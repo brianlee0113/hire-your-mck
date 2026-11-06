@@ -473,6 +473,9 @@ def _clean_axes(chart, tok, show_values=False):
     va.has_major_gridlines = False
     va.has_minor_gridlines = False
     va.visible = show_values
+    if not show_values:  # Keynote ignores a deleted axis; hiding the tick labels too keeps it clean there
+        from pptx.enum.chart import XL_TICK_LABEL_POSITION
+        va.tick_label_position = XL_TICK_LABEL_POSITION.NONE
     va.format.line.fill.background()
     ca = chart.category_axis
     ca.format.line.color.rgb = rgb(tok["rule"])
@@ -528,9 +531,10 @@ def chart(c, spec, slide, body, box):
         cats = cats + [bench["label"]]
         series = [dict(series[0], points=series[0]["points"] + [bench["point"]])]
     synth = _stand_ins(len(cats), ctype)
-    cd = CategoryChartData()
+    unit = next(((spec.dpoint(p) or {}).get("unit") for s in series for p in s["points"] if spec.dpoint(p)), None)
+    # number format on the source cells too: Keynote and Google Slides read it from there, not from the labels
+    cd = CategoryChartData(number_format=excel_format(unit, body.get("value_format")))
     cd.categories = cats
-    unit = None
     for s in series:
         vals = []
         for i, p in enumerate(s["points"]):
@@ -595,7 +599,9 @@ def chart(c, spec, slide, body, box):
             dl = pt.data_label
             dl.has_text_frame = True
             val_txt = "?" if p.get("placeholder") else fmt(spec.value(p), unit, nf)
-            if ctype == "line" and pi == len(s_spec["points"]) - 1:
+            if ctype == "line" and pi == len(s_spec["points"]) - 1 and multi:
+                # name the line only when there are several; a lone line is named by the unit line,
+                # and a longer label wraps over the line's end
                 val_txt = f"{s_spec['name']}  {val_txt}"
             dl.text_frame.text = val_txt
             run = dl.text_frame.paragraphs[0].runs[0]
@@ -640,7 +646,7 @@ def waterfall(c, spec, body, box):
             base.append(running if v >= 0 else running + v)
             height.append(abs(v))
             running += v
-    cd = CategoryChartData()
+    cd = CategoryChartData(number_format=nf)
     cd.categories = cats
     cd.add_series("base", base)
     cd.add_series(body["series"][0]["name"], height)
