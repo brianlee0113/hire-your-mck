@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archetype Catalog v0.2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: a working spec sheet. Summary numbers → routing → anatomy → the 17 slide types as wireframe cards. */
+  --bg: #f6f7f8;
+  --surface: #ffffff;
+  --ink: #16202a;
+  --muted: #5d6b78;
+  --line: #d9dee3;
+  --accent: #0d6e6e;
+  --accent-soft: #d6ecea;
+  --wire: #b9c2ca;
+  --wire-dark: #3b4a57;
+  --warn: #b45309;
+  --font-display: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", -apple-system, "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11171c; --surface: #182128; --ink: #e6ebef; --muted: #98a6b2; --line: #2b3741;
+    --accent: #4fb8b0; --accent-soft: #1d3b3a; --wire: #4a5a67; --wire-dark: #b9c6d0; --warn: #f0a050;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11171c; --surface: #182128; --ink: #e6ebef; --muted: #98a6b2; --line: #2b3741;
+  --accent: #4fb8b0; --accent-soft: #1d3b3a; --wire: #4a5a67; --wire-dark: #b9c6d0; --warn: #f0a050;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 40px 20px 80px; display: grid; gap: 48px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+h1 { font-size: 34px; line-height: 1.2; }
+h2 { font-size: 23px; }
+h3 { font-size: 16px; font-family: var(--font-mono); font-weight: 500; }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.lede { color: var(--muted); }
+header { display: grid; gap: 10px; }
+section { display: grid; gap: 18px; }
+.sec-head { display: grid; gap: 6px; }
+code, .mono { font-family: var(--font-mono); font-size: 13px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: grid; gap: 4px; }
+.stat b { font-family: var(--font-display); font-size: 32px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 13px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+.bars { display: grid; gap: 8px; }
+.bar-row { display: grid; grid-template-columns: 150px 1fr 44px; gap: 12px; align-items: center; font-size: 14px; }
+.bar-track { height: 18px; background: var(--bg); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--wire); }
+.bar-fill.hi { background: var(--accent); }
+.bar-row .n { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--font-mono); font-size: 13px; }
+.bar-row small { color: var(--muted); display: block; font-size: 12px; line-height: 1.3; }
+.note { font-size: 14px; color: var(--muted); border-left: 3px solid var(--accent); padding-left: 12px; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; background: var(--surface); }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 500; }
+td .chip { margin-right: 4px; }
+.chip { display: inline-block; font-family: var(--font-mono); font-size: 12px; padding: 1px 7px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+.chip.alt { background: var(--bg); color: var(--muted); border: 1px solid var(--line); }
+.anatomy { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.anatomy svg { width: 100%; height: auto; display: block; }
+.rules { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.rules li { display: grid; grid-template-columns: 34px 1fr; gap: 8px; font-size: 14px; }
+.rules li b { font-family: var(--font-mono); color: var(--accent); font-weight: 500; }
+.family { display: grid; gap: 12px; }
+.family-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.family-head h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; }
+.family-head span { color: var(--muted); font-size: 13px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.thumb { background: var(--bg); border-bottom: 1px solid var(--line); padding: 12px; }
+.thumb svg { width: 100%; height: auto; display: block; }
+.card-body { padding: 14px; display: grid; gap: 8px; align-content: start; }
+.card-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.card-top h3 { font-size: 14px; }
+.count { font-family: var(--font-mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+.when { font-size: 14px; }
+.ex { font-family: var(--font-display); font-size: 14px; line-height: 1.4; border-top: 1px dashed var(--line); padding-top: 8px; }
+.ex::before { content: "Example title"; display: block; font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; }
+.card ul { margin: 0; padding-left: 16px; font-size: 13px; color: var(--muted); display: grid; gap: 2px; }
+.cols-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.list-panel h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.list-panel ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; }
+.ask { border: 1px solid var(--accent); background: var(--accent-soft); border-radius: 8px; padding: 18px 20px; display: grid; gap: 8px; }
+.ask ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+footer { color: var(--muted); font-size: 13px; }
+@media (max-width: 760px) {
+  .anatomy { grid-template-columns: 1fr; }
+  .bar-row { grid-template-columns: 110px 1fr 36px; }
+  h1 { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">hire-your-mck · Archetype catalog v0.2 · 203 decks · draft for review</div>
+  <h1>컨설팅 장표는 20가지 유형과 몇 가지 문법으로 만들어진다</h1>
+  <p class="lede">공개된 맥킨지 덱 203개의 3,257페이지를 직접 보고 태깅했습니다. 최신 덱일수록 크게 반영하고(반감기 5년), 같은 게시처의 덱이 결과를 좌우하지 않도록 상한을 뒀습니다. 생성기는 이 카탈로그를 기준으로 리드 메시지에 맞는 장표 유형을 고르고, 공통 규칙으로 검사합니다. 대상은 미국 사용자(영어)이고, 예시 제목은 모두 새로 지은 것입니다.</p>
+</header>
+
+<section>
+  <div class="stats">
+    <div class="stat"><b>78%</b><span>본문 장표 중 so-what 문장형 제목 (2022년 이후 78%)</span></div>
+    <div class="stat"><b>14</b><span>so-what 제목의 단어 수 중앙값 · 90%가 20단어 이하</span></div>
+    <div class="stat"><b>88%</b><span>제목이 2줄 이하 (2022년 이후 84%로, 조금 길어짐)</span></div>
+    <div class="stat"><b>21%</b><span>2022년 이후 차트 + takeaway 사이드바 (2010년대의 2배)</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">00 · Principles</div>
+    <h2>최상위 원칙</h2>
+    <p class="lede">모든 장표와 QA가 따르는 원칙입니다. Brian이 직접 쓴 원칙(B)이 Claude가 추가한 원칙(A: 덱 분석 근거, G: 일반 관행)보다 우선합니다. 전체 목록은 <code>docs/principles.md</code>에 있습니다.</p>
+  </div>
+  <div class="cols-3">
+    <div class="panel list-panel">
+      <h3><span class="chip">B</span> Brian 작성</h3>
+      <ul>
+        <li><b>B-01</b> 리드 메시지만 읽어도 한 장이 이해돼야 한다.</li>
+        <li><b>B-02</b> 시선은 위→아래, 좌→우로 간다. 영역마다 핵심을 먼저 말하고 부연한다.</li>
+        <li><b>B-03</b> 한 장에 한 주제. 깊이 들어가는 건 괜찮지만, 섞지 않는다.</li>
+        <li><b>B-04</b> Exec Summary만 읽어도 덱 전체가 이해돼야 한다.</li>
+      </ul>
+    </div>
+    <div class="panel list-panel">
+      <h3><span class="chip alt">A</span> Claude 추가 · 덱 분석 근거</h3>
+      <ul>
+        <li><b>A-01</b> 제목 속 숫자는 본문에 다시 보인다.</li>
+        <li><b>A-02</b> 제목이 지목한 것만 강조한다.</li>
+        <li><b>A-03</b> 제목은 2줄 이내.</li>
+        <li><b>A-04</b> 개수 단어 = 시각 요소 수.</li>
+        <li><b>A-05</b> 절이 두 개인 제목은 2패널.</li>
+        <li><b>A-06~09</b> 단위 줄, 출처 100%, Exec Summary 번호 = 섹션 번호, 연결어.</li>
+        <li><b>A-10</b> 같은 그림을 다시 쓰면서 강조만 바꾼다. (v0.2)</li>
+        <li><b>A-11</b> 차트 장표는 takeaway 사이드바가 기본. (v0.2)</li>
+      </ul>
+    </div>
+    <div class="panel list-panel">
+      <h3><span class="chip alt">G</span> Claude 추가 · 일반 관행</h3>
+      <ul>
+        <li><b>G-01</b> 수평 논리: 제목만 이어 읽어도 이야기가 된다.</li>
+        <li><b>G-02</b> 수직 논리: 본문의 모든 요소는 제목을 증명한다.</li>
+        <li><b>G-03</b> MECE</li>
+        <li><b>G-04</b> 피라미드 구조</li>
+        <li><b>G-05</b> 차트 하나에 메시지 하나</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">01 · What slides argue</div>
+    <h2>메시지 유형별 장표 수</h2>
+    <p class="lede">본문 2,621장을 "무엇을 비교하는가"로 나눈 가중 비중입니다. 정량 비교 다섯 가지는 Gene Zelazny의 분류를 따랐습니다.</p>
+  </div>
+  <div class="panel bars" id="mt-bars"></div>
+  <p class="note">차트만 잘 그리는 도구는 컨설팅 덱의 절반만 만듭니다. 구조형과 텍스트형 장표가 45%, 정량 비교가 55%입니다.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">02 · Routing</div>
+    <h2>리드 메시지 → 장표 유형</h2>
+    <p class="lede">생성기는 리드 메시지에서 비교의 종류를 판별해 1순위 유형을 고릅니다.</p>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>리드 메시지가 말하는 것</th><th>신호 단어</th><th>1순위</th><th>대안</th></tr></thead>
+      <tbody id="routing"></tbody>
+    </table>
+  </div>
+  <ul class="rules">
+    <li><b>R1</b><span>제목에 절이 두 개("X rose, while Y fell")면 <code>multi-chart-panel</code>로 2분할합니다.</span></li>
+    <li><b>R2</b><span>제목에 개수 단어("Three drivers")가 있으면 시각 요소 수를 그 숫자에 맞춥니다.</span></li>
+    <li><b>R3</b><span>제목이 질문형이면 답은 콜아웃이나 사이드바에 둡니다.</span></li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">03 · Anatomy</div>
+    <h2>모든 장표에 적용되는 공통 문법</h2>
+    <p class="lede">다섯 묶음 중 세 묶음 이상에서 독립적으로 확인된 규칙만 넣었습니다.</p>
+  </div>
+  <div class="anatomy">
+    <div class="panel" id="anatomy-svg"></div>
+    <div class="panel">
+      <ul class="rules">
+        <li><b>T1</b><span>제목은 주어와 서술어가 있는 so-what 문장입니다. 토픽 라벨은 표지, 간지, 방법론, 부록에만 씁니다.</span></li>
+        <li><b>A-03</b><span>제목은 2줄 권장, 3줄은 경고, 25단어 초과는 실패입니다.</span></li>
+        <li><b>T3</b><span>제목 속 숫자는 장표 안에 다시 보여야 합니다(합계 막대, 강조 막대, 콜아웃 중 하나).</span></li>
+        <li><b>T4</b><span>제목이 지목한 항목만 강조색이고, 나머지는 중립색입니다.</span></li>
+        <li><b>L1</b><span>단위 줄(지표, 단위, 기간)은 제목 바로 아래에 둡니다.</span></li>
+        <li><b>L2</b><span>각주는 출처 바로 위, 출처는 좌하단에 둡니다. 데이터 장표는 출처 필수입니다(D5).</span></li>
+        <li><b>L3</b><span>출처 없는 placeholder가 들어간 장표에는 <code>ILLUSTRATIVE</code> 스티커를 자동으로 붙입니다.</span></li>
+        <li><b>L4</b><span>차트 2/3 + takeaway 1/3. 2022년 이후 차트 장표의 기본 레이아웃입니다(A-11).</span></li>
+        <li><b>C1</b><span>막대는 값 내림차순으로 정렬하고, 막대 끝에 값을 붙이고, 값 축은 없앱니다.</span></li>
+        <li><b>C3</b><span>Total, 평균, Other는 맨 끝에 다른 스타일로 둡니다.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">03b · Style over time</div>
+    <h2>스타일은 2020년을 경계로 바뀌었다</h2>
+    <p class="lede">구조 문법(제목 규칙, 장표 유형)은 시기가 달라도 거의 같습니다. 바뀐 건 시각 스타일입니다. 그래서 시각 규칙은 2020년 이후 표준 템플릿 덱 99개(1,530페이지)에서만 뽑았습니다. 행사·공동 브랜드·고객 템플릿 덱 21개는 제외했습니다.</p>
+  </div>
+  <div class="anatomy">
+    <div class="panel"><div class="table-scroll"><table>
+      <thead><tr><th>시기</th><th>본문 장표</th><th>so-what</th><th>단어</th><th>2줄 이하</th><th>사이드바</th></tr></thead>
+      <tbody><tr><td>≤2009</td><td class='mono'>138</td><td>71%</td><td>13</td><td>95%</td><td>10%</td></tr><tr><td>2010–17</td><td class='mono'>656</td><td>74%</td><td>14</td><td>96%</td><td>9%</td></tr><tr><td>2018–21</td><td class='mono'>714</td><td>74%</td><td>13</td><td>91%</td><td>12%</td></tr><tr><td>2022+</td><td class='mono'>1113</td><td>78%</td><td>15</td><td>84%</td><td>21%</td></tr></tbody></table></div></div>
+    <div class="panel"><ul class="rules">
+      <li><b>제목</b><span>serif 91% · sans 9% · sentence 96% · Bold 93% · 마침표 없음 98%</span></li>
+      <li><b>색</b><span>blue+accent 62% · mono-blue 31% · multi-color 5%. 강조색 1개, 다른 색은 의미가 있을 때만</span></li>
+      <li><b>차트</b><span>flat 83% · none 16% · outlined 1% · 격자선 없음 98%</span></li>
+      <li><b>스티커</b><span>none 70% · text-only 27% · outlined-box 3%. 테두리 박스는 옛 스타일</span></li>
+      <li><b>다크</b><span>어두운 덱은 반도체 협회 키노트 등 행사 덱에 집중됩니다. 기본은 밝은 덱이고, 어두운 덱은 토큰 모드로 제공합니다</span></li>
+      <li><b>2026</b><span>신호만 있습니다(덱 1~2개): 흰 차트 + 어두운 사이드바, 하단 결론 바, 제목 마침표. 덱이 더 쌓이면 다시 봅니다</span></li>
+    </ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">04 · Tier 1</div>
+    <h2>v1에 넣을 20가지 장표 유형</h2>
+    <p class="lede">빈도가 높고 여러 덱에서 쓰인 유형에, 컨설팅을 상징하는 2x2와 이슈 트리를 더했습니다. stacked-100은 v0.2 집계에서 승격했습니다. 숫자는 주 유형으로 쓰인 장수 / 등장 덱 수 · 가중 비중입니다.</p>
+  </div>
+  <div id="tier1" style="display:grid; gap:32px"></div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">05 · Deck skeleton</div>
+    <h2>덱 구조 규칙</h2>
+  </div>
+  <div class="cols-3">
+    <div class="panel list-panel">
+      <h3>Storyline</h3>
+      <ul>
+        <li><b>S1</b> Exec Summary의 번호가 각 장 제목의 번호와 섹션이 됩니다. 마지막 장에서 요약을 반복합니다.</li>
+        <li><b>S2</b> 개요 장표가 ID(1, 2a, R1)를 부여하고, 상세 장표 제목 앞에 같은 ID를 붙입니다.</li>
+        <li><b>S4</b> Backup은 지원하는 본 장표 바로 뒤에 <code>BACKUP:</code> 접두어로 붙입니다.</li>
+        <li><b>S5</b> 병렬 챕터는 같은 템플릿과 같은 제목 구조를 반복합니다.</li>
+      </ul>
+    </div>
+    <div class="panel list-panel">
+      <h3>Tracker와 연결</h3>
+      <ul>
+        <li><b>S3</b> 목차를 반복하면서 현재 항목만 강조해 간지로 씁니다. 실제 덱에는 손으로 만든 tracker의 오류가 있어서, 우리는 spec에서 자동으로 만듭니다.</li>
+        <li><b>T7</b> "However / In addition / As a result"로 다음 장을 엽니다. 연속 장표는 <code>(1/2)</code>로 표시합니다.</li>
+      </ul>
+    </div>
+    <div class="panel list-panel">
+      <h3>덱 뼈대 (Nav)</h3>
+      <ul>
+        <li><code>cover</code> 37개 덱 전부</li>
+        <li><code>agenda-tracker</code> 목차를 반복해 현재 항목만 강조</li>
+        <li><code>section-divider</code> 섹션 이름 + so-what 한 문장</li>
+        <li><code>end-page</code> Key takeaways → Next steps</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">06 · Later</div>
+    <h2>v1.x로 미룬 것</h2>
+  </div>
+  <div class="cols-3">
+    <div class="panel list-panel">
+      <h3>Tier 2 (11종)</h3>
+      <p class="mono" style="color:var(--muted); line-height:1.9">scatter-bubble · heatmap · survey-bars · cost-curve · data-table · map · org-chart · initiative-one-pager · definition-table · quote-interview · <b style="color:var(--ink)">statement (new)</b></p>
+    </div>
+    <div class="panel list-panel">
+      <h3>보류한 신규 후보</h3>
+      <p style="font-size:14px"><b>statement 장표 → Tier 2에 추가함</b> (문장 하나를 크게 보여주는 장표. 변형을 합쳐 27장, 덱 약 20개). 나머지 후보(from-to-shift, speaker-intro, audience-poll, build-reveal 등)는 Tier 1의 변형이나 키노트 전용으로 남깁니다.</p>
+    </div>
+    <div class="panel list-panel">
+      <h3>한계</h3>
+      <ul>
+        <li>컨퍼런스 발표가 가장 많고, M&amp;A·가격·통신 덱은 거의 없습니다.</li><li>mckinsey.com 자체 덱과 일본 METI는 봇 차단으로 받지 못했습니다.</li>
+        <li>긴 덱은 12~30페이지만 샘플링했습니다(최신 덱일수록 많이).</li>
+        <li>태깅은 에이전트 5개가 했고, 사람이 검수하지 않았습니다.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="ask">
+  <h2 style="font-size:19px">검토 부탁드릴 것</h2>
+  <ol>
+    <li>statement 장표를 Tier 2에 새로 넣을까요?</li>
+    <li>제목 규칙을 "2줄 권장, 3줄은 경고"로 완화했습니다(최신 덱의 16%가 3줄). 괜찮을까요?</li>
+  </ol>
+</section>
+
+<footer>근거: 공개 맥킨지 덱 203개(2001–2026), 3,257페이지 태깅 · 최신성 가중(반감기 5년) · 게시처 상한 · 2026-11-05 · 원본 덱은 재배포하지 않으며, 이 페이지의 와이어프레임과 예시 제목은 새로 만든 것입니다. Not affiliated with McKinsey &amp; Company.</footer>
+</div>
+
+<script>
+(function () {
+  const NS = "http://www.w3.org/2000/svg";
+  const c = { wire: "var(--wire)", dark: "var(--wire-dark)", acc: "var(--accent)", bg: "var(--surface)", line: "var(--line)", muted: "var(--muted)" };
+
+  // ---------- message-type bars ----------
+  const mt = [
+    ["item", "항목 비교", 26, true],
+    ["argument", "텍스트 논증", 23, false],
+    ["structure", "구조 · 프레임워크", 22, false],
+    ["time-series", "시계열", 13, true],
+    ["component", "구성 · 분해", 10, true],
+    ["frequency", "분포", 3, true],
+    ["correlation", "상관", 3, true]
+  ];
+  const max = 26;
+  document.getElementById("mt-bars").innerHTML = mt.map(([id, ko, n, q]) =>
+    `<div class="bar-row"><div><span class="mono">${id}</span><small>${ko}${q ? " · 정량" : ""}</small></div>
+     <div class="bar-track"><div class="bar-fill${q ? " hi" : ""}" style="width:${(n / max * 100).toFixed(1)}%"></div></div>
+     <div class="n">${n}%</div></div>`).join("");
+
+  // ---------- routing ----------
+  const routing = [
+    ["A가 B보다 크다 · 순위", "largest, leads, lags, gap", "bar-ranking", "kpi-big-numbers (항목 ≤3), heatmap (지표 여러 개)"],
+    ["시간에 따라 변했다 (데이터 포인트 많음)", "grew, declined, since 2015", "line-trend", "column-time-series (시점 ≤8)"],
+    ["구성이 시간에 따라 변했다", "share rose, mix shifted", "stacked-column", "stacked-100"],
+    ["무엇이 합쳐져 총합이 되나 · A→B 요인", "drivers, bridge, explains", "waterfall-bridge", "stacked-100 (한 시점)"],
+    ["둘 사이에 관계가 있다", "the more…, correlates", "scatter-bubble", "—"],
+    ["응답·분포가 이렇다", "N% of respondents", "survey-bars", "bar-ranking"],
+    ["N개 요소로 이루어진다", "three factors, four pillars", "framework-pillars", "text-columns"],
+    ["단계·순서로 진행된다", "steps, phases, value chain", "process-flow", "timeline-roadmap (날짜가 있으면)"],
+    ["옵션·대상을 같은 기준으로 비교", "options, A vs. B", "comparison-table", "harvey-ball-table (정성 평가)"],
+    ["해야 할 일 N개", "should, levers, actions", "numbered-levers", "initiative-one-pager (과제 하나 상세)"],
+    ["다른 곳에서 이렇게 성공했다", "case, example, benchmark", "case-example", "—"],
+    ["주장 하나에 근거 2~4개", "두 절로 된 제목", "multi-chart-panel", "—"],
+    ["정성 논증 · 판단", "unlikely, because", "bullet-argument", "text-columns (대조)"]
+  ];
+  document.getElementById("routing").innerHTML = routing.map(([a, s, p, alt]) =>
+    `<tr><td>${a}</td><td class="mono" style="color:var(--muted)">${s}</td><td><span class="chip">${p}</span></td><td style="color:var(--muted)">${alt}</td></tr>`).join("");
+
+  // ---------- svg helpers ----------
+  function svg(w, h, body, label) {
+    return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}" xmlns="${NS}">${body}</svg>`;
+  }
+  const R = (x, y, w, h, f, extra = "") => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}" ${extra}/>`;
+  const L = (x1, y1, x2, y2, s, extra = "") => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${s}" ${extra}/>`;
+  const T = (x, y, t, size, f, extra = "") => `<text x="${x}" y="${y}" font-size="${size}" fill="${f}" font-family="IBM Plex Sans, sans-serif" ${extra}>${t}</text>`;
+
+  // slide frame: title 2 lines, unit line, source line
+  function frame(body, opt = {}) {
+    let s = R(0.5, 0.5, 159, 89, c.bg, `stroke="${c.line}"`);
+    s += R(8, 7, 118, 4, c.dark, 'rx="1"') + R(8, 13, 82, 4, c.dark, 'rx="1"');
+    if (opt.unit !== false) s += R(8, 21, 46, 2, c.wire, 'rx="1"');
+    if (opt.sticker) s += R(132, 6, 21, 6, "none", `stroke="${c.acc}" stroke-width=".7"`);
+    s += R(8, 83, 40, 1.6, c.wire, 'rx=".8"') + R(146, 83, 6, 1.6, c.wire);
+    return s + body;
+  }
+
+  const thumbs = {
+    "bar-ranking": () => {
+      let b = ""; const ws = [86, 72, 60, 51, 40, 30];
+      ws.forEach((w, i) => { const y = 29 + i * 7.6; b += R(36, y, w, 5, i === 0 ? c.acc : c.wire) + R(10, y + 1.3, 20, 2.4, c.wire) + R(38 + w, y + 1.3, 6, 2.4, c.dark); });
+      b += R(36, 29 + 6 * 7.6, 50, 5, "none", `stroke="${c.dark}" stroke-width=".6" stroke-dasharray="1.5 1"`);
+      return frame(b);
+    },
+    "column-time-series": () => {
+      let b = ""; const hs = [16, 20, 24, 28, 34, 40];
+      hs.forEach((h, i) => { const x = 16 + i * 20; const f = i >= 4 ? c.acc : c.wire; b += R(x, 78 - h, 12, h, f, i >= 4 ? 'opacity=".55"' : "") + R(x + 2, 74 - h, 8, 2, c.dark); });
+      b += L(94, 30, 94, 79, c.dark, 'stroke-width=".6" stroke-dasharray="1.5 1.2"');
+      b += `<path d="M20 46 Q 66 26 112 30" fill="none" stroke="${c.acc}" stroke-width=".9" marker-end="url(#ah)"/>`;
+      b += R(62, 30, 18, 5, c.bg, `stroke="${c.acc}" stroke-width=".7" rx="2.5"`);
+      return frame(defs() + b);
+    },
+    "line-trend": () => {
+      let b = L(12, 78, 148, 78, c.wire, 'stroke-width=".6"');
+      b += `<polyline points="14,66 34,62 54,60 74,54 94,48 114,40 134,32" fill="none" stroke="${c.acc}" stroke-width="1.6"/>`;
+      b += `<polyline points="14,58 34,58 54,56 74,57 94,55 114,54 134,53" fill="none" stroke="${c.wire}" stroke-width="1.2"/>`;
+      b += `<polyline points="14,72 34,70 54,71 74,68 94,69 114,66 134,65" fill="none" stroke="${c.wire}" stroke-width="1.2"/>`;
+      b += L(94, 28, 94, 78, c.dark, 'stroke-width=".6" stroke-dasharray="1.5 1.2"');
+      b += R(137, 30, 16, 2.4, c.acc) + R(137, 52, 12, 2.4, c.wire) + R(137, 64, 12, 2.4, c.wire);
+      return frame(b);
+    },
+    "stacked-column": () => {
+      let b = ""; const segs = [[10, 8, 6], [11, 10, 7], [12, 12, 9], [12, 14, 11], [13, 16, 13]];
+      segs.forEach((s, i) => { const x = 20 + i * 24; let y = 78; s.forEach((h, j) => { y -= h; b += R(x, y, 14, h, [c.wire, c.dark, c.acc][j], j === 1 ? 'opacity=".45"' : ""); }); b += R(x + 3, y - 4, 8, 2, c.dark); });
+      return frame(b);
+    },
+    "stacked-100": () => {
+      let b = ""; const segs = [[40, 35, 25], [34, 34, 32], [28, 32, 40], [22, 30, 48]];
+      segs.forEach((sg, i) => { const x = 22 + i * 32; let y = 32; b += R(x + 2, 27, 16, 2, c.dark); sg.forEach((p, j) => { const h = p * 0.46; b += R(x, y, 20, h, [c.wire, c.dark, c.acc][j], j === 1 ? 'opacity=".35"' : ""); y += h; }); });
+      return frame(b);
+    },
+    "waterfall-bridge": () => {
+      let b = R(14, 64, 14, 14, c.dark);
+      const steps = [10, 7, 5, -6, 3];
+      let level = 64;
+      steps.forEach((d, i) => { const x = 34 + i * 18; const h = Math.abs(d) * 1.2; const y = d > 0 ? level - h : level; b += L(x - 6, level, x, level, c.dark, 'stroke-width=".5" stroke-dasharray="1 1"'); b += R(x, y, 12, h, d > 0 ? c.wire : c.bg, d < 0 ? `stroke="${c.wire}" stroke-width=".8"` : ""); level = d > 0 ? level - h : level + h; });
+      b += L(124, level, 130, level, c.dark, 'stroke-width=".5" stroke-dasharray="1 1"');
+      b += R(130, level, 14, 78 - level, c.acc);
+      b += R(132, level - 5, 10, 2.4, c.dark);
+      return frame(b);
+    },
+    "kpi-big-numbers": () => {
+      let b = "";
+      [0, 1, 2].forEach(i => { const x = 12 + i * 48; b += T(x, 52, ["42%", "$3.1B", "2.4x"][i], 15, i === 0 ? c.acc : c.dark, 'font-weight="600"') + R(x, 58, 38, 2.2, c.wire) + R(x, 63, 30, 2.2, c.wire) + R(x, 68, 34, 2.2, c.wire); });
+      return frame(b);
+    },
+    "multi-chart-panel": () => {
+      let b = R(10, 28, 64, 4, c.dark, 'opacity=".25"') + R(86, 28, 64, 4, c.dark, 'opacity=".25"');
+      [18, 26, 34, 44].forEach((h, i) => b += R(16 + i * 14, 78 - h, 9, h, i === 3 ? c.acc : c.wire));
+      [44, 34, 22, 14].forEach((h, i) => b += R(92 + i * 14, 78 - h, 9, h, i === 0 ? c.acc : c.wire));
+      b += `<path d="M77 50 l4 4 -4 4" fill="none" stroke="${c.dark}" stroke-width="1"/>`;
+      return frame(b, { unit: false });
+    },
+    "comparison-table": () => {
+      let b = "";
+      [0, 1, 2, 3].forEach(i => { const x = 44 + i * 28; b += R(x, 27, 22, 3, c.dark); });
+      [0, 1, 2, 3].forEach(r => { const y = 35 + r * 11; b += R(10, y, 28, 8, c.acc, r === 0 ? "" : 'opacity=".35"'); [0, 1, 2, 3].forEach(i => b += R(44 + i * 28, y + 1.5, 20, 2, c.wire) + R(44 + i * 28, y + 5, 14, 2, c.wire)); b += L(10, y + 10, 152, y + 10, c.line, 'stroke-width=".5" stroke-dasharray="1 1"'); });
+      return frame(b, { unit: false });
+    },
+    "harvey-ball-table": () => {
+      let b = ""; const fills = [[1, .75, .5, .25], [.5, 1, .25, .75], [.25, .5, 1, .5], [.75, .25, .75, 1]];
+      [0, 1, 2, 3].forEach(i => b += R(50 + i * 26, 27, 16, 3, c.dark));
+      fills.forEach((row, r) => { const y = 39 + r * 11; b += R(10, y - 2, 30, 3, c.dark, 'opacity=".6"'); row.forEach((f, i) => b += ball(58 + i * 26, y, 4, f)); });
+      return frame(b, { unit: false });
+    },
+    "framework-pillars": () => {
+      let b = `<path d="M16 34 L80 25 L144 34 Z" fill="${c.dark}" opacity=".8"/>`;
+      [0, 1, 2].forEach(i => { const x = 20 + i * 42; b += R(x, 38, 36, 34, c.acc, i === 1 ? "" : 'opacity=".35"') + R(x + 4, 44, 28, 2.4, c.bg) + R(x + 4, 50, 22, 2, c.bg) + R(x + 4, 55, 26, 2, c.bg); });
+      b += R(16, 74, 128, 4, c.wire);
+      return frame(b, { unit: false });
+    },
+    "process-flow": () => {
+      let b = "";
+      [0, 1, 2, 3].forEach(i => { const x = 10 + i * 36; const o = (0.35 + i * 0.2).toFixed(2); b += `<path d="M${x} 32 h30 l6 7 -6 7 h-30 l6 -7 z" fill="${c.acc}" opacity="${o}"/>`; b += R(x + 6, 52, 26, 2.2, c.wire) + R(x + 6, 57, 20, 2.2, c.wire) + R(x + 6, 62, 24, 2.2, c.wire); });
+      return frame(b, { unit: false });
+    },
+    "timeline-roadmap": () => {
+      let b = ""; [0, 1, 2, 3].forEach(i => b += R(40 + i * 28, 27, 20, 2.6, c.dark));
+      [[40, 50], [56, 60], [84, 52], [62, 80]].forEach(([x, w], r) => { const y = 36 + r * 10; b += R(10, y, 24, 3, c.wire) + R(x, y - 1, w, 5, r === 1 ? c.acc : c.wire, 'rx="2.5"'); });
+      [[96, 34], [138, 64]].forEach(([x, y]) => b += `<path d="M${x} ${y} l3 3 -3 3 -3 -3 z" fill="${c.dark}"/>`);
+      return frame(b, { unit: false });
+    },
+    "matrix-2x2": () => {
+      let b = L(20, 28, 20, 78, c.dark, 'stroke-width=".8"') + L(20, 78, 150, 78, c.dark, 'stroke-width=".8"');
+      b += R(86, 28, 64, 25, c.acc, 'opacity=".18"');
+      b += L(85, 28, 85, 78, c.wire, 'stroke-dasharray="1.5 1.2"') + L(20, 53, 150, 53, c.wire, 'stroke-dasharray="1.5 1.2"');
+      [[100, 36, 3.5], [126, 42, 4.5], [112, 46, 3], [40, 38, 3], [56, 64, 4], [118, 68, 3.5], [36, 70, 3]].forEach(([x, y, r], i) => b += `<circle cx="${x}" cy="${y}" r="${r}" fill="${i < 3 ? c.acc : c.wire}"/>`);
+      b += R(10, 50, 6, 2, c.wire) + R(80, 81, 12, 1.6, c.wire);
+      return frame(b, { unit: false });
+    },
+    "issue-tree": () => {
+      let b = R(10, 46, 26, 10, c.acc);
+      const mids = [34, 51, 68];
+      mids.forEach((y, i) => { b += `<path d="M36 51 H44 V${y + 4} H52" fill="none" stroke="${c.dark}" stroke-width=".6"/>` + R(52, y, 30, 8, c.dark, i === 1 ? "" : 'opacity=".55"');
+        [-4, 4].forEach(d => b += `<path d="M82 ${y + 4} H90 V${y + 4 + d} H98" fill="none" stroke="${c.wire}" stroke-width=".6"/>` + R(98, y + 4 + d - 2, 44, 3.4, c.wire)); });
+      b += T(43, 30, "×", 6, c.dark);
+      return frame(b, { unit: false });
+    },
+    "exec-summary": () => {
+      let b = "";
+      [0, 1, 2, 3].forEach(i => { const y = 30 + i * 12; b += `<circle cx="13" cy="${y + 2}" r="2.6" fill="${c.acc}"/>` + R(20, y, 120 - i * 8, 3.2, c.dark) + R(26, y + 6, 70 + (i % 2) * 20, 2, c.wire); });
+      return frame(b, { unit: false });
+    },
+    "bullet-argument": () => {
+      let b = "";
+      [0, 1, 2].forEach(i => { const y = 30 + i * 16; b += R(10, y, 3, 3, c.dark) + R(17, y, 110, 3, c.dark, 'opacity=".75"') + R(22, y + 6, 90, 2, c.wire) + R(22, y + 10, 76, 2, c.wire); });
+      return frame(b, { unit: false });
+    },
+    "text-columns": () => {
+      let b = R(10, 28, 68, 7, c.wire) + R(82, 28, 68, 7, c.acc);
+      [0, 1, 2, 3].forEach(i => { b += R(14, 41 + i * 8, 56, 2.2, c.wire) + R(86, 41 + i * 8, 56, 2.2, c.wire); });
+      b += R(10, 28, 68, 50, "none", `stroke="${c.line}"`) + R(82, 28, 68, 50, "none", `stroke="${c.line}"`);
+      return frame(b, { unit: false });
+    },
+    "numbered-levers": () => {
+      let b = "";
+      [0, 1, 2, 3].forEach(i => { const y = 30 + i * 10; b += `<circle cx="14" cy="${y + 2}" r="3.2" fill="${c.acc}"/>` + T(12.6, y + 3.4, i + 1, 4, "#fff") + R(22, y, 90, 3, c.dark, 'opacity=".7"') + R(134, y, 14, 3, c.dark); });
+      b += L(22, 70, 150, 70, c.dark, 'stroke-width=".7"') + R(22, 73, 30, 3, c.dark) + R(128, 73, 20, 3.4, c.acc);
+      return frame(b, { unit: false });
+    },
+    "case-example": () => {
+      let b = R(10, 28, 44, 4, c.dark, 'opacity=".5"') + R(58, 28, 44, 4, c.dark, 'opacity=".5"');
+      [0, 1].forEach(k => [0, 1, 2, 3].forEach(i => b += R(10 + k * 48, 37 + i * 7, 38, 2.2, c.wire)));
+      b += R(106, 28, 46, 50, c.acc) + T(110, 46, "+18%", 9, "#fff", 'font-weight="600"') + T(110, 62, "$40M", 9, "#fff", 'font-weight="600"');
+      return frame(b, { unit: false });
+    }
+  };
+  function ball(cx, cy, r, f) {
+    let s = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${c.dark}" stroke-width=".7"/>`;
+    if (f >= 1) return s + `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${c.dark}"/>`;
+    const a = f * 2 * Math.PI; const x = cx + r * Math.sin(a), y = cy - r * Math.cos(a);
+    return s + `<path d="M${cx} ${cy} L${cx} ${cy - r} A${r} ${r} 0 ${f > .5 ? 1 : 0} 1 ${x.toFixed(2)} ${y.toFixed(2)} Z" fill="${c.dark}"/>`;
+  }
+  function defs() { return `<defs><marker id="ah" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="${c.acc}"/></marker></defs>`; }
+
+  // ---------- tier 1 data ----------
+  const fam = [
+    ["정량 차트", "8종 · 숫자로 증명", [
+      ["bar-ranking", "142 / 81 · 6.1%", "항목 간 크기 비교, 순위", "Software leads every sector in AI adoption, at 2x the cross-industry average", ["값 내림차순, 막대 끝에 값", "지목된 막대만 강조색", "Total·평균은 맨 끝에 다른 스타일"]],
+      ["column-time-series", "103 / 71 · 4.5%", "시점 8개 이하의 시계열, 전후 비교", "US data-center capex has tripled since 2019 and is on track to double again by 2028", ["막대 위 값 라벨, y축 없음", "CAGR 화살표 또는 증감 알약", "전망 구간은 점선으로 나누고 색을 다르게"]],
+      ["line-trend", "111 / 80 · 4.0%", "긴 시계열, 추세, 시나리오", "Online grocery penetration has stalled at ~12% since the 2021 peak", ["선 끝에 직접 라벨, 범례 없음", "초점 계열만 강조색", "실적과 전망은 점선 세로선으로 구분"]],
+      ["stacked-column", "93 / 64 · 3.6%", "구성이 시간에 따라 변함", "Subscriptions now make up half of revenue, up from a fifth in 2020", ["막대 위에 합계", "세그먼트 라벨은 막대 안쪽", "축 아래 보조 지표 행"]],
+      ["waterfall-bridge", "70 / 50 · 2.2%", "총합 분해, A→B 브릿지, 레버 효과", "Three levers close the $120M margin gap, led by procurement savings", ["제목 숫자 = 합계 막대", "시작·끝 진하게, 요인은 연하게", "모르는 값은 점선 '?' 막대"]],
+      ["stacked-100", "61 / 48 · 2.7%", "한 시점이나 몇 시점의 구성비", "Digital channels now carry over half of mid-market bookings, up from a third in 2021", ["막대 위에 100% = 전체 규모", "지목된 세그먼트만 강조색", "파이는 세그먼트 3개 이하일 때만"]],
+      ["kpi-big-numbers", "109 / 67 · 4.5%", "핵심 숫자 1~4개", "The pilot paid back in 7 months and cut handling time by 42%", ["큰 숫자 + 1~3줄 설명", "균일 그리드", "다른 장표의 사이드바로도 쓴다"]],
+      ["multi-chart-panel", "186 / 103 · 7.4%", "주장 하나에 근거 2~4개", "Demand is shifting to the Sun Belt, while coastal metros lose share", ["패널마다 문장형 소제목 + 단위 줄", "패널 사이 셰브런", "제목에 절이 2개면 2분할"]]
+    ]],
+    ["표", "2종 · 같은 기준으로 비교", [
+      ["comparison-table", "151 / 84 · 5.7%", "옵션·대상을 같은 정성 기준으로 비교, ID 부여", "Of four entry options, a minority stake offers the best balance of speed and control", ["행 = 대상(번호 배지), 열 = 속성 3~5개", "배지는 이후 장표의 tracker가 된다", "행 사이 점선"]],
+      ["harvey-ball-table", "53 / 39 · 2.1%", "정성 평가 비교 (우리 vs 경쟁사, 옵션 평가)", "We match leaders on price but trail on delivery speed and service", ["Harvey ball과 텍스트를 한 칸에", "범례 필수", "체크마크 변형 가능"]]
+    ]],
+    ["구조·다이어그램", "5종 · 생각의 틀을 보여준다", [
+      ["framework-pillars", "161 / 102 · 6.7%", "N개 요소로 구성된다", "Winning in mid-market banking rests on three capabilities", ["제목의 개수 = 요소 수", "각 요소가 이후 섹션·제목 접두어가 된다", "아이콘 타일, 기둥, 하우스"]],
+      ["process-flow", "84 / 63 · 3.0%", "단계, 방법론, 밸류체인, From→To", "A four-step approach takes the program from diagnostic to scale in 18 months", ["셰브런 단계", "오른쪽으로 갈수록 진하게", "스윔레인 변형"]],
+      ["timeline-roadmap", "46 / 42 · 1.7%", "실행 계획, 단계별 로드맵", "Quick wins fund the transformation: the first $30M lands within two quarters", ["가로 시간축 × 워크스트림 행", "마일스톤 마커", "현재 단계 강조"]],
+      ["matrix-2x2", "24 / 19 · 0.8%", "두 축으로 분류하고 우선순위를 정한다", "Six of the 14 initiatives are high-value and easy to execute, so we start there", ["축 라벨은 낮음↔높음", "선택한 사분면만 진하게", "항목은 점이나 버블로 배치"]],
+      ["issue-tree", "19 / 14 · 0.3%", "문제나 가치를 분해한다", "Margin erosion comes from price, not volume: two-thirds of the gap is discounting", ["왼쪽→오른쪽 분기", "산술 연산자(×, ÷) 허용", "가지는 MECE (G-03)"]]
+    ]],
+    ["텍스트형", "5종 · 논리와 실행", [
+      ["exec-summary", "66 / 54 · 2.7%", "덱 맨 앞의 전체 결론", "(번호가 붙은 문장 3~7개. 각 문장이 이후 섹션의 리드 메시지가 된다)", ["번호 = 이후 섹션 번호", "불렛마다 근거 대시 1~3개", "마지막 장에서 반복"]],
+      ["bullet-argument", "71 / 52 · 2.7%", "정성 논증, 판단", "A full divestiture is unlikely to clear regulators before 2027", ["제목 + 구조화된 불렛", "슬롯이 가장 적다", "남용 금지"]],
+      ["text-columns", "109 / 74 · 5.3%", "2~4개를 대조 (장단점, 문제→해결, 범위)", "Today's model optimizes for volume; the target model optimizes for margin", ["라벨 열 박스", "'답' 열은 헤더를 진하게"]],
+      ["numbered-levers", "97 / 66 · 3.4%", "해야 할 일·옵션 N개", "Five levers can lift EBITDA by $85M over three years", ["번호 + 레버 문장 + 값 열", "제목 숫자 = 합계 행"]],
+      ["case-example", "109 / 63 · 4.5%", "다른 곳의 성공 사례로 증명", "Example: A regional carrier cut churn by 18% with proactive outreach", ["상황 → 접근 → 성과", "성과는 진한 블록에 큰 숫자 2~3개", "'Example:' 접두어"]]
+    ]]
+  ];
+  document.getElementById("tier1").innerHTML = fam.map(([name, sub, items]) =>
+    `<div class="family"><div class="family-head"><h3>${name}</h3><span>${sub}</span></div><div class="cards">` +
+    items.map(([id, n, when, ex, rules]) =>
+      `<article class="card"><div class="thumb">${svg(160, 90, thumbs[id](), id + " wireframe")}</div>
+       <div class="card-body"><div class="card-top"><h3>${id}</h3><span class="count">${n}</span></div>
+       <div class="when">${when}</div><ul>${rules.map(r => `<li>${r}</li>`).join("")}</ul>
+       <div class="ex">${ex}</div></div></article>`).join("") + `</div></div>`).join("");
+
+  // ---------- anatomy ----------
+  const A = (x, y, n) => `<g><circle cx="${x}" cy="${y}" r="7" fill="${c.acc}"/>${T(x, y + 3, n, 7.5, "#fff", 'text-anchor="middle" font-family="IBM Plex Mono, monospace"')}</g>`;
+  let a = R(1, 1, 318, 178, c.bg, `stroke="${c.line}" stroke-width="1"`);
+  a += T(14, 18, "2  NORTH AMERICA", 6.5, c.muted, 'font-family="IBM Plex Mono, monospace" letter-spacing=".5"');
+  a += R(250, 10, 58, 11, "none", `stroke="${c.acc}" stroke-width=".8"`) + T(254, 18, "ILLUSTRATIVE", 6, c.acc, 'font-family="IBM Plex Mono, monospace"');
+  a += T(14, 34, "Software leads every sector in AI adoption,", 10.5, c.dark, 'font-family="IBM Plex Serif, serif" font-weight="600"');
+  a += T(14, 47, "at 2x the cross-industry average", 10.5, c.dark, 'font-family="IBM Plex Serif, serif" font-weight="600"');
+  a += T(14, 58, "Share of firms using gen AI in production, %, 2025", 6.5, c.muted);
+  const bars = [["Software", 64], ["Financial services", 48], ["Healthcare", 39], ["Retail", 33], ["Manufacturing", 27]];
+  bars.forEach(([lab, v], i) => { const y = 68 + i * 14; a += T(14, y + 7, lab, 6.5, c.dark) + R(78, y, v * 1.9, 9, i === 0 ? c.acc : c.wire) + T(82 + v * 1.9, y + 7, v, 6.5, c.dark, 'font-weight="600"'); });
+    a += R(78, 138, 32 * 1.9, 9, "none", `stroke="${c.dark}" stroke-width=".7" stroke-dasharray="2 1.5"`) + T(14, 145, "Average", 6.5, c.dark, 'font-style="italic"') + T(82 + 32 * 1.9, 145, "32", 6.5, c.dark, 'font-style="italic"');
+  a += R(222, 66, 88, 82, c.acc, 'opacity=".1"') + R(222, 66, 2, 82, c.acc);
+  a += T(230, 82, "2x", 18, c.acc, 'font-family="IBM Plex Serif, serif" font-weight="600"') + T(230, 96, "software vs. the", 6.5, c.dark) + T(230, 105, "average sector", 6.5, c.dark);
+  a += `<path d="M212 104 l5 4 -5 4" fill="none" stroke="${c.dark}" stroke-width="1"/>`;
+  a += T(14, 162, "1 Firms with 500+ employees", 5.5, c.muted) + T(14, 171, "Source: Example Survey of US Firms, 2025 (n = 1,200)", 5.5, c.muted) + T(300, 171, "7", 5.5, c.muted);
+  const marks = A(10, 15, "S3") + A(10, 40, "T1") + A(10, 57, "L1") + A(10, 100, "C1") + A(10, 142, "C3") + A(10, 168, "L2") + A(284, 30, "L3") + A(242, 64, "L4");
+  document.getElementById("anatomy-svg").innerHTML = svg(340, 180, `<g transform="translate(20,0)">${a}</g>` + marks, "Annotated example slide showing title, unit line, sorted bars, takeaway sidebar, sticker and source line");
+})();
+</script>
+</body>
+</html>

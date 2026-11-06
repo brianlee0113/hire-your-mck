@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Output (generated PPTs)
+output/
+
+# Samples (client-specific PPTs)
+samples/
+
+# Templates: only our own theme file is tracked (no client templates)
+templates/*
+!templates/themes.json
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+~$*
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
+
+# v1 archive (old history + client-derived material, never commit)
+_archive-v1/
+
+# Raw tagging data (verbatim titles from third-party decks; keep local)
+docs/research/raw/
+
+# Built skill (tools/build_skill.py)
+dist/

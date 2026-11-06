@@ -1,0 +1,1132 @@
+{
+  "spec_version": "0.1",
+  "mode": "deck_detailed",
+  "meta": {
+    "title": "Renderer showcase 2",
+    "subtitle": "Panels, framework, process, timeline, issue tree, levers, case",
+    "company_name": "Example Freight (fictional)",
+    "date": "2026-11-05",
+    "language": "en-US",
+    "confidentiality": "Illustrative example — all companies, numbers and sources are fictional",
+    "theme": "navy"
+  },
+  "storyline": {
+    "governing_thought": "A pricing-led plan closes the $40M gap, starting with a Sun Belt pilot",
+    "exec_summary": [
+      {
+        "id": "1",
+        "text": "Mid-market growth is structural, and pricing is the capability we lack",
+        "supports": [
+          "1",
+          "2"
+        ],
+        "sub_points": [
+          {
+            "text": "More shippers, each shipping more value",
+            "slide_id": "1"
+          },
+          {
+            "text": "Network and service are strong; pricing is the gap",
+            "slide_id": "2"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "text": "We launch in four steps over six quarters, gated by a pilot review",
+        "supports": [
+          "3",
+          "4"
+        ],
+        "sub_points": [
+          {
+            "text": "Pilot with top accounts, then the Sun Belt, then national",
+            "slide_id": "3"
+          },
+          {
+            "text": "Pilot review in Q2 2027, national go / no-go in Q2 2028",
+            "slide_id": "4"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "text": "Five levers close the $40M gap, led by pricing, as a peer has shown",
+        "supports": [
+          "5",
+          "6",
+          "7"
+        ],
+        "sub_points": [
+          {
+            "text": "Price is the largest branch of the gap",
+            "slide_id": "5"
+          },
+          {
+            "text": "A regional carrier gained 4.1 margin points with the same model",
+            "slide_id": "7"
+          }
+        ]
+      }
+    ],
+    "next_steps": [
+      {
+        "action": "Agree go / no-go metrics for the pilot",
+        "owner": "Finance and pricing",
+        "timing": "Dec 2026"
+      },
+      {
+        "action": "Launch the pricing pilot and the Dallas cross-dock",
+        "owner": "Pricing, network ops",
+        "timing": "Q1 2027"
+      },
+      {
+        "action": "Pilot review: scale to the Sun Belt or stop",
+        "owner": "Executive committee",
+        "timing": "Q2 2027"
+      },
+      {
+        "action": "National go / no-go",
+        "owner": "Executive committee",
+        "timing": "Q2 2028"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "1",
+      "title": "Why",
+      "exec_item_id": "1",
+      "tracker_label": "Why"
+    },
+    {
+      "id": "2",
+      "title": "How",
+      "exec_item_id": "2",
+      "tracker_label": "How"
+    },
+    {
+      "id": "3",
+      "title": "Value",
+      "exec_item_id": "3",
+      "tracker_label": "Value"
+    }
+  ],
+  "slides": [
+    {
+      "id": "c",
+      "role": "cover",
+      "status": "filled"
+    },
+    {
+      "id": "es",
+      "role": "exec_summary",
+      "status": "filled",
+      "archetype": "exec-summary",
+      "message_type": "navigation"
+    },
+    {
+      "id": "1",
+      "role": "content",
+      "section_id": "1",
+      "status": "filled",
+      "archetype": "multi-chart-panel",
+      "message_type": "time-series",
+      "lead_message": {
+        "text": "Mid-market growth comes from more shippers, and each one ships more value",
+        "highlights": [],
+        "clauses": 2
+      },
+      "layout": {
+        "variant": "split_2"
+      },
+      "body": {
+        "kind": "panels",
+        "panels": [
+          {
+            "header": "Active shippers are up by more than a third since 2021",
+            "unit_line": "**Active mid-market shippers**, thousands",
+            "delta": {
+              "data_ref": "pad"
+            },
+            "body": {
+              "kind": "chart",
+              "chart_type": "column",
+              "categories": [
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025"
+              ],
+              "series": [
+                {
+                  "name": "Shippers",
+                  "points": [
+                    {
+                      "data_ref": "pa2021"
+                    },
+                    {
+                      "data_ref": "pa2022"
+                    },
+                    {
+                      "data_ref": "pa2023"
+                    },
+                    {
+                      "data_ref": "pa2024"
+                    },
+                    {
+                      "data_ref": "pa2025"
+                    }
+                  ]
+                }
+              ],
+              "sort": "none",
+              "highlight": [
+                "2025"
+              ],
+              "value_format": "0.0"
+            }
+          },
+          {
+            "header": "Each shipper also spends more per shipment",
+            "unit_line": "**Average revenue per shipment**, $",
+            "delta": {
+              "data_ref": "pbd"
+            },
+            "body": {
+              "kind": "chart",
+              "chart_type": "column",
+              "categories": [
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025"
+              ],
+              "series": [
+                {
+                  "name": "Revenue per shipment",
+                  "points": [
+                    {
+                      "data_ref": "pb2021"
+                    },
+                    {
+                      "data_ref": "pb2022"
+                    },
+                    {
+                      "data_ref": "pb2023"
+                    },
+                    {
+                      "data_ref": "pb2024"
+                    },
+                    {
+                      "data_ref": "pb2025"
+                    }
+                  ]
+                }
+              ],
+              "sort": "none",
+              "highlight": [
+                "2025"
+              ],
+              "value_format": "\"$\"0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "role": "content",
+      "section_id": "1",
+      "status": "filled",
+      "archetype": "framework-pillars",
+      "message_type": "structure",
+      "lead_message": {
+        "text": "Four capabilities make the mid-market model work, and pricing is the one we lack today",
+        "highlights": [
+          "Pricing"
+        ],
+        "count_word": 4,
+        "clauses": 1
+      },
+      "layout": {
+        "variant": "full"
+      },
+      "body": {
+        "kind": "framework",
+        "shape": "pillars",
+        "roof": "Profitable growth with mid-market shippers",
+        "foundation": "Shared data on lanes, accounts and cost to serve",
+        "items": [
+          {
+            "header": "Pricing that tracks cost",
+            "detail": [
+              "Index-linked contracts",
+              "Quarterly review cadence",
+              "Clear accessorial rules",
+              "Price changes passed through within a quarter"
+            ],
+            "emphasis": true
+          },
+          {
+            "header": "A dense regional network",
+            "detail": [
+              "Cross-docks near shipper clusters",
+              "Shared linehaul capacity",
+              "Lane-level utilization targets",
+              "Two cross-docks in the Sun Belt"
+            ]
+          },
+          {
+            "header": "Low cost to sell and serve",
+            "detail": [
+              "Inside sales for small accounts",
+              "Self-serve quoting",
+              "Digital claims and billing",
+              "Account plans only for the top 200"
+            ]
+          },
+          {
+            "header": "Service shippers can see",
+            "detail": [
+              "Live shipment tracking",
+              "Proactive delay alerts",
+              "One contact per account",
+              "Weekly service score per account"
+            ]
+          }
+        ]
+      },
+      "callout": {
+        "target": "Pricing that tracks cost",
+        "header": "The gap to close first",
+        "detail": "Network and service are already strong"
+      }
+    },
+    {
+      "id": "3",
+      "role": "content",
+      "section_id": "2",
+      "status": "filled",
+      "archetype": "process-flow",
+      "message_type": "structure",
+      "lead_message": {
+        "text": "We launch in four steps, from a pilot with top accounts to a national rollout",
+        "count_word": 4,
+        "clauses": 1
+      },
+      "layout": {
+        "variant": "full"
+      },
+      "body": {
+        "kind": "process",
+        "steps": [
+          {
+            "header": "Design",
+            "detail": [
+              "Build the pricing index",
+              "Pick pilot accounts",
+              "Set success metrics",
+              "Agree the go / no-go metrics with finance",
+              "Brief the sales team"
+            ],
+            "footer": "Exit: index and metrics signed off"
+          },
+          {
+            "header": "Pilot",
+            "detail": [
+              "Sign index contracts",
+              "Open the Dallas cross-dock",
+              "Track margin weekly",
+              "Weekly margin and churn review",
+              "Fix issues before scaling"
+            ],
+            "emphasis": true,
+            "footer": "Gate: margin and churn on target"
+          },
+          {
+            "header": "Scale in the Sun Belt",
+            "detail": [
+              "Extend to all large accounts",
+              "Open the Atlanta cross-dock",
+              "Move small accounts to inside sales",
+              "Hire the inside sales team",
+              "Train account managers on the index"
+            ],
+            "footer": "Exit: Sun Belt fully on index"
+          },
+          {
+            "header": "Roll out nationally",
+            "detail": [
+              "Region-by-region launch",
+              "Same playbook and metrics",
+              "Review after each region",
+              "Launch region by region",
+              "Retire the annual tender"
+            ],
+            "footer": "Gate: national go / no-go"
+          }
+        ]
+      },
+      "callout": {
+        "target": "Pilot",
+        "header": "Decision point",
+        "detail": "Scale only if margin and churn move as planned"
+      }
+    },
+    {
+      "id": "4",
+      "role": "content",
+      "section_id": "2",
+      "status": "filled",
+      "archetype": "timeline-roadmap",
+      "message_type": "structure",
+      "lead_message": {
+        "text": "The plan runs six quarters, with the pricing pilot and the first cross-dock in the first half",
+        "clauses": 1
+      },
+      "layout": {
+        "variant": "full"
+      },
+      "body": {
+        "kind": "timeline",
+        "periods": [
+          "Q1 2027",
+          "Q2 2027",
+          "Q3 2027",
+          "Q4 2027",
+          "Q1 2028",
+          "Q2 2028"
+        ],
+        "rows": [
+          {
+            "label": "Pricing",
+            "bars": [
+              {
+                "start": "Q1 2027",
+                "end": "Q2 2027",
+                "label": "Index design + pilot",
+                "emphasis": true
+              },
+              {
+                "start": "Q3 2027",
+                "end": "Q2 2028",
+                "label": "Roll out to all accounts"
+              }
+            ]
+          },
+          {
+            "label": "Network",
+            "bars": [
+              {
+                "start": "Q1 2027",
+                "end": "Q2 2027",
+                "label": "Dallas cross-dock",
+                "emphasis": true
+              },
+              {
+                "start": "Q3 2027",
+                "end": "Q4 2027",
+                "label": "Atlanta cross-dock"
+              }
+            ]
+          },
+          {
+            "label": "Sales",
+            "bars": [
+              {
+                "start": "Q2 2027",
+                "end": "Q3 2027",
+                "label": "Inside sales team"
+              },
+              {
+                "start": "Q4 2027",
+                "end": "Q2 2028",
+                "label": "Move small accounts"
+              }
+            ]
+          },
+          {
+            "label": "Systems",
+            "bars": [
+              {
+                "start": "Q1 2027",
+                "end": "Q3 2027",
+                "label": "Quoting and index engine"
+              },
+              {
+                "start": "Q4 2027",
+                "end": "Q2 2028",
+                "label": "Shipper portal"
+              }
+            ]
+          }
+        ],
+        "milestones": [
+          {
+            "at": "Q2 2027",
+            "label": "Pilot review"
+          },
+          {
+            "at": "Q4 2027",
+            "label": "Sun Belt live"
+          },
+          {
+            "at": "Q2 2028",
+            "label": "National go / no-go"
+          }
+        ]
+      },
+      "so_what": "Two decisions gate the plan: the pilot review in Q2 2027 and the national go / no-go"
+    },
+    {
+      "id": "5",
+      "role": "content",
+      "section_id": "3",
+      "status": "filled",
+      "archetype": "issue-tree",
+      "message_type": "component",
+      "lead_message": {
+        "text": "The $40M gap breaks down into price, volume mix and cost to serve",
+        "numbers": [
+          {
+            "text": "$40M",
+            "data_ref": "t0"
+          }
+        ],
+        "clauses": 1
+      },
+      "layout": {
+        "variant": "full"
+      },
+      "body": {
+        "kind": "tree",
+        "mece_note": "every dollar of the gap sits in exactly one branch: what we charge, what we carry, or what it costs to carry it",
+        "root": {
+          "label": "Margin gap to target",
+          "point": {
+            "data_ref": "t0"
+          },
+          "operator": "+",
+          "children": [
+            {
+              "label": "Price",
+              "point": {
+                "data_ref": "t1"
+              },
+              "emphasis": true,
+              "operator": "+",
+              "children": [
+                {
+                  "label": "Contract rates",
+                  "point": {
+                    "data_ref": "t1a"
+                  }
+                },
+                {
+                  "label": "Accessorial fees",
+                  "point": {
+                    "data_ref": "t1b"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Volume mix",
+              "point": {
+                "data_ref": "t2"
+              },
+              "operator": "+",
+              "children": [
+                {
+                  "label": "Lane mix",
+                  "point": {
+                    "data_ref": "t2a"
+                  }
+                },
+                {
+                  "label": "Account mix",
+                  "point": {
+                    "data_ref": "t2b"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Cost to serve",
+              "point": {
+                "data_ref": "t3"
+              },
+              "operator": "+",
+              "children": [
+                {
+                  "label": "Linehaul and terminals",
+                  "point": {
+                    "data_ref": "t3a"
+                  }
+                },
+                {
+                  "label": "Sales and service",
+                  "point": {
+                    "data_ref": "t3b"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "so_what": "Price is the largest branch, so the pricing pilot comes first",
+      "so_what_style": "line"
+    },
+    {
+      "id": "6",
+      "role": "content",
+      "section_id": "3",
+      "status": "filled",
+      "archetype": "numbered-levers",
+      "message_type": "component",
+      "lead_message": {
+        "text": "Five levers add up to $40M by 2027, and the two pricing levers deliver more than half",
+        "numbers": [
+          {
+            "text": "$40M",
+            "data_ref": "ltot"
+          }
+        ],
+        "count_word": 5,
+        "clauses": 1
+      },
+      "unit_line": "**Operating margin uplift by lever**, $ millions, 2027E",
+      "layout": {
+        "variant": "full"
+      },
+      "body": {
+        "kind": "levers",
+        "items": [
+          {
+            "code": "R1",
+            "text": "Move large accounts to index-linked contracts",
+            "point": {
+              "data_ref": "lR1"
+            }
+          },
+          {
+            "code": "R2",
+            "text": "Charge accessorial fees consistently",
+            "point": {
+              "data_ref": "lR2"
+            }
+          },
+          {
+            "code": "R3",
+            "text": "Open two Sun Belt cross-docks",
+            "point": {
+              "data_ref": "lR3"
+            }
+          },
+          {
+            "code": "R4",
+            "text": "Shift small accounts to inside sales",
+            "point": {
+              "data_ref": "lR4"
+            }
+          },
+          {
+            "code": "R5",
+            "text": "Self-serve quoting for repeat lanes",
+            "point": {
+              "data_ref": "lR5"
+            }
+          }
+        ],
+        "total": {
+          "data_ref": "ltot"
+        },
+        "headers": [
+          "Lever",
+          "Margin uplift by 2027"
+        ]
+      },
+      "footnotes": [
+        "Estimates assume 2026 volumes and current lane mix; R3 includes one year of cross-dock operating cost",
+        "R1 and R2 overlap slightly; the total removes the overlap"
+      ]
+    },
+    {
+      "id": "7",
+      "role": "content",
+      "section_id": "3",
+      "status": "filled",
+      "archetype": "case-example",
+      "message_type": "argument",
+      "lead_message": {
+        "text": "A regional carrier lifted margin by 4.1 percentage points in 18 months with index-linked pricing",
+        "numbers": [
+          {
+            "text": "4.1",
+            "data_ref": "c1"
+          },
+          {
+            "text": "18",
+            "data_ref": "c3"
+          }
+        ],
+        "clauses": 1
+      },
+      "layout": {
+        "variant": "full"
+      },
+      "body": {
+        "kind": "case",
+        "subject": "Regional LTL carrier, US Southeast (fictional)",
+        "situation": [
+          "Annual tenders locked in rates for a full year",
+          "Fuel and labor cost rose faster than contract rates",
+          "Margin on mid-market accounts fell three years in a row",
+          "Sales teams negotiated each lane by hand"
+        ],
+        "approach": [
+          "Index-linked contracts for accounts above $2M",
+          "Quarterly reviews replaced the annual tender",
+          "Account managers trained to explain the index",
+          "Pilot with top accounts before the full rollout"
+        ],
+        "impact": [
+          {
+            "point": {
+              "data_ref": "c1"
+            },
+            "caption": "points of operating margin"
+          },
+          {
+            "point": {
+              "data_ref": "c2"
+            },
+            "caption": "change in account churn"
+          },
+          {
+            "point": {
+              "data_ref": "c3"
+            },
+            "caption": "months to full rollout"
+          }
+        ]
+      },
+      "so_what": "The same model fits our mid-market book, and churn did not rise"
+    },
+    {
+      "id": "end",
+      "role": "end_page",
+      "status": "filled"
+    }
+  ],
+  "data_points": [
+    {
+      "id": "pa2021",
+      "slide_id": "1",
+      "label": "Active mid-market shippers 2021",
+      "value": 18.0,
+      "unit": "k",
+      "period": "2021",
+      "source_id": "s1"
+    },
+    {
+      "id": "pa2022",
+      "slide_id": "1",
+      "label": "Active mid-market shippers 2022",
+      "value": 19.5,
+      "unit": "k",
+      "period": "2022",
+      "source_id": "s1"
+    },
+    {
+      "id": "pa2023",
+      "slide_id": "1",
+      "label": "Active mid-market shippers 2023",
+      "value": 21.0,
+      "unit": "k",
+      "period": "2023",
+      "source_id": "s1"
+    },
+    {
+      "id": "pa2024",
+      "slide_id": "1",
+      "label": "Active mid-market shippers 2024",
+      "value": 22.8,
+      "unit": "k",
+      "period": "2024",
+      "source_id": "s1"
+    },
+    {
+      "id": "pa2025",
+      "slide_id": "1",
+      "label": "Active mid-market shippers 2025",
+      "value": 24.6,
+      "unit": "k",
+      "period": "2025",
+      "source_id": "s1"
+    },
+    {
+      "id": "pb2021",
+      "slide_id": "1",
+      "label": "Average revenue per shipment 2021",
+      "value": 410,
+      "unit": "$",
+      "period": "2021",
+      "source_id": "s1"
+    },
+    {
+      "id": "pb2022",
+      "slide_id": "1",
+      "label": "Average revenue per shipment 2022",
+      "value": 425,
+      "unit": "$",
+      "period": "2022",
+      "source_id": "s1"
+    },
+    {
+      "id": "pb2023",
+      "slide_id": "1",
+      "label": "Average revenue per shipment 2023",
+      "value": 440,
+      "unit": "$",
+      "period": "2023",
+      "source_id": "s1"
+    },
+    {
+      "id": "pb2024",
+      "slide_id": "1",
+      "label": "Average revenue per shipment 2024",
+      "value": 452,
+      "unit": "$",
+      "period": "2024",
+      "source_id": "s1"
+    },
+    {
+      "id": "pb2025",
+      "slide_id": "1",
+      "label": "Average revenue per shipment 2025",
+      "value": 470,
+      "unit": "$",
+      "period": "2025",
+      "source_id": "s1"
+    },
+    {
+      "id": "pad",
+      "slide_id": "1",
+      "label": "Growth in active shippers 2021–25",
+      "value": 0.37,
+      "unit": "%",
+      "period": "2021–25",
+      "source_id": "s3",
+      "derived_from": [
+        "pa2021",
+        "pa2025"
+      ],
+      "formula": "24.6/18.0−1",
+      "calc": "pa2025 / pa2021 - 1"
+    },
+    {
+      "id": "pbd",
+      "slide_id": "1",
+      "label": "Growth in revenue per shipment 2021–25",
+      "value": 0.15,
+      "unit": "%",
+      "period": "2021–25",
+      "source_id": "s3",
+      "derived_from": [
+        "pb2021",
+        "pb2025"
+      ],
+      "formula": "470/410−1",
+      "calc": "pb2025 / pb2021 - 1"
+    },
+    {
+      "id": "t0",
+      "slide_id": "5",
+      "label": "Margin gap to target",
+      "value": 40,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s3",
+      "derived_from": [
+        "w0x",
+        "w4x"
+      ],
+      "formula": "160 − 120 = 40",
+      "calc": "w4x - w0x"
+    },
+    {
+      "id": "w0x",
+      "slide_id": "5",
+      "label": "Current mid-market operating margin",
+      "value": 120,
+      "unit": "$M",
+      "period": "2026",
+      "source_id": "s1"
+    },
+    {
+      "id": "w4x",
+      "slide_id": "5",
+      "label": "2027 target mid-market operating margin",
+      "value": 160,
+      "unit": "$M",
+      "period": "2027",
+      "source_id": "s1"
+    },
+    {
+      "id": "t1",
+      "slide_id": "5",
+      "label": "Gap closed by pricing (management margin bridge)",
+      "value": 22,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s1"
+    },
+    {
+      "id": "lR1",
+      "slide_id": "6",
+      "label": "Move large accounts to index-linked contracts",
+      "value": 14,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "locator": "Lever sizing tab"
+    },
+    {
+      "id": "lR2",
+      "slide_id": "6",
+      "label": "Charge accessorial fees consistently",
+      "value": 8,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "locator": "Lever sizing tab"
+    },
+    {
+      "id": "lR3",
+      "slide_id": "6",
+      "label": "Open two Sun Belt cross-docks",
+      "value": 7,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "locator": "Lever sizing tab"
+    },
+    {
+      "id": "lR4",
+      "slide_id": "6",
+      "label": "Shift small accounts to inside sales",
+      "value": 6,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "locator": "Lever sizing tab"
+    },
+    {
+      "id": "lR5",
+      "slide_id": "6",
+      "label": "Self-serve quoting for repeat lanes",
+      "value": 5,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "locator": "Lever sizing tab"
+    },
+    {
+      "id": "ltot",
+      "slide_id": "6",
+      "label": "Total margin uplift",
+      "value": 40,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s3",
+      "derived_from": [
+        "lR1",
+        "lR2",
+        "lR3",
+        "lR4",
+        "lR5"
+      ],
+      "formula": "sum of R1–R5",
+      "calc": "lR1 + lR2 + lR3 + lR4 + lR5"
+    },
+    {
+      "id": "c1",
+      "slide_id": "7",
+      "label": "Operating margin uplift",
+      "value": 4.1,
+      "unit": "pp",
+      "period": "18 months",
+      "source_id": "s2"
+    },
+    {
+      "id": "c2",
+      "slide_id": "7",
+      "label": "Change in account churn",
+      "value": -0.12,
+      "unit": "%",
+      "period": "18 months",
+      "source_id": "s2"
+    },
+    {
+      "id": "c3",
+      "slide_id": "7",
+      "label": "Time to full rollout",
+      "value": 18,
+      "unit": "months",
+      "period": "",
+      "source_id": "s2"
+    },
+    {
+      "id": "pl1",
+      "slide_id": "7",
+      "label": "Index-pricing threshold, annual account revenue",
+      "value": 2,
+      "unit": "$M",
+      "period": "2027 plan",
+      "source_id": "plan",
+      "locator": "Plan assumptions tab"
+    },
+    {
+      "id": "pl3",
+      "slide_id": "2",
+      "label": "Top accounts with account plans",
+      "value": 200,
+      "unit": "accounts",
+      "period": "2027 plan",
+      "source_id": "plan",
+      "locator": "Plan assumptions tab"
+    },
+    {
+      "id": "t1a",
+      "slide_id": "5",
+      "label": "Margin gap from contract rates",
+      "value": 14,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "excerpt": "Contract rates: $14M",
+      "locator": "Margin bridge tab (fictional)",
+      "used_in": "tree: Contract rates"
+    },
+    {
+      "id": "t1b",
+      "slide_id": "5",
+      "label": "Margin gap from accessorial fees",
+      "value": 8,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "excerpt": "Accessorial fees: $8M",
+      "locator": "Margin bridge tab (fictional)",
+      "used_in": "tree: Accessorial fees"
+    },
+    {
+      "id": "t2",
+      "slide_id": "5",
+      "label": "Margin gap from volume mix",
+      "value": 11,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "excerpt": "Volume mix: $11M",
+      "locator": "Margin bridge tab (fictional)",
+      "used_in": "tree: Volume mix"
+    },
+    {
+      "id": "t2a",
+      "slide_id": "5",
+      "label": "Margin gap from lane mix",
+      "value": 7,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "excerpt": "Lane mix: $7M",
+      "locator": "Margin bridge tab (fictional)",
+      "used_in": "tree: Lane mix"
+    },
+    {
+      "id": "t2b",
+      "slide_id": "5",
+      "label": "Margin gap from account mix",
+      "value": 4,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "excerpt": "Account mix: $4M",
+      "locator": "Margin bridge tab (fictional)",
+      "used_in": "tree: Account mix"
+    },
+    {
+      "id": "t3",
+      "slide_id": "5",
+      "label": "Margin gap from cost to serve",
+      "value": 7,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "excerpt": "Cost to serve: $7M",
+      "locator": "Margin bridge tab (fictional)",
+      "used_in": "tree: Cost to serve"
+    },
+    {
+      "id": "t3a",
+      "slide_id": "5",
+      "label": "Margin gap from linehaul and terminals",
+      "value": 4,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "excerpt": "Linehaul and terminals: $4M",
+      "locator": "Margin bridge tab (fictional)",
+      "used_in": "tree: Linehaul and terminals"
+    },
+    {
+      "id": "t3b",
+      "slide_id": "5",
+      "label": "Margin gap from sales and service",
+      "value": 3,
+      "unit": "$M",
+      "period": "2027E",
+      "source_id": "s4",
+      "excerpt": "Sales and service: $3M",
+      "locator": "Margin bridge tab (fictional)",
+      "used_in": "tree: Sales and service"
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "user_provided",
+      "name": "Example Freight account P&L (fictional)"
+    },
+    {
+      "id": "s2",
+      "kind": "web",
+      "name": "Example Logistics Review, Pricing case studies 2025 (fictional)",
+      "publisher": "Example Logistics Review",
+      "url": "https://example.org/pricing-cases",
+      "accessed": "2026-11-05",
+      "published": "2025"
+    },
+    {
+      "id": "s3",
+      "kind": "derived",
+      "name": "Team analysis"
+    },
+    {
+      "id": "s4",
+      "kind": "user_provided",
+      "name": "Example Freight pricing and network analysis (fictional)"
+    },
+    {
+      "id": "plan",
+      "kind": "user_provided",
+      "name": "Example Freight mid-market plan (fictional)"
+    }
+  ]
+}

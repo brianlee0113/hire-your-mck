@@ -1,0 +1,649 @@
+{
+  "spec_version": "0.1",
+  "mode": "deck_flow",
+  "meta": {
+    "title": "Where Example Freight should grow next",
+    "subtitle": "Discussion document",
+    "company_name": "Example Freight (fictional)",
+    "audience": "Executive committee",
+    "purpose": "Decide which customer segment and region to prioritize for 2027 growth",
+    "date": "2026-11-05",
+    "language": "en-US",
+    "confidentiality": "Illustrative example — all companies, numbers and sources are fictional",
+    "theme": "navy"
+  },
+  "inputs": [
+    {
+      "id": "in-1",
+      "kind": "pasted_research",
+      "label": "Analyst notes on segment economics",
+      "content": "(fictional) Mid-market shippers grew 11% a year..."
+    },
+    {
+      "id": "in-2",
+      "kind": "qa_answer",
+      "label": "Answer to: what decision does this deck support?",
+      "content": "Pick one segment and one region for 2027."
+    }
+  ],
+  "storyline": {
+    "governing_thought": "Example Freight should put 2027 growth investment into mid-market shippers in the Sun Belt",
+    "exec_summary": [
+      {
+        "id": "1",
+        "text": "Mid-market shippers are the fastest-growing segment, at twice the market average",
+        "supports": [
+          "1"
+        ],
+        "sub_points": [
+          {
+            "text": "Mid-market volume grew 11% a year since 2021, compared with 5.5% for the market",
+            "slide_id": "1"
+          },
+          {
+            "text": "Growth holds in every region where we have data, led by the Sun Belt",
+            "slide_id": "B1"
+          },
+          {
+            "text": "Enterprise and government segments grew below the market",
+            "slide_id": "1"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "text": "Three levers close most of the $40M margin gap in the segment, led by pricing",
+        "supports": [
+          "2"
+        ],
+        "sub_points": [
+          {
+            "text": "Index-linked pricing is the largest lever",
+            "slide_id": "2"
+          },
+          {
+            "text": "Two Sun Belt cross-docks raise network density",
+            "slide_id": "2"
+          },
+          {
+            "text": "Inside sales for small accounts cuts cost to serve (sizing still needs data)",
+            "slide_id": "2"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "text": "The Sun Belt combines the largest prize with the easiest entry, so we start there",
+        "supports": [
+          "3"
+        ],
+        "sub_points": [
+          {
+            "text": "Largest mid-market freight spend and the fewest entrenched carriers",
+            "slide_id": "3"
+          },
+          {
+            "text": "Most of our terminals are already in the region",
+            "slide_id": "3"
+          },
+          {
+            "text": "The same pricing and network playbook then rolls out region by region",
+            "slide_id": "3"
+          }
+        ]
+      }
+    ],
+    "next_steps": [
+      {
+        "action": "Confirm margin and lever data with finance",
+        "owner": "Finance",
+        "timing": "Nov 2026"
+      },
+      {
+        "action": "Size regional freight spend and competitor share",
+        "owner": "Strategy team",
+        "timing": "Dec 2026"
+      },
+      {
+        "action": "Decide the 2027 launch region",
+        "owner": "Executive committee",
+        "timing": "Jan 2027"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "1",
+      "title": "Where growth is",
+      "exec_item_id": "1",
+      "tracker_label": "Growth"
+    },
+    {
+      "id": "2",
+      "title": "How to make it profitable",
+      "exec_item_id": "2",
+      "tracker_label": "Margin"
+    },
+    {
+      "id": "3",
+      "title": "Where to start",
+      "exec_item_id": "3",
+      "tracker_label": "Region"
+    }
+  ],
+  "slides": [
+    {
+      "id": "c",
+      "role": "cover",
+      "status": "filled"
+    },
+    {
+      "id": "es",
+      "role": "exec_summary",
+      "status": "filled",
+      "archetype": "exec-summary",
+      "message_type": "navigation"
+    },
+    {
+      "id": "1",
+      "role": "content",
+      "section_id": "1",
+      "status": "filled",
+      "lead_message": {
+        "text": "Mid-market shippers are the fastest-growing segment, at twice the market average",
+        "numbers": [
+          {
+            "text": "twice",
+            "data_ref": "d1-6"
+          }
+        ],
+        "highlights": [
+          "Mid-market"
+        ],
+        "clauses": 1
+      },
+      "message_type": "item",
+      "archetype": "bar-ranking",
+      "rationale": "Ranking of segments by one metric → bar-ranking (routing: 'A is larger than B').",
+      "unit_line": "**Shipment volume growth**, CAGR 2021–25, %",
+      "layout": {
+        "variant": "takeaway_sidebar",
+        "sidebar": {
+          "kind": "big_number",
+          "big_number": {
+            "data_ref": "d1-6"
+          },
+          "caption": "mid-market growth vs. the market average, 2021–25",
+          "bullets": [
+            "**Mid-market:** shippers outgrowing parcel networks are moving to LTL",
+            "**Enterprise:** growth limited to renewals of existing contracts",
+            "**E-commerce SMB and government:** small, price-led volumes"
+          ]
+        }
+      },
+      "body": {
+        "kind": "chart",
+        "chart_type": "bar",
+        "categories": [
+          "Mid-market",
+          "Enterprise",
+          "E-commerce SMB",
+          "Government"
+        ],
+        "series": [
+          {
+            "name": "Volume CAGR 2021–25",
+            "points": [
+              {
+                "data_ref": "d1-1"
+              },
+              {
+                "data_ref": "d1-2"
+              },
+              {
+                "data_ref": "d1-3"
+              },
+              {
+                "data_ref": "d1-4"
+              }
+            ]
+          }
+        ],
+        "sort": "desc",
+        "highlight": [
+          "Mid-market"
+        ],
+        "benchmark": {
+          "label": "Market average",
+          "point": {
+            "data_ref": "d1-5"
+          }
+        },
+        "value_format": "0.0%"
+      },
+      "data_requirements": [
+        {
+          "id": "r1",
+          "description": "Shipment volume CAGR by customer segment, US, 2021–25",
+          "recommended_exhibit": "Sorted horizontal bar, mid-market highlighted, market average last",
+          "status": "found_user",
+          "data_refs": [
+            "d1-1",
+            "d1-2",
+            "d1-3",
+            "d1-4",
+            "d1-5"
+          ]
+        }
+      ],
+      "footnotes": [
+        "Mid-market = shippers with $50M–$1B annual revenue"
+      ]
+    },
+    {
+      "id": "2",
+      "role": "content",
+      "section_id": "2",
+      "status": "ghost",
+      "lead_message": {
+        "text": "Three levers close most of the $40M margin gap in the segment, led by pricing",
+        "numbers": [
+          {
+            "text": "$40M"
+          }
+        ],
+        "highlights": [
+          "Pricing"
+        ],
+        "count_word": 3,
+        "clauses": 1
+      },
+      "message_type": "component",
+      "archetype": "waterfall-bridge",
+      "rationale": "What adds up to the gap → waterfall-bridge (routing: 'what makes up the total').",
+      "unit_line": "**Operating margin gap to target**, $ millions, 2027E",
+      "sticker": "ILLUSTRATIVE — DATA NEEDED",
+      "data_requirements": [
+        {
+          "id": "r2",
+          "description": "Current vs. target operating margin for mid-market accounts, $M",
+          "recommended_exhibit": "Waterfall: current margin → 3 levers → target; pricing step highlighted",
+          "metric": "Operating margin",
+          "unit": "$M",
+          "period": "2026 actual, 2027 target",
+          "candidate_sources": [
+            "User: account P&L export",
+            "Company 10-K segment note"
+          ],
+          "status": "needed"
+        },
+        {
+          "id": "r3",
+          "description": "Estimated impact of each lever (pricing, network density, sales cost), $M",
+          "recommended_exhibit": "Steps of the same waterfall",
+          "candidate_sources": [
+            "User: pricing analysis",
+            "Industry benchmark studies"
+          ],
+          "status": "needed"
+        }
+      ],
+      "so_what": "Pricing is the largest of the three levers, worth more than half of the gap",
+      "body": {
+        "kind": "chart",
+        "chart_type": "waterfall",
+        "categories": [
+          "2026 margin",
+          "Pricing",
+          "Network density",
+          "Sales cost",
+          "2027 target"
+        ],
+        "series": [
+          {
+            "name": "Operating margin",
+            "points": [
+              {
+                "placeholder": true
+              },
+              {
+                "placeholder": true
+              },
+              {
+                "placeholder": true
+              },
+              {
+                "placeholder": true
+              },
+              {
+                "placeholder": true
+              }
+            ]
+          }
+        ],
+        "sort": "none",
+        "highlight": [
+          "Pricing"
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "role": "content",
+      "section_id": "3",
+      "status": "drafted",
+      "lead_message": {
+        "text": "The Sun Belt combines the largest prize with the easiest entry, so we start there",
+        "highlights": [
+          "Sun Belt"
+        ],
+        "clauses": 1
+      },
+      "message_type": "structure",
+      "archetype": "matrix-2x2",
+      "rationale": "Prioritize options on two dimensions → matrix-2x2.",
+      "sticker": "ILLUSTRATIVE — DATA NEEDED",
+      "body": {
+        "kind": "matrix",
+        "x_axis": {
+          "label": "Ease of entry",
+          "low": "Harder",
+          "high": "Easier"
+        },
+        "y_axis": {
+          "label": "Size of prize",
+          "low": "Smaller",
+          "high": "Larger"
+        },
+        "quadrant_labels": [
+          "Build capability first",
+          "Start here",
+          "Deprioritize",
+          "Opportunistic"
+        ],
+        "focus_quadrant": "top-right",
+        "items": [
+          {
+            "label": "Sun Belt",
+            "x": 0.8,
+            "y": 0.85,
+            "size": 1.0
+          },
+          {
+            "label": "Midwest",
+            "x": 0.6,
+            "y": 0.45,
+            "size": 0.55
+          },
+          {
+            "label": "Northeast",
+            "x": 0.25,
+            "y": 0.7,
+            "size": 0.75
+          },
+          {
+            "label": "Pacific Northwest",
+            "x": 0.3,
+            "y": 0.25,
+            "size": 0.35
+          }
+        ]
+      },
+      "data_requirements": [
+        {
+          "id": "r4",
+          "description": "Mid-market freight spend by region ($B) and competitor density",
+          "recommended_exhibit": "2x2 with bubble size = spend",
+          "status": "needed"
+        }
+      ],
+      "unit_line": "**Four regions we serve**, by size of prize and ease of entry; bubble size = mid-market freight spend",
+      "layout": {
+        "variant": "takeaway_sidebar",
+        "sidebar": {
+          "header": "Why we start in the Sun Belt",
+          "kind": "reasons",
+          "reasons": [
+            {
+              "header": "Largest prize",
+              "detail": "Biggest pool of mid-market freight spend among the four regions, and still growing",
+              "point": {
+                "placeholder": true,
+                "label": "mid-market freight spend by region, $B"
+              }
+            },
+            {
+              "header": "Easiest entry",
+              "detail": "Fewest entrenched carriers with a large share of mid-market lanes",
+              "point": {
+                "placeholder": true,
+                "label": "competitor share of mid-market lanes, by region"
+              }
+            },
+            {
+              "header": "Builds on today’s network",
+              "detail": "Most of our terminals and current mid-market customers are already there",
+              "point": {
+                "placeholder": true,
+                "label": "our terminals and customers by region"
+              }
+            }
+          ],
+          "note": "Next: confirm spend and share data before the steering committee"
+        }
+      }
+    },
+    {
+      "id": "B1",
+      "role": "backup",
+      "section_id": "1",
+      "backup_of": "1",
+      "status": "drafted",
+      "lead_message": {
+        "prefix": "BACKUP:",
+        "text": "Mid-market growth holds across all four regions we serve",
+        "clauses": 1
+      },
+      "message_type": "item",
+      "archetype": "kpi-big-numbers",
+      "unit_line": "**Mid-market volume CAGR**, 2021–25, %, by region",
+      "body": {
+        "kind": "kpi",
+        "items": [
+          {
+            "point": {
+              "data_ref": "d1-7"
+            },
+            "caption": "Sun Belt",
+            "relation": "Highest of the four regions",
+            "drivers": [
+              "New e-commerce fulfillment hubs",
+              "Nearshoring freight from Mexico",
+              "Fastest-growing shipper base",
+              "Highest share of new accounts"
+            ]
+          },
+          {
+            "point": {
+              "data_ref": "d1-8"
+            },
+            "caption": "Midwest",
+            "relation": "Above the market average",
+            "drivers": [
+              "Manufacturing reshoring",
+              "Stable retail distribution base",
+              "Two large accounts won in 2024",
+              "Slower in rural lanes"
+            ]
+          },
+          {
+            "point": {
+              "placeholder": true
+            },
+            "caption": "Northeast",
+            "relation": "Not yet sized",
+            "drivers": [
+              "Data needed: mid-market volume by region, 2021–25",
+              "Look in: TMS shipment export",
+              "Ask: regional sales leads"
+            ]
+          },
+          {
+            "point": {
+              "placeholder": true
+            },
+            "caption": "Pacific Northwest",
+            "relation": "Not yet sized",
+            "drivers": [
+              "Data needed: mid-market volume by region, 2021–25",
+              "Look in: TMS shipment export",
+              "Ask: regional sales leads"
+            ]
+          }
+        ]
+      },
+      "sticker": "ILLUSTRATIVE — DATA NEEDED",
+      "so_what": "Growth is broad-based: both regions with data beat the market average",
+      "data_requirements": [
+        {
+          "id": "r5",
+          "description": "Mid-market volume CAGR by region, 2021–25",
+          "candidate_sources": [
+            "User: TMS shipment export",
+            "Regional sales leads"
+          ],
+          "status": "needed"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "role": "end_page",
+      "status": "filled"
+    }
+  ],
+  "data_points": [
+    {
+      "id": "d1-1",
+      "slide_id": "1",
+      "label": "Mid-market volume CAGR",
+      "value": 0.11,
+      "unit": "%",
+      "period": "2021–25",
+      "source_id": "s1",
+      "excerpt": "Mid-market shippers grew 11% a year",
+      "locator": "Analyst notes, p.2",
+      "used_in": "bar: Mid-market"
+    },
+    {
+      "id": "d1-2",
+      "slide_id": "1",
+      "label": "Enterprise volume CAGR",
+      "value": 0.052,
+      "unit": "%",
+      "period": "2021–25",
+      "source_id": "s1",
+      "excerpt": "Enterprise 5.2%",
+      "locator": "Analyst notes, p.2",
+      "used_in": "bar: Enterprise"
+    },
+    {
+      "id": "d1-3",
+      "slide_id": "1",
+      "label": "E-commerce SMB volume CAGR",
+      "value": 0.047,
+      "unit": "%",
+      "period": "2021–25",
+      "source_id": "s2",
+      "excerpt": "Small e-commerce shippers: 4.7% CAGR",
+      "locator": "Table 3",
+      "used_in": "bar: E-commerce SMB"
+    },
+    {
+      "id": "d1-4",
+      "slide_id": "1",
+      "label": "Government volume CAGR",
+      "value": 0.021,
+      "unit": "%",
+      "period": "2021–25",
+      "source_id": "s2",
+      "excerpt": "Public sector: 2.1%",
+      "locator": "Table 3",
+      "used_in": "bar: Government"
+    },
+    {
+      "id": "d1-5",
+      "slide_id": "1",
+      "label": "Market average volume CAGR",
+      "value": 0.055,
+      "unit": "%",
+      "period": "2021–25",
+      "source_id": "s2",
+      "excerpt": "Total market: 5.5% CAGR",
+      "locator": "Table 3",
+      "used_in": "benchmark row"
+    },
+    {
+      "id": "d1-6",
+      "slide_id": "1",
+      "label": "Mid-market growth vs. market average",
+      "value": 2.0,
+      "unit": "x",
+      "period": "2021–25",
+      "source_id": "s3",
+      "derived_from": [
+        "d1-1",
+        "d1-5"
+      ],
+      "formula": "d1-1 / d1-5 = 0.11 / 0.055",
+      "used_in": "title, sidebar",
+      "calc": "d1-1 / d1-5"
+    },
+    {
+      "id": "d1-7",
+      "slide_id": "B1",
+      "label": "Sun Belt mid-market volume CAGR",
+      "value": 0.134,
+      "unit": "%",
+      "period": "2021–25",
+      "source_id": "s1",
+      "excerpt": "Sun Belt mid-market +13.4%",
+      "locator": "Analyst notes, p.3",
+      "used_in": "KPI: Sun Belt"
+    },
+    {
+      "id": "d1-8",
+      "slide_id": "B1",
+      "label": "Midwest mid-market volume CAGR",
+      "value": 0.089,
+      "unit": "%",
+      "period": "2021–25",
+      "source_id": "s1",
+      "excerpt": "Midwest mid-market +8.9%",
+      "locator": "Analyst notes, p.3",
+      "used_in": "KPI: Midwest"
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "user_provided",
+      "name": "Example Freight analyst notes (fictional)",
+      "input_id": "in-1"
+    },
+    {
+      "id": "s2",
+      "kind": "web",
+      "name": "Example Freight Association, Annual Market Report 2025 (fictional)",
+      "publisher": "Example Freight Association",
+      "url": "https://example.org/market-report-2025",
+      "accessed": "2026-11-05",
+      "published": "2025"
+    },
+    {
+      "id": "s3",
+      "kind": "derived",
+      "name": "Team analysis"
+    }
+  ]
+}
