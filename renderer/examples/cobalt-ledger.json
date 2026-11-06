@@ -1,0 +1,1530 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Launching AI in Cobalt Ledger",
+  "subtitle": "Discussion document for the CEO",
+  "company_name": "Cobalt Ledger",
+  "audience": "CEO",
+  "purpose": "Decide whether to launch an AI package for small-business customers now",
+  "date": "2026-11-06",
+  "language": "en-US",
+  "confidentiality": "Fictional company; every number from public sources",
+  "theme": "navy"
+ },
+ "storyline": {
+  "governing_thought": "Cobalt Ledger should launch its AI package now, built into bookkeeping and the month-end close, to win the small firms that have not yet adopted AI",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "Small firms are the next wave of AI adoption, and accounting is the function they have barely touched",
+    "supports": [
+     "1",
+     "2",
+     "3"
+    ],
+    "sub_points": [
+     {
+      "text": "The share of US firms using AI rose from 17% to 25% between November 2025 and October 2026",
+      "slide_id": "1"
+     },
+     {
+      "text": "Firms with 1–4 employees use AI at 56% of the rate of firms with 250 or more",
+      "slide_id": "2"
+     },
+     {
+      "text": "In finance and accounting, 5.9% of the smallest firms use AI, compared with 20.5% of the largest",
+      "slide_id": "3"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "Small firms hold back because they cannot see where AI fits, not because of price, so AI has to come inside the tools they already use",
+    "supports": [
+     "4",
+     "5"
+    ],
+    "sub_points": [
+     {
+      "text": "Among the smallest firms with no AI plans, 63% say AI does not apply to their business, while only 7% say it is too expensive",
+      "slide_id": "4"
+     },
+     {
+      "text": "Small firms planning to adopt struggle most to find tools that fit (54%), and users worry most about accuracy (46%)",
+      "slide_id": "5"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "AI pays off in accounting and the leading platforms have already shipped it, so we should launch now, starting with bookkeeping and the monthly close",
+    "supports": [
+     "6",
+     "7",
+     "8"
+    ],
+    "sub_points": [
+     {
+      "text": "Firms using AI accounting software closed their books 7.5 days faster, and accountants gave 55% more client support each week",
+      "slide_id": "6"
+     },
+     {
+      "text": "Intuit, Xero and Shopify all launched AI assistants for small businesses between 2023 and 2025",
+      "slide_id": "7"
+     },
+     {
+      "text": "Four moves: start with the close, turn AI on by default, show sources for approval, launch with the smallest customers",
+      "slide_id": "8"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Approve the launch budget and the H1 2027 launch date",
+    "owner": "CEO and CFO",
+    "timing": "Dec 2026"
+   },
+   {
+    "action": "Scope the package around bank-feed categorization and the month-end close",
+    "owner": "Product",
+    "timing": "Q1 2027"
+   },
+   {
+    "action": "Design source-and-approve controls for every AI entry",
+    "owner": "Product and Design",
+    "timing": "Q1 2027"
+   },
+   {
+    "action": "Pilot with a group of our smallest customers and measure close time before and after",
+    "owner": "Customer Success",
+    "timing": "Q1–Q2 2027"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "1",
+   "title": "Small firms are the next wave",
+   "exec_item_id": "1",
+   "tracker_label": "Market"
+  },
+  {
+   "id": "2",
+   "title": "What holds them back",
+   "exec_item_id": "2",
+   "tracker_label": "Barriers"
+  },
+  {
+   "id": "3",
+   "title": "Why launch now",
+   "exec_item_id": "3",
+   "tracker_label": "Launch"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "AI use among US firms rose from 17% to 25% in under a year, so our customers will soon expect it",
+    "numbers": [
+     {
+      "text": "17%",
+      "data_ref": "t202524"
+     },
+     {
+      "text": "25%",
+      "data_ref": "t202621"
+     }
+    ],
+    "highlights": [
+     "All US firms"
+    ],
+    "clauses": 1
+   },
+   "message_type": "time-series",
+   "archetype": "line-trend",
+   "rationale": "Changed over time, many points -> line-trend",
+   "unit_line": "**US firms using AI in any business function**, % of firms, last reading of each month, Nov 2025 to Oct 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "Adoption is building month after month, not spiking",
+     "big_number": {
+      "data_ref": "rise1"
+     },
+     "caption": "relative rise in the share of firms using AI in eleven months",
+     "bullets": [
+      "**Nov–Feb:** flat through the winter, before the climb began",
+      "**Mar–Oct:** up in almost every month, a steady climb rather than a spike",
+      "**For us:** customers meet AI in the other tools they use every day, and will look for it in ours"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "line",
+    "categories": [
+     "Nov",
+     "Dec",
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun",
+     "Jul",
+     "Aug",
+     "Sep",
+     "Oct"
+    ],
+    "series": [
+     {
+      "name": "All US firms",
+      "points": [
+       {
+        "data_ref": "t202524"
+       },
+       {
+        "data_ref": "t202526"
+       },
+       {
+        "data_ref": "t202602"
+       },
+       {
+        "data_ref": "t202604"
+       },
+       {
+        "data_ref": "t202606"
+       },
+       {
+        "data_ref": "t202608"
+       },
+       {
+        "data_ref": "t202611"
+       },
+       {
+        "data_ref": "t202613"
+       },
+       {
+        "data_ref": "t202615"
+       },
+       {
+        "data_ref": "t202617"
+       },
+       {
+        "data_ref": "t202619"
+       },
+       {
+        "data_ref": "t202621"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "All US firms"
+    ],
+    "value_format": "0%"
+   },
+   "footnotes": [
+    "Census reworded the question in November 2025 (\"in any of its business functions\"), so earlier readings are not comparable and are left out",
+    "The latest cycle (published Nov 5, 2026) renamed AI \"Super Intelligence\" in the question, and \"Do not know\" answers jumped; it is left out until the series settles"
+   ]
+  },
+  {
+   "id": "2",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Small firms use AI at about half the rate of large ones, so most of our customers have yet to adopt",
+    "highlights": [
+     "1–4",
+     "5–9",
+     "10–19"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "A is lower than B across size classes -> bar-ranking, kept in size order",
+   "unit_line": "**US firms using AI in any business function**, % of firms, by number of employees, Oct 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Below 20 employees, adoption is flat; above it, it climbs with size",
+     "bullets": [
+      "**1–19 employees:** all three classes sit at or below the national rate, and this is where our customers are",
+      "**Mid-sized firms:** the rate climbs with each size class",
+      "**Largest firms:** the highest rate, so the gap is about size, not about whether AI is useful"
+     ],
+     "rows": [
+      {
+       "label": "Smallest firms' AI-use rate as a share of the largest firms' rate",
+       "basis": "24.3% ÷ 43.6%",
+       "point": {
+        "data_ref": "zr2"
+       },
+       "highlight": true
+      }
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "1–4",
+     "5–9",
+     "10–19",
+     "20–49",
+     "50–99",
+     "100–249",
+     "250+"
+    ],
+    "series": [
+     {
+      "name": "Firms using AI",
+      "points": [
+       {
+        "data_ref": "zA"
+       },
+       {
+        "data_ref": "zB"
+       },
+       {
+        "data_ref": "zC"
+       },
+       {
+        "data_ref": "zD"
+       },
+       {
+        "data_ref": "zE"
+       },
+       {
+        "data_ref": "zF"
+       },
+       {
+        "data_ref": "zG"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "1–4",
+     "5–9",
+     "10–19"
+    ],
+    "value_format": "0.0%",
+    "benchmark": {
+     "label": "All US firms",
+     "point": {
+      "data_ref": "t202621"
+     }
+    }
+   },
+   "footnotes": [
+    "Census BTOS cycle 202621, reference period Sep 21 to Oct 4, 2026; employer firms only"
+   ]
+  },
+  {
+   "id": "3",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "In accounting, under 6% of the smallest firms use AI against over 20% of the largest, so our core is open",
+    "numbers": [
+     {
+      "text": "6%",
+      "data_ref": "fA"
+     },
+     {
+      "text": "20%",
+      "data_ref": "fG"
+     }
+    ],
+    "highlights": [
+     "1–4"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "Same exhibit as the page before, one function (A-10) -> bar-ranking",
+   "unit_line": "**US firms using AI in finance and accounting**, % of firms, by number of employees, last six months, Nov 2025 to Jan 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "Our core workflow is where small firms lag the most",
+     "big_number": {
+      "data_ref": "fx3"
+     },
+     "caption": "the largest firms' rate of AI use in finance and accounting, as a multiple of the smallest firms'",
+     "bullets": [
+      "**Smallest firms:** the lowest rate of any size class, below the all-firm rate for this function",
+      "**Largest firms:** the highest rate, so AI in accounting already works at scale",
+      "**For us:** a ledger with AI built in brings small firms what large finance teams already use"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "1–4",
+     "5–9",
+     "10–19",
+     "20–49",
+     "50–99",
+     "100–249",
+     "250+"
+    ],
+    "series": [
+     {
+      "name": "Firms using AI in finance and accounting",
+      "points": [
+       {
+        "data_ref": "fA"
+       },
+       {
+        "data_ref": "fB"
+       },
+       {
+        "data_ref": "fC"
+       },
+       {
+        "data_ref": "fD"
+       },
+       {
+        "data_ref": "fE"
+       },
+       {
+        "data_ref": "fF"
+       },
+       {
+        "data_ref": "fG"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "1–4"
+    ],
+    "value_format": "0.0%",
+    "benchmark": {
+     "label": "All US firms",
+     "point": {
+      "data_ref": "fall"
+     }
+    }
+   },
+   "footnotes": [
+    "Census BTOS 2026 AI supplement; reference period November 2025 to January 2026"
+   ]
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Small firms skip AI because they do not see where it fits, not because of cost, so we must show them",
+    "highlights": [
+     "Does not apply to us"
+    ],
+    "clauses": 1
+   },
+   "message_type": "frequency",
+   "archetype": "survey-bars",
+   "rationale": "How respondents answered -> survey-bars",
+   "unit_line": "**Reasons for not planning to use AI**, % of firms with 1–4 employees and no AI plans, Nov 2025 to Jan 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The barrier is relevance, which product design can fix",
+     "bullets": [
+      "**Not applicable:** owners do not see AI in their own work, so showing it inside the ledger answers this directly",
+      "**Lack of knowledge:** the second reason is also about not seeing the use, not about the technology",
+      "**Too expensive:** last of the six, so a price cut alone would not move these firms"
+     ],
+     "rows": [
+      {
+       "label": "\"Not applicable\" answers for every \"too expensive\" answer",
+       "basis": "63.3% ÷ 6.7%",
+       "point": {
+        "data_ref": "rx4"
+       },
+       "highlight": true
+      }
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "survey_bar",
+    "categories": [
+     "Does not apply to us",
+     "Unsure of the use",
+     "Privacy or security",
+     "Not mature yet",
+     "Bias",
+     "Too expensive"
+    ],
+    "series": [
+     {
+      "name": "Share of firms",
+      "points": [
+       {
+        "data_ref": "r10"
+       },
+       {
+        "data_ref": "r3"
+       },
+       {
+        "data_ref": "r4"
+       },
+       {
+        "data_ref": "r2"
+       },
+       {
+        "data_ref": "r5"
+       },
+       {
+        "data_ref": "r1"
+       }
+      ]
+     }
+    ],
+    "sort": "desc",
+    "highlight": [
+     "Does not apply to us"
+    ],
+    "value_format": "0%"
+   },
+   "footnotes": [
+    "Firms could choose more than one reason; shown are the six most-cited reasons other than \"Other\""
+   ]
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Adopters cannot find tools that fit, and users doubt accuracy, so our package must be built in and checkable",
+    "clauses": 2
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Two clauses, one claim -> multi-chart-panel, no arrow (B-09)",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "Before adopting, the hardest part is finding a tool that fits the business",
+      "unit_line": "**Top challenges, small employer firms planning to use AI**, % of firms, 2025",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Finding tools that fit",
+        "Setup and training"
+       ],
+       "series": [
+        {
+         "name": "Share of firms",
+         "points": [
+          {
+           "data_ref": "c1"
+          },
+          {
+           "data_ref": "c2"
+          }
+         ]
+        }
+       ],
+       "sort": "desc",
+       "highlight": [
+        "Finding tools that fit"
+       ],
+       "value_format": "0%"
+      }
+     },
+     {
+      "header": "After adopting, the worry is whether the answers are right",
+      "unit_line": "**Top challenges, small employer firms using AI**, % of firms, 2025",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Accuracy",
+        "Adapting tools"
+       ],
+       "series": [
+        {
+         "name": "Share of firms",
+         "points": [
+          {
+           "data_ref": "c3"
+          },
+          {
+           "data_ref": "c4"
+          }
+         ]
+        }
+       ],
+       "sort": "desc",
+       "highlight": [
+        "Accuracy"
+       ],
+       "value_format": "0%"
+      }
+     }
+    ]
+   },
+   "so_what": "Built-in AI ends the search for a tool; a source on every suggestion answers the accuracy worry",
+   "so_what_style": "bar",
+   "footnotes": [
+    "Federal Reserve Banks' Small Business Credit Survey of employer firms with 1–499 employees, fielded September to November 2025"
+   ]
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "Accountants using AI closed the books 7.5 days faster, the gain our customers would feel first",
+    "numbers": [
+     {
+      "text": "7.5 days",
+      "data_ref": "k1"
+     }
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "kpi-big-numbers",
+   "rationale": "Three results of one study -> kpi-big-numbers",
+   "unit_line": "**Measured effect of AI accounting software**, field data from small and mid-sized firms, 2025",
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "k1"
+      },
+      "caption": "days faster monthly close",
+      "relation": "The gain an owner sees at every close",
+      "drivers": [
+       "General ledger entries also became 12% more granular",
+       "A shorter close puts cash and profit figures in front of the owner sooner",
+       "Measured on real transactions, not in a lab"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "k2"
+      },
+      "caption": "more weekly client support",
+      "relation": "Time saved went to clients, not to cuts",
+      "drivers": [
+       "Accountants answered more client questions each week",
+       "Time saved went to clients rather than to cuts in staff",
+       "For our customers: faster answers from their bookkeeper"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "k3"
+      },
+      "caption": "of accountant time moved from data entry",
+      "relation": "Routine entry is where AI takes over first",
+      "drivers": [
+       "Time moved to client communication and quality checks",
+       "Routine entry is the work AI took over first",
+       "So our first AI features should take on entry and categorization"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Field data from 79 small and mid-sized firms using one AI accounting product, plus a panel survey of 277 accountants; an observational study, not a randomized trial"
+   ]
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "Intuit, Xero and Shopify have all shipped AI assistants for small businesses, so waiting would leave us the exception",
+    "clauses": 1
+   },
+   "message_type": "structure",
+   "archetype": "timeline-roadmap",
+   "rationale": "Launches over time, with dates -> timeline-roadmap",
+   "unit_line": "**AI assistant launches by small-business software platforms**, by half-year, from company press releases",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "timeline",
+    "periods": [
+     "H2 2023",
+     "H1 2024",
+     "H2 2024",
+     "H1 2025",
+     "H2 2025",
+     "H1 2026",
+     "H2 2026",
+     "H1 2027"
+    ],
+    "rows": [
+     {
+      "label": "Intuit (QuickBooks)",
+      "bars": [
+       {
+        "start": "H2 2023",
+        "end": "H1 2024",
+        "label": "Intuit Assist, beta to rollout"
+       },
+       {
+        "start": "H2 2025",
+        "end": "H2 2025",
+        "label": "AI agents"
+       }
+      ]
+     },
+     {
+      "label": "Xero",
+      "bars": [
+       {
+        "start": "H2 2025",
+        "end": "H2 2025",
+        "label": "JAX features"
+       }
+      ]
+     },
+     {
+      "label": "Shopify",
+      "bars": [
+       {
+        "start": "H2 2025",
+        "end": "H2 2025",
+        "label": "Sidekick agent"
+       }
+      ]
+     },
+     {
+      "label": "Cobalt Ledger",
+      "bars": [
+       {
+        "start": "H1 2027",
+        "end": "H1 2027",
+        "label": "Our launch",
+        "emphasis": true
+       }
+      ]
+     }
+    ],
+    "milestones": [
+     {
+      "at": "H2 2026",
+      "label": "Today"
+     }
+    ]
+   },
+   "so_what": "AI is becoming standard in small-business software, so our risk is being late, not early",
+   "so_what_style": "line",
+   "footnotes": [
+    "Intuit: Sept 6, 2023 and July 1, 2025 press releases; Xero: Sept 3, 2025 media release; Shopify: Winter '26 Edition, Dec 10, 2025",
+    "Intuit says its agents save businesses up to 12 hours a month; Xero says 73% of its customers have used AI on its platform since March 2025"
+   ]
+  },
+  {
+   "id": "8",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "Four launch moves turn this evidence into an AI package small firms will actually use",
+    "count_word": 4,
+    "clauses": 1
+   },
+   "message_type": "argument",
+   "archetype": "numbered-levers",
+   "rationale": "N things to do -> numbered-levers",
+   "unit_line": "**AI package launch**, moves and the evidence behind each",
+   "body": {
+    "kind": "levers",
+    "headers": [
+     "Move",
+     "Why it matters"
+    ],
+    "items": [
+     {
+      "code": "1",
+      "text": "Start with bank-feed categorization and the month-end close, where AI saves the most time",
+      "point": {
+       "data_ref": "k1"
+      },
+      "metric": "days faster monthly close with AI (p. 8)"
+     },
+     {
+      "code": "2",
+      "text": "Turn AI on by default inside the screens customers already use, so they see where it fits",
+      "point": {
+       "data_ref": "r10"
+      },
+      "metric": "of the smallest non-adopters say AI does not apply (p. 6)"
+     },
+     {
+      "code": "3",
+      "text": "Show the source of every AI entry and let the owner approve it with one click",
+      "point": {
+       "data_ref": "c3"
+      },
+      "metric": "of small-firm AI users cite accuracy (p. 7)"
+     },
+     {
+      "code": "4",
+      "text": "Launch first with our smallest customers, where AI in accounting is least used",
+      "point": {
+       "data_ref": "fA"
+      },
+      "metric": "of the smallest firms use AI in finance and accounting (p. 5)"
+     }
+    ]
+   },
+   "so_what": "Decision today: approve the package for launch in H1 2027, starting with the monthly close",
+   "so_what_style": "bar"
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "t202524",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202524",
+   "value": 0.173,
+   "unit": "%",
+   "period": "Nov 2025",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202524 = \"17.3%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202526",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202526",
+   "value": 0.178,
+   "unit": "%",
+   "period": "Dec 2025",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202526 = \"17.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202602",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202602",
+   "value": 0.182,
+   "unit": "%",
+   "period": "Jan 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202602 = \"18.2%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202604",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202604",
+   "value": 0.175,
+   "unit": "%",
+   "period": "Feb 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202604 = \"17.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202606",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202606",
+   "value": 0.189,
+   "unit": "%",
+   "period": "Mar 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202606 = \"18.9%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202608",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202608",
+   "value": 0.198,
+   "unit": "%",
+   "period": "Apr 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202608 = \"19.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202611",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202611",
+   "value": 0.206,
+   "unit": "%",
+   "period": "May 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202611 = \"20.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202613",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202613",
+   "value": 0.206,
+   "unit": "%",
+   "period": "Jun 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202613 = \"20.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202615",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202615",
+   "value": 0.215,
+   "unit": "%",
+   "period": "Jul 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202615 = \"21.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202617",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202617",
+   "value": 0.224,
+   "unit": "%",
+   "period": "Aug 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202617 = \"22.4%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202619",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202619",
+   "value": 0.238,
+   "unit": "%",
+   "period": "Sep 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202619 = \"23.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "t202621",
+   "slide_id": "1",
+   "label": "US firms using AI, BTOS cycle 202621",
+   "value": 0.246,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart"
+  },
+  {
+   "id": "rise1",
+   "slide_id": "1",
+   "label": "Relative rise in the share of US firms using AI, Nov 2025 to Oct 2026",
+   "value": 0.42,
+   "unit": "%",
+   "period": "Nov 2025 to Oct 2026",
+   "source_id": "s0",
+   "used_in": "sidebar big number",
+   "derived_from": [
+    "t202621",
+    "t202524"
+   ],
+   "formula": "24.6% ÷ 17.3% − 1",
+   "calc": "t202621 / t202524 - 1"
+  },
+  {
+   "id": "zA",
+   "slide_id": "2",
+   "label": "Firms with 1–4 employees using AI",
+   "value": 0.243,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize A, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.3%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "zB",
+   "slide_id": "2",
+   "label": "Firms with 5–9 employees using AI",
+   "value": 0.226,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize B, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"22.6%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "zC",
+   "slide_id": "2",
+   "label": "Firms with 10–19 employees using AI",
+   "value": 0.246,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize C, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.6%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "zD",
+   "slide_id": "2",
+   "label": "Firms with 20–49 employees using AI",
+   "value": 0.26,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize D, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"26.0%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "zE",
+   "slide_id": "2",
+   "label": "Firms with 50–99 employees using AI",
+   "value": 0.29,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize E, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"29.0%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "zF",
+   "slide_id": "2",
+   "label": "Firms with 100–249 employees using AI",
+   "value": 0.353,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize F, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"35.3%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "zG",
+   "slide_id": "2",
+   "label": "Firms with 250+ employees using AI",
+   "value": 0.436,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize G, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"43.6%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "zr2",
+   "slide_id": "2",
+   "label": "AI-use rate of firms with 1–4 employees as a share of the rate of firms with 250+",
+   "value": 0.56,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s0",
+   "used_in": "sidebar row",
+   "derived_from": [
+    "zA",
+    "zG"
+   ],
+   "formula": "24.3% ÷ 43.6%",
+   "calc": "zA / zG"
+  },
+  {
+   "id": "fA",
+   "slide_id": "3",
+   "label": "Firms with 1–4 employees using AI in finance and accounting",
+   "value": 0.059,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"5.9%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "fB",
+   "slide_id": "3",
+   "label": "Firms with 5–9 employees using AI in finance and accounting",
+   "value": 0.061,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize B, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"6.1%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "fC",
+   "slide_id": "3",
+   "label": "Firms with 10–19 employees using AI in finance and accounting",
+   "value": 0.069,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize C, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"6.9%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "fD",
+   "slide_id": "3",
+   "label": "Firms with 20–49 employees using AI in finance and accounting",
+   "value": 0.082,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize D, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"8.2%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "fE",
+   "slide_id": "3",
+   "label": "Firms with 50–99 employees using AI in finance and accounting",
+   "value": 0.108,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize E, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"10.8%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "fF",
+   "slide_id": "3",
+   "label": "Firms with 100–249 employees using AI in finance and accounting",
+   "value": 0.155,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize F, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"15.5%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "fG",
+   "slide_id": "3",
+   "label": "Firms with 250+ employees using AI in finance and accounting",
+   "value": 0.205,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize G, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"20.5%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart"
+  },
+  {
+   "id": "fall",
+   "slide_id": "3",
+   "label": "All US firms using AI in finance and accounting",
+   "value": 0.066,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "scope 1, Q2, \"Finance and accounting\", Estimate - Yes = \"6.6%\"",
+   "locator": "National Response Estimates sheet",
+   "used_in": "benchmark"
+  },
+  {
+   "id": "fx3",
+   "slide_id": "3",
+   "label": "Finance and accounting AI use, firms with 250+ employees as a multiple of firms with 1–4",
+   "value": 3.5,
+   "unit": "x",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s0",
+   "used_in": "sidebar big number",
+   "derived_from": [
+    "fG",
+    "fA"
+   ],
+   "formula": "20.5% ÷ 5.9%",
+   "calc": "fG / fA"
+  },
+  {
+   "id": "r10",
+   "slide_id": "4",
+   "label": "Firms with 1–4 employees and no AI plans citing: Does not apply to us",
+   "value": 0.633,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"AI is not applicable to this business\" = \"63.3%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars"
+  },
+  {
+   "id": "r3",
+   "slide_id": "4",
+   "label": "Firms with 1–4 employees and no AI plans citing: Unsure of the use",
+   "value": 0.212,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"Lack of knowledge on the capabilities of AI\" = \"21.2%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars"
+  },
+  {
+   "id": "r4",
+   "slide_id": "4",
+   "label": "Firms with 1–4 employees and no AI plans citing: Privacy or security",
+   "value": 0.201,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"Concerns about privacy/security\" = \"20.1%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars"
+  },
+  {
+   "id": "r2",
+   "slide_id": "4",
+   "label": "Firms with 1–4 employees and no AI plans citing: Not mature yet",
+   "value": 0.126,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"AI is not a mature enough technology yet\" = \"12.6%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars"
+  },
+  {
+   "id": "r5",
+   "slide_id": "4",
+   "label": "Firms with 1–4 employees and no AI plans citing: Bias",
+   "value": 0.089,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"Concerns about bias\" = \"8.9%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars"
+  },
+  {
+   "id": "r1",
+   "slide_id": "4",
+   "label": "Firms with 1–4 employees and no AI plans citing: Too expensive",
+   "value": 0.067,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"Too expensive\" = \"6.7%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars"
+  },
+  {
+   "id": "rx4",
+   "slide_id": "4",
+   "label": "'Not applicable' as a multiple of 'too expensive', firms with 1–4 employees",
+   "value": 9.4,
+   "unit": "x",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s0",
+   "used_in": "sidebar row",
+   "derived_from": [
+    "r10",
+    "r1"
+   ],
+   "formula": "63.3% ÷ 6.7%",
+   "calc": "r10 / r1"
+  },
+  {
+   "id": "c1",
+   "slide_id": "5",
+   "label": "Small employer firms naming a top AI challenge — Planning firms: finding tools to meet business needs",
+   "value": 0.54,
+   "unit": "%",
+   "period": "survey fielded Sep–Nov 2025",
+   "source_id": "s4",
+   "excerpt": "For AI users, the top challenges were accuracy (46%) and adapting tools to meet business needs (43%). For firms that plan to use AI in the next 12 months, the top challenges were finding tools to meet business needs (54%) and the time required to implement or train employees on AI (37%).",
+   "locator": "Overview, PDF p. 5",
+   "used_in": "panel chart"
+  },
+  {
+   "id": "c2",
+   "slide_id": "5",
+   "label": "Small employer firms naming a top AI challenge — Planning firms: time to implement or train employees",
+   "value": 0.37,
+   "unit": "%",
+   "period": "survey fielded Sep–Nov 2025",
+   "source_id": "s4",
+   "excerpt": "For AI users, the top challenges were accuracy (46%) and adapting tools to meet business needs (43%). For firms that plan to use AI in the next 12 months, the top challenges were finding tools to meet business needs (54%) and the time required to implement or train employees on AI (37%).",
+   "locator": "Overview, PDF p. 5",
+   "used_in": "panel chart"
+  },
+  {
+   "id": "c3",
+   "slide_id": "5",
+   "label": "Small employer firms naming a top AI challenge — AI users: accuracy",
+   "value": 0.46,
+   "unit": "%",
+   "period": "survey fielded Sep–Nov 2025",
+   "source_id": "s4",
+   "excerpt": "For AI users, the top challenges were accuracy (46%) and adapting tools to meet business needs (43%). For firms that plan to use AI in the next 12 months, the top challenges were finding tools to meet business needs (54%) and the time required to implement or train employees on AI (37%).",
+   "locator": "Overview, PDF p. 5",
+   "used_in": "panel chart"
+  },
+  {
+   "id": "c4",
+   "slide_id": "5",
+   "label": "Small employer firms naming a top AI challenge — AI users: adapting tools to meet business needs",
+   "value": 0.43,
+   "unit": "%",
+   "period": "survey fielded Sep–Nov 2025",
+   "source_id": "s4",
+   "excerpt": "For AI users, the top challenges were accuracy (46%) and adapting tools to meet business needs (43%). For firms that plan to use AI in the next 12 months, the top challenges were finding tools to meet business needs (54%) and the time required to implement or train employees on AI (37%).",
+   "locator": "Overview, PDF p. 5",
+   "used_in": "panel chart"
+  },
+  {
+   "id": "k1",
+   "slide_id": "6",
+   "label": "Reduction in monthly close time for firms using AI accounting software",
+   "value": 7.5,
+   "unit": "days",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "AI usage further corresponds to improved financial reporting quality, evidenced by a 12% increase in general ledger granularity and a 7.5-day reduction in monthly close time.",
+   "locator": "Abstract",
+   "used_in": "KPI tile 1, title"
+  },
+  {
+   "id": "k2",
+   "slide_id": "6",
+   "label": "Increase in weekly client support by accountants using AI",
+   "value": 0.55,
+   "unit": "%",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "We document significant productivity gains among AI adopters, including a 55% increase in weekly client support and a reallocation of approximately 8.5% of accountant time from routine data entry toward high-value tasks such as business communication and quality assurance",
+   "locator": "Abstract",
+   "used_in": "KPI tile 2"
+  },
+  {
+   "id": "k3",
+   "slide_id": "6",
+   "label": "Share of accountant time moved from routine data entry to higher-value tasks",
+   "value": 0.085,
+   "unit": "%",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "We document significant productivity gains among AI adopters, including a 55% increase in weekly client support and a reallocation of approximately 8.5% of accountant time from routine data entry toward high-value tasks such as business communication and quality assurance",
+   "locator": "Abstract",
+   "used_in": "KPI tile 3"
+  },
+  {
+   "id": "k4",
+   "slide_id": "6",
+   "label": "Small and mid-sized firms in the field data",
+   "value": 79,
+   "unit": "firms",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "partnering with a technology firm that provides AI-based accounting software, we analyze unique field data from 79 small-and mid-sized firms, covering hundreds of thousands of transactions",
+   "locator": "Abstract",
+   "used_in": "footnote"
+  },
+  {
+   "id": "k5",
+   "slide_id": "6",
+   "label": "Accountants in the panel survey",
+   "value": 277,
+   "unit": "accountants",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "through panel survey data from 277 accountants",
+   "locator": "Abstract",
+   "used_in": "footnote"
+  },
+  {
+   "id": "k6",
+   "slide_id": "6",
+   "label": "Increase in general ledger granularity",
+   "value": 0.12,
+   "unit": "%",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "evidenced by a 12% increase in general ledger granularity and a 7.5-day reduction in monthly close time",
+   "locator": "Abstract",
+   "used_in": "KPI tile 1 driver"
+  },
+  {
+   "id": "i12",
+   "slide_id": "7",
+   "label": "Time Intuit says its QuickBooks AI agents save businesses",
+   "value": 12,
+   "unit": "hours a month",
+   "period": "Jul 2025",
+   "source_id": "s7",
+   "excerpt": "saving businesses up to 12 hours a month",
+   "locator": "Body text",
+   "used_in": "timeline bar note"
+  },
+  {
+   "id": "x73",
+   "slide_id": "7",
+   "label": "Xero customers who have used AI on the platform since March 2025",
+   "value": 0.73,
+   "unit": "%",
+   "period": "Sep 2025",
+   "source_id": "s8",
+   "excerpt": "with 73% of customers having used AI across the platform since March",
+   "locator": "Body text",
+   "used_in": "timeline bar note"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "web",
+   "name": "Business Trends and Outlook Survey (BTOS), national response estimates",
+   "publisher": "US Census Bureau",
+   "url": "https://www.census.gov/hfp/btos/downloads/National.xlsx",
+   "accessed": "2026-11-06",
+   "published": "2026-11-05"
+  },
+  {
+   "id": "s2",
+   "kind": "web",
+   "name": "BTOS, response estimates by employment size class",
+   "publisher": "US Census Bureau",
+   "url": "https://www.census.gov/hfp/btos/downloads/Employment%20Size%20Class.xlsx",
+   "accessed": "2026-11-06",
+   "published": "2026-11-05"
+  },
+  {
+   "id": "s3",
+   "kind": "web",
+   "name": "BTOS 2026 AI supplement tables",
+   "publisher": "US Census Bureau",
+   "url": "https://www.census.gov/hfp/btos/downloads/AI_Supplement_Table_2026.xlsx",
+   "accessed": "2026-11-06",
+   "published": "2026"
+  },
+  {
+   "id": "s4",
+   "kind": "web",
+   "name": "Small Business Credit Survey: 2026 Report on Employer Firms",
+   "publisher": "Federal Reserve Banks",
+   "url": "https://www.fedsmallbusiness.org/-/media/project/clevelandfedtenant/fsbsite/reports/2026/2026-report-on-employer-firms/2026-report-on-employer-firms.pdf",
+   "accessed": "2026-11-06",
+   "published": "2026-03"
+  },
+  {
+   "id": "s5",
+   "kind": "web",
+   "name": "Choi and Xie, Human-AI Accounting: Early Evidence from the Field (working paper)",
+   "publisher": "Stanford Graduate School of Business",
+   "url": "https://www.gsb.stanford.edu/faculty-research/working-papers/human-ai-accounting-early-evidence-field",
+   "accessed": "2026-11-06",
+   "published": "2025"
+  },
+  {
+   "id": "s6",
+   "kind": "web",
+   "name": "Introducing Intuit Assist (press release)",
+   "publisher": "Intuit",
+   "url": "https://www.intuit.com/company/press-room/press-releases/2023/introducing-intuit-assist-the-generative-ai-powered-financial-assistant-for-small-businesses-and-consumers/",
+   "accessed": "2026-11-06",
+   "published": "2023-09-06"
+  },
+  {
+   "id": "s7",
+   "kind": "web",
+   "name": "Intuit introduces virtual team of AI agents (press release)",
+   "publisher": "Intuit",
+   "url": "https://investors.intuit.com/news-events/press-releases/detail/1258/intuit-introduces-ground-breaking-virtual-team-of-ai-agents-to-fuel-growth-for-businesses",
+   "accessed": "2026-11-06",
+   "published": "2025-07-01"
+  },
+  {
+   "id": "s8",
+   "kind": "web",
+   "name": "Xero's AI financial superagent JAX launches new features (media release)",
+   "publisher": "Xero",
+   "url": "https://www.xero.com/us/media-releases/xeros-ai-financial-superagent-jax-launches-powerful-new-features/",
+   "accessed": "2026-11-06",
+   "published": "2025-09-03"
+  },
+  {
+   "id": "s9",
+   "kind": "web",
+   "name": "Shopify Winter '26 Edition",
+   "publisher": "Shopify",
+   "url": "https://www.shopify.com/news/winter-26-edition-merchant",
+   "accessed": "2026-11-06",
+   "published": "2025-12-10"
+  },
+  {
+   "id": "s0",
+   "kind": "derived",
+   "name": "Team analysis of the sources above"
+  }
+ ]
+}
