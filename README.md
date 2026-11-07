@@ -6,7 +6,8 @@ A Claude Skill that turns your research, or just the decision you need to make, 
 McKinsey-style deck: a storyline that holds together, an action title on every slide,
 editable PowerPoint charts, and a source for every number. It researches the data slide by slide
 and hands you two files: the deck, and a separate Excel workbook that tracks every source, one sheet per slide.
-Built by an ex-McKinsey consultant.
+
+*Built by an ex-McKinsey consultant.*
 
 ![From a short brief to a storyline to a finished deck with its source workbook](docs/readme/demo.gif)
 
