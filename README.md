@@ -4,7 +4,9 @@
 
 A Claude Skill that turns your research, or just the decision you need to make, into a
 McKinsey-style deck: a storyline that holds together, an action title on every slide,
-editable PowerPoint charts, and a source for every number. Built by an ex-McKinsey consultant.
+editable PowerPoint charts, and a source for every number. It researches the data slide by slide
+and hands you two files: the deck, and a separate Excel workbook that tracks every source, one sheet per slide.
+Built by an ex-McKinsey consultant.
 
 ![From a short brief to a storyline to a finished deck](docs/readme/hero.png)
 
@@ -19,7 +21,7 @@ Most AI deck tools start from layouts. This one starts where a consulting team s
 | | |
 |---|---|
 | 🧭 **A storyline that holds** | One governing thought, an executive summary whose items become sections, and an action title on every slide that the slide then proves. Read only the titles and you still get the argument. |
-| 🧾 **A receipt for every number** | No number reaches a slide without a source. Each deck ships with an Excel workbook: value, source, URL, a verbatim excerpt, and a live formula for anything calculated. No source? The slide shows "?" and says what data is needed. |
+| 🧾 **A receipt for every number** | The skill researches the data for each slide (your files first, then the web) and keeps the sources in a **separate Excel workbook, one sheet per slide**: value, source, URL, a verbatim excerpt, and a live formula for anything calculated. No source? The slide shows "?" and says what data is needed. |
 | 📊 **Real PowerPoint, not pictures** | Native, editable charts and text boxes. Edit a chart's data in PowerPoint and the chart redraws. |
 
 ---
@@ -68,7 +70,16 @@ The rules behind this are written down and checked, not left to taste. The one t
 
 ![The 5.9% on the slide traced to its row in the source workbook](docs/readme/receipt.png)
 
-The workbook has one sheet per slide. Every number has its source, URL, a verbatim excerpt and where to find it. A number the skill calculated (a share, a gap, a multiple) lists its inputs and is a **live Excel formula** over those cells, so you can audit it or change an input.
+Sources are managed apart from the slides, in `<deck>-sources.xlsx`:
+
+| Sheet | What it holds |
+|---|---|
+| **Index** | Every slide, its title, and how many of its numbers are sourced |
+| **p3, p4, …** (one per slide) | Each number on that page: value, unit, period, source, URL, verbatim excerpt, where in the source, date accessed, where it is used on the slide |
+| **Calculations** | Every number the skill calculated, as a live Excel formula over the sourced cells, with its assumptions |
+| **Sources** | Every source used in the deck, with publisher, URL and dates |
+
+So a reviewer can check any page without opening the deck, and you can update a source and see what it touches. A number the skill calculated (a share, a gap, a multiple) lists its inputs and is a **live Excel formula** over those cells, so you can audit it or change an input.
 
 When a number cannot be found, the skill does not guess. It asks you: a recommended value with its basis, an upload, or a wider search. Only as a last resort does the slide keep a "?" and an `ILLUSTRATIVE — DATA NEEDED` sticker.
 
@@ -132,26 +143,38 @@ The layout rules stay the same; only the colors and fonts change. The design is 
 
 ## Quick start
 
-**1. Build the skill**
+### Claude Code: one command
+
+```bash
+claude plugin install hire-your-mck --marketplace brianlee0113/hire-your-mck
+```
+
+Or inside a session: `/plugin marketplace add brianlee0113/hire-your-mck`, then `/plugin install hire-your-mck@hire-your-mck`.
+
+### Claude.ai: download, then upload
+
+1. Download **`hire-your-mck.zip`** from the [latest release](https://github.com/brianlee0113/hire-your-mck/releases/latest).
+2. In Claude, open **Customize → Skills → + → Upload a skill** and choose the zip.
+3. Make sure code execution is on (**Settings → Capabilities**); the skill runs Python to build the files.
+
+### Then brief it
+
+> Our CEO has to decide whether to launch an AI package for our small-business accounting customers now. Build the deck from public data.
+
+It asks a few multiple-choice questions, shows you the storyline for approval, then returns `<name>.pptx` and `<name>-sources.xlsx`. It needs `python-pptx`, `openpyxl`, `jsonschema` and `pillow`, and installs them on first run if they are missing.
+
+<details>
+<summary>Build from source</summary>
 
 ```bash
 git clone https://github.com/brianlee0113/hire-your-mck.git
 cd hire-your-mck
-python tools/build_skill.py      # -> dist/hire-your-mck/ and dist/hire-your-mck.zip
+python tools/build_skill.py          # -> plugin/skills/hire-your-mck/ and dist/hire-your-mck.zip
+python tools/build_skill.py --check  # fails if the committed plugin copy is out of date
 ```
 
-**2. Install it**
-
-- **Claude.ai:** upload `dist/hire-your-mck.zip` in the Skills section of your settings
-- **Claude Code:** copy `dist/hire-your-mck/` into `~/.claude/skills/`
-
-The skill needs `python-pptx`, `openpyxl`, `jsonschema` and `pillow`; Claude installs them on first run if they are missing.
-
-**3. Brief it**
-
-> Our CEO has to decide whether to launch an AI package for our small-business accounting customers now. Build the deck from public data.
-
-It asks a few multiple-choice questions, shows you the storyline for approval, then returns `<name>.pptx` and `<name>-sources.xlsx`.
+Edit the sources in `skill/`, `renderer/`, `tools/spec/` and `templates/`, never the generated copy in `plugin/`.
+</details>
 
 ---
 

@@ -1,0 +1,1921 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/brianlee0113/hire-your-mck/docs/spec/storyline.schema.json",
+  "title": "Storyline spec",
+  "description": "Single source of truth between the conversation and the renderer. Every mode writes the same spec; modes differ only in how far slides progress (status). The renderer turns it into a PPTX, and the source workbook is generated from data_points + sources.",
+  "type": "object",
+  "required": [
+    "spec_version",
+    "mode",
+    "meta",
+    "storyline",
+    "slides"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "spec_version": {
+      "const": "0.1"
+    },
+    "mode": {
+      "enum": [
+        "deck_detailed",
+        "deck_flow",
+        "single_slide"
+      ],
+      "description": "deck_detailed: slides reach status filled. deck_flow: slides stop at ghost (data_requirements filled, no values). single_slide: exactly one content slide; storyline.exec_summary has one item."
+    },
+    "meta": {
+      "$ref": "#/$defs/meta"
+    },
+    "inputs": {
+      "type": "array",
+      "description": "What the user gave us. Used for provenance: sources of kind user_provided point here.",
+      "items": {
+        "$ref": "#/$defs/input"
+      }
+    },
+    "storyline": {
+      "$ref": "#/$defs/storyline"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/section"
+      }
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/slide"
+      }
+    },
+    "data_points": {
+      "type": "array",
+      "description": "Every number that appears on any slide. The source workbook has one sheet per slide built from these rows (rule A-07).",
+      "items": {
+        "$ref": "#/$defs/data_point"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "qa": {
+      "$ref": "#/$defs/qa"
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,15}$"
+    },
+    "meta": {
+      "type": "object",
+      "required": [
+        "title",
+        "language"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "company_name": {
+          "type": "string",
+          "description": "Shown where the footer brand goes (D8). Never 'McKinsey'."
+        },
+        "audience": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string",
+          "description": "The decision this deck supports."
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "language": {
+          "const": "en-US"
+        },
+        "confidentiality": {
+          "type": "string"
+        },
+        "theme": {
+          "enum": [
+            "navy",
+            "crimson",
+            "forest",
+            "mono",
+            "vivid",
+            "slate",
+            "terracotta"
+          ],
+          "default": "navy",
+          "description": "Color theme from templates/themes.json. Grammar is the same for every theme (D8)."
+        },
+        "font_pair": {
+          "enum": [
+            "georgia-arial",
+            "aptos-serif-aptos",
+            "arial",
+            "calibri",
+            "aptos"
+          ],
+          "description": "Overrides the theme's font pair. Omit to use the theme default (D10)."
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "pasted_research",
+            "qa_answer",
+            "file",
+            "lead_message"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string",
+          "description": "Raw text, or a path for files."
+        }
+      }
+    },
+    "storyline": {
+      "type": "object",
+      "required": [
+        "governing_thought",
+        "exec_summary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "governing_thought": {
+          "type": "string",
+          "description": "The one-sentence answer the whole deck proves (G-04)."
+        },
+        "exec_summary": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 7,
+          "description": "Each item is a lead message. Item ids become section ids and title prefixes (A-08). Reading only these must tell the whole story (B-04).",
+          "items": {
+            "$ref": "#/$defs/exec_item"
+          }
+        },
+        "next_steps": {
+          "type": "array",
+          "maxItems": 6,
+          "description": "Shown on the end page.",
+          "items": {
+            "type": "object",
+            "required": [
+              "action"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "string"
+              },
+              "timing": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "key_takeaways": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional. Only when they say something the exec summary does not (B-05). Without them the end page shows next steps only."
+        }
+      }
+    },
+    "exec_item": {
+      "type": "object",
+      "required": [
+        "id",
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "text": {
+          "type": "string"
+        },
+        "supports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "description": "Content slide ids whose lead messages prove this bullet. QA: every exec item has ≥1, and every non-backup content slide is listed under exactly one item (B-04)."
+        },
+        "sub_points": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "slide_id": {
+                "$ref": "#/$defs/id"
+              }
+            }
+          }
+        }
+      }
+    },
+    "section": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "exec_item_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string"
+        },
+        "exec_item_id": {
+          "$ref": "#/$defs/id"
+        },
+        "tracker_label": {
+          "type": "string",
+          "description": "Short label for the auto-generated tracker (S3)."
+        }
+      }
+    },
+    "slide": {
+      "type": "object",
+      "required": [
+        "id",
+        "role",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "enum": [
+            "cover",
+            "exec_summary",
+            "agenda_tracker",
+            "section_divider",
+            "content",
+            "backup",
+            "end_page"
+          ]
+        },
+        "section_id": {
+          "$ref": "#/$defs/id"
+        },
+        "parent_id": {
+          "$ref": "#/$defs/id",
+          "description": "Overview slide that assigned this slide's id (S2)."
+        },
+        "backup_of": {
+          "$ref": "#/$defs/id",
+          "description": "For role backup: the content slide this supports. Title gets the 'BACKUP:' prefix (S4)."
+        },
+        "status": {
+          "enum": [
+            "ghost",
+            "drafted",
+            "filled",
+            "qa_passed"
+          ],
+          "description": "ghost = lead message + archetype + data_requirements, no values (flow mode end state). drafted = body written, some placeholders. filled = every number has a data_ref with a source. qa_passed = all QA rules pass."
+        },
+        "lead_message": {
+          "$ref": "#/$defs/lead_message"
+        },
+        "message_type": {
+          "enum": [
+            "item",
+            "component",
+            "time-series",
+            "frequency",
+            "correlation",
+            "structure",
+            "argument",
+            "navigation"
+          ]
+        },
+        "archetype": {
+          "$ref": "#/$defs/archetype"
+        },
+        "layout": {
+          "$ref": "#/$defs/layout"
+        },
+        "unit_line": {
+          "type": "string",
+          "description": "'**Metric**, unit, period' under the title. Required on chart slides (A-06)."
+        },
+        "sticker": {
+          "enum": [
+            "PRELIMINARY",
+            "NOT EXHAUSTIVE",
+            "ILLUSTRATIVE",
+            "ESTIMATE",
+            "ILLUSTRATIVE — DATA NEEDED"
+          ],
+          "description": "Set to 'ILLUSTRATIVE — DATA NEEDED' automatically when any point on the slide is a placeholder (L3)."
+        },
+        "body": {
+          "$ref": "#/$defs/body"
+        },
+        "data_requirements": {
+          "type": "array",
+          "description": "What data would prove the lead message. Written in every mode; it is the only body content in flow mode.",
+          "items": {
+            "$ref": "#/$defs/data_requirement"
+          }
+        },
+        "footnotes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "speaker_notes": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Why this archetype was chosen (routing table row). Shown to the user, not rendered."
+        },
+        "so_what": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "Optional one-sentence conclusion shown at the bottom of the body (A-12). The action title stays the main conclusion (B-01); use this on some slides, not all."
+        },
+        "so_what_style": {
+          "enum": [
+            "bar",
+            "line"
+          ],
+          "default": "bar",
+          "description": "bar = dark full-width bar; line = thin rule + accent bar + bold sentence (lighter). No label: public decks never print 'So what'."
+        },
+        "callout": {
+          "type": "object",
+          "required": [
+            "target",
+            "header"
+          ],
+          "additionalProperties": false,
+          "description": "Small highlighted box attached to the one element the title points at (A-02). target = the element's header, label or id (column, table row, process step, framework item, lever code).",
+          "properties": {
+            "target": {
+              "type": "string"
+            },
+            "header": {
+              "type": "string"
+            },
+            "detail": {
+              "type": "string"
+            }
+          }
+        },
+        "basis": {
+          "type": "object",
+          "required": [
+            "terms"
+          ],
+          "additionalProperties": false,
+          "description": "How an estimate on this slide was built (B-08), drawn as a strip of number cards under the exhibit.",
+          "properties": {
+            "header": {
+              "type": "string"
+            },
+            "terms": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 6,
+              "items": {
+                "$ref": "#/$defs/equation_term"
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "role": {
+                "enum": [
+                  "content",
+                  "backup"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "lead_message",
+              "message_type",
+              "archetype",
+              "section_id"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "role": {
+                "const": "backup"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "backup_of"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "drafted",
+                  "filled",
+                  "qa_passed"
+                ]
+              },
+              "role": {
+                "enum": [
+                  "content",
+                  "backup"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "body"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ghost"
+              },
+              "role": {
+                "enum": [
+                  "content",
+                  "backup"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "data_requirements"
+            ]
+          }
+        }
+      ]
+    },
+    "lead_message": {
+      "type": "object",
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string",
+          "maxLength": 180,
+          "description": "So-what sentence, ≤2 rendered lines, ~10–20 words, no trailing period (B-01, A-03, D8)."
+        },
+        "prefix": {
+          "type": "string",
+          "description": "Tracker code like '2a:' or 'Example:' or 'BACKUP:'. Rendered before text; generated from ids when omitted."
+        },
+        "numbers": {
+          "type": "array",
+          "description": "Numbers that appear in the title, each tied to the data point that shows it on the slide (A-01).",
+          "items": {
+            "type": "object",
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "As written in the title, e.g. '2x', '$120M', '~40%'."
+              },
+              "data_ref": {
+                "$ref": "#/$defs/id"
+              }
+            }
+          }
+        },
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Items the title names; only these get the accent color (A-02)."
+        },
+        "count_word": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "'Three drivers' → 3; must equal the number of body elements (A-04)."
+        },
+        "clauses": {
+          "enum": [
+            1,
+            2
+          ],
+          "description": "2 → split_2 layout or 2 panels (A-05)."
+        },
+        "is_question": {
+          "type": "boolean",
+          "description": "If true, the answer must sit in a callout or sidebar (routing rule R3)."
+        }
+      }
+    },
+    "archetype": {
+      "enum": [
+        "bar-ranking",
+        "column-time-series",
+        "line-trend",
+        "stacked-column",
+        "stacked-100",
+        "waterfall-bridge",
+        "kpi-big-numbers",
+        "multi-chart-panel",
+        "comparison-table",
+        "harvey-ball-table",
+        "framework-pillars",
+        "process-flow",
+        "timeline-roadmap",
+        "matrix-2x2",
+        "issue-tree",
+        "exec-summary",
+        "bullet-argument",
+        "text-columns",
+        "numbered-levers",
+        "case-example",
+        "scatter-bubble",
+        "heatmap",
+        "survey-bars",
+        "cost-curve",
+        "data-table",
+        "map",
+        "org-chart",
+        "initiative-one-pager",
+        "definition-table",
+        "quote-interview",
+        "statement",
+        "calculation-bridge",
+        "cover",
+        "agenda-tracker",
+        "section-divider",
+        "end-page"
+      ],
+      "description": "Tier 1 (20) first, then Tier 2, then navigation. See docs/archetypes/README.md."
+    },
+    "layout": {
+      "type": "object",
+      "required": [
+        "variant"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "variant": {
+          "enum": [
+            "full",
+            "takeaway_sidebar",
+            "split_2"
+          ]
+        },
+        "sidebar": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Right third, joined to the body by a chevron (L4, B-02: evidence left, conclusion right).",
+          "properties": {
+            "header": {
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "bullets",
+                "big_number",
+                "reasons"
+              ]
+            },
+            "bullets": {
+              "type": "array",
+              "maxItems": 4,
+              "items": {
+                "type": "string"
+              }
+            },
+            "big_number": {
+              "$ref": "#/$defs/point"
+            },
+            "caption": {
+              "type": "string"
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 4,
+              "description": "Numbered reasons (e.g. why the focus quadrant wins). Each has a takeaway header and a one-line detail.",
+              "items": {
+                "type": "object",
+                "required": [
+                  "header",
+                  "detail"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "header": {
+                    "type": "string"
+                  },
+                  "detail": {
+                    "type": "string"
+                  },
+                  "point": {
+                    "$ref": "#/$defs/point"
+                  }
+                }
+              }
+            },
+            "note": {
+              "type": "string",
+              "description": "Short line at the bottom of the sidebar, e.g. the next step."
+            },
+            "rows": {
+              "type": "array",
+              "maxItems": 5,
+              "description": "Label + value rows with a small bar, under the big number or bullets. Fills the sidebar with sourced numbers (A-12).",
+              "items": {
+                "type": "object",
+                "required": [
+                  "label",
+                  "point"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "point": {
+                    "$ref": "#/$defs/point"
+                  },
+                  "highlight": {
+                    "type": "boolean"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "description": "How the row's estimate was calculated, e.g. '16% of sales × 26% share' (B-08). Shown under the label."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "point": {
+      "type": "object",
+      "description": "A value shown on a slide. Either it references a data point (filled), or it is a placeholder (ghost or drafted). A literal value without data_ref is invalid (D5).",
+      "additionalProperties": false,
+      "properties": {
+        "data_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "placeholder": {
+          "type": "boolean",
+          "description": "Rendered as a dashed '?' mark plus the sticker."
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "data_ref"
+          ],
+          "properties": {
+            "placeholder": {
+              "const": false
+            }
+          }
+        },
+        {
+          "required": [
+            "placeholder"
+          ],
+          "properties": {
+            "placeholder": {
+              "const": true
+            }
+          },
+          "not": {
+            "required": [
+              "data_ref"
+            ]
+          }
+        }
+      ]
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "description": "Archetype-specific content, discriminated by kind.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/body_chart"
+        },
+        {
+          "$ref": "#/$defs/body_kpi"
+        },
+        {
+          "$ref": "#/$defs/body_panels"
+        },
+        {
+          "$ref": "#/$defs/body_table"
+        },
+        {
+          "$ref": "#/$defs/body_framework"
+        },
+        {
+          "$ref": "#/$defs/body_process"
+        },
+        {
+          "$ref": "#/$defs/body_timeline"
+        },
+        {
+          "$ref": "#/$defs/body_matrix"
+        },
+        {
+          "$ref": "#/$defs/body_tree"
+        },
+        {
+          "$ref": "#/$defs/body_text"
+        },
+        {
+          "$ref": "#/$defs/body_levers"
+        },
+        {
+          "$ref": "#/$defs/body_case"
+        },
+        {
+          "$ref": "#/$defs/body_equation"
+        }
+      ]
+    },
+    "body_chart": {
+      "type": "object",
+      "required": [
+        "kind",
+        "chart_type",
+        "categories",
+        "series"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "chart"
+        },
+        "chart_type": {
+          "enum": [
+            "bar",
+            "column",
+            "stacked_column",
+            "stacked_100",
+            "line",
+            "waterfall",
+            "scatter",
+            "survey_bar"
+          ]
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "series": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "points"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "points": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/point"
+                },
+                "description": "Same length and order as categories."
+              },
+              "role": {
+                "enum": [
+                  "primary",
+                  "comparator",
+                  "forecast"
+                ],
+                "description": "primary | comparator | forecast. Not drawn differently yet; forecasts are labeled in the categories (e.g. 2027E)."
+              }
+            }
+          }
+        },
+        "sort": {
+          "enum": [
+            "desc",
+            "asc",
+            "none"
+          ],
+          "default": "desc",
+          "description": "C1: desc unless order carries meaning (time, geography)."
+        },
+        "highlight": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Categories to accent; must match lead_message.highlights (A-02)."
+        },
+        "total": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "point": {
+              "$ref": "#/$defs/point"
+            }
+          },
+          "description": "Placed last, styled differently (C3)."
+        },
+        "benchmark": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "point": {
+              "$ref": "#/$defs/point"
+            }
+          }
+        },
+        "waterfall_steps": {
+          "type": "array",
+          "description": "For chart_type waterfall: which categories are start/end totals vs. steps.",
+          "items": {
+            "enum": [
+              "total",
+              "step"
+            ]
+          }
+        },
+        "value_format": {
+          "type": "string",
+          "description": "e.g. '0%', '$0.0B', '0.0x'."
+        }
+      }
+    },
+    "body_kpi": {
+      "type": "object",
+      "required": [
+        "kind",
+        "items"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "kpi"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "point",
+              "caption"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "point": {
+                "$ref": "#/$defs/point"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "relation": {
+                "type": "string",
+                "description": "One line comparing the number to a benchmark, e.g. '2.4x the market average of 5.5%'. Numbers here need their own data_ref in the slide."
+              },
+              "drivers": {
+                "type": "array",
+                "maxItems": 4,
+                "items": {
+                  "type": "string"
+                },
+                "description": "What drives the number (filled) or what is missing (placeholder). 2–4 lines."
+              }
+            }
+          }
+        }
+      }
+    },
+    "body_panels": {
+      "type": "object",
+      "required": [
+        "kind",
+        "panels"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "panels"
+        },
+        "panels": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "description": "All panels prove the same lead message (B-03). Each header is a takeaway sentence (B-02).",
+          "items": {
+            "type": "object",
+            "required": [
+              "header",
+              "body"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "header": {
+                "type": "string"
+              },
+              "unit_line": {
+                "type": "string"
+              },
+              "body": {
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/body_chart"
+                  },
+                  {
+                    "$ref": "#/$defs/body_kpi"
+                  }
+                ]
+              },
+              "delta": {
+                "$ref": "#/$defs/point"
+              }
+            }
+          }
+        },
+        "connector": {
+          "enum": [
+            "none",
+            "arrow"
+          ],
+          "default": "none",
+          "description": "Arrow between panels only when the left panel causes or leads to the right one (B-09). Parallel evidence: none."
+        }
+      }
+    },
+    "body_table": {
+      "type": "object",
+      "required": [
+        "kind",
+        "table_type",
+        "columns",
+        "rows"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "table"
+        },
+        "table_type": {
+          "enum": [
+            "comparison",
+            "harvey",
+            "data",
+            "heatmap",
+            "definition"
+          ]
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "cells"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "badge": {
+                "type": "string",
+                "description": "Row id; becomes a tracker prefix on later slides (S2)."
+              },
+              "label": {
+                "type": "string"
+              },
+              "highlight": {
+                "type": "boolean"
+              },
+              "cells": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "rating": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 4,
+                      "description": "Harvey ball quarters."
+                    },
+                    "point": {
+                      "$ref": "#/$defs/point"
+                    }
+                  }
+                }
+              },
+              "note": {
+                "type": "string",
+                "description": "Short verdict for the row. With a slide callout, every row's note is shown in a right-hand column; the callout target row is highlighted."
+              }
+            }
+          }
+        },
+        "legend": {
+          "type": "string"
+        },
+        "verdict_header": {
+          "type": "string",
+          "description": "Header of the verdict column, which holds row notes and the callout (default 'Verdict')."
+        }
+      }
+    },
+    "titled_item": {
+      "type": "object",
+      "required": [
+        "header"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "header": {
+          "type": "string",
+          "description": "Leads with the takeaway of this box (B-02)."
+        },
+        "detail": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 5
+        },
+        "point": {
+          "$ref": "#/$defs/point"
+        },
+        "emphasis": {
+          "type": "boolean"
+        },
+        "point_caption": {
+          "type": "string",
+          "description": "Label for the item's number, e.g. 'Margin impact by 2027'."
+        },
+        "footer": {
+          "type": "string",
+          "description": "One bold line at the bottom of the box, e.g. owner and start date, or the exit gate of a step."
+        }
+      }
+    },
+    "body_framework": {
+      "type": "object",
+      "required": [
+        "kind",
+        "items"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "framework"
+        },
+        "shape": {
+          "enum": [
+            "pillars",
+            "house",
+            "tiles",
+            "wheel"
+          ]
+        },
+        "roof": {
+          "type": "string"
+        },
+        "foundation": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/titled_item"
+          }
+        }
+      }
+    },
+    "body_process": {
+      "type": "object",
+      "required": [
+        "kind",
+        "steps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "process"
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 7,
+          "items": {
+            "$ref": "#/$defs/titled_item"
+          }
+        },
+        "from_to": {
+          "type": "boolean",
+          "description": "Render as From → To columns instead of chevrons."
+        }
+      }
+    },
+    "body_timeline": {
+      "type": "object",
+      "required": [
+        "kind",
+        "periods",
+        "rows"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "timeline"
+        },
+        "periods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "bars"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "bars": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "start",
+                    "end"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "start": {
+                      "type": "string"
+                    },
+                    "end": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "emphasis": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "at",
+              "label"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "at": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "body_matrix": {
+      "type": "object",
+      "required": [
+        "kind",
+        "x_axis",
+        "y_axis",
+        "items"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "matrix"
+        },
+        "x_axis": {
+          "$ref": "#/$defs/axis"
+        },
+        "y_axis": {
+          "$ref": "#/$defs/axis"
+        },
+        "quadrant_labels": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "string"
+          },
+          "description": "Order: top-left, top-right, bottom-left, bottom-right."
+        },
+        "focus_quadrant": {
+          "enum": [
+            "top-left",
+            "top-right",
+            "bottom-left",
+            "bottom-right"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "x",
+              "y"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "size": {
+                "type": "number"
+              },
+              "data_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "axis": {
+      "type": "object",
+      "required": [
+        "label"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "low": {
+          "type": "string",
+          "default": "Low"
+        },
+        "high": {
+          "type": "string",
+          "default": "High"
+        }
+      }
+    },
+    "body_tree": {
+      "type": "object",
+      "required": [
+        "kind",
+        "root"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "tree"
+        },
+        "root": {
+          "$ref": "#/$defs/tree_node"
+        },
+        "mece_note": {
+          "type": "string",
+          "description": "How the branches are mutually exclusive and collectively exhaustive (G-03)."
+        }
+      }
+    },
+    "tree_node": {
+      "type": "object",
+      "required": [
+        "label"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "operator": {
+          "enum": [
+            "+",
+            "×",
+            "÷",
+            "−",
+            "or"
+          ],
+          "description": "How the children combine into this node."
+        },
+        "point": {
+          "$ref": "#/$defs/point"
+        },
+        "emphasis": {
+          "type": "boolean"
+        },
+        "children": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "$ref": "#/$defs/tree_node"
+          }
+        }
+      }
+    },
+    "body_text": {
+      "type": "object",
+      "required": [
+        "kind",
+        "style"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "text"
+        },
+        "style": {
+          "enum": [
+            "bullets",
+            "columns",
+            "statement"
+          ]
+        },
+        "bullets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "sub": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "columns": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/titled_item"
+          }
+        },
+        "statement": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "archetype 'statement': the lead message itself is set large in the middle of the slide. No chart, no bullets.",
+          "properties": {
+            "support": {
+              "type": "string",
+              "description": "Optional one-line support under the statement (B-02: point first, then detail)."
+            },
+            "emphasis": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Phrases of the statement shown in the accent color. Must appear in lead_message.text (A-02)."
+            },
+            "split": {
+              "type": "boolean",
+              "default": false,
+              "description": "Split variant: statement on a solid accent panel on the left, support on the right."
+            }
+          }
+        }
+      }
+    },
+    "body_levers": {
+      "type": "object",
+      "required": [
+        "kind",
+        "items"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "levers"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "code",
+              "text"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "point": {
+                "$ref": "#/$defs/point"
+              },
+              "metric": {
+                "type": "string",
+                "description": "What the number measures, shown under it, e.g. 'of shoppers say it is hard to find' (B-10)."
+              }
+            }
+          }
+        },
+        "total": {
+          "$ref": "#/$defs/point",
+          "description": "Title number must equal this (A-01)."
+        },
+        "headers": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          },
+          "description": "Column headers: [moves column, numbers column], e.g. ['Move', 'Evidence']. Required when items carry numbers (B-10)."
+        }
+      }
+    },
+    "body_case": {
+      "type": "object",
+      "required": [
+        "kind",
+        "situation",
+        "approach",
+        "impact"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "case"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "situation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "approach": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "impact": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "point",
+              "caption"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "point": {
+                "$ref": "#/$defs/point"
+              },
+              "caption": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "situation_header": {
+          "type": "string",
+          "description": "Takeaway header for the situation column (B-02). Default 'Situation'."
+        },
+        "approach_header": {
+          "type": "string",
+          "description": "Takeaway header for the approach column (B-02). Default 'Approach'."
+        },
+        "connector": {
+          "enum": [
+            "impact_only",
+            "all"
+          ],
+          "default": "impact_only",
+          "description": "Arrows between columns (B-09). Default: only before Impact, since situation and approach are not cause and effect."
+        }
+      }
+    },
+    "data_requirement": {
+      "type": "object",
+      "required": [
+        "id",
+        "description",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "description": {
+          "type": "string",
+          "description": "e.g. 'Share of firms using gen AI in production, by sector, US, 2025'."
+        },
+        "recommended_exhibit": {
+          "type": "string",
+          "description": "e.g. 'Sorted horizontal bar, software highlighted, average row last'."
+        },
+        "metric": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "candidate_sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Where to look: user files first (D2), then named public sources."
+        },
+        "status": {
+          "enum": [
+            "needed",
+            "found_user",
+            "found_web",
+            "not_found"
+          ]
+        },
+        "data_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        }
+      }
+    },
+    "data_point": {
+      "type": "object",
+      "required": [
+        "id",
+        "slide_id",
+        "label",
+        "value",
+        "unit",
+        "source_id"
+      ],
+      "additionalProperties": false,
+      "description": "One row in the source workbook: Data point | Value | Source | URL | Excerpt | Accessed | Used in.",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "slide_id": {
+          "$ref": "#/$defs/id",
+          "description": "First slide that shows this number. Reuse the same data point on later slides instead of copying it."
+        },
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "source_id": {
+          "$ref": "#/$defs/id"
+        },
+        "excerpt": {
+          "type": "string",
+          "description": "Verbatim text or table cell the value was taken from."
+        },
+        "locator": {
+          "type": "string",
+          "description": "Page, table or cell in the source."
+        },
+        "derived_from": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "description": "For source kind derived: inputs to the calculation."
+        },
+        "formula": {
+          "type": "string"
+        },
+        "used_in": {
+          "type": "string",
+          "description": "Which slide element shows it, e.g. 'bar: Software', 'title', 'sidebar'."
+        },
+        "value_high": {
+          "type": "number",
+          "description": "Upper end of a range (value = lower end). Shown as e.g. '4–5 years'."
+        },
+        "calc": {
+          "type": "string",
+          "description": "Machine-readable formula over data point ids, e.g. '(us1 - pl1) * 100'. Becomes a live Excel formula; check.py recomputes it (B-08)."
+        },
+        "estimate": {
+          "type": "boolean",
+          "description": "true for projections, sizings and uplifts: our own estimate, not a fact. Needs calc, assumptions and a visible basis on the slide (B-08)."
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Every assumption behind an estimate, one per line. Listed in the Calculations sheet."
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "user_provided",
+            "web",
+            "derived"
+          ],
+          "description": "D2: user_provided wins when it conflicts with web."
+        },
+        "name": {
+          "type": "string",
+          "description": "As printed on the slide's 'Source:' line."
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "input_id": {
+          "$ref": "#/$defs/id",
+          "description": "For user_provided: which input it came from."
+        },
+        "accessed": {
+          "type": "string",
+          "format": "date"
+        },
+        "published": {
+          "type": "string"
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ran_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "rule",
+              "status"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "rule": {
+                "type": "string",
+                "description": "Principle id, e.g. B-04, A-01."
+              },
+              "slide_id": {
+                "$ref": "#/$defs/id"
+              },
+              "status": {
+                "enum": [
+                  "pass",
+                  "warn",
+                  "fail"
+                ]
+              },
+              "detail": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "equation_term": {
+      "type": "object",
+      "required": [
+        "point",
+        "caption"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "op": {
+          "enum": [
+            "+",
+            "−",
+            "×",
+            "÷",
+            "="
+          ],
+          "description": "Operator shown before this term. The last term is the result and takes '='."
+        },
+        "point": {
+          "$ref": "#/$defs/point"
+        },
+        "caption": {
+          "type": "string",
+          "description": "What the number is, in plain words (B-10). Add the source if it is not ours: '(supplier review, 2025)'."
+        }
+      }
+    },
+    "body_equation": {
+      "type": "object",
+      "required": [
+        "kind",
+        "terms"
+      ],
+      "additionalProperties": false,
+      "description": "A calculation drawn as number cards joined by operators (B-08). Use it when the slide's point is how an estimate is built.",
+      "properties": {
+        "kind": {
+          "const": "equation"
+        },
+        "terms": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/equation_term"
+          }
+        },
+        "assumptions_header": {
+          "type": "string",
+          "description": "Takeaway header over the assumptions (B-02)."
+        },
+        "assumptions": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

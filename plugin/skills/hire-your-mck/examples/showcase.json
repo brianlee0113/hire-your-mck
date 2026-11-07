@@ -1,0 +1,1010 @@
+{
+  "spec_version": "0.1",
+  "mode": "deck_detailed",
+  "meta": {
+    "title": "Renderer showcase",
+    "subtitle": "Every Tier 1 kind the v0 renderer draws",
+    "company_name": "Example Freight (fictional)",
+    "date": "2026-11-05",
+    "language": "en-US",
+    "confidentiality": "Illustrative example — all companies, numbers and sources are fictional",
+    "theme": "navy"
+  },
+  "storyline": {
+    "governing_thought": "Example Freight can close its margin gap and win the mid-market by starting in the Sun Belt",
+    "exec_summary": [
+      {
+        "id": "1",
+        "text": "Three levers close the $40M margin gap, and digital booking is now the largest channel",
+        "supports": [
+          "1",
+          "2"
+        ],
+        "sub_points": [
+          {
+            "text": "Pricing closes more than half of the gap on its own",
+            "slide_id": "1"
+          },
+          {
+            "text": "Digital booking doubled its share since 2021",
+            "slide_id": "2"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "text": "Mid-market volume keeps outgrowing the market, and the Sun Belt is the best place to start",
+        "supports": [
+          "3",
+          "4"
+        ],
+        "sub_points": [
+          {
+            "text": "Mid-market volume pulled away from the market every year since 2020",
+            "slide_id": "3"
+          },
+          {
+            "text": "The Sun Belt leads on all four launch criteria",
+            "slide_id": "4"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "text": "We win by changing pricing, network and sales, starting in the Sun Belt",
+        "supports": [
+          "5",
+          "6"
+        ],
+        "sub_points": [
+          {
+            "text": "Index pricing, a denser Sun Belt network and inside sales",
+            "slide_id": "5"
+          },
+          {
+            "text": "Winning the Sun Belt funds the national rollout",
+            "slide_id": "6"
+          }
+        ]
+      }
+    ],
+    "next_steps": [
+      {
+        "action": "Approve the pricing pilot with top Sun Belt accounts",
+        "owner": "Executive committee",
+        "timing": "Dec 2026"
+      },
+      {
+        "action": "Sign the Dallas cross-dock lease",
+        "owner": "Network operations",
+        "timing": "Q1 2027"
+      },
+      {
+        "action": "Hire the inside sales team",
+        "owner": "Sales",
+        "timing": "Q1–Q2 2027"
+      },
+      {
+        "action": "Report pilot margin and churn",
+        "owner": "Finance",
+        "timing": "Q2 2027"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "1",
+      "title": "Margin",
+      "exec_item_id": "1",
+      "tracker_label": "Margin"
+    },
+    {
+      "id": "2",
+      "title": "Growth",
+      "exec_item_id": "2",
+      "tracker_label": "Growth"
+    },
+    {
+      "id": "3",
+      "title": "Plan",
+      "exec_item_id": "3",
+      "tracker_label": "Plan"
+    }
+  ],
+  "slides": [
+    {
+      "id": "c",
+      "role": "cover",
+      "status": "filled"
+    },
+    {
+      "id": "es",
+      "role": "exec_summary",
+      "status": "filled",
+      "archetype": "exec-summary",
+      "message_type": "navigation"
+    },
+    {
+      "id": "1",
+      "role": "content",
+      "section_id": "1",
+      "status": "filled",
+      "archetype": "waterfall-bridge",
+      "message_type": "component",
+      "lead_message": {
+        "text": "Three levers lift margin from $120M to the $160M target, and pricing delivers more than half of the gain",
+        "numbers": [
+          {
+            "text": "$120M",
+            "data_ref": "w0"
+          },
+          {
+            "text": "$160M",
+            "data_ref": "w4"
+          }
+        ],
+        "highlights": [
+          "Pricing"
+        ],
+        "count_word": 3,
+        "clauses": 1
+      },
+      "unit_line": "**Operating margin, mid-market accounts**, $ millions, 2026 to 2027 target",
+      "layout": {
+        "variant": "takeaway_sidebar",
+        "sidebar": {
+          "kind": "big_number",
+          "big_number": {
+            "data_ref": "psh"
+          },
+          "caption": "of the $40M gain to the 2027 target comes from pricing",
+          "bullets": [
+            "**Pricing first:** the largest step, and it needs no new capital",
+            "**Network second:** the two cross-docks need capex and about a year to ramp up",
+            "**Sales cost last:** the smallest step, but it frees field time for the top accounts"
+          ]
+        }
+      },
+      "body": {
+        "kind": "chart",
+        "chart_type": "waterfall",
+        "categories": [
+          "2026 margin",
+          "Pricing",
+          "Network density",
+          "Sales cost",
+          "2027 target"
+        ],
+        "series": [
+          {
+            "name": "Margin",
+            "points": [
+              {
+                "data_ref": "w0"
+              },
+              {
+                "data_ref": "w1"
+              },
+              {
+                "data_ref": "w2"
+              },
+              {
+                "data_ref": "w3"
+              },
+              {
+                "data_ref": "w4"
+              }
+            ]
+          }
+        ],
+        "sort": "none",
+        "highlight": [
+          "Pricing"
+        ],
+        "value_format": "\"$\"#,##0\"M\""
+      }
+    },
+    {
+      "id": "2",
+      "role": "content",
+      "section_id": "1",
+      "status": "filled",
+      "archetype": "stacked-100",
+      "message_type": "component",
+      "lead_message": {
+        "text": "Digital booking has doubled its share since 2021 and is now the largest channel",
+        "highlights": [
+          "Digital"
+        ],
+        "clauses": 1
+      },
+      "unit_line": "**Share of mid-market bookings by channel**, %, 2021–25",
+      "layout": {
+        "variant": "takeaway_sidebar",
+        "sidebar": {
+          "header": "Digital took share from both other channels",
+          "kind": "bullets",
+          "bullets": [
+            "**Digital:** rose in every period, fastest after self-serve quoting launched in 2023",
+            "**Broker:** still large on legacy lanes, but lost share every period",
+            "**Direct sales:** now focused on the largest accounts"
+          ]
+        }
+      },
+      "body": {
+        "kind": "chart",
+        "chart_type": "stacked_100",
+        "categories": [
+          "2021",
+          "2023",
+          "2025"
+        ],
+        "series": [
+          {
+            "name": "Digital",
+            "points": [
+              {
+                "data_ref": "mdg2021"
+              },
+              {
+                "data_ref": "mdg2023"
+              },
+              {
+                "data_ref": "mdg2025"
+              }
+            ]
+          },
+          {
+            "name": "Broker",
+            "points": [
+              {
+                "data_ref": "mbr2021"
+              },
+              {
+                "data_ref": "mbr2023"
+              },
+              {
+                "data_ref": "mbr2025"
+              }
+            ]
+          },
+          {
+            "name": "Direct sales",
+            "points": [
+              {
+                "data_ref": "mds2021"
+              },
+              {
+                "data_ref": "mds2023"
+              },
+              {
+                "data_ref": "mds2025"
+              }
+            ]
+          }
+        ],
+        "sort": "none",
+        "highlight": [
+          "Digital"
+        ],
+        "value_format": "0%"
+      }
+    },
+    {
+      "id": "3",
+      "role": "content",
+      "section_id": "2",
+      "status": "filled",
+      "archetype": "line-trend",
+      "message_type": "time-series",
+      "lead_message": {
+        "text": "Mid-market volume has pulled away from the market every year since 2020",
+        "highlights": [
+          "Mid-market"
+        ],
+        "clauses": 1
+      },
+      "unit_line": "**Shipment volume**, index 2019 = 100",
+      "layout": {
+        "variant": "takeaway_sidebar",
+        "sidebar": {
+          "header": "Why mid-market pulled away",
+          "kind": "bullets",
+          "bullets": [
+            "**2020–22:** e-commerce shippers moved volume from parcel to LTL",
+            "**2023:** mid-market kept growing while the market stalled in the freight recession",
+            "**2024–25:** the gap widened as new Sun Belt lanes opened"
+          ]
+        }
+      },
+      "body": {
+        "kind": "chart",
+        "chart_type": "line",
+        "categories": [
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "series": [
+          {
+            "name": "Mid-market",
+            "points": [
+              {
+                "data_ref": "la2019"
+              },
+              {
+                "data_ref": "la2020"
+              },
+              {
+                "data_ref": "la2021"
+              },
+              {
+                "data_ref": "la2022"
+              },
+              {
+                "data_ref": "la2023"
+              },
+              {
+                "data_ref": "la2024"
+              },
+              {
+                "data_ref": "la2025"
+              }
+            ]
+          },
+          {
+            "name": "Total market",
+            "points": [
+              {
+                "data_ref": "lb2019"
+              },
+              {
+                "data_ref": "lb2020"
+              },
+              {
+                "data_ref": "lb2021"
+              },
+              {
+                "data_ref": "lb2022"
+              },
+              {
+                "data_ref": "lb2023"
+              },
+              {
+                "data_ref": "lb2024"
+              },
+              {
+                "data_ref": "lb2025"
+              }
+            ]
+          }
+        ],
+        "sort": "none",
+        "highlight": [
+          "Mid-market"
+        ],
+        "value_format": "0"
+      }
+    },
+    {
+      "id": "4",
+      "role": "content",
+      "section_id": "2",
+      "status": "filled",
+      "archetype": "harvey-ball-table",
+      "message_type": "structure",
+      "lead_message": {
+        "text": "The Sun Belt scores highest on all four criteria we used to pick a launch region",
+        "highlights": [
+          "Sun Belt"
+        ],
+        "count_word": 4,
+        "clauses": 1
+      },
+      "layout": {
+        "variant": "full"
+      },
+      "body": {
+        "kind": "table",
+        "table_type": "harvey",
+        "columns": [
+          "Size of prize",
+          "Ease of entry",
+          "Fit with network",
+          "Speed to impact",
+          "Mid-market spend",
+          "Verdict"
+        ],
+        "rows": [
+          {
+            "label": "Sun Belt",
+            "highlight": true,
+            "cells": [
+              {
+                "rating": 4
+              },
+              {
+                "rating": 3
+              },
+              {
+                "rating": 4
+              },
+              {
+                "rating": 3
+              },
+              {
+                "point": {
+                  "data_ref": "spsu"
+                }
+              },
+              {
+                "text": "Start here: largest spend, few rivals, network in place"
+              }
+            ]
+          },
+          {
+            "label": "Midwest",
+            "cells": [
+              {
+                "rating": 2
+              },
+              {
+                "rating": 3
+              },
+              {
+                "rating": 3
+              },
+              {
+                "rating": 2
+              },
+              {
+                "point": {
+                  "data_ref": "spmi"
+                }
+              },
+              {
+                "text": "Fallback if network fit slips"
+              }
+            ]
+          },
+          {
+            "label": "Northeast",
+            "cells": [
+              {
+                "rating": 3
+              },
+              {
+                "rating": 1
+              },
+              {
+                "rating": 2
+              },
+              {
+                "rating": 1
+              },
+              {
+                "point": {
+                  "data_ref": "spno"
+                }
+              },
+              {
+                "text": "Not now: incumbents hold the best lanes"
+              }
+            ]
+          },
+          {
+            "label": "Pacific Northwest",
+            "cells": [
+              {
+                "rating": 1
+              },
+              {
+                "rating": 2
+              },
+              {
+                "rating": 1
+              },
+              {
+                "rating": 2
+              },
+              {
+                "point": {
+                  "data_ref": "sppa"
+                }
+              },
+              {
+                "text": "Not now: small and far from our network"
+              }
+            ]
+          }
+        ],
+        "legend": "Team assessment from customer interviews and network data (illustrative)"
+      },
+      "footnotes": [
+        "Ratings combine shipper interviews, freight spend and our current terminal map; full circle = strongest of the four regions"
+      ],
+      "unit_line": "**Launch criteria by region**, team assessment; mid-market freight spend in $ billions, 2025"
+    },
+    {
+      "id": "5",
+      "role": "content",
+      "section_id": "3",
+      "status": "filled",
+      "archetype": "text-columns",
+      "message_type": "argument",
+      "lead_message": {
+        "text": "Winning the segment means changing how we price, where we operate and how we sell",
+        "clauses": 1,
+        "numbers": []
+      },
+      "layout": {
+        "variant": "full"
+      },
+      "body": {
+        "kind": "text",
+        "style": "columns",
+        "columns": [
+          {
+            "header": "Price on index, not on lane",
+            "detail": [
+              "Index-linked contracts for every account above $2M",
+              "Quarterly price review replaces the annual tender",
+              "Fuel and labor pass-through written into the index",
+              "Pilot with top accounts before full rollout"
+            ],
+            "point": {
+              "data_ref": "w1"
+            },
+            "point_caption": "Margin impact by 2027",
+            "footer": "Owner: pricing team · starts Q1 2027"
+          },
+          {
+            "header": "Densify the Sun Belt network",
+            "detail": [
+              "Two new cross-docks in Dallas and Atlanta",
+              "Shared linehaul capacity with regional partners",
+              "Re-route low-density lanes through the new hubs",
+              "Close the two least-used Midwest terminals"
+            ],
+            "point": {
+              "data_ref": "w2"
+            },
+            "point_caption": "Margin impact by 2027",
+            "footer": "Owner: network ops · starts Q2 2027"
+          },
+          {
+            "header": "Sell through inside sales",
+            "detail": [
+              "Move accounts under $500K to inside sales",
+              "Field team focuses on the top 200 accounts",
+              "Self-serve quoting for repeat lanes",
+              "Pay commission on margin, not on volume"
+            ],
+            "point": {
+              "data_ref": "w3"
+            },
+            "point_caption": "Margin impact by 2027",
+            "emphasis": true,
+            "footer": "Owner: sales · starts Q2 2027"
+          }
+        ]
+      },
+      "so_what": "Together, the three moves close the $40M margin gap by 2027"
+    },
+    {
+      "id": "6",
+      "role": "content",
+      "section_id": "3",
+      "status": "filled",
+      "archetype": "statement",
+      "message_type": "argument",
+      "lead_message": {
+        "text": "Winning the Sun Belt first funds the rest of the national rollout",
+        "highlights": [
+          "Sun Belt"
+        ],
+        "clauses": 1
+      },
+      "layout": {
+        "variant": "full"
+      },
+      "body": {
+        "kind": "text",
+        "style": "statement",
+        "statement": {
+          "support": "Each region we add after it reuses the same network and pricing playbook",
+          "emphasis": [
+            "Sun Belt"
+          ]
+        }
+      }
+    },
+    {
+      "id": "end",
+      "role": "end_page",
+      "status": "filled"
+    }
+  ],
+  "data_points": [
+    {
+      "id": "w0",
+      "slide_id": "1",
+      "label": "Operating margin: 2026 margin",
+      "value": 120,
+      "unit": "$M",
+      "period": "2026–27",
+      "source_id": "s1"
+    },
+    {
+      "id": "w1",
+      "slide_id": "1",
+      "label": "Operating margin: Pricing",
+      "value": 22,
+      "unit": "$M",
+      "period": "2026–27",
+      "source_id": "s1"
+    },
+    {
+      "id": "w2",
+      "slide_id": "1",
+      "label": "Operating margin: Network density",
+      "value": 11,
+      "unit": "$M",
+      "period": "2026–27",
+      "source_id": "s1"
+    },
+    {
+      "id": "w3",
+      "slide_id": "1",
+      "label": "Operating margin: Sales cost",
+      "value": 7,
+      "unit": "$M",
+      "period": "2026–27",
+      "source_id": "s1"
+    },
+    {
+      "id": "w4",
+      "slide_id": "1",
+      "label": "Operating margin: 2027 target",
+      "value": 160,
+      "unit": "$M",
+      "period": "2026–27",
+      "source_id": "s1"
+    },
+    {
+      "id": "wgap",
+      "slide_id": "1",
+      "label": "Margin gap to target",
+      "value": 40,
+      "unit": "$M",
+      "period": "2026–27",
+      "source_id": "s3",
+      "derived_from": [
+        "w0",
+        "w4"
+      ],
+      "formula": "w4 − w0 = 160 − 120",
+      "calc": "w4 - w0"
+    },
+    {
+      "id": "mdg2021",
+      "slide_id": "2",
+      "label": "Digital share of bookings, 2021",
+      "value": 0.18,
+      "unit": "%",
+      "period": "2021",
+      "source_id": "s2"
+    },
+    {
+      "id": "mdg2023",
+      "slide_id": "2",
+      "label": "Digital share of bookings, 2023",
+      "value": 0.27,
+      "unit": "%",
+      "period": "2023",
+      "source_id": "s2"
+    },
+    {
+      "id": "mdg2025",
+      "slide_id": "2",
+      "label": "Digital share of bookings, 2025",
+      "value": 0.39,
+      "unit": "%",
+      "period": "2025",
+      "source_id": "s2"
+    },
+    {
+      "id": "mbr2021",
+      "slide_id": "2",
+      "label": "Broker share of bookings, 2021",
+      "value": 0.42,
+      "unit": "%",
+      "period": "2021",
+      "source_id": "s2"
+    },
+    {
+      "id": "mbr2023",
+      "slide_id": "2",
+      "label": "Broker share of bookings, 2023",
+      "value": 0.38,
+      "unit": "%",
+      "period": "2023",
+      "source_id": "s2"
+    },
+    {
+      "id": "mbr2025",
+      "slide_id": "2",
+      "label": "Broker share of bookings, 2025",
+      "value": 0.33,
+      "unit": "%",
+      "period": "2025",
+      "source_id": "s2"
+    },
+    {
+      "id": "mds2021",
+      "slide_id": "2",
+      "label": "Direct sales share of bookings, 2021",
+      "value": 0.4,
+      "unit": "%",
+      "period": "2021",
+      "source_id": "s2"
+    },
+    {
+      "id": "mds2023",
+      "slide_id": "2",
+      "label": "Direct sales share of bookings, 2023",
+      "value": 0.35,
+      "unit": "%",
+      "period": "2023",
+      "source_id": "s2"
+    },
+    {
+      "id": "mds2025",
+      "slide_id": "2",
+      "label": "Direct sales share of bookings, 2025",
+      "value": 0.28,
+      "unit": "%",
+      "period": "2025",
+      "source_id": "s2"
+    },
+    {
+      "id": "la2019",
+      "slide_id": "3",
+      "label": "Mid-market volume index 2019",
+      "value": 100,
+      "unit": "index",
+      "period": "2019",
+      "source_id": "s2"
+    },
+    {
+      "id": "la2020",
+      "slide_id": "3",
+      "label": "Mid-market volume index 2020",
+      "value": 104,
+      "unit": "index",
+      "period": "2020",
+      "source_id": "s2"
+    },
+    {
+      "id": "la2021",
+      "slide_id": "3",
+      "label": "Mid-market volume index 2021",
+      "value": 111,
+      "unit": "index",
+      "period": "2021",
+      "source_id": "s2"
+    },
+    {
+      "id": "la2022",
+      "slide_id": "3",
+      "label": "Mid-market volume index 2022",
+      "value": 119,
+      "unit": "index",
+      "period": "2022",
+      "source_id": "s2"
+    },
+    {
+      "id": "la2023",
+      "slide_id": "3",
+      "label": "Mid-market volume index 2023",
+      "value": 126,
+      "unit": "index",
+      "period": "2023",
+      "source_id": "s2"
+    },
+    {
+      "id": "la2024",
+      "slide_id": "3",
+      "label": "Mid-market volume index 2024",
+      "value": 135,
+      "unit": "index",
+      "period": "2024",
+      "source_id": "s2"
+    },
+    {
+      "id": "la2025",
+      "slide_id": "3",
+      "label": "Mid-market volume index 2025",
+      "value": 144,
+      "unit": "index",
+      "period": "2025",
+      "source_id": "s2"
+    },
+    {
+      "id": "lb2019",
+      "slide_id": "3",
+      "label": "Market volume index 2019",
+      "value": 100,
+      "unit": "index",
+      "period": "2019",
+      "source_id": "s2"
+    },
+    {
+      "id": "lb2020",
+      "slide_id": "3",
+      "label": "Market volume index 2020",
+      "value": 101,
+      "unit": "index",
+      "period": "2020",
+      "source_id": "s2"
+    },
+    {
+      "id": "lb2021",
+      "slide_id": "3",
+      "label": "Market volume index 2021",
+      "value": 103,
+      "unit": "index",
+      "period": "2021",
+      "source_id": "s2"
+    },
+    {
+      "id": "lb2022",
+      "slide_id": "3",
+      "label": "Market volume index 2022",
+      "value": 104,
+      "unit": "index",
+      "period": "2022",
+      "source_id": "s2"
+    },
+    {
+      "id": "lb2023",
+      "slide_id": "3",
+      "label": "Market volume index 2023",
+      "value": 106,
+      "unit": "index",
+      "period": "2023",
+      "source_id": "s2"
+    },
+    {
+      "id": "lb2024",
+      "slide_id": "3",
+      "label": "Market volume index 2024",
+      "value": 108,
+      "unit": "index",
+      "period": "2024",
+      "source_id": "s2"
+    },
+    {
+      "id": "lb2025",
+      "slide_id": "3",
+      "label": "Market volume index 2025",
+      "value": 110,
+      "unit": "index",
+      "period": "2025",
+      "source_id": "s2"
+    },
+    {
+      "id": "spsu",
+      "slide_id": "4",
+      "label": "Mid-market freight spend, Sun Belt",
+      "value": 4.8,
+      "unit": "$B",
+      "period": "2025",
+      "source_id": "s2"
+    },
+    {
+      "id": "spmi",
+      "slide_id": "4",
+      "label": "Mid-market freight spend, Midwest",
+      "value": 2.6,
+      "unit": "$B",
+      "period": "2025",
+      "source_id": "s2"
+    },
+    {
+      "id": "spno",
+      "slide_id": "4",
+      "label": "Mid-market freight spend, Northeast",
+      "value": 4.1,
+      "unit": "$B",
+      "period": "2025",
+      "source_id": "s2"
+    },
+    {
+      "id": "sppa",
+      "slide_id": "4",
+      "label": "Mid-market freight spend, Pacific Northwest",
+      "value": 1.2,
+      "unit": "$B",
+      "period": "2025",
+      "source_id": "s2"
+    },
+    {
+      "id": "pl1",
+      "slide_id": "5",
+      "label": "Index-pricing threshold, annual account revenue",
+      "value": 2,
+      "unit": "$M",
+      "period": "2027 plan",
+      "source_id": "plan",
+      "locator": "Plan assumptions tab"
+    },
+    {
+      "id": "pl2",
+      "slide_id": "5",
+      "label": "Inside-sales threshold, annual account revenue",
+      "value": 500,
+      "unit": "$K",
+      "period": "2027 plan",
+      "source_id": "plan",
+      "locator": "Plan assumptions tab"
+    },
+    {
+      "id": "pl3",
+      "slide_id": "5",
+      "label": "Top accounts kept by field sales",
+      "value": 200,
+      "unit": "accounts",
+      "period": "2027 plan",
+      "source_id": "plan",
+      "locator": "Plan assumptions tab"
+    },
+    {
+      "id": "psh",
+      "slide_id": "1",
+      "label": "Pricing's share of the margin gain to the 2027 target",
+      "value": 0.55,
+      "unit": "%",
+      "period": "2026–27",
+      "source_id": "s3",
+      "derived_from": [
+        "w1",
+        "w0",
+        "w4"
+      ],
+      "calc": "w1 / (w4 - w0)",
+      "formula": "22 ÷ (160 − 120) = 55%",
+      "used_in": "sidebar big number"
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "user_provided",
+      "name": "Example Freight account P&L (fictional)"
+    },
+    {
+      "id": "s2",
+      "kind": "web",
+      "name": "Example Freight Association, Annual Market Report 2025 (fictional)",
+      "publisher": "Example Freight Association",
+      "url": "https://example.org/market-report-2025",
+      "accessed": "2026-11-05",
+      "published": "2025"
+    },
+    {
+      "id": "s3",
+      "kind": "derived",
+      "name": "Team analysis"
+    },
+    {
+      "id": "plan",
+      "kind": "user_provided",
+      "name": "Example Freight mid-market plan (fictional)"
+    }
+  ]
+}
