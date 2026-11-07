@@ -160,6 +160,7 @@ The layout rules stay the same; only the colors and fonts change. The design is 
 ## Install details
 
 - **Claude Code, inside a session:** `/plugin marketplace add brianlee0113/hire-your-mck`, then `/plugin install hire-your-mck@hire-your-mck`.
+- **Other agents** (Cursor, Codex and others that read Agent Skills): `npx skills add brianlee0113/hire-your-mck`. Built and tested on Claude.
 - **Claude.ai:** code execution must be on (**Settings → Capabilities**); the skill runs Python to build the files.
 - **What happens after the brief:** it asks a few multiple-choice questions, shows you the storyline for approval, then returns `<name>.pptx` and `<name>-sources.xlsx`.
 - **Dependencies:** `python-pptx`, `openpyxl`, `jsonschema` and `pillow`, installed on first run if missing.
