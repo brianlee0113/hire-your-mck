@@ -38,7 +38,8 @@ def build(OUT=OUT, zip_it=True):
     (OUT / "scripts" / "renderer").mkdir(parents=True)
     (OUT / "scripts" / "templates").mkdir()
 
-    shutil.copy(ROOT / "skill" / "SKILL.md", OUT / "SKILL.md")
+    # The source is SKILL.src.md so that skill installers (e.g. `npx skills add`) find only the built copy
+    shutil.copy(ROOT / "skill" / "SKILL.src.md", OUT / "SKILL.md")
     for f in (ROOT / "skill" / "references").glob("*.md"):
         shutil.copy(f, OUT / "references" / f.name)
     shutil.copy(ROOT / "docs/spec/examples/example-deck.json", OUT / "examples" / "example-deck.json")
