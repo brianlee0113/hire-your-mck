@@ -8,7 +8,7 @@ editable PowerPoint charts, and a source for every number. It researches the dat
 and hands you two files: the deck, and a separate Excel workbook that tracks every source, one sheet per slide.
 Built by an ex-McKinsey consultant.
 
-![From a short brief to a storyline to a finished deck](docs/readme/hero.png)
+![From a short brief to a storyline to a finished deck with its source workbook](docs/readme/demo.gif)
 
 <sub>Every slide on this page comes from one real example: a fictional company, <a href="renderer/examples/cobalt-ledger.json">Cobalt Ledger</a>, deciding whether to launch AI for its small-business customers, built entirely from public data (US Census Bureau, Federal Reserve, Stanford GSB, company press releases).</sub>
 
