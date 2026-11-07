@@ -12,6 +12,22 @@ Built by an ex-McKinsey consultant.
 
 <sub>Every slide on this page comes from one real example: a fictional company, <a href="renderer/examples/cobalt-ledger.json">Cobalt Ledger</a>, deciding whether to launch AI for its small-business customers, built entirely from public data (US Census Bureau, Federal Reserve, Stanford GSB, company press releases).</sub>
 
+## Get started
+
+**Claude Code**
+
+```bash
+claude plugin install hire-your-mck --marketplace brianlee0113/hire-your-mck
+```
+
+**Claude.ai**: download [`hire-your-mck.zip`](https://github.com/brianlee0113/hire-your-mck/releases/latest/download/hire-your-mck.zip), then **Customize → Skills → Upload a skill**.
+
+Then just brief it:
+
+> Our CEO has to decide whether to launch an AI package for our small-business customers. Build the deck from public data.
+
+[More install options](#install-details)
+
 ---
 
 ## Pretty slides are easy. The logic is the hard part.
@@ -141,27 +157,12 @@ The layout rules stay the same; only the colors and fonts change. The design is 
 
 ---
 
-## Quick start
+## Install details
 
-### Claude Code: one command
-
-```bash
-claude plugin install hire-your-mck --marketplace brianlee0113/hire-your-mck
-```
-
-Or inside a session: `/plugin marketplace add brianlee0113/hire-your-mck`, then `/plugin install hire-your-mck@hire-your-mck`.
-
-### Claude.ai: download, then upload
-
-1. Download **`hire-your-mck.zip`** from the [latest release](https://github.com/brianlee0113/hire-your-mck/releases/latest).
-2. In Claude, open **Customize → Skills → + → Upload a skill** and choose the zip.
-3. Make sure code execution is on (**Settings → Capabilities**); the skill runs Python to build the files.
-
-### Then brief it
-
-> Our CEO has to decide whether to launch an AI package for our small-business accounting customers now. Build the deck from public data.
-
-It asks a few multiple-choice questions, shows you the storyline for approval, then returns `<name>.pptx` and `<name>-sources.xlsx`. It needs `python-pptx`, `openpyxl`, `jsonschema` and `pillow`, and installs them on first run if they are missing.
+- **Claude Code, inside a session:** `/plugin marketplace add brianlee0113/hire-your-mck`, then `/plugin install hire-your-mck@hire-your-mck`.
+- **Claude.ai:** code execution must be on (**Settings → Capabilities**); the skill runs Python to build the files.
+- **What happens after the brief:** it asks a few multiple-choice questions, shows you the storyline for approval, then returns `<name>.pptx` and `<name>-sources.xlsx`.
+- **Dependencies:** `python-pptx`, `openpyxl`, `jsonschema` and `pillow`, installed on first run if missing.
 
 <details>
 <summary>Build from source</summary>
