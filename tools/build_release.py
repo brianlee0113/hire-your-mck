@@ -5,7 +5,7 @@ so the skill there carries no scripts. The renderer and the checker ship as a Py
 instead, and the directory's skill calls them with `uvx hire-your-mck ...`.
 
 Usage: python tools/build_release.py                 -> dist/pypi/ (package source) and dist/directory/
-       python tools/build_release.py --directory DIR -> write the directory plugin to DIR instead
+       python tools/build_release.py --directory DIR -> only the directory plugin, written to DIR
                                                         (keeps DIR/.git, replaces everything else)
 
 Then: cd dist/pypi && uv build && uv publish
@@ -180,5 +180,6 @@ def build_directory(out=DIST / "directory"):
 
 if __name__ == "__main__":
     target = sys.argv[sys.argv.index("--directory") + 1] if "--directory" in sys.argv else None
-    build_package()
+    if not target:  # --directory alone leaves dist/pypi (and its built wheel) untouched
+        build_package()
     build_directory(pathlib.Path(target).expanduser().resolve() if target else DIST / "directory")
