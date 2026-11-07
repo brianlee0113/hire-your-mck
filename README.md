@@ -21,6 +21,8 @@ and hands you two files: the deck, and a separate Excel workbook that tracks eve
 claude plugin install hire-your-mck --marketplace brianlee0113/hire-your-mck
 ```
 
+Or just ask Claude Code: *"Install github.com/brianlee0113/hire-your-mck"*. Restart Claude Code afterwards so it picks up the skill.
+
 **Claude.ai**: download [`hire-your-mck.zip`](https://github.com/brianlee0113/hire-your-mck/releases/latest/download/hire-your-mck.zip), then **Customize → Skills → Upload a skill**.
 
 Then just brief it:
