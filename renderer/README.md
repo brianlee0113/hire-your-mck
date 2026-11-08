@@ -1,4 +1,4 @@
-# Renderer v0.3 (density v2, all Tier 1 kinds)
+# Renderer v0.4 (density v2, all Tier 1 kinds + scatter, heatmap, quotes, agenda, divider)
 
 Storyline spec → `deck.pptx` (native, editable charts and shapes) + `deck-sources.xlsx`.
 
@@ -10,7 +10,7 @@ python -m renderer docs/spec/examples/example-deck.json --out output [--theme cr
 - Theme and fonts: `meta.theme` / `meta.font_pair` in the spec, or the flags. Values live in `templates/themes.json`; tokens in `renderer/tokens.py`.
 - Every number comes from `data_points` via `data_ref`. Placeholders render as a dashed “?” and add the `ILLUSTRATIVE — DATA NEEDED` sticker (D5, L3).
 - The source workbook has an Index sheet, one sheet per content slide (sourced rows, then MISSING rows), and a Sources sheet.
-- `examples/showcase.json` and `examples/showcase-2.json`: one slide per drawn kind, both pass `check.py`.
+- `examples/showcase.json`, `examples/showcase-2.json` and `examples/showcase-3.json` (10 content slides with section dividers; scatter, heatmap, quotes): one slide per drawn kind, all pass `check.py`.
 
 ## Density (A-12)
 
@@ -37,8 +37,10 @@ margins and bottom extent match the references; median text is ~520 chars per sl
 | `tree` (left-to-right boxes, elbow connectors, operator between siblings, values or “?”, MECE note) | drawn |
 | `levers` (code badge, lever, share bar, value, total row) | drawn |
 | `case` (subject, situation → approach → dark impact block with 2–3 big numbers) | drawn |
-| chart `scatter` (Tier 2) | **not yet**: dashed box + warning |
-| roles `agenda_tracker`, `section_divider` | **not yet** |
+| chart `scatter` (native XY or bubble chart, dashed average lines, area names, labeled points, optional trendline) | drawn |
+| table `heatmap` (each column shaded by rank, `low_is_better` inverts, benchmark row unshaded, outlined target row, shading legend) | drawn |
+| text `quotes` (2–6 quote cards: takeaway header, quotation mark, verbatim quote with accented phrase, speaker role; source in the Source line) | drawn |
+| roles `agenda_tracker` (section names and pages, current section emphasised) and `section_divider` (dark number panel, section tracker, claim) | drawn |
 
 Sidebar value rows draw comparison bars only when all rows share a unit. Statement and support text sit together as one centered block.
 

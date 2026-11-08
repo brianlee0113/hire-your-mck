@@ -77,7 +77,7 @@
 | `timeline` | timeline-roadmap |
 | `matrix` | matrix-2x2 |
 | `tree` | issue-tree |
-| `text` | bullet-argument, text-columns, statement (`style: "statement"`) |
+| `text` | bullet-argument, text-columns, statement (`style: "statement"`), quote-interview (`style: "quotes"`) |
 | `levers` | numbered-levers |
 | `case` | case-example |
 

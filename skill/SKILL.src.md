@@ -58,9 +58,10 @@ If the user chose "I have research", wait for it before Step 1.
 
 ### Step 1 · Storyline
 1. Write the **governing thought**: one sentence that answers the decision the deck supports.
-2. Write the **executive summary**: 3–5 numbered bullets. Each bullet is a full so-what sentence and becomes one section. Read alone, the bullets must tell the whole story (B-04).
+2. Write the **executive summary**: 3–5 numbered bullets. Each bullet is a full so-what sentence and becomes one section. Read alone, the bullets must tell the whole story (B-04). It is the first page the reader sees, so it must fit at full size: governing thought ≤ 2 lines, each bullet ≤ 2 lines, each sub-point one line. `render.py` warns when it only fits below 12 pt or does not fit; shorten, never accept that warning.
 3. For each bullet plan 1–3 content slides. Each slide has one **action title** (lead message): a complete judgment, 2 lines max, ideally ≤ 21 words, no period (B-01, A-03). The title gives the implication ("so it is our strongest profit lever"), not a readout of the chart (B-07). Exec sub-points are full sentences that read on their own: subject, metric, value, comparison (B-11). Write units the way `references/style.md` says: "percentage points", "4.5 times", "compared with" in sentences; "pp", "4.5x" only in labels.
 4. Route each title to an archetype with the routing table in `references/archetypes.md`.
+5. With 10+ content slides, plan navigation in one style for the whole deck: a `section_divider` before each section (default), or an `agenda_tracker` after the exec summary repeated with `section_id` before each section. Shorter decks get none; the exec summary is the contents.
 
 ### Checkpoint 2 · Approve the storyline
 Show the executive summary with, under each bullet, the planned slide titles and their archetypes. Then ask, as multiple choice: Looks right, build it (Recommended) · Change the story or order · Add or drop slides · Change the audience or ask. This is the cheapest moment to change the story; do no data work before it.
@@ -107,7 +108,7 @@ Then judge what the script cannot check, slide by slide, and fix what fails:
 - G-03: are framework items, tree branches and levers mutually exclusive and collectively exhaustive?
 
 ### Step 5 · Render and deliver
-Run `render.py`. It prints `warn:` lines for layout problems it can detect (text running into the element below, text spilling out of a shape, shapes off the slide). Fix every one by shortening the text, dropping a bullet or a sidebar row, or splitting the slide, then render again until none are left. Give the user the `.pptx` and the `-sources.xlsx`, then a short note: slide count, theme, how many numbers are sourced, and the list of placeholders still open with the data each one needs.
+Run `render.py`. It prints `warn:` lines, each with its page and slide id, for layout problems it can detect (text running into the element below, a rule or the edge of its panel, text spilling out of a shape, shapes off the slide, an exec summary that does not fit at full size). Fix every one by shortening the text, dropping a bullet or a sidebar row, or splitting the slide, then render again until none are left. Give the user the `.pptx` and the `-sources.xlsx`, then a short note: slide count, theme, how many numbers are sourced, and the list of placeholders still open with the data each one needs.
 
 Offer the next useful step: fill the open placeholders, switch theme (`navy` default; `crimson`, `forest`, `mono`, `vivid`, `slate`, `terracotta`), or turn a flow deck into a detailed one (same spec, fill the data).
 

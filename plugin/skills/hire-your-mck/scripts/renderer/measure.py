@@ -18,7 +18,10 @@ LINE = 1.2  # PowerPoint line pitch for single spacing, as a multiple of the fon
 
 _DIRS = ["/System/Library/Fonts/Supplemental", "/System/Library/Fonts", "/Library/Fonts",
          os.path.expanduser("~/Library/Fonts"), "/usr/share/fonts", "/usr/local/share/fonts",
-         os.path.expanduser("~/.fonts"), "C:/Windows/Fonts"]
+         os.path.expanduser("~/.fonts"), "C:/Windows/Fonts",
+         # Office for Mac keeps Calibri and Aptos inside the app bundles
+         "/Applications/Microsoft PowerPoint.app/Contents/Resources/DFonts",
+         "/Applications/Microsoft Word.app/Contents/Resources/DFonts"]
 
 # family -> candidate file names (regular, bold). First match wins; later entries are metric-compatible stand-ins.
 _FILES = {
@@ -27,7 +30,7 @@ _FILES = {
     "georgia": (["Georgia.ttf", "georgia.ttf", "Gelasio-Regular.ttf", "DejaVuSerif.ttf"],
                 ["Georgia Bold.ttf", "georgiab.ttf", "Gelasio-Bold.ttf", "DejaVuSerif-Bold.ttf"]),
     "calibri": (["Calibri.ttf", "calibri.ttf", "Carlito-Regular.ttf", "LiberationSans-Regular.ttf"],
-                ["Calibri Bold.ttf", "calibrib.ttf", "Carlito-Bold.ttf", "LiberationSans-Bold.ttf"]),
+                ["Calibri Bold.ttf", "calibrib.ttf", "Calibrib.ttf", "Carlito-Bold.ttf", "LiberationSans-Bold.ttf"]),
     "aptos": (["Aptos.ttf", "aptos.ttf", "LiberationSans-Regular.ttf"],
               ["Aptos-Bold.ttf", "Aptos Bold.ttf", "aptos-bold.ttf", "LiberationSans-Bold.ttf"]),
     "aptos serif": (["Aptos Serif.ttf", "AptosSerif.ttf", "Georgia.ttf", "Gelasio-Regular.ttf"],
@@ -97,13 +100,25 @@ def wrap(runs, width_in):
     return lines or [[("", runs[0][1] if runs else "arial", runs[0][2] if runs else 12, False)]]
 
 
+@functools.lru_cache(maxsize=None)
+def line_pitch(family, bold=False):
+    """Single-spaced line pitch as a multiple of the size: 1.2, or the font's own ascent + descent when taller
+    (Calibri and Aptos run about 1.22)."""
+    f = _font(family, bold)
+    if f is None:
+        return LINE
+    a, d = f.getmetrics()
+    return max(LINE, (a + d) / 200.0)
+
+
 def para_height(runs, width_in, line_spacing=1.0):
     """Height in inches of one paragraph of styled runs."""
     lines = wrap(runs, width_in)
     h = 0.0
     for ln in lines:
         size = max((r[2] for r in ln), default=12)
-        h += size * LINE * line_spacing / 72.0
+        pitch = max((line_pitch(r[1], r[3]) for r in ln), default=LINE)
+        h += size * pitch * line_spacing / 72.0
     return h
 
 

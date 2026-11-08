@@ -45,7 +45,8 @@ Order: `cover`, `exec_summary`, content and backup slides by section, `end_page`
 }
 ```
 
-- `role`: `cover`, `exec_summary`, `content`, `backup` (needs `backup_of`; title prefix `"BACKUP:"`), `end_page`.
+- `role`: `cover`, `exec_summary`, `agenda_tracker`, `section_divider`, `content`, `backup` (needs `backup_of`; title prefix `"BACKUP:"`), `end_page`.
+- Navigation slides need only `id`, `role`, `status` (+ `section_id` for a divider, or for an agenda that emphasises a section): `{"id": "d2", "role": "section_divider", "section_id": "2", "status": "filled", "archetype": "section-divider", "message_type": "navigation"}`. Their text comes from `sections` and the exec summary.
 - `message_type`: `item`, `component`, `time-series`, `frequency`, `correlation`, `structure`, `argument`, `navigation`.
 - `lead_message.highlights` must equal the chart `highlight` (A-02). Declare every number in the title in `numbers` with a data_ref (A-01); years are not numbers.
 - `clauses: 2` needs `layout.variant: "split_2"` or a panels body.
@@ -57,6 +58,8 @@ Order: `cover`, `exec_summary`, content and backup slides by section, `end_page`
 | `ghost` | title, archetype, `data_requirements`; optional body skeleton with **only placeholders**; `so_what` = the takeaway to prove | the real exhibit with "?" values + "Takeaway to prove" + "Data needed" |
 | `drafted` | body with some placeholders | finished slide, dashed "?" where data is missing, sticker |
 | `filled` | every point has a sourced data_ref | finished slide |
+
+On a ghost slide the right third is the "Takeaway to prove / Data needed" panel, so the exhibit is narrower: use at most 3 text columns, short table headers, and put the exhibit you recommend in the **first** data requirement's `recommended_exhibit` (it is the "Exhibit:" line).
 
 ## Points: the only way a number gets onto a slide
 
@@ -109,6 +112,39 @@ Captions name the source of any input that is not ours.
 
 Row `note`s and a slide `callout` on a table render as the table's **last column** ("Verdict", or `body.verdict_header`), inside the table; the callout row is highlighted and shows the callout header and detail. Row heights come from the text, so keep cells to 2–3 lines.
 
+## Scatter
+
+```json
+{"kind": "chart", "chart_type": "scatter", "categories": ["Riverside", "Oak Park", "..."],
+ "series": [{"name": "Visits booked online", "points": [...]}, {"name": "No-show rate", "points": [...]}],
+ "x_label": "**Visits booked online**, % of visits", "y_label": "**No-show rate**, % of booked visits",
+ "x_format": "0%", "value_format": "0%", "highlight": ["Riverside", "Oak Park"],
+ "quadrant_labels": ["Low online, high no-shows", "", "", "High online, low no-shows"], "focus_quadrant": "top-left"}
+```
+
+A third series makes bubbles (sizes). `reference_lines: "none"` drops the average lines; `trendline: true` adds a dashed linear trend; `label_points: "highlight"` names only highlighted points (default when there are more than 14).
+
+## Heatmap
+
+`table_type: "heatmap"`, every measure cell a `point`. `low_is_better: ["Wait time, minutes"]` inverts that column's shading so darker always means better. A reference row `{"label": "Network median", "benchmark": true, "cells": [...]}` goes first and is not shaded. The row the title names gets `highlight: true`; a slide `callout` on it fills the verdict column.
+
+## Quotes
+
+```json
+{"kind": "text", "style": "quotes", "quotes": [
+  {"header": "Phone booking loses patients before the visit",
+   "text": "I called three times and gave up. **By the time someone answered, I had to get back to work.**",
+   "speaker": "Patient, 40s, Riverside", "source_id": "s2", "emphasis": true}]}
+```
+
+Quotes are verbatim; never polish or invent them. Without the user's notes yet (flow mode, or drafted), write the quote you need as a placeholder: `{"placeholder": true, "header": "Escalation is the condition for referring", "text": "a physician on what must happen when a patient at home gets worse", "speaker": "Emergency physician, listening session"}`. It renders as a dashed "Quote needed" card, never as a quote.
+
+At most 3 quotes fit with headers on one slide in one row; 4–6 go in two rows of compact cards, so keep them to 1–2 sentences. `speaker` is a role, never a private person's name. `source_id` points at the interview notes or survey (its name appears in the Source line). Put the sample size in the source name ("Patient interviews, n = 18").
+
+## Values the user chose
+
+A target, split or threshold the user picked at a checkpoint is a data point like any other: add an input `{"id": "in-2", "kind": "qa_answer", "label": "Budget split chosen at storyline review", "content": "40/30/20/10"}`, a source `{"id": "s9", "kind": "user_provided", "name": "Budget split chosen by the exec team at storyline review", "input_id": "in-2"}`, and point the data point at it.
+
 ## Levers
 
 `body.headers: ["Move", "Why it matters"]` is required when items carry numbers (B-10). If the numbers differ in unit, each item also gets `"metric": "of shoppers say it is hard to find"`, shown under the number.
@@ -160,5 +196,8 @@ Shows `next_steps` (action, owner, timing). Add `storyline.key_takeaways` only i
 | B-05 plain sum/difference in a sidebar, key takeaways repeating the exec summary | warn |
 | A-03 title length, A-05 two clauses, D8 title period | warn |
 | B-06 unrelated sidebar number | warn |
+| S3 section divider without an existing section; quote citing an unknown source; scatter without x and y series; heatmap `low_is_better` naming no column | fail |
+| A-07 quote without `source_id` | warn |
+| S3 navigation in a deck with fewer than 10 content slides; section dividers and agenda trackers mixed in one deck | warn |
 | A-12 sidebar value rows on more than a third of content slides or on two in a row; B-12 placeholders left in a full deck | warn |
 | A-12 density: thin slide, lone chart, thin sidebar, boxes < 3 bullets, KPI without drivers, one conclusion device > 40% or 3 in a row, table callout without row notes, end page without next steps | warn |

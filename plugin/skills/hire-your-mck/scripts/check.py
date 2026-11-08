@@ -101,7 +101,7 @@ def count_elements(body):
     k = body.get("kind")
     return {"framework": lambda: len(body["items"]), "process": lambda: len(body["steps"]),
             "levers": lambda: len(body["items"]), "panels": lambda: len(body["panels"]),
-            "kpi": lambda: len(body["items"]), "text": lambda: len(body.get("columns") or body.get("bullets") or []),
+            "kpi": lambda: len(body["items"]), "text": lambda: len(body.get("columns") or body.get("bullets") or body.get("quotes") or []),
             # waterfall: start and end bars are totals, the steps in between are the elements
             "chart": lambda: len(body["categories"]) - 2 if body.get("chart_type") == "waterfall" else len(body["categories"]),
             "tree": lambda: len(body["root"].get("children", []))}.get(k, lambda: None)()
@@ -123,6 +123,23 @@ def device(s):
     if s.get("so_what"):
         return s.get("so_what_style", "bar")
     return "none"
+
+# 1c. navigation slides: section dividers and agenda trackers point at real sections
+sec_ids = {sc["id"] for sc in spec.get("sections", [])}
+for s in spec["slides"]:
+    if s["role"] == "section_divider" and s.get("section_id") not in sec_ids:
+        out("S3", "fail", f"section divider needs an existing section_id (got {s.get('section_id')})", s["id"])
+    if s["role"] == "agenda_tracker":
+        if s.get("section_id") and s["section_id"] not in sec_ids:
+            out("S3", "fail", f"agenda tracker section_id {s['section_id']} does not exist", s["id"])
+        if not sec_ids:
+            out("S3", "warn", "agenda tracker in a deck without sections", s["id"])
+nav = [s for s in spec["slides"] if s["role"] in ("section_divider", "agenda_tracker")]
+n_content = sum(1 for s in spec["slides"] if s["role"] == "content")
+if nav and n_content < 10:
+    out("S3", "warn", f"navigation slides in a deck with {n_content} content slides; under 10, the exec summary is the contents")
+if {s["role"] for s in nav} == {"section_divider", "agenda_tracker"}:
+    out("S3", "warn", "section dividers and agenda trackers mixed; use one navigation style for the whole deck")
 
 # 2. B-04: exec summary <-> content slides
 es = spec["storyline"]["exec_summary"]
@@ -154,7 +171,7 @@ for s in spec["slides"]:
     if lm["text"].rstrip().endswith("."): out("D8", "warn", "title ends with a period", sid)
     # A-01 numbers in title appear on slide
     nums = re.findall(r"[$~]?\d[\d,.]*\s?(?:%|x|M|B|K|pp|p\.p\.)?", lm["text"])
-    nums = [n for n in nums if not re.fullmatch(r"(19|20)\d\d(s)?", n.strip())]  # years are not claims
+    nums = [n for n in nums if not re.fullmatch(r"(19|20)\d\d(s)?", n.strip().rstrip(",.;:"))]  # years are not claims
     declared = lm.get("numbers", [])
     if nums and not declared:
         out("A-01", "warn", f"title numbers {nums} not declared in lead_message.numbers", sid)
@@ -168,6 +185,10 @@ for s in spec["slides"]:
     if body and body.get("kind") == "chart":
         hl_t = set(lm.get("highlights", [])); hl_c = set(body.get("highlight", []))
         if hl_t != hl_c: out("A-02", "fail", f"title highlights {sorted(hl_t)} ≠ chart highlight {sorted(hl_c)}", sid)
+        if body.get("chart_type") == "scatter" and len(body["series"]) not in (2, 3):
+            out("schema+", "fail", f"scatter needs series x, y and optionally size; has {len(body['series'])} series", sid)
+        if body.get("quadrant_labels") and body.get("reference_lines") == "none":
+            out("schema+", "warn", "quadrant_labels need the average lines (reference_lines 'mean')", sid)
         for ser in body["series"]:
             if len(ser["points"]) != len(body["categories"]):
                 out("schema+", "fail", f"series '{ser['name']}' has {len(ser['points'])} points for {len(body['categories'])} categories", sid)
@@ -205,7 +226,7 @@ for s in spec["slides"]:
             if sb_chars < 160 and not sb.get("rows"):
                 out("A-12", "warn", f"takeaway sidebar has ~{sb_chars} chars and no rows; it will look empty below the first line", sid)
         if s.get("callout") and body.get("kind") == "table":
-            missing = [r["label"] for r in body["rows"] if r["label"] != s["callout"]["target"] and not r.get("note")]
+            missing = [r["label"] for r in body["rows"] if r["label"] != s["callout"]["target"] and not r.get("note") and not r.get("benchmark")]
             if missing:
                 out("A-12", "warn", f"table callout: rows without a note leave the verdict column empty ({', '.join(missing)})", sid)
         if body.get("kind") == "kpi" and any(not it.get("drivers") for it in body["items"]):
@@ -217,11 +238,31 @@ for s in spec["slides"]:
                 out("A-02", "fail", f"statement emphasis '{e}' is not in the lead message", sid)
         if s.get("archetype") != "statement":
             out("schema+", "warn", "text style 'statement' used outside archetype 'statement'", sid)
+    # quote-interview: every quote traces to its interview notes or survey (A-07)
+    if body and body.get("kind") == "text" and body.get("style") == "quotes":
+        for q in body.get("quotes", []):
+            if q.get("placeholder"):
+                continue
+            if s.get("status") == "ghost":
+                out("A-07", "warn", f"ghost slide shows a quote from '{q['speaker'][:30]}' as if it were real; mark it "
+                    "placeholder: true unless it is verbatim from the user's material", sid)
+            if not q.get("source_id"):
+                out("A-07", "warn", f"quote from '{q['speaker'][:30]}' has no source_id (interview notes, survey)", sid)
+            elif q["source_id"] not in srcs:
+                out("A-07", "fail", f"quote cites unknown source {q['source_id']}", sid)
+    # heatmap: low_is_better must name real columns; shading needs numbers
+    if body and body.get("kind") == "table" and body.get("table_type") == "heatmap":
+        for col in body.get("low_is_better", []):
+            if col not in body["columns"]:
+                out("schema+", "fail", f"low_is_better names '{col}', which is not a column", sid)
+        if not any(cell.get("point") for r in body["rows"] for cell in r["cells"]):
+            out("schema+", "fail", "heatmap has no numeric cells to shade", sid)
     # A-04 count word
     cw = lm.get("count_word")
     if cw and body:
         n = count_elements(body)
-        if n is not None and n != cw: out("A-04", "fail", f"title says {cw}, body has {n} elements", sid)
+        named = len(body.get("highlight", [])) if body.get("kind") == "chart" else 0  # "four stores" may be the highlighted ones
+        if n is not None and n != cw and named != cw: out("A-04", "fail", f"title says {cw}, body has {n} elements", sid)
     # A-05 two clauses
     if lm.get("clauses") == 2 and body and body.get("kind") != "panels" and s.get("layout", {}).get("variant") != "split_2":
         out("A-05", "warn", "two-clause title but not split_2 / panels", sid)
@@ -239,6 +280,9 @@ for s in spec["slides"]:
         if d["source_id"] not in srcs: out("A-07", "fail", f"{d['id']} cites unknown source {d['source_id']}", sid)
         if srcs.get(d["source_id"], {}).get("kind") == "derived" and not d.get("derived_from"):
             out("A-07", "fail", f"{d['id']} is derived but lists no inputs", sid)
+    quote_ph = body and body.get("kind") == "text" and body.get("style") == "quotes" and \
+        any(q.get("placeholder") for q in body.get("quotes", []))
+    has_ph = has_ph or bool(quote_ph)
     # L3 sticker
     if has_ph and s.get("sticker") != "ILLUSTRATIVE — DATA NEEDED":
         out("L3", "fail", "slide has placeholders but no 'ILLUSTRATIVE — DATA NEEDED' sticker", sid)
@@ -417,6 +461,7 @@ for a_, b_, s_ in zip(has_rows, has_rows[1:], row_slides[1:]):
 # B-12 (F5): a full deck does not leave "?" values
 if spec["mode"] == "deck_detailed":
     n_ph = sum(1 for s in content for p in list(points(s.get("body"))) + list(points(s.get("layout"))) if p.get("placeholder"))
+    n_ph += sum(1 for s in content for q in ((s.get("body") or {}).get("quotes") or []) if q.get("placeholder"))
     if n_ph:
         out("B-12", "warn", f"full deck still has {n_ph} '?' value(s): ask the user (multiple choice, with a recommended value and its basis) or estimate it from sourced inputs (B-08) before rendering")
 # B-05 deck level: key takeaways that restate the exec summary

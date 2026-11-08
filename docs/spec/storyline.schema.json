@@ -301,7 +301,8 @@
             "content",
             "backup",
             "end_page"
-          ]
+          ],
+          "description": "agenda_tracker: contents page; with section_id it is repeated before that section with the section emphasised. section_divider: section opener (needs section_id); lead_message.text overrides the section's exec summary claim."
         },
         "section_id": {
           "$ref": "#/$defs/id"
@@ -877,7 +878,8 @@
                 "description": "primary | comparator | forecast. Not drawn differently yet; forecasts are labeled in the categories (e.g. 2027E)."
               }
             }
-          }
+          },
+          "description": "Category charts: one series per legend entry. scatter: series[0] = x values, series[1] = y values, optional series[2] = bubble sizes; categories name the points."
         },
         "sort": {
           "enum": [
@@ -933,6 +935,55 @@
         "value_format": {
           "type": "string",
           "description": "e.g. '0%', '$0.0B', '0.0x'."
+        },
+        "x_label": {
+          "type": "string",
+          "description": "scatter: x-axis title, '**Metric**, unit' (default: series[0].name)."
+        },
+        "y_label": {
+          "type": "string",
+          "description": "scatter: y-axis title (default: series[1].name)."
+        },
+        "x_format": {
+          "type": "string",
+          "description": "scatter: number format of the x axis (value_format is the y axis)."
+        },
+        "reference_lines": {
+          "enum": [
+            "mean",
+            "none"
+          ],
+          "default": "mean",
+          "description": "scatter: dashed average lines that split the plot into four areas."
+        },
+        "quadrant_labels": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "string"
+          },
+          "description": "scatter: names of the four areas made by the average lines, in order top-left, top-right, bottom-left, bottom-right (empty string = no name)."
+        },
+        "focus_quadrant": {
+          "enum": [
+            "top-left",
+            "top-right",
+            "bottom-left",
+            "bottom-right"
+          ]
+        },
+        "trendline": {
+          "type": "boolean",
+          "default": false,
+          "description": "scatter: dashed linear trendline (native, editable)."
+        },
+        "label_points": {
+          "enum": [
+            "all",
+            "highlight"
+          ],
+          "description": "scatter: which points carry their name. Default all up to 14 points, else highlighted only."
         }
       }
     },
@@ -1110,6 +1161,10 @@
               "note": {
                 "type": "string",
                 "description": "Short verdict for the row. With a slide callout, every row's note is shown in a right-hand column; the callout target row is highlighted."
+              },
+              "benchmark": {
+                "type": "boolean",
+                "description": "heatmap: a reference row (e.g. peer median), shown plain and left out of the shading. Put it first."
               }
             }
           }
@@ -1120,6 +1175,13 @@
         "verdict_header": {
           "type": "string",
           "description": "Header of the verdict column, which holds row notes and the callout (default 'Verdict')."
+        },
+        "low_is_better": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "heatmap: columns where a lower value is better; their shading is inverted so darker always means better."
         }
       }
     },
@@ -1464,7 +1526,8 @@
           "enum": [
             "bullets",
             "columns",
-            "statement"
+            "statement",
+            "quotes"
           ]
         },
         "bullets": {
@@ -1516,6 +1579,46 @@
               "type": "boolean",
               "default": false,
               "description": "Split variant: statement on a solid accent panel on the left, support on the right."
+            }
+          }
+        },
+        "quotes": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "description": "archetype 'quote-interview': quote cards. Quotes are verbatim; **phrase** marks the words the title rests on.",
+          "items": {
+            "type": "object",
+            "required": [
+              "text",
+              "speaker"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Verbatim quote, no quotation marks. With placeholder: true, what the quote needs to show."
+              },
+              "speaker": {
+                "type": "string",
+                "description": "Role and organization type, never a private person's name (e.g. 'Head of procurement, regional grocer')."
+              },
+              "header": {
+                "type": "string",
+                "description": "Optional takeaway the quote proves (B-02)."
+              },
+              "emphasis": {
+                "type": "boolean",
+                "description": "The card the title points at."
+              },
+              "source_id": {
+                "$ref": "#/$defs/id",
+                "description": "Interview notes or survey the quote comes from (A-07)."
+              },
+              "placeholder": {
+                "type": "boolean",
+                "description": "Not a quote yet (ghost or drafted): text says what quote is needed, speaker says from whom. Drawn as a dashed 'Quote needed' card, never as a quote."
+              }
             }
           }
         }

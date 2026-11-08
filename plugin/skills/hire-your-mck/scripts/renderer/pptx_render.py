@@ -5,11 +5,12 @@ is a placeholder drawn as a dashed "?" (D5). Charts are native PowerPoint charts
 so the data stays editable (D3).
 """
 import copy
+import math
 import re
 
 from lxml import etree
 from pptx import Presentation
-from pptx.chart.data import CategoryChartData
+from pptx.chart.data import BubbleChartData, CategoryChartData, XyChartData
 from pptx.dml.color import RGBColor
 from pptx.enum.chart import XL_CHART_TYPE, XL_LABEL_POSITION, XL_LEGEND_POSITION
 from pptx.enum.dml import MSO_LINE_DASH_STYLE
@@ -91,7 +92,14 @@ def excel_format(unit, value_format=None):
 
 def _num(v, decimals=None):
     if decimals is None:
-        decimals = 0 if abs(v - round(v)) < 1e-9 else 1
+        # whole numbers without decimals, else one; two only when one would round to a whole number the value
+        # is not (99.95 must not read 100.0)
+        if abs(v - round(v)) < 1e-9:
+            decimals = 0
+        elif abs(round(v, 1) - round(round(v, 1))) < 1e-9 and abs(v - round(v, 1)) > 1e-9:
+            decimals = 2
+        else:
+            decimals = 1
     return f"{v:,.{decimals}f}"
 
 
@@ -100,6 +108,8 @@ def fmt(value, unit=None, value_format=None, signed=False):
     if value is None:
         return "?"
     sign = "+" if (signed and value > 0) else ""
+    if value < 0 and unit and unit.startswith("$"):  # −$3.3M, not $−3.3M
+        return "−" + fmt(-value, unit, value_format)
     if value_format:
         f = value_format
         decimals = len(re.match(r"0*", f.split(".")[1]).group(0)) if "." in f else 0
@@ -140,6 +150,16 @@ def dp_fmt(spec, point, value_format=None, signed=False):
 
 # ---------------------------------------------------------------- primitives
 
+def _safe_size(w, h, what):
+    """A shape with zero or negative size makes PowerPoint refuse the whole file. Never write one; warn instead."""
+    if w > 0.01 and h > 0.01:
+        return w, h
+    label = what if isinstance(what, str) else str(what)[:40]
+    SIDEBAR_WARN.append(f"layout: an element had no room ({w:.2f} x {h:.2f} in) and was squeezed: {label[:40]!r}; "
+                        "shorten the text or drop an element on this slide")
+    return max(w, 0.05), max(h, 0.05)
+
+
 class Canvas:
     def __init__(self, slide, tok):
         self.slide = slide
@@ -148,6 +168,7 @@ class Canvas:
     def text(self, x, y, w, h, paras, size=S["body"], color=None, font=None, bold=False,
              align="l", anchor="t", wrap=True, line_spacing=None):
         """paras: str | list of str | list of list of (text, {bold,color,size,font}) runs."""
+        w, h = _safe_size(w, h, paras)
         box = self.slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
         tf = box.text_frame
         tf.word_wrap = wrap
@@ -180,6 +201,7 @@ class Canvas:
         return box
 
     def rect(self, x, y, w, h, fill=None, line=None, dash=False, radius=None, weight=0.75, shape=None):
+        w, h = _safe_size(w, h, "shape")
         shp = self.slide.shapes.add_shape(shape or (MSO_SHAPE.ROUNDED_RECTANGLE if radius else MSO_SHAPE.RECTANGLE),
                                           Inches(x), Inches(y), Inches(w), Inches(h))
         if radius and shape is None:
@@ -298,6 +320,19 @@ def source_line(spec, slide):
             continue
         if s.get("name") and s["name"] not in names:
             names.append(s["name"])
+    def cited(o):
+        if isinstance(o, dict):
+            if isinstance(o.get("source_id"), str):
+                yield o["source_id"]
+            for v in o.values():
+                yield from cited(v)
+        elif isinstance(o, list):
+            for v in o:
+                yield from cited(v)
+    for sid_ in cited(slide.get("body")):
+        nm = spec.src.get(sid_, {}).get("name")
+        if nm and nm not in names:
+            names.append(nm)
     if derived:
         names.append("team analysis")
     if not names:
@@ -323,7 +358,7 @@ def body_box(slide):
         bottom -= BASIS_H + G["gap"]
     lay = slide.get("layout") or {}
     has_side = lay.get("variant") == "takeaway_sidebar" or slide.get("status") == "ghost"
-    if has_side and (slide.get("body") or {}).get("kind") != "matrix":
+    if has_side and ((slide.get("body") or {}).get("kind") != "matrix" or slide.get("status") == "ghost"):
         w = w - G["sidebar_w"] - G["gap"] * 1.6
     return x, y, w, bottom - y
 
@@ -520,6 +555,8 @@ def chart(c, spec, slide, body, box):
     ctype = body["chart_type"]
     if ctype == "waterfall":
         return waterfall(c, spec, body, box)
+    if ctype == "scatter":
+        return scatter(c, spec, slide, body, box)
     cats, series = _sorted(body, spec)
     known = [spec.value(p) for s in series for p in s["points"] if spec.value(p) is not None]
     stand_in = (sum(known) / len(known)) if known else None
@@ -558,23 +595,40 @@ def chart(c, spec, slide, body, box):
         ch.legend.include_in_layout = False
         _font(ch.legend, t, size=S["label"] + 1)
     _clean_axes(ch, t)
+    if not bench_line and ctype in ("bar", "survey_bar", "column", "stacked_column"):
+        # bars start at zero, or small differences look large; headroom keeps end labels off the bar
+        tops = [sum(v) for v in zip(*[[spec.value(p) or 0 for p in s_["points"]] for s_ in series])] \
+            if ctype == "stacked_column" else [spec.value(p) for s_ in series for p in s_["points"] if spec.value(p) is not None]
+        head = 1.15 if ctype in ("bar", "survey_bar") else 1.12
+        if tops and min(tops) >= 0 and max(tops) > 0:
+            ch.value_axis.minimum_scale = 0
+            ch.value_axis.maximum_scale = max(tops) * head
+        elif tops and min(tops) < 0:
+            # room past the most negative bar for its value label, so it stays clear of the category names
+            span = max(max(tops), 0) - min(tops)
+            ch.value_axis.minimum_scale = min(tops) - span * 0.16
+            ch.value_axis.maximum_scale = max(max(tops), 0) + span * (head - 1)
     _font(ch.category_axis.tick_labels, t, size=S["label"] + 1)
     if ctype in ("bar", "survey_bar"):
         ch.category_axis.reverse_order = True
+    if any((spec.value(p) or 0) < 0 for s_ in series for p in s_["points"]):
+        from pptx.enum.chart import XL_TICK_LABEL_POSITION
+        ch.category_axis.tick_label_position = XL_TICK_LABEL_POSITION.LOW  # names stay left of (or under) negative bars
     plot = ch.plots[0]
     if hasattr(plot, "gap_width"):
         plot.gap_width = 45
     if ctype in ("stacked_column", "stacked_100"):
         plot.overlap = 100
     highlight = set(body.get("highlight", []))
-    palette = [t["other_bars"], t["gray_light"], t["gray_mid"], t["gray_dark"], t["primary"]]
+    colors = series_colors(t, [s_["name"] for s_ in series], highlight, line=ctype == "line") if multi else [t["other_bars"]]
+    if multi and len(series) > 5:
+        SIDEBAR_WARN.append(f"slide {slide.get('id')}: {len(series)} series cannot all be told apart by color; "
+                            "group the smallest into 'Other' (5 at most)")
     for si, (s_spec, s_obj) in enumerate(zip(series, plot.series)):
-        base = palette[si % len(palette)] if multi else t["other_bars"]
-        if multi and s_spec["name"] in highlight:
-            base = t["highlight"]
+        base = colors[si]
         if ctype == "line":
             on = s_spec["name"] in highlight or not multi
-            s_obj.format.line.color.rgb = rgb(t["highlight"] if on else t["gray_mid"])
+            s_obj.format.line.color.rgb = rgb(t["highlight"] if not multi else base)
             s_obj.format.line.width = Pt(2.75 if on else 2)
             s_obj.smooth = False
             from pptx.enum.chart import XL_MARKER_STYLE
@@ -610,13 +664,57 @@ def chart(c, spec, slide, body, box):
             run.font.bold = hl or p.get("placeholder", False)
             run.font.name = t["font_body"]
             stacked = ctype in ("stacked_column", "stacked_100")
-            on_dark = stacked and s_spec["name"] in highlight
+            on_dark = stacked and _luma(base) < 0.55
             run.font.color.rgb = rgb(t["white"] if on_dark else (t["placeholder"] if p.get("placeholder") else t["title"]))
             if ctype == "line":
                 dl.position = XL_LABEL_POSITION.RIGHT if pi else XL_LABEL_POSITION.LEFT
             else:
                 dl.position = XL_LABEL_POSITION.CENTER if stacked else XL_LABEL_POSITION.OUTSIDE_END
+    _no_invert(ch)
     return gf
+
+
+def _luma(hex_):
+    h = hex_.lstrip("#")
+    r, g, b = (int(h[i:i + 2], 16) / 255 for i in (0, 2, 4))
+    return 0.299 * r + 0.587 * g + 0.114 * b
+
+
+def _mix(a, b, f):
+    """Mix color a toward b by f (0 = a, 1 = b)."""
+    a, b = a.lstrip("#"), b.lstrip("#")
+    return "#%02X%02X%02X" % tuple(round(int(a[i:i + 2], 16) * (1 - f) + int(b[i:i + 2], 16) * f) for i in (0, 2, 4))
+
+
+def series_colors(t, names, highlight, line=False):
+    """One color per series, all distinguishable: highlighted series take shades of the accent,
+    the rest a gray ramp (dark to light; lines skip the lightest, which vanish on white)."""
+    hl_pool = [t["highlight"], _mix(t["highlight"], t["primary"], 0.55), tint(t["highlight"], 0.55)]
+    grays = ([t["gray_dark"], _mix(t["gray_dark"], t["other_bars"], 0.5), t["other_bars"]] if line else
+             [t["gray_dark"], _mix(t["gray_dark"], t["other_bars"], 0.5), t["other_bars"], t["gray_light"]])
+    n_other = sum(1 for n in names if n not in highlight)
+    if n_other == 1:
+        grays = [t["other_bars"]]
+    elif n_other == 2 and not line:
+        grays = [t["gray_dark"], t["other_bars"]]
+    grays = grays + [t["primary"], "#D0D6DB"]
+    out, h_i, g_i = [], 0, 0
+    for n in names:
+        if n in highlight:
+            out.append(hl_pool[h_i % len(hl_pool)]); h_i += 1
+        else:
+            out.append(grays[g_i % len(grays)]); g_i += 1
+    return out
+
+
+def _no_invert(ch):
+    """PowerPoint draws a negative bar white when its own data point lacks invertIfNegative=0, even when the
+    series says so. Put it on every data point (schema order: idx, invertIfNegative, ...)."""
+    for dpt in ch._chartSpace.iter(qn("c:dPt")):
+        if dpt.find(qn("c:invertIfNegative")) is None and dpt.getparent().tag in (qn("c:ser"),) and \
+                dpt.getparent().getparent().tag == qn("c:barChart"):
+            el = etree.Element(qn("c:invertIfNegative"), val="0")
+            dpt.find(qn("c:idx")).addnext(el)
 
 
 def waterfall(c, spec, body, box):
@@ -688,7 +786,259 @@ def waterfall(c, spec, body, box):
         dark = (total or hl) and v is not None
         r.font.color.rgb = rgb(t["white"] if dark else (t["highlight"] if hl else (t["placeholder"] if v is None else t["title"])))
         dl.position = XL_LABEL_POSITION.INSIDE_END
+    _no_invert(ch)
     return gf
+
+
+def _nice_axis(vals, pad=0.08, ticks=5):
+    """Axis (min, max, step) on round numbers that hold every value with a little room."""
+    lo, hi = min(vals), max(vals)
+    if hi - lo < 1e-12:
+        lo, hi = lo - (abs(lo) or 1) * 0.5, hi + (abs(hi) or 1) * 0.5
+    span = hi - lo
+    lo, hi = lo - span * pad, hi + span * pad
+    raw = (hi - lo) / ticks
+    mag = 10 ** math.floor(math.log10(raw))
+    step = next(m * mag for m in (1, 2, 2.5, 5, 10) if m * mag >= raw)
+    lo2 = math.floor(lo / step) * step
+    hi2 = math.ceil(hi / step) * step
+    if min(vals) >= 0 and lo2 < 0:
+        lo2 = 0.0
+    return lo2, hi2, step
+
+
+def scatter(c, spec, slide, body, box):
+    """Native XY scatter (or bubble when a third series gives sizes). Series 0 = x, series 1 = y, series 2 = size.
+    Average lines split the plot into named areas; points carry their own labels; highlighted points take the accent."""
+    x, y, w, h = box
+    t = c.t
+    cats = body["categories"]
+    ser = body["series"]
+    n = len(cats)
+    xs = [spec.value(p) for p in ser[0]["points"]]
+    ys = [spec.value(p) for p in ser[1]["points"]]
+    sizes = [spec.value(p) for p in ser[2]["points"]] if len(ser) > 2 else None
+    # stand-ins for unknown points: spread along a rising diagonal so a ghost still reads as a scatter
+    kx = [v for v in xs if v is not None]
+    ky = [v for v in ys if v is not None]
+    for i in range(n):
+        f = (i + 1) / (n + 1)
+        if xs[i] is None:
+            xs[i] = (min(kx) + (max(kx) - min(kx)) * f) if len(kx) > 1 else f
+        if ys[i] is None:
+            ys[i] = (min(ky) + (max(ky) - min(ky)) * (0.3 + 0.5 * f)) if len(ky) > 1 else 0.3 + 0.5 * f
+    if sizes is not None:
+        known_s = [v for v in sizes if v is not None]
+        sizes = [v if v is not None else (sum(known_s) / len(known_s) if known_s else 1) for v in sizes]
+    ux = next(((spec.dpoint(p) or {}).get("unit") for p in ser[0]["points"] if spec.dpoint(p)), None)
+    uy = next(((spec.dpoint(p) or {}).get("unit") for p in ser[1]["points"] if spec.dpoint(p)), None)
+    fx = body.get("x_format") or excel_format(ux)
+    fy = body.get("value_format") or excel_format(uy)
+    axis_h = 0.62  # room under the plot for tick labels and the x-axis title
+    axis_w = 0.95  # room left of the plot for tick labels and the y-axis title
+    if sizes is not None:
+        cd = BubbleChartData(number_format=fy)
+        s_ = cd.add_series(ser[1]["name"])
+        for xv, yv, sv in zip(xs, ys, sizes):
+            s_.add_data_point(xv, yv, sv)
+        ctype = XL_CHART_TYPE.BUBBLE
+    else:
+        cd = XyChartData(number_format=fy)
+        s_ = cd.add_series(ser[1]["name"])
+        for xv, yv in zip(xs, ys):
+            s_.add_data_point(xv, yv)
+        ctype = XL_CHART_TYPE.XY_SCATTER
+    gf = c.slide.shapes.add_chart(ctype, Inches(x), Inches(y), Inches(w), Inches(h), cd)
+    ch = gf.chart
+    ch.has_title = False
+    ch.has_legend = False
+    ch.font.name = t["font_body"]
+    ch.font.size = Pt(S["label"])
+    xmin, xmax, xstep = _nice_axis(xs)
+    ymin, ymax, ystep = _nice_axis(ys, pad=0.12)
+    from pptx.enum.chart import XL_TICK_MARK
+    from pptx.enum.chart import XL_TICK_LABEL_POSITION
+    for ax, lo, hi, st, nf, known in ((ch.category_axis, xmin, xmax, xstep, fx, kx), (ch.value_axis, ymin, ymax, ystep, fy, ky)):
+        ax.minimum_scale, ax.maximum_scale, ax.major_unit = lo, hi, st
+        ax.has_major_gridlines = False
+        ax.has_minor_gridlines = False
+        ax.major_tick_mark = XL_TICK_MARK.NONE
+        ax.format.line.color.rgb = rgb(t["rule"])
+        ax.tick_labels.number_format = nf
+        ax.tick_labels.number_format_is_linked = False
+        _font(ax.tick_labels, t, color=t["muted"])
+        if not known:  # stand-in positions only: numbers on this axis would be invented
+            ax.tick_label_position = XL_TICK_LABEL_POSITION.NONE
+    # each axis sits on the low edge of the other, never through the middle at zero
+    from pptx.enum.chart import XL_AXIS_CROSSES
+    ch.category_axis.crosses = XL_AXIS_CROSSES.MINIMUM
+    ch.value_axis.crosses = XL_AXIS_CROSSES.MINIMUM
+    # fix the inner plot area so average lines and area names can be placed exactly
+    lx, ly = axis_w / w, 0.03
+    lw_, lh_ = 1 - lx - 0.02, 1 - ly - axis_h / h
+    plotArea = ch._chartSpace.find(qn("c:chart")).find(qn("c:plotArea"))
+    layout = plotArea.find(qn("c:layout"))
+    if layout is None:
+        layout = etree.Element(qn("c:layout"))
+        plotArea.insert(0, layout)
+    for old in list(layout):
+        layout.remove(old)
+    ml = etree.SubElement(layout, qn("c:manualLayout"))
+    for tag, val in (("c:layoutTarget", "inner"), ("c:xMode", "edge"), ("c:yMode", "edge"),
+                     ("c:x", lx), ("c:y", ly), ("c:w", lw_), ("c:h", lh_)):
+        etree.SubElement(ml, qn(tag), val=str(val))
+    px0, py0, pw, ph = x + w * lx, y + h * ly, w * lw_, h * lh_
+    to_x = lambda v: px0 + pw * (v - xmin) / (xmax - xmin)
+    to_y = lambda v: py0 + ph * (1 - (v - ymin) / (ymax - ymin))
+    plot = ch.plots[0]
+    if sizes is not None:
+        plot.bubble_scale = 45
+    s_obj = plot.series[0]
+    from pptx.enum.chart import XL_MARKER_STYLE
+    highlight = set(body.get("highlight", []))
+    label_all = body.get("label_points", "all" if n <= 14 else "highlight") == "all"
+    phs = [any(q.get("placeholder") for q in p) for p in zip(ser[0]["points"], ser[1]["points"])]
+    pos = _scatter_layout(c, spec, slide, body, cats, xs, ys, sizes, highlight, label_all, kx, ky, ux, uy, fx,
+                          (px0, py0, pw, ph), to_x, to_y, phs)
+    if sizes is None:
+        s_obj.marker.style = XL_MARKER_STYLE.CIRCLE
+        s_obj.marker.size = 11
+        s_obj.format.line.fill.background()  # no line between points
+    for i, p in enumerate(zip(ser[0]["points"], ser[1]["points"])):
+        pt = s_obj.points[i]
+        on = cats[i] in highlight
+        ph_ = any(q.get("placeholder") for q in p)
+        fmt_obj = pt.format if sizes is not None else pt.marker.format
+        if sizes is None:
+            pt.marker.style = XL_MARKER_STYLE.CIRCLE
+            pt.marker.size = 13 if on else 11
+        if ph_:
+            _fill(fmt_obj, None, dash_line=t["highlight"] if on else t["placeholder"])
+        else:
+            _fill(fmt_obj, t["highlight"] if on else t["other_bars"])
+            if sizes is not None:
+                fmt_obj.line.color.rgb = rgb(t["white"])
+                fmt_obj.line.width = Pt(0.75)
+        if label_all or on:
+            dl = pt.data_label
+            dl.has_text_frame = True
+            dl.text_frame.text = cats[i] + (" ?" if ph_ else "")
+            r = dl.text_frame.paragraphs[0].runs[0]
+            r.font.size = Pt(S["label"] + (1 if on else 0))
+            r.font.bold = on
+            r.font.name = t["font_body"]
+            r.font.color.rgb = rgb(t["highlight"] if on else (t["placeholder"] if ph_ else t["text"]))
+            dl.position = {"r": XL_LABEL_POSITION.RIGHT, "l": XL_LABEL_POSITION.LEFT, "a": XL_LABEL_POSITION.ABOVE,
+                           "b": XL_LABEL_POSITION.BELOW}[pos["labels"].get(i, "r")]
+    if body.get("trendline"):
+        ser_el = s_obj._element
+        tl = etree.Element(qn("c:trendline"))
+        spPr = etree.SubElement(tl, qn("c:spPr"))
+        ln = etree.SubElement(spPr, qn("a:ln"), w=str(int(1.25 * 12700)))
+        sf = etree.SubElement(ln, qn("a:solidFill"))
+        etree.SubElement(sf, qn("a:srgbClr"), val=t["gray_dark"].lstrip("#"))
+        etree.SubElement(ln, qn("a:prstDash"), val="dash")
+        etree.SubElement(tl, qn("c:trendlineType"), val="linear")
+        etree.SubElement(tl, qn("c:dispRSqr"), val="0")
+        etree.SubElement(tl, qn("c:dispEq"), val="0")
+        anchor = ser_el.find(qn("c:xVal"))
+        anchor.addprevious(tl)
+    # axis titles, drawn as text so they sit exactly under / beside the plot
+    c.text(px0, y + h - 0.3, pw, 0.28, unit_runs(body.get("x_label") or ser[0]["name"], t), size=S["label"], align="c")
+    ytl = c.text(x - ph / 2 + 0.16, py0 + ph / 2 - 0.14, ph, 0.28, unit_runs(body.get("y_label") or ser[1]["name"], t),
+                 size=S["label"], align="c", wrap=False)
+    ytl.rotation = 270
+    # average lines split the plot into areas (catalog: scatter-bubble)
+    if pos.get("means"):
+        mx, my = pos["means"]
+        c.line(to_x(mx), py0, to_x(mx), py0 + ph, color=t["gray_mid"], weight=1, dash=True)
+        c.line(px0, to_y(my), px0 + pw, to_y(my), color=t["gray_mid"], weight=1, dash=True)
+        for (bx, by, bw, bh_), txt, al in pos["avg_boxes"]:
+            c.text(bx, by, bw, bh_, txt, size=S["small"] - 1, color=t["muted"], align=al)
+        focus = body.get("focus_quadrant")
+        for key, (bx, by, bw, bh_), lab, al in pos["quadrants"]:
+            c.text(bx, by, bw, bh_, lab, size=S["small"] - 1, bold=True,
+                   color=t["highlight"] if focus == key else t["placeholder"], align=al)
+    return gf
+
+
+def _overlap(a, b):
+    return max(0.0, min(a[2], b[2]) - max(a[0], b[0])) * max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
+
+
+def _scatter_layout(c, spec, slide, body, cats, xs, ys, sizes, highlight, label_all, kx, ky, ux, uy, fx, plot, to_x, to_y, phs):
+    """Where every text on a scatter goes, measured with the real font: point labels take the first free side
+    (right, left, above, below) of their point; area names that would cover a point are dropped; anything that
+    still collides is reported (the chart's own labels are not checked by layout_check)."""
+    px0, py0, pw, ph = plot
+    n = len(cats)
+    sid = slide.get("id")
+    # point circles: markers are 11-13 pt; bubbles scale by area, the largest about a quarter of the plot's short side
+    if sizes is not None:
+        smax = max(abs(v) for v in sizes) or 1
+        radii = [0.25 * min(pw, ph) * 0.45 * math.sqrt(abs(v) / smax) / 2 for v in sizes]
+    else:
+        radii = [((13 if cats[i] in highlight else 11) / 2) / 72 for i in range(n)]
+    centers = [(to_x(xs[i]), to_y(ys[i])) for i in range(n)]
+    circles = [(cx - r, cy - r, cx + r, cy + r) for (cx, cy), r in zip(centers, radii)]
+    fixed, out = [], {"labels": {}, "avg_boxes": [], "quadrants": [], "means": None}
+    tsize = (S["small"] - 1)
+    tw = lambda txt, bold=False, size=tsize: measure.width_pt(txt, FONTS["body"], size, bold) / 72 + 0.08
+    if body.get("reference_lines", "mean") == "mean" and kx and ky:
+        mx, my = sum(kx) / len(kx), sum(ky) / len(ky)
+        out["means"] = (mx, my)
+        a1 = "Average " + fmt(mx, ux, fx if body.get("x_format") else None)
+        a2 = "Average " + fmt(my, uy, body.get("value_format"))
+        b1 = (to_x(mx) + 0.06, py0 + ph - 0.24, tw(a1), 0.22)
+        b2 = (px0 + pw - tw(a2), to_y(my) - 0.24, tw(a2), 0.22)
+        out["avg_boxes"] = [(b1, a1, "l"), (b2, a2, "r")]
+        fixed += [(b[0], b[1], b[0] + b[2], b[1] + b[3]) for b in (b1, b2)]
+        for key, lab in zip(["top-left", "top-right", "bottom-left", "bottom-right"], body.get("quadrant_labels") or []):
+            if not lab:
+                continue
+            txt = lab.upper()
+            w_ = tw(txt, True)
+            bx = px0 + 0.1 if key.endswith("left") else px0 + pw - 0.1 - w_
+            by = py0 + 0.06 if key.startswith("top") else py0 + ph - 0.5
+            box = (bx, by, bx + w_, by + 0.24)
+            if any(_overlap(box, ci) > 0 for ci in circles):
+                SIDEBAR_WARN.append(f"slide {sid}: area name '{lab}' would cover data points and was left out; "
+                                    "name that area in the sidebar instead")
+                continue
+            out["quadrants"].append((key, (bx, by, w_, 0.24), txt, "l" if key.endswith("left") else "r"))
+            fixed.append(box)
+    placed = []
+    order = sorted(range(n), key=lambda i: (cats[i] not in highlight, -radii[i]))
+    clashes = []
+    for i in order:
+        on = cats[i] in highlight
+        if not (label_all or on):
+            continue
+        size = S["label"] + (1 if on else 0)
+        txt = cats[i] + (" ?" if phs[i] else "")
+        lw, lh = measure.width_pt(txt, FONTS["body"], size, on) / 72 + 0.1, size * 1.25 / 72
+        (cx, cy), r = centers[i], radii[i]
+        cands = {"r": (cx + r + 0.03, cy - lh / 2), "l": (cx - r - 0.03 - lw, cy - lh / 2),
+                 "a": (cx - lw / 2, cy - r - 0.02 - lh), "b": (cx - lw / 2, cy + r + 0.02)}
+        best, best_cost = "r", None
+        for side, (lx, ly) in cands.items():
+            box = (lx, ly, lx + lw, ly + lh)
+            cost = sum(_overlap(box, o) for o in circles[:i] + circles[i + 1:] + fixed + placed)
+            if lx < px0 or lx + lw > px0 + pw + 0.3 or ly < py0 - 0.05 or ly + lh > py0 + ph:
+                cost += 10  # leaves the plot
+            if best_cost is None or cost < best_cost - 1e-9:
+                best, best_cost = side, cost
+            if cost == 0:
+                break
+        lx, ly = cands[best]
+        placed.append((lx, ly, lx + lw, ly + lh))
+        out["labels"][i] = best
+        if best_cost and best_cost > 0.004:
+            clashes.append(cats[i])
+    if clashes:
+        SIDEBAR_WARN.append(f"slide {sid}: point labels still overlap ({', '.join(clashes[:4])}); label only the highlighted "
+                            "points (label_points: 'highlight') or drop the trendline / area names")
+    return out
 
 
 # ---------------------------------------------------------------- other bodies
@@ -726,44 +1076,58 @@ def kpi(c, spec, body, box):
 
 
 def matrix(c, spec, slide, body, box):
+    """2x2. With a takeaway sidebar it is a square and the panel takes the rest of the width; without one
+    (no sidebar, or a ghost slide whose panel is drawn elsewhere) it stretches into a rectangle, so no gap is left."""
     x, y, w, h = box
     t = c.t
-    size = min(h - 0.35, w * 0.42)
+    lay = slide.get("layout") or {}
+    side = lay.get("variant") == "takeaway_sidebar" and slide.get("status") != "ghost"
+    mh = h - 0.35
+    mw = min(mh, w * 0.42) if side else w - 0.55
+    if side:
+        mh = mw
     ox = x + 0.5
     oy = y + 0.05
-    q = size / 2
+    qw, qh = mw / 2, mh / 2
     labels = body.get("quadrant_labels") or ["", "", "", ""]
     pos = {"top-left": (0, 0), "top-right": (1, 0), "bottom-left": (0, 1), "bottom-right": (1, 1)}
     for i, key in enumerate(["top-left", "top-right", "bottom-left", "bottom-right"]):
         cx, cy = pos[key]
         focus = body.get("focus_quadrant") == key
-        c.rect(ox + cx * q, oy + cy * q, q, q, fill=(t["sidebar"] if not t["dark_sidebar"] else t["panel"]) if focus else None, line=t["rule"])
-        ly = oy + cy * q + (0.1 if cy == 0 else q - 0.36)
-        c.text(ox + cx * q + 0.12, ly, q - 0.24, 0.3, labels[i], size=S["label"] + 1, bold=focus,
+        c.rect(ox + cx * qw, oy + cy * qh, qw, qh, fill=(t["sidebar"] if not t["dark_sidebar"] else t["panel"]) if focus else None,
+               line=t["rule"])
+        ly = oy + cy * qh + (0.1 if cy == 0 else qh - 0.36)
+        c.text(ox + cx * qw + 0.12, ly, qw - 0.24, 0.3, labels[i], size=S["label"] + 1, bold=focus,
                color=t["primary"] if focus else t["muted"])
     xa, ya = body["x_axis"], body["y_axis"]
-    c.text(ox, oy + size + 0.06, size, 0.24, xa.get("low", ""), size=S["small"], color=t["muted"])
-    c.text(ox, oy + size + 0.06, size, 0.24, xa.get("high", ""), size=S["small"], color=t["muted"], align="r")
-    c.text(ox, oy + size + 0.04, size, 0.26, xa["label"] + " →", size=S["label"] + 1, bold=True, color=t["title"], align="c")
-    cx_axis, cy_axis = ox - 0.3, oy + size / 2
+    c.text(ox, oy + mh + 0.06, mw, 0.24, xa.get("low", ""), size=S["small"], color=t["muted"])
+    c.text(ox, oy + mh + 0.06, mw, 0.24, xa.get("high", ""), size=S["small"], color=t["muted"], align="r")
+    c.text(ox, oy + mh + 0.04, mw, 0.26, xa["label"] + " →", size=S["label"] + 1, bold=True, color=t["title"], align="c")
+    cx_axis, cy_axis = ox - 0.3, oy + mh / 2
     for txt, al, sz, bold, col in ((ya["label"] + " →", "c", S["label"] + 1, True, t["title"]),
                                    (ya.get("low", ""), "l", S["small"], False, t["muted"]),
                                    (ya.get("high", ""), "r", S["small"], False, t["muted"])):
-        tb = c.text(cx_axis - size / 2, cy_axis - 0.12, size, 0.24, txt, size=sz, bold=bold, color=col, align=al, wrap=False)
+        tb = c.text(cx_axis - mh / 2, cy_axis - 0.12, mh, 0.24, txt, size=sz, bold=bold, color=col, align=al, wrap=False)
         tb.rotation = 270
     hl = set((slide.get("lead_message") or {}).get("highlights", []))
     sizes = [it.get("size") for it in body["items"] if it.get("size")]
     for it in body["items"]:
-        px = ox + it["x"] * size
-        py = oy + (1 - it["y"]) * size
+        px = ox + it["x"] * mw
+        py = oy + (1 - it["y"]) * mh
         r = 0.12 if not it.get("size") else 0.09 + 0.2 * (it["size"] / max(sizes))
         on = it["label"] in hl
         c.rect(px - r, py - r, 2 * r, 2 * r, fill=t["highlight"] if on else t["other_bars"], shape=MSO_SHAPE.OVAL)
-        c.text(px + r + 0.07, py - 0.14, 2.4, 0.3, it["label"], size=S["body"], bold=on, color=t["title"] if on else t["text"])
-    # the takeaway panel takes the rest of the width (A-12)
-    px0 = ox + size + 0.42
-    sidebar(c, spec, slide, x=px0, w=x + w - px0)
-
+        # labels stay inside the matrix, never past its right edge
+        room = ox + mw - (px + r + 0.07) - 0.05
+        if room >= 1.0:
+            c.text(px + r + 0.07, py - 0.14, min(2.4, room), 0.3, it["label"], size=S["body"], bold=on,
+                   color=t["title"] if on else t["text"])
+        else:  # too close to the right edge: label on the left of the point
+            c.text(px - r - 0.07 - 2.4, py - 0.14, 2.4, 0.3, it["label"], size=S["body"], bold=on,
+                   color=t["title"] if on else t["text"], align="r")
+    if side:  # the takeaway panel takes the rest of the width (A-12)
+        px0 = ox + mw + 0.42
+        sidebar(c, spec, slide, x=px0, w=x + w - px0)
 
 _LN_ORDER = ["a:lnL", "a:lnR", "a:lnT", "a:lnB"]
 
@@ -823,7 +1187,27 @@ def table(c, spec, body, box, slide=None):
     verdict = (co_row is not None or any(r.get("note") for r in rows)) and not last_text
     if verdict:
         cols.append(body.get("verdict_header") or "Verdict")
-    legend_h = 0.34 if (harvey_type or body.get("legend")) else 0
+    heat = body["table_type"] == "heatmap"
+    legend_h = 0.34 if (harvey_type or heat or body.get("legend")) else 0
+    # heatmap: each column shaded by rank among the compared rows (benchmark rows stay plain); darker = higher,
+    # or darker = better when the column is listed in low_is_better
+    shade = {}
+    if heat:
+        low_good = set(body.get("low_is_better", []))
+        for j, col in enumerate(body["columns"]):
+            vals = [(i, spec.value(r["cells"][j].get("point"))) for i, r in enumerate(rows)
+                    if not r.get("benchmark") and j < len(r["cells"]) and r["cells"][j].get("point")]
+            known = sorted(v for _, v in vals if v is not None)
+            if len(known) < 2:
+                continue
+            for i, v in vals:
+                if v is None:
+                    continue
+                pct = sum(1 for k in known if k < v) / (len(known) - 1)
+                pct = 1 - pct if col in low_good else pct
+                shade[(i, j)] = 0.9 - 0.8 * pct
+        if not shade and not body.get("legend"):
+            legend_h = 0
     ncols = len(cols) + 1
     first_w = w * 0.19
     widths = [first_w] + [0] * (ncols - 1)
@@ -861,12 +1245,27 @@ def table(c, spec, body, box, slide=None):
             rh.append(need)
         return hh, rh
 
+    def words_fit(size):  # PowerPoint breaks a word that is wider than its column; keep every header word whole
+        return all(measure.width_pt(wd, FONTS["body"], size, True) / 72 <= widths[j] - 0.36
+                   for j, col in enumerate(cols, start=1) for wd in str(col).split())
+
     size = S["body"]
     while True:
         head_h, rhs = heights(size)
         if head_h + sum(rhs) <= h - legend_h or size <= 10:
             break
         size -= 0.5
+    # then up to 2 pt smaller so no header word breaks; if that is not enough, keep the size and ask for a shorter header
+    for s2 in [size - 0.5 * k for k in range(0, 5)]:
+        if s2 >= 11 and words_fit(s2):
+            size = s2
+            head_h, rhs = heights(size)
+            break
+    else:
+        long_ = [wd for j, col in enumerate(cols, start=1) for wd in str(col).split()
+                 if measure.width_pt(wd, FONTS["body"], size, True) / 72 > widths[j] - 0.36]
+        SIDEBAR_WARN.append(f"slide {(slide or {}).get('id')}: table header words wider than their column ({', '.join(repr(w_) for w_ in long_[:3])}); "
+                            "shorten the column header or drop a column")
     spare = max(0.0, (h - legend_h) - head_h - sum(rhs))
     rhs = [r_ + spare / len(rhs) for r_ in rhs] if spare < 0.6 * len(rhs) else [r_ + 0.6 for r_ in rhs]
     tops, acc = [], y + head_h
@@ -918,14 +1317,18 @@ def table(c, spec, body, box, slide=None):
     put(tb.cell(0, 0), "")
     for j, col in enumerate(cols, start=1):
         is_text_col = (last_text or verdict) and j == ncols - 1
-        put(tb.cell(0, j), col, bold=True, color=t["title"], size=size, align="l" if (is_text_col or not harvey_type) else "c")
+        put(tb.cell(0, j), col, bold=True, color=t["title"], size=size,
+            align="l" if (is_text_col or not (harvey_type or heat)) else "c")
     for j in range(ncols):
         _cell_border(tb.cell(0, j), "b", t["primary"], 1.5)
     for i, row in enumerate(rows, start=1):
         on = row.get("highlight") or (i - 1) == co_row
         tint = t["sidebar"] if on and not t["dark_sidebar"] else (t["panel"] if on else None)
+        if heat and row.get("benchmark"):
+            tint = t["panel"]
         label = (row.get("badge", "") + "  " if row.get("badge") else "") + row["label"]
-        put(tb.cell(i, 0), label, bold=True, color=t["highlight"] if on else t["title"], size=size + 1, fill=tint)
+        put(tb.cell(i, 0), label, bold=True, color=t["highlight"] if on else (t["muted"] if row.get("benchmark") else t["title"]),
+            size=size + 1, fill=tint)
         texts = cell_texts(i - 1, row)
         for j, txt in enumerate(texts, start=1):
             cell = row["cells"][j - 1] if j - 1 < len(row["cells"]) else {}
@@ -934,12 +1337,38 @@ def table(c, spec, body, box, slide=None):
                 runs = [(co["header"], True, t["highlight"])] + ([(co["detail"], False, t["title"])] if co.get("detail") else [])
                 put(tb.cell(i, j), "", size=size, fill=tint, runs=runs)
                 continue
+            if heat and cell.get("point") and not is_text_col:
+                f_ = shade.get((i - 1, j - 1))
+                ph_ = spec.dpoint(cell["point"]) is None
+                put(tb.cell(i, j), txt, bold=bool(on), size=size, align="c",
+                    color=t["placeholder"] if ph_ else (t["white"] if (f_ is not None and f_ < 0.5) else t["title"]),
+                    fill=tint if f_ is None else tint_of(t["primary"], f_))
+                continue
             put(tb.cell(i, j), txt,
                 bold=bool(on and (is_text_col or cell.get("point"))),
                 color=(t["highlight"] if (on and is_text_col) else (t["title"] if on or cell.get("point") else t["text"])),
                 size=size, align="l" if (is_text_col or not harvey_type) else "c", fill=tint)
     bottom = y + head_h + sum(rhs)
-    if harvey_type:
+    if heat:
+        for i, row in enumerate(rows):  # the target row gets a full-width outline (shading keeps its meaning)
+            if row.get("highlight") or i == co_row:
+                c.rect(x, tops[i], w, rhs[i], line=t["highlight"], weight=2.25)
+        ly = bottom + 0.1
+        if not shade:  # nothing is shaded yet (ghost or drafted): a legend would describe nothing
+            return gf
+        low_good = bool(body.get("low_is_better"))
+        lo_lab, hi_lab = ("Weaker", "Stronger") if low_good else ("Lower", "Higher")
+        c.text(x, ly, 0.75, 0.24, lo_lab, size=S["small"], color=t["muted"])
+        lx = x + 0.72
+        for q_ in range(5):
+            c.rect(lx, ly + 0.03, 0.3, 0.18, fill=tint_of(t["primary"], 0.9 - 0.2 * q_))
+            lx += 0.32
+        c.text(lx + 0.06, ly, 0.9, 0.24, hi_lab, size=S["small"], color=t["muted"])
+        note = "Shading ranks the rows within each column" + ("; darker = better" if low_good else "")
+        if body.get("legend"):
+            note += ". " + body["legend"]
+        c.text(lx + 1.0, ly, w - (lx + 1.0 - x), 0.24, note, size=S["small"], color=t["muted"])
+    elif harvey_type:
         r = min(0.19, min(rhs) * 0.3)
         xs, acc = [], x
         for cw in widths:
@@ -995,6 +1424,8 @@ def text_body(c, spec, slide, body, box):
                 c.rect(x + 0.4, top + sh + gap - 0.12, 0.9, 0.04, fill=t["highlight"])
                 c.text(x + 0.4, top + sh + gap, w - 0.8, sup_h, sup, size=S["header"] + 4, color=t["muted"])
         return
+    if style == "quotes":
+        return quotes(c, spec, slide, body, box)
     if style == "bullets":
         paras = []
         for b in body.get("bullets", []):
@@ -1007,14 +1438,15 @@ def text_body(c, spec, slide, body, box):
     n = len(cols)
     gap = G["gap"]
     cw = (w - gap * (n - 1)) / n
-    common = min([fit_size(col.get("detail", []), cw - 0.38, h - 0.9 - _reserve(slide, col) - 0.3, S["body"])
+    hdr_need = max([0.9] + [_est_h(col["header"], cw - 0.8, S["header"] + 1, 1.0, bold=True) + 0.32 for col in cols])
+    common = min([fit_size(col.get("detail", []), cw - 0.38, h - hdr_need - _reserve(slide, col) - 0.3, S["body"])
                   for col in cols] or [S["body"]])
     for i, col in enumerate(cols):
         cx = x + i * (cw + gap)
         emph = col.get("emphasis")
         target = _is_target(slide, col)
         c.rect(cx, y, cw, h, fill=t["white"])
-        hdr_h = 0.9
+        hdr_h = hdr_need
         c.rect(cx, y, cw, hdr_h, fill=t["primary"] if emph else t["panel"])
         # the outline goes on top of the header fill, so the stroke keeps one width all the way round
         c.rect(cx, y, cw, h, fill=None, line=t["highlight"] if target else t["rule"], weight=2 if target else 0.75)
@@ -1029,6 +1461,82 @@ def text_body(c, spec, slide, body, box):
         _box_bottom(c, spec, slide, col, cx + 0.19, y + h, cw - 0.38, emph)
 
 
+def _quote_runs(text, t, size):
+    """'... **key phrase** ...' -> runs with the key phrase bold in the accent color."""
+    runs = []
+    for k, part in enumerate(str(text).split("**")):
+        if part:
+            runs.append((part, {"bold": k % 2 == 1, "color": t["highlight"] if k % 2 == 1 else t["title"],
+                                "font": t["font_title"], "size": size}))
+    return runs
+
+
+def quotes(c, spec, slide, body, box):
+    """quote-interview: 2-6 quote cards. Each card: optional takeaway header, a quotation mark, the quote
+    (serif; **phrase** in the accent) and who said it (role, not name). Grid: one row up to 3, then two rows;
+    two rows use a compact card with the quotation mark beside the quote. A quote with placeholder: true is
+    not a quote yet: a dashed card that says what quote is needed and from whom (ghost / drafted)."""
+    x, y, w, h = box
+    t = c.t
+    qs = body["quotes"]
+    n = len(qs)
+    ncol = n if n <= 3 else (2 if n == 4 else 3)
+    nrow = math.ceil(n / ncol)
+    compact = nrow > 1
+    gx, gy = G["gap"] * 1.4, G["gap"] * (1.0 if compact else 1.2)
+    cw = (w - gx * (ncol - 1)) / ncol
+    chh = (h - gy * (nrow - 1)) / nrow
+    pad = 0.2 if compact else 0.28
+    hsize = S["header"] if compact else S["header"] + 1
+    has_head = any(q.get("header") for q in qs)
+    head_h = max([_est_h(q["header"], cw - 2 * pad, hsize, 1.0, bold=True) for q in qs if q.get("header")] or [0])
+    head_h = head_h + (0.14 if compact else 0.22) if has_head else 0
+    mark_h = 0 if compact else 0.5          # compact: the mark hangs left of the quote instead of sitting above it
+    indent = 0.42 if compact else 0
+    who_h = 0.36 if compact else 0.5
+    room = chh - pad - head_h - mark_h - who_h - 0.12
+    tw = cw - 2 * pad - indent
+    size = min(fit_size([q["text"]], tw, max(room, 0.1), S["header"] + 4, min_size=11 if compact else 12, indent=0,
+                        line_spacing=1.12, title=True) for q in qs)
+    if room < 0.3 or any(_est_h(q["text"], tw, size, 1.12, title=True) > room + 0.02 for q in qs):
+        SIDEBAR_WARN.append(f"slide {slide.get('id')}: quotes do not fit their cards; use at most 3 quotes on one "
+                            "slide, shorter quotes, or shorter headers")
+        room = max(room, 0.3)
+    for k, q in enumerate(qs):
+        r_, c_ = divmod(k, ncol)
+        qx, qy = x + c_ * (cw + gx), y + r_ * (chh + gy)
+        on = bool(q.get("emphasis"))
+        ph = bool(q.get("placeholder"))
+        if ph:
+            c.rect(qx, qy, cw, chh, fill=None, line=t["placeholder"], dash=True)
+        else:
+            c.rect(qx, qy, cw, chh, fill=t["sidebar"] if on and not t["dark_sidebar"] else t["panel"])
+            c.rect(qx, qy, cw, 0.05, fill=t["highlight"] if on else t["primary"])
+        cy = qy + pad
+        if q.get("header"):
+            c.text(qx + pad, cy, cw - 2 * pad, head_h - 0.14, q["header"], size=hsize, bold=True,
+                   color=t["muted"] if ph else t["title"], line_spacing=1.0)
+            cy += head_h
+        if ph:
+            c.text(qx + pad, cy, cw - 2 * pad, 0.24, "QUOTE NEEDED", size=S["small"] - 1, bold=True, color=t["caution_ink"])
+            c.text(qx + pad, cy + 0.3, cw - 2 * pad, max(0.3, room + mark_h - 0.3), q["text"], size=S["body"],
+                   color=t["placeholder"], line_spacing=1.12)
+        else:
+            if compact:
+                c.text(qx + pad - 0.03, cy - 0.06, 0.4, 0.5, "\u201c", size=34, bold=True, font=t["font_title"],
+                       color=t["highlight"], line_spacing=0.8)
+            else:
+                c.text(qx + pad - 0.04, cy - 0.04, 0.8, mark_h + 0.1, "\u201c", size=54, bold=True, font=t["font_title"],
+                       color=t["highlight"], line_spacing=0.8)
+            cy += mark_h
+            c.text(qx + pad + indent, cy, tw, room, [_quote_runs(q["text"], t, size)], size=size, line_spacing=1.12)
+        who = ("From: " if ph else "") + q.get("speaker", "")
+        ly = qy + chh - who_h - 0.02
+        c.line(qx + pad, ly, qx + pad + 0.6, ly, color=t["highlight"] if on and not ph else t["gray_mid"], weight=1.5)
+        c.text(qx + pad, ly + 0.08, cw - 2 * pad, who_h - 0.1, who, size=S["label"] - (1 if compact else 0),
+               color=t["muted"], bold=True)
+
+
 def ghost(c, spec, slide, box):
     """Storyline-only slide: the real exhibit skeleton with '?' values + takeaway and data needed (A-12)."""
     x, y, w, h = box
@@ -1041,7 +1549,12 @@ def ghost(c, spec, slide, box):
     elif body and body.get("kind") in _ghost_kinds():
         b2 = (x, y, w, h - cap_h)
         fn = _ghost_kinds()[body["kind"]]
-        fn(c, spec, body, b2) if body["kind"] in ("kpi", "table") else fn(c, spec, slide, body, b2)
+        if body["kind"] == "kpi":
+            fn(c, spec, body, b2)
+        elif body["kind"] == "table":
+            fn(c, spec, body, b2, slide)
+        else:
+            fn(c, spec, slide, body, b2)
     else:
         c.rect(x, y, w, h - cap_h, line=t["placeholder"], dash=True)
         c.text(x, y + (h - cap_h) / 2 - 0.2, w, 0.4, slide.get("archetype", ""), size=S["header"], color=t["placeholder"], align="c")
@@ -1169,6 +1682,13 @@ def exec_summary(c, spec, slide, page_no, pages=None):
     while f > 0.72 and sum(need(it, f) for it in spec.exec) > avail:
         f -= 0.02
     needs = [need(it, f) for it in spec.exec]
+    # the first page a reader sees: never let it overflow, and say so when it only fits in small type
+    if sum(needs) > avail + 0.02:
+        SIDEBAR_WARN.append("exec summary does not fit the page even at the smallest size; shorten the governing "
+                            "thought and the sub-points (one line each), or merge sub-points")
+    elif S["body"] * f < 11.95:
+        SIDEBAR_WARN.append(f"exec summary only fits with sub-points at {S['body'] * f:.1f} pt (body text is {S['body']} pt); "
+                            "shorten the sub-points to one line each so the first page reads at full size")
     rows = [nd * avail / sum(needs) for nd in needs]  # rows share the page in proportion to their text
     for i, item in enumerate(spec.exec):
         row = rows[i]
@@ -1223,6 +1743,88 @@ def end_page(c, spec, slide, page_no):
             c.text(px + cols[0], yy, cols[1] - 0.15, rh, st.get("owner", ""), size=S["body"], color=t["text"], anchor="m")
             c.text(px + cols[0] + cols[1], yy, cols[2], rh, st.get("timing", ""), size=S["body"], color=t["text"], anchor="m")
             c.line(px, yy + rh, px + pw, yy + rh, color=t["rule"])
+    c.text(G["slide_w"] - m - 0.5, G["source_top"], 0.5, G["line_h"], str(page_no), size=S["source"], color=t["muted"], align="r")
+
+
+def _section_claim(spec, sec):
+    """The exec summary item a section proves (its lead message)."""
+    return next((it["text"] for it in spec.exec if it["id"] == sec.get("exec_item_id")), "")
+
+
+def _section_pages(spec, pages):
+    """First page of each section's content."""
+    out = {}
+    for sl in spec.raw["slides"]:
+        if sl.get("role") in ("content", "backup") and sl.get("section_id") and sl["section_id"] not in out:
+            out[sl["section_id"]] = pages[sl["id"]]
+    return out
+
+
+def section_divider(c, spec, slide, page_no):
+    """Section opener: number and name on a dark panel, the section's claim beside it (catalog: section-divider)."""
+    t = c.t
+    m = G["margin"]
+    sec = spec.sections.get(slide.get("section_id"), {})
+    pw = 4.4
+    c.rect(0, 0, pw, G["slide_h"], fill=t["primary"])
+    c.text(m, 1.0, pw - 2 * m, 0.3, "SECTION", size=S["label"], bold=True, color=t["white"])
+    c.text(m, 1.3, pw - 2 * m, 2.6, sec.get("id", ""), size=150, bold=True, font=t["font_title"], color=t["white"],
+           anchor="t", line_spacing=0.85)
+    # tracker: every section, current one in white
+    ty = G["slide_h"] - 1.15 - 0.34 * len(spec.section_order)
+    for s_id in spec.section_order:
+        cur = s_id == slide.get("section_id")
+        lab = spec.sections[s_id].get("tracker_label") or spec.sections[s_id]["title"]
+        c.text(m, ty, pw - 2 * m, 0.3, f"{s_id}   {lab}", size=S["label"] + 1, bold=cur,
+               color=t["white"] if cur else tint(t["primary"], 0.55))
+        ty += 0.34
+    tx = pw + 0.8
+    tw = G["slide_w"] - tx - m - 0.2
+    title = sec.get("title", "")
+    claim = (slide.get("lead_message") or {}).get("text") or _section_claim(spec, sec)
+    th = _est_h(title, tw, 40, 1.0, bold=True, title=True)
+    ch_ = _est_h(claim, tw, S["header"] + 7, 1.2) if claim else 0
+    top = (G["slide_h"] - (th + 0.45 + ch_)) / 2
+    c.text(tx, top, tw, th, title, size=40, bold=True, font=t["font_title"], color=t["title"], line_spacing=1.0)
+    if claim:
+        c.rect(tx, top + th + 0.18, 0.9, 0.05, fill=t["highlight"])
+        c.text(tx, top + th + 0.45, tw, ch_, claim, size=S["header"] + 7, color=t["text"], line_spacing=1.2)
+    c.text(G["slide_w"] - m - 0.5, G["source_top"], 0.5, G["line_h"], str(page_no), size=S["source"], color=t["muted"], align="r")
+
+
+def agenda_tracker(c, spec, slide, page_no, pages=None):
+    """Contents page, repeated before each section with the current section emphasised (catalog: agenda-tracker).
+    Each row: number, section name, first page. The claims stay on the exec summary (B-05: no deck-level repeat).
+    Without section_id it is a plain agenda."""
+    t = c.t
+    m = G["margin"]
+    W = G["slide_w"] - 2 * m
+    title = (slide.get("lead_message") or {}).get("text") or "Contents"
+    c.text(m, G["title_top"], G["title_w"], G["title_h"], title, size=S["title"], bold=True, font=t["font_title"], color=t["title"])
+    cur = slide.get("section_id")
+    first = _section_pages(spec, pages or {})
+    secs = [spec.sections[s] for s in spec.section_order]
+    n = max(1, len(secs))
+    y0 = G["content_top"] - 0.1
+    rh = min(1.0, (G["content_bottom"] - y0) / n)
+    nw, pgw = 0.9, 0.9
+    tw = W - nw - pgw - 0.3
+    c.line(m, y0, m + W, y0, color=t["primary"], weight=1.5)
+    for i, sec in enumerate(secs):
+        yy = y0 + i * rh
+        on = cur is not None and sec["id"] == cur
+        dim = cur is not None and not on
+        if on:
+            c.rect(m, yy + 0.04, W, rh - 0.08, fill=t["sidebar"] if not t["dark_sidebar"] else t["panel"])
+            c.rect(m, yy + 0.04, 0.07, rh - 0.08, fill=t["highlight"])
+        c.text(m + 0.25, yy, nw - 0.25, rh, sec["id"], size=30, bold=True, font=t["font_title"], anchor="m",
+               color=t["highlight"] if on else (t["gray_mid"] if dim else t["primary"]))
+        c.text(m + nw, yy, tw, rh, sec["title"], size=S["header"] + 7, bold=True, font=t["font_title"], anchor="m",
+               color=t["placeholder"] if dim else t["title"], line_spacing=1.0)
+        if sec["id"] in first:
+            c.text(m + W - pgw, yy, pgw - 0.15, rh, f"p. {first[sec['id']]}", size=S["label"] + 1, anchor="m", align="r",
+                   color=t["placeholder"] if dim else t["muted"])
+        c.line(m, yy + rh, m + W, yy + rh, color=t["rule"])
     c.text(G["slide_w"] - m - 0.5, G["source_top"], 0.5, G["line_h"], str(page_no), size=S["source"], color=t["muted"], align="r")
 
 
@@ -1314,6 +1916,10 @@ def fit_size(texts, w, h, size, min_size=11, indent=0.2, line_spacing=1.15, para
     return min_size
 
 
+def tint_of(hex_, f=0.88):
+    return tint(hex_, f)
+
+
 def tint(hex_, f=0.88):
     """Mix a color with white (f = share of white)."""
     h = hex_.lstrip("#")
@@ -1395,18 +2001,21 @@ def panels(c, spec, slide, body, box):
     n = len(ps)
     gap = 0.42
     pw = (w - gap * (n - 1)) / n
+    hd_h = max(_est_h(p["header"], pw - (0.9 if p.get("delta") else 0), S["header"] + 1, 1.0, bold=True) for p in ps)
+    ul_h = max([_est_h(p["unit_line"].replace("**", ""), pw, S["label"], 1.0) for p in ps if p.get("unit_line")] or [0])
     for i, p in enumerate(ps):
         px = x + i * (pw + gap)
-        c.text(px, y, pw - (0.9 if p.get("delta") else 0), 0.62, p["header"], size=S["header"] + 1, bold=True, color=t["title"], line_spacing=1.0)
+        c.text(px, y, pw - (0.9 if p.get("delta") else 0), hd_h, p["header"], size=S["header"] + 1, bold=True, color=t["title"], line_spacing=1.0)
         if p.get("delta"):
             pill = c.rect(px + pw - 0.85, y + 0.04, 0.85, 0.32, fill=t["highlight"] if spec.dpoint(p["delta"]) else None,
                           line=None if spec.dpoint(p["delta"]) else t["placeholder"], dash=not spec.dpoint(p["delta"]), radius=0.16)
             d_unit = (spec.dpoint(p["delta"]) or {}).get("unit")
             c.label_in(pill, dp_fmt(spec, p["delta"], signed=d_unit != "x"), size=S["label"], bold=True, color=t["white"] if spec.dpoint(p["delta"]) else t["placeholder"])
-        cy = y + 0.72
-        if p.get("unit_line"):
-            c.text(px, cy, pw, 0.26, unit_runs(p["unit_line"], t), size=S["label"])
-            cy += 0.32
+        cy = y + max(0.62, hd_h) + 0.1
+        if ul_h:
+            if p.get("unit_line"):
+                c.text(px, cy, pw, ul_h, unit_runs(p["unit_line"], t), size=S["label"], line_spacing=1.0)
+            cy += ul_h + 0.06
         c.line(px, cy, px + pw, cy, color=t["rule"])
         inner = (px, cy + 0.1, pw, y + h - cy - 0.1)
         b = p["body"]
@@ -1669,7 +2278,19 @@ def levers(c, spec, slide, body, box):
         y += 0.46
         h -= 0.46
     n = len(items) + (1 if total else 0)
-    rh = min(1.05 if any(it.get("metric") for it in items) else 0.95, h / n)
+    tw0 = w * (0.5 if any(it.get("metric") for it in items) else 0.56)
+    same_unit0 = len({(spec.dpoint(it.get("point")) or {}).get("unit") for it in items if it.get("point")}) <= 1
+    # mixed units draw no bars, so the number and its metric line may use the space a bar would take
+    mw = 2.6 if same_unit0 else max(2.6, w - 0.75 - tw0 - 0.3)
+    def need_(it):  # value line + metric under it, or the lever text, whichever is taller
+        m_ = (0.5 + _est_h(it["metric"], mw, S["label"] + 1, 1.0) + 0.08) if it.get("metric") else 0
+        return max(m_, _est_h(it["text"], tw0, S["body"] + 1, 1.0) + 0.16)
+    real = max(need_(it) for it in items)
+    want = max(real, 1.05 if any(it.get("metric") for it in items) else 0.95)
+    rh = min(want, h / n)
+    if real > h / n + 0.02:
+        SIDEBAR_WARN.append(f"slide {slide.get('id')}: lever rows need {real:.2f} in but have {h / n:.2f} in; "
+                            "shorten the lever text or the metric line, or drop a lever")
     vals = [spec.value(it.get("point")) for it in items]
     vmax = max([abs(v) for v in vals if v is not None] or [1])
     same_unit = len({(spec.dpoint(it.get("point")) or {}).get("unit") for it in items if it.get("point")}) <= 1
@@ -1701,7 +2322,6 @@ def levers(c, spec, slide, body, box):
                 c.rect(vx, ry + rh / 2 - 0.14, max(0.05, barw * abs(v) / vmax), 0.28, fill=t["other_bars"])
             col = t["placeholder"] if v is None else t["title"]
             if it.get("metric"):
-                mw = 2.6
                 c.text(x + w - mw, ry + 0.06, mw, 0.42, dp_fmt(spec, p), size=S["header"] + 3, bold=True, font=t["font_title"], color=col, align="r")
                 c.text(x + w - mw, ry + 0.5, mw, rh - 0.52, it["metric"], size=S["label"] + 1, color=t["muted"], align="r", line_spacing=1.0)
             else:
@@ -1722,18 +2342,23 @@ def case(c, spec, slide, body, box):
     t = c.t
     top = y
     if body.get("subject"):
-        c.text(x, y, w, 0.3, [[("CASE  ", {"bold": True, "color": t["highlight"]}), (body["subject"], {"bold": True, "color": t["title"]})]], size=S["body"])
-        top += 0.45
+        sh_ = _est_h("CASE  " + body["subject"], w, S["body"], 1.0, bold=True)
+        c.text(x, y, w, sh_, [[("CASE  ", {"bold": True, "color": t["highlight"]}), (body["subject"], {"bold": True, "color": t["title"]})]],
+               size=S["body"], line_spacing=1.0)
+        top += sh_ + 0.15
     hh = y + h - top
     gap = 0.35
     iw = w * 0.32
     cw = (w - iw - 2 * gap) / 2
     labels = (body.get("situation_header") or "Situation", body.get("approach_header") or "Approach")
+    # both headers get the height of the taller one, so the rules under them line up
+    lh_ = max(_est_h(lab, cw, S["header"] + 1, 1.0, bold=True) for lab in labels)
     for k, (lab, items) in enumerate(((labels[0], body.get("situation", [])), (labels[1], body.get("approach", [])))):
         cx = x + k * (cw + gap)
-        c.text(cx, top, cw, 0.32, lab, size=S["header"] + 1, bold=True, color=t["title"])
-        c.line(cx, top + 0.4, cx + cw, top + 0.4, color=t["primary"], weight=1.5)
-        _bullets(c, items, cx, top + 0.55, cw, hh - 0.6, size=fit_size(items, cw, hh - 0.6, S["body"] + 2, line_spacing=1.15))
+        c.text(cx, top, cw, lh_, lab, size=S["header"] + 1, bold=True, color=t["title"], line_spacing=1.0)
+        c.line(cx, top + lh_ + 0.08, cx + cw, top + lh_ + 0.08, color=t["primary"], weight=1.5)
+        by_ = top + lh_ + 0.23
+        _bullets(c, items, cx, by_, cw, top + hh - by_, size=fit_size(items, cw, top + hh - by_, S["body"] + 2, line_spacing=1.15))
         if k == 1 or body.get("connector") == "all":  # B-09: situation -> approach is not cause and effect
             c.rect(cx + cw + gap / 2 - 0.09, top + hh / 2, 0.18, 0.3, fill=t["gray_light"], shape=MSO_SHAPE.CHEVRON)
     ix = x + 2 * (cw + gap)
@@ -1835,16 +2460,28 @@ def measured_height(sh, body_font="Arial"):
 
 def layout_check(slide, page_no, body_font="Arial"):
     """F8: after drawing, flag text that does not fit its box (measured with real fonts), text that runs into
-    another element, and shapes that leave the slide."""
+    another element below it (text, a rule or a box), text that spills out of the panel it sits on, and shapes
+    that leave the slide."""
     out = []
     W, H = G["slide_w"], G["slide_h"]
-    boxes = []
+    texts, others = [], []
     for sh in slide.shapes:
         x, y = sh.left / 914400, sh.top / 914400
         w, h = sh.width / 914400, sh.height / 914400
         if sh.rotation == 0 and (x < -0.01 or y < -0.01 or x + w > W + 0.01 or y + h > H + 0.01):
             out.append(f"p{page_no}: shape leaves the slide ({x:.2f}, {y:.2f}, {w:.2f} x {h:.2f} in)")
-        if sh.shape_type == 19 or not sh.has_text_frame or not sh.text_frame.text.strip() or sh.rotation:
+        if sh.rotation or getattr(sh, "has_chart", False) or getattr(sh, "has_table", False):
+            continue
+        is_line = sh.shape_type == 9 or (sh.shape_type is None and h < 0.01)
+        has_text = (not is_line) and sh.has_text_frame and sh.text_frame.text.strip()
+        filled = sh.shape_type == 1 and sh.fill.type == 1
+        if is_line:
+            if w > 0.05:
+                others.append(("rule", x, y, w, 0.0))
+            continue
+        if filled and h > 0.02:
+            others.append(("panel", x, y, w, h))
+        if not has_text:
             continue
         tf = sh.text_frame
         if tf.word_wrap is False:
@@ -1857,20 +2494,34 @@ def layout_check(slide, page_no, body_font="Arial"):
             top, bot = y + h - need, y + h
         else:
             top, bot = y, y + need
-        filled = sh.shape_type == 1 and sh.fill.type == 1
-        boxes.append((x, y, w, h, top, bot, need, filled, tf.text.strip().replace("\n", " ")[:40]))
-    for i, (x, y, w, h, top, bot, need, filled, label) in enumerate(boxes):
+        texts.append((x, y, w, h, top, bot, need, filled, tf.text.strip().replace("\n", " ")[:40]))
+    for i, (x, y, w, h, top, bot, need, filled, label) in enumerate(texts):
         if need <= h + 0.03:
             continue
         if filled:
             out.append(f"p{page_no}: text does not fit its shape ({need:.2f} in of text in {h:.2f} in): \"{label}\"")
             continue
-        for j, (x2, y2, w2, h2, *_r) in enumerate(boxes):
+        hit = None
+        for j, (x2, y2, w2, h2, *_r) in enumerate(texts):
             if j == i or min(x + w, x2 + w2) - max(x, x2) <= 0.05:
                 continue
             if (y2 > y + 0.02 and bot > y2 + 0.02 and y2 >= y + h - 0.02) or (y2 + h2 < y + 0.02 and top < y2 + h2 - 0.02):
-                out.append(f"p{page_no}: text runs into another element ({need:.2f} in of text in {h:.2f} in): \"{label}\"")
+                hit = "another element"
                 break
+        if not hit:
+            for kind, x2, y2, w2, h2 in others:
+                if min(x + w, x2 + w2) - max(x, x2) <= 0.05:
+                    continue
+                # a rule or box that starts below the box's planned bottom but above where the text really ends
+                if y + h - 0.05 <= y2 < bot - 0.02:
+                    hit = "a rule" if kind == "rule" else "the box below"
+                    break
+                # the panel the text sits on ends before the text does
+                if kind == "panel" and y2 <= y + 0.02 and y + h - 0.12 <= y2 + h2 < bot - 0.02 and x2 <= x + 0.02 and x2 + w2 >= x + w - 0.02:
+                    hit = "the edge of its panel"
+                    break
+        if hit:
+            out.append(f"p{page_no}: text runs into {hit} ({need:.2f} in of text in {h:.2f} in): \"{label}\"")
     return out
 
 
@@ -1894,13 +2545,18 @@ def render(spec_dict, out_path, theme=None, font_pair=None):
             exec_summary(c, spec, sl, i, pages)
         elif role == "end_page":
             end_page(c, spec, sl, i)
+        elif role == "section_divider":
+            section_divider(c, spec, sl, i)
+        elif role == "agenda_tracker":
+            agenda_tracker(c, spec, sl, i, pages)
         elif role in ("content", "backup"):
             w = content(c, spec, sl, i)
             if w:
-                warnings.append(w)
+                warnings.append(f"p{i} (slide {sl['id']}): " + re.sub(r"^slide [^:]+: ", "", w))
         else:
             warnings.append(f"slide {sl['id']}: role '{role}' not drawn yet")
-        warnings += layout_check(slide, i, tok["font_body"]) + SIDEBAR_WARN
+        own = [re.sub(r"^slide [^:]+: ", "", w_) for w_ in SIDEBAR_WARN]
+        warnings += layout_check(slide, i, tok["font_body"]) + [f"p{i} (slide {sl['id']}): {w_}" for w_ in own]
         SIDEBAR_WARN.clear()
     prs.save(out_path)
     return {"path": out_path, "slides": len(spec_dict["slides"]), "theme": tok["theme"], "font_pair": tok["font_pair"], "warnings": warnings}

@@ -1,0 +1,1776 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Renderer showcase 3",
+  "subtitle": "Section dividers, scatter, heatmap and interview quotes in a 10-slide deck",
+  "company_name": "Example Health (fictional)",
+  "date": "2026-11-08",
+  "language": "en-US",
+  "confidentiality": "Illustrative example — all companies, numbers and sources are fictional",
+  "theme": "navy"
+ },
+ "storyline": {
+  "governing_thought": "Moving Riverside and Oak Park to online booking is the fastest way to cut no-shows across the network",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "No-shows are the network's largest avoidable loss, and clinics that book online lose far fewer patients",
+    "supports": [
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "sub_points": [
+     {
+      "text": "No-shows cost the network tens of thousands of visits and millions of dollars a year",
+      "slide_id": "4"
+     },
+     {
+      "text": "Clinics that book most visits online have the lowest no-show rates; Riverside and Oak Park book the fewest",
+      "slide_id": "5"
+     },
+     {
+      "text": "Reminder letters have not moved the network rate in four years",
+      "slide_id": "7"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "Riverside trails the network on every operating measure, and phone check-in is the biggest cause",
+    "supports": [
+     "9",
+     "10",
+     "11"
+    ],
+    "sub_points": [
+     {
+      "text": "Riverside is last of the clinics on wait time, no-shows, satisfaction and throughput",
+      "slide_id": "9"
+     },
+     {
+      "text": "Phone check-in explains half of its extra wait over the network median",
+      "slide_id": "10"
+     },
+     {
+      "text": "Three changes would bring it to the median within a year",
+      "slide_id": "11"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "Patients say they miss visits because booking is hard, so online booking and text reminders go first",
+    "supports": [
+     "13",
+     "14",
+     "15"
+    ],
+    "sub_points": [
+     {
+      "text": "Trouble booking or rescheduling is the most common reason patients give",
+      "slide_id": "13"
+     },
+     {
+      "text": "Patients describe phone queues and late letters, not a lack of need",
+      "slide_id": "14"
+     },
+     {
+      "text": "Riverside and Oak Park switch first, the rest of the network by the end of 2027",
+      "slide_id": "15"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Move Riverside and Oak Park to online booking with text reminders",
+    "owner": "Operations",
+    "timing": "Q1 2027"
+   },
+   {
+    "action": "Track no-shows and wait time weekly against the network median",
+    "owner": "Finance",
+    "timing": "From Jan 2027"
+   },
+   {
+    "action": "Review the pilot and decide on the remaining clinics",
+    "owner": "Executive team",
+    "timing": "Q2 2027"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "1",
+   "title": "Booking and no-shows",
+   "exec_item_id": "1",
+   "tracker_label": "Booking"
+  },
+  {
+   "id": "2",
+   "title": "Clinic performance",
+   "exec_item_id": "2",
+   "tracker_label": "Performance"
+  },
+  {
+   "id": "3",
+   "title": "What patients say",
+   "exec_item_id": "3",
+   "tracker_label": "Patients"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "d1",
+   "role": "section_divider",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "kpi-big-numbers",
+   "message_type": "item",
+   "lead_message": {
+    "text": "No-shows are the network's largest avoidable loss of visits and revenue",
+    "clauses": 1
+   },
+   "rationale": "A few headline numbers -> KPI tiles",
+   "unit_line": "**Cost of no-shows across the network**, January to September 2026",
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "k-vis"
+      },
+      "caption": "thousand booked visits lost",
+      "relation": "Slots held open for patients who never came",
+      "drivers": [
+       "Most lost slots cannot be refilled on the day",
+       "Clinicians sit idle or run late on the next patient",
+       "Concentrated in the clinics that book by phone"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "k-rev"
+      },
+      "caption": "revenue lost",
+      "relation": "Billed only when the visit takes place",
+      "drivers": [
+       "Lost visit fees, not counting follow-up care",
+       "Fixed staff and room costs stay the same",
+       "Larger than any cost line we can cut this year"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "k-rate"
+      },
+      "caption": "of booked visits are no-shows",
+      "relation": "Network rate, unchanged for years",
+      "drivers": [
+       "Varies more than twofold between clinics",
+       "Highest where online booking is lowest",
+       "Reminder letters have not moved it"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "scatter-bubble",
+   "message_type": "correlation",
+   "lead_message": {
+    "text": "Clinics that book more visits online have fewer no-shows, and Riverside and Oak Park lag on both",
+    "highlights": [
+     "Riverside",
+     "Oak Park"
+    ],
+    "clauses": 1
+   },
+   "rationale": "Two measures move together across clinics -> scatter with average lines",
+   "unit_line": "**Online booking and no-shows by clinic**, %, January to September 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Booking online goes with keeping the appointment",
+     "bullets": [
+      "**Riverside and Oak Park:** fewer than a quarter of visits booked online, and the highest no-show rates in the network",
+      "**Clinics above half online:** no-show rates near or under the bottom of the range, half the level of the two laggards",
+      "**Lakeview and Elmwood:** near the average on both, the next candidates once the laggards move"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "scatter",
+    "categories": [
+     "Riverside",
+     "Oak Park",
+     "Lakeview",
+     "Hillcrest",
+     "Midtown",
+     "Westgate",
+     "Northside",
+     "Bayview",
+     "Elmwood",
+     "Fairmont"
+    ],
+    "series": [
+     {
+      "name": "Visits booked online",
+      "points": [
+       {
+        "data_ref": "on-riv"
+       },
+       {
+        "data_ref": "on-oak"
+       },
+       {
+        "data_ref": "on-lak"
+       },
+       {
+        "data_ref": "on-hil"
+       },
+       {
+        "data_ref": "on-mid"
+       },
+       {
+        "data_ref": "on-wes"
+       },
+       {
+        "data_ref": "on-nor"
+       },
+       {
+        "data_ref": "on-bay"
+       },
+       {
+        "data_ref": "on-elm"
+       },
+       {
+        "data_ref": "on-fai"
+       }
+      ]
+     },
+     {
+      "name": "No-show rate",
+      "points": [
+       {
+        "data_ref": "ns-riv"
+       },
+       {
+        "data_ref": "ns-oak"
+       },
+       {
+        "data_ref": "ns-lak"
+       },
+       {
+        "data_ref": "ns-hil"
+       },
+       {
+        "data_ref": "ns-mid"
+       },
+       {
+        "data_ref": "ns-wes"
+       },
+       {
+        "data_ref": "ns-nor"
+       },
+       {
+        "data_ref": "ns-bay"
+       },
+       {
+        "data_ref": "ns-elm"
+       },
+       {
+        "data_ref": "ns-fai"
+       }
+      ]
+     }
+    ],
+    "x_label": "**Visits booked online**, % of visits",
+    "y_label": "**No-show rate**, % of booked visits",
+    "x_format": "0%",
+    "value_format": "0%",
+    "highlight": [
+     "Riverside",
+     "Oak Park"
+    ],
+    "quadrant_labels": [
+     "Low online, high no-shows",
+     "",
+     "",
+     "High online, low no-shows"
+    ],
+    "focus_quadrant": "top-left"
+   }
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "bar-ranking",
+   "message_type": "item",
+   "lead_message": {
+    "text": "Riverside and Oak Park lose the most visits to no-shows, so the fix pays most there",
+    "highlights": [
+     "Riverside",
+     "Oak Park"
+    ],
+    "clauses": 1
+   },
+   "rationale": "Ranking of clinics -> sorted bar",
+   "unit_line": "**Booked visits lost to no-shows**, thousands, January to September 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Two clinics carry the largest share of the loss",
+     "bullets": [
+      "**Riverside:** the most lost visits of any clinic, from the highest no-show rate and a large patient list",
+      "**Oak Park:** second, with the same phone-first booking",
+      "**Everyone else:** a similar, smaller loss per clinic, which a network-wide switch can address later"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "Riverside",
+     "Oak Park",
+     "Lakeview",
+     "Hillcrest",
+     "Midtown",
+     "Westgate",
+     "Northside",
+     "Bayview",
+     "Elmwood",
+     "Fairmont"
+    ],
+    "series": [
+     {
+      "name": "Lost visits",
+      "points": [
+       {
+        "data_ref": "lv-riv"
+       },
+       {
+        "data_ref": "lv-oak"
+       },
+       {
+        "data_ref": "lv-lak"
+       },
+       {
+        "data_ref": "lv-hil"
+       },
+       {
+        "data_ref": "lv-mid"
+       },
+       {
+        "data_ref": "lv-wes"
+       },
+       {
+        "data_ref": "lv-nor"
+       },
+       {
+        "data_ref": "lv-bay"
+       },
+       {
+        "data_ref": "lv-elm"
+       },
+       {
+        "data_ref": "lv-fai"
+       }
+      ]
+     }
+    ],
+    "sort": "desc",
+    "highlight": [
+     "Riverside",
+     "Oak Park"
+    ],
+    "value_format": "0.0"
+   }
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "column-time-series",
+   "message_type": "time-series",
+   "lead_message": {
+    "text": "The network no-show rate has barely moved since reminder letters started, so letters are not the answer",
+    "highlights": [],
+    "clauses": 1
+   },
+   "rationale": "Few periods over time -> column",
+   "unit_line": "**Network no-show rate**, % of booked visits, 2022 to 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Flat for five years, with letters in place the whole time",
+     "bullets": [
+      "**Letters:** sent for every booking since 2022, yet the rate has stayed within a narrow band",
+      "**Timing:** patients tell us letters often arrive after the visit date",
+      "**Implication:** a channel the patient answers on the day, such as a text, is the change to test"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "2022",
+     "2023",
+     "2024",
+     "2025",
+     "2026"
+    ],
+    "series": [
+     {
+      "name": "No-show rate",
+      "points": [
+       {
+        "data_ref": "tr-2022"
+       },
+       {
+        "data_ref": "tr-2023"
+       },
+       {
+        "data_ref": "tr-2024"
+       },
+       {
+        "data_ref": "tr-2025"
+       },
+       {
+        "data_ref": "tr-2026"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [],
+    "value_format": "0.0%"
+   },
+   "footnotes": [
+    "2026 covers January to September"
+   ]
+  },
+  {
+   "id": "d2",
+   "role": "section_divider",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "9",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "heatmap",
+   "message_type": "item",
+   "lead_message": {
+    "text": "Riverside trails the network median on all four operating measures, and wait time is the widest gap",
+    "highlights": [
+     "Riverside"
+    ],
+    "count_word": 4,
+    "clauses": 1
+   },
+   "rationale": "Several clinics compared on several measures -> heatmap with the network median on top",
+   "unit_line": "**Operating measures by clinic**, January to September 2026",
+   "callout": {
+    "target": "Riverside",
+    "header": "Start here",
+    "detail": "Worst wait, no-shows, satisfaction and throughput"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "heatmap",
+    "columns": [
+     "Wait time, minutes",
+     "No-show rate",
+     "Satisfaction, index 0–100",
+     "Visits per clinician a day"
+    ],
+    "rows": [
+     {
+      "label": "Network median",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "hm-med-0"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-med-1"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-med-2"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-med-3"
+        }
+       }
+      ],
+      "benchmark": true
+     },
+     {
+      "label": "Riverside",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "hm-riv-0"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-riv-1"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-riv-2"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-riv-3"
+        }
+       }
+      ],
+      "highlight": true
+     },
+     {
+      "label": "Oak Park",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "hm-oak-0"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-oak-1"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-oak-2"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-oak-3"
+        }
+       }
+      ],
+      "note": "Weak booking, average throughput"
+     },
+     {
+      "label": "Lakeview",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "hm-lak-0"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-lak-1"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-lak-2"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-lak-3"
+        }
+       }
+      ],
+      "note": "At the median"
+     },
+     {
+      "label": "Hillcrest",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "hm-hil-0"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-hil-1"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-hil-2"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-hil-3"
+        }
+       }
+      ],
+      "note": "Best wait and no-shows"
+     },
+     {
+      "label": "Midtown",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "hm-mid-0"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-mid-1"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-mid-2"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-mid-3"
+        }
+       }
+      ],
+      "note": "Most visits per clinician"
+     },
+     {
+      "label": "Westgate",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "hm-wes-0"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-wes-1"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-wes-2"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "hm-wes-3"
+        }
+       }
+      ],
+      "note": "Slightly below the median"
+     }
+    ],
+    "low_is_better": [
+     "Wait time, minutes",
+     "No-show rate"
+    ],
+    "verdict_header": "Read-across"
+   }
+  },
+  {
+   "id": "10",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "waterfall-bridge",
+   "message_type": "component",
+   "lead_message": {
+    "text": "Phone check-in explains half of Riverside's extra wait over the network median",
+    "highlights": [
+     "Phone check-in"
+    ],
+    "count_word": 3,
+    "clauses": 1
+   },
+   "rationale": "What adds up to the gap -> waterfall",
+   "unit_line": "**Average wait from arrival to clinician**, minutes, January to September 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "big_number": {
+      "data_ref": "wf-share"
+     },
+     "caption": "of Riverside's extra wait comes from phone check-in",
+     "bullets": [
+      "**Phone check-in:** patients queue at the desk while staff answer booking calls",
+      "**Rota gaps:** late-morning gaps when shifts change leave rooms empty",
+      "**Room turnover:** the smallest step, fixed by a cleaning slot in the schedule"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "waterfall",
+    "categories": [
+     "Network median",
+     "Phone check-in",
+     "Rota gaps",
+     "Room turnover",
+     "Riverside"
+    ],
+    "series": [
+     {
+      "name": "Wait time",
+      "points": [
+       {
+        "data_ref": "wf0"
+       },
+       {
+        "data_ref": "wf1"
+       },
+       {
+        "data_ref": "wf2"
+       },
+       {
+        "data_ref": "wf3"
+       },
+       {
+        "data_ref": "hm-riv-0"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Phone check-in"
+    ],
+    "value_format": "0"
+   }
+  },
+  {
+   "id": "11",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "text-columns",
+   "message_type": "argument",
+   "lead_message": {
+    "text": "Three changes would bring Riverside to the network median within a year",
+    "count_word": 3,
+    "clauses": 1
+   },
+   "rationale": "Three moves side by side -> text columns",
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "Move booking and check-in online",
+      "detail": [
+       "Online booking for every visit type",
+       "Self check-in on arrival",
+       "Desk staff freed from booking calls",
+       "Text reminder the day before"
+      ],
+      "emphasis": true,
+      "footer": "Owner: operations · starts Q1 2027"
+     },
+     {
+      "header": "Close the gaps in the clinician rota",
+      "detail": [
+       "Overlap shifts by half an hour",
+       "Float clinician shared with Oak Park",
+       "Weekly rota review against bookings"
+      ],
+      "footer": "Owner: clinical lead · starts Q1 2027"
+     },
+     {
+      "header": "Schedule room turnover",
+      "detail": [
+       "Fixed cleaning slot every two hours",
+       "Rooms assigned at booking",
+       "Turnover tracked on the daily board"
+      ],
+      "footer": "Owner: site manager · starts Q2 2027"
+     }
+    ]
+   },
+   "so_what": "Online booking does the most, because it fixes both the wait and the no-shows"
+  },
+  {
+   "id": "d3",
+   "role": "section_divider",
+   "section_id": "3",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "13",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "archetype": "survey-bars",
+   "message_type": "frequency",
+   "lead_message": {
+    "text": "Trouble booking or rescheduling is the most common reason patients give for a missed visit",
+    "highlights": [
+     "Could not book or reschedule in time"
+    ],
+    "clauses": 1
+   },
+   "rationale": "How respondents answered -> survey bars",
+   "unit_line": "**Main reason for the last missed visit**, % of patients who missed a visit, October 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The first two reasons are about the booking system, not the patient",
+     "bullets": [
+      "**Booking:** the top reason by a wide margin, and the one online booking removes",
+      "**Forgetting:** second, and a text reminder on the day addresses it",
+      "**Need for care:** feeling better ranks third, so most missed visits were still needed"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "survey_bar",
+    "categories": [
+     "Could not book or reschedule in time",
+     "Forgot the appointment",
+     "Felt better",
+     "Transport",
+     "Work or childcare",
+     "Cost"
+    ],
+    "series": [
+     {
+      "name": "Share of patients",
+      "points": [
+       {
+        "data_ref": "sv0"
+       },
+       {
+        "data_ref": "sv1"
+       },
+       {
+        "data_ref": "sv2"
+       },
+       {
+        "data_ref": "sv3"
+       },
+       {
+        "data_ref": "sv4"
+       },
+       {
+        "data_ref": "sv5"
+       }
+      ]
+     }
+    ],
+    "sort": "desc",
+    "highlight": [
+     "Could not book or reschedule in time"
+    ],
+    "value_format": "0%"
+   }
+  },
+  {
+   "id": "14",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "archetype": "quote-interview",
+   "message_type": "argument",
+   "lead_message": {
+    "text": "Patients say they miss visits because booking is hard, not because they need less care",
+    "highlights": [],
+    "count_word": 3,
+    "clauses": 1
+   },
+   "rationale": "Qualitative evidence from interviews -> quote cards with a takeaway each",
+   "unit_line": "**Patient interviews**, Riverside, Oak Park and Hillcrest, October 2026",
+   "body": {
+    "kind": "text",
+    "style": "quotes",
+    "quotes": [
+     {
+      "header": "Phone booking loses patients before the visit",
+      "text": "I called three times and gave up. **By the time someone answered, I had to get back to work.**",
+      "speaker": "Patient, 40s, Riverside",
+      "source_id": "s2",
+      "emphasis": true
+     },
+     {
+      "header": "Reminders do not reach people",
+      "text": "The reminder came as a letter after the date. **A text the day before would have done it.**",
+      "speaker": "Patient, 60s, Oak Park",
+      "source_id": "s2"
+     },
+     {
+      "header": "Online booking changes the habit",
+      "text": "Since I can book on my phone at night, **I have not missed one appointment this year.**",
+      "speaker": "Patient, 30s, Hillcrest (books online)",
+      "source_id": "s2"
+     }
+    ]
+   },
+   "so_what": "Fixing booking and reminders addresses the reasons patients give; demand for care is not the problem",
+   "so_what_style": "line"
+  },
+  {
+   "id": "15",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "archetype": "timeline-roadmap",
+   "message_type": "structure",
+   "lead_message": {
+    "text": "Riverside and Oak Park switch to online booking first, and every clinic follows by the end of 2027",
+    "clauses": 1
+   },
+   "rationale": "Rollout with dates -> timeline",
+   "unit_line": "**Rollout of online booking and text reminders**, by quarter",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "timeline",
+    "periods": [
+     "Q4 2026",
+     "Q1 2027",
+     "Q2 2027",
+     "Q3 2027",
+     "Q4 2027"
+    ],
+    "rows": [
+     {
+      "label": "Riverside",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q1 2027",
+        "label": "Online booking and texts",
+        "emphasis": true
+       }
+      ]
+     },
+     {
+      "label": "Oak Park",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q1 2027",
+        "label": "Online booking and texts",
+        "emphasis": true
+       }
+      ]
+     },
+     {
+      "label": "Other clinics",
+      "bars": [
+       {
+        "start": "Q3 2027",
+        "end": "Q4 2027",
+        "label": "Network rollout"
+       }
+      ]
+     },
+     {
+      "label": "Tracking",
+      "bars": [
+       {
+        "start": "Q4 2026",
+        "end": "Q4 2027",
+        "label": "Weekly no-show and wait-time report"
+       }
+      ]
+     }
+    ],
+    "milestones": [
+     {
+      "at": "Q4 2026",
+      "label": "Decision"
+     },
+     {
+      "at": "Q2 2027",
+      "label": "Pilot review"
+     }
+    ]
+   },
+   "so_what": "One review after the pilot decides the network rollout, so the risk stays with two clinics"
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled",
+   "archetype": "end-page",
+   "message_type": "navigation"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "k-vis",
+   "slide_id": "4",
+   "label": "Booked visits lost to no-shows, network",
+   "value": 41.5,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "k-rev",
+   "slide_id": "4",
+   "label": "Revenue lost to no-shows, network",
+   "value": 6.2,
+   "unit": "$M",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "k-rate",
+   "slide_id": "4",
+   "label": "Network no-show rate",
+   "value": 0.13,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-riv",
+   "slide_id": "5",
+   "label": "Riverside: share of visits booked online",
+   "value": 0.18,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-oak",
+   "slide_id": "5",
+   "label": "Oak Park: share of visits booked online",
+   "value": 0.24,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-lak",
+   "slide_id": "5",
+   "label": "Lakeview: share of visits booked online",
+   "value": 0.41,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-hil",
+   "slide_id": "5",
+   "label": "Hillcrest: share of visits booked online",
+   "value": 0.52,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-mid",
+   "slide_id": "5",
+   "label": "Midtown: share of visits booked online",
+   "value": 0.47,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-wes",
+   "slide_id": "5",
+   "label": "Westgate: share of visits booked online",
+   "value": 0.33,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-nor",
+   "slide_id": "5",
+   "label": "Northside: share of visits booked online",
+   "value": 0.58,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-bay",
+   "slide_id": "5",
+   "label": "Bayview: share of visits booked online",
+   "value": 0.62,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-elm",
+   "slide_id": "5",
+   "label": "Elmwood: share of visits booked online",
+   "value": 0.38,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "on-fai",
+   "slide_id": "5",
+   "label": "Fairmont: share of visits booked online",
+   "value": 0.55,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-riv",
+   "slide_id": "5",
+   "label": "Riverside: no-show rate",
+   "value": 0.21,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-oak",
+   "slide_id": "5",
+   "label": "Oak Park: no-show rate",
+   "value": 0.19,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-lak",
+   "slide_id": "5",
+   "label": "Lakeview: no-show rate",
+   "value": 0.13,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-hil",
+   "slide_id": "5",
+   "label": "Hillcrest: no-show rate",
+   "value": 0.1,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-mid",
+   "slide_id": "5",
+   "label": "Midtown: no-show rate",
+   "value": 0.12,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-wes",
+   "slide_id": "5",
+   "label": "Westgate: no-show rate",
+   "value": 0.15,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-nor",
+   "slide_id": "5",
+   "label": "Northside: no-show rate",
+   "value": 0.09,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-bay",
+   "slide_id": "5",
+   "label": "Bayview: no-show rate",
+   "value": 0.08,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-elm",
+   "slide_id": "5",
+   "label": "Elmwood: no-show rate",
+   "value": 0.14,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "ns-fai",
+   "slide_id": "5",
+   "label": "Fairmont: no-show rate",
+   "value": 0.11,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-riv",
+   "slide_id": "6",
+   "label": "Riverside: booked visits lost to no-shows",
+   "value": 7.9,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-oak",
+   "slide_id": "6",
+   "label": "Oak Park: booked visits lost to no-shows",
+   "value": 6.4,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-lak",
+   "slide_id": "6",
+   "label": "Lakeview: booked visits lost to no-shows",
+   "value": 3.8,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-hil",
+   "slide_id": "6",
+   "label": "Hillcrest: booked visits lost to no-shows",
+   "value": 2.9,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-mid",
+   "slide_id": "6",
+   "label": "Midtown: booked visits lost to no-shows",
+   "value": 3.6,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-wes",
+   "slide_id": "6",
+   "label": "Westgate: booked visits lost to no-shows",
+   "value": 4.4,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-nor",
+   "slide_id": "6",
+   "label": "Northside: booked visits lost to no-shows",
+   "value": 2.6,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-bay",
+   "slide_id": "6",
+   "label": "Bayview: booked visits lost to no-shows",
+   "value": 2.2,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-elm",
+   "slide_id": "6",
+   "label": "Elmwood: booked visits lost to no-shows",
+   "value": 4.1,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "lv-fai",
+   "slide_id": "6",
+   "label": "Fairmont: booked visits lost to no-shows",
+   "value": 3.6,
+   "unit": "thousand visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "tr-2022",
+   "slide_id": "7",
+   "label": "Network no-show rate 2022",
+   "value": 0.135,
+   "unit": "%",
+   "period": "2022",
+   "source_id": "s1"
+  },
+  {
+   "id": "tr-2023",
+   "slide_id": "7",
+   "label": "Network no-show rate 2023",
+   "value": 0.132,
+   "unit": "%",
+   "period": "2023",
+   "source_id": "s1"
+  },
+  {
+   "id": "tr-2024",
+   "slide_id": "7",
+   "label": "Network no-show rate 2024",
+   "value": 0.134,
+   "unit": "%",
+   "period": "2024",
+   "source_id": "s1"
+  },
+  {
+   "id": "tr-2025",
+   "slide_id": "7",
+   "label": "Network no-show rate 2025",
+   "value": 0.131,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s1"
+  },
+  {
+   "id": "tr-2026",
+   "slide_id": "7",
+   "label": "Network no-show rate 2026",
+   "value": 0.13,
+   "unit": "%",
+   "period": "2026 (Jan–Sep)",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-med-0",
+   "slide_id": "9",
+   "label": "Network median: Wait time, minutes",
+   "value": 14,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-med-1",
+   "slide_id": "9",
+   "label": "Network median: No-show rate",
+   "value": 0.13,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-med-2",
+   "slide_id": "9",
+   "label": "Network median: Satisfaction, index 0–100",
+   "value": 78,
+   "unit": "index points",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-med-3",
+   "slide_id": "9",
+   "label": "Network median: Visits per clinician a day",
+   "value": 21,
+   "unit": "visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-riv-0",
+   "slide_id": "9",
+   "label": "Riverside: Wait time, minutes",
+   "value": 26,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-riv-1",
+   "slide_id": "9",
+   "label": "Riverside: No-show rate",
+   "value": 0.21,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-riv-2",
+   "slide_id": "9",
+   "label": "Riverside: Satisfaction, index 0–100",
+   "value": 64,
+   "unit": "index points",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-riv-3",
+   "slide_id": "9",
+   "label": "Riverside: Visits per clinician a day",
+   "value": 17,
+   "unit": "visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-oak-0",
+   "slide_id": "9",
+   "label": "Oak Park: Wait time, minutes",
+   "value": 19,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-oak-1",
+   "slide_id": "9",
+   "label": "Oak Park: No-show rate",
+   "value": 0.19,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-oak-2",
+   "slide_id": "9",
+   "label": "Oak Park: Satisfaction, index 0–100",
+   "value": 71,
+   "unit": "index points",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-oak-3",
+   "slide_id": "9",
+   "label": "Oak Park: Visits per clinician a day",
+   "value": 19,
+   "unit": "visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-lak-0",
+   "slide_id": "9",
+   "label": "Lakeview: Wait time, minutes",
+   "value": 12,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-lak-1",
+   "slide_id": "9",
+   "label": "Lakeview: No-show rate",
+   "value": 0.13,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-lak-2",
+   "slide_id": "9",
+   "label": "Lakeview: Satisfaction, index 0–100",
+   "value": 80,
+   "unit": "index points",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-lak-3",
+   "slide_id": "9",
+   "label": "Lakeview: Visits per clinician a day",
+   "value": 22,
+   "unit": "visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-hil-0",
+   "slide_id": "9",
+   "label": "Hillcrest: Wait time, minutes",
+   "value": 11,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-hil-1",
+   "slide_id": "9",
+   "label": "Hillcrest: No-show rate",
+   "value": 0.1,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-hil-2",
+   "slide_id": "9",
+   "label": "Hillcrest: Satisfaction, index 0–100",
+   "value": 83,
+   "unit": "index points",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-hil-3",
+   "slide_id": "9",
+   "label": "Hillcrest: Visits per clinician a day",
+   "value": 23,
+   "unit": "visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-mid-0",
+   "slide_id": "9",
+   "label": "Midtown: Wait time, minutes",
+   "value": 15,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-mid-1",
+   "slide_id": "9",
+   "label": "Midtown: No-show rate",
+   "value": 0.12,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-mid-2",
+   "slide_id": "9",
+   "label": "Midtown: Satisfaction, index 0–100",
+   "value": 77,
+   "unit": "index points",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-mid-3",
+   "slide_id": "9",
+   "label": "Midtown: Visits per clinician a day",
+   "value": 24,
+   "unit": "visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-wes-0",
+   "slide_id": "9",
+   "label": "Westgate: Wait time, minutes",
+   "value": 16,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-wes-1",
+   "slide_id": "9",
+   "label": "Westgate: No-show rate",
+   "value": 0.15,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-wes-2",
+   "slide_id": "9",
+   "label": "Westgate: Satisfaction, index 0–100",
+   "value": 74,
+   "unit": "index points",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "hm-wes-3",
+   "slide_id": "9",
+   "label": "Westgate: Visits per clinician a day",
+   "value": 20,
+   "unit": "visits",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "wf0",
+   "slide_id": "10",
+   "label": "Wait time, network median",
+   "value": 14,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "wf1",
+   "slide_id": "10",
+   "label": "Extra wait at Riverside: phone check-in",
+   "value": 6,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "wf2",
+   "slide_id": "10",
+   "label": "Extra wait at Riverside: gaps in clinician rota",
+   "value": 4,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "wf3",
+   "slide_id": "10",
+   "label": "Extra wait at Riverside: room turnover",
+   "value": 2,
+   "unit": "minutes",
+   "period": "Jan–Sep 2026",
+   "source_id": "s1"
+  },
+  {
+   "id": "wf-share",
+   "slide_id": "10",
+   "label": "Phone check-in share of Riverside's extra wait over the median",
+   "value": 0.5,
+   "unit": "%",
+   "period": "Jan–Sep 2026",
+   "source_id": "s3",
+   "derived_from": [
+    "wf1",
+    "hm-riv-0",
+    "wf0"
+   ],
+   "formula": "6 ÷ (26 − 14)",
+   "calc": "wf1 / (hm-riv-0 - wf0)"
+  },
+  {
+   "id": "sv0",
+   "slide_id": "13",
+   "label": "Main reason for last missed visit: Could not book or reschedule in time",
+   "value": 0.38,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s4"
+  },
+  {
+   "id": "sv1",
+   "slide_id": "13",
+   "label": "Main reason for last missed visit: Forgot the appointment",
+   "value": 0.24,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s4"
+  },
+  {
+   "id": "sv2",
+   "slide_id": "13",
+   "label": "Main reason for last missed visit: Felt better",
+   "value": 0.14,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s4"
+  },
+  {
+   "id": "sv3",
+   "slide_id": "13",
+   "label": "Main reason for last missed visit: Transport",
+   "value": 0.1,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s4"
+  },
+  {
+   "id": "sv4",
+   "slide_id": "13",
+   "label": "Main reason for last missed visit: Work or childcare",
+   "value": 0.09,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s4"
+  },
+  {
+   "id": "sv5",
+   "slide_id": "13",
+   "label": "Main reason for last missed visit: Cost",
+   "value": 0.05,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s4"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "user_provided",
+   "name": "Example Health clinic operations report (fictional)"
+  },
+  {
+   "id": "s2",
+   "kind": "user_provided",
+   "name": "Example Health patient interviews, n = 18 (fictional)"
+  },
+  {
+   "id": "s3",
+   "kind": "derived",
+   "name": "Team analysis"
+  },
+  {
+   "id": "s4",
+   "kind": "user_provided",
+   "name": "Example Health patient survey, October 2026 (fictional)"
+  }
+ ]
+}
