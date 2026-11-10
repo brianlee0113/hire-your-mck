@@ -421,11 +421,12 @@ def sidebar(c, spec, slide, x=None, w=None):
     cy = y + 0.24
     if sb.get("implication"):  # what it means for us: its own box at the foot of the sidebar
         isz = S["body"] + 1
-        ih = _est_h(sb["implication"], w - 2 * pad - 0.32, isz, 1.12, bold=True) + 0.3
+        tw_ = w - 2 * pad - 0.5
+        ih = max(0.62, _est_h(sb["implication"], tw_, isz, 1.12, bold=True) + 0.3)
         iy = bottom - pad + 0.08 - ih
         c.rect(x + pad - 0.08, iy, w - 2 * pad + 0.16, ih, fill=t["white"] if not t["dark_sidebar"] else t["primary"])
-        c.rect(x + pad - 0.08, iy, 0.07, ih, fill=t["highlight"])
-        c.text(x + pad + 0.14, iy + 0.15, w - 2 * pad - 0.32, ih - 0.3, sb["implication"], size=isz, bold=True,
+        _alert(c, x + pad + 0.04, iy + ih / 2 - 0.15)  # circled "!" marks what it means for us
+        c.text(x + pad + 0.46, iy + 0.15, tw_, ih - 0.3, sb["implication"], size=isz, bold=True,
                color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12, anchor="m")
         bottom = iy - 0.12
     if sb.get("header"):
@@ -1387,7 +1388,7 @@ def table(c, spec, body, box, slide=None):
             cell = row["cells"][j - 1] if j - 1 < len(row["cells"]) else {}
             is_text_col = (last_text or verdict) and j == ncols - 1
             if verdict and j == ncols - 1 and (i - 1) == co_row:
-                runs = [(("       " if co.get("icon") == "alert" else "") + co["header"], True, t["highlight"])] + ([(co["detail"], False, t["title"])] if co.get("detail") else [])
+                runs = [(co["header"], True, t["highlight"])] + ([(co["detail"], False, t["title"])] if co.get("detail") else [])
                 put(tb.cell(i, j), "", size=size, fill=tint, runs=runs)
                 continue
             if heat and cell.get("point") and not is_text_col:
@@ -1402,8 +1403,6 @@ def table(c, spec, body, box, slide=None):
                 color=(t["highlight"] if (on and is_text_col) else (t["title"] if on or cell.get("point") else t["text"])),
                 size=size, align="l" if (is_text_col or not harvey_type) else "c", fill=tint)
     bottom = y + head_h + sum(rhs)
-    if co and co.get("icon") == "alert" and co_row is not None and verdict:
-        _alert(c, x + sum(widths[:-1]) + 0.08, tops[co_row] + 0.08, d=0.3)
     if heat:
         for i, row in enumerate(rows):  # the target row gets a full-width outline (shading keeps its meaning)
             if row.get("highlight") or i == co_row:
@@ -2133,10 +2132,6 @@ def _callout_box(c, x, y, w, h, co):
     t = c.t
     c.rect(x, y, w, h, fill=tint(t["highlight"]))
     c.rect(x, y, 0.05, h, fill=t["highlight"])
-    if co.get("icon") == "alert":
-        _alert(c, x + 0.16, y + 0.12)
-        x += 0.36
-        w -= 0.36
     texts = [co["header"]] + ([co["detail"]] if co.get("detail") else [])
     size = fit_size(texts, w - 0.3, h - 0.2, S["body"], min_size=10, indent=0, line_spacing=1.05)
     paras = [[(co["header"], {"bold": True, "color": t["highlight"] if not t["dark_sidebar"] else t["title"]})]]

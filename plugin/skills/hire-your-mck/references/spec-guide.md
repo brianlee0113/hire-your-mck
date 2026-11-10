@@ -214,9 +214,9 @@ Shows `next_steps` (action, owner, timing). Add `storyline.key_takeaways` only i
   "implication": "Start with bank feeds and the close, then extend to invoicing in the same package"}}
 ```
 
-A `callout` can carry `"icon": "alert"`: a circled "!" on the box or table row the title points at. KPI items show their `drivers` under a thin rule; add `drivers_header` only when a label helps, and not the same one on every KPI slide.
+KPI items show their `drivers` under a thin rule; add `drivers_header` only when a label helps, and not the same one on every KPI slide.
 
-`implication` is what the exhibit means for us, drawn in its own box at the foot of the sidebar. Use it instead of a last bullet that starts "For us:".
+`implication` is what the exhibit means for us, drawn in its own box at the foot of the sidebar and marked with a circled "!". Use it instead of a last bullet that starts "For us:".
 
 `rows` and `big_number` must be **derived from the exhibit** (B-05, B-06), but not as a plain sum or difference: use shares or expected impact. `check.py` fails a repeat and warns on an unrelated number or a plain difference.
 
