@@ -421,13 +421,28 @@ def sidebar(c, spec, slide, x=None, w=None):
     cy = y + 0.24
     if sb.get("implication"):  # what it means for us: its own box at the foot of the sidebar
         isz = S["body"] + 1
-        tw_ = w - 2 * pad - 0.5
-        ih = max(0.62, _est_h(sb["implication"], tw_, isz, 1.12, bold=True) + 0.3)
-        iy = bottom - pad + 0.08 - ih
-        c.rect(x + pad - 0.08, iy, w - 2 * pad + 0.16, ih, fill=t["white"] if not t["dark_sidebar"] else t["primary"])
-        _alert(c, x + pad + 0.04, iy + ih / 2 - 0.15)  # circled "!" marks what it means for us
-        c.text(x + pad + 0.46, iy + 0.15, tw_, ih - 0.3, sb["implication"], size=isz, bold=True,
-               color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12, anchor="m")
+        alert = sb.get("implication_style") == "alert"
+        bx, bw = x + pad - 0.08, w - 2 * pad + 0.16
+        if alert:  # variant: a solid circle with "!" on a tinted panel, headed like a callout
+            d = 0.42
+            tw_ = bw - d - 0.42
+            ih = max(d + 0.32, _est_h(sb["implication"], tw_, isz, 1.12, bold=True) + 0.34)
+            iy = bottom - pad + 0.08 - ih
+            c.rect(bx, iy, bw, ih, fill=tint(t["highlight"]) if not t["dark_sidebar"] else t["primary"], line=t["highlight"], weight=1)
+            dot = c.rect(bx + 0.16, iy + 0.16, d, d, fill=t["highlight"], shape=MSO_SHAPE.OVAL)
+            for side in ("margin_top", "margin_bottom", "margin_left", "margin_right"):
+                setattr(dot.text_frame, side, 0)
+            c.label_in(dot, "!", size=S["header"] + 3, bold=True, color=t["white"], font=t["font_title"])
+            c.text(bx + d + 0.3, iy + 0.17, tw_, ih - 0.3, sb["implication"], size=isz, bold=True,
+                   color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12)
+        else:  # default: white panel with the accent bar
+            tw_ = w - 2 * pad - 0.32
+            ih = _est_h(sb["implication"], tw_, isz, 1.12, bold=True) + 0.3
+            iy = bottom - pad + 0.08 - ih
+            c.rect(bx, iy, bw, ih, fill=t["white"] if not t["dark_sidebar"] else t["primary"])
+            c.rect(bx, iy, 0.07, ih, fill=t["highlight"])
+            c.text(x + pad + 0.14, iy + 0.15, tw_, ih - 0.3, sb["implication"], size=isz, bold=True,
+                   color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12, anchor="m")
         bottom = iy - 0.12
     if sb.get("header"):
         size = S["takeaway"] + 2

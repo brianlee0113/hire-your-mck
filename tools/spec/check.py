@@ -169,6 +169,11 @@ if len(_titles) >= 8:
     for (i1, _), f1, f2, f3 in zip(_titles[2:], forms, forms[1:], forms[2:]):
         if f1 == f2 == f3 and f1 not in ("one clause", "other"):
             out("A-09", "warn", f"three titles in a row use the '{f1}' form", i1)
+# A-12: the implication box comes in two styles; one style on every slide repeats a device
+_imp = [((s.get("layout") or {}).get("sidebar") or {}).get("implication_style", "bar") for s in content
+        if ((s.get("layout") or {}).get("sidebar") or {}).get("implication")]
+if len(_imp) >= 4 and len(set(_imp)) == 1:
+    out("A-12", "warn", f"all {len(_imp)} implication boxes use the '{_imp[0]}' style; switch about one in three to the other")
 # A-13: no slide type dominates a long deck (reference decks: one type is at most 24% of pages at the median)
 _typed = [s.get("archetype") for s in spec["slides"] if s["role"] in ("content", "backup") and s.get("archetype")]
 if len(_typed) >= 15:

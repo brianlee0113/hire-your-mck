@@ -787,7 +787,15 @@
             "implication": {
               "type": "string",
               "maxLength": 160,
-              "description": "What the exhibit means for us, in its own box at the foot of the sidebar, marked with a circled '!'. Use it instead of a 'For us:' bullet."
+              "description": "What the exhibit means for us, in its own box at the foot of the sidebar. Use it instead of a 'For us:' bullet."
+            },
+            "implication_style": {
+              "enum": [
+                "bar",
+                "alert"
+              ],
+              "default": "bar",
+              "description": "bar: white panel with the accent bar (default). alert: tinted panel with a circled '!'. Mix them across the deck so one device does not repeat on every slide."
             }
           }
         }
