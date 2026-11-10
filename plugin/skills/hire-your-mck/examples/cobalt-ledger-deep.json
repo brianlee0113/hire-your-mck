@@ -89,6 +89,7 @@
     "supports": [
      "L5",
      "5b",
+     "5e",
      "5c",
      "5d"
     ],
@@ -1944,85 +1945,130 @@
    "section_id": "5",
    "status": "filled",
    "lead_message": {
+    "prefix": "5a:",
     "text": "A pilot with the smallest customers proves the time saved before any price changes"
    },
-   "message_type": "time-series",
-   "archetype": "timeline-roadmap",
-   "unit_line": "**Pilot and launch plan**, by quarter",
+   "message_type": "argument",
+   "archetype": "initiative-one-pager",
    "body": {
-    "kind": "timeline",
-    "periods": [
-     "Q1 2027",
-     "Q2 2027",
-     "Q3 2027",
-     "Q4 2027",
-     "Q1 2028"
-    ],
+    "kind": "initiative",
+    "template": "actions_impact",
+    "header": "Prove hours saved and errors caught with customers who opt in",
     "rows": [
      {
       "label": "Build",
-      "bars": [
-       {
-        "start": "Q1 2027",
-        "end": "Q2 2027",
-        "label": "Categorization, close, approval"
-       }
+      "actions": [
+       "Bank-feed categorization, month-end close, approval on every entry",
+       "Usage limits by plan from the first release"
       ]
      },
      {
       "label": "Pilot",
-      "bars": [
-       {
-        "start": "Q2 2027",
-        "end": "Q2 2027",
-        "label": "Smallest customers, opt-in",
-        "emphasis": true
-       }
+      "actions": [
+       "Smallest customers who opt in, for one quarter",
+       "Weekly review of hours saved and corrected entries"
       ]
      },
      {
-      "label": "Launch",
-      "bars": [
-       {
-        "start": "Q3 2027",
-        "end": "Q4 2027",
-        "label": "All paid plans, new price at renewal"
-       }
-      ]
-     },
-     {
-      "label": "Extend",
-      "bars": [
-       {
-        "start": "Q4 2027",
-        "end": "Q1 2028",
-        "label": "Invoicing and expenses"
-       }
-      ]
-     },
-     {
-      "label": "Tracking",
-      "bars": [
-       {
-        "start": "Q2 2027",
-        "end": "Q1 2028",
-        "label": "Monthly hours, errors, churn, AI cost"
-       }
+      "label": "Decide",
+      "actions": [
+       "Raise prices only if hours saved hold and churn stays flat",
+       "Price decision at the Q3 2027 review"
       ]
      }
     ],
-    "milestones": [
+    "impact": {
+     "point": {
+      "data_ref": "i12"
+     },
+     "label": "Benchmark: hours a month Intuit says its agents save"
+    },
+    "owner": "AI package lead",
+    "timing": "Q1–Q3 2027"
+   }
+  },
+  {
+   "id": "5e",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "archetype": "org-chart",
+   "message_type": "structure",
+   "lead_message": {
+    "text": "One AI package lead reporting to the CEO runs the launch through pilot squads"
+   },
+   "body": {
+    "kind": "org",
+    "nodes": [
      {
-      "at": "Q2 2027",
-      "label": "Pilot review"
+      "id": "ceo",
+      "label": "CEO"
      },
      {
-      "at": "Q3 2027",
-      "label": "Price decision"
+      "id": "lead",
+      "label": "AI package lead",
+      "sub": "new, full time",
+      "parent": "ceo",
+      "status": "new"
+     },
+     {
+      "id": "prod",
+      "label": "Product",
+      "parent": "lead"
+     },
+     {
+      "id": "plat",
+      "label": "AI platform team",
+      "parent": "lead",
+      "status": "new"
+     },
+     {
+      "id": "cs",
+      "label": "Customer success",
+      "parent": "lead"
+     },
+     {
+      "id": "fin",
+      "label": "Finance",
+      "parent": "lead",
+      "status": "changed",
+      "sub": "owns the price decision"
+     },
+     {
+      "id": "sq",
+      "label": "Pilot squads",
+      "sub": "one per customer cohort",
+      "parent": "plat",
+      "count": 3,
+      "status": "new"
+     }
+    ],
+    "side": [
+     {
+      "label": "Launch steering group",
+      "sub": "CEO, CFO, product; monthly",
+      "attach": "ceo"
+     }
+    ],
+    "roles": [
+     {
+      "node": "lead",
+      "bullets": [
+       "Owns scope, the pilot review and the launch date",
+       "Reports hours saved, errors and churn monthly",
+       "Brings the price decision to the steering group"
+      ]
+     },
+     {
+      "node": "sq",
+      "bullets": [
+       "A product manager, engineers and a customer-success lead",
+       "Runs approval flows and error reviews with pilot customers",
+       "Feeds fixes back before the broad launch"
+      ]
      }
     ]
-   },
-   "so_what": "One review after the pilot decides the price change, so the revenue risk waits until the value is proven"
+   }
   },
   {
    "id": "5c",

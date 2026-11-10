@@ -1,0 +1,698 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Renderer showcase 4",
+  "subtitle": "Cost curve, org chart and initiative one-pagers",
+  "company_name": "Example Logistics (fictional)",
+  "date": "2026-11-10",
+  "language": "en-US",
+  "confidentiality": "Illustrative example — all companies, numbers and sources are fictional",
+  "theme": "navy"
+ },
+ "storyline": {
+  "governing_thought": "Example Logistics can cut a quarter of its emissions at a profit, starting with routes and drivers",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "Four levers cut 46 kt of emissions a year and save money, and three more pay off under the internal carbon price",
+    "supports": [
+     "3"
+    ],
+    "sub_points": [
+     {
+      "text": "Route optimization and eco-driving are the largest levers that save money",
+      "slide_id": "3"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "A small program office with a champion in every depot runs three first initiatives in 2027",
+    "supports": [
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "sub_points": [
+     {
+      "text": "Route optimization, eco-driving and urban electric vans start first",
+      "slide_id": "5"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Appoint the decarbonization office lead",
+    "owner": "CEO",
+    "timing": "Dec 2026"
+   },
+   {
+    "action": "Start route optimization in the first three depots",
+    "owner": "Head of operations",
+    "timing": "Q1 2027"
+   }
+  ]
+ },
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "3",
+   "role": "content",
+   "status": "filled",
+   "archetype": "cost-curve",
+   "message_type": "component",
+   "lead_message": {
+    "text": "Four levers cut 46 kt of emissions a year and save money before any carbon price is applied",
+    "numbers": [
+     {
+      "text": "46 kt",
+      "data_ref": "save"
+     }
+    ],
+    "count_word": null
+   },
+   "unit_line": "**Abatement cost curve, Example Logistics**, 2030, against a 2025 baseline of 180 kt CO2e",
+   "body": {
+    "kind": "cost_curve",
+    "items": [
+     {
+      "label": "Route optimization software",
+      "width": {
+       "data_ref": "w1"
+      },
+      "height": {
+       "data_ref": "h1"
+      },
+      "group": "Operations"
+     },
+     {
+      "label": "Eco-driving training",
+      "width": {
+       "data_ref": "w2"
+      },
+      "height": {
+       "data_ref": "h2"
+      },
+      "group": "Operations"
+     },
+     {
+      "label": "Tire and aerodynamic retrofits",
+      "width": {
+       "data_ref": "w3"
+      },
+      "height": {
+       "data_ref": "h3"
+      },
+      "group": "Operations"
+     },
+     {
+      "label": "Warehouse LED and solar",
+      "width": {
+       "data_ref": "w4"
+      },
+      "height": {
+       "data_ref": "h4"
+      },
+      "group": "Facilities"
+     },
+     {
+      "label": "Renewable power contracts",
+      "width": {
+       "data_ref": "w5"
+      },
+      "height": {
+       "data_ref": "h5"
+      },
+      "group": "Facilities"
+     },
+     {
+      "label": "Electric vans, urban routes",
+      "width": {
+       "data_ref": "w6"
+      },
+      "height": {
+       "data_ref": "h6"
+      },
+      "group": "Fleet"
+     },
+     {
+      "label": "Renewable diesel",
+      "width": {
+       "data_ref": "w7"
+      },
+      "height": {
+       "data_ref": "h7"
+      },
+      "group": "Fleet"
+     },
+     {
+      "label": "Hydrogen trucks, long haul",
+      "width": {
+       "data_ref": "w8"
+      },
+      "height": {
+       "data_ref": "h8"
+      },
+      "group": "Fleet"
+     }
+    ],
+    "x_label": "**Abatement**, kt CO2e a year, cumulative",
+    "y_label": "**Abatement cost**, $ per t CO2e",
+    "price_line": {
+     "point": {
+      "data_ref": "cp"
+     },
+     "label": "Internal carbon price"
+    },
+    "bracket": {
+     "from": "Route optimization software",
+     "to": "Warehouse LED and solar",
+     "point": {
+      "data_ref": "save"
+     },
+     "label": "kt a year, net saving"
+    },
+    "tail": {
+     "label": "No lever yet",
+     "width": {
+      "data_ref": "tail"
+     }
+    }
+   },
+   "footnotes": [
+    "Baseline: 180 kt CO2e a year of fleet and facility emissions in 2025 (scope 1 and 2)"
+   ],
+   "section_id": "1"
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "status": "filled",
+   "archetype": "org-chart",
+   "message_type": "structure",
+   "lead_message": {
+    "text": "A small program office under the CEO runs the plan through site champions in every depot"
+   },
+   "body": {
+    "kind": "org",
+    "nodes": [
+     {
+      "id": "ceo",
+      "label": "CEO"
+     },
+     {
+      "id": "pmo",
+      "label": "Decarbonization office",
+      "sub": "new, four people",
+      "parent": "ceo",
+      "status": "new"
+     },
+     {
+      "id": "ops",
+      "label": "Operations",
+      "parent": "pmo"
+     },
+     {
+      "id": "fleet",
+      "label": "Fleet",
+      "parent": "pmo"
+     },
+     {
+      "id": "fac",
+      "label": "Facilities",
+      "parent": "pmo"
+     },
+     {
+      "id": "proc",
+      "label": "Procurement",
+      "parent": "pmo",
+      "status": "changed",
+      "sub": "adds energy buying"
+     },
+     {
+      "id": "champ",
+      "label": "Site champions",
+      "sub": "one per depot",
+      "parent": "ops",
+      "count": 12,
+      "status": "new"
+     }
+    ],
+    "side": [
+     {
+      "label": "Board sustainability committee",
+      "sub": "quarterly review",
+      "attach": "ceo"
+     }
+    ],
+    "roles": [
+     {
+      "node": "pmo",
+      "bullets": [
+       "Owns the lever plan and the internal carbon price",
+       "Reports progress against 2030 targets each quarter",
+       "Approves spending above the depot budget"
+      ]
+     },
+     {
+      "node": "champ",
+      "bullets": [
+       "Runs route and driving changes on site",
+       "Tracks fuel and power use each week",
+       "Raises blockers to the office within a week"
+      ]
+     }
+    ]
+   },
+   "section_id": "2"
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "status": "filled",
+   "archetype": "initiative-one-pager",
+   "message_type": "argument",
+   "lead_message": {
+    "prefix": "1a:",
+    "text": "Roll out route optimization to every depot by mid-2027"
+   },
+   "body": {
+    "kind": "initiative",
+    "template": "actions_impact",
+    "header": "Cut empty and detour miles with software the dispatchers already trust",
+    "rows": [
+     {
+      "label": "Build",
+      "actions": [
+       "Connect the routing tool to order and telematics data",
+       "Set depot-level targets for miles per stop"
+      ]
+     },
+     {
+      "label": "Roll out",
+      "actions": [
+       "Four waves of three depots, starting with the largest",
+       "Dispatcher training in the week before each wave"
+      ]
+     },
+     {
+      "label": "Track",
+      "actions": [
+       "Weekly miles, fuel and on-time delivery by depot",
+       "Quarterly review with the program office"
+      ]
+     }
+    ],
+    "impact": {
+     "point": {
+      "data_ref": "w1"
+     },
+     "label": "kt CO2e abatement a year by 2030"
+    },
+    "owner": "Head of operations",
+    "timing": "Q1–Q3 2027"
+   },
+   "footnotes": [
+    "The Dallas pilot cut route emissions by 11% in Q2 2026"
+   ],
+   "section_id": "2"
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "status": "filled",
+   "archetype": "initiative-one-pager",
+   "message_type": "argument",
+   "lead_message": {
+    "prefix": "1b:",
+    "text": "Train every driver in eco-driving and keep the habit with weekly feedback"
+   },
+   "body": {
+    "kind": "initiative",
+    "template": "actions_impact",
+    "header": "Smoother driving burns less fuel on every route, at almost no cost",
+    "rows": [
+     {
+      "label": "Train",
+      "actions": [
+       "Half-day course for all drivers, run by senior drivers",
+       "Refresher for new hires in their first month"
+      ]
+     },
+     {
+      "label": "Feedback",
+      "actions": [
+       "Weekly telematics scorecard per driver",
+       "Depot league table and small rewards"
+      ]
+     },
+     {
+      "label": "Sustain",
+      "actions": [
+       "Coach the bottom tenth of drivers each quarter",
+       "Fold the score into driver reviews"
+      ]
+     }
+    ],
+    "impact": {
+     "point": {
+      "data_ref": "w2"
+     },
+     "label": "kt CO2e abatement a year by 2030"
+    },
+    "owner": "Head of fleet",
+    "timing": "Q1–Q2 2027"
+   },
+   "footnotes": [
+    "Pilot drivers used 7% less fuel after training"
+   ],
+   "section_id": "2"
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "status": "filled",
+   "archetype": "initiative-one-pager",
+   "message_type": "argument",
+   "lead_message": {
+    "prefix": "1c:",
+    "text": "Electrify urban routes first, where vans already have the range"
+   },
+   "body": {
+    "kind": "initiative",
+    "template": "actions_impact",
+    "header": "Replace diesel vans on short urban routes as leases end",
+    "rows": [
+     {
+      "label": "Select",
+      "actions": [
+       "Routes under 150 km a day, with overnight depot parking",
+       "Lease ends from 2027 to 2029"
+      ]
+     },
+     {
+      "label": "Equip",
+      "actions": [
+       "Chargers in the six urban depots",
+       "Power contracts sized for night charging"
+      ]
+     },
+     {
+      "label": "Switch",
+      "actions": [
+       "One third of urban vans a year",
+       "Driver handover and range training"
+      ]
+     }
+    ],
+    "impact": {
+     "point": {
+      "data_ref": "w6"
+     },
+     "label": "kt CO2e abatement a year by 2030"
+    },
+    "owner": "Head of fleet",
+    "timing": "2027–2029"
+   },
+   "footnotes": [
+    "82% of urban routes are within today's electric-van range"
+   ],
+   "section_id": "2"
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "w1",
+   "slide_id": "3",
+   "label": "Abatement potential: Route optimization software",
+   "value": 18,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 1"
+  },
+  {
+   "id": "h1",
+   "slide_id": "3",
+   "label": "Abatement cost: Route optimization software",
+   "value": -45,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 1"
+  },
+  {
+   "id": "w2",
+   "slide_id": "3",
+   "label": "Abatement potential: Eco-driving training",
+   "value": 12,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 2"
+  },
+  {
+   "id": "h2",
+   "slide_id": "3",
+   "label": "Abatement cost: Eco-driving training",
+   "value": -30,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 2"
+  },
+  {
+   "id": "w3",
+   "slide_id": "3",
+   "label": "Abatement potential: Tire and aerodynamic retrofits",
+   "value": 9,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 3"
+  },
+  {
+   "id": "h3",
+   "slide_id": "3",
+   "label": "Abatement cost: Tire and aerodynamic retrofits",
+   "value": -12,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 3"
+  },
+  {
+   "id": "w4",
+   "slide_id": "3",
+   "label": "Abatement potential: Warehouse LED and solar",
+   "value": 7,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 4"
+  },
+  {
+   "id": "h4",
+   "slide_id": "3",
+   "label": "Abatement cost: Warehouse LED and solar",
+   "value": -5,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 4"
+  },
+  {
+   "id": "w5",
+   "slide_id": "3",
+   "label": "Abatement potential: Renewable power contracts",
+   "value": 15,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 5"
+  },
+  {
+   "id": "h5",
+   "slide_id": "3",
+   "label": "Abatement cost: Renewable power contracts",
+   "value": 8,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 5"
+  },
+  {
+   "id": "w6",
+   "slide_id": "3",
+   "label": "Abatement potential: Electric vans, urban routes",
+   "value": 22,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 6"
+  },
+  {
+   "id": "h6",
+   "slide_id": "3",
+   "label": "Abatement cost: Electric vans, urban routes",
+   "value": 35,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 6"
+  },
+  {
+   "id": "w7",
+   "slide_id": "3",
+   "label": "Abatement potential: Renewable diesel",
+   "value": 16,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 7"
+  },
+  {
+   "id": "h7",
+   "slide_id": "3",
+   "label": "Abatement cost: Renewable diesel",
+   "value": 60,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 7"
+  },
+  {
+   "id": "w8",
+   "slide_id": "3",
+   "label": "Abatement potential: Hydrogen trucks, long haul",
+   "value": 10,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 8"
+  },
+  {
+   "id": "h8",
+   "slide_id": "3",
+   "label": "Abatement cost: Hydrogen trucks, long haul",
+   "value": 140,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 8"
+  },
+  {
+   "id": "tail",
+   "slide_id": "3",
+   "label": "Emissions with no lever yet",
+   "value": 25,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, residual"
+  },
+  {
+   "id": "cp",
+   "slide_id": "3",
+   "label": "Internal carbon price",
+   "value": 50,
+   "unit": "$ per t CO2e",
+   "period": "2027",
+   "source_id": "s1",
+   "locator": "Finance policy memo"
+  },
+  {
+   "id": "save",
+   "slide_id": "3",
+   "label": "Abatement from levers that save money",
+   "value": 46,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s3",
+   "derived_from": [
+    "w1",
+    "w2",
+    "w3",
+    "w4"
+   ],
+   "formula": "sum of the four levers below zero",
+   "calc": "w1 + w2 + w3 + w4"
+  },
+  {
+   "id": "base",
+   "slide_id": "3",
+   "label": "Fleet and facility emissions, baseline",
+   "value": 180,
+   "unit": "kt CO2e a year",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, scope 1 and 2"
+  },
+  {
+   "id": "pilot",
+   "slide_id": "5",
+   "label": "Emissions cut in the route optimization pilot",
+   "value": 0.11,
+   "unit": "%",
+   "period": "Q2 2026",
+   "source_id": "s2",
+   "locator": "Pilot report, Dallas depot"
+  },
+  {
+   "id": "eco",
+   "slide_id": "6",
+   "label": "Fuel saved per driver after eco-driving training",
+   "value": 0.07,
+   "unit": "%",
+   "period": "2026 pilot",
+   "source_id": "s2",
+   "locator": "Pilot report, driver telematics"
+  },
+  {
+   "id": "vans",
+   "slide_id": "7",
+   "label": "Urban routes within electric-van range",
+   "value": 0.82,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Route data, daily mileage"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "user_provided",
+   "name": "Example Logistics lever model and route data (fictional)"
+  },
+  {
+   "id": "s2",
+   "kind": "user_provided",
+   "name": "Example Logistics pilot reports, 2026 (fictional)"
+  },
+  {
+   "id": "s3",
+   "kind": "derived",
+   "name": "Team analysis"
+  }
+ ]
+}

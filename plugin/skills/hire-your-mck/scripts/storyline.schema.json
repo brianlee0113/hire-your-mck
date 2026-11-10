@@ -890,6 +890,15 @@
         },
         {
           "$ref": "#/$defs/body_equation"
+        },
+        {
+          "$ref": "#/$defs/body_cost_curve"
+        },
+        {
+          "$ref": "#/$defs/body_org"
+        },
+        {
+          "$ref": "#/$defs/body_initiative"
         }
       ]
     },
@@ -2363,6 +2372,377 @@
               "type": "string"
             }
           }
+        }
+      }
+    },
+    "body_cost_curve": {
+      "type": "object",
+      "required": [
+        "kind",
+        "items",
+        "x_label",
+        "y_label"
+      ],
+      "additionalProperties": false,
+      "description": "Cost curve (archetype cost-curve): one bar per measure, width = volume, height = unit cost, sorted from cheapest; bars below zero save money. Drawn as shapes (native charts cannot vary bar width).",
+      "properties": {
+        "kind": {
+          "const": "cost_curve"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 40,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "width",
+              "height"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "width": {
+                "$ref": "#/$defs/point"
+              },
+              "height": {
+                "$ref": "#/$defs/point"
+              },
+              "group": {
+                "type": "string",
+                "description": "Colour group, shown in the legend (max 4 groups)."
+              }
+            }
+          }
+        },
+        "x_label": {
+          "type": "string",
+          "description": "'**Metric**, unit', bottom right, e.g. '**Hours saved a month**, per customer, cumulative'."
+        },
+        "y_label": {
+          "type": "string",
+          "description": "'**Metric**, unit', top left, never rotated."
+        },
+        "price_line": {
+          "type": "object",
+          "required": [
+            "point",
+            "label"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "point": {
+              "$ref": "#/$defs/point"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "description": "Dashed horizontal line, e.g. a carbon price or the plan uplift."
+        },
+        "bracket": {
+          "type": "object",
+          "required": [
+            "from",
+            "to",
+            "point"
+          ],
+          "additionalProperties": false,
+          "description": "Brace over a run of bars with a pill value; must equal the title number (A-01).",
+          "properties": {
+            "from": {
+              "type": "string"
+            },
+            "to": {
+              "type": "string"
+            },
+            "point": {
+              "$ref": "#/$defs/point"
+            },
+            "label": {
+              "type": "string"
+            }
+          }
+        },
+        "tail": {
+          "type": "object",
+          "required": [
+            "label",
+            "width"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "width": {
+              "$ref": "#/$defs/point"
+            }
+          },
+          "description": "Grey block closing the curve: volume with no measure yet ('TBD')."
+        },
+        "highlight": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Bars the title names; they get the accent colour."
+        }
+      }
+    },
+    "body_org": {
+      "type": "object",
+      "required": [
+        "kind",
+        "nodes"
+      ],
+      "additionalProperties": false,
+      "description": "Org chart (archetype org-chart): same-size boxes per level, elbow connectors, roles in callouts outside the boxes, new units filled dark with a legend.",
+      "properties": {
+        "kind": {
+          "const": "org"
+        },
+        "nodes": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 24,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "label"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "label": {
+                "type": "string",
+                "description": "Unit or role name, 6 words at most."
+              },
+              "sub": {
+                "type": "string",
+                "description": "One short line under the label."
+              },
+              "parent": {
+                "$ref": "#/$defs/id"
+              },
+              "status": {
+                "enum": [
+                  "existing",
+                  "new",
+                  "changed"
+                ],
+                "default": "existing"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 2,
+                "maximum": 99,
+                "description": "Shown as stacked copies: one per region or team."
+              },
+              "dotted": {
+                "type": "boolean",
+                "description": "Dotted line to the parent (advisory or indirect)."
+              }
+            }
+          }
+        },
+        "side": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "attach"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "sub": {
+                "type": "string"
+              },
+              "attach": {
+                "$ref": "#/$defs/id"
+              }
+            }
+          },
+          "description": "Committees outside the hierarchy, drawn as an oval beside the node they advise."
+        },
+        "roles": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "node",
+              "bullets"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "node": {
+                "$ref": "#/$defs/id"
+              },
+              "header": {
+                "type": "string"
+              },
+              "bullets": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 5,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "'Key roles' callouts tied to a node; role text never goes inside the boxes."
+        }
+      }
+    },
+    "body_initiative": {
+      "type": "object",
+      "required": [
+        "kind",
+        "template"
+      ],
+      "additionalProperties": false,
+      "description": "Initiative one-pager (archetype initiative-one-pager). One template per deck; the title starts with the initiative's code.",
+      "properties": {
+        "kind": {
+          "const": "initiative"
+        },
+        "template": {
+          "enum": [
+            "actions_impact",
+            "description_case",
+            "pros_prereqs"
+          ]
+        },
+        "header": {
+          "type": "string",
+          "description": "actions_impact: the initiative's one-line aim, in the band under the title."
+        },
+        "rows": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "actions"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "actions": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 4,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "actions_impact: label column + key actions."
+        },
+        "description": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "string"
+          },
+          "description": "description_case and pros_prereqs: what the initiative is."
+        },
+        "case": {
+          "type": "object",
+          "required": [
+            "name",
+            "bullets"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "bullets": {
+              "type": "array",
+              "maxItems": 6,
+              "items": {
+                "type": "string"
+              }
+            },
+            "impact": {
+              "type": "object",
+              "required": [
+                "point",
+                "caption"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "point": {
+                  "$ref": "#/$defs/point"
+                },
+                "caption": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "pros": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "string"
+          }
+        },
+        "cons": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "string"
+          }
+        },
+        "prerequisites": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "string"
+          }
+        },
+        "impact": {
+          "type": "object",
+          "required": [
+            "point",
+            "label"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "point": {
+              "$ref": "#/$defs/point"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "description": "Pulled-out impact pill (never buried in the text)."
+        },
+        "owner": {
+          "type": "string"
+        },
+        "timing": {
+          "type": "string"
         }
       }
     }

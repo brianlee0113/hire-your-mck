@@ -169,6 +169,69 @@ if len(_titles) >= 8:
     for (i1, _), f1, f2, f3 in zip(_titles[2:], forms, forms[1:], forms[2:]):
         if f1 == f2 == f3 and f1 not in ("one clause", "other"):
             out("A-09", "warn", f"three titles in a row use the '{f1}' form", i1)
+# CC / OC / IO: cost curve, org chart, initiative one-pager
+_tpls = {}
+for s in content:
+    b = s.get("body") or {}
+    if s.get("status") == "ghost":
+        continue
+    if b.get("kind") == "cost_curve":
+        labels = [it["label"] for it in b["items"]]
+        for it in b["items"]:
+            wv = (dps.get((it.get("width") or {}).get("data_ref")) or {}).get("value")
+            if wv is not None and wv <= 0:
+                out("CC-01", "fail", f"bar '{it['label']}' has width {wv}; width is a volume and must be positive", s["id"])
+        groups = {it.get("group") for it in b["items"] if it.get("group")}
+        if len(groups) > 4:
+            out("CC-02", "warn", f"{len(groups)} colour groups; keep 4 or fewer so the legend reads", s["id"])
+        if groups and any(not it.get("group") for it in b["items"]):
+            out("CC-02", "warn", "some bars have a group and some do not; give every bar a group or none", s["id"])
+        br = b.get("bracket") or {}
+        for k in ("from", "to"):
+            if br and br.get(k) not in labels:
+                out("CC-03", "fail", f"bracket {k} '{br.get(k)}' is not a bar label", s["id"])
+        for hl_ in b.get("highlight", []):
+            if hl_ not in labels:
+                out("A-02", "fail", f"highlight '{hl_}' is not a bar label", s["id"])
+        if len(b["items"]) > 15:
+            out("CC-02", "warn", f"{len(b['items'])} bars; label groups rather than every bar, or merge small measures", s["id"])
+    if b.get("kind") == "org":
+        ids = {n["id"] for n in b["nodes"]}
+        par = {n["id"]: n.get("parent") for n in b["nodes"]}
+        for n in b["nodes"]:
+            if n.get("parent") and n["parent"] not in ids:
+                out("OC-01", "fail", f"org node {n['id']} has unknown parent {n['parent']}", s["id"])
+            seen, cur = set(), n["id"]
+            while cur in par and par[cur]:
+                if cur in seen:
+                    out("OC-01", "fail", f"org chart has a cycle through {n['id']}", s["id"]); break
+                seen.add(cur); cur = par[cur]
+            if len(n["label"].split()) > 6:
+                out("OC-02", "warn", f"box '{n['label'][:30]}' has more than 6 words; put the detail in roles", s["id"])
+        lev = {}
+        def _d(i, k=0):
+            return k if not par.get(i) or par[i] not in ids or k > 20 else _d(par[i], k + 1)
+        for i in ids:
+            lev[_d(i)] = lev.get(_d(i), 0) + 1
+        if max(lev.values()) > 6:
+            out("OC-01", "warn", f"{max(lev.values())} boxes on one level; group them or show one with a count", s["id"])
+        for r in b.get("roles", []) + [{"node": x["attach"]} for x in b.get("side", [])]:
+            if r["node"] not in ids:
+                out("OC-01", "fail", f"roles or side entry points at unknown node {r['node']}", s["id"])
+    if b.get("kind") == "initiative":
+        _tpls.setdefault(b["template"], []).append(s["id"])
+        lm_ = s.get("lead_message") or {}
+        if not (lm_.get("prefix") or s.get("tree_node")):
+            out("IO-01", "warn", "initiative one-pager without a code before the title ('1a:'); it ties the page to the overview", s["id"])
+        need = {"actions_impact": ("rows",), "description_case": ("description", "case"), "pros_prereqs": ("pros", "prerequisites")}[b["template"]]
+        for k in need:
+            if not b.get(k):
+                out("IO-03", "fail", f"template {b['template']} needs '{k}'", s["id"])
+        if b["template"] == "actions_impact" and not b.get("impact"):
+            out("IO-03", "warn", "actions_impact one-pager without an impact pill; pull the impact out of the text", s["id"])
+if len(_tpls) > 1:
+    out("IO-02", "warn", "initiative one-pagers use different templates (" + ", ".join(f"{k}: {len(v)}" for k, v in _tpls.items()) +
+        "); a series reuses one template")
 # A-12: the implication box comes in two styles; one style on every slide repeats a device
 _imp = [((s.get("layout") or {}).get("sidebar") or {}).get("implication_style", "bar") for s in content
         if ((s.get("layout") or {}).get("sidebar") or {}).get("implication")]
@@ -259,7 +322,7 @@ for s in spec["slides"]:
     # A-12 density
     if s.get("status") != "ghost" and s.get("archetype") != "statement" and body:
         n_chars = slide_chars(s)
-        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix") else 450  # exhibits carry the message
+        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org") else 450  # exhibits carry the message
         if n_chars < low: out("A-12", "warn", f"slide text is ~{n_chars} chars; references run 670–1,110 (target 600–1,100, charts ≥300)", sid)
         elif n_chars > 1300: out("A-12", "warn", f"slide text is ~{n_chars} chars; above 1,300 reads as crowded", sid)
         for it in body.get("columns", []) + body.get("items", []) + body.get("steps", []):
