@@ -20,9 +20,10 @@
       "enum": [
         "deck_detailed",
         "deck_flow",
+        "deck_deep",
         "single_slide"
       ],
-      "description": "deck_detailed: slides reach status filled. deck_flow: slides stop at ghost (data_requirements filled, no values). single_slide: exactly one content slide; storyline.exec_summary has one item."
+      "description": "deck_detailed: slides reach status filled. deck_flow: slides stop at ghost (data_requirements filled, no values). deck_deep: a 30–60 slide deck built with the seven-step process; slides reach filled, and the spec also carries problem and issue_tree, from which sections, lead slides and evidence codes are built. single_slide: exactly one content slide; storyline.exec_summary has one item."
     },
     "meta": {
       "$ref": "#/$defs/meta"
@@ -36,6 +37,17 @@
     },
     "storyline": {
       "$ref": "#/$defs/storyline"
+    },
+    "problem": {
+      "$ref": "#/$defs/problem"
+    },
+    "issue_tree": {
+      "type": "array",
+      "minItems": 3,
+      "description": "Steps 2–6 of the seven-step process (deck_deep). Level-1 nodes (no parent) become the sections; kept leaves become the lead slide's index and the evidence codes (T-01…T-04).",
+      "items": {
+        "$ref": "#/$defs/issue_node"
+      }
     },
     "sections": {
       "type": "array",
@@ -129,6 +141,15 @@
             "aptos"
           ],
           "description": "Overrides the theme's font pair. Omit to use the theme default (D10)."
+        },
+        "deck_type": {
+          "enum": [
+            "client_diagnostic",
+            "policy_analysis",
+            "research_report"
+          ],
+          "default": "client_diagnostic",
+          "description": "deck_deep preset chosen at checkpoint 1. client_diagnostic: summary + contents tracker, sizing, ends on how to make it happen, appendix 15–30%. policy_analysis: methodology and sensitivities up front, appendix up to 55%. research_report: key questions or a framework as the agenda, ends on key takeaways (L-03, L-04)."
         }
       }
     },
@@ -277,6 +298,18 @@
         "tracker_label": {
           "type": "string",
           "description": "Short label for the auto-generated tracker (S3)."
+        },
+        "tree_node": {
+          "$ref": "#/$defs/id",
+          "description": "deck_deep: the level-1 issue_tree node this section answers (T-01)."
+        },
+        "lead_slide": {
+          "$ref": "#/$defs/id",
+          "description": "deck_deep: the content slide right after the divider that states the section's answer and indexes its leaves (numbered-levers, framework or table; L-01)."
+        },
+        "parent_id": {
+          "$ref": "#/$defs/id",
+          "description": "Sub-section of this section (sections over ~20 pages, L-02). Shares its parent's exec_item_id."
         }
       }
     },
@@ -313,7 +346,22 @@
         },
         "backup_of": {
           "$ref": "#/$defs/id",
-          "description": "For role backup: the content slide this supports. Title gets the 'BACKUP:' prefix (S4)."
+          "description": "For role backup: the content slide this supports. Title gets the 'BACKUP:' prefix (S4). deck_deep: the 'what we did not pursue' slide sets tree_node (the pruned nodes) instead."
+        },
+        "tree_node": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "minItems": 1
+            }
+          ],
+          "description": "deck_deep: the issue_tree leaf this evidence slide proves (its code is the title prefix, T-02). On the appendix 'what we did not pursue' slide: the pruned node(s) it lists."
         },
         "status": {
           "enum": [
@@ -467,8 +515,17 @@
             }
           },
           "then": {
-            "required": [
-              "backup_of"
+            "anyOf": [
+              {
+                "required": [
+                  "backup_of"
+                ]
+              },
+              {
+                "required": [
+                  "tree_node"
+                ]
+              }
             ]
           }
         },
@@ -2044,6 +2101,204 @@
           }
         }
       }
+    },
+    "problem": {
+      "type": "object",
+      "required": [
+        "statement",
+        "decision_maker",
+        "success_criteria",
+        "deadline",
+        "one_day_answer"
+      ],
+      "additionalProperties": false,
+      "description": "Step 1 problem definition worksheet and the step 4 one-day answer (P-01). Shown on the 'question we were asked' slide and used for the closing check.",
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 10,
+          "description": "One sentence: outcome-focused, specific and measurable, time-bound, set at the highest level the decision maker owns. A question, not a topic."
+        },
+        "decision_maker": {
+          "type": "string",
+          "minLength": 2,
+          "description": "Who decides and what they will decide."
+        },
+        "success_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          },
+          "description": "How the decision maker will judge the answer (a number, a threshold, a yes/no)."
+        },
+        "deadline": {
+          "type": "string",
+          "minLength": 2,
+          "description": "When the decision is taken."
+        },
+        "accuracy": {
+          "type": "string",
+          "description": "Precision the decision needs ('order of magnitude', '±10%')."
+        },
+        "out_of_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Boundaries and off-limits options agreed at checkpoint 1."
+        },
+        "one_day_answer": {
+          "type": "object",
+          "required": [
+            "situation",
+            "complication",
+            "resolution"
+          ],
+          "additionalProperties": false,
+          "description": "Best answer before the analysis, in exactly three parts (situation · observation/complication · resolution).",
+          "properties": {
+            "situation": {
+              "type": "string",
+              "minLength": 5
+            },
+            "complication": {
+              "type": "string",
+              "minLength": 5
+            },
+            "resolution": {
+              "type": "string",
+              "minLength": 5
+            }
+          }
+        }
+      }
+    },
+    "issue_node": {
+      "type": "object",
+      "required": [
+        "id",
+        "hypothesis"
+      ],
+      "additionalProperties": false,
+      "description": "One node of the hypothesis tree. A node without parent is a level-1 branch (= a section); a node no other node names as parent is a leaf.",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[0-9]{1,2}[a-z]?[0-9]?$",
+          "description": "Index code: '2' for a branch, '2a' for its leaf. Evidence titles start with it ('2a:', T-02). Required on every kept node."
+        },
+        "parent": {
+          "$ref": "#/$defs/id"
+        },
+        "label": {
+          "type": "string",
+          "description": "Short name for trackers and the lead slide index ('Demand')."
+        },
+        "hypothesis": {
+          "type": "string",
+          "minLength": 10,
+          "description": "A testable sentence, not a label ('Mid-market firms will pay for AP automation within 2 years')."
+        },
+        "priority": {
+          "type": "object",
+          "required": [
+            "importance",
+            "influence"
+          ],
+          "additionalProperties": false,
+          "description": "Step 3: how much the answer depends on it × whether the decision maker can move it.",
+          "properties": {
+            "importance": {
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            },
+            "influence": {
+              "enum": [
+                "high",
+                "medium",
+                "low"
+              ]
+            }
+          }
+        },
+        "cut_reason": {
+          "type": "string",
+          "description": "Set when the branch is pruned. Pruned branches go to the appendix 'what we did not pursue' slide (T-02)."
+        },
+        "workplan": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Step 4: the analysis that would prove or kill the hypothesis.",
+          "properties": {
+            "analysis": {
+              "type": "string"
+            },
+            "exhibit": {
+              "type": "string",
+              "description": "Dummied chart: archetype or chart type and axes."
+            },
+            "sources": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Candidate data sources."
+            },
+            "knock_out": {
+              "type": "boolean",
+              "description": "An analysis that could end the branch on its own; run these first."
+            }
+          }
+        },
+        "finding": {
+          "type": "object",
+          "required": [
+            "verdict"
+          ],
+          "additionalProperties": false,
+          "description": "Step 5–6 result. refuted and revised leaves get new titles (T-04).",
+          "properties": {
+            "verdict": {
+              "enum": [
+                "confirmed",
+                "revised",
+                "refuted"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        }
+      }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "deck_deep"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "required": [
+          "problem",
+          "issue_tree",
+          "sections"
+        ]
+      }
+    }
+  ]
 }

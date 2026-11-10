@@ -289,7 +289,7 @@ for s in spec["slides"]:
     if has_ph and s["status"] in ("filled", "qa_passed"):
         out("status", "fail", f"status {s['status']} but slide still has placeholders", sid)
     # backup
-    if s["role"] == "backup" and s.get("backup_of") not in slides:
+    if s["role"] == "backup" and s.get("backup_of") not in slides and not s.get("tree_node"):
         out("S4", "fail", f"backup_of {s.get('backup_of')} does not exist", sid)
 
 for d in dps.values():
@@ -593,6 +593,207 @@ for s in srcs.values():
         out("V-04", "warn", f"web source {s['id']} has no 'published' date")
     elif _this_year - int(pub.group(0)) >= 4 and not s.get("recency_ok"):
         out("V-04", "warn", f"{s['id']} was published in {pub.group(0)}; look for a newer edition, or say why it still holds in 'recency_ok'")
+# ---- deck_deep: seven-step problem solving and long-deck grammar ----------------------------
+def _norm(t):
+    return re.sub(r"[^a-z0-9%$.]+", " ", (t or "").lower()).strip()
+
+
+def _leaf_slides(tree_id):
+    return [s for s in spec["slides"] if s["role"] == "content" and tree_id in _as_list(s.get("tree_node"))]
+
+
+def _as_list(x):
+    return x if isinstance(x, list) else ([x] if x else [])
+
+
+if spec["mode"] == "deck_deep":
+    pr = spec.get("problem") or {}
+    # P-01: the problem definition worksheet is complete
+    for k in ("decision_maker", "deadline", "statement"):
+        if not str(pr.get(k) or "").strip():
+            out("P-01", "fail", f"problem.{k} is empty; settle it at checkpoint 1")
+    if not [c for c in pr.get("success_criteria", []) if c.strip()]:
+        out("P-01", "fail", "problem.success_criteria is empty; how will the decision maker judge the answer?")
+    oda = pr.get("one_day_answer") or {}
+    for k in ("situation", "complication", "resolution"):
+        if not str(oda.get(k) or "").strip():
+            out("P-01", "fail", f"one_day_answer.{k} is empty; the one-day answer has exactly three parts")
+    st = pr.get("statement", "")
+    if st and not re.search(r"\d|\bby\b|\bwithin\b|\bbefore\b|\buntil\b|\bnext\b", st, re.I):
+        out("P-01", "warn", f"problem statement has no time frame or number; make it measurable and time-bound: \"{st[:60]}\"")
+
+    tree = {n["id"]: n for n in spec.get("issue_tree", [])}
+    kids = {}
+    for n in tree.values():
+        if n.get("parent"):
+            if n["parent"] not in tree:
+                out("T-01", "fail", f"issue node {n['id']} has unknown parent {n['parent']}")
+            kids.setdefault(n["parent"], []).append(n["id"])
+
+    def cut(i):  # a node is pruned when it or any ancestor has a cut_reason
+        seen = set()
+        while i in tree and i not in seen:
+            seen.add(i)
+            if tree[i].get("cut_reason"):
+                return True
+            i = tree[i].get("parent")
+        return False
+    kept = {i for i in tree if not cut(i)}
+    level1 = [i for i in tree if not tree[i].get("parent")]
+    kept1 = [i for i in level1 if i in kept]
+    leaves = [i for i in kept if not [k for k in kids.get(i, []) if k in kept]]
+    # T-01: 3–5 level-1 branches = sections = exec summary items, each a hypothesis
+    if not 3 <= len(kept1) <= 5:
+        out("T-01", "fail", f"issue tree has {len(kept1)} kept level-1 branches; want 3–5 (they become the sections)")
+    secs = spec.get("sections", [])
+    top_secs = [sc for sc in secs if not sc.get("parent_id")]
+    by_node = {}
+    for sc in top_secs:  # sections without tree_node are context or how to make it happen
+        if sc.get("tree_node") and sc["tree_node"] not in tree:
+            out("T-01", "fail", f"section {sc['id']} tree_node {sc['tree_node']} is not in issue_tree")
+        elif sc.get("tree_node"):
+            by_node.setdefault(sc["tree_node"], []).append(sc["id"])
+    for i in kept1:
+        if len(by_node.get(i, [])) != 1:
+            out("T-01", "fail", f"level-1 branch {i} ('{tree[i].get('label') or tree[i]['hypothesis'][:30]}') maps to {len(by_node.get(i, []))} sections (want exactly 1)")
+    extra = [sc for sc in top_secs if sc.get("tree_node") in tree and sc["tree_node"] not in kept1]
+    for sc in extra:
+        out("T-01", "fail", f"section {sc['id']} answers {sc['tree_node']}, which is pruned or not a level-1 branch")
+    n_exec = len(spec["storyline"]["exec_summary"])
+    if n_exec != len(top_secs):
+        out("T-01", "warn", f"{n_exec} exec summary items for {len(top_secs)} sections; one bold bullet per section (R2)")
+    for n in tree.values():
+        if len(n["hypothesis"].split()) < 5:
+            out("T-01", "warn", f"issue node {n['id']} reads like a label ('{n['hypothesis']}'); write a testable hypothesis sentence")
+    codes = {}
+    for i in kept:
+        c = tree[i].get("code")
+        if not c:
+            out("T-02", "fail", f"kept issue node {i} has no code ('2a'); evidence titles start with it")
+        elif c in codes:
+            out("T-02", "fail", f"code {c} used by both {codes[c]} and {i}")
+        else:
+            codes[c] = i
+    # step 3: every leaf is scored; big but unmovable levers are cut on purpose
+    for i in leaves:
+        pri = tree[i].get("priority")
+        if not pri:
+            out("T-02", "warn", f"leaf {i} has no priority (importance × influence)")
+        elif pri["importance"] == "low" or pri["influence"] == "low":
+            out("T-02", "warn", f"leaf {i} scores {pri['importance']} importance / {pri['influence']} influence; cut it (cut_reason) or say why it stays")
+    cut_nodes = [i for i in tree if tree[i].get("cut_reason")]
+    listed = {x for s in spec["slides"] if s["role"] == "backup" for x in _as_list(s.get("tree_node"))}
+    for i in cut_nodes:
+        if i not in listed:
+            out("T-02", "warn", f"pruned node {i} is on no appendix slide; list it on 'what we did not pursue' (tree_node) with its reason")
+    for s in spec["slides"]:
+        for x in _as_list(s.get("tree_node")):
+            if x not in tree:
+                out("T-02", "fail", f"tree_node {x} is not in issue_tree", s["id"])
+            elif s["role"] == "content" and x not in leaves:
+                out("T-02", "fail", f"evidence slide proves {x}, which is {'pruned' if x not in kept else 'not a leaf'}", s["id"])
+            elif s["role"] == "content" and tree[x].get("code"):
+                c = tree[x]["code"]
+                pre = (s.get("lead_message") or {}).get("prefix", "") + " " + (s.get("lead_message") or {}).get("text", "")
+                if not re.match(rf"\s*{re.escape(c)}\b", pre):
+                    out("T-02", "fail", f"title does not start with its code '{c}:' (set lead_message.prefix)", s["id"])
+    # T-03: every kept leaf has at least one evidence slide and a workplan
+    for i in leaves:
+        if not _leaf_slides(i):
+            out("T-03", "fail", f"leaf {i} ('{tree[i]['hypothesis'][:40]}') has no evidence slide (tree_node)")
+        wp = tree[i].get("workplan") or {}
+        if not (wp.get("analysis") and wp.get("exhibit")):
+            out("T-03", "warn", f"leaf {i} has no workplan analysis and dummied exhibit (step 4)")
+    lead_ids = {sc.get("lead_slide") for sc in secs}
+    for s in content:
+        if not s.get("tree_node") and s["id"] not in lead_ids and s.get("status") != "ghost":
+            sec = next((sc for sc in secs if sc["id"] == s.get("section_id")), {})
+            if sec.get("tree_node"):
+                out("T-03", "warn", "evidence slide in a tree section has no tree_node; which leaf does it prove?", s["id"])
+    # T-04: findings rewrite titles
+    for i in leaves:
+        f = tree[i].get("finding")
+        sl = _leaf_slides(i)
+        if not f:
+            if sl and all(s["status"] in ("filled", "qa_passed") for s in sl):
+                out("T-04", "warn", f"leaf {i} has filled slides but no finding; record confirmed / revised / refuted")
+            continue
+        if f["verdict"] in ("refuted", "revised"):
+            h = _norm(tree[i]["hypothesis"])
+            for s in sl:
+                if _norm(s["lead_message"]["text"]) == h:
+                    out("T-04", "fail", f"leaf {i} was {f['verdict']} but the title still states the original hypothesis; rewrite it to what the data shows", s["id"])
+            if not f.get("note"):
+                out("T-04", "warn", f"leaf {i} was {f['verdict']}; say in finding.note what the data showed")
+
+    # L-01: tiny front matter; every section opens with a divider and a lead slide
+    order = spec["slides"]
+    first_nav = next((k for k, s in enumerate(order) if s["role"] in ("section_divider", "agenda_tracker") and s.get("section_id")), None)
+    front = order[:first_nav] if first_nav is not None else []
+    if first_nav is None:
+        out("L-01", "fail", "no section dividers; a long deck repeats the agenda before each section (R3)")
+    elif len(front) > 4:
+        out("L-01", "fail", f"{len(front)} slides before the first section; keep the front matter to 4 (cover, context, exec summary, agenda)")
+    pos = {s["id"]: k for k, s in enumerate(order)}
+    for sc in secs:
+        nav = [k for k, s in enumerate(order) if s["role"] in ("section_divider", "agenda_tracker") and s.get("section_id") == sc["id"]]
+        if not nav:
+            out("L-01", "fail", f"section {sc['id']} ('{sc['title'][:30]}') has no divider")
+            continue
+        ls = sc.get("lead_slide")
+        if not ls:
+            if sc.get("tree_node"):
+                out("L-01", "fail", f"section {sc['id']} has no lead_slide (its answer + the index of its leaves)")
+            continue
+        if ls not in slides or slides[ls]["role"] != "content":
+            out("L-01", "fail", f"section {sc['id']} lead_slide {ls} is not a content slide")
+            continue
+        nxt = next((s for s in order[nav[0] + 1:] if s["role"] == "content"), None)
+        if not nxt or nxt["id"] != ls:
+            out("L-01", "warn", f"lead slide {ls} is not the first content slide after the section {sc['id']} divider")
+        if slides[ls].get("tree_node"):
+            out("L-01", "warn", f"lead slide {ls} carries a tree_node; it indexes the section, it does not prove one leaf", ls)
+    n_all = len(order)
+    if not 30 <= n_all <= 60:
+        out("L-01", "warn", f"deck_deep has {n_all} slides; aim for 30–40 (up to 60)")
+    # L-02: long sections split into sub-sections
+    sec_of = {}
+    cur = None
+    for s in order:
+        if s["role"] in ("section_divider", "agenda_tracker") and s.get("section_id"):
+            cur = s["section_id"]
+        if s["role"] == "backup":
+            break
+        if cur:
+            sec_of.setdefault(s.get("section_id") or cur, []).append(s["id"])
+    parent = {sc["id"]: sc.get("parent_id") for sc in secs}
+    has_sub = {p for p in parent.values() if p}
+    for sid_, ids in sec_of.items():
+        size = len(ids) + sum(len(sec_of.get(c, [])) for c, p in parent.items() if p == sid_)
+        if size > 20 and sid_ not in has_sub and not parent.get(sid_):
+            out("L-02", "warn", f"section {sid_} runs {size} slides; split it into sub-sections (parent_id) with their own lead slide")
+    # L-03: appendix share and order
+    dt = (spec.get("meta") or {}).get("deck_type", "client_diagnostic")
+    n_back = sum(1 for s in order if s["role"] == "backup")
+    share = n_back / n_all if n_all else 0
+    hi = 0.55 if dt == "policy_analysis" else 0.30
+    lo = 0 if dt == "research_report" else 0.15
+    if not lo <= share <= hi:
+        out("L-03", "warn", f"appendix is {share:.0%} of the deck ({n_back} of {n_all}); a {dt.replace('_', ' ')} runs {lo:.0%}–{hi:.0%}")
+    sec_rank = {sc["id"]: k for k, sc in enumerate(secs)}
+    def _sec(sid_):
+        s = slides.get(sid_) or {}
+        return s.get("section_id") or (slides.get(s.get("backup_of")) or {}).get("section_id")
+    ranks = [sec_rank[_sec(s["id"])] for s in order if s["role"] == "backup" and _sec(s["id"]) in sec_rank]
+    if any(b < a for a, b in zip(ranks, ranks[1:])):
+        out("L-03", "warn", "appendix slides do not follow the order of the main sections")
+    # L-04: how to make it happen comes last
+    act = re.compile(r"\b(?:make it happen|implement\w*|roadmap|next steps?|way forward|plan)\b|실행|로드맵", re.I)
+    for k, sc in enumerate(top_secs):
+        if act.search(sc["title"] + " " + sc.get("tracker_label", "")) and k != len(top_secs) - 1:
+            out("L-04", "warn", f"section {sc['id']} ('{sc['title'][:30]}') is about implementation but is not the last section")
+    if dt == "client_diagnostic" and top_secs and not act.search(top_secs[-1]["title"] + " " + top_secs[-1].get("tracker_label", "")):
+        out("L-04", "warn", "a client diagnostic ends on how to make it happen (plan, owners, next steps); the last section is not that")
 fails = [r for r in results if r[1] == "fail"]; warns = [r for r in results if r[1] == "warn"]
 for rule, st, sid, det in results:
     if st != "pass" or rule == "schema":

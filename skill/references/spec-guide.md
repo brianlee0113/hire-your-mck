@@ -7,7 +7,7 @@ The spec is one JSON file (schema: `scripts/storyline.schema.json`, JSON Schema 
 ```json
 {
   "spec_version": "0.1",
-  "mode": "deck_detailed | deck_flow | single_slide",
+  "mode": "deck_detailed | deck_flow | deck_deep | single_slide",
   "meta": {"title": "...", "subtitle": "...", "company_name": "...", "audience": "...", "purpose": "...",
            "date": "YYYY-MM-DD", "language": "en-US", "confidentiality": "...", "theme": "navy"},
   "inputs": [{"id": "in-1", "kind": "pasted_research", "label": "...", "content": "..."}],
@@ -23,6 +23,32 @@ The spec is one JSON file (schema: `scripts/storyline.schema.json`, JSON Schema 
 - `next_steps[]`: `{action, owner, timing}`, 3–5 items. Shown on the end page.
 - `meta.theme`: `navy` (default), `crimson`, `forest`, `mono`, `vivid`, `slate`, `terracotta`. `meta.font_pair` overrides the theme's fonts (`georgia-arial` default, `aptos-serif-aptos`, `arial`, `calibri`, `aptos`).
 - Never put a firm's name in `company_name`; use the user's company.
+
+### Deep decks (`deck_deep`)
+
+`problem`, `issue_tree` and `sections` are required; `meta.deck_type` is `client_diagnostic` (default), `policy_analysis` or `research_report`.
+
+```json
+"problem": {"statement": "Should we launch a mid-market AP product by Q3 2027, and at what price?",
+            "decision_maker": "CEO and board", "success_criteria": ["Payback under 18 months"],
+            "deadline": "Board meeting, March 2027", "accuracy": "±20%", "out_of_scope": ["Enterprise tier"],
+            "one_day_answer": {"situation": "...", "complication": "...", "resolution": "..."}},
+"issue_tree": [
+  {"id": "n1", "code": "1", "label": "Demand", "hypothesis": "Mid-market firms will pay for AP automation within two years"},
+  {"id": "n1a", "code": "1a", "parent": "n1", "hypothesis": "Invoice volumes grow faster than finance headcount",
+   "priority": {"importance": "high", "influence": "medium"},
+   "workplan": {"analysis": "Invoice CAGR against headcount CAGR", "exhibit": "line-trend, two lines, 2019–25",
+                "sources": ["Census ABS"], "knock_out": true},
+   "finding": {"verdict": "confirmed", "note": "..."}},
+  {"id": "n5", "label": "Regulation", "hypothesis": "...", "cut_reason": "Timing is set by regulators, not by us"}
+],
+"sections": [{"id": "1", "title": "Demand", "exec_item_id": "1", "tree_node": "n1", "lead_slide": "L1"}]
+```
+
+- A node without `parent` is a level-1 branch (= one section). A node nobody names as parent is a leaf. `cut_reason` prunes the node and everything under it.
+- Evidence slides set `"tree_node": "n1a"` and `"lead_message": {"prefix": "1a:", ...}`. The lead slide (first content slide after the section's agenda) has no `tree_node`.
+- The appendix slide "What we did not pursue" is a `backup` with `"tree_node": ["n5"]` instead of `backup_of`.
+- Sections without `tree_node` are context or how to make it happen (last). Sub-sections set `parent_id` and share the parent's `exec_item_id`.
 
 ## Slides
 
@@ -202,6 +228,8 @@ Shows `next_steps` (action, owner, timing). Add `storyline.key_takeaways` only i
 | A-07 quote without `source_id` | warn |
 | V-01 web number without excerpt or not matching it; V-02 foreign-currency excerpt behind a `$` unit; V-03 web source without tier, number from a T4 source | fail |
 | V-01 excerpt with no figure, user numbers with neither excerpt nor locator; V-02 period not in the excerpt; V-03 T3 without `cites`, title or exec numbers on T3; V-04 source without `published` or 4+ years old | warn |
+| P-01 empty decision maker, success criteria, deadline or one-day answer part; T-01 level-1 branches outside 3–5 or not one section each; T-02 missing or duplicate code, title without its code, slide on a pruned node; T-03 leaf without an evidence slide; T-04 refuted or revised leaf still titled with its hypothesis; L-01 front matter over 4, section without divider or lead slide (`deck_deep`) | fail |
+| P-01 statement without time frame; T-01 label-like hypothesis; T-02 unscored or low leaf, pruned node not in the appendix; T-03 no workplan; T-04 no verdict; L-01 outside 30–60 slides; L-02 section over 20; L-03 appendix share or order; L-04 make it happen not last (`deck_deep`) | warn |
 | S3 navigation in a deck with fewer than 10 content slides; section dividers and agenda trackers mixed in one deck | warn |
 | A-12 sidebar value rows on more than a third of content slides or on two in a row; B-12 placeholders left in a full deck | warn |
 | A-12 density: thin slide, lone chart, thin sidebar, boxes < 3 bullets, KPI without drivers, one conclusion device > 40% or 3 in a row, table callout without row notes, end page without next steps | warn |
