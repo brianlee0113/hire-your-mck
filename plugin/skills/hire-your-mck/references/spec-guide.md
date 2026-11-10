@@ -46,7 +46,7 @@ The spec is one JSON file (schema: `scripts/storyline.schema.json`, JSON Schema 
 ```
 
 - A node without `parent` is a level-1 branch (= one section). A node nobody names as parent is a leaf. `cut_reason` prunes the node and everything under it.
-- Evidence slides set `"tree_node": "n1a"` and `"lead_message": {"prefix": "1a:", ...}`. The lead slide (first content slide after the section's agenda) has no `tree_node`.
+- Evidence slides set `"tree_node": "n1a"`; the renderer writes the code ("1a:") before the title, so leave `prefix` out. Continuation pages of a long table add "(1/2)" to the title (R12). The lead slide (first content slide after the section's agenda) has no `tree_node`.
 - The appendix slide "What we did not pursue" is a `backup` with `"tree_node": ["n5"]` instead of `backup_of`.
 - Sections without `tree_node` are context or how to make it happen (last). Sub-sections set `parent_id` and share the parent's `exec_item_id`.
 
@@ -228,7 +228,7 @@ Shows `next_steps` (action, owner, timing). Add `storyline.key_takeaways` only i
 | A-07 quote without `source_id` | warn |
 | V-01 web number without excerpt or not matching it; V-02 foreign-currency excerpt behind a `$` unit; V-03 web source without tier, number from a T4 source | fail |
 | V-01 excerpt with no figure, user numbers with neither excerpt nor locator; V-02 period not in the excerpt; V-03 T3 without `cites`, title or exec numbers on T3; V-04 source without `published` or 4+ years old | warn |
-| P-01 empty decision maker, success criteria, deadline or one-day answer part; T-01 level-1 branches outside 3–5 or not one section each; T-02 missing or duplicate code, title without its code, slide on a pruned node; T-03 leaf without an evidence slide; T-04 refuted or revised leaf still titled with its hypothesis; L-01 front matter over 4, section without divider or lead slide (`deck_deep`) | fail |
+| P-01 empty decision maker, success criteria, deadline or one-day answer part; T-01 level-1 branches outside 3–5 or not one section each; T-02 missing or duplicate code, prefix that is not its code, slide on a pruned node; T-03 leaf without an evidence slide; T-04 refuted or revised leaf still titled with its hypothesis; L-01 front matter over 4, section without divider or lead slide (`deck_deep`) | fail |
 | P-01 statement without time frame; T-01 label-like hypothesis; T-02 unscored or low leaf, pruned node not in the appendix; T-03 no workplan; T-04 no verdict; L-01 outside 30–60 slides; L-02 section over 20; L-03 appendix share or order; L-04 make it happen not last (`deck_deep`) | warn |
 | S3 navigation in a deck with fewer than 10 content slides; section dividers and agenda trackers mixed in one deck | warn |
 | A-12 sidebar value rows on more than a third of content slides or on two in a row; B-12 placeholders left in a full deck | warn |

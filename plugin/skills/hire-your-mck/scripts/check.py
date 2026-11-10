@@ -170,7 +170,7 @@ for s in spec["slides"]:
     elif words > 21: out("A-03", "warn", f"title has {words} words (90% of observed titles ≤20)", sid)
     if lm["text"].rstrip().endswith("."): out("D8", "warn", "title ends with a period", sid)
     # A-01 numbers in title appear on slide
-    nums = re.findall(r"[$~]?\d[\d,.]*\s?(?:%|x|M|B|K|pp|p\.p\.)?", lm["text"])
+    nums = re.findall(r"[$~]?\d[\d,.]*\s?(?:%|x|M|B|K|pp|p\.p\.)?", re.sub(r"\(\d+/\d+\)", "", lm["text"]))  # "(1/2)" continuations
     nums = [n for n in nums if not re.fullmatch(r"(19|20)\d\d(s)?", n.strip().rstrip(",.;:"))]  # years are not claims
     declared = lm.get("numbers", [])
     if nums and not declared:
@@ -694,9 +694,10 @@ if spec["mode"] == "deck_deep":
                 out("T-02", "fail", f"evidence slide proves {x}, which is {'pruned' if x not in kept else 'not a leaf'}", s["id"])
             elif s["role"] == "content" and tree[x].get("code"):
                 c = tree[x]["code"]
-                pre = (s.get("lead_message") or {}).get("prefix", "") + " " + (s.get("lead_message") or {}).get("text", "")
-                if not re.match(rf"\s*{re.escape(c)}\b", pre):
-                    out("T-02", "fail", f"title does not start with its code '{c}:' (set lead_message.prefix)", s["id"])
+                lm_ = s.get("lead_message") or {}
+                # the renderer writes "2a:" from tree_node when prefix is omitted
+                if "prefix" in lm_ and not re.match(rf"\s*{re.escape(c)}\b", lm_["prefix"] + " " + lm_.get("text", "")):
+                    out("T-02", "fail", f"title prefix '{lm_['prefix']}' is not its code '{c}:'; omit prefix to have it generated", s["id"])
     # T-03: every kept leaf has at least one evidence slide and a workplan
     for i in leaves:
         if not _leaf_slides(i):

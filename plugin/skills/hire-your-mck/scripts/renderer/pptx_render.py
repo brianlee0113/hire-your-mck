@@ -42,8 +42,31 @@ class Spec:
         self.dp = {d["id"]: d for d in spec.get("data_points", [])}
         self.src = {s["id"]: s for s in spec.get("sources", [])}
         self.sections = {s["id"]: s for s in spec.get("sections", [])}
-        self.section_order = [s["id"] for s in spec.get("sections", [])]
+        # top-level sections; sub-sections (parent_id, long decks) hang under their parent (two-level tracker)
+        self.section_order = [s["id"] for s in spec.get("sections", []) if not s.get("parent_id")]
+        self.subs = {}
+        for s in spec.get("sections", []):
+            if s.get("parent_id"):
+                self.subs.setdefault(s["parent_id"], []).append(s["id"])
+        # deck_deep: issue tree codes become title prefixes ("2a:") when the spec does not set one
+        self.codes = {n["id"]: n["code"] for n in spec.get("issue_tree", []) if n.get("code")}
         self.exec = spec.get("storyline", {}).get("exec_summary", [])
+
+    def top_of(self, sid):
+        """The top-level section a (sub-)section belongs to."""
+        return (self.sections.get(sid) or {}).get("parent_id") or sid
+
+    def label(self, sid):
+        sec = self.sections[sid]
+        return sec.get("tracker_label") or sec["title"]
+
+    def prefix(self, slide):
+        lm = slide.get("lead_message") or {}
+        if "prefix" in lm or slide.get("role") != "content":
+            return lm.get("prefix", "")
+        node = slide.get("tree_node")
+        node = node[0] if isinstance(node, list) and node else node
+        return f"{self.codes[node]}:" if node in self.codes else ""
 
     def value(self, point):
         if not point or point.get("placeholder"):
@@ -266,17 +289,19 @@ def chrome(c, spec, slide, page_no, footnotes=None):
     m = G["margin"]
     # tracker (S3): every section label, current one emphasised
     sid = slide.get("section_id")
-    if sid and spec.section_order:
+    if sid in spec.sections and spec.section_order:
         runs = []
+        top = spec.top_of(sid)
         for i, s_id in enumerate(spec.section_order):
-            lab = spec.sections[s_id].get("tracker_label") or spec.sections[s_id]["title"]
             if i:
                 runs.append(("    ", {}))
-            cur = s_id == sid
-            runs.append((f"{s_id} {lab}", {"bold": cur, "color": t["primary"] if cur else t["placeholder"]}))
+            cur = s_id == top
+            runs.append((f"{s_id} {spec.label(s_id)}", {"bold": cur, "color": t["primary"] if cur else t["placeholder"]}))
+            if cur and sid != top:  # second level: the current sub-section after its parent
+                runs.append((f" › {sid} {spec.label(sid)}", {"bold": True, "color": t["primary"]}))
         c.text(m, G["tracker_top"], 8, 0.2, [runs], size=S["tracker"])
     lm = slide.get("lead_message") or {}
-    title = (lm.get("prefix", "") + " " + lm.get("text", "")).strip()
+    title = (spec.prefix(slide) + " " + lm.get("text", "")).strip()
     if slide.get("archetype") == "statement" and slide.get("status") != "ghost":
         title = ""  # the statement itself is the title, set large in the body
     if title:
@@ -1757,7 +1782,22 @@ def _section_pages(spec, pages):
     for sl in spec.raw["slides"]:
         if sl.get("role") in ("content", "backup") and sl.get("section_id") and sl["section_id"] not in out:
             out[sl["section_id"]] = pages[sl["id"]]
+    for parent, kids in spec.subs.items():  # a parent whose content all sits in sub-sections
+        got = [out[k] for k in kids if k in out] + ([out[parent]] if parent in out else [])
+        if got:
+            out[parent] = min(got)
     return out
+
+
+def _tracker_rows(spec, sid):
+    """(section id, level) rows: every top-level section, plus the sub-sections of the current one."""
+    top = spec.top_of(sid) if sid else None
+    rows = []
+    for s_id in spec.section_order:
+        rows.append((s_id, 0))
+        if s_id == top:
+            rows += [(k, 1) for k in spec.subs.get(s_id, [])]
+    return rows
 
 
 def section_divider(c, spec, slide, page_no):
@@ -1768,14 +1808,16 @@ def section_divider(c, spec, slide, page_no):
     pw = 4.4
     c.rect(0, 0, pw, G["slide_h"], fill=t["primary"])
     c.text(m, 1.0, pw - 2 * m, 0.3, "SECTION", size=S["label"], bold=True, color=t["white"])
-    c.text(m, 1.3, pw - 2 * m, 2.6, sec.get("id", ""), size=150, bold=True, font=t["font_title"], color=t["white"],
-           anchor="t", line_spacing=0.85)
-    # tracker: every section, current one in white
-    ty = G["slide_h"] - 1.15 - 0.34 * len(spec.section_order)
-    for s_id in spec.section_order:
-        cur = s_id == slide.get("section_id")
-        lab = spec.sections[s_id].get("tracker_label") or spec.sections[s_id]["title"]
-        c.text(m, ty, pw - 2 * m, 0.3, f"{s_id}   {lab}", size=S["label"] + 1, bold=cur,
+    c.text(m, 1.3, pw - 2 * m, 2.6, sec.get("id", ""), size=150 if len(sec.get("id", "")) <= 2 else 100, bold=True,
+           font=t["font_title"], color=t["white"], anchor="t", line_spacing=0.85)
+    # tracker: every section, current one in white; sub-sections of the current one indented below it
+    sid = slide.get("section_id")
+    rows = _tracker_rows(spec, sid)
+    ty = G["slide_h"] - 1.15 - 0.34 * len(rows)
+    for s_id, lvl in rows:
+        cur = s_id in (sid, spec.top_of(sid)) if lvl == 0 else s_id == sid
+        ind = 0.35 * lvl
+        c.text(m + ind, ty, pw - 2 * m - ind, 0.3, f"{s_id}   {spec.label(s_id)}", size=S["label"] + 1 - lvl, bold=cur,
                color=t["white"] if cur else tint(t["primary"], 0.55))
         ty += 0.34
     tx = pw + 0.8
@@ -1803,28 +1845,43 @@ def agenda_tracker(c, spec, slide, page_no, pages=None):
     c.text(m, G["title_top"], G["title_w"], G["title_h"], title, size=S["title"], bold=True, font=t["font_title"], color=t["title"])
     cur = slide.get("section_id")
     first = _section_pages(spec, pages or {})
-    secs = [spec.sections[s] for s in spec.section_order]
-    n = max(1, len(secs))
+    rows = _tracker_rows(spec, cur)
+    n_top = len(spec.section_order)
+    n_sub = len(rows) - n_top
     y0 = G["content_top"] - 0.1
-    rh = min(1.0, (G["content_bottom"] - y0) / n)
+    # sub-section rows take 60% of a section row
+    rh = min(1.0, (G["content_bottom"] - y0) / max(1, n_top + 0.6 * n_sub))
     nw, pgw = 0.9, 0.9
     tw = W - nw - pgw - 0.3
     c.line(m, y0, m + W, y0, color=t["primary"], weight=1.5)
-    for i, sec in enumerate(secs):
-        yy = y0 + i * rh
-        on = cur is not None and sec["id"] == cur
-        dim = cur is not None and not on
-        if on:
-            c.rect(m, yy + 0.04, W, rh - 0.08, fill=t["sidebar"] if not t["dark_sidebar"] else t["panel"])
-            c.rect(m, yy + 0.04, 0.07, rh - 0.08, fill=t["highlight"])
-        c.text(m + 0.25, yy, nw - 0.25, rh, sec["id"], size=30, bold=True, font=t["font_title"], anchor="m",
-               color=t["highlight"] if on else (t["gray_mid"] if dim else t["primary"]))
-        c.text(m + nw, yy, tw, rh, sec["title"], size=S["header"] + 7, bold=True, font=t["font_title"], anchor="m",
-               color=t["placeholder"] if dim else t["title"], line_spacing=1.0)
-        if sec["id"] in first:
-            c.text(m + W - pgw, yy, pgw - 0.15, rh, f"p. {first[sec['id']]}", size=S["label"] + 1, anchor="m", align="r",
+    yy = y0
+    for s_id, lvl in rows:
+        sec = spec.sections[s_id]
+        h = rh if lvl == 0 else rh * 0.6
+        if lvl == 0:
+            on = cur is not None and s_id == spec.top_of(cur)
+            dim = cur is not None and not on
+        else:
+            on, dim = s_id == cur, s_id != cur
+        if on and lvl == 0:
+            c.rect(m, yy + 0.04, W, h - 0.08, fill=t["sidebar"] if not t["dark_sidebar"] else t["panel"])
+            c.rect(m, yy + 0.04, 0.07, h - 0.08, fill=t["highlight"])
+        if lvl == 0:
+            c.text(m + 0.25, yy, nw - 0.25, h, s_id, size=30, bold=True, font=t["font_title"], anchor="m",
+                   color=t["highlight"] if on else (t["gray_mid"] if dim else t["primary"]))
+            c.text(m + nw, yy, tw, h, sec["title"], size=S["header"] + 7, bold=True, font=t["font_title"], anchor="m",
+                   color=t["placeholder"] if dim else t["title"], line_spacing=1.0)
+        else:
+            if on:
+                c.rect(m + nw, yy + 0.06, 0.05, h - 0.12, fill=t["highlight"])
+            c.text(m + nw + 0.2, yy, tw - 0.2, h, f"{s_id}   {sec['title']}", size=S["header"] + 2, bold=on, anchor="m",
+                   color=t["title"] if on else t["muted"], line_spacing=1.0)
+        if s_id in first:
+            c.text(m + W - pgw, yy, pgw - 0.15, h, f"p. {first[s_id]}", size=S["label"] + 1 - lvl, anchor="m", align="r",
                    color=t["placeholder"] if dim else t["muted"])
-        c.line(m, yy + rh, m + W, yy + rh, color=t["rule"])
+        if lvl == 0 or (rows.index((s_id, lvl)) + 1 < len(rows) and rows[rows.index((s_id, lvl)) + 1][1] == 0):
+            c.line(m, yy + h, m + W, yy + h, color=t["rule"])
+        yy += h
     c.text(G["slide_w"] - m - 0.5, G["source_top"], 0.5, G["line_h"], str(page_no), size=S["source"], color=t["muted"], align="r")
 
 

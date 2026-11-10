@@ -57,7 +57,7 @@ def render(spec_dict, out_path, primary="0B1F33"):
         n_ph = _count_placeholders(sl.get("body")) + _count_placeholders(sl.get("layout"))
         sheet = f"p{pages[sl['id']]} (slide {sl['id']})"[:31]  # page number as on the slide
         ws = wb.create_sheet(sheet)
-        title = ((sl.get("lead_message") or {}).get("prefix", "") + " " + (sl.get("lead_message") or {}).get("text", "")).strip()
+        title = (spec.prefix(sl) + " " + (sl.get("lead_message") or {}).get("text", "")).strip()
         ws["A1"] = title
         ws["A1"].font = Font(bold=True, size=13)
         ws["A2"] = f"Status: {sl['status']} · archetype: {sl.get('archetype', '')}"
