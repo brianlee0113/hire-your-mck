@@ -56,6 +56,7 @@ def page_text(body, ctype, url):
 
 
 def norm(t):
+    t = t.replace("|", " ")  # excerpts copied from a reader's markdown table
     t = t.replace(" ", " ").replace("’", "'").replace("“", '"').replace("”", '"').replace("–", "-").replace("—", "-")
     return re.sub(r"\s+", " ", t).strip().lower()
 
@@ -96,7 +97,7 @@ def find(excerpt, page):
     if e in p:
         return True
     # ellipses in a quote: every fragment must be on the page
-    frags = [f.strip() for f in re.split(r"\.\.\.|…", e) if len(f.strip()) > 12]
+    frags = [f.strip() for f in re.split(r"\[?(?:\.\.\.|…)\]?", e) if len(f.strip()) > 12]
     if len(frags) > 1 and all(f in p for f in frags):
         return True
     nums = sorted(set(re.findall(r"\d[\d,.]*\d|\d", e)), key=len, reverse=True)

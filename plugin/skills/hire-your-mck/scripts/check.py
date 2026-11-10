@@ -436,7 +436,7 @@ def _all_text(o, path=""):
     if isinstance(o, str): yield path, o
     elif isinstance(o, dict):
         for k, v in o.items():
-            if k not in ("data_requirements", "rationale", "excerpt", "inputs", "formula", "calc", "data_ref", "id"):
+            if k not in ("data_requirements", "rationale", "excerpt", "locator", "inputs", "formula", "calc", "data_ref", "id", "verified", "corroboration"):
                 yield from _all_text(v, f"{path}/{k}")
     elif isinstance(o, list):
         for i, v in enumerate(o): yield from _all_text(v, f"{path}/{i}")
