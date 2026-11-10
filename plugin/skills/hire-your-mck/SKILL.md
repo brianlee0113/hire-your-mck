@@ -68,7 +68,11 @@ Show the executive summary with, under each bullet, the planned slide titles and
 
 ### Step 2 · Data
 1. Use the user's files and pasted research first (D2). Then search the web for gaps.
-2. Every number on a slide becomes a `data_point` with `source_id`, `excerpt` (verbatim), `locator`, and for web sources `url` and `accessed`.
+2. Every number on a slide becomes a `data_point` with `source_id`, `excerpt` (verbatim), `locator`, and for web sources `url` and `accessed`. Verify as you collect (V-01–V-04 in `references/principles.md`):
+   - Copy the excerpt from the page you opened, never from memory or a search snippet; the value must appear in it.
+   - Tier every web source. Prefer T1 (statistics agencies, regulators, filings, papers) and T2. When a page reports someone else's number (T3), open the original and cite that. Never take a number from a T4 page (blogs, vendor market claims, statistics aggregators).
+   - Check the definition matches the label: currency, period, geography, population.
+   - Use the latest edition; a source 4+ years old needs a reason it still holds.
 3. Numbers you calculate (shares, gaps, CAGR, multiples) are `derived`: list `derived_from`, `formula` and a machine-readable `calc` (it becomes a live Excel formula).
    Projections, sizings and uplifts are **estimates**: add `"estimate": true` and every assumption in `assumptions`, and show the basis on the slide: a `basis` strip, an `equation` body, or a row `basis` (B-08). If the estimate needs its own explanation, give it its own `calculation-bridge` slide (B-03).
 4. Reuse one data point on every slide that shows the same number (its `slide_id` is the first slide).

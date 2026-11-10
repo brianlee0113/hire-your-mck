@@ -62,6 +62,15 @@ QA: warn when a `deck_detailed` spec still has placeholders.
 - **A-11** The takeaway sidebar is the default for quantitative charts.
 - **A-12** Density, matched to 2020+ decks: title 25 pt, body 14 pt, 0.6 in side margins, content down to 91% of the slide; 600–1,100 characters per content slide (charts ≥ 300); boxes 3–5 bullets; KPI tiles with 2–4 driver lines. Conclusion devices are chosen per slide (none 72% of reference pages, sidebar 17%, callout 7%, bottom bar 4%) and varied. QA warns on thin slides, lone charts, thin sidebars, one device on > 40% of slides or three in a row, callout tables without row notes, end pages without next steps. Sidebar value rows (label + number + bar) appear on at most a third of content slides and never on two in a row; QA warns otherwise.
 
+## V · Source verification
+
+A number is only as good as the line it was copied from. These rules make the source workbook something a reader can audit.
+
+- **V-01 The value is in its excerpt.** Every web number carries a verbatim `excerpt`, and the value (or its rounding, with "billion", "%" and "percent" converted) appears in it. A value you computed from the excerpt is a derived number with `calc`, not a copied one. User numbers need an `excerpt` or a `locator` (sheet, row, page). QA: fail when a web number has no excerpt or does not match it; warn when the excerpt has no figure, or user numbers have neither excerpt nor locator.
+- **V-02 Same definition.** The excerpt measures the same thing as the label: same currency, period, geography and population. A number in another currency is converted as a derived number (rate and date in `assumptions`). Use `period`, `geography` and `definition` when the label could mean more than one thing. QA: fail on a foreign-currency excerpt behind a `$` unit; warn when the excerpt names years and none is the data point's period. LLM: same population (all firms vs. employer firms), nominal vs. real, calendar vs. fiscal year.
+- **V-03 Tier the source, cite the primary.** Every web source has a `tier`. **T1** primary: official statistics, regulators, filings, peer-reviewed papers, a company's own disclosures about itself. **T2** established research firms, industry bodies, reputable surveys. **T3** reporting on someone else's number (news, summaries, other decks): open the primary and cite it instead; if you cannot reach it, name it in `cites`. **T4** not citable for numbers: blogs, vendor marketing about a market, SEO statistics pages, AI-generated pages. QA: fail on a web source without tier or a number from T4; warn on T3 without `cites`, and on title or exec summary numbers that rest on T3.
+- **V-04 Use the latest edition.** A web source has a `published` date; one published 4 or more years ago needs a newer edition or a `recency_ok` reason ("latest census; it runs every 5 years"). QA: warn.
+
 ## G · General practice
 
 - **G-01 Horizontal logic.** The titles alone, in order, tell the story. QA (LLM): find the logic gaps.

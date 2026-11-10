@@ -1872,6 +1872,14 @@
             "type": "string"
           },
           "description": "Every assumption behind an estimate, one per line. Listed in the Calculations sheet."
+        },
+        "geography": {
+          "type": "string",
+          "description": "Where the number applies (country, state, market), when the source covers more than one (V-02)."
+        },
+        "definition": {
+          "type": "string",
+          "description": "What exactly is counted when the label could mean more than one thing, e.g. 'nominal USD, calendar year, employer firms only' (V-02)."
         }
       }
     },
@@ -1916,6 +1924,23 @@
         },
         "published": {
           "type": "string"
+        },
+        "tier": {
+          "enum": [
+            "T1",
+            "T2",
+            "T3",
+            "T4"
+          ],
+          "description": "Web sources (V-03). T1 primary: official statistics, regulators, filings, peer-reviewed papers, the company's own disclosures about itself. T2 established research firms, industry bodies, reputable surveys. T3 reporting on another source (news, summaries): trace to the primary. T4 not citable for numbers: blogs, vendor marketing about the market, SEO aggregators, AI-generated pages."
+        },
+        "cites": {
+          "type": "string",
+          "description": "T3 only: the primary source the report relies on, if it could not be reached."
+        },
+        "recency_ok": {
+          "type": "string",
+          "description": "Why a source published 4+ years ago still holds (V-04), e.g. 'latest edition; census runs every 5 years'."
         }
       }
     },

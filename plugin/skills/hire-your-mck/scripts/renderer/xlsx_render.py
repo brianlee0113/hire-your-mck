@@ -11,9 +11,10 @@ import re
 
 from .pptx_render import Spec, collect_refs, fmt, has_placeholder
 
-COLS = ["Data point", "Value", "Unit", "Period", "Source", "Source type", "URL", "Excerpt",
+COLS = ["Data point", "Value", "Unit", "Period", "Source", "Source type", "Tier", "URL", "Excerpt",
         "Locator", "Accessed", "Used in", "How it was calculated"]
-WIDTHS = [34, 12, 8, 12, 40, 13, 36, 44, 18, 12, 22, 34]
+WIDTHS = [34, 12, 8, 12, 40, 13, 6, 36, 44, 18, 12, 22, 34]
+URL_COL = COLS.index("URL") + 1
 
 
 def _style_header(ws, row, color):
@@ -76,20 +77,20 @@ def render(spec_dict, out_path, primary="0B1F33"):
                 calc += f"  → live formula: Calculations!C{calc_rows[r]}"
             ws.append([
                 d.get("label"), d.get("value"), d.get("unit"), d.get("period"), s.get("name"), s.get("kind"),
-                s.get("url"), d.get("excerpt"), d.get("locator"), s.get("accessed"), d.get("used_in"), calc,
+                s.get("tier"), s.get("url"), d.get("excerpt"), d.get("locator"), s.get("accessed"), d.get("used_in"), calc,
             ])
             row = ws.max_row
             v = ws.cell(row=row, column=2)
             if d.get("unit") == "%":
                 v.number_format = "0.0%"
             if s.get("url"):
-                ws.cell(row=row, column=7).hyperlink = s["url"]
+                ws.cell(row=row, column=URL_COL).hyperlink = s["url"]
             for col in range(1, len(COLS) + 1):
                 ws.cell(row=row, column=col).alignment = Alignment(vertical="top", wrap_text=True)
                 ws.cell(row=row, column=col).border = thin
         for req in open_reqs:
             ws.append([req["description"], "MISSING", req.get("unit"), req.get("period"),
-                       "; ".join(req.get("candidate_sources", [])), "needed", None,
+                       "; ".join(req.get("candidate_sources", [])), "needed", None, None,
                        req.get("recommended_exhibit"), None, None, "placeholder", None])
             for col in range(1, len(COLS) + 1):
                 c = ws.cell(row=ws.max_row, column=col)
@@ -108,14 +109,15 @@ def render(spec_dict, out_path, primary="0B1F33"):
         wb._sheets.remove(calc_ws)
         wb._sheets.append(calc_ws)
     src = wb.create_sheet("Sources")
-    src.append(["Id", "Name", "Type", "Publisher", "URL", "Published", "Accessed"])
-    for col in range(1, 8):
+    src.append(["Id", "Name", "Type", "Tier", "Publisher", "URL", "Published", "Accessed", "Primary source (T3)", "Why still current"])
+    for col in range(1, 11):
         c = src.cell(row=1, column=col)
         c.font = Font(bold=True, color="FFFFFF")
         c.fill = PatternFill("solid", fgColor=primary)
     for s in spec_dict.get("sources", []):
-        src.append([s["id"], s.get("name"), s.get("kind"), s.get("publisher"), s.get("url"), s.get("published"), s.get("accessed")])
-    for w, col in zip([6, 60, 14, 30, 40, 11, 11], "ABCDEFG"):
+        src.append([s["id"], s.get("name"), s.get("kind"), s.get("tier"), s.get("publisher"), s.get("url"), s.get("published"),
+                    s.get("accessed"), s.get("cites"), s.get("recency_ok")])
+    for w, col in zip([6, 60, 14, 6, 30, 40, 11, 11, 30, 30], "ABCDEFGHIJ"):
         src.column_dimensions[col].width = w
     wb.save(out_path)
     return {"path": out_path, "sheets": len(wb.sheetnames)}

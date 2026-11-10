@@ -473,6 +473,126 @@ for kt in spec["storyline"].get("key_takeaways", []):
             out("B-05", "warn", f"key takeaway repeats exec item {it['id']}; drop it and keep next steps only: \"{kt[:50]}\"")
 if any(s["role"] == "end_page" for s in spec["slides"]) and not spec["storyline"].get("next_steps"):
     out("A-12", "warn", "end page has no storyline.next_steps; the right half will be empty")
+# ---- V-01: the value appears in its excerpt -------------------------------------------------
+_SCALE_WORDS = {"thousand": 1e3, "k": 1e3, "million": 1e6, "mn": 1e6, "mm": 1e6, "m": 1e6,
+                "billion": 1e9, "bn": 1e9, "b": 1e9, "trillion": 1e12, "tn": 1e12, "t": 1e12}
+_UNIT_SCALE = {"$K": 1e3, "$M": 1e6, "$B": 1e9, "$T": 1e12, "k": 1e3, "M": 1e6, "B": 1e9}
+_NUM = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?(?:\s?(thousand|million|billion|trillion|mn|mm|bn|tn|[kKmMbBtT])(?![A-Za-z]))?")
+
+
+def excerpt_numbers(text):
+    """(raw, absolute) for every figure in the text; absolute applies a scale word ("1.2 billion")."""
+    out = []
+    for m in _NUM.finditer(text or ""):
+        raw = float(m.group(1).replace(",", "") + (m.group(2) or ""))
+        sc = _SCALE_WORDS.get((m.group(3) or "").lower(), 1)
+        out.append((raw, raw * sc))
+    return out
+
+
+def _tol(x):
+    """Half a unit of the last shown digit of x, so 1.2 matches 1.23 and 40 matches 40.4."""
+    s = f"{abs(x):.6f}".rstrip("0").rstrip(".")
+    dec = len(s.split(".")[1]) if "." in s else 0
+    return 0.5 * 10 ** -dec + 1e-9
+
+
+def value_in_excerpt(value, unit, text):
+    """True / False, or None when the text has no figure to compare."""
+    if value == 0 and re.search(r"\b(no|none|zero|nil|not any)\b", text or "", re.I):
+        return True
+    nums = excerpt_numbers(text)
+    if not nums:
+        return None
+    v = abs(value)
+    shown = [v] + ([v * 100] if unit in ("%", "pp") else [])
+    absolute = v * _UNIT_SCALE.get(unit, 1)
+    for raw, ab in nums:
+        if any(abs(raw - c) <= _tol(c) for c in shown):
+            return True
+        if abs(ab - absolute) <= _tol(v) * _UNIT_SCALE.get(unit, 1):
+            return True
+    return False
+
+
+_CUR = {"$": r"\$|USD|dollar", "€": r"€|EUR|euro", "£": r"£|GBP|pound", "¥": r"¥|JPY|yen|CNY|yuan", "₩": r"₩|KRW|won"}
+
+
+def foreign_currency(unit, text):
+    """The excerpt states money in another currency than the data point's unit ($M against '€4.2 billion')."""
+    if not unit.startswith("$") or re.search(_CUR["$"], text or ""):
+        return None
+    for sym, pat in _CUR.items():
+        if sym != "$" and re.search(pat, text or ""):
+            return sym
+    return None
+
+
+# ---- V · source verification ------------------------------------------------------------------
+import datetime
+_this_year = datetime.date.today().year
+lead_refs = set()  # numbers the reader takes away: titles and the executive summary
+for s in content:
+    lead_refs |= set(collect_data_refs((s.get("lead_message") or {})))
+lead_refs |= set(collect_data_refs(spec["storyline"].get("exec_summary", [])))
+no_trace = {}
+for d in dps.values():
+    src = srcs.get(d.get("source_id"), {})
+    kind = src.get("kind")
+    if kind == "derived" or d.get("estimate"):
+        continue
+    vals = [d["value"]] + ([d["value_high"]] if "value_high" in d else [])
+    text = d.get("excerpt")
+    if not text and kind == "user_provided":
+        inp = next((i for i in spec.get("inputs", []) if i.get("id") == src.get("input_id")), {})
+        if inp.get("kind") == "qa_answer":
+            continue  # a value the user picked at a checkpoint is its own source
+        text = inp.get("content") if isinstance(inp.get("content"), str) else None
+        if not text and not d.get("locator"):
+            no_trace.setdefault(src.get("id"), []).append(d["id"]); continue
+    if not text:
+        if kind == "web":
+            out("V-01", "fail", f"{d['id']} ('{d['label'][:40]}') is from the web but has no excerpt; copy the sentence or table cell the value comes from", d["slide_id"])
+        continue
+    for v in vals:
+        ok = value_in_excerpt(v, d.get("unit", ""), text)
+        if ok is False:
+            shown_v = f"{v * 100:g}%" if d.get("unit") == "%" else f"{v:g} {d.get('unit', '')}".strip()
+            out("V-01", "fail", f"{d['id']} = {shown_v} is not in its excerpt: \"{text[:70]}\". Fix the value, quote the right passage, or make it a derived number with calc", d["slide_id"])
+        elif ok is None and d.get("excerpt"):
+            out("V-01", "warn", f"{d['id']}: excerpt has no figure to check {v:g} against: \"{text[:60]}\"", d["slide_id"])
+    cur = foreign_currency(d.get("unit", ""), d.get("excerpt") or "")
+    if cur:
+        out("V-02", "fail", f"{d['id']} is in {d['unit']} but its excerpt is in {cur}; convert it as a derived number (calc, rate and date in assumptions)", d["slide_id"])
+    years = set(re.findall(r"(?:19|20)\d\d", d.get("period") or ""))
+    context = " ".join(str(x or "") for x in (d.get("excerpt"), d.get("locator")))  # not the source's own date: a 2026 report often holds 2025 data
+    if years and d.get("excerpt") and re.search(r"(?:19|20)\d\d", context) and not years & set(re.findall(r"(?:19|20)\d\d", context)):
+        out("V-02", "warn", f"{d['id']}: period {d['period']} does not appear in its excerpt or locator, which name other years; check the value is for that period", d["slide_id"])
+for sid_, ids in no_trace.items():
+    out("V-01", "warn", f"{len(ids)} data point(s) from {sid_} have neither excerpt nor locator ({', '.join(ids[:4])}{'…' if len(ids) > 4 else ''}); add the sheet, row or page they come from")
+uses = {}
+for d in dps.values():
+    uses.setdefault(d.get("source_id"), []).append(d["id"])
+for s in srcs.values():
+    if s.get("kind") != "web":
+        continue
+    tier = s.get("tier")
+    used = uses.get(s["id"], [])
+    if not tier:
+        out("V-03", "fail", f"web source {s['id']} ('{s['name'][:40]}') has no tier (T1 primary · T2 research or industry body · T3 reporting on another source · T4 not citable)")
+    elif tier == "T4" and used:
+        out("V-03", "fail", f"{s['id']} is T4 (blog, vendor marketing, aggregator); find the primary source for {', '.join(used[:4])}")
+    elif tier == "T3":
+        if not s.get("cites"):
+            out("V-03", "warn", f"{s['id']} is T3: trace it to the primary source and cite that, or name it in 'cites'")
+        key = sorted(set(used) & lead_refs)
+        if key:
+            out("V-03", "warn", f"title or exec summary number(s) {', '.join(key)} rest on T3 source {s['id']}; confirm them in a T1/T2 source")
+    pub = re.match(r"(19|20)\d\d", str(s.get("published") or ""))
+    if not pub:
+        out("V-04", "warn", f"web source {s['id']} has no 'published' date")
+    elif _this_year - int(pub.group(0)) >= 4 and not s.get("recency_ok"):
+        out("V-04", "warn", f"{s['id']} was published in {pub.group(0)}; look for a newer edition, or say why it still holds in 'recency_ok'")
 fails = [r for r in results if r[1] == "fail"]; warns = [r for r in results if r[1] == "warn"]
 for rule, st, sid, det in results:
     if st != "pass" or rule == "schema":

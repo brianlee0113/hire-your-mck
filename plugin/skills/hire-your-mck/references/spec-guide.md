@@ -85,7 +85,9 @@ Always give a placeholder a `label` that says what data is needed; it is shown t
 - Ranges: `"value": 4, "value_high": 5, "unit": "years"` → "4–5 years".
 - One number, one data point: reuse it on every slide that shows it; `slide_id` is the first slide.
 - Sources: `{"id", "kind": "user_provided | web | derived", "name", "publisher", "url", "accessed", "published", "input_id"}`. User material beats web (D2). `derived` = your own calculation; it must list `derived_from` and `formula`.
-- `excerpt` is verbatim from the source. It is what makes the source workbook trustworthy.
+- `excerpt` is verbatim from the source, and the value must appear in it (V-01): `"value": 1.2, "unit": "$B"` matches "$1.23 billion"; `0.047` with `%` matches "4.7 percent". If you computed the value from figures in the excerpt, it is a `derived` number with `calc`. User numbers carry an `excerpt` or at least a `locator` ("P&L export, Margin tab, row 14").
+- Web sources carry a `tier` (V-03): `T1` primary (official statistics, regulators, filings, peer-reviewed papers, a company about itself) · `T2` research firms, industry bodies, reputable surveys · `T3` reporting on another source: cite the primary instead, or name it in `"cites"` · `T4` never for numbers (blogs, vendor market claims, statistics aggregators, AI-generated pages). Give `published`; a source 4+ years old needs `"recency_ok": "<why it still holds>"` (V-04).
+- When a label could mean more than one thing, pin it down (V-02): `"geography": "US"`, `"definition": "employer firms only; share of firms, not of employees"`. A number in another currency becomes a derived number converted with a dated rate in `assumptions`.
 - **Calculated numbers carry `calc` (B-08):** a formula over data point ids with `+ - * /` and spaces around `-`, e.g. `"calc": "(pl1 - us1) * 100"`. check.py recomputes it; the workbook turns it into a live Excel formula on the Calculations sheet.
 - **Estimates** (projections, sizings, uplifts) also carry `"estimate": true` and `"assumptions": ["...", "..."]`, and the slide that shows them must show their basis (next section).
 
@@ -198,6 +200,8 @@ Shows `next_steps` (action, owner, timing). Add `storyline.key_takeaways` only i
 | B-06 unrelated sidebar number | warn |
 | S3 section divider without an existing section; quote citing an unknown source; scatter without x and y series; heatmap `low_is_better` naming no column | fail |
 | A-07 quote without `source_id` | warn |
+| V-01 web number without excerpt or not matching it; V-02 foreign-currency excerpt behind a `$` unit; V-03 web source without tier, number from a T4 source | fail |
+| V-01 excerpt with no figure, user numbers with neither excerpt nor locator; V-02 period not in the excerpt; V-03 T3 without `cites`, title or exec numbers on T3; V-04 source without `published` or 4+ years old | warn |
 | S3 navigation in a deck with fewer than 10 content slides; section dividers and agenda trackers mixed in one deck | warn |
 | A-12 sidebar value rows on more than a third of content slides or on two in a row; B-12 placeholders left in a full deck | warn |
 | A-12 density: thin slide, lone chart, thin sidebar, boxes < 3 bullets, KPI without drivers, one conclusion device > 40% or 3 in a row, table callout without row notes, end page without next steps | warn |
