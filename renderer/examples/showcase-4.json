@@ -231,7 +231,13 @@
        "Connect the routing tool to order and telematics data",
        "Set depot targets for miles per stop and empty miles",
        "Agree the override rules with dispatch leads"
-      ]
+      ],
+      "impact": {
+       "point": {
+        "data_ref": "pilot"
+       },
+       "text": "lower route emissions in the Dallas pilot"
+      }
      },
      {
       "label": "Roll out",
@@ -239,7 +245,13 @@
        "Four waves of three depots, largest first",
        "Dispatcher training in the week before each wave",
        "Two weeks of parallel running before switching over"
-      ]
+      ],
+      "impact": {
+       "point": {
+        "data_ref": "dep"
+       },
+       "text": "depots live by mid-2027, all of the network"
+      }
      },
      {
       "label": "Track",
@@ -247,7 +259,13 @@
        "Weekly miles, fuel and on-time delivery by depot",
        "Monthly review of overrides and their reasons",
        "Quarterly report to the decarbonization office"
-      ]
+      ],
+      "impact": {
+       "point": {
+        "data_ref": "otd"
+       },
+       "text": "on-time delivery held during the pilot"
+      }
      }
     ],
     "impact": {
@@ -259,9 +277,6 @@
     "owner": "Head of operations",
     "timing": "Q1–Q3 2027"
    },
-   "footnotes": [
-    "The Dallas pilot cut route emissions by 11% in Q2 2026"
-   ],
    "section_id": "1"
   },
   {
@@ -669,6 +684,26 @@
    "period": "2026",
    "source_id": "s1",
    "locator": "Route data, daily mileage"
+  },
+  {
+   "id": "dep",
+   "slide_id": "5",
+   "label": "Depots running route optimization by mid-2027",
+   "value": 12,
+   "unit": "depots",
+   "period": "Q3 2027",
+   "source_id": "s1",
+   "locator": "Rollout plan, wave schedule"
+  },
+  {
+   "id": "otd",
+   "slide_id": "5",
+   "label": "On-time delivery in the route optimization pilot",
+   "value": 0.96,
+   "unit": "%",
+   "period": "Q2 2026",
+   "source_id": "s2",
+   "locator": "Pilot report, Dallas depot"
   }
  ],
  "sources": [

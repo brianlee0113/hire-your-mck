@@ -2651,6 +2651,22 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "impact": {
+                "type": "object",
+                "required": [
+                  "text"
+                ],
+                "additionalProperties": false,
+                "description": "actions_impact: the row's expected result, shown in a right-hand column. Give a point when it is a number (it needs a data point like any other).",
+                "properties": {
+                  "point": {
+                    "$ref": "#/$defs/point"
+                  },
+                  "text": {
+                    "type": "string"
+                  }
+                }
               }
             }
           },
@@ -2743,6 +2759,10 @@
         },
         "timing": {
           "type": "string"
+        },
+        "result_header": {
+          "type": "string",
+          "description": "Header of the result column (default 'Expected result')."
         }
       }
     }

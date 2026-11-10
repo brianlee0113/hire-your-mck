@@ -1952,19 +1952,37 @@ def initiative(c, spec, slide, body, box):
             y += bh_ + 0.2
             h -= bh_ + 0.2
         lw = w * 0.2
-        c.text(x + lw + 0.3, y, w - lw - 0.3, 0.3, "Key actions", size=S["header"] + 1, bold=True, color=t["title"])
-        c.line(x + lw + 0.3, y + 0.34, x + w, y + 0.34, color=t["primary"], weight=1.25)
         rows = body.get("rows", [])
+        res = any(r.get("impact") for r in rows)  # r1-7: each row carries its own result on the right
+        rw_ = w * 0.27 if res else 0
+        aw = w - lw - 0.3 - (rw_ + 0.3 if res else 0)
+        c.text(x + lw + 0.3, y, aw, 0.3, "Key actions", size=S["header"] + 1, bold=True, color=t["title"])
+        c.line(x + lw + 0.3, y + 0.34, x + lw + 0.3 + aw, y + 0.34, color=t["primary"], weight=1.25)
+        if res:
+            rx_ = x + w - rw_
+            c.text(rx_, y, rw_, 0.3, body.get("result_header", "Expected result"), size=S["header"] + 1, bold=True, color=t["highlight"])
+            c.line(rx_, y + 0.34, x + w, y + 0.34, color=t["highlight"], weight=1.25)
         ry = y + 0.46
         rh = (y + h - ry) / max(1, len(rows))
-        afs = min([fit_size(r["actions"], w - lw - 0.3, rh - 0.2, S["header"] + 3, min_size=11) for r in rows] or [S["body"]])
+        afs = min([fit_size(r["actions"], aw, rh - 0.2, S["header"] + 3, min_size=11) for r in rows] or [S["body"]])
         for r in rows:
             lab = c.rect(x, ry + 0.04, lw, rh - 0.12, fill=t["panel"])
             lab.text_frame.margin_left = Inches(0.15)
             c.label_in(lab, r["label"], size=S["header"] + 2, bold=True, color=t["title"], align="l")
             lab.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
-            _bullets(c, r["actions"], x + lw + 0.3, ry + 0.08, w - lw - 0.3, rh - 0.16, size=afs, fixed=True)
-            c.line(x + lw + 0.3, ry + rh - 0.04, x + w, ry + rh - 0.04, color=t["rule"])
+            _bullets(c, r["actions"], x + lw + 0.3, ry + 0.08, aw, rh - 0.16, size=afs, fixed=True)
+            c.line(x + lw + 0.3, ry + rh - 0.04, x + lw + 0.3 + aw, ry + rh - 0.04, color=t["rule"])
+            ri = r.get("impact")
+            if ri:
+                rx_ = x + w - rw_
+                c.rect(rx_, ry + 0.04, rw_, rh - 0.12, fill=tint(t["highlight"], 0.93))
+                c.rect(rx_, ry + 0.04, 0.05, rh - 0.12, fill=t["highlight"])
+                if ri.get("point"):
+                    c.text(rx_ + 0.2, ry + 0.04, 1.45, rh - 0.12, dp_fmt(spec, ri["point"]), size=S["header"] + 9, bold=True,
+                           color=t["highlight"], font=t["font_title"], anchor="m")
+                    c.text(rx_ + 1.65, ry + 0.04, rw_ - 1.8, rh - 0.12, ri["text"], size=S["label"] + 1, color=t["title"], anchor="m", line_spacing=1.05)
+                else:
+                    c.text(rx_ + 0.2, ry + 0.04, rw_ - 0.35, rh - 0.12, ri["text"], size=S["body"], bold=True, color=t["title"], anchor="m", line_spacing=1.05)
             ry += rh
         if imp:  # in the band: number pill at the right end, what it measures to its left
             by_ = y - bh_ - 0.2
