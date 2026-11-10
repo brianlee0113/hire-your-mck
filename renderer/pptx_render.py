@@ -1118,8 +1118,11 @@ def kpi(c, spec, body, box):
         drivers = it.get("drivers", [])
         if drivers:
             dy = y + th + 0.2
-            c.text(tx, dy, tw, 0.22, "WHAT IS MISSING" if ph else "WHAT DRIVES IT", size=S["small"] - 1, bold=True,
-                   color=t["caution_ink"] if ph else t["muted"])
+            head = "WHAT IS MISSING" if ph else (it.get("drivers_header") or body.get("drivers_header"))
+            if head:
+                c.text(tx, dy, tw, 0.22, head.upper(), size=S["small"] - 1, bold=True, color=t["caution_ink"] if ph else t["muted"])
+            else:  # a fixed label on every tile of every KPI slide tires the reader; a rule separates just as well
+                c.line(tx, dy + 0.1, tx + tw, dy + 0.1, color=t["rule"])
             paras = [[("–  ", {"color": t["muted"]}), (d, {"color": t["muted"] if ph else t["text"]})] for d in drivers]
             dh = y + h - dy - 0.27
             c.text(tx, dy + 0.27, tw, dh, paras, size=common, line_spacing=1.1)
@@ -1384,7 +1387,7 @@ def table(c, spec, body, box, slide=None):
             cell = row["cells"][j - 1] if j - 1 < len(row["cells"]) else {}
             is_text_col = (last_text or verdict) and j == ncols - 1
             if verdict and j == ncols - 1 and (i - 1) == co_row:
-                runs = [(co["header"], True, t["highlight"])] + ([(co["detail"], False, t["title"])] if co.get("detail") else [])
+                runs = [(("       " if co.get("icon") == "alert" else "") + co["header"], True, t["highlight"])] + ([(co["detail"], False, t["title"])] if co.get("detail") else [])
                 put(tb.cell(i, j), "", size=size, fill=tint, runs=runs)
                 continue
             if heat and cell.get("point") and not is_text_col:
@@ -1399,6 +1402,8 @@ def table(c, spec, body, box, slide=None):
                 color=(t["highlight"] if (on and is_text_col) else (t["title"] if on or cell.get("point") else t["text"])),
                 size=size, align="l" if (is_text_col or not harvey_type) else "c", fill=tint)
     bottom = y + head_h + sum(rhs)
+    if co and co.get("icon") == "alert" and co_row is not None and verdict:
+        _alert(c, x + sum(widths[:-1]) + 0.08, tops[co_row] + 0.08, d=0.3)
     if heat:
         for i, row in enumerate(rows):  # the target row gets a full-width outline (shading keeps its meaning)
             if row.get("highlight") or i == co_row:
@@ -2115,10 +2120,23 @@ def _reserve(slide, item):
     return (0.62 if item.get("point") else 0) + (0.5 if item.get("footer") else 0) + (1.0 if _is_target(slide, item) else 0)
 
 
+def _alert(c, x, y, d=0.3):
+    """Circled '!' marking the element the title points at."""
+    t = c.t
+    dot = c.rect(x, y, d, d, fill=t["highlight"], shape=MSO_SHAPE.OVAL)
+    dot.text_frame.margin_top = dot.text_frame.margin_bottom = 0
+    dot.text_frame.margin_left = dot.text_frame.margin_right = 0
+    c.label_in(dot, "!", size=S["label"] - 1, bold=True, color=t["white"])
+
+
 def _callout_box(c, x, y, w, h, co):
     t = c.t
     c.rect(x, y, w, h, fill=tint(t["highlight"]))
     c.rect(x, y, 0.05, h, fill=t["highlight"])
+    if co.get("icon") == "alert":
+        _alert(c, x + 0.16, y + 0.12)
+        x += 0.36
+        w -= 0.36
     texts = [co["header"]] + ([co["detail"]] if co.get("detail") else [])
     size = fit_size(texts, w - 0.3, h - 0.2, S["body"], min_size=10, indent=0, line_spacing=1.05)
     paras = [[(co["header"], {"bold": True, "color": t["highlight"] if not t["dark_sidebar"] else t["title"]})]]
@@ -2457,7 +2475,8 @@ def levers(c, spec, slide, body, box):
         h -= 0.46
     n = len(items) + (1 if total else 0)
     tw0 = w * (0.5 if any(it.get("metric") for it in items) else 0.56)
-    same_unit0 = len({(spec.dpoint(it.get("point")) or {}).get("unit") for it in items if it.get("point")}) <= 1
+    same_unit0 = (len({(spec.dpoint(it.get("point")) or {}).get("unit") for it in items if it.get("point")}) <= 1
+                  and len({it.get("metric") for it in items if it.get("point")}) <= 1)  # different questions are not one scale
     # mixed units draw no bars, so the number and its metric line may use the space a bar would take
     mw = 2.6 if same_unit0 else max(2.6, w - 0.75 - tw0 - 0.3)
     def need_(it):  # value line + metric under it, or the lever text, whichever is taller
@@ -2471,7 +2490,7 @@ def levers(c, spec, slide, body, box):
                             "shorten the lever text or the metric line, or drop a lever")
     vals = [spec.value(it.get("point")) for it in items]
     vmax = max([abs(v) for v in vals if v is not None] or [1])
-    same_unit = len({(spec.dpoint(it.get("point")) or {}).get("unit") for it in items if it.get("point")}) <= 1
+    same_unit = same_unit0
     tw = w * (0.5 if any(it.get("metric") for it in items) else 0.56)
     vx = x + 0.75 + tw
     barw = w - (vx - x) - 1.3

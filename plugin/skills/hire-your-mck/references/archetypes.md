@@ -62,7 +62,7 @@ Each line: archetype → `body.kind` (key fields) — how a full slide looks.
 - `numbered-levers` → `levers` (`items[]` with `code`, `text`, `point`; `total`).
 - `case-example` → `case` (`subject`, `situation[]`, `approach[]` with 3–4 bullets each, `impact[]` with 2–3 big numbers).
 - `quote-interview` → `text`, `style: "quotes"` (2–6 `quotes[]` with verbatim `text`, `speaker` = role and type of organization, never a private name, `header` = the takeaway the quote proves, `source_id` = the interview notes or survey, `emphasis` on the card the title points at). Mark the words the title rests on with `**…**`. Quotes are evidence, so they need a source like numbers do; a quote you do not have yet is `placeholder: true` (spec-guide.md).
-- `statement` → `text`, `style: "statement"` (`statement.support`, `emphasis` words of the title). At most 2–3 per deck.
+- `statement` → `text`, `style: "statement"` (`statement.support`, `emphasis` words of the title). Rare: 1% of reference pages, mostly keynotes and vision documents. Not in client diagnostics or policy analyses; at most one in a talk.
 
 **Navigation** (no body): `cover`, `exec_summary`, `agenda_tracker`, `section_divider`, `end_page`. The end page shows `storyline.next_steps`.
 - `agenda_tracker`: contents page built from `sections` (section name and first page). Without `section_id` it is the agenda; with `section_id` it is repeated before that section with the section emphasised.

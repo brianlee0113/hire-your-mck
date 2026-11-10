@@ -466,6 +466,12 @@
             },
             "detail": {
               "type": "string"
+            },
+            "icon": {
+              "enum": [
+                "alert"
+              ],
+              "description": "Circled '!' on the callout: an emphasis device for the one element that matters, used now and then to break up repeated slide types."
             }
           }
         },
@@ -1095,9 +1101,16 @@
                   "type": "string"
                 },
                 "description": "What drives the number (filled) or what is missing (placeholder). 2–4 lines."
+              },
+              "drivers_header": {
+                "type": "string"
               }
             }
           }
+        },
+        "drivers_header": {
+          "type": "string",
+          "description": "Optional label over the driver lines ('Why it matters', 'Behind the number'). Without it a thin rule separates them; avoid the same label on every KPI slide."
         }
       }
     },

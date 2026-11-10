@@ -175,8 +175,12 @@ if len(_typed) >= 15:
     from collections import Counter as _C
     for a_, n in _C(_typed).most_common(1):
         if n / len(_typed) > 0.30:
-            out("A-13", "warn", f"'{a_}' is {n} of {len(_typed)} slides; use the routing table to find a better fit for some (scatter, heatmap, statement, framework)")
+            out("A-13", "warn", f"'{a_}' is {n} of {len(_typed)} slides; use the routing table to find a better fit for some (scatter, heatmap, framework, columns)")
     tables = sum(1 for a_ in _typed if a_ in ("comparison-table", "definition-table", "data-table", "harvey-ball-table"))
+# statement pages: 1% of reference pages, mostly keynotes and vision decks
+if _typed.count("statement") and (spec.get("meta") or {}).get("deck_type", "client_diagnostic") != "research_report" and spec["mode"] == "deck_deep":
+    out("A-13", "warn", "statement page in an analytical deck; reference decks use them in keynotes and vision documents (1% of pages). "
+        "Keep the point in an action title instead")
     if tables / len(_typed) > 0.40:
         out("A-13", "warn", f"{tables} of {len(_typed)} slides are tables; turn the ones with numbers into charts or a heatmap")
 
