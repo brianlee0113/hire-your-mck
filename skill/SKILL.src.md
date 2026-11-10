@@ -31,25 +31,29 @@ Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow
 | `references/archetypes.md` | Choosing a slide type and filling its body |
 | `references/spec-guide.md` | Writing the JSON: fields, statuses, data points, sources, placeholders |
 | `references/style.md` | Titles, unit lines, density, conclusion devices, themes |
+| `references/deep-deck.md` | Only for `deck_deep`: the seven-step workflow that replaces Steps 1–2 |
 | `examples/*.json` | Complete specs that pass QA. Copy their shape |
 
-## The three modes
+## The four modes
 
 | Mode | Ask for | Slides end as |
 |---|---|---|
 | `deck_detailed` | Research, files or answers to a few questions | `filled`: every number sourced |
 | `deck_flow` | The landing message (plus any context) | `ghost`: real exhibit skeleton with "?" values, takeaway to prove, data needed |
+| `deck_deep` | A decision to work through, plus research or files | 30–60 slides built with the seven-step process: problem, issue tree, sections, `filled` |
 | `single_slide` | One lead message, or research for one slide | One `filled` slide |
 
 ## Workflow
 
-The skill stops and asks the user **only at three checkpoints**. Do everything else on your own.
+The skill stops and asks the user **only at three checkpoints** (four in `deck_deep`). Do everything else on your own.
 
 **How to ask, every time.** Ask as multiple choice, never as open questions the user has to type out. If your environment has a tool that shows questions with selectable options, use it; otherwise write numbered options. Each question gets 2–4 options written for this user's topic, your recommended option first and marked "(Recommended)", and the user can always type their own answer. Ask all the questions of one checkpoint in one go. The same applies to any assumption you need confirmed along the way (an age cutoff, a pilot city, a business model): each becomes one multiple-choice question with your recommendation first and the reason in a few words, e.g. "Age cutoff: 55+ (Recommended: matches SCSEP and AARP) · 65+ · 50+". Never end a message with open questions the user must type answers to. If you need facts only the user has (their numbers, their company), first offer options for *where* to get them (upload a file · paste it · search the web · leave as a placeholder) rather than asking them to type the facts.
 
 ### Checkpoint 1 · Brief (skip any question the first message already answers)
 Ask these together, as multiple choice:
-1. **What to build:** full deck with data (`deck_detailed`) · storyline only, slides with "?" values (`deck_flow`) · one slide (`single_slide`).
+1. **What to build:** full deck with data (`deck_detailed`) · storyline only, slides with "?" values (`deck_flow`) · deep deck, 30–60 slides worked through as a problem (`deck_deep`) · one slide (`single_slide`).
+
+**If the user picks `deck_deep`, switch to `references/deep-deck.md` now.** It replaces the rest of this checkpoint and Steps 1–2 with its own four checkpoints, then returns to Step 3.
 2. **Your material:** I have research or files to share (upload or paste next) · I already pasted it · no material: search the web · no material: leave data as placeholders.
 3. **Audience and decision:** 2–3 likely options for this topic (e.g. "CEO: approve or reject", "Board: update", "Team: align on a plan").
 4. **Look:** the themes in `references/style.md`, each with a 3–5 word description — `navy` (Recommended: deep navy, one blue accent) · `crimson` (charcoal, one red) · `forest` (deep green) · `mono` (black and white, prints well) · `vivid` (startup pitch, violet and coral) · `slate` (steel blue and amber) · `terracotta` (warm earth). If the tool caps options at four, show navy, mono, vivid and slate, and let the user type another.
