@@ -25,9 +25,21 @@ Or just ask Claude Code: *"Install github.com/brianlee0113/hire-your-mck"*. Rest
 
 **Claude.ai**: download [`hire-your-mck.zip`](https://github.com/brianlee0113/hire-your-mck/releases/latest/download/hire-your-mck.zip), then **Customize → Skills → Upload a skill**.
 
-Then just brief it:
+Then brief it. In Claude Code, start with `/hire-your-mck`:
 
-> Our CEO has to decide whether to launch an AI package for our small-business customers. Build the deck from public data.
+```text
+/hire-your-mck Create a deck: our CEO has to decide whether to launch an AI package for our small-business customers. Build it from public data.
+```
+
+More examples, one for each [mode](#three-modes):
+
+```text
+/hire-your-mck Create a deck from the files in ./research on why our churn doubled this year, for the board.
+/hire-your-mck Create a ghost deck: should we enter the Texas home-care market? Storyline only, no data yet.
+/hire-your-mck Create one slide: our three biggest cost levers, from cost-breakdown.xlsx.
+```
+
+In Claude.ai, there is no slash command: write the same brief without `/hire-your-mck` and the skill picks it up.
 
 [More install options](#install-details)
 
