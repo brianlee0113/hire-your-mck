@@ -1812,17 +1812,21 @@ def org_chart(c, spec, slide, body, box):
     tot = sum(nleaves(r) for r in roots)
     roles = body.get("roles", [])
     side = body.get("side", [])
-    tree_w = w - (3.1 if side else 0)
-    tree_h = h * (0.6 if roles else 0.95)
+    role_w = w * 0.3 if roles else 0
+    tree_w = w - (role_w + 0.35 if roles else 0)
+    tree_h = h * 0.97
     per_lev = {}
     for i, d in depth.items():
         per_lev.setdefault(d, []).append(i)
     if max(len(v) for v in per_lev.values()) > 6:
         SIDEBAR_WARN.append(f"slide {slide.get('id')}: more than 6 boxes on one level of the org chart")
-    bw = min(2.3, tree_w / tot - 0.25)
-    bh = max(0.5, min(0.64, tree_h / nlev - 0.3))
+    # boxes and type grow with the space: a small org chart fills the slide, a large one shrinks to fit
+    bw = min(2.9, tree_w / tot - 0.3)
+    bh = max(0.55, min(0.95, tree_h / nlev - 0.32))
     gap = (tree_h - nlev * bh) / max(1, nlev - 1) if nlev > 1 else 0
-    gap = max(0.3, min(gap, 0.75))
+    gap = max(0.3, min(gap, 0.9))
+    box_fs = min(fit_size([n["label"] + (f" ×{n['count']}" if n.get("count") else "")] + ([n["sub"]] if n.get("sub") else []),
+                          bw - 0.2, bh - 0.12, S["header"] + 3, min_size=9.5, indent=0, line_spacing=1.0, bold=True) for n in body["nodes"])
     pos = {}
     def place(i, x0):
         cx = x0 + leaves[i] * tree_w / tot / 2
@@ -1861,19 +1865,21 @@ def org_chart(c, spec, slide, body, box):
         paras = [[(lab, {"bold": True, "color": t["white"] if new else t["title"]})]]
         if n.get("sub"):
             paras.append([(n["sub"], {"size": S["small"], "color": tint(t["white"], 0.3) if new else t["muted"]})])
-        fs = fit_size([lab] + ([n["sub"]] if n.get("sub") else []), bw - 0.16, bh - 0.08, S["label"] + 1, min_size=9.5, line_spacing=1.0)
-        c.text(cx - bw / 2 + 0.08, ty, bw - 0.16, bh, paras, size=fs, align="c", anchor="m", line_spacing=1.0)
+        if n.get("sub"):
+            paras[1][0][1]["size"] = max(9, box_fs - 3)
+        c.text(cx - bw / 2 + 0.08, ty, bw - 0.16, bh, paras, size=box_fs, align="c", anchor="m", line_spacing=1.0)
         if len(n["label"].split()) > 6:
             SIDEBAR_WARN.append(f"slide {slide.get('id')}: org box '{n['label'][:30]}' has more than 6 words; move the detail to roles")
     for sd in side:
         if sd["attach"] not in pos:
             continue
         cx, ty = pos[sd["attach"]]
-        ox, ow = x + tree_w + 0.2, 2.9
+        ox = cx + bw / 2 + 0.6
+        ow = min(2.9, x + tree_w - ox)
         el = c.rect(ox, ty - 0.08, ow, bh + 0.16, fill=tint(t["highlight"]), line=t["highlight"], shape=MSO_SHAPE.OVAL)
         c.line(cx + bw / 2, ty + bh / 2, ox, ty + bh / 2, color=t["muted"], dash=True)
         paras = [[(sd["label"], {"bold": True, "color": t["title"]})]] + ([[(sd["sub"], {"size": S["small"], "color": t["muted"]})]] if sd.get("sub") else [])
-        c.text(ox + 0.35, ty - 0.08, ow - 0.7, bh + 0.16, paras, size=S["small"], align="c", anchor="m", line_spacing=1.0)
+        c.text(ox + 0.35, ty - 0.08, ow - 0.7, bh + 0.16, paras, size=S["label"] + 1, align="c", anchor="m", line_spacing=1.0)
     if new_any:  # legend top left, clear of the root box and the side committee
         ly = y
         lx = x
@@ -1882,16 +1888,30 @@ def org_chart(c, spec, slide, body, box):
         if any(n.get("status") == "changed" for n in body["nodes"]):
             c.rect(lx, ly + 0.29, 0.16, 0.16, fill=tint(t["highlight"]), line=t["primary"])
             c.text(lx + 0.24, ly + 0.26, 1.6, 0.22, "Changed", size=S["small"], color=t["text"])
-    if roles:
-        ry = y + tree_h + 0.35
-        rh = y + h - ry
-        rw = (w - 0.3 * (len(roles) - 1)) / len(roles)
-        for k, r in enumerate(roles):
-            rx = x + k * (rw + 0.3)
-            c.rect(rx, ry, rw, rh, fill=t["white"], line=t["rule"])
-            head = r.get("header") or f"Key roles · {nodes.get(r['node'], {}).get('label', '')}"
-            c.text(rx + 0.15, ry + 0.1, rw - 0.3, 0.3, head, size=S["label"] + 1, bold=True, color=t["title"])
-            _bullets(c, r["bullets"], rx + 0.15, ry + 0.45, rw - 0.3, rh - 0.55, size=S["label"] + 1)
+    if roles:  # "Key roles" callouts stacked in a right-hand column (r2-115 keeps them outside the boxes)
+        rx = x + w - role_w
+        rw = role_w
+        gap_r = 0.2
+        heads = [r.get("header") or f"Key roles · {nodes.get(r['node'], {}).get('label', '')}" for r in roles]
+        hhs = [_est_h(hd, rw - 0.4, S["header"], 1.0, bold=True) for hd in heads]
+        room = h - gap_r * (len(roles) - 1)
+        role_fs = S["body"] + 1
+        while True:  # one type size for all callouts; each callout as tall as its text needs, sharing the spare height
+            needs = [hh + 0.5 + sum(_est_h(b, rw - 0.64, role_fs, 1.15) for b in r["bullets"]) for r, hh in zip(roles, hhs)]
+            if sum(needs) <= room or role_fs <= 11:
+                break
+            role_fs -= 0.5
+        spare = max(0.0, room - sum(needs)) / len(roles)
+        ry = y
+        for k, (r, hd, hh, nd) in enumerate(zip(roles, heads, hhs, needs)):
+            rh = nd + spare
+            if k:
+                ry += prev_h + gap_r
+            prev_h = rh
+            c.rect(rx, ry, rw, rh, fill=t["panel"])
+            c.rect(rx, ry, 0.06, rh, fill=t["primary"])
+            c.text(rx + 0.22, ry + 0.14, rw - 0.4, hh, hd, size=S["header"], bold=True, color=t["title"], line_spacing=1.0)
+            _bullets(c, r["bullets"], rx + 0.22, ry + 0.14 + hh + 0.12, rw - 0.4, rh - hh - 0.35, size=role_fs, fixed=True)
 
 
 def _vertical_label(c, x, y, w, h, txt, fill, color):
@@ -1924,58 +1944,62 @@ def initiative(c, spec, slide, body, box):
     h -= fh
     imp = body.get("impact")
     if tpl == "actions_impact":
-        if body.get("header"):
-            band = c.rect(x, y, w, 0.46, fill=tint(t["highlight"]))
-            band.text_frame.margin_left = Inches(0.18)
-            c.label_in(band, body["header"], size=S["header"] + 1, bold=True, color=t["highlight"], align="l")
-            y += 0.6
-            h -= 0.6
-        if imp:
-            h -= 0.75
+        bh_ = 0.72 if imp else 0.5
+        if body.get("header") or imp:
+            c.rect(x, y, w, bh_, fill=tint(t["highlight"]))
+            c.text(x + 0.2, y, w * (0.62 if imp else 0.95), bh_, body.get("header", ""), size=S["header"] + 2, bold=True,
+                   color=t["highlight"], anchor="m")
+            y += bh_ + 0.2
+            h -= bh_ + 0.2
         lw = w * 0.2
-        c.text(x + lw + 0.3, y, w - lw - 0.3, 0.3, "Key actions", size=S["header"], bold=True, color=t["title"])
+        c.text(x + lw + 0.3, y, w - lw - 0.3, 0.3, "Key actions", size=S["header"] + 1, bold=True, color=t["title"])
         c.line(x + lw + 0.3, y + 0.34, x + w, y + 0.34, color=t["primary"], weight=1.25)
         rows = body.get("rows", [])
         ry = y + 0.46
         rh = (y + h - ry) / max(1, len(rows))
+        afs = min([fit_size(r["actions"], w - lw - 0.3, rh - 0.2, S["header"] + 3, min_size=11) for r in rows] or [S["body"]])
         for r in rows:
             lab = c.rect(x, ry + 0.04, lw, rh - 0.12, fill=t["panel"])
             lab.text_frame.margin_left = Inches(0.15)
-            c.label_in(lab, r["label"], size=S["header"], bold=True, color=t["title"], align="l")
+            c.label_in(lab, r["label"], size=S["header"] + 2, bold=True, color=t["title"], align="l")
             lab.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
-            _bullets(c, r["actions"], x + lw + 0.3, ry + 0.08, w - lw - 0.3, rh - 0.16, size=S["body"])
+            _bullets(c, r["actions"], x + lw + 0.3, ry + 0.08, w - lw - 0.3, rh - 0.16, size=afs, fixed=True)
             c.line(x + lw + 0.3, ry + rh - 0.04, x + w, ry + rh - 0.04, color=t["rule"])
             ry += rh
-        if imp:
-            pw_ = 3.4
-            pill = c.rect(x + w - pw_, y + h + 0.15, pw_, 0.52, fill=tint(t["highlight"]), radius=0.26)
-            c.label_in(pill, dp_fmt(spec, imp["point"]), size=S["header"] + 3, bold=True, color=t["highlight"], font=t["font_title"])
-            c.text(x + w - pw_ - 3.2, y + h + 0.15, 3.0, 0.52, imp["label"], size=S["header"], bold=True, color=t["title"], align="r", anchor="m")
+        if imp:  # in the band: number pill at the right end, what it measures to its left
+            by_ = y - bh_ - 0.2
+            pw_ = 1.5
+            pill = c.rect(x + w - pw_ - 0.12, by_ + 0.1, pw_, bh_ - 0.2, fill=t["highlight"], radius=(bh_ - 0.2) / 2)
+            c.label_in(pill, dp_fmt(spec, imp["point"]), size=S["header"] + 9, bold=True, color=t["white"], font=t["font_title"])
+            c.text(x + w * 0.64, by_, w * 0.36 - pw_ - 0.3, bh_, imp["label"], size=S["label"] + 1, bold=True, color=t["title"], align="r", anchor="m")
     elif tpl == "description_case":
         dw = w * 0.33
         for bx_, bw_, head, col in ((x, dw, "Description", t["primary"]), (x + dw + 0.3, w - dw - 0.3, "Case example · " + (body.get("case") or {}).get("name", ""), t["highlight"])):
             c.rect(bx_, y + 0.18, bw_ - 0.12, 0.07, fill=col)
             c.rect(bx_, y + 0.32, bw_, h - 0.32, fill=t["white"], line=col, weight=1.25)
             c.text(bx_ + 0.18, y + 0.44, bw_ - 0.36, 0.3, head, size=S["header"], bold=True, color=col)
-        _bullets(c, body.get("description", []), x + 0.18, y + 0.86, dw - 0.36, h - 1.0, size=S["body"])
         cs = body.get("case") or {}
         cx_, cw_ = x + dw + 0.3 + 0.18, w - dw - 0.3 - 0.36
-        ib = 1.05 if cs.get("impact") else 0
-        _bullets(c, cs.get("bullets", []), cx_, y + 0.86, cw_, h - 1.0 - ib - 0.2, size=S["body"])
+        ib = 1.25 if cs.get("impact") else 0
+        dfs = min(fit_size(body.get("description", []) or ["x"], dw - 0.36, h - 1.0, S["header"] + 3, min_size=11),
+                  fit_size(cs.get("bullets", []) or ["x"], cw_, h - 1.0 - ib - 0.2, S["header"] + 3, min_size=11))
+        _bullets(c, body.get("description", []), x + 0.18, y + 0.86, dw - 0.36, h - 1.0, size=dfs, fixed=True)
+        _bullets(c, cs.get("bullets", []), cx_, y + 0.86, cw_, h - 1.0 - ib - 0.2, size=dfs, fixed=True)
         if cs.get("impact"):
             iy = y + h - ib - 0.2
             c.text(cx_, iy - 0.02, 2, 0.26, "Impact", size=S["label"] + 1, bold=True, color=t["title"])
-            bx2 = c.rect(cx_, iy + 0.28, min(cw_, 4.6), ib - 0.3, fill=t["primary"])
-            c.text(cx_ + 0.2, iy + 0.28, 1.6, ib - 0.3, dp_fmt(spec, cs["impact"]["point"]), size=S["header"] + 12, bold=True,
+            iw = min(cw_, 6.2)
+            c.rect(cx_, iy + 0.28, iw, ib - 0.3, fill=t["primary"])
+            c.text(cx_ + 0.25, iy + 0.28, 1.9, ib - 0.3, dp_fmt(spec, cs["impact"]["point"]), size=S["header"] + 17, bold=True,
                    color=t["white"], font=t["font_title"], anchor="m")
-            c.text(cx_ + 1.8, iy + 0.28, min(cw_, 4.6) - 1.95, ib - 0.3, cs["impact"]["caption"], size=S["label"], color=tint(t["white"], 0.25), anchor="m")
+            c.text(cx_ + 2.2, iy + 0.28, iw - 2.4, ib - 0.3, cs["impact"]["caption"], size=S["body"], color=tint(t["white"], 0.15), anchor="m")
     else:  # pros_prereqs
         desc = body.get("description", [])
         dh = min(1.3, 0.3 + 0.32 * len(desc)) if desc else 0
         if desc:
             c.text(x, y, w, 0.28, "Description", size=S["header"], bold=True, color=t["title"])
             c.rect(x, y + 0.32, w, dh, fill=t["white"], line=t["primary"])
-            _bullets(c, desc, x + 0.18, y + 0.42, w - 0.36, dh - 0.2, size=S["body"])
+            _bullets(c, desc, x + 0.18, y + 0.42, w - 0.36, dh - 0.2, size=S["body"] + 1)
             y += dh + 0.55
             h -= dh + 0.55
         lw = w * 0.55
@@ -1984,10 +2008,12 @@ def initiative(c, spec, slide, body, box):
         y += 0.36
         h -= 0.36
         half = h / 2
+        pfs = min(fit_size(body.get("pros", []) or ["x"], lw - 0.7, half - 0.2, S["header"] + 3, min_size=11),
+                  fit_size(body.get("cons", []) or ["x"], lw - 0.7, half - 0.2, S["header"] + 3, min_size=11))
         for k, (lab, items, col) in enumerate((("Benefits", body.get("pros", []), t["primary"]), ("Concerns", body.get("cons", []), t["muted"]))):
             yy = y + k * half
             _vertical_label(c, x, yy, 0.42, half - 0.1, lab, t["panel"], col)
-            _bullets(c, items, x + 0.6, yy + 0.08, lw - 0.7, half - 0.2, size=S["body"])
+            _bullets(c, items, x + 0.6, yy + 0.08, lw - 0.7, half - 0.2, size=pfs, fixed=True)
             if k == 0:
                 c.line(x + 0.6, yy + half - 0.05, x + lw, yy + half - 0.05, color=t["rule"])
         px_ = x + lw + 0.3
@@ -1997,7 +2023,7 @@ def initiative(c, spec, slide, body, box):
         for k, p_ in enumerate(pre):
             yy = y + 0.12 + k * step
             _check_icon(c, px_ + 0.15, yy + 0.02)
-            c.text(px_ + 0.55, yy, w - lw - 0.3 - 0.7, step - 0.06, p_, size=S["body"], color=t["text"], line_spacing=1.05)
+            c.text(px_ + 0.55, yy, w - lw - 0.3 - 0.7, step - 0.06, p_, size=pfs, color=t["text"], line_spacing=1.05)
         if imp:
             SIDEBAR_WARN.append(f"slide {slide.get('id')}: the pros_prereqs template has no impact pill; put the impact in a description line")
 

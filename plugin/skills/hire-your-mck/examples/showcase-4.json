@@ -3,7 +3,7 @@
  "mode": "deck_detailed",
  "meta": {
   "title": "Renderer showcase 4",
-  "subtitle": "Cost curve, org chart and initiative one-pagers",
+  "subtitle": "Cost curve, org chart and the three initiative one-pager templates",
   "company_name": "Example Logistics (fictional)",
   "date": "2026-11-10",
   "language": "en-US",
@@ -15,30 +15,42 @@
   "exec_summary": [
    {
     "id": "1",
-    "text": "Four levers cut 46 kt of emissions a year and save money, and three more pay off under the internal carbon price",
+    "text": "Four levers cut 46 kt of emissions a year and save money, led by route optimization",
     "supports": [
-     "3"
+     "3",
+     "5"
     ],
     "sub_points": [
      {
-      "text": "Route optimization and eco-driving are the largest levers that save money",
-      "slide_id": "3"
+      "text": "Route optimization rolls out to every depot by mid-2027",
+      "slide_id": "5"
      }
     ]
    },
    {
     "id": "2",
-    "text": "A small program office with a champion in every depot runs three first initiatives in 2027",
+    "text": "A small program office with a champion in every depot runs the plan, starting with driver training",
     "supports": [
      "4",
-     "5",
-     "6",
+     "6"
+    ],
+    "sub_points": [
+     {
+      "text": "Eco-driving needs telematics, coaches and agreement on the scorecard",
+      "slide_id": "6"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "Electric vans start on urban routes, most of which are already within range",
+    "supports": [
      "7"
     ],
     "sub_points": [
      {
-      "text": "Route optimization, eco-driving and urban electric vans start first",
-      "slide_id": "5"
+      "text": "82% of urban routes fit today's electric-van range",
+      "slide_id": "7"
      }
     ]
    }
@@ -199,6 +211,60 @@
    "section_id": "1"
   },
   {
+   "id": "5",
+   "role": "content",
+   "status": "filled",
+   "archetype": "initiative-one-pager",
+   "message_type": "argument",
+   "lead_message": {
+    "prefix": "1a:",
+    "text": "Roll out route optimization to every depot by mid-2027"
+   },
+   "body": {
+    "kind": "initiative",
+    "template": "actions_impact",
+    "header": "Cut empty and detour miles with software the dispatchers already trust",
+    "rows": [
+     {
+      "label": "Build",
+      "actions": [
+       "Connect the routing tool to order and telematics data",
+       "Set depot targets for miles per stop and empty miles",
+       "Agree the override rules with dispatch leads"
+      ]
+     },
+     {
+      "label": "Roll out",
+      "actions": [
+       "Four waves of three depots, largest first",
+       "Dispatcher training in the week before each wave",
+       "Two weeks of parallel running before switching over"
+      ]
+     },
+     {
+      "label": "Track",
+      "actions": [
+       "Weekly miles, fuel and on-time delivery by depot",
+       "Monthly review of overrides and their reasons",
+       "Quarterly report to the decarbonization office"
+      ]
+     }
+    ],
+    "impact": {
+     "point": {
+      "data_ref": "w1"
+     },
+     "label": "kt CO2e abatement a year by 2030"
+    },
+    "owner": "Head of operations",
+    "timing": "Q1–Q3 2027"
+   },
+   "footnotes": [
+    "The Dallas pilot cut route emissions by 11% in Q2 2026"
+   ],
+   "section_id": "1"
+  },
+  {
    "id": "4",
    "role": "content",
    "status": "filled",
@@ -224,17 +290,20 @@
      {
       "id": "ops",
       "label": "Operations",
-      "parent": "pmo"
+      "parent": "pmo",
+      "sub": "routes and dispatch"
      },
      {
       "id": "fleet",
       "label": "Fleet",
-      "parent": "pmo"
+      "parent": "pmo",
+      "sub": "vans, trucks, fuel"
      },
      {
       "id": "fac",
       "label": "Facilities",
-      "parent": "pmo"
+      "parent": "pmo",
+      "sub": "depots and power"
      },
      {
       "id": "proc",
@@ -281,99 +350,37 @@
    "section_id": "2"
   },
   {
-   "id": "5",
-   "role": "content",
-   "status": "filled",
-   "archetype": "initiative-one-pager",
-   "message_type": "argument",
-   "lead_message": {
-    "prefix": "1a:",
-    "text": "Roll out route optimization to every depot by mid-2027"
-   },
-   "body": {
-    "kind": "initiative",
-    "template": "actions_impact",
-    "header": "Cut empty and detour miles with software the dispatchers already trust",
-    "rows": [
-     {
-      "label": "Build",
-      "actions": [
-       "Connect the routing tool to order and telematics data",
-       "Set depot-level targets for miles per stop"
-      ]
-     },
-     {
-      "label": "Roll out",
-      "actions": [
-       "Four waves of three depots, starting with the largest",
-       "Dispatcher training in the week before each wave"
-      ]
-     },
-     {
-      "label": "Track",
-      "actions": [
-       "Weekly miles, fuel and on-time delivery by depot",
-       "Quarterly review with the program office"
-      ]
-     }
-    ],
-    "impact": {
-     "point": {
-      "data_ref": "w1"
-     },
-     "label": "kt CO2e abatement a year by 2030"
-    },
-    "owner": "Head of operations",
-    "timing": "Q1–Q3 2027"
-   },
-   "footnotes": [
-    "The Dallas pilot cut route emissions by 11% in Q2 2026"
-   ],
-   "section_id": "2"
-  },
-  {
    "id": "6",
    "role": "content",
    "status": "filled",
    "archetype": "initiative-one-pager",
    "message_type": "argument",
    "lead_message": {
-    "prefix": "1b:",
+    "prefix": "2a:",
     "text": "Train every driver in eco-driving and keep the habit with weekly feedback"
    },
    "body": {
     "kind": "initiative",
-    "template": "actions_impact",
-    "header": "Smoother driving burns less fuel on every route, at almost no cost",
-    "rows": [
-     {
-      "label": "Train",
-      "actions": [
-       "Half-day course for all drivers, run by senior drivers",
-       "Refresher for new hires in their first month"
-      ]
-     },
-     {
-      "label": "Feedback",
-      "actions": [
-       "Weekly telematics scorecard per driver",
-       "Depot league table and small rewards"
-      ]
-     },
-     {
-      "label": "Sustain",
-      "actions": [
-       "Coach the bottom tenth of drivers each quarter",
-       "Fold the score into driver reviews"
-      ]
-     }
+    "template": "pros_prereqs",
+    "description": [
+     "Half-day course for every driver, run by senior drivers, then a weekly telematics scorecard and a depot league table"
     ],
-    "impact": {
-     "point": {
-      "data_ref": "w2"
-     },
-     "label": "kt CO2e abatement a year by 2030"
-    },
+    "pros": [
+     "The cheapest lever on the curve after routing",
+     "Drivers see the effect on their own score within weeks",
+     "Needs no new vehicles or equipment"
+    ],
+    "cons": [
+     "The effect fades within months without feedback",
+     "Some drivers resist being ranked against colleagues",
+     "Results vary with routes and weather"
+    ],
+    "prerequisites": [
+     "Telematics on every van and truck",
+     "Senior drivers trained as coaches",
+     "Agreement with driver representatives on the scorecard",
+     "A small rewards budget for each depot"
+    ],
     "owner": "Head of fleet",
     "timing": "Q1–Q2 2027"
    },
@@ -389,49 +396,35 @@
    "archetype": "initiative-one-pager",
    "message_type": "argument",
    "lead_message": {
-    "prefix": "1c:",
+    "prefix": "3a:",
     "text": "Electrify urban routes first, where vans already have the range"
    },
    "body": {
     "kind": "initiative",
-    "template": "actions_impact",
-    "header": "Replace diesel vans on short urban routes as leases end",
-    "rows": [
-     {
-      "label": "Select",
-      "actions": [
-       "Routes under 150 km a day, with overnight depot parking",
-       "Lease ends from 2027 to 2029"
-      ]
-     },
-     {
-      "label": "Equip",
-      "actions": [
-       "Chargers in the six urban depots",
-       "Power contracts sized for night charging"
-      ]
-     },
-     {
-      "label": "Switch",
-      "actions": [
-       "One third of urban vans a year",
-       "Driver handover and range training"
-      ]
-     }
+    "template": "description_case",
+    "description": [
+     "Replace diesel vans on urban routes as their leases end",
+     "Chargers in the six urban depots, used overnight",
+     "Power contracts sized for night charging"
     ],
-    "impact": {
-     "point": {
-      "data_ref": "w6"
-     },
-     "label": "kt CO2e abatement a year by 2030"
+    "case": {
+     "name": "Route data review, 2026",
+     "bullets": [
+      "Daily mileage of every urban route compared with van range",
+      "Overnight parking checked at each urban depot",
+      "Lease end dates mapped for 2027–2029"
+     ],
+     "impact": {
+      "point": {
+       "data_ref": "vans"
+      },
+      "caption": "of urban routes are already within electric-van range"
+     }
     },
     "owner": "Head of fleet",
     "timing": "2027–2029"
    },
-   "footnotes": [
-    "82% of urban routes are within today's electric-van range"
-   ],
-   "section_id": "2"
+   "section_id": "3"
   },
   {
    "id": "end",
@@ -693,6 +686,26 @@
    "id": "s3",
    "kind": "derived",
    "name": "Team analysis"
+  }
+ ],
+ "sections": [
+  {
+   "id": "1",
+   "title": "Levers that pay",
+   "exec_item_id": "1",
+   "tracker_label": "Levers"
+  },
+  {
+   "id": "2",
+   "title": "People and organization",
+   "exec_item_id": "2",
+   "tracker_label": "People"
+  },
+  {
+   "id": "3",
+   "title": "Fleet",
+   "exec_item_id": "3",
+   "tracker_label": "Fleet"
   }
  ]
 }

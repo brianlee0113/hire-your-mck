@@ -219,7 +219,7 @@ for s in content:
             if r["node"] not in ids:
                 out("OC-01", "fail", f"roles or side entry points at unknown node {r['node']}", s["id"])
     if b.get("kind") == "initiative":
-        _tpls.setdefault(b["template"], []).append(s["id"])
+        _tpls.setdefault(s.get("section_id"), {}).setdefault(b["template"], []).append(s["id"])
         lm_ = s.get("lead_message") or {}
         if not (lm_.get("prefix") or s.get("tree_node")):
             out("IO-01", "warn", "initiative one-pager without a code before the title ('1a:'); it ties the page to the overview", s["id"])
@@ -229,9 +229,10 @@ for s in content:
                 out("IO-03", "fail", f"template {b['template']} needs '{k}'", s["id"])
         if b["template"] == "actions_impact" and not b.get("impact"):
             out("IO-03", "warn", "actions_impact one-pager without an impact pill; pull the impact out of the text", s["id"])
-if len(_tpls) > 1:
-    out("IO-02", "warn", "initiative one-pagers use different templates (" + ", ".join(f"{k}: {len(v)}" for k, v in _tpls.items()) +
-        "); a series reuses one template")
+for sec_, tp_ in _tpls.items():  # a series = the one-pagers of one section
+    if len(tp_) > 1:
+        out("IO-02", "warn", f"one-pagers in section {sec_} use different templates (" + ", ".join(f"{k}: {len(v)}" for k, v in tp_.items()) +
+            "); a series reuses one template")
 # A-12: the implication box comes in two styles; one style on every slide repeats a device
 _imp = [((s.get("layout") or {}).get("sidebar") or {}).get("implication_style", "bar") for s in content
         if ((s.get("layout") or {}).get("sidebar") or {}).get("implication")]
