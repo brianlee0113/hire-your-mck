@@ -50,7 +50,16 @@ class Spec:
                 self.subs.setdefault(s["parent_id"], []).append(s["id"])
         # deck_deep: issue tree codes become title prefixes ("2a:") when the spec does not set one
         self.codes = {n["id"]: n["code"] for n in spec.get("issue_tree", []) if n.get("code")}
+        self._key = None
         self.exec = spec.get("storyline", {}).get("exec_summary", [])
+
+    def low_confidence(self, slide):
+        """Labels of grade C numbers shown on the slide (V-05, V-06): they get a footnote."""
+        from .grade import grade, key_refs
+        if self._key is None:
+            self._key = key_refs(self.raw)
+        refs = dict.fromkeys(collect_refs({k: slide.get(k) for k in ("body", "layout", "lead_message", "callout", "basis")}))
+        return [self.dp[r]["label"] for r in refs if r in self.dp and grade(self, r, self._key)[0] == "C"]
 
     def top_of(self, sid):
         """The top-level section a (sub-)section belongs to."""
@@ -316,6 +325,10 @@ def chrome(c, spec, slide, page_no, footnotes=None):
         c.label_in(shp, slide.get("sticker") or STICKER, size=9, color=t["caution_ink"], bold=True)
     y = G["source_top"]
     notes = list(footnotes or []) + list(slide.get("footnotes", []))
+    low = spec.low_confidence(slide) if slide.get("role") in ("content", "backup") else []
+    if low:
+        txt = "; ".join(low)
+        notes.append("Lower confidence (secondary source, not re-checked, or sources differ): " + (txt if len(txt) < 110 else txt[:107] + "…"))
     if notes:
         lines = [f"{i + 1}  {n}" for i, n in enumerate(notes)]
         top = y - 0.02 - G["line_h"] * len(lines)

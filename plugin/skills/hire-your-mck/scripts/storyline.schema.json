@@ -1937,6 +1937,67 @@
         "definition": {
           "type": "string",
           "description": "What exactly is counted when the label could mean more than one thing, e.g. 'nominal USD, calendar year, employer firms only' (V-02)."
+        },
+        "verified": {
+          "type": "object",
+          "required": [
+            "result"
+          ],
+          "additionalProperties": false,
+          "description": "Second-pass re-check (V-05): the page was opened again before rendering and the excerpt looked for. verify.py writes it; a verifier or the user may override it after reading the page.",
+          "properties": {
+            "result": {
+              "enum": [
+                "match",
+                "not_found",
+                "unreachable"
+              ]
+            },
+            "at": {
+              "type": "string",
+              "description": "Date of the re-check, YYYY-MM-DD."
+            },
+            "by": {
+              "enum": [
+                "verify.py",
+                "verifier",
+                "user"
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        "corroboration": {
+          "type": "array",
+          "description": "Second independent sources for the same number (V-06): required for title and exec summary numbers in deck_deep. A value that differs needs a note saying which one is used and why.",
+          "items": {
+            "type": "object",
+            "required": [
+              "source_id",
+              "value",
+              "excerpt"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "$ref": "#/$defs/id"
+              },
+              "value": {
+                "type": "number"
+              },
+              "excerpt": {
+                "type": "string"
+              },
+              "locator": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },

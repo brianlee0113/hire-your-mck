@@ -593,6 +593,42 @@ for s in srcs.values():
         out("V-04", "warn", f"web source {s['id']} has no 'published' date")
     elif _this_year - int(pub.group(0)) >= 4 and not s.get("recency_ok"):
         out("V-04", "warn", f"{s['id']} was published in {pub.group(0)}; look for a newer edition, or say why it still holds in 'recency_ok'")
+# V-05 re-check on the page, V-06 second source for key numbers (grades in renderer/grade.py)
+unchecked = {}
+single = []
+for d in dps.values():
+    src = srcs.get(d.get("source_id"), {})
+    v = d.get("verified") or {}
+    if v.get("result") == "not_found":
+        out("V-05", "warn", f"{d['id']}: the excerpt was not found when {src.get('url', 'the page')[:60]} was opened again; "
+            "open it, re-quote the passage or replace the source (graded C until then)", d["slide_id"])
+    elif v.get("result") == "unreachable":
+        out("V-05", "warn", f"{d['id']}: {src.get('url', 'the page')[:60]} could not be opened for the re-check; try again or "
+            "confirm by hand and set verified.by 'verifier' (graded C until then)", d["slide_id"])
+    elif not v and src.get("kind") == "web" and not d.get("estimate"):
+        unchecked.setdefault(src["id"], []).append(d["id"])
+    for c in d.get("corroboration", []):
+        other = srcs.get(c["source_id"])
+        if not other:
+            out("V-06", "fail", f"{d['id']}: second source {c['source_id']} is not in sources", d["slide_id"]); continue
+        if c["source_id"] == d.get("source_id"):
+            out("V-06", "fail", f"{d['id']}: second source is the same source", d["slide_id"]); continue
+        pubs = {(src.get("publisher") or "").strip().lower(), (other.get("publisher") or "").strip().lower()} - {""}
+        if len(pubs) == 1 and src.get("publisher") and other.get("publisher") or src.get("id") in str(other.get("cites") or ""):
+            out("V-06", "warn", f"{d['id']}: second source {c['source_id']} is not independent (same publisher, or it cites the first)", d["slide_id"])
+        ok = value_in_excerpt(c["value"], d.get("unit", ""), c["excerpt"])
+        if ok is False:
+            out("V-06", "fail", f"{d['id']}: second source value {c['value']:g} is not in its excerpt: \"{c['excerpt'][:60]}\"", d["slide_id"])
+        if abs(c["value"] - d["value"]) > 0.02 * max(abs(c["value"]), abs(d["value"])) and not c.get("note"):
+            out("V-06", "warn", f"{d['id']} = {d['value']:g} but {c['source_id']} says {c['value']:g}; say in note which one you use and why (graded C until then)", d["slide_id"])
+    if spec["mode"] == "deck_deep" and d["id"] in lead_refs and src.get("kind") == "web" and not d.get("corroboration"):
+        single.append(d["id"])
+if spec["mode"] == "deck_deep":
+    for sid_, ids in unchecked.items():
+        out("V-05", "warn", f"{len(ids)} number(s) from web source {sid_} not re-checked; run verify.py before rendering ({', '.join(ids[:4])}{'…' if len(ids) > 4 else ''})")
+    if single:
+        out("V-06", "warn", f"{len(single)} title or exec summary number(s) rest on one source ({', '.join(single[:6])}{'…' if len(single) > 6 else ''}); "
+            "find a second independent source (corroboration) or keep grade B")
 # ---- deck_deep: seven-step problem solving and long-deck grammar ----------------------------
 def _norm(t):
     return re.sub(r"[^a-z0-9%$.]+", " ", (t or "").lower()).strip()

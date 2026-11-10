@@ -64,4 +64,11 @@ Checkpoint 4 shows which hypotheses flipped and the new governing thought, toget
 
 Continue with Steps 3–5 of `SKILL.md`: write the bodies, run `check.py` until every fail is fixed, judge the LLM checks, render. Before rendering, close the loop against the worksheet: does the answer meet the success criteria, respect the out-of-scope list and the accuracy agreed? Say so on the last body slide or in the next steps.
 
-In the delivery note, add the tree verdicts (how many leaves confirmed, revised, refuted) next to the sourced-number count.
+### Source check, second pass (before rendering)
+
+1. **Corroborate the key numbers (V-06).** For every number in a title or the exec summary, search for a second, independent source (another publisher that does not cite the first) and add it to `corroboration` with its own excerpt. If the values differ by more than 2%, keep the better source and say why in `note`. Where no second source exists, leave it: the number stays grade B and `check.py` lists it.
+2. **Re-check the pages (V-05).** Run `verify.py spec.json --write`. Without network access, open each source with your own web fetch and record `verified` by hand. Resolve every `not_found`.
+3. **Independent verifier.** Someone who did not write the deck re-traces the numbers. In Claude Code, start a subagent with only the spec path and this brief: "For every title and exec summary number, and 10 other numbers picked at random, open the source URL, find the value, and report: id, value found, match or not, and what differs. Do not edit the spec." In claude.ai (no subagents), do it as a separate pass: put the deck aside, then go through the same list source by source. Fix what the verifier finds and set `verified.by` to `"verifier"` for the numbers it confirmed.
+4. Run `check.py` again, then render. The workbook shows every number's grade; grade C numbers get a footnote on their slide.
+
+In the delivery note, add the tree verdicts (how many leaves confirmed, revised, refuted) and the grade count (A/B/C/E) next to the sourced-number count.

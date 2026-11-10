@@ -9,11 +9,13 @@ from openpyxl.utils import get_column_letter
 
 import re
 
+from .grade import GRADES, grade, key_refs
 from .pptx_render import Spec, collect_refs, fmt, has_placeholder
 
-COLS = ["Data point", "Value", "Unit", "Period", "Source", "Source type", "Tier", "URL", "Excerpt",
-        "Locator", "Accessed", "Used in", "How it was calculated"]
-WIDTHS = [34, 12, 8, 12, 40, 13, 6, 36, 44, 18, 12, 22, 34]
+COLS = ["Data point", "Value", "Unit", "Period", "Source", "Source type", "Tier", "Grade", "URL", "Excerpt",
+        "Locator", "Accessed", "Used in", "How it was calculated", "Checks"]
+WIDTHS = [34, 12, 8, 12, 40, 13, 6, 7, 36, 44, 18, 12, 22, 34, 40]
+GRADE_FILL = {"A": "E3F1E6", "B": None, "C": "FBE3E1", "E": "EEF3FB"}
 URL_COL = COLS.index("URL") + 1
 
 
@@ -43,6 +45,7 @@ def render(spec_dict, out_path, primary="0B1F33"):
 
     pages = {sl["id"]: i for i, sl in enumerate(spec_dict["slides"], start=1)}
     calc_rows = _calculations(wb, spec, primary)
+    key = key_refs(spec_dict)
     for sl in spec_dict["slides"]:
         if sl["role"] not in ("content", "backup"):
             continue
@@ -75,9 +78,11 @@ def render(spec_dict, out_path, primary="0B1F33"):
                 calc = (d.get("formula") or "") + (f"  (from {', '.join(d['derived_from'])})" if d.get("derived_from") else "")
             if r in calc_rows:
                 calc += f"  → live formula: Calculations!C{calc_rows[r]}"
+            g, why = grade(spec, r, key)
             ws.append([
                 d.get("label"), d.get("value"), d.get("unit"), d.get("period"), s.get("name"), s.get("kind"),
-                s.get("tier"), s.get("url"), d.get("excerpt"), d.get("locator"), s.get("accessed"), d.get("used_in"), calc,
+                s.get("tier"), g, s.get("url"), d.get("excerpt"), d.get("locator"), s.get("accessed"), d.get("used_in"), calc,
+                _checks(spec, d, why),
             ])
             row = ws.max_row
             v = ws.cell(row=row, column=2)
@@ -88,10 +93,12 @@ def render(spec_dict, out_path, primary="0B1F33"):
             for col in range(1, len(COLS) + 1):
                 ws.cell(row=row, column=col).alignment = Alignment(vertical="top", wrap_text=True)
                 ws.cell(row=row, column=col).border = thin
+            if GRADE_FILL[g]:
+                ws.cell(row=row, column=COLS.index("Grade") + 1).fill = PatternFill("solid", fgColor=GRADE_FILL[g])
         for req in open_reqs:
             ws.append([req["description"], "MISSING", req.get("unit"), req.get("period"),
-                       "; ".join(req.get("candidate_sources", [])), "needed", None, None,
-                       req.get("recommended_exhibit"), None, None, "placeholder", None])
+                       "; ".join(req.get("candidate_sources", [])), "needed", None, None, None,
+                       req.get("recommended_exhibit"), None, None, "placeholder", None, None])
             for col in range(1, len(COLS) + 1):
                 c = ws.cell(row=ws.max_row, column=col)
                 c.fill = missing_fill
@@ -103,6 +110,14 @@ def render(spec_dict, out_path, primary="0B1F33"):
         ws.freeze_panes = "A5"
         idx.append([pages[sl["id"]], title, sl["status"], len(refs), n_ph + len(open_reqs), sheet])
         idx.cell(row=idx.max_row, column=6).hyperlink = f"#'{sheet}'!A1"
+
+    idx.append([])
+    idx.append([None, "Grade: how far each number has been checked (column Grade on every page sheet)"])
+    idx.cell(row=idx.max_row, column=2).font = Font(bold=True)
+    for g, text in GRADES.items():
+        idx.append([g, text])
+        if GRADE_FILL[g]:
+            idx.cell(row=idx.max_row, column=1).fill = PatternFill("solid", fgColor=GRADE_FILL[g])
 
     if "Calculations" in wb.sheetnames:  # after the page sheets, before Sources
         calc_ws = wb["Calculations"]
@@ -121,6 +136,20 @@ def render(spec_dict, out_path, primary="0B1F33"):
         src.column_dimensions[col].width = w
     wb.save(out_path)
     return {"path": out_path, "sheets": len(wb.sheetnames)}
+
+
+def _checks(spec, d, why):
+    """What was done to check the number: re-fetch result and second sources."""
+    parts = [why]
+    v = d.get("verified") or {}
+    if v.get("result"):
+        parts.append(f"re-check {v['result'].replace('_', ' ')}" + (f" {v['at']}" if v.get("at") else "") +
+                     (f" by {v['by']}" if v.get("by") else "") + (f": {v['note']}" if v.get("note") else ""))
+    for c in d.get("corroboration", []):
+        name = spec.src.get(c.get("source_id"), {}).get("name", c.get("source_id"))
+        val = f" = {c['value']:g}" if isinstance(c.get("value"), (int, float)) else ""
+        parts.append(f"second source: {name}{val}" + (f" ({c['note']})" if c.get("note") else ""))
+    return "\n".join(p for p in parts if p)
 
 
 def _count_placeholders(obj):

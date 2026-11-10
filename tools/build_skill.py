@@ -47,6 +47,7 @@ def build(OUT=OUT, zip_it=True):
         shutil.copy(f, OUT / "examples" / f.name)
 
     shutil.copy(ROOT / "tools/spec/check.py", OUT / "scripts" / "check.py")
+    shutil.copy(ROOT / "tools/spec/verify.py", OUT / "scripts" / "verify.py")
     shutil.copy(ROOT / "docs/spec/storyline.schema.json", OUT / "scripts" / "storyline.schema.json")
     for f in (ROOT / "renderer").glob("*.py"):
         shutil.copy(f, OUT / "scripts" / "renderer" / f.name)

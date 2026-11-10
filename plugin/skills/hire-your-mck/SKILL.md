@@ -18,10 +18,11 @@ Everything runs through one file, the **storyline spec** (JSON). You write the s
 
 ```
 python <skill>/scripts/check.py spec.json          # QA; exit 1 on any fail
+python <skill>/scripts/verify.py spec.json --write # re-open every web source, look for each excerpt (needs network)
 python <skill>/scripts/render.py spec.json --out <output dir> [--theme navy]
 ```
 
-Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow measures text with the real fonts so nothing overflows).
+Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow measures text with the real fonts so nothing overflows; add `pymupdf` so `verify.py` can read PDF sources).
 
 ## Read before you write the spec
 
@@ -104,6 +105,8 @@ Follow `references/spec-guide.md` and the examples. The rules that most often go
 
 ### Step 4 · QA, then fix
 Run `check.py`. Fix every `FAIL`. Treat every `WARN` as something to fix unless you can say why it does not apply.
+
+Before rendering a deck with web sources, re-check them (V-05): run `verify.py spec.json --write`, which opens every source again and records whether each excerpt is still there. If the script cannot reach the network (some sandboxes), open the pages with your own web fetch instead and set `verified` by hand (`"by": "verifier"`). For every `not_found`, open the page: re-quote the passage, correct the value, or replace the source. The workbook grades every number A/B/C/E from these results and C numbers get a footnote on their slide.
 
 Then judge what the script cannot check, slide by slide, and fix what fails:
 - B-01: cover the body; does the title alone give the slide's point?
