@@ -310,6 +310,10 @@
         "parent_id": {
           "$ref": "#/$defs/id",
           "description": "Sub-section of this section (sections over ~20 pages, L-02). Shares its parent's exec_item_id."
+        },
+        "question": {
+          "type": "string",
+          "description": "deck_deep: the question this section answers, listed on the Key questions page (china27 form)."
         }
       }
     },
@@ -333,10 +337,11 @@
             "agenda_tracker",
             "section_divider",
             "content",
+            "appendix_divider",
             "backup",
             "end_page"
           ],
-          "description": "agenda_tracker: contents page; with section_id it is repeated before that section with the section emphasised. section_divider: section opener (needs section_id); lead_message.text overrides the section's exec summary claim. problem_statement (deck_deep): 'The question we were asked', drawn from spec.problem; not a content slide, so it needs no exec item."
+          "description": "agenda_tracker: contents page; with section_id it is repeated before that section with the section emphasised. section_divider: section opener (needs section_id); lead_message.text overrides the section's exec summary claim. problem_statement (deck_deep): 'Key questions', drawn from spec.problem and each section's question; not a content slide, so it needs no exec item. appendix_divider: opens the appendix and lists every backup page (R9); the agenda then ends with an Appendix row."
         },
         "section_id": {
           "$ref": "#/$defs/id"
@@ -778,6 +783,11 @@
                   }
                 }
               }
+            },
+            "implication": {
+              "type": "string",
+              "maxLength": 160,
+              "description": "What the exhibit means for us, in its own box at the foot of the sidebar. Use it instead of a 'For us:' bullet."
             }
           }
         }

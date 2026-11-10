@@ -141,6 +141,45 @@ if nav and n_content < 10:
 if {s["role"] for s in nav} == {"section_divider", "agenda_tracker"}:
     out("S3", "warn", "section dividers and agenda trackers mixed; use one navigation style for the whole deck")
 
+# S3: one contents page in a row is enough (exec summary or agenda, then the section tracker)
+for a_, b_ in zip(spec["slides"], spec["slides"][1:]):
+    if a_["role"] == "agenda_tracker" and not a_.get("section_id") and b_["role"] in ("agenda_tracker", "section_divider") and b_.get("section_id"):
+        out("S3", "warn", f"full agenda {a_['id']} is followed straight by the section tracker {b_['id']}; drop the full agenda "
+            "(the exec summary already lists the sections) or let it open section 1", a_["id"])
+# R9: the appendix opens with its own divider
+_back = [k for k, s in enumerate(spec["slides"]) if s["role"] == "backup"]
+if _back and (nav or spec["mode"] == "deck_deep"):
+    if not any(s["role"] == "appendix_divider" for s in spec["slides"][:_back[0]]):
+        out("L-03", "warn", "backup slides start without an appendix_divider; long decks open the appendix with its own divider (R9)")
+# A-09: titles read as one story but not one template (0 of 2,001 reference titles use ", so"; 55% are one clause)
+_titles = [(s["id"], s["lead_message"]["text"]) for s in content]
+_FORMS = {", so": r",\s+so\b", "colon": r":", "dash": r"\s[—–-]\s", ", and": r",\s+and\b", ", but": r",\s+but\b|\bhowever\b",
+          ", while": r"\bwhile\b|\bwhereas\b", ", with": r",\s+with\b", ", which": r",\s+which\b"}
+def _form(txt):
+    return next((k for k, p in _FORMS.items() if re.search(p, txt, re.I)), "one clause" if "," not in txt else "other")
+if len(_titles) >= 8:
+    from collections import Counter as _C
+    forms = [_form(x) for _, x in _titles]
+    for f, n in _C(forms).items():
+        lim = 0.1 if f == ", so" else 0.25
+        if f not in ("one clause", "other") and n / len(forms) > lim:
+            extra = '; none of 2,001 reference titles use ", so"' if f == ", so" else ""
+            out("A-09", "warn", f"{n} of {len(forms)} titles use the '{f}' form; vary the sentence shape (reference decks: 55% one clause, "
+                f"13% colon, under 6% each for dash, and, but{extra})")
+    for (i1, _), f1, f2, f3 in zip(_titles[2:], forms, forms[1:], forms[2:]):
+        if f1 == f2 == f3 and f1 not in ("one clause", "other"):
+            out("A-09", "warn", f"three titles in a row use the '{f1}' form", i1)
+# A-13: no slide type dominates a long deck (reference decks: one type is at most 24% of pages at the median)
+_typed = [s.get("archetype") for s in spec["slides"] if s["role"] in ("content", "backup") and s.get("archetype")]
+if len(_typed) >= 15:
+    from collections import Counter as _C
+    for a_, n in _C(_typed).most_common(1):
+        if n / len(_typed) > 0.30:
+            out("A-13", "warn", f"'{a_}' is {n} of {len(_typed)} slides; use the routing table to find a better fit for some (scatter, heatmap, statement, framework)")
+    tables = sum(1 for a_ in _typed if a_ in ("comparison-table", "definition-table", "data-table", "harvey-ball-table"))
+    if tables / len(_typed) > 0.40:
+        out("A-13", "warn", f"{tables} of {len(_typed)} slides are tables; turn the ones with numbers into charts or a heatmap")
+
 # 2. B-04: exec summary <-> content slides
 es = spec["storyline"]["exec_summary"]
 covered = {}
@@ -345,6 +384,7 @@ for s in content:
     seen = set()
     for txt in _texts(s):
         txt = re.sub(r"(19|20)\d\d\s?[–-]\s?\d{2,4}", "", txt)  # year ranges like 2021–25
+        txt = re.sub(r"\d[\d,]*\s?[–-]\s?\d[\d,]*|\d[\d,]*\s+or more", "", txt)  # class labels like "20–49", "250 or more"
         for m in _NUM.finditer(txt):
             raw = m.group(1).replace(",", "")
             if not raw or re.fullmatch(r"(19|20)\d\d", raw) or (not m.group(2) and float(raw) < 10 and "." not in raw):
@@ -745,7 +785,7 @@ if spec["mode"] == "deck_deep":
             out("T-03", "warn", f"leaf {i} has no workplan analysis and dummied exhibit (step 4)")
     lead_ids = {sc.get("lead_slide") for sc in secs}
     for s in content:
-        if not s.get("tree_node") and s["id"] not in lead_ids and s.get("status") != "ghost":
+        if not s.get("tree_node") and s["id"] not in lead_ids and s.get("status") != "ghost" and s.get("archetype") != "statement":
             sec = next((sc for sc in secs if sc["id"] == s.get("section_id")), {})
             if sec.get("tree_node"):
                 out("T-03", "warn", "evidence slide in a tree section has no tree_node; which leaf does it prove?", s["id"])

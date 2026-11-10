@@ -47,7 +47,9 @@ The spec is one JSON file (schema: `scripts/storyline.schema.json`, JSON Schema 
 
 - A node without `parent` is a level-1 branch (= one section). A node nobody names as parent is a leaf. `cut_reason` prunes the node and everything under it.
 - Evidence slides set `"tree_node": "n1a"`; the renderer writes the code ("1a:") before the title, so leave `prefix` out. Continuation pages of a long table add "(1/2)" to the title (R12). The lead slide (first content slide after the section's agenda) has no `tree_node`.
+- Each section gets a `question` (deck_deep): the Key questions page lists them under the problem statement.
 - Front matter: a `problem_statement` slide (`{"id": "q", "role": "problem_statement", "status": "filled"}`) shows the problem worksheet; it is not a content slide and belongs to no exec item.
+- The appendix opens with `{"id": "app", "role": "appendix_divider", "status": "filled"}` (any deck with backup slides and navigation); the agenda then ends with an Appendix row.
 - The appendix slide "What we did not pursue" is a `backup` with `"tree_node": ["n5"]` instead of `backup_of`.
 - Sections without `tree_node` are context or how to make it happen (last). Sub-sections set `parent_id` and share the parent's `exec_item_id`.
 
@@ -208,8 +210,11 @@ Shows `next_steps` (action, owner, timing). Add `storyline.key_takeaways` only i
               "**Broker:** still large on legacy lanes, but lost share every period"],
   "rows": [{"label": "Digital share gain, 2021–25", "point": {"data_ref": "gain"}, "highlight": true}],
   "reasons": [{"header": "Largest prize", "detail": "...", "point": {...}}],
-  "note": "Next: confirm spend data before the steering committee"}}
+  "note": "Next: confirm spend data before the steering committee",
+  "implication": "Start with bank feeds and the close, then extend to invoicing in the same package"}}
 ```
+
+`implication` is what the exhibit means for us, drawn in its own box at the foot of the sidebar. Use it instead of a last bullet that starts "For us:".
 
 `rows` and `big_number` must be **derived from the exhibit** (B-05, B-06), but not as a plain sum or difference: use shares or expected impact. `check.py` fails a repeat and warns on an unrelated number or a plain difference.
 
@@ -235,6 +240,7 @@ Shows `next_steps` (action, owner, timing). Add `storyline.key_takeaways` only i
 | V-05 excerpt not found or page unreachable on re-check, web numbers not re-checked (`deck_deep`); V-06 dependent second source, values differ without a note, key numbers with one source (`deck_deep`) | warn |
 | V-01 excerpt with no figure, user numbers with neither excerpt nor locator; V-02 period not in the excerpt; V-03 T3 without `cites`, title or exec numbers on T3; V-04 source without `published` or 4+ years old | warn |
 | P-01 empty decision maker, success criteria, deadline or one-day answer part; T-01 level-1 branches outside 3–5 or not one section each; T-02 missing or duplicate code, prefix that is not its code, slide on a pruned node; T-03 leaf without an evidence slide; T-04 refuted or revised leaf still titled with its hypothesis; L-01 front matter over 4, section without divider or lead slide (`deck_deep`) | fail |
+| S3 full agenda straight before the first section tracker; L-03 backup without an appendix divider; A-09 one title shape on over a quarter of titles (", so" over a tenth) or three in a row; A-13 one archetype over 30% or tables over 40% of a 15+ slide deck | warn |
 | P-01 statement without time frame; T-01 label-like hypothesis; T-02 unscored or low leaf, pruned node not in the appendix; T-03 no workplan; T-04 no verdict; L-01 outside 30–60 slides; L-02 section over 20; L-03 appendix share or order; L-04 make it happen not last (`deck_deep`) | warn |
 | S3 navigation in a deck with fewer than 10 content slides; section dividers and agenda trackers mixed in one deck | warn |
 | A-12 sidebar value rows on more than a third of content slides or on two in a row; B-12 placeholders left in a full deck | warn |

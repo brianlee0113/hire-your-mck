@@ -419,6 +419,15 @@ def sidebar(c, spec, slide, x=None, w=None):
     ink = t["sidebar_text"]
     pad = 0.28
     cy = y + 0.24
+    if sb.get("implication"):  # what it means for us: its own box at the foot of the sidebar
+        isz = S["body"] + 1
+        ih = _est_h(sb["implication"], w - 2 * pad - 0.32, isz, 1.12, bold=True) + 0.3
+        iy = bottom - pad + 0.08 - ih
+        c.rect(x + pad - 0.08, iy, w - 2 * pad + 0.16, ih, fill=t["white"] if not t["dark_sidebar"] else t["primary"])
+        c.rect(x + pad - 0.08, iy, 0.07, ih, fill=t["highlight"])
+        c.text(x + pad + 0.14, iy + 0.15, w - 2 * pad - 0.32, ih - 0.3, sb["implication"], size=isz, bold=True,
+               color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12, anchor="m")
+        bottom = iy - 0.12
     if sb.get("header"):
         size = S["takeaway"] + 2
         hh = _est_h(sb["header"], w - 2 * pad, size, 1.0, bold=True, title=True)
@@ -487,6 +496,9 @@ def sidebar(c, spec, slide, x=None, w=None):
                     runs.append((part, {"color": ink, "bold": k % 2 == 1}))
             c.text(x + pad, cy, w - 2 * pad, bh, [runs], size=size, line_spacing=1.12)
             cy += bh + gap
+        if cy - gap > bottom - reserve + 0.05:
+            SIDEBAR_WARN.append(f"slide {slide['id']}: sidebar bullets run past the space above the "
+                                f"{'implication box' if sb.get('implication') else 'rows or note'}; shorten or drop a bullet")
     if rows:
         # rows sit on the bottom of the sidebar so they can never run out of it (F6); bullets fill the space above
         cy = (bottom - (0.55 if sb.get("note") else 0.1)) - sum(needs_r) - 0.12
@@ -1709,7 +1721,7 @@ def problem_statement(c, spec, slide, page_no):
     m = G["margin"]
     W = G["slide_w"] - 2 * m
     pr = spec.raw.get("problem") or {}
-    title = (slide.get("lead_message") or {}).get("text") or "The question we were asked"
+    title = (slide.get("lead_message") or {}).get("text") or "Key questions"
     c.text(m, G["title_top"], G["title_w"], G["title_h"], title, size=S["title"], bold=True, font=t["font_title"], color=t["title"])
     y = G["content_top"] - 0.1
     q = pr.get("statement", "")
@@ -1720,7 +1732,25 @@ def problem_statement(c, spec, slide, page_no):
     c.rect(m, y, W, qh, fill=t["sidebar"] if not t["dark_sidebar"] else t["panel"])
     c.rect(m, y, 0.08, qh, fill=t["highlight"])
     c.text(m + 0.45, y, W - 0.9, qh, q, size=qs, bold=True, font=t["font_title"], color=t["title"], anchor="m", line_spacing=1.1)
-    y += qh + 0.35
+    y += qh + 0.3
+    qs_ = [spec.sections[s] for s in spec.section_order if spec.sections[s].get("question")]
+    if qs_:  # china27: numbered questions are the agenda; each divider repeats its question
+        rh = min(0.62, (G["content_bottom"] - 1.25 - y) / len(qs_))
+        for i, sec in enumerate(qs_):
+            yy = y + i * rh
+            c.text(m + 0.1, yy, 0.5, rh, sec["id"], size=22, bold=True, color=t["highlight"], font=t["font_title"], anchor="m")
+            c.text(m + 0.7, yy, W - 0.7, rh, sec["question"], size=S["header"] + 2, color=t["title"], anchor="m", line_spacing=1.05)
+            c.line(m, yy + rh, m + W, yy + rh, color=t["rule"])
+        y += rh * len(qs_) + 0.3
+        terms = [("Decision maker", pr.get("decision_maker", "")), ("Success criteria", "; ".join(pr.get("success_criteria", []))),
+                 ("Timing", pr.get("deadline", "")), ("Out of scope", "; ".join(pr.get("out_of_scope", [])))]
+        cw = (W - 3 * 0.3) / 4
+        for k, (head, txt) in enumerate(terms):
+            xx = m + k * (cw + 0.3)
+            c.text(xx, y, cw, 0.25, head, size=S["label"], bold=True, color=t["muted"])
+            c.text(xx, y + 0.25, cw, G["content_bottom"] - y - 0.25, txt, size=S["label"] + 1, color=t["text"], line_spacing=1.1)
+        c.text(G["slide_w"] - m - 0.5, G["source_top"], 0.5, G["line_h"], str(page_no), size=S["source"], color=t["muted"], align="r")
+        return
     cells = [("Decision maker", [pr.get("decision_maker", "")]),
              ("Success criteria", pr.get("success_criteria", [])),
              ("Timing and accuracy", [x for x in (pr.get("deadline"), pr.get("accuracy") and f"Accuracy needed: {pr['accuracy']}") if x]),
@@ -1904,8 +1934,9 @@ def agenda_tracker(c, spec, slide, page_no, pages=None):
     cur = slide.get("section_id")
     first = _section_pages(spec, pages or {})
     rows = _tracker_rows(spec, cur)
-    n_top = len(spec.section_order)
-    n_sub = len(rows) - n_top
+    app = next((s for s in spec.raw["slides"] if s["role"] == "appendix_divider"), None)
+    n_top = len(spec.section_order) + (1 if app else 0)
+    n_sub = len(rows) - len(spec.section_order)
     y0 = G["content_top"] - 0.1
     # sub-section rows take 60% of a section row
     rh = min(1.0, (G["content_bottom"] - y0) / max(1, n_top + 0.6 * n_sub))
@@ -1940,6 +1971,38 @@ def agenda_tracker(c, spec, slide, page_no, pages=None):
         if lvl == 0 or (rows.index((s_id, lvl)) + 1 < len(rows) and rows[rows.index((s_id, lvl)) + 1][1] == 0):
             c.line(m, yy + h, m + W, yy + h, color=t["rule"])
         yy += h
+    if app:  # dc3, cap23: the appendix is the last item of the contents
+        dim = cur is not None
+        c.text(m + 0.25, yy, nw - 0.25, rh, "A", size=30, bold=True, font=t["font_title"], anchor="m", color=t["gray_mid"] if dim else t["primary"])
+        c.text(m + nw, yy, tw, rh, "Appendix", size=S["header"] + 7, bold=True, font=t["font_title"], anchor="m",
+               color=t["placeholder"] if dim else t["title"])
+        if pages and app["id"] in pages:
+            c.text(m + W - pgw, yy, pgw - 0.15, rh, f"p. {pages[app['id']]}", size=S["label"] + 1, anchor="m", align="r",
+                   color=t["placeholder"] if dim else t["muted"])
+        c.line(m, yy + rh, m + W, yy + rh, color=t["rule"])
+    c.text(G["slide_w"] - m - 0.5, G["source_top"], 0.5, G["line_h"], str(page_no), size=S["source"], color=t["muted"], align="r")
+
+
+def appendix_divider(c, spec, slide, page_no, pages=None):
+    """Opens the appendix (uk9 'APPENDIX' + 'Appendix contents' in one page): dark panel, then every backup page in order."""
+    t = c.t
+    m = G["margin"]
+    pw = 4.4
+    c.rect(0, 0, pw, G["slide_h"], fill=t["primary"])
+    c.text(m, 1.3, pw - 2 * m, 1.0, "Appendix", size=44, bold=True, font=t["font_title"], color=t["white"], anchor="t")
+    c.rect(m, 2.45, 0.9, 0.05, fill=t["highlight"])
+    tx = pw + 0.8
+    tw = G["slide_w"] - tx - m
+    back = [s for s in spec.raw["slides"] if s["role"] == "backup"]
+    top = 1.0
+    rh = min(0.55, (G["slide_h"] - 1.6 - top) / max(1, len(back)))
+    c.text(tx, top - 0.45, tw, 0.35, "Contents", size=S["header"], bold=True, color=t["title"])
+    for i, s in enumerate(back):
+        yy = top + i * rh
+        c.text(tx, yy, tw - 0.9, rh, (s.get("lead_message") or {}).get("text", ""), size=S["body"], color=t["text"], anchor="m", line_spacing=1.0)
+        if pages and s["id"] in pages:
+            c.text(tx + tw - 0.8, yy, 0.8, rh, f"p. {pages[s['id']]}", size=S["label"] + 1, color=t["muted"], anchor="m", align="r")
+        c.line(tx, yy + rh, tx + tw, yy + rh, color=t["rule"])
     c.text(G["slide_w"] - m - 0.5, G["source_top"], 0.5, G["line_h"], str(page_no), size=S["source"], color=t["muted"], align="r")
 
 
@@ -2660,6 +2723,8 @@ def render(spec_dict, out_path, theme=None, font_pair=None):
             exec_summary(c, spec, sl, i, pages)
         elif role == "problem_statement":
             problem_statement(c, spec, sl, i)
+        elif role == "appendix_divider":
+            appendix_divider(c, spec, sl, i, pages)
         elif role == "end_page":
             end_page(c, spec, sl, i)
         elif role == "section_divider":
