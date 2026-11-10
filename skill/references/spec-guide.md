@@ -47,6 +47,7 @@ The spec is one JSON file (schema: `scripts/storyline.schema.json`, JSON Schema 
 
 - A node without `parent` is a level-1 branch (= one section). A node nobody names as parent is a leaf. `cut_reason` prunes the node and everything under it.
 - Evidence slides set `"tree_node": "n1a"`; the renderer writes the code ("1a:") before the title, so leave `prefix` out. Continuation pages of a long table add "(1/2)" to the title (R12). The lead slide (first content slide after the section's agenda) has no `tree_node`.
+- Front matter: a `problem_statement` slide (`{"id": "q", "role": "problem_statement", "status": "filled"}`) shows the problem worksheet; it is not a content slide and belongs to no exec item.
 - The appendix slide "What we did not pursue" is a `backup` with `"tree_node": ["n5"]` instead of `backup_of`.
 - Sections without `tree_node` are context or how to make it happen (last). Sub-sections set `parent_id` and share the parent's `exec_item_id`.
 

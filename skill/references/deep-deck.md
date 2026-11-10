@@ -39,7 +39,7 @@ For each kept leaf write the `workplan`: the analysis that would prove or kill i
 Write the **one-day answer** in three parts (`problem.one_day_answer`): situation, complication, resolution. It is the first draft of the governing thought.
 
 Then lay out the ghost deck with the long-deck grammar (all slides `ghost`):
-- **Front matter, 4 slides at most:** cover, an optional "The question we were asked" slide (the problem statement and success criteria), exec summary, agenda.
+- **Front matter, 4 slides at most:** cover, "The question we were asked" (`{"id": "q", "role": "problem_statement", "status": "filled"}`, drawn from `problem`; it needs no exec item), exec summary, agenda.
 - **Per section:** the agenda again with the section highlighted (`agenda_tracker` with `section_id`), then a **lead slide** that states the section's answer and indexes its leaves (`numbered-levers`, `framework-pillars` or `comparison-table`, codes "2a", "2b"), then 1–3 evidence slides per leaf (up to 7 for the one that matters most). Evidence slides set `tree_node`; the renderer puts the code ("2a:") before the title. Methodology a section needs gets one short slide there; full detail goes in the appendix.
 - **Storyline order:** context and baseline → size of the prize → deep dives by branch → implications → how to make it happen (last, `deck_type` client diagnostic).
 - **Sections over ~20 slides** split into sub-sections (`parent_id`), each with its own tracker and lead slide.

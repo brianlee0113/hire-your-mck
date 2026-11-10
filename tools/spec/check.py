@@ -642,6 +642,8 @@ def _as_list(x):
     return x if isinstance(x, list) else ([x] if x else [])
 
 
+if any(s["role"] == "problem_statement" for s in spec["slides"]) and not spec.get("problem"):
+    out("P-01", "fail", "problem_statement slide but no problem in the spec; it is drawn from spec.problem")
 if spec["mode"] == "deck_deep":
     pr = spec.get("problem") or {}
     # P-01: the problem definition worksheet is complete

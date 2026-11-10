@@ -1690,6 +1690,51 @@ def cover(c, spec, slide, page_no):
         c.text(m + 0.4, G["source_top"], 10, G["line_h"], meta["confidentiality"], size=S["source"], color=t["muted"])
 
 
+def _page_ranges(pages):
+    """[6, 7, 8, 11] -> '6–8, 11' (long decks list many pages per exec item)."""
+    ps = sorted(set(pages))
+    out, i = [], 0
+    while i < len(ps):
+        j = i
+        while j + 1 < len(ps) and ps[j + 1] == ps[j] + 1:
+            j += 1
+        out.append(str(ps[i]) if j == i else (f"{ps[i]}, {ps[j]}" if j == i + 1 else f"{ps[i]}–{ps[j]}"))
+        i = j + 1
+    return ", ".join(out)
+
+
+def problem_statement(c, spec, slide, page_no):
+    """deck_deep front matter: the question the deck answers and the terms agreed for it (problem worksheet, P-01)."""
+    t = c.t
+    m = G["margin"]
+    W = G["slide_w"] - 2 * m
+    pr = spec.raw.get("problem") or {}
+    title = (slide.get("lead_message") or {}).get("text") or "The question we were asked"
+    c.text(m, G["title_top"], G["title_w"], G["title_h"], title, size=S["title"], bold=True, font=t["font_title"], color=t["title"])
+    y = G["content_top"] - 0.1
+    q = pr.get("statement", "")
+    qs = S["header"] + 8
+    while qs > S["header"] + 1 and _est_h(q, W - 0.9, qs, 1.1, bold=True, title=True) > 1.3:
+        qs -= 0.5
+    qh = _est_h(q, W - 0.9, qs, 1.1, bold=True, title=True) + 0.5
+    c.rect(m, y, W, qh, fill=t["sidebar"] if not t["dark_sidebar"] else t["panel"])
+    c.rect(m, y, 0.08, qh, fill=t["highlight"])
+    c.text(m + 0.45, y, W - 0.9, qh, q, size=qs, bold=True, font=t["font_title"], color=t["title"], anchor="m", line_spacing=1.1)
+    y += qh + 0.35
+    cells = [("Decision maker", [pr.get("decision_maker", "")]),
+             ("Success criteria", pr.get("success_criteria", [])),
+             ("Timing and accuracy", [x for x in (pr.get("deadline"), pr.get("accuracy") and f"Accuracy needed: {pr['accuracy']}") if x]),
+             ("Out of scope", pr.get("out_of_scope", []) or ["None agreed"])]
+    cw = (W - 3 * 0.3) / 4
+    hgt = G["content_bottom"] - y
+    for k, (head, lines) in enumerate(cells):
+        x = m + k * (cw + 0.3)
+        c.line(x, y, x + cw, y, color=t["primary"], weight=1.5)
+        c.text(x, y + 0.12, cw, 0.35, head, size=S["header"], bold=True, color=t["title"])
+        c.text(x, y + 0.55, cw, hgt - 0.6, [("– " if len(lines) > 1 else "") + s for s in lines], size=S["body"], color=t["text"], line_spacing=1.15)
+    c.text(G["slide_w"] - m - 0.5, G["source_top"], 0.5, G["line_h"], str(page_no), size=S["source"], color=t["muted"], align="r")
+
+
 def exec_summary(c, spec, slide, page_no, pages=None):
     t = c.t
     m = G["margin"]
@@ -1737,7 +1782,7 @@ def exec_summary(c, spec, slide, page_no, pages=None):
         c.text(m + 0.58, y, tw, row - 0.15, paras, size=round(S["body"] * f * 2) / 2, line_spacing=1.15)
         refs = [pages[s] for s in item.get("supports", []) if pages and s in pages]
         if refs:
-            c.text(G["slide_w"] - m - 1.1, y + 0.04, 1.1, 0.3, "p. " + ", ".join(str(p) for p in refs), size=S["label"], color=t["muted"], align="r")
+            c.text(G["slide_w"] - m - 1.1, y + 0.04, 1.1, 0.3, "p. " + _page_ranges(refs), size=S["label"], color=t["muted"], align="r")
         if i < n - 1:
             c.line(m, y + row - 0.12, G["slide_w"] - m, y + row - 0.12, color=t["rule"])
         y += row
@@ -2613,6 +2658,8 @@ def render(spec_dict, out_path, theme=None, font_pair=None):
             cover(c, spec, sl, i)
         elif role == "exec_summary":
             exec_summary(c, spec, sl, i, pages)
+        elif role == "problem_statement":
+            problem_statement(c, spec, sl, i)
         elif role == "end_page":
             end_page(c, spec, sl, i)
         elif role == "section_divider":
