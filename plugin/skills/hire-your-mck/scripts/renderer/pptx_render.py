@@ -209,7 +209,7 @@ class Canvas:
         self.t = tok
 
     def text(self, x, y, w, h, paras, size=S["body"], color=None, font=None, bold=False,
-             align="l", anchor="t", wrap=True, line_spacing=None):
+             align="l", anchor="t", wrap=True, line_spacing=None, space_after=None):
         """paras: str | list of str | list of list of (text, {bold,color,size,font}) runs."""
         w, h = _safe_size(w, h, paras)
         box = self.slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
@@ -224,6 +224,8 @@ class Canvas:
             p.alignment = {"l": PP_ALIGN.LEFT, "c": PP_ALIGN.CENTER, "r": PP_ALIGN.RIGHT}[align]
             if line_spacing:
                 p.line_spacing = line_spacing
+            if space_after and i < len(paras) - 1:
+                p.space_after = Pt(space_after)
             runs = [(para, {})] if isinstance(para, str) else para
             first = runs[0][0] if runs else ""
             if first.strip() in ("–", "▪", "•") and first.endswith(" "):
@@ -1165,9 +1167,9 @@ def kpi(c, spec, body, box):
                 c.text(tx, dy, tw, 0.22, head.upper(), size=S["small"] - 1, bold=True, color=t["caution_ink"] if ph else t["muted"])
             else:  # a fixed label on every tile of every KPI slide tires the reader; a rule separates just as well
                 c.line(tx, dy + 0.1, tx + tw, dy + 0.1, color=t["rule"])
-            paras = [[("–  ", {"color": t["muted"]}), (d, {"color": t["muted"] if ph else t["text"]})] for d in drivers]
+            paras = [bullet_runs(t, d, t["muted"] if ph else None) for d in drivers]
             dh = y + h - dy - 0.27
-            c.text(tx, dy + 0.27, tw, dh, paras, size=common, line_spacing=1.1)
+            c.text(tx, dy + 0.27, tw, dh, paras, size=common, line_spacing=1.12, space_after=common * BULLET_GAP)
 
 
 def matrix(c, spec, slide, body, box):
@@ -1524,10 +1526,10 @@ def text_body(c, spec, slide, body, box):
     if style == "bullets":
         paras = []
         for b in body.get("bullets", []):
-            paras.append([("▪  ", {"color": t["highlight"]}), (b["text"], {"bold": True, "color": t["title"]})])
+            paras.append(bullet_runs(t, b["text"] if "**" in b["text"] else f"**{b['text']}**", t["title"]))
             for sub in b.get("sub", []):
-                paras.append([("      –  " + sub, {})])
-        c.text(x, y, w, h, paras, size=S["body"] + 2, line_spacing=1.3)
+                paras.append(bullet_runs(t, sub, sub=True))
+        c.text(x, y, w, h, paras, size=S["body"] + 2, line_spacing=1.12, space_after=(S["body"] + 2) * BULLET_GAP)
         return
     cols = body.get("columns", [])
     n = len(cols)
@@ -1549,10 +1551,10 @@ def text_body(c, spec, slide, body, box):
         c.label_in(dot, col.get("id") or str(i + 1), size=S["label"], bold=True, color=t["primary"] if emph else t["white"])
         c.text(cx + 0.62, y + 0.2, cw - 0.8, hdr_h - 0.3, col["header"], size=S["header"] + 1, bold=True,
                color=t["white"] if emph else t["title"], line_spacing=1.0)
-        paras = [[("–  ", {"color": t["muted"]}), (d, {})] for d in col.get("detail", [])]
+        paras = [bullet_runs(t, d) for d in col.get("detail", [])]
         if paras:
             bh = h - hdr_h - _reserve(slide, col) - 0.3
-            c.text(cx + 0.19, y + hdr_h + 0.2, cw - 0.38, bh, paras, size=common, line_spacing=1.15)
+            c.text(cx + 0.19, y + hdr_h + 0.2, cw - 0.38, bh, paras, size=common, line_spacing=1.12, space_after=common * BULLET_GAP)
         _box_bottom(c, spec, slide, col, cx + 0.19, y + h, cw - 0.38, emph)
 
 
@@ -2553,10 +2555,15 @@ def venn(c, spec, slide, body, box):
             hh = _est_h(body["centre"], nw - 2 * pad_, S["header"] + 6, 1.05, bold=True, title=True)
             c.text(nx + pad_, ny, nw - 2 * pad_, hh, body["centre"], size=S["header"] + 6, bold=True, font=t["font_title"], color=t["title"], line_spacing=1.05)
             ny += hh + 0.3
-        if body.get("notes"):
-            fs = fit_size(body["notes"], nw - 2 * pad_ - 0.2, y + h - ny - 0.3, S["body"] + 4, min_size=12, para_gap=0.12)
-            paras = [[("–  ", {"color": t["muted"]}), (n_, {"color": t["text"]})] for n_ in body["notes"]]
-            c.text(nx + pad_, ny, nw - 2 * pad_, y + h - ny - 0.3, paras, size=fs, line_spacing=1.25)
+        if body.get("notes"):  # same bullets as the takeaway sidebar: accent square, bold lead-in, a gap between bullets
+            room = y + h - ny - 0.3
+            bw_ = nw - 2 * pad_
+            fs = fit_size(body["notes"], bw_ - 0.2, room - 0.2 * len(body["notes"]), S["body"] + 3, min_size=12, line_spacing=1.12)
+            hs_ = [_est_h(n_, bw_ - 0.2, fs, 1.12) for n_ in body["notes"]]
+            gap_ = min(0.32, max(0.08, (room - sum(hs_)) / max(1, len(hs_))))
+            for n_, bh_ in zip(body["notes"], hs_):
+                c.text(nx + pad_, ny, bw_, bh_, [bullet_runs(t, n_)], size=fs, line_spacing=1.12)
+                ny += bh_ + gap_
 
 
 def not_yet(c, slide, box):
@@ -2692,7 +2699,8 @@ def problem_statement(c, spec, slide, page_no):
         x = m + k * (cw + 0.3)
         c.line(x, y, x + cw, y, color=t["primary"], weight=1.5)
         c.text(x, y + 0.12, cw, 0.35, head, size=S["header"], bold=True, color=t["title"])
-        c.text(x, y + 0.55, cw, hgt - 0.6, [("– " if len(lines) > 1 else "") + s for s in lines], size=S["body"], color=t["text"], line_spacing=1.15)
+        c.text(x, y + 0.55, cw, hgt - 0.6, [bullet_runs(t, s) if len(lines) > 1 else s for s in lines], size=S["body"], color=t["text"],
+               line_spacing=1.12, space_after=S["body"] * BULLET_GAP)
     c.text(G["slide_w"] - m - 0.5, G["source_top"], 0.5, G["line_h"], str(page_no), size=S["source"], color=t["muted"], align="r")
 
 
@@ -3083,12 +3091,28 @@ def _box_bottom(c, spec, slide, item, x, bottom, w, emph=False):
         _callout_box(c, x, y + 0.06, w, 0.88, slide["callout"])
 
 
+def bullet_runs(t, text, color=None, sub=False):
+    """One bullet convention on every slide: an accent square for bullets, a muted dash for sub-bullets,
+    and **bold lead-ins** as in the takeaway sidebar."""
+    runs = [("–  ", {"color": t["muted"]})] if sub else [("▪  ", {"color": t["highlight"]})]
+    for k, part in enumerate(str(text).split("**")):
+        if part:
+            runs.append((part, {"color": color or t["text"], "bold": k % 2 == 1}))
+    return runs
+
+
+BULLET_GAP = 0.45  # space after a bullet, as a share of the type size (the sidebar's rhythm)
+
+
 def _bullets(c, items, x, y, w, h, size=None, color=None, fixed=False):
     t = c.t
-    paras = [[("–  ", {"color": t["muted"]}), (d, {"color": color or t["text"]})] for d in items]
+    paras = [bullet_runs(t, d, color) for d in items]
     if paras:
-        sz = size if fixed else fit_size(items, w, h, size or S["body"])
-        c.text(x, y, w, h, paras, size=sz, line_spacing=1.15)
+        sz = size if fixed else fit_size(items, w, h, size or S["body"], line_spacing=1.12, para_gap=(size or S["body"]) * BULLET_GAP / 72)
+        # the gap between bullets gives way first when the box is tight
+        need = sum(_est_h(d, w - 0.2, sz, 1.12) for d in items)
+        gap_pt = max(0.0, min(sz * BULLET_GAP, (h - need) * 72 / max(1, len(items) - 1)))
+        c.text(x, y, w, h, paras, size=sz, line_spacing=1.12, space_after=gap_pt)
 
 
 def _point_line(c, spec, item, x, y, w, emph=False):
