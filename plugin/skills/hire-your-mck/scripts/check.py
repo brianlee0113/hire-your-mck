@@ -242,6 +242,38 @@ for s in content:
                 out("MP-04", "fail", "bubble map with a negative value; use a choropleth or bars", s["id"])
         if len(b.get("callouts", [])) > 6:
             out("MP-03", "warn", "more than 6 callouts crowd the map; keep the ones the title needs", s["id"])
+    if b.get("kind") == "marimekko":
+        for cl in b["columns"]:
+            if len(cl["cells"]) != len(b["rows"]):
+                out("MK-01", "fail", f"column '{cl['label']}' has {len(cl['cells'])} cells for {len(b['rows'])} rows", s["id"])
+                continue
+            vs = [(dps.get(p_.get("data_ref")) or {}).get("value") for p_ in cl["cells"]]
+            if all(isinstance(v, (int, float)) for v in vs):
+                tot = sum(vs) * (100 if all(abs(v) <= 1.5 for v in vs) else 1)
+                if abs(tot - 100) > 1.5:
+                    out("MK-01", "fail", f"cells of column '{cl['label']}' sum to {tot:.1f}%, not 100%", s["id"])
+        labs_ = {cl["label"] for cl in b["columns"]}
+        for hh in b.get("highlight", []):
+            if hh["column"] not in labs_ or hh["row"] not in b["rows"]:
+                out("MK-01", "fail", f"highlight {hh} names no cell", s["id"])
+    if b.get("kind") == "donut":
+        for it in b["items"]:
+            v = (dps.get((it.get("point") or {}).get("data_ref")) or {}).get("value")
+            if isinstance(v, (int, float)) and not 0 <= v <= 1:
+                out("DN-01", "fail", f"donut '{it['label']}' value {v} is not a share between 0 and 100%", s["id"])
+    if b.get("kind") == "landscape":
+        names_ = {nm for sg in b["segments"] for nm in sg["items"]}
+        for nm in b.get("marked", []) + ([b["us"]] if b.get("us") else []):
+            if nm not in names_:
+                out("LS-01", "fail", f"'{nm}' is marked but not in any segment", s["id"])
+        if not 3 <= len(b["segments"]) <= 8:
+            out("LS-01", "warn", f"{len(b['segments'])} segments; reference landscapes use 3–8 equal columns", s["id"])
+    if b.get("kind") == "from_to":
+        for r in b["rows"]:
+            if not r["from"].strip() or not r["to"].strip():
+                out("FT-01", "fail", "from–to row with an empty side; the two columns run parallel", s["id"])
+    if b.get("kind") == "venn" and not (b.get("centre") or b.get("notes")):
+        out("VN-01", "warn", "venn without a centre or notes; say what sits where the sets meet", s["id"])
     if b.get("kind") == "initiative":
         _tpls.setdefault(s.get("section_id"), {}).setdefault(b["template"], []).append(s["id"])
         lm_ = s.get("lead_message") or {}
@@ -311,7 +343,7 @@ for s in spec["slides"]:
     elif words > 21: out("A-03", "warn", f"title has {words} words (90% of observed titles ≤20)", sid)
     if lm["text"].rstrip().endswith("."): out("D8", "warn", "title ends with a period", sid)
     # A-01 numbers in title appear on slide
-    nums = re.findall(r"[$~]?\d[\d,.]*\s?(?:%|x|M|B|K|pp|p\.p\.)?", re.sub(r"\(\d+/\d+\)", "", lm["text"]))  # "(1/2)" continuations
+    nums = re.findall(r"[$~]?\d[\d,.]*\s?(?:%|x|M|B|K|pp|p\.p\.)?", re.sub(r"\(\d+/\d+\)|\b\d+\s?[–-]\s?\d+(?=\s+[a-z])", "", lm["text"]))  # "(1/2)" continuations
     nums = [n for n in nums if not re.fullmatch(r"(19|20)\d\d(s)?", n.strip().rstrip(",.;:"))]  # years are not claims
     declared = lm.get("numbers", [])
     if nums and not declared:
@@ -352,7 +384,7 @@ for s in spec["slides"]:
     # A-12 density
     if s.get("status") != "ghost" and s.get("archetype") != "statement" and body:
         n_chars = slide_chars(s)
-        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org", "map") else 450  # exhibits carry the message
+        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org", "map", "marimekko", "donut", "venn", "landscape") else 450  # exhibits carry the message
         if n_chars < low: out("A-12", "warn", f"slide text is ~{n_chars} chars; references run 670–1,110 (target 600–1,100, charts ≥300)", sid)
         elif n_chars > 1300: out("A-12", "warn", f"slide text is ~{n_chars} chars; above 1,300 reads as crowded", sid)
         for it in body.get("columns", []) + body.get("items", []) + body.get("steps", []):
@@ -486,7 +518,7 @@ for s in content:
     seen = set()
     for txt in _texts(s):
         txt = re.sub(r"(19|20)\d\d\s?[–-]\s?\d{2,4}", "", txt)  # year ranges like 2021–25
-        txt = re.sub(r"\d[\d,]*\s?[–-]\s?\d[\d,]*|\d[\d,]*\s+or more", "", txt)  # class labels like "20–49", "250 or more"
+        txt = re.sub(r"\d[\d,]*\s?[–-]\s?\d[\d,]*|\d[\d,]*\s+or more|\b\d[\d,]*\+", "", txt)  # class labels like "20–49", "250 or more"
         for m in _NUM.finditer(txt):
             raw = m.group(1).replace(",", "")
             if not raw or re.fullmatch(r"(19|20)\d\d", raw) or (not m.group(2) and float(raw) < 10 and "." not in raw):

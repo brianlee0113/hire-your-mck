@@ -4,7 +4,7 @@ Use this file instead of Steps 1–2 of `SKILL.md` when the user picks a deep de
 
 A deep deck stops at **four checkpoints**, one more than the other modes: a wrong problem or tree costs 50 slides, so both are confirmed before any data work. Ask every checkpoint as multiple choice, recommendation first (see "How to ask" in `SKILL.md`).
 
-`examples/cobalt-ledger-deep.json` is a complete deep deck (43 slides, 165 sourced numbers) built this way: copy its shape for `problem`, `issue_tree`, `sections` and the appendix.
+`examples/cobalt-ledger-deep.json` is a complete deep deck (44 slides, 165 sourced numbers) built this way: copy its shape for `problem`, `issue_tree`, `sections` and the appendix.
 
 Everything you decide goes into the spec as you go: `problem`, `issue_tree`, `sections`, then slides. Write and check one section at a time; a 50-slide spec written in one pass is hard to fix.
 

@@ -681,7 +681,12 @@
         "cover",
         "agenda-tracker",
         "section-divider",
-        "end-page"
+        "end-page",
+        "marimekko",
+        "donut",
+        "landscape",
+        "from-to",
+        "venn"
       ],
       "description": "Tier 1 (20) first, then Tier 2, then navigation. See docs/archetypes/README.md."
     },
@@ -903,6 +908,21 @@
         },
         {
           "$ref": "#/$defs/body_map"
+        },
+        {
+          "$ref": "#/$defs/body_marimekko"
+        },
+        {
+          "$ref": "#/$defs/body_donut"
+        },
+        {
+          "$ref": "#/$defs/body_landscape"
+        },
+        {
+          "$ref": "#/$defs/body_from_to"
+        },
+        {
+          "$ref": "#/$defs/body_venn"
         }
       ]
     },
@@ -2897,6 +2917,271 @@
             }
           },
           "description": "Notes in aligned edge columns, joined to the region by an elbow leader line."
+        }
+      }
+    },
+    "body_marimekko": {
+      "type": "object",
+      "required": [
+        "kind",
+        "rows",
+        "columns"
+      ],
+      "additionalProperties": false,
+      "description": "Marimekko (archetype marimekko): variable-width 100% columns, no y axis; column width = its share, cells = shares within the column. Drawn as shapes. Pair it with a takeaway sidebar.",
+      "properties": {
+        "kind": {
+          "const": "marimekko"
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "type": "string"
+          },
+          "description": "Row names, top to bottom, labelled once at the left (no legend)."
+        },
+        "columns": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "width",
+              "cells"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "width": {
+                "$ref": "#/$defs/point"
+              },
+              "cells": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/point"
+                },
+                "description": "One point per row, in row order; shares of the column summing to 100%."
+              }
+            }
+          }
+        },
+        "width_label": {
+          "type": "string",
+          "description": "What the column widths measure, under the chart."
+        },
+        "highlight": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "column",
+              "row"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "column": {
+                "type": "string"
+              },
+              "row": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Cells outlined in the accent colour."
+        }
+      }
+    },
+    "body_donut": {
+      "type": "object",
+      "required": [
+        "kind",
+        "items"
+      ],
+      "additionalProperties": false,
+      "description": "Donuts (archetype donut): 1–4 equal-size rings, the share in accent from 12 o'clock clockwise, the rest grey, the value in the centre.",
+      "properties": {
+        "kind": {
+          "const": "donut"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "point"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "sub": {
+                "type": "string"
+              },
+              "point": {
+                "$ref": "#/$defs/point"
+              },
+              "emphasis": {
+                "type": "boolean",
+                "description": "Ring in the primary colour instead of the accent."
+              }
+            }
+          }
+        }
+      }
+    },
+    "body_landscape": {
+      "type": "object",
+      "required": [
+        "kind",
+        "segments"
+      ],
+      "additionalProperties": false,
+      "description": "Landscape (archetype landscape): segments as equal columns of name chips (no logos).",
+      "properties": {
+        "kind": {
+          "const": "landscape"
+        },
+        "segments": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "items"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 12,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "marked": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Names outlined and bold (e.g. players that already ship the feature)."
+        },
+        "marked_label": {
+          "type": "string",
+          "description": "What the outline means, shown in the key."
+        },
+        "us": {
+          "type": "string",
+          "description": "Our company's name, filled in the accent colour."
+        },
+        "hedge": {
+          "type": "string",
+          "default": "Examples, not exhaustive"
+        }
+      }
+    },
+    "body_from_to": {
+      "type": "object",
+      "required": [
+        "kind",
+        "from_label",
+        "to_label",
+        "rows"
+      ],
+      "additionalProperties": false,
+      "description": "From–to shift (archetype from-to): two parallel columns, the To side stronger, one arrow between the headers.",
+      "properties": {
+        "kind": {
+          "const": "from_to"
+        },
+        "from_label": {
+          "type": "string"
+        },
+        "to_label": {
+          "type": "string"
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "required": [
+              "from",
+              "to"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "description": "Optional dimension name in a left column ('Data entry')."
+              },
+              "from": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              },
+              "from_detail": {
+                "type": "string"
+              },
+              "to_detail": {
+                "type": "string",
+                "description": "One line under the To headline: how or why."
+              }
+            }
+          }
+        }
+      }
+    },
+    "body_venn": {
+      "type": "object",
+      "required": [
+        "kind",
+        "sets"
+      ],
+      "additionalProperties": false,
+      "description": "Venn (archetype venn): 2–3 translucent circles of one hue; the overlaps stay unlabelled except the centre, explained in a notes column.",
+      "properties": {
+        "kind": {
+          "const": "venn"
+        },
+        "sets": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "centre": {
+          "type": "string",
+          "description": "What sits where all sets meet; the notes column's header."
+        },
+        "notes": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "string"
+          }
         }
       }
     }

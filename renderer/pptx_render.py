@@ -2309,6 +2309,210 @@ def map_body(c, spec, slide, body, box):
             c.rect(ax - 0.035, ay - 0.035, 0.07, 0.07, fill=t["title"], shape=MSO_SHAPE.OVAL)
 
 
+# ---------------------------------------------------------------- marimekko, donut, landscape, from-to, venn
+
+def _alpha(shp, pct):
+    sf = shp.fill._xPr.find(qn("a:solidFill"))
+    if sf is not None and len(sf):
+        etree.SubElement(sf[0], qn("a:alpha"), val=str(int(pct * 1000)))
+
+
+def marimekko(c, spec, slide, body, box):
+    """Variable-width 100% columns, no y axis, widths on top, cell values inside, row names at left (11 reference pages)."""
+    x, y, w, h = box
+    t = c.t
+    rows, cols = body["rows"], body["columns"]
+    lab_w = min(1.7, max(measure.width_pt(r, FONTS["body"], S["label"] + 1, True) / 72 + 0.15 for r in rows))
+    px, pw = x + lab_w + 0.1, w - lab_w - 0.1
+    top, bot = y + 0.34, y + h - 0.62
+    ph = bot - top
+    widths = [abs(spec.value(cl["width"]) or 0) for cl in cols]
+    tot = sum(widths) or 1
+    fills = [t["primary"], t["highlight"], tint_of(t["highlight"], 0.45), tint_of(t["highlight"], 0.72), t["other_bars"], tint_of(t["other_bars"], 0.5)]
+    hl = {(hh["column"], hh["row"]) for hh in body.get("highlight", [])}
+    xx = px
+    first_bands = []
+    for ci, cl in enumerate(cols):
+        cw = pw * widths[ci] / tot
+        tw__ = max(cw, 0.6)
+        c.text(xx + cw / 2 - tw__ / 2, y, tw__, 0.3, dp_fmt(spec, cl["width"]), size=S["label"], bold=True, color=t["title"], align="c")
+        vals = [abs(spec.value(p_) or 0) for p_ in cl["cells"]]
+        ssum = sum(vals) or 1
+        yy = top
+        for ri, (p_, v) in enumerate(zip(cl["cells"], vals)):
+            ch = ph * v / ssum
+            col = fills[ri % len(fills)]
+            c.rect(xx, yy, cw, max(0.005, ch), fill=col, line=t["white"], weight=1)
+            dark = ri < 2 or col == t["primary"]
+            if cw > 0.45 and ch > 0.26:
+                c.text(xx, yy + ch / 2 - 0.12, cw, 0.24, dp_fmt(spec, p_), size=S["label"], color=t["white"] if dark else t["title"], align="c")
+            if (cl["label"], rows[ri] if ri < len(rows) else None) in hl:
+                c.rect(xx - 0.03, yy - 0.03, cw + 0.06, ch + 0.06, line=t["highlight"], weight=2.5, dash=True)
+            if ci == 0:
+                first_bands.append((yy, ch))
+            yy += ch
+        lw_ = max(cw, measure.width_pt(cl["label"], FONTS["body"], S["label"]) / 72 + 0.1)  # narrow columns: label may run wider
+        c.text(xx + cw / 2 - lw_ / 2, bot + 0.06, lw_, 0.3, cl["label"], size=S["label"], color=t["text"], align="c")
+        xx += cw
+    for r, (yy, ch) in zip(rows, first_bands):
+        c.text(x, yy, lab_w, ch, r, size=S["label"] + 1, bold=True, color=t["title"], align="r", anchor="m", line_spacing=1.0)
+    if body.get("width_label"):
+        c.text(px, bot + 0.34, pw, 0.24, "Column width: " + body["width_label"], size=S["small"], color=t["muted"])
+
+
+def _ring(c, cx, cy, r_out, r_in, a0, a1, fill, name="ring"):
+    """Annulus segment from angle a0 to a1 (degrees clockwise from 12 o'clock) as one editable freeform."""
+    n = max(6, int(abs(a1 - a0) / 3))
+    pts = lambda r, a: (cx + r * math.sin(math.radians(a)), cy - r * math.cos(math.radians(a)))
+    outer = [pts(r_out, a0 + (a1 - a0) * k / n) for k in range(n + 1)]
+    inner = [pts(r_in, a1 - (a1 - a0) * k / n) for k in range(n + 1)]
+    return _freeform(c, [outer + inner], fill, fill, name)
+
+
+def donut(c, spec, slide, body, box):
+    """1–4 equal donuts: accent share from 12 o'clock clockwise, the rest grey, value in the centre (34 reference pages)."""
+    x, y, w, h = box
+    t = c.t
+    items = body["items"]
+    n = len(items)
+    cell = w / n
+    r = min(cell * 0.36, (h - 1.0) / 2 * 0.92)
+    for i, it in enumerate(items):
+        cx, cy = x + cell * (i + 0.5), y + r + 0.15
+        v = spec.value(it["point"])
+        share = max(0.0, min(1.0, v if v is not None else 0))
+        col = t["primary"] if it.get("emphasis") else t["highlight"]
+        thick = r * 0.34
+        _ring(c, cx, cy, r, r - thick, 0, 359.9, tint_of(t["other_bars"], 0.45), "donut base")
+        if share > 0:
+            _ring(c, cx, cy, r, r - thick, 0, 360 * share - (0.1 if share >= 1 else 0), col, it["label"])
+        hole = 2 * (r - thick) * 0.7
+        txt_ = dp_fmt(spec, it["point"])
+        vs = 40
+        while vs > 14 and measure.width_pt(txt_, FONTS["title"], vs, True) / 72 > hole:
+            vs -= 1
+        c.text(cx - r, cy - 0.32, 2 * r, 0.64, txt_, size=vs, bold=True, font=t["font_title"], color=t["title"], align="c", anchor="m")
+        ly = cy + r + 0.14
+        lh = _est_h(it["label"], cell - 0.3, S["header"] + 1, 1.05, bold=True)
+        c.text(x + cell * i + 0.15, ly, cell - 0.3, lh, it["label"], size=S["header"] + 1, bold=True, color=t["title"], align="c", line_spacing=1.05)
+        if it.get("sub"):
+            c.text(x + cell * i + 0.15, ly + lh + 0.02, cell - 0.3, 0.3, it["sub"], size=S["label"], color=t["muted"], align="c")
+
+
+def landscape(c, spec, slide, body, box):
+    """Segments as equal columns of name chips; marked players outlined, our company filled (20 reference pages, names not logos)."""
+    x, y, w, h = box
+    t = c.t
+    segs = body["segments"]
+    n = len(segs)
+    gap = 0.16
+    cw = (w - gap * (n - 1)) / n
+    key_h = 0.34
+    hh = 0.5
+    ph = h - hh - 0.08 - key_h
+    nmax = max(len(s_["items"]) for s_ in segs)
+    chip = min(0.62, (ph - 0.2) / nmax - 0.1)
+    marked = set(body.get("marked", []))
+    us = body.get("us")
+    names = [it for s_ in segs for it in s_["items"]]
+    fs = min(fit_size([nm], cw - 0.4, chip - 0.06, S["body"] + 1, min_size=10, indent=0, line_spacing=1.0, bold=True) for nm in names)
+    for i, s_ in enumerate(segs):
+        sx = x + i * (cw + gap)
+        hd = c.rect(sx, y, cw, hh, fill=t["primary"])
+        c.label_in(hd, s_["label"], size=S["header"], bold=True, color=t["white"])
+        c.rect(sx, y + hh + 0.08, cw, ph, fill=t["panel"])
+        for k, nm in enumerate(s_["items"]):
+            cy = y + hh + 0.08 + 0.14 + k * (chip + 0.1)
+            is_us, is_m = nm == us, nm in marked
+            c.rect(sx + 0.14, cy, cw - 0.28, chip, fill=t["highlight"] if is_us else t["white"],
+                   line=t["primary"] if is_m else t["rule"], weight=1.75 if is_m else 0.75)
+            c.text(sx + 0.2, cy, cw - 0.4, chip, nm, size=fs, bold=is_m or is_us, color=t["white"] if is_us else t["title"],
+                   align="c", anchor="m", line_spacing=1.0)
+    key = [body.get("hedge", "Examples, not exhaustive")]
+    if marked and body.get("marked_label"):
+        key.append(f"Outlined: {body['marked_label']}")
+    if us:
+        key.append(f"Filled: {us}")
+    c.text(x, y + h - key_h + 0.06, w, key_h, "   ·   ".join(key), size=S["small"], color=t["muted"])
+
+
+def from_to(c, spec, slide, body, box):
+    """Two parallel columns, From light and To strong, one arrow between the headers; rows may carry a dimension and a detail line."""
+    x, y, w, h = box
+    t = c.t
+    rows = body["rows"]
+    lab = any(r.get("label") for r in rows)
+    lw = w * 0.16 if lab else 0
+    gap = 0.7
+    colw = (w - lw - (0.2 if lab else 0) - gap) / 2
+    fx = x + lw + (0.2 if lab else 0)
+    tx = fx + colw + gap
+    hh = 0.6
+    c.rect(fx, y, colw, hh, fill=t["panel"])
+    c.text(fx + 0.2, y, colw - 0.3, hh, body["from_label"], size=S["header"] + 3, bold=True, color=t["title"], anchor="m")
+    c.rect(tx, y, colw, hh, fill=t["primary"])
+    c.text(tx + 0.2, y, colw - 0.3, hh, body["to_label"], size=S["header"] + 3, bold=True, color=t["white"], anchor="m")
+    dot = c.rect(fx + colw + gap / 2 - 0.22, y + hh / 2 - 0.22, 0.44, 0.44, fill=t["highlight"], shape=MSO_SHAPE.OVAL)
+    c.label_in(dot, "›", size=S["header"] + 6, bold=True, color=t["white"])
+    ry = y + hh + 0.12
+    rh = (y + h - ry) / len(rows)
+    c.rect(tx, ry - 0.06, colw, y + h - ry + 0.06, fill=tint(t["highlight"], 0.94))
+    det = any(r.get("from_detail") or r.get("to_detail") for r in rows)
+    ds = S["label"] + 1
+    dline = 0.26 if det else 0
+    hs = min(min(fit_size([s_], colw - 0.4, rh - 0.16 - dline, S["header"] + 4, min_size=12, indent=0, line_spacing=1.05) for s_ in (r["from"], r["to"]))
+             for r in rows)
+    for k, r in enumerate(rows):
+        yy = ry + k * rh
+        if lab:
+            c.text(x, yy, lw, rh, r.get("label", ""), size=S["label"] + 1, bold=True, color=t["muted"], anchor="m", line_spacing=1.0)
+        for cx_, head, detail, strong in ((fx, r["from"], r.get("from_detail"), False), (tx, r["to"], r.get("to_detail"), True)):
+            paras = [[(head, {"bold": strong, "color": t["title"] if strong else t["text"], "size": hs})]]
+            if detail:
+                paras.append([(detail, {"color": t["muted"], "size": ds})])
+            c.text(cx_ + 0.2, yy, colw - 0.4, rh, paras, size=hs, anchor="m", line_spacing=1.05)
+        if k < len(rows) - 1:
+            c.line(fx, yy + rh, fx + colw, yy + rh, color=t["rule"])
+            c.line(tx, yy + rh, tx + colw, yy + rh, color=t["white"], weight=1.25)
+            if lab:
+                c.line(x, yy + rh, x + lw, yy + rh, color=t["rule"])
+
+
+def venn(c, spec, slide, body, box):
+    """2–3 translucent circles of one hue; only the centre is explained, in a notes column (15 reference pages)."""
+    x, y, w, h = box
+    t = c.t
+    sets = body["sets"]
+    vw = w * 0.5 if body.get("notes") or body.get("centre") else w
+    r = min(vw / 3.5, (h - 0.8) / 3.2)
+    cx0, cy0 = x + vw / 2, y + h / 2 + (0.12 if len(sets) == 3 else 0)
+    d = r * 0.85
+    pos = [(cx0 - d / 2, cy0 - d * 0.35), (cx0 + d / 2, cy0 - d * 0.35), (cx0, cy0 + d * 0.55)] if len(sets) == 3 else [(cx0 - d * 0.55, cy0), (cx0 + d * 0.55, cy0)]
+    for (px_, py_), name in zip(pos, sets):
+        o = c.rect(px_ - r, py_ - r, 2 * r, 2 * r, fill=t["highlight"], line=t["highlight"], weight=1.25, shape=MSO_SHAPE.OVAL)
+        _alpha(o, 18)
+    # set names outside the circles: above the top ones, below the bottom one
+    for k, ((px_, py_), name) in enumerate(zip(pos, sets)):
+        below = len(sets) == 3 and k == 2
+        ly = py_ + r + 0.05 if below else py_ - r - 0.42
+        lx = px_ + (0 if below or len(sets) == 2 and False else (-r * 0.55 if k == 0 else r * 0.55))
+        c.text(lx - 1.3, ly, 2.6, 0.38, name, size=S["header"] + 1, bold=True, color=t["title"], align="c", anchor="b" if not below else "t", line_spacing=1.0)
+    ccx = sum(p_[0] for p_ in pos) / len(pos)
+    ccy = sum(p_[1] for p_ in pos) / len(pos)
+    c.rect(ccx - 0.08, ccy - 0.08, 0.16, 0.16, fill=t["primary"], shape=MSO_SHAPE.OVAL)
+    if body.get("notes") or body.get("centre"):
+        nx = x + vw + 0.3
+        nw = w - vw - 0.3
+        c.line(ccx + 0.08, ccy, nx - 0.1, ccy, color=t["muted"], weight=0.75)
+        ny = ccy - 0.3
+        if body.get("centre"):
+            hh = _est_h(body["centre"], nw, S["header"] + 3, 1.05, bold=True, title=True)
+            c.text(nx, ny, nw, hh, body["centre"], size=S["header"] + 3, bold=True, font=t["font_title"], color=t["title"], line_spacing=1.05)
+            ny += hh + 0.18
+        if body.get("notes"):
+            _bullets(c, body["notes"], nx, ny, nw, y + h - ny, size=S["body"] + 1)
+
+
 def not_yet(c, slide, box):
     x, y, w, h = box
     c.rect(x, y, w, h, line=c.t["placeholder"], dash=True)
@@ -2341,7 +2545,12 @@ def content(c, spec, slide, page_no):
              "cost_curve": lambda: cost_curve(c, spec, slide, body, box),
              "org": lambda: org_chart(c, spec, slide, body, box),
              "initiative": lambda: initiative(c, spec, slide, body, box),
-             "map": lambda: map_body(c, spec, slide, body, box)}
+             "map": lambda: map_body(c, spec, slide, body, box),
+             "marimekko": lambda: marimekko(c, spec, slide, body, box),
+             "donut": lambda: donut(c, spec, slide, body, box),
+             "landscape": lambda: landscape(c, spec, slide, body, box),
+             "from_to": lambda: from_to(c, spec, slide, body, box),
+             "venn": lambda: venn(c, spec, slide, body, box)}
     if slide.get("status") == "ghost":
         ghost(c, spec, slide, box)
     elif not body:

@@ -242,6 +242,8 @@ KPI items show their `drivers` under a thin rule; add `drivers_header` only when
 | V-05 excerpt not found or page unreachable on re-check, web numbers not re-checked (`deck_deep`); V-06 dependent second source, values differ without a note, key numbers with one source (`deck_deep`) | warn |
 | V-01 excerpt with no figure, user numbers with neither excerpt nor locator; V-02 period not in the excerpt; V-03 T3 without `cites`, title or exec numbers on T3; V-04 source without `published` or 4+ years old | warn |
 | P-01 empty decision maker, success criteria, deadline or one-day answer part; T-01 level-1 branches outside 3–5 or not one section each; T-02 missing or duplicate code, prefix that is not its code, slide on a pruned node; T-03 leaf without an evidence slide; T-04 refuted or revised leaf still titled with its hypothesis; L-01 front matter over 4, section without divider or lead slide (`deck_deep`) | fail |
+| MK-01 marimekko column cells not matching the rows or not summing to 100%, highlight naming no cell; DN-01 donut value outside 0–100%; LS-01 marked or us name not in a segment; FT-01 from–to row with an empty side | fail |
+| LS-01 landscape outside 3–8 segments; VN-01 venn without centre or notes | warn |
 | MP-01 map region code not on the map; MP-02 breaks not ascending, choropleth or bubble map without values; MP-03 highlight map without groups; MP-04 bubble values negative or in mixed units | fail |
 | MP-03 more than 6 callouts on a map | warn |
 | CC-01 cost-curve bar with zero or negative width; CC-03 bracket naming a bar that does not exist; OC-01 org node with an unknown parent, a cycle, or roles pointing at no node; IO-03 one-pager missing its template's blocks | fail |
