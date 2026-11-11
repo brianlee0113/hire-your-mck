@@ -1,6 +1,6 @@
 ---
 name: hire-your-mck
-description: Build consulting-style PowerPoint decks (McKinsey-style storyline, action titles, one message per slide) with editable native charts and a source workbook where every number is traced to its source. Use when the user asks for a strategy deck, board or steering-committee presentation, an executive summary deck, a storyline or "ghost deck", or a single consulting-style slide from research, notes, data or a key message.
+description: Build consulting-style PowerPoint decks (McKinsey-style storyline, action titles, one message per slide) with editable native charts and a source workbook where every number is traced to its source. Use when the user asks for a strategy deck, board or steering-committee presentation, an executive summary deck, a storyline or "ghost deck", a deep 30–60 slide deck that works a decision through as a problem (issue tree, hypotheses, seven-step problem solving), or a single consulting-style slide from research, notes, data or a key message.
 ---
 
 # Hire your McK
@@ -40,8 +40,8 @@ Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow
 | Mode | Ask for | Slides end as |
 |---|---|---|
 | `deck_detailed` | Research, files or answers to a few questions | `filled`: every number sourced |
-| `deck_flow` | The landing message (plus any context) | `ghost`: real exhibit skeleton with "?" values, takeaway to prove, data needed |
 | `deck_deep` | A decision to work through, plus research or files | 30–60 slides built with the seven-step process: problem, issue tree, sections, `filled` |
+| `deck_flow` | The landing message (plus any context) | `ghost`: real exhibit skeleton with "?" values, takeaway to prove, data needed |
 | `single_slide` | One lead message, or research for one slide | One `filled` slide |
 
 ## Workflow
@@ -51,15 +51,19 @@ The skill stops and asks the user **only at three checkpoints** (four in `deck_d
 **How to ask, every time.** Ask as multiple choice, never as open questions the user has to type out. If your environment has a tool that shows questions with selectable options, use it; otherwise write numbered options. Each question gets 2–4 options written for this user's topic, your recommended option first and marked "(Recommended)", and the user can always type their own answer. Ask all the questions of one checkpoint in one go. The same applies to any assumption you need confirmed along the way (an age cutoff, a pilot city, a business model): each becomes one multiple-choice question with your recommendation first and the reason in a few words, e.g. "Age cutoff: 55+ (Recommended: matches SCSEP and AARP) · 65+ · 50+". Never end a message with open questions the user must type answers to. If you need facts only the user has (their numbers, their company), first offer options for *where* to get them (upload a file · paste it · search the web · leave as a placeholder) rather than asking them to type the facts.
 
 ### Checkpoint 1 · Brief (skip any question the first message already answers)
-Ask these together, as multiple choice:
-1. **What to build:** full deck with data (`deck_detailed`) · storyline only, slides with "?" values (`deck_flow`) · deep deck, 30–60 slides worked through as a problem (`deck_deep`) · one slide (`single_slide`).
-
-**If the user picks `deck_deep`, switch to `references/deep-deck.md` now.** It replaces the rest of this checkpoint and Steps 1–2 with its own four checkpoints, then returns to Step 3.
+Ask these together, as multiple choice, in this option order:
+1. **What to build:** full deck with data (`deck_detailed`) · deep deck, 30–60 slides worked through as a problem (`deck_deep`) · storyline only, slides with "?" values (`deck_flow`) · one slide (`single_slide`).
+   Mark one "(Recommended)" from what the first message shows, and keep the order above even when the recommended mode is not first (the one exception to "recommended first"):
+   - `deck_deep` when the request is a decision with several open questions behind it (enter a market, launch, invest, restructure), asks for depth or length ("deep", "30+ slides", "full diagnostic", "issue tree", "seven steps"), or is for a CEO, board or steering committee deciding on it.
+   - `deck_flow` when there is no material and the user wants the story first; `single_slide` when they name one slide; `deck_detailed` otherwise.
+   If the first message already names the mode ("deep deck", "ghost deck", "one slide"), do not ask this question.
 2. **Your material:** I have research or files to share (upload or paste next) · I already pasted it · no material: search the web · no material: leave data as placeholders.
 3. **Audience and decision:** 2–3 likely options for this topic (e.g. "CEO: approve or reject", "Board: update", "Team: align on a plan").
 4. **Look:** the themes in `references/style.md`, each with a 3–5 word description — `navy` (Recommended: deep navy, one blue accent) · `crimson` (charcoal, one red) · `forest` (deep green) · `mono` (black and white, prints well) · `vivid` (startup pitch, violet and coral) · `slate` (steel blue and amber) · `terracotta` (warm earth). If the tool caps options at four, show navy, mono, vivid and slate, and let the user type another.
 
 If the user chose "I have research", wait for it before Step 1.
+
+**If the mode is `deck_deep`, switch to `references/deep-deck.md` now.** It replaces Steps 1–2 with its own checkpoints, then returns to Step 3. Keep the answers already given here (material, audience, look); its Checkpoint 1 asks only the deep-deck questions. If the first message already asked for a deep deck, skip this checkpoint and start with that file's Checkpoint 1, which then also asks for material and look.
 
 ### Step 1 · Storyline
 1. Write the **governing thought**: one sentence that answers the decision the deck supports.

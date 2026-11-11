@@ -14,12 +14,12 @@ Draft the problem definition worksheet from the user's request and material (`pr
 - **statement**: one question, outcome-focused, measurable, time-bound, at the highest level the decision maker owns. "Should we launch a mid-market AP product by Q3 2027, and at what price?", not "Mid-market AP market".
 - **decision_maker**, **success_criteria** (how they judge the answer), **deadline**, **accuracy** needed, **out_of_scope**.
 
-Checkpoint 1 asks, in one go (skip what the first message answers):
+Checkpoint 1 asks, in one go (skip what the first message or the brief in `SKILL.md` already answered):
 1. **Problem statement:** 2–3 drafts that differ in scope or level, the recommended one first.
 2. **Out of scope:** the boundaries you assumed, to confirm or change.
 3. **Deck type** (`meta.deck_type`): client diagnostic (Recommended for a company decision: summary, sizing, ends on how to make it happen) · policy analysis (methodology and sensitivities, large appendix) · research report (key questions as the agenda, ends on takeaways).
 4. **Length:** 30–40 slides (Recommended) · 40–60 slides.
-5. **Material and look:** as in Checkpoint 1 of `SKILL.md`.
+5. **Material, audience and look:** as in Checkpoint 1 of `SKILL.md`, only if that checkpoint was skipped because the first message already asked for a deep deck. Never ask them twice.
 
 ## Step 2 · Disaggregate
 

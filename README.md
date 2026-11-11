@@ -31,10 +31,11 @@ Then brief it. In Claude Code, start with `/hire-your-mck`:
 /hire-your-mck Create a deck: our CEO has to decide whether to launch an AI package for our small-business customers. Build it from public data.
 ```
 
-More examples, one for each [mode](#three-modes):
+More examples, one for each [mode](#four-modes):
 
 ```text
 /hire-your-mck Create a deck from the files in ./research on why our churn doubled this year, for the board.
+/hire-your-mck Create a deep deck, 30–40 slides: should we enter mid-market AP automation by Q3 2027? Work it through as a problem from public data.
 /hire-your-mck Create a ghost deck: should we enter the Texas home-care market? Storyline only, no data yet.
 /hire-your-mck Create one slide: our three biggest cost levers, from cost-breakdown.xlsx.
 ```
@@ -144,23 +145,24 @@ The renderer then measures every text box with the real fonts and flags anything
 
 ---
 
-## Three modes
+## Four modes
 
 | Mode | You give it | You get |
 |---|---|---|
 | **Full deck** | Research, files, or "search the web" | Every slide filled, every number sourced |
+| **Deep deck** (30–60 slides) | A decision to work through, plus research or "search the web" | The seven-step problem-solving process: problem statement, issue tree you approve, a section per branch with its own lead slide, an appendix, every number sourced and re-checked against its page |
 | **Storyline only** (ghost deck) | The decision and a few lines of context | The real exhibit on each slide with "?" values, the takeaway each slide must prove, and the data to find |
 | **Single slide** | One message, or research for one slide | One finished slide |
 
 ![The same slide as a ghost deck and as a full deck](docs/readme/modes.png)
 
-A storyline-only deck turns into a full deck later: same spec, fill in the data.
+A storyline-only deck turns into a full deck later: same spec, fill in the data. If you do not name a mode, the skill recommends one from your brief: a decision with several open questions behind it, for a CEO or board, gets the deep deck. See [`cobalt-ledger-deep.json`](renderer/examples/cobalt-ledger-deep.json) for a 44-slide example.
 
 ---
 
 ## Gallery
 
-20 slide types, chosen by what the title says (a ranking, a trend, a bridge, a set of moves, a case, a two-by-two, an issue tree, and more).
+30+ slide types, chosen by what the title says (a ranking, a trend, a bridge, a set of moves, a case, an issue tree, a map, a cost curve, an org chart, a marimekko, and more).
 
 ![Six slides from the example deck](docs/readme/gallery.png)
 
