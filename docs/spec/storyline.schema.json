@@ -792,10 +792,11 @@
             "implication_style": {
               "enum": [
                 "bar",
-                "alert"
+                "alert",
+                "dark",
+                "rule"
               ],
-              "default": "bar",
-              "description": "bar: white panel with the accent bar (default). alert: tinted panel with a circled '!'. Mix them across the deck so one device does not repeat on every slide."
+              "description": "Leave it out: the renderer rotates dark box, rule, accent bar and circled '!' in deck order, so neighbouring slides differ. Set it only to force one look on a slide."
             }
           }
         }

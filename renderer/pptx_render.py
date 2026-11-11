@@ -52,6 +52,17 @@ class Spec:
         self.codes = {n["id"]: n["code"] for n in spec.get("issue_tree", []) if n.get("code")}
         self._key = None
         self.exec = spec.get("storyline", {}).get("exec_summary", [])
+        self._imp_n = 0
+
+    IMPLICATION_STYLES = ("dark", "rule", "bar", "alert")  # reference "bottom-line box" first, then varied
+
+    def implication_style(self, sb):
+        """Explicit style wins; otherwise rotate through the four in deck order so no two neighbours look alike."""
+        if sb.get("implication_style"):
+            return sb["implication_style"]
+        st = self.IMPLICATION_STYLES[self._imp_n % len(self.IMPLICATION_STYLES)]
+        self._imp_n += 1
+        return st
 
     def low_confidence(self, slide):
         """Labels of grade C numbers shown on the slide (V-05, V-06): they get a footnote."""
@@ -421,7 +432,8 @@ def sidebar(c, spec, slide, x=None, w=None):
     cy = y + 0.24
     if sb.get("implication"):  # what it means for us: its own box at the foot of the sidebar
         isz = S["body"] + 1
-        alert = sb.get("implication_style") == "alert"
+        istyle = spec.implication_style(sb)
+        alert = istyle == "alert"
         bx, bw = x + pad - 0.08, w - 2 * pad + 0.16
         if alert:  # variant: a solid circle with "!" on a tinted panel, headed like a callout
             d = 0.42
@@ -435,6 +447,20 @@ def sidebar(c, spec, slide, x=None, w=None):
             c.label_in(dot, "!", size=S["header"] + 3, bold=True, color=t["white"], font=t["font_title"])
             c.text(bx + d + 0.3, iy + 0.17, tw_, ih - 0.3, sb["implication"], size=isz, bold=True,
                    color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12)
+        elif istyle == "dark":  # filled box in the primary colour, white bold text (reference "bottom-line box")
+            tw_ = bw - 0.4
+            ih = _est_h(sb["implication"], tw_, isz, 1.1, bold=True, title=True) + 0.3
+            iy = bottom - pad + 0.08 - ih
+            c.rect(bx, iy, bw, ih, fill=t["primary"] if not t["dark_sidebar"] else t["highlight"])
+            c.text(bx + 0.2, iy + 0.15, tw_, ih - 0.3, sb["implication"], size=isz, bold=True, font=t["font_title"],
+                   color=t["white"], line_spacing=1.1, anchor="m")
+        elif istyle == "rule":  # no box: a rule, then a bold line in the accent colour
+            tw_ = bw
+            ih = _est_h(sb["implication"], tw_, isz, 1.1, bold=True, title=True) + 0.22
+            iy = bottom - pad + 0.08 - ih
+            c.line(bx, iy, bx + bw, iy, color=t["highlight"], weight=1.5)
+            c.text(bx, iy + 0.14, tw_, ih - 0.14, sb["implication"], size=isz, bold=True, font=t["font_title"],
+                   color=t["highlight"] if not t["dark_sidebar"] else t["white"], line_spacing=1.1)
         else:  # default: white panel with the accent bar
             tw_ = w - 2 * pad - 0.32
             ih = _est_h(sb["implication"], tw_, isz, 1.12, bold=True) + 0.3

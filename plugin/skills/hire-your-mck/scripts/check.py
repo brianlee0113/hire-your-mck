@@ -257,11 +257,12 @@ for sec_, tp_ in _tpls.items():  # a series = the one-pagers of one section
     if len(tp_) > 1:
         out("IO-02", "warn", f"one-pagers in section {sec_} use different templates (" + ", ".join(f"{k}: {len(v)}" for k, v in tp_.items()) +
             "); a series reuses one template")
-# A-12: the implication box comes in two styles; one style on every slide repeats a device
-_imp = [((s.get("layout") or {}).get("sidebar") or {}).get("implication_style", "bar") for s in content
+# A-12: implication boxes vary; the renderer rotates styles unless the spec fixes one
+_imp = [((s.get("layout") or {}).get("sidebar") or {}).get("implication_style") for s in content
         if ((s.get("layout") or {}).get("sidebar") or {}).get("implication")]
-if len(_imp) >= 4 and len(set(_imp)) == 1:
-    out("A-12", "warn", f"all {len(_imp)} implication boxes use the '{_imp[0]}' style; switch about one in three to the other")
+_fixed = [x for x in _imp if x]
+if len(_fixed) >= 4 and len(set(_fixed)) == 1:
+    out("A-12", "warn", f"all {len(_fixed)} implication boxes are fixed to '{_fixed[0]}'; leave implication_style out so the renderer varies them")
 # A-13: no slide type dominates a long deck (reference decks: one type is at most 24% of pages at the median)
 _typed = [s.get("archetype") for s in spec["slides"] if s["role"] in ("content", "backup") and s.get("archetype")]
 if len(_typed) >= 15:
