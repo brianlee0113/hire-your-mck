@@ -260,6 +260,10 @@ for sec_, tp_ in _tpls.items():  # a series = the one-pagers of one section
 # A-12: implication boxes vary; the renderer rotates styles unless the spec fixes one
 _imp = [((s.get("layout") or {}).get("sidebar") or {}).get("implication_style") for s in content
         if ((s.get("layout") or {}).get("sidebar") or {}).get("implication")]
+_sb = [s for s in content if (s.get("layout") or {}).get("variant") == "takeaway_sidebar" and s.get("status") != "ghost"]
+if len(_sb) >= 6 and len(_imp) > len(_sb) / 3:
+    out("A-12", "warn", f"implication boxes on {len(_imp)} of {len(_sb)} sidebar slides; keep them for slides that lead to a decision "
+        "(reference decks: about 1 in 30) and let the others end on plain bullets")
 _fixed = [x for x in _imp if x]
 if len(_fixed) >= 4 and len(set(_fixed)) == 1:
     out("A-12", "warn", f"all {len(_fixed)} implication boxes are fixed to '{_fixed[0]}'; leave implication_style out so the renderer varies them")
