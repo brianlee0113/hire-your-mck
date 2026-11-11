@@ -2370,15 +2370,25 @@ def _ring(c, cx, cy, r_out, r_in, a0, a1, fill, name="ring"):
 
 
 def donut(c, spec, slide, body, box):
-    """1–4 equal donuts: accent share from 12 o'clock clockwise, the rest grey, value in the centre (34 reference pages)."""
+    """1–4 equal donuts: accent share from 12 o'clock clockwise, the rest grey, value in the centre (34 reference pages).
+    Each may carry 2–3 detail lines; the group sits in the vertical middle of the body."""
     x, y, w, h = box
     t = c.t
     items = body["items"]
     n = len(items)
     cell = w / n
-    r = min(cell * 0.36, (h - 1.0) / 2 * 0.92)
+    det = any(it.get("detail") for it in items)
+    lab_h = max(_est_h(it["label"], cell - 0.3, S["header"] + 1, 1.05, bold=True) for it in items) + (0.32 if any(it.get("sub") for it in items) else 0)
+    det_h = 0
+    dfs = S["body"]
+    if det:
+        dfs = min(fit_size(it.get("detail", []) or ["x"], cell - 0.5, h * 0.3, S["body"], min_size=11) for it in items)
+        det_h = max(sum(_est_h(d_, cell - 0.7, dfs, 1.1) for d_ in it.get("detail", [])) for it in items) + 0.25
+    r = min(cell * 0.34, (h - lab_h - det_h - 0.35) / 2)
+    group = 2 * r + 0.14 + lab_h + det_h
+    top = y + max(0.0, (h - group) / 2)
     for i, it in enumerate(items):
-        cx, cy = x + cell * (i + 0.5), y + r + 0.15
+        cx, cy = x + cell * (i + 0.5), top + r
         v = spec.value(it["point"])
         share = max(0.0, min(1.0, v if v is not None else 0))
         col = t["primary"] if it.get("emphasis") else t["highlight"]
@@ -2397,6 +2407,10 @@ def donut(c, spec, slide, body, box):
         c.text(x + cell * i + 0.15, ly, cell - 0.3, lh, it["label"], size=S["header"] + 1, bold=True, color=t["title"], align="c", line_spacing=1.05)
         if it.get("sub"):
             c.text(x + cell * i + 0.15, ly + lh + 0.02, cell - 0.3, 0.3, it["sub"], size=S["label"], color=t["muted"], align="c")
+        if it.get("detail"):
+            dy = top + 2 * r + 0.14 + lab_h + 0.12
+            c.line(x + cell * i + 0.25, dy - 0.06, x + cell * (i + 1) - 0.25, dy - 0.06, color=t["rule"])
+            _bullets(c, it["detail"], x + cell * i + 0.25, dy + 0.04, cell - 0.5, det_h, size=dfs, fixed=True)
 
 
 def landscape(c, spec, slide, body, box):
@@ -2409,17 +2423,25 @@ def landscape(c, spec, slide, body, box):
     cw = (w - gap * (n - 1)) / n
     key_h = 0.34
     hh = 0.5
-    ph = h - hh - 0.08 - key_h
+    notes = any(s_.get("note") for s_ in segs)
+    note_h = 0.62 if notes else 0
+    y += key_h  # key on top right, above the columns
+    h -= key_h
+    ph = h - hh - 0.08 - note_h
     nmax = max(len(s_["items"]) for s_ in segs)
     chip = min(0.62, (ph - 0.2) / nmax - 0.1)
     marked = set(body.get("marked", []))
     us = body.get("us")
     names = [it for s_ in segs for it in s_["items"]]
     fs = min(fit_size([nm], cw - 0.4, chip - 0.06, S["body"] + 1, min_size=10, indent=0, line_spacing=1.0, bold=True) for nm in names)
+    head_fs = S["header"]  # one size for every header; no word may break inside a column
+    while head_fs > 10 and any(measure.width_pt(wd, FONTS["body"], head_fs, True) / 72 > cw - 0.25
+                               for s_ in segs for wd in s_["label"].split()):
+        head_fs -= 0.5
     for i, s_ in enumerate(segs):
         sx = x + i * (cw + gap)
         hd = c.rect(sx, y, cw, hh, fill=t["primary"])
-        c.label_in(hd, s_["label"], size=S["header"], bold=True, color=t["white"])
+        c.label_in(hd, s_["label"], size=head_fs, bold=True, color=t["white"])
         c.rect(sx, y + hh + 0.08, cw, ph, fill=t["panel"])
         for k, nm in enumerate(s_["items"]):
             cy = y + hh + 0.08 + 0.14 + k * (chip + 0.1)
@@ -2428,12 +2450,28 @@ def landscape(c, spec, slide, body, box):
                    line=t["primary"] if is_m else t["rule"], weight=1.75 if is_m else 0.75)
             c.text(sx + 0.2, cy, cw - 0.4, chip, nm, size=fs, bold=is_m or is_us, color=t["white"] if is_us else t["title"],
                    align="c", anchor="m", line_spacing=1.0)
-    key = [body.get("hedge", "Examples, not exhaustive")]
-    if marked and body.get("marked_label"):
-        key.append(f"Outlined: {body['marked_label']}")
+    for i, s_ in enumerate(segs):
+        if s_.get("note"):
+            sx = x + i * (cw + gap)
+            c.line(sx, y + h - note_h + 0.06, sx + cw, y + h - note_h + 0.06, color=t["primary"], weight=1.25)
+            c.text(sx, y + h - note_h + 0.12, cw, note_h - 0.12, s_["note"], size=S["label"], bold=True, color=t["title"], line_spacing=1.05)
+    # key: swatch + meaning, top right (as consultants usually mark it)
+    kx = x + w
+    ky = y - key_h + 0.04
+    entries = []
     if us:
-        key.append(f"Filled: {us}")
-    c.text(x, y + h - key_h + 0.06, w, key_h, "   ·   ".join(key), size=S["small"], color=t["muted"])
+        entries.append(("fill", f"{us}"))
+    if marked and body.get("marked_label"):
+        entries.append(("outline", body["marked_label"]))
+    for kind_, lab in entries:
+        tw_ = measure.width_pt(lab, FONTS["body"], S["small"]) / 72 + 0.1
+        kx -= tw_
+        c.text(kx, ky, tw_, 0.24, lab, size=S["small"], color=t["text"])
+        kx -= 0.34
+        c.rect(kx, ky + 0.03, 0.26, 0.17, fill=t["highlight"] if kind_ == "fill" else t["white"],
+               line=None if kind_ == "fill" else t["primary"], weight=1.75)
+        kx -= 0.3
+    c.text(x, ky, kx - x, 0.24, body.get("hedge", "Examples, not exhaustive"), size=S["small"], color=t["muted"])
 
 
 def from_to(c, spec, slide, body, box):
@@ -2503,14 +2541,19 @@ def venn(c, spec, slide, body, box):
     if body.get("notes") or body.get("centre"):
         nx = x + vw + 0.3
         nw = w - vw - 0.3
-        c.line(ccx + 0.08, ccy, nx - 0.1, ccy, color=t["muted"], weight=0.75)
-        ny = ccy - 0.3
+        c.rect(nx, y, nw, h, fill=t["panel"])  # notes as a full-height panel, so the right half carries the explanation
+        c.rect(nx, y, nw, 0.06, fill=t["primary"])
+        c.line(ccx + 0.08, ccy, nx, ccy, color=t["muted"], weight=0.75)
+        pad_ = 0.3
+        ny = y + 0.3
         if body.get("centre"):
-            hh = _est_h(body["centre"], nw, S["header"] + 3, 1.05, bold=True, title=True)
-            c.text(nx, ny, nw, hh, body["centre"], size=S["header"] + 3, bold=True, font=t["font_title"], color=t["title"], line_spacing=1.05)
-            ny += hh + 0.18
+            hh = _est_h(body["centre"], nw - 2 * pad_, S["header"] + 6, 1.05, bold=True, title=True)
+            c.text(nx + pad_, ny, nw - 2 * pad_, hh, body["centre"], size=S["header"] + 6, bold=True, font=t["font_title"], color=t["title"], line_spacing=1.05)
+            ny += hh + 0.3
         if body.get("notes"):
-            _bullets(c, body["notes"], nx, ny, nw, y + h - ny, size=S["body"] + 1)
+            fs = fit_size(body["notes"], nw - 2 * pad_ - 0.2, y + h - ny - 0.3, S["body"] + 4, min_size=12, para_gap=0.12)
+            paras = [[("–  ", {"color": t["muted"]}), (n_, {"color": t["text"]})] for n_ in body["notes"]]
+            c.text(nx + pad_, ny, nw - 2 * pad_, y + h - ny - 0.3, paras, size=fs, line_spacing=1.25)
 
 
 def not_yet(c, slide, box):

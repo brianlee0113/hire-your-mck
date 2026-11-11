@@ -3033,6 +3033,14 @@
               "emphasis": {
                 "type": "boolean",
                 "description": "Ring in the primary colour instead of the accent."
+              },
+              "detail": {
+                "type": "array",
+                "maxItems": 3,
+                "items": {
+                  "type": "string"
+                },
+                "description": "2–3 short lines under the donut: what drives the share."
               }
             }
           }
@@ -3073,6 +3081,10 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "note": {
+                "type": "string",
+                "description": "One bold line under the column: what the segment shows."
               }
             }
           }
