@@ -118,7 +118,8 @@ Brief it in plain words, for example:
 
 It asks a few multiple-choice questions (audience, decision, material, look), shows you the
 storyline for approval, finds and sources the data slide by slide, checks the deck against its
-rules, and renders the files. It can also build a storyline-only "ghost deck" or a single slide.
+rules, and renders the files. It can also build a storyline-only "ghost deck", a single slide, or a
+deep 30–60 slide deck worked through as a problem (problem statement, issue tree, a section per branch).
 
 ## Setup
 
