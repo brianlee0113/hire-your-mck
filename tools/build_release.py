@@ -18,7 +18,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 NAME = "hire-your-mck"
 PKG = "hire_your_mck"
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 DIST = ROOT / "dist"
 ALLOWED = {".md", ".txt", ".json", ".yaml", ".yml", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico"}
 
@@ -48,6 +48,7 @@ packages = ["src/{PKG}"]
 '''
 
 CLI = f'''"""Usage: {NAME} check <spec.json>
+       {NAME} verify <spec.json> [--write]   (re-open every web source; add pymupdf for PDF sources)
        {NAME} render <spec.json> [--out DIR] [--theme navy] [--font-pair arial]"""
 import pathlib
 import runpy
@@ -61,6 +62,10 @@ def main():
     if cmd == "check":
         sys.argv = ["{NAME} check", *args]
         runpy.run_path(str(HERE / "check.py"), run_name="__main__")
+        return 0
+    if cmd == "verify":
+        sys.argv = ["{NAME} verify", *args]
+        runpy.run_path(str(HERE / "verify.py"), run_name="__main__")
         return 0
     if cmd == "render":
         from .renderer.__main__ import main as render
@@ -82,6 +87,7 @@ The renderer and checker behind the [{NAME}](https://github.com/brianlee0113/hir
 
 ```
 uvx {NAME} check spec.json
+uvx --with pymupdf {NAME} verify spec.json --write
 uvx {NAME} render spec.json --out output [--theme navy]
 ```
 
@@ -129,13 +135,17 @@ MIT licensed. Not affiliated with or endorsed by McKinsey & Company.
 # SKILL.md and references: script paths -> package commands
 SUBS = [
     ("python <skill>/scripts/check.py spec.json ", f"uvx {NAME} check spec.json  "),
+    ("python <skill>/scripts/verify.py spec.json --write", f"uvx --with pymupdf {NAME} verify spec.json --write"),
     ("python <skill>/scripts/render.py spec.json", f"uvx {NAME} render spec.json"),
-    ("Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow measures text with the real fonts so nothing overflows).",
-     f"`uvx` fetches the `{NAME}` package from PyPI on first run. Without `uv`: `pip install {NAME}`, then drop the `uvx`."),
+    ("Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow measures text with the real fonts so nothing overflows; add `pymupdf` so `verify.py` can read PDF sources).",
+     f"`uvx` fetches the `{NAME}` package from PyPI on first run (`--with pymupdf` lets `verify` read PDF sources). Without `uv`: `pip install {NAME} pymupdf`, then drop the `uvx`."),
     ("`scripts/templates/themes.json`", "`references/themes.json`"),
     ("`scripts/storyline.schema.json`", "`references/storyline.schema.json`"),
     ("`check.py`", f"`{NAME} check`"),
     ("`render.py`", f"`{NAME} render`"),
+    ("`verify.py spec.json --write`", f"`{NAME} verify spec.json --write`"),
+    ("`verify.py --write`", f"`{NAME} verify --write`"),
+    ("`verify.py`", f"`{NAME} verify`"),
     ("check.py", f"`{NAME} check`"),
 ]
 
@@ -143,7 +153,7 @@ SUBS = [
 def substitute(text, path):
     for old, new in SUBS:
         text = text.replace(old, new)
-    left = re.findall(r"scripts/|\.py\b", text)
+    left = re.findall(r"scripts/|\.py\b", text.replace('"by": "verify.py"', ""))  # the value verify writes, not a path
     if left:
         sys.exit(f"{path}: script reference left after substitution: {left}")
     return text
@@ -161,6 +171,7 @@ def build_package(out=DIST / "pypi"):
     for f in (ROOT / "renderer" / "geo").glob("*.json"):  # map outlines (Natural Earth, public domain)
         shutil.copy(f, src / "renderer" / "geo" / f.name)
     shutil.copy(ROOT / "tools/spec/check.py", src / "check.py")
+    shutil.copy(ROOT / "tools/spec/verify.py", src / "verify.py")
     shutil.copy(ROOT / "docs/spec/storyline.schema.json", src / "storyline.schema.json")
     shutil.copy(ROOT / "templates/themes.json", src / "templates" / "themes.json")
     (src / "__init__.py").write_text(f'__version__ = "{VERSION}"\n')
