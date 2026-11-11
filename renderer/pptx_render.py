@@ -2332,6 +2332,7 @@ def marimekko(c, spec, slide, body, box):
     hl = {(hh["column"], hh["row"]) for hh in body.get("highlight", [])}
     xx = px
     first_bands = []
+    outlines = []  # drawn last, so no later cell covers the outline
     for ci, cl in enumerate(cols):
         cw = pw * widths[ci] / tot
         tw__ = max(cw, 0.6)
@@ -2347,13 +2348,15 @@ def marimekko(c, spec, slide, body, box):
             if cw > 0.45 and ch > 0.26:
                 c.text(xx, yy + ch / 2 - 0.12, cw, 0.24, dp_fmt(spec, p_), size=S["label"], color=t["white"] if dark else t["title"], align="c")
             if (cl["label"], rows[ri] if ri < len(rows) else None) in hl:
-                c.rect(xx - 0.03, yy - 0.03, cw + 0.06, ch + 0.06, line=t["highlight"], weight=2.5, dash=True)
+                outlines.append((xx, yy, cw, ch))
             if ci == 0:
                 first_bands.append((yy, ch))
             yy += ch
         lw_ = max(cw, measure.width_pt(cl["label"], FONTS["body"], S["label"]) / 72 + 0.1)  # narrow columns: label may run wider
         c.text(xx + cw / 2 - lw_ / 2, bot + 0.06, lw_, 0.3, cl["label"], size=S["label"], color=t["text"], align="c")
         xx += cw
+    for ox_, oy_, ow_, oh_ in outlines:
+        c.rect(ox_ - 0.03, oy_ - 0.03, ow_ + 0.06, oh_ + 0.06, line=t["highlight"], weight=2.5, dash=True)
     for r, (yy, ch) in zip(rows, first_bands):
         c.text(x, yy, lab_w, ch, r, size=S["label"] + 1, bold=True, color=t["title"], align="r", anchor="m", line_spacing=1.0)
     if body.get("width_label"):
