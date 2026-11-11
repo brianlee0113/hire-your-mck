@@ -51,6 +51,9 @@ def build(OUT=OUT, zip_it=True):
     shutil.copy(ROOT / "docs/spec/storyline.schema.json", OUT / "scripts" / "storyline.schema.json")
     for f in (ROOT / "renderer").glob("*.py"):
         shutil.copy(f, OUT / "scripts" / "renderer" / f.name)
+    (OUT / "scripts" / "renderer" / "geo").mkdir()
+    for f in (ROOT / "renderer" / "geo").glob("*.json"):  # map outlines (Natural Earth, public domain)
+        shutil.copy(f, OUT / "scripts" / "renderer" / "geo" / f.name)
     shutil.copy(ROOT / "templates" / "themes.json", OUT / "scripts" / "templates" / "themes.json")
     (OUT / "scripts" / "render.py").write_text(RENDER_WRAPPER)
     (OUT / "scripts" / "requirements.txt").write_text("python-pptx>=1.0.0\nopenpyxl>=3.1\njsonschema>=4.0\npillow>=9.0\n")

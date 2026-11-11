@@ -3,7 +3,7 @@
  "mode": "deck_detailed",
  "meta": {
   "title": "Renderer showcase 4",
-  "subtitle": "Cost curve, org chart and the three initiative one-pager templates",
+  "subtitle": "Cost curve, org chart, initiative one-pagers and maps",
   "company_name": "Example Logistics (fictional)",
   "date": "2026-11-10",
   "language": "en-US",
@@ -51,6 +51,20 @@
      {
       "text": "82% of urban routes fit today's electric-van range",
       "slide_id": "7"
+     }
+    ]
+   },
+   {
+    "id": "4",
+    "text": "The first wave covers the US, Germany and Mexico, where two thirds of emissions sit",
+    "supports": [
+     "8",
+     "9"
+    ],
+    "sub_points": [
+     {
+      "text": "The US alone emits over a third of the total",
+      "slide_id": "9"
      }
     ]
    }
@@ -442,6 +456,149 @@
    "section_id": "3"
   },
   {
+   "id": "8",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "archetype": "map",
+   "message_type": "item",
+   "lead_message": {
+    "text": "Route optimization goes first where the network is densest: the US, Germany and Mexico"
+   },
+   "unit_line": "**Depot network, Example Logistics**, 2026",
+   "body": {
+    "kind": "map",
+    "geo": "world",
+    "style": "highlight",
+    "groups": [
+     {
+      "label": "First wave, 2027",
+      "codes": [
+       "USA",
+       "DEU",
+       "MEX"
+      ]
+     },
+     {
+      "label": "Second wave, 2028",
+      "codes": [
+       "CAN",
+       "POL",
+       "GBR",
+       "BRA",
+       "IND"
+      ]
+     }
+    ],
+    "callouts": [
+     {
+      "code": "USA",
+      "header": "United States",
+      "text": "Largest network; Dallas pilot depot",
+      "point": {
+       "data_ref": "dep-us"
+      }
+     },
+     {
+      "code": "MEX",
+      "header": "Mexico",
+      "text": "Cross-border routes into Texas",
+      "point": {
+       "data_ref": "dep-mx"
+      }
+     },
+     {
+      "code": "DEU",
+      "header": "Germany",
+      "text": "Hub for the European network",
+      "point": {
+       "data_ref": "dep-de"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "9",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "archetype": "map",
+   "message_type": "item",
+   "lead_message": {
+    "text": "Three countries make up two thirds of emissions, so the first wave covers most of the gap"
+   },
+   "unit_line": "**Fleet and facility emissions by country**, kt CO2e, 2025",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The US alone is over a third",
+     "bullets": [
+      "**United States:** the largest fleet and the longest routes",
+      "**Germany and Mexico:** next largest, with dense urban routes",
+      "**Everyone else:** small sites that follow in 2028"
+     ],
+     "implication": "Start in the three largest countries; the rest follow the same playbook"
+    }
+   },
+   "body": {
+    "kind": "map",
+    "geo": "world",
+    "style": "bubble",
+    "regions": [
+     {
+      "code": "USA",
+      "point": {
+       "data_ref": "em-USA"
+      }
+     },
+     {
+      "code": "MEX",
+      "point": {
+       "data_ref": "em-MEX"
+      }
+     },
+     {
+      "code": "CAN",
+      "point": {
+       "data_ref": "em-CAN"
+      }
+     },
+     {
+      "code": "DEU",
+      "point": {
+       "data_ref": "em-DEU"
+      }
+     },
+     {
+      "code": "POL",
+      "point": {
+       "data_ref": "em-POL"
+      }
+     },
+     {
+      "code": "GBR",
+      "point": {
+       "data_ref": "em-GBR"
+      }
+     },
+     {
+      "code": "BRA",
+      "point": {
+       "data_ref": "em-BRA"
+      }
+     },
+     {
+      "code": "IND",
+      "point": {
+       "data_ref": "em-IND"
+      }
+     }
+    ]
+   }
+  },
+  {
    "id": "end",
    "role": "end_page",
    "status": "filled"
@@ -704,6 +861,116 @@
    "period": "Q2 2026",
    "source_id": "s2",
    "locator": "Pilot report, Dallas depot"
+  },
+  {
+   "id": "em-USA",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, USA",
+   "value": 62,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-MEX",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, MEX",
+   "value": 18,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-CAN",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, CAN",
+   "value": 14,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-DEU",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, DEU",
+   "value": 21,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-POL",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, POL",
+   "value": 9,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-GBR",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, GBR",
+   "value": 11,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-BRA",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, BRA",
+   "value": 12,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-IND",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, IND",
+   "value": 8,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "dep-us",
+   "slide_id": "8",
+   "label": "Depots in the United States",
+   "value": 12,
+   "unit": "depots",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Network list"
+  },
+  {
+   "id": "dep-de",
+   "slide_id": "8",
+   "label": "Depots in Germany",
+   "value": 5,
+   "unit": "depots",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Network list"
+  },
+  {
+   "id": "dep-mx",
+   "slide_id": "8",
+   "label": "Depots in Mexico",
+   "value": 4,
+   "unit": "depots",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Network list"
   }
  ],
  "sources": [
@@ -741,6 +1008,12 @@
    "title": "Fleet",
    "exec_item_id": "3",
    "tracker_label": "Fleet"
+  },
+  {
+   "id": "4",
+   "title": "Network",
+   "exec_item_id": "4",
+   "tracker_label": "Network"
   }
  ]
 }

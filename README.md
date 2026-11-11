@@ -209,4 +209,6 @@ All of it is in [`skill/references/principles.md`](skill/references/principles.m
 
 MIT. See [LICENSE](LICENSE).
 
+Map outlines in `renderer/geo/` are built from [Natural Earth](https://www.naturalearthdata.com/) (public domain) by `tools/geo/build_geo.py`; borders follow Natural Earth's de facto boundaries.
+
 *Not affiliated with or endorsed by McKinsey & Company. "McKinsey-style" describes a style of slide writing; the design, themes and code are original.*

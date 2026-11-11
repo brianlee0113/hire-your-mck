@@ -2046,6 +2046,243 @@ def initiative(c, spec, slide, body, box):
             SIDEBAR_WARN.append(f"slide {slide.get('id')}: the pros_prereqs template has no impact pill; put the impact in a description line")
 
 
+# ---------------------------------------------------------------- map
+
+_GEO = {}
+MAP_LAND = "#D5DBE1"  # light grey land, as on the reference maps
+EXTENTS = {  # world crops, as the bounding box of these countries
+    "europe": ["PRT", "ESP", "FRA", "GBR", "IRL", "NOR", "SWE", "FIN", "EST", "POL", "ITA", "GRC", "CYP", "ROU", "UKR", "BLR"],
+    "americas": ["CAN", "USA", "MEX", "BRA", "ARG", "CHL", "COL", "PER"],
+    "asia": ["CHN", "IND", "JPN", "IDN", "KOR", "PHL", "VNM", "THA", "MYS", "PAK", "KAZ", "MNG"],
+}
+
+
+def _geo(name):
+    if name not in _GEO:
+        import json as _json, os as _os
+        with open(_os.path.join(_os.path.dirname(__file__), "geo", f"{name}.json")) as fh:
+            _GEO[name] = _json.load(fh)
+    return _GEO[name]
+
+
+def _clip(poly, x0, y0, x1, y1):
+    """Sutherland–Hodgman: clip a polygon [(x, y)] to a rectangle."""
+    def cut(pts, inside, inter):
+        out = []
+        for i, cur in enumerate(pts):
+            prev = pts[i - 1]
+            if inside(cur):
+                if not inside(prev):
+                    out.append(inter(prev, cur))
+                out.append(cur)
+            elif inside(prev):
+                out.append(inter(prev, cur))
+        return out
+    def ix(p, q, x):
+        t_ = (x - p[0]) / ((q[0] - p[0]) or 1e-9)
+        return (x, p[1] + t_ * (q[1] - p[1]))
+    def iy(p, q, y):
+        t_ = (y - p[1]) / ((q[1] - p[1]) or 1e-9)
+        return (p[0] + t_ * (q[0] - p[0]), y)
+    for inside, inter in ((lambda p: p[0] >= x0, lambda p, q: ix(p, q, x0)), (lambda p: p[0] <= x1, lambda p, q: ix(p, q, x1)),
+                          (lambda p: p[1] >= y0, lambda p, q: iy(p, q, y0)), (lambda p: p[1] <= y1, lambda p, q: iy(p, q, y1))):
+        if not poly:
+            break
+        poly = cut(poly, inside, inter)
+    return poly
+
+
+def _freeform(c, rings, fill, line, name):
+    """One editable shape per region; each ring a closed contour (inches)."""
+    rings = [r for r in rings if len(r) >= 3]
+    if not rings:
+        return None
+    fb = c.slide.shapes.build_freeform(Inches(rings[0][0][0]), Inches(rings[0][0][1]), scale=1.0)
+    for j, r in enumerate(rings):
+        pts = [(Inches(px_), Inches(py_)) for px_, py_ in r]
+        if j:
+            fb.move_to(*pts[0])
+        fb.add_line_segments(pts[1:], close=True)
+    shp = fb.convert_to_shape()
+    shp.name = name
+    shp.fill.solid()
+    shp.fill.fore_color.rgb = rgb(fill)
+    shp.line.color.rgb = rgb(line)
+    shp.line.width = Pt(0.4)
+    shp.shadow.inherit = False
+    return shp
+
+
+def _class_colors(t, n):
+    """n steps of one hue, light to dark: tints of the accent, then the accent, then the primary."""
+    if n <= 2:
+        return [tint_of(t["highlight"], 0.55), t["primary"]][-n:]
+    tints = [tint_of(t["highlight"], 0.82 - (0.82 - 0.3) * k / max(1, n - 3)) for k in range(n - 2)]
+    return tints + [t["highlight"], t["primary"]]
+
+
+def map_body(c, spec, slide, body, box):
+    """Choropleth, highlight or bubble map (68 reference pages: light grey land, white hairlines, one hue, legend in the empty sea)."""
+    x, y, w, h = box
+    t = c.t
+    geo = _geo(body["geo"])
+    regs = geo["regions"]
+    style = body["style"]
+    calls = body.get("callouts", [])
+    vals = {r["code"]: spec.value(r.get("point")) for r in body.get("regions", []) if r.get("point")}
+    listed = {r["code"] for r in body.get("regions", [])}
+    # extent in geo units
+    if body.get("extent", "auto") in EXTENTS:
+        pts = [(p[i], p[i + 1]) for cc in EXTENTS[body["extent"]] if cc in regs for p in regs[cc]["paths"] for i in range(0, len(p), 2)]
+        gx0, gx1 = min(p[0] for p in pts), max(p[0] for p in pts)
+        gy0, gy1 = min(p[1] for p in pts), max(p[1] for p in pts)
+        pad_ = 0.04 * (gx1 - gx0)
+        gx0, gx1, gy0, gy1 = gx0 - pad_, gx1 + pad_, gy0 - pad_, gy1 + pad_
+        crop = True
+    else:
+        gx0, gy0, gx1, gy1 = 0, 0, geo["width"], geo["height"]
+        crop = False
+    # edge columns for callouts
+    sides = {}
+    for cl in calls:
+        if cl["code"] not in regs:
+            continue
+        lx = regs[cl["code"]]["label"][0]
+        sides.setdefault(cl.get("side") or ("left" if lx < (gx0 + gx1) / 2 else "right"), []).append(cl)
+    col_w = 2.1
+    mx = x + (col_w + 0.25 if "left" in sides else 0)
+    mw = w - (col_w + 0.25 if "left" in sides else 0) - (col_w + 0.25 if "right" in sides else 0)
+    # a legend needs a clear column beside the map (the US map has no empty sea at the bottom right)
+    side_legend = style in ("choropleth", "highlight") and body["geo"] == "us_states" and "right" not in sides
+    k = min(mw / (gx1 - gx0), h / (gy1 - gy0))
+    if side_legend and mw - (gx1 - gx0) * k < 1.7:
+        k = (mw - 1.7) / (gx1 - gx0)
+    ox = mx if side_legend else mx + (mw - (gx1 - gx0) * k) / 2
+    oy = y + max(0.0, h - (gy1 - gy0) * k) / 2  # a wide map sits in the middle of the body, not at the top
+    P_ = lambda gx, gy: (ox + (gx - gx0) * k, oy + (gy - gy0) * k)
+    # fills
+    colors, legend = {}, []
+    no_data = False
+    if style == "choropleth":
+        vv = sorted(v for v in vals.values() if v is not None)
+        br = body.get("breaks")
+        if not br and vv:
+            step = _nice_step(vv[-1] - vv[0], 5)
+            lo_ = math.floor(vv[0] / step) * step
+            br = [lo_ + step * (i + 1) for i in range(4)]
+        br = br or [0]
+        cols = _class_colors(t, len(br) + 1)
+        unit = next(((spec.dpoint(r.get("point")) or {}).get("unit") for r in body.get("regions", []) if r.get("point")), "")
+        f_ = lambda v: fmt(v, unit, None)
+        for code, v in vals.items():
+            if v is not None:
+                colors[code] = cols[sum(1 for b in br if v >= b)]
+        labels = [f"Under {f_(br[0])}"] + [f"{f_(a)}–{f_(b)}" for a, b in zip(br, br[1:])] + [f"{f_(br[-1])} or more"]
+        legend = list(zip(reversed(cols), reversed(labels)))
+        no_data = body["geo"] == "us_states" and any(cc not in colors for cc in regs) or any(cc in listed and cc not in colors for cc in regs)
+    elif style == "highlight":
+        gcols = [t["primary"], t["highlight"], tint_of(t["highlight"], 0.55)]
+        for g, gc in zip(body.get("groups", []), gcols):
+            for cc in g["codes"]:
+                colors[cc] = gc
+            legend.append((gc, g["label"]))
+    for code, r in regs.items():
+        rings = []
+        for p in r["paths"]:
+            ring = [(p[i], p[i + 1]) for i in range(0, len(p), 2)]
+            if crop:
+                ring = _clip(ring, gx0, gy0, gx1, gy1)
+            if len(ring) >= 3:
+                rings.append([P_(*q) for q in ring])
+        if rings:
+            _freeform(c, rings, colors.get(code, MAP_LAND), t["white"], f"{code} {r['name']}")
+    # bubbles: area proportional to value, largest drawn first
+    if style == "bubble" and vals:
+        vmax = max(v for v in vals.values() if v is not None) or 1
+        rmax = min(0.5, 0.065 * mw)
+        unit = next(((spec.dpoint(r.get("point")) or {}).get("unit") for r in body.get("regions", []) if r.get("point")), "")
+        labs_ = []
+        for code, v in sorted(vals.items(), key=lambda kv: -(kv[1] or 0)):
+            if v is None or code not in regs:
+                continue
+            cx, cy = P_(*regs[code]["label"])
+            r_ = rmax * math.sqrt(max(v, 0) / vmax)
+            dot = c.rect(cx - r_, cy - r_, 2 * r_, 2 * r_, fill=t["highlight"], line=t["white"], weight=1, shape=MSO_SHAPE.OVAL)
+            sf = dot.fill._xPr.find(qn("a:solidFill"))  # 80% opaque so overlapping bubbles stay readable
+            if sf is not None and len(sf):
+                etree.SubElement(sf[0], qn("a:alpha"), val="80000")
+            pt_ = next(r["point"] for r in body["regions"] if r["code"] == code)
+            labs_.append((cx, cy, r_, pt_))
+        placed = []
+        def free(bx, by, bw, bh):
+            return all(bx + bw < px or bx > px + pw_ or by + bh < py or by > py + ph_ for px, py, pw_, ph_ in placed)
+        for cx, cy, r_, pt_ in labs_:  # numbers after all circles; an overlapping number moves outside its circle
+            txt = dp_fmt(spec, pt_)
+            tw_ = len(txt) * 0.09 + 0.1
+            spots = ([(cx - tw_ / 2, cy - 0.12, True)] if r_ > 0.24 else []) + \
+                    [(cx + r_ + 0.04, cy - 0.12, False), (cx - r_ - 0.04 - tw_, cy - 0.12, False), (cx - tw_ / 2, cy + r_ + 0.02, False),
+                     (cx - tw_ / 2, cy - r_ - 0.26, False)]
+            bx, by, inside = next(((sx, sy, ins) for sx, sy, ins in spots if free(sx, sy, tw_, 0.24)), spots[0])
+            placed.append((bx, by, tw_, 0.24))
+            c.text(bx, by, tw_, 0.24, txt, size=S["label"] if inside else S["small"], bold=True,
+                   color=t["white"] if inside else t["title"], align="c" if inside else "l")
+        # size key: two round values, as the reference maps do ("50 · 10")
+        mag = 10 ** math.floor(math.log10(vmax))
+        big_ = max(m_ * mag for m_ in (1, 2, 5) if m_ * mag <= vmax)
+        small_ = big_ / 5
+        kx, ky = mx + mw - rmax - 0.15, y + h - 2 * rmax - 0.45
+        for v_ in (big_, small_):
+            r_ = rmax * math.sqrt(v_ / vmax)
+            c.rect(kx - r_, ky + 2 * rmax - 2 * r_, 2 * r_, 2 * r_, line=t["muted"], weight=0.75, shape=MSO_SHAPE.OVAL)
+        unit_txt = "" if unit in ("%", "$M", "$B", "$K") else f" {unit}"
+        c.text(kx - 1.3, ky + 2 * rmax + 0.04, 2.6, 0.22, f"{fmt(big_, unit, None)} · {fmt(small_, unit, None)}{unit_txt}; area = value",
+               size=S["small"] - 1, color=t["muted"], align="c")
+    # legend: small swatches stacked, in the empty sea (bottom right for the US, bottom left for the world)
+    if no_data:
+        legend.append((MAP_LAND, "No data"))
+    if legend:
+        lh_ = 0.25
+        n_ = len(legend) + (1 if body.get("legend_title") else 0)
+        if side_legend:
+            lx_, ly_ = ox + (gx1 - gx0) * k + 0.25, y + (gy1 - gy0) * k - lh_ * n_
+        else:  # bottom left of the map itself: the South Pacific is empty on a world map
+            lx_, ly_ = ox + 0.05, oy + (gy1 - gy0) * k - lh_ * n_
+        if body.get("legend_title"):
+            c.text(lx_, ly_, 2.4, lh_, body["legend_title"], size=S["small"], bold=True, color=t["title"])
+            ly_ += lh_
+        for col, lab in legend:
+            c.rect(lx_, ly_ + 0.04, 0.24, 0.16, fill=col)
+            c.text(lx_ + 0.32, ly_, 2.0, lh_, lab, size=S["small"], color=t["text"])
+            ly_ += lh_
+    # callouts in aligned edge columns, elbow leaders (no diagonals)
+    for side_, items in sides.items():
+        items = sorted(items, key=lambda cl: regs[cl["code"]]["label"][1])
+        cx_col = x if side_ == "left" else x + w - col_w
+        heights = [0.3 + (_est_h(cl["text"], col_w, S["label"], 1.05) if cl.get("text") else 0) for cl in items]
+        ys_ = []
+        cur = y
+        for cl, hh in zip(items, heights):
+            want = P_(*regs[cl["code"]]["label"])[1] - 0.12
+            cur = max(cur, want)
+            ys_.append(cur)
+            cur += hh + 0.18
+        over = cur - 0.18 - (y + h)
+        if over > 0:
+            ys_ = [v - over for v in ys_]
+            for i in range(1, len(ys_)):
+                ys_[i] = max(ys_[i], ys_[i - 1] + heights[i - 1] + 0.18)
+        for cl, hh, ty in zip(items, heights, ys_):
+            ax, ay = P_(*regs[cl["code"]]["label"])
+            head = cl["header"] + (f"  {dp_fmt(spec, cl['point'])}" if cl.get("point") else "")
+            paras = [[(head, {"bold": True, "color": t["title"]})]] + ([[(cl["text"], {"size": S["label"], "color": t["text"]})]] if cl.get("text") else [])
+            c.text(cx_col, ty, col_w, hh, paras, size=S["label"] + 1, align="l" if side_ == "left" else "l", line_spacing=1.05)
+            ly = ty + 0.13
+            ex = cx_col + col_w + 0.05 if side_ == "left" else cx_col - 0.05
+            c.line(ax, ay, ax, ly, color=t["muted"], weight=0.75)
+            c.line(ax, ly, ex, ly, color=t["muted"], weight=0.75)
+            c.rect(ax - 0.035, ay - 0.035, 0.07, 0.07, fill=t["title"], shape=MSO_SHAPE.OVAL)
+
+
 def not_yet(c, slide, box):
     x, y, w, h = box
     c.rect(x, y, w, h, line=c.t["placeholder"], dash=True)
@@ -2077,7 +2314,8 @@ def content(c, spec, slide, page_no):
              "equation": lambda: equation_body(c, spec, body, box),
              "cost_curve": lambda: cost_curve(c, spec, slide, body, box),
              "org": lambda: org_chart(c, spec, slide, body, box),
-             "initiative": lambda: initiative(c, spec, slide, body, box)}
+             "initiative": lambda: initiative(c, spec, slide, body, box),
+             "map": lambda: map_body(c, spec, slide, body, box)}
     if slide.get("status") == "ghost":
         ghost(c, spec, slide, box)
     elif not body:

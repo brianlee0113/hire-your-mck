@@ -157,6 +157,9 @@ def build_package(out=DIST / "pypi"):
     (src / "templates").mkdir()
     for f in (ROOT / "renderer").glob("*.py"):
         shutil.copy(f, src / "renderer" / f.name)
+    (src / "renderer" / "geo").mkdir()
+    for f in (ROOT / "renderer" / "geo").glob("*.json"):  # map outlines (Natural Earth, public domain)
+        shutil.copy(f, src / "renderer" / "geo" / f.name)
     shutil.copy(ROOT / "tools/spec/check.py", src / "check.py")
     shutil.copy(ROOT / "docs/spec/storyline.schema.json", src / "storyline.schema.json")
     shutil.copy(ROOT / "templates/themes.json", src / "templates" / "themes.json")

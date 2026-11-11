@@ -218,6 +218,30 @@ for s in content:
         for r in b.get("roles", []) + [{"node": x["attach"]} for x in b.get("side", [])]:
             if r["node"] not in ids:
                 out("OC-01", "fail", f"roles or side entry points at unknown node {r['node']}", s["id"])
+    if b.get("kind") == "map":
+        _here_ = pathlib.Path(__file__).resolve().parent
+        _gp = next((q / "geo" / f"{b['geo']}.json" for q in (_here_ / "renderer", *[pp / "renderer" for pp in _here_.parents]) if (q / "geo" / f"{b['geo']}.json").exists()), None)
+        codes_ = set(json.load(open(_gp))["regions"]) if _gp else None
+        used = [r["code"] for r in b.get("regions", [])] + [cc for g in b.get("groups", []) for cc in g["codes"]] + [cl["code"] for cl in b.get("callouts", [])]
+        if codes_ is not None:
+            bad = sorted({cc for cc in used if cc not in codes_})
+            if bad:
+                out("MP-01", "fail", f"region codes not on the {b['geo']} map: {', '.join(bad[:8])} (world uses ISO 3166 alpha-3, the US map USPS codes)", s["id"])
+        br = b.get("breaks")
+        if br and any(b2 <= b1 for b1, b2 in zip(br, br[1:])):
+            out("MP-02", "fail", "breaks must ascend", s["id"])
+        if b["style"] in ("choropleth", "bubble") and not b.get("regions"):
+            out("MP-02", "fail", f"{b['style']} map without regions and values", s["id"])
+        if b["style"] == "highlight" and not b.get("groups"):
+            out("MP-03", "fail", "highlight map without groups", s["id"])
+        if b["style"] == "bubble":
+            units_ = {(dps.get((r.get("point") or {}).get("data_ref")) or {}).get("unit") for r in b.get("regions", []) if r.get("point")}
+            if len(units_) > 1:
+                out("MP-04", "fail", f"bubble values in different units ({', '.join(map(str, units_))})", s["id"])
+            if any(((dps.get((r.get("point") or {}).get("data_ref")) or {}).get("value") or 0) < 0 for r in b.get("regions", [])):
+                out("MP-04", "fail", "bubble map with a negative value; use a choropleth or bars", s["id"])
+        if len(b.get("callouts", [])) > 6:
+            out("MP-03", "warn", "more than 6 callouts crowd the map; keep the ones the title needs", s["id"])
     if b.get("kind") == "initiative":
         _tpls.setdefault(s.get("section_id"), {}).setdefault(b["template"], []).append(s["id"])
         lm_ = s.get("lead_message") or {}
@@ -323,7 +347,7 @@ for s in spec["slides"]:
     # A-12 density
     if s.get("status") != "ghost" and s.get("archetype") != "statement" and body:
         n_chars = slide_chars(s)
-        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org") else 450  # exhibits carry the message
+        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org", "map") else 450  # exhibits carry the message
         if n_chars < low: out("A-12", "warn", f"slide text is ~{n_chars} chars; references run 670–1,110 (target 600–1,100, charts ≥300)", sid)
         elif n_chars > 1300: out("A-12", "warn", f"slide text is ~{n_chars} chars; above 1,300 reads as crowded", sid)
         for it in body.get("columns", []) + body.get("items", []) + body.get("steps", []):
