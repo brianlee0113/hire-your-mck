@@ -1,0 +1,38 @@
+{
+ "x": "DRS3DV",
+ "y": "DU85N7",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X's governing thought (Pro tier, Q4 2027, about $2M, mobile first) is carried by four summary points that map onto the deck's sections. Slide 3 tests the CPO's plan against five conditions and each later slide supports one verdict. Its one tension, a title saying a mobile delay costs 'about twice as much lasting ARR' beside text saying 'the money is close', is reconciled explicitly by the $0.43M deferred profit and three tie-breakers. Y's pyramid is tidy, but its parts pull against each other. It argues 14% paid conversion is an upper bound, yet headlines 'plan on about $2.9M' from a single 33% precedent with no range. It says AI explains 'at most part' of the win-rate drop, then builds its sequencing break-even on AI causing all of it. Its Q2 recommendation also rests on a pre-sign-off condition (the rewrite fixing less than about half of mobile churn) that could reverse the governing thought, and the 'longer horizon' note on the sequencing slide is muddled.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "judgment": {
+   "reasons": "Both reach a conclusion the key treats as defensible. X delays Copilot for mobile (the key's conditional option) and meets its conditions: it quantifies the win-rate risk ($0.64M ceiling, $0.32M base) and plans a limited AI response (beta kept live, early access in Routewise deals, battlecard, randomised pilot, a mid-February trigger to launch sooner). Y launches in Pro in Q2 and accepts the mobile delay explicitly. X weighs the trade-offs better. It compares four packaging options on ARR, gross profit, margin, NRR and competitive parity. It runs a 3×3 sensitivity on the sequencing decision with break-evens of 26–40%, and admits the money is close before deciding on evidence quality and durability. It also notes that new-logo wins do not count toward the NRR objective. Y's sequencing rests on one break-even (51.7%) built from upper bounds that favour Copilot, and it leaves the deciding input to be estimated before sign-off. Y's launch gate (beat a 2% productivity gain) is a low bar and does not test willingness to pay; X's gate is pilot conversion of at least 10% and margin of at least 75%. Y's 1,000-request-per-seat allowance (about 6,200 per average account) barely constrains the 6,800-request buyers it identifies as the risk. Y does usefully ask whether the 14 engineers can come from elsewhere.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core numbers right: $8.06M vs $2.45M, inference of $32.4/$61.2/$130.5 a month, 109 deals worth $0.64M, Pro at $2.89M for 33% migration, and $1.47M engineering. Both catch the pack's 58% vs 40% usage inconsistency and reject the VP Sales claim via the implied 58% win rate. X uses the evidence more carefully. It gives Pro adoption as a 14–33% range with a 25% base, and stress-tests company margin if Pro adopters behave like paywall buyers (74.1–74.8% uncapped, at least 76.3% with a 500-request cap), which checks out. It discounts the AI share of the win-rate drop and the rewrite's effectiveness with stated assumptions. Y's 76.5% margin assumes Pro adopters use the beta average of 444 requests per seat, despite its own adverse-selection argument. At its 1,000-request cap, heavy adopters would push company margin to roughly 74.5%, below the floor, so the claim that the allowance protects margin is not supported. Y's single 33% uptake figure and all-upper-bound sequencing maths are weaker inferences. Y does add two careful readings: the 31% counts mentions across all lost deals, and the matching traits of the comparison group are unknown. X's payback figure (about 21 months) is less transparent than Y's but plausible with a migration ramp.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects: keep 'launch', reject the $149 add-on and the $8M figure, and attribute the gap to stated versus revealed preference plus survey non-response and size bias. X does it more systematically. It breaks the hypothesis into five conditions and gives a verdict on each (demand, typical-customer benefit, flat-price margin, strategic need, priority over mobile), keeping only the strategic need and revising price, packaging and timing. Its replacement sizing is calibrated: $1.2–2.9M with a base of about $2M. Y revises packaging and sizing but keeps Q2 timing and swaps the $8M for a $2.9M point estimate from the top of the plausible range. That leans on one precedent it admits was for a different offer, which is a less sceptical update given its own argument that paid conversion will be under 14%.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "X would serve the CEO better. It covers every critical insight in the key with correct arithmetic and gives a calibrated revenue range. Its Pro design is tested against heavy-user adverse selection. It quantifies the mobile-versus-Copilot trade-off with sensitivities, a dated trigger to launch sooner, a pilot gated on conversion and margin, and a risk table with warning signs. Its delay recommendation meets the key's conditions for defensibility. Y is shorter and reaches a defensible Pro-tier conclusion with mostly correct numbers. But its headline rests on an optimistic 33% uptake, its allowance does not protect margin against the heavy users it warns about, and its sequencing analysis is tilted by upper bounds. Its Q2 recommendation also depends on an unanswered question that could flip it.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9831482,
+ "wall_s": 65.9520149230957
+}

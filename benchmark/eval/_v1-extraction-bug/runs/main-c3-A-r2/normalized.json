@@ -1,0 +1,715 @@
+{
+ "normalized": {
+  "governing_thought": "Launch Copilot in Q2 2027 as part of a new Pro tier at +$12 per seat. A $149 add-on would earn less, and Copilot free in Core would breach the margin floor",
+  "executive_summary": [
+   "Launch. The competitive threat is real, though smaller than claimed",
+   "Routewise put AI scheduling in its Pro plan, and since then our win rate in deals against them has fallen from 44% to 37%. At most that is ~110 deals, or $0.6M of new ARR a year, not the $1.9M the Sales memo implies.",
+   "In the beta, jobs per dispatcher-hour rose 11%, against 2% for matched accounts. The beta accounts volunteered, so this is an upper bound.",
+   "Package it as a Pro tier. The $8M add-on case rests on the survey",
+   "When beta users actually hit a $149 paywall, 14% bought, against 46% in the survey. That means at most $2.5M of add-on ARR.",
+   "A flat $149 attracts heavy users: their inference costs eat 41% of the price, and 88% for the top accounts. A per-seat Pro tier grows with account size and matches Routewise. Base case: ~$2.2M ARR, +3.8 NRR points and a 76.6% company gross margin.",
+   "Including Copilot free in Core would take gross margin to 72–74%, below the 75% floor.",
+   "Guardrails. Protect mobile and test before we scale",
+   "Launching first delays the mobile rewrite by two quarters, which costs ~$0.5M of churn we could have avoided. Holding Copilot back until mobile ships would forgo ~$1.1M or more of Copilot ARR.",
+   "Go or no-go in March: if a random-sample Pro offer points to adoption below 15%, the 14 engineers go back to mobile.",
+   "Decisions requested today: 1. Approve a Q2 2027 launch of Pro: $91 per seat ($79 Core + $12), including Copilot with 600 AI requests per seat per month, pooled per account. 2. Reject the $149 add-on and the free-in-Core option. 3. Assign 14 engineers to Copilot for Q1–Q2, and re-baseline the mobile rewrite two quarters later with a fixed date. 4. Approve the Q1 price test and the March go/no-go checkpoint."
+  ],
+  "slides": [
+   {
+    "n": 1,
+    "title": "Dispatch Copilot: launch it in Q2 2027 inside a new Pro tier, not as a $149 add-on",
+    "claims": [
+     {
+      "claim": "Our decision question: should we launch Dispatch Copilot in Q2 2027, and if so, how should we package and price it?",
+      "evidence": []
+     },
+     {
+      "claim": "Based only on the internal briefing pack. All figures in the pack are fictional.",
+      "evidence": [
+       "Prepared for CEO Maya Okafor and the executive team",
+       "BRIGHTWORK · EXECUTIVE TEAM · JANUARY 2027 PLANNING"
+      ]
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "title": "Launch Copilot in Q2 2027 as part of a new Pro tier at +$12 per seat. A $149 add-on would earn less, and Copilot free in Core would breach the margin floor",
+    "claims": [
+     {
+      "claim": "Launch. The competitive threat is real, though smaller than claimed",
+      "evidence": [
+       "win rate in deals against them has fallen from 44% to 37%",
+       "At most that is ~110 deals, or $0.6M of new ARR a year, not the $1.9M the Sales memo implies.",
+       "In the beta, jobs per dispatcher-hour rose 11%, against 2% for matched accounts. The beta accounts volunteered, so this is an upper bound."
+      ]
+     },
+     {
+      "claim": "Package it as a Pro tier. The $8M add-on case rests on the survey",
+      "evidence": [
+       "When beta users actually hit a $149 paywall, 14% bought, against 46% in the survey. That means at most $2.5M of add-on ARR.",
+       "A flat $149 attracts heavy users: their inference costs eat 41% of the price, and 88% for the top accounts.",
+       "Base case: ~$2.2M ARR, +3.8 NRR points and a 76.6% company gross margin.",
+       "Including Copilot free in Core would take gross margin to 72–74%, below the 75% floor."
+      ]
+     },
+     {
+      "claim": "Guardrails. Protect mobile and test before we scale",
+      "evidence": [
+       "Launching first delays the mobile rewrite by two quarters, which costs ~$0.5M of churn we could have avoided. Holding Copilot back until mobile ships would forgo ~$1.1M or more of Copilot ARR.",
+       "Go or no-go in March: if a random-sample Pro offer points to adoption below 15%, the 14 engineers go back to mobile."
+      ]
+     },
+     {
+      "claim": "Decisions requested today",
+      "evidence": [
+       "1. Approve a Q2 2027 launch of Pro: $91 per seat ($79 Core + $12), including Copilot with 600 AI requests per seat per month, pooled per account.",
+       "2. Reject the $149 add-on and the free-in-Core option.",
+       "3. Assign 14 engineers to Copilot for Q1–Q2, and re-baseline the mobile rewrite two quarters later with a fixed date.",
+       "4. Approve the Q1 price test and the March go/no-go checkpoint."
+      ]
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "title": "Any option has to pass three tests: lift NRR toward 105%, hold gross margin at 75% or more, and justify a two-quarter delay to mobile",
+    "claims": [
+     {
+      "claim": "Net revenue retention: 101% → 105%",
+      "evidence": [
+       "Gap: 4 points, or ~$2.3M of net expansion on $57.6M ARR, by 2028.",
+       "Only paid upgrades by existing accounts, or less churn, move NRR. New-customer wins do not."
+      ]
+     },
+     {
+      "claim": "Company gross margin: 78% → ≥75%",
+      "evidence": [
+       "Headroom: 3 points, or ~$1.7M of extra cost at today’s revenue.",
+       "Copilot adds $0.009 per AI request (price fixed until December 2027) plus ~$0.6M a year of platform, evaluation and support cost. The price has to cover both."
+      ]
+     },
+     {
+      "claim": "Engineering trade-off: 14 of 60",
+      "evidence": [
+       "Engineers for two quarters, or $1.47M fully loaded. The mobile app rewrite slips by two quarters.",
+       "Mobile reliability is the top churn reason (27%) and the top feature request (38% rank it first, against 19% for AI scheduling)."
+      ]
+     },
+     {
+      "claim": "Baseline today",
+      "evidence": [
+       "9,800 accounts · 6.2 office seats each · Core at $79/seat/month · $57.6M ARR · 78% gross margin · 14% logo churn · 101% NRR",
+       "Average account: $5,878 ARR (6.2 seats × $79 × 12)."
+      ]
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "title": "When customers faced a real paywall they bought at a third of the survey rate. The add-on is worth $2.5M of ARR at most, not $8M",
+    "claims": [
+     {
+      "claim": "Share of accounts buying Copilot at $149 per account per month",
+      "evidence": [
+       "Survey: said likely to buy 46% ($8.1M)",
+       "Paywall test: bought 14% ($2.5M)",
+       "Planning range, all accounts 7–14% ($1.2–2.5M)"
+      ]
+     },
+     {
+      "claim": "Why the survey overstates demand",
+      "evidence": [
+       "Self-selected: only 610 of 9,800 admins replied (6%).",
+       "Skewed to big accounts: respondents average 9.4 seats, against 6.2 across the base.",
+       "Stated intent: saying “likely” is not the same as paying."
+      ]
+     },
+     {
+      "claim": "Why even 14% is a ceiling for the base",
+      "evidence": [
+       "Volunteers: beta accounts are larger (8.1 seats) and more active than average.",
+       "Heavy users bought: buyers averaged 6,800 requests a month, against a beta mean of 3,600."
+      ]
+     },
+     {
+      "claim": "The CPO’s $8M figure is 46% × 9,800 accounts × $149 × 12. Our planning range halves the paywall rate at the low end, because the test accounts were volunteers.",
+      "evidence": []
+     },
+     {
+      "claim": "So what: a $149 add-on would add about 2–4 NRR points at best, and its buyers would be the most expensive accounts to serve (slide 7).",
+      "evidence": [
+       "Survey October 2026; paywall test in the last four weeks of the 12-week beta."
+      ]
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "title": "Routewise’s AI is costing us at most ~110 deals ($0.6M of new ARR) a year, a third of what the Sales memo implies",
+    "claims": [
+     {
+      "claim": "Brightwork win rate in deals Routewise contests",
+      "evidence": [
+       "Q1–Q2 2026: 44%",
+       "Q3 2026: 37%",
+       "In September 2026 Routewise launched AI scheduling in its Pro plan. In Q3 it also offered 20% off the first year, so the drop has two possible causes."
+      ]
+     },
+     {
+      "claim": "Sizing the threat: the most we could recover",
+      "evidence": [
+       "Qualified new-customer opportunities a year: 2,600",
+       "× share where Routewise competes (60%): 1,560 deals",
+       "× drop in win rate (44% → 37%, 7 points): ~109 deals",
+       "× $5,878 ARR per new account (6.2 seats on Core): ≤ $0.64M new ARR a year"
+      ]
+     },
+     {
+      "claim": "Why the memo’s “recover a third of losses” (~328 deals, $1.9M) is too high",
+      "evidence": [
+       "When 31% of loss notes mention AI, that does not mean AI caused those losses. The 31% also covers all Q3 losses, not just Routewise deals.",
+       "We were already losing 56% of these deals before Routewise had AI. Parity can only win back the 7-point drop.",
+       "Some of the drop is probably Routewise’s 20% promotion, so $0.64M is a ceiling."
+      ]
+     },
+     {
+      "claim": "The win-back shows up in new ARR, not in NRR.",
+      "evidence": []
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "title": "The beta shows real productivity value, but because the accounts volunteered, every figure is an upper bound",
+    "claims": [
+     {
+      "claim": "Jobs scheduled per dispatcher-hour: +11%",
+      "evidence": [
+       "vs +2% for matched non-beta accounts (9 points net), against the prior 12 weeks",
+       "Can: Engaged dispatchers who opt in use Copilot heavily and schedule more jobs per hour.",
+       "Cannot: Assume the base will gain 9 points. Volunteers are larger (8.1 seats against 6.2) and more active."
+      ]
+     },
+     {
+      "claim": "90-day renewal rate: 97%",
+      "evidence": [
+       "vs 93% for matched accounts. Probably selection: active volunteers renew more anyway",
+       "Cannot: Credit Copilot with the 4-point renewal gap. We leave any retention gain out of the base case."
+      ]
+     },
+     {
+      "claim": "Dispatcher hours saved per week: 4.1 h",
+      "evidence": [
+       "Self-reported, with no comparison group"
+      ]
+     },
+     {
+      "claim": "Usage is concentrated, so pricing has to handle heavy users (slide 7).",
+      "evidence": [
+       "the top 10% of accounts make 58% of requests",
+       "The median account makes 1,900 requests a month and the mean 3,600"
+      ]
+     },
+     {
+      "claim": "A top-10% mean of 14,500 requests implies a 40% share, not 58%. We cost on the higher mean (3,600). Product should reconcile the two figures before launch.",
+      "evidence": [
+       "What 240 volunteer accounts over 12 weeks can and cannot tell us"
+      ]
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "title": "A flat $149 add-on draws in the heaviest users. Per-seat pricing with an allowance keeps inference cost in line with revenue",
+    "claims": [
+     {
+      "claim": "Monthly inference cost per account at $0.009 per request",
+      "evidence": [
+       "Median beta account (1,900): $17",
+       "Mean beta account (3,600): $32",
+       "Paywall buyers (6,800): $61 (41%)",
+       "Top 10% of accounts (14,500): $131 (88%)",
+       "Percentages show inference cost as a share of the $149 price. The ~$0.6M a year of fixed platform cost comes on top."
+      ]
+     },
+     {
+      "claim": "Per-account economics, typical case",
+      "evidence": [
+       "Revenue a month: $149 add-on $149; Pro +$12/seat (6.2-seat account) $74",
+       "Inference at expected use: $61 (6,800 requests); $25 (444 per seat, the beta mean)",
+       "Inference share of revenue: 41%; 33%",
+       "Worst case: Top-10% account: $131, or 88% of price; Capped at 600 per seat: $33 (45%). Overage billed above that",
+       "Does revenue grow with usage? No. The price is flat per account; Yes. Revenue rises with seats and overage"
+      ]
+     },
+     {
+      "claim": "Upside we don’t price in: inference list prices fell 35% in the last 12 months. Our $0.009 rate is fixed until December 2027, so we should renegotiate in H2 2027 and keep the savings as margin.",
+      "evidence": [
+       "Beta per-seat usage = 3,600 requests ÷ 8.1 seats."
+      ]
+     }
+    ]
+   },
+   {
+    "n": 8,
+    "title": "Of the four ways to launch, only a Pro tier passes all three tests",
+    "claims": [
+     {
+      "claim": "A · Defer: mobile first, Copilot in Q4 2027 — ✗ Fails on value",
+      "evidence": [
+       "Expansion ARR: None in H1 2027. C’s ARR arrives ~2 quarters later",
+       "NRR contribution: Deferred",
+       "Copilot gross profit a year: n/a in 2027",
+       "Company gross margin: 78.0%",
+       "Parity with Routewise: None until Q4 2027",
+       "Mobile rewrite: On schedule",
+       "Gives up ~$1.1M of Copilot ARR to save ~$0.5M of mobile churn. Routewise gets two more quarters"
+      ]
+     },
+     {
+      "claim": "B · $149 per account add-on (CPO proposal) — ~ Passes, but weaker",
+      "evidence": [
+       "Expansion ARR: $1.75M (10% adopt; $1.2–2.5M)",
+       "NRR contribution: +3.0 points",
+       "Copilot gross profit a year: $0.43M",
+       "Company gross margin: 76.4%",
+       "Parity with Routewise: Weak: an extra fee on top of the plan",
+       "Mobile rewrite: Two quarters late",
+       "Lower profit, draws heavy users, and the buying evidence comes from volunteers"
+      ]
+     },
+     {
+      "claim": "C · Pro tier at +$12 per seat with Copilot (recommended) — ✓ Passes all three",
+      "evidence": [
+       "Expansion ARR: $2.19M (25% adopt; $1.3–2.9M)",
+       "NRR contribution: +3.8 points",
+       "Copilot gross profit a year: $0.86M",
+       "Company gross margin: 76.6%",
+       "Parity with Routewise: Matches “AI in Pro”",
+       "Mobile rewrite: Two quarters late",
+       "Higher expansion and profit, matches Routewise, and costs stay controlled"
+      ]
+     },
+     {
+      "claim": "D · Copilot free in Core (Routewise-style) — ✗ Fails the margin test",
+      "evidence": [
+       "Expansion ARR: $0, because there is no price",
+       "NRR contribution: Indirect only, via retention",
+       "Copilot gross profit a year: −$3.5M",
+       "Company gross margin: 71.9–73.5%",
+       "Parity with Routewise: Strongest",
+       "Mobile rewrite: Two quarters late",
+       "Breaches 75% if more than ~39% of accounts use it at the beta mean"
+      ]
+     }
+    ]
+   },
+   {
+    "n": 9,
+    "title": "Pro at $91 per seat (Core plus $12) includes Copilot and a pooled allowance of 600 AI requests per seat",
+    "claims": [
+     {
+      "claim": "Plan: A new Pro tier: Core plus Dispatch Copilot (schedule proposals, quote drafts, call summaries). Core stays at $79.",
+      "evidence": [
+       "An opt-in upgrade avoids raising the Core price (price drives 22% of churn), and it mirrors Routewise’s packaging."
+      ]
+     },
+     {
+      "claim": "Price: +$12 per office seat per month ($91 in total).",
+      "evidence": [
+       "Revenue grows with account size, which is what drives usage. A typical 6.2-seat account pays $74 a month, half the $149 add-on."
+      ]
+     },
+     {
+      "claim": "Allowance: 600 AI requests per seat per month, pooled across the account.",
+      "evidence": [
+       "That is 35% above the beta mean (444 per seat), and it holds worst-case inference to $5.40 per seat, or 45% of the uplift."
+      ]
+     },
+     {
+      "claim": "Overage: $20 per extra 1,000 requests (about 2.2× today’s cost).",
+      "evidence": [
+       "The heaviest accounts (the top 10% average 14,500 requests a month) pay for what they use rather than eating into margin."
+      ]
+     },
+     {
+      "claim": "New business: Pro becomes the lead plan in every deal Routewise contests.",
+      "evidence": [
+       "It neutralises the “AI included” comparison, worth up to $0.64M of new ARR a year."
+      ]
+     },
+     {
+      "claim": "Inference contract: Renegotiate in H2 2027, ahead of the December 2027 expiry.",
+      "evidence": [
+       "List prices fell 35% in 12 months. We keep the savings as margin and hold the price."
+      ]
+     },
+     {
+      "claim": "Our choice, to be validated: $12 is the only per-seat price in the pack, and the 600-request allowance and $20 overage are our proposals. The Q1 test adds a $15 arm to check whether customers would pay more.",
+      "evidence": [
+       "Allowance and overage levels are recommendations, not tested figures."
+      ]
+     }
+    ]
+   },
+   {
+    "n": 10,
+    "title": "Base case: Pro adds ~$2.2M of ARR and ~3.8 NRR points at a 76.6% company margin. Fixing mobile closes the rest of the gap to 105%",
+    "claims": [
+     {
+      "claim": "NRR points each lever adds (low to high, base case marked) against a 4-point gap to 105%",
+      "evidence": [
+       "Pro tier (15–33% adopt): 2.3 to 5.0, base 3.8",
+       "$149 add-on (7–14% adopt): 2.1 to 4.3, base 3.0",
+       "Mobile rewrite (halves or ends mobile churn): 1.6 to 3.3"
+      ]
+     },
+     {
+      "claim": "Pro tier scenarios (full-year run-rate)",
+      "evidence": [
+       "Accounts adopting: Low 15% / Base 25% / High 33%",
+       "Expansion ARR: $1.31M / $2.19M / $2.89M",
+       "NRR points: +2.3 / +3.8 / +5.0",
+       "Copilot gross profit: $0.27M / $0.86M / $1.32M",
+       "Company gross margin: 76.7% / 76.6% / 76.5%",
+       "…if every seat uses its full allowance: 76.5% / 76.2% / 75.9%",
+       "Low = the paywall rate. High = 33% of accounts moved to the 2023 higher tier within a year. Base sits between them."
+      ]
+     },
+     {
+      "claim": "One-off engineering cost of $1.47M pays back in ~1.7 years on base gross profit, before any new-customer wins (≤ $0.64M ARR a year).",
+      "evidence": []
+     },
+     {
+      "claim": "Pro’s base case plus a rewrite that halves mobile churn gives ~5.4 points, enough to clear the gap.",
+      "evidence": []
+     },
+     {
+      "claim": "Upgrades lift NRR once. Holding 105% also needs lower churn, which is the case for protecting mobile.",
+      "evidence": [
+       "Assumes adopters average 6.2 seats; the $0.6M platform cost is counted in cost of revenue."
+      ]
+     }
+    ]
+   },
+   {
+    "n": 11,
+    "title": "Launching Copilot first costs ~$0.5M of avoidable mobile churn, while holding it back forgoes ~$1.1M or more. Launch, but fix the new mobile date",
+    "claims": [
+     {
+      "claim": "Main reason churned accounts gave, 2026 (n = 1,190)",
+      "evidence": [
+       "Mobile app reliability 27% ($1.9M)",
+       "Price 22% ($1.5M)",
+       "Other 16%",
+       "Missing integrations 15%",
+       "Out of business or sold 14%",
+       "Switched for AI features 6% ($0.4M)"
+      ]
+     },
+     {
+      "claim": "Cost of each sequence (both shift the other project by two quarters)",
+      "evidence": [
+       "Copilot first (recommended): ~$0.5M ARR of mobile churn not avoided for six months, if the rewrite halves mobile churn. $0.9M if it would end mobile churn entirely.",
+       "Mobile first: ~$1.1M ARR of Pro expansion deferred (base case, or $0.65M if adoption is low), plus up to $0.3M of new ARR lost to Routewise and up to $0.2M of AI-driven churn."
+      ]
+     },
+     {
+      "claim": "The order flips if Pro adoption is low (~15%) and the rewrite would end most mobile churn. That is why the March checkpoint uses the price test.",
+      "evidence": []
+     },
+     {
+      "claim": "How we protect mobile",
+      "evidence": [
+       "Re-baseline the mobile rewrite two quarters later on a fixed, published date, and return the 14 engineers to it in Q3.",
+       "Ask the CTO whether the 14 can come from teams other than mobile. If they can, the delay shrinks."
+      ]
+     },
+     {
+      "claim": "Mobile drives 4.5× as much churn as AI. Ending it would be worth ~3.3 NRR points. It is a real lever, and it is being delayed, not dropped.",
+      "evidence": [
+       "ARR = accounts × $5,878. The rewrite’s effect on churn is our assumption (half or all of mobile churn)."
+      ]
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "title": "Four uncertainties could change the answer. Each has a test and a trigger",
+    "claims": [
+     {
+      "claim": "Will demand hold beyond volunteers?",
+      "evidence": [
+       "All adoption and productivity data come from volunteer accounts, which are larger than average.",
+       "Q1: offer Pro to a random sample of non-beta accounts at $12, with a $15 arm, and measure conversion and usage.",
+       "Below 15% implied adoption: pause the launch and move the engineers back to mobile."
+      ]
+     },
+     {
+      "claim": "Usage and inference cost",
+      "evidence": [
+       "The top 10% of accounts make 58% of requests, and the inference price is fixed only until December 2027.",
+       "Track requests per seat each month and renegotiate the contract in H2 2027.",
+       "Mean above 600 per seat, or Copilot margin below 55%: tighten the allowance or raise the overage price."
+      ]
+     },
+     {
+      "claim": "Is Routewise’s AI the cause?",
+      "evidence": [
+       "Our win-rate drop coincided with Routewise’s 20%-off first-year promotion.",
+       "Q1 win-loss interviews that separate AI from price. Track the win rate after launch.",
+       "No recovery toward 44% by Q4 2027: respond on price and promotion rather than adding more AI."
+      ]
+     },
+     {
+      "claim": "Cost of the mobile delay",
+      "evidence": [
+       "Mobile is the top churn reason, and its rewrite slips by two quarters.",
+       "Use a re-baselined date and track churn by reason each month.",
+       "Mobile-related churn rising: bring the engineers back as soon as the launch ships."
+      ]
+     },
+     {
+      "claim": "What would change our recommendation",
+      "evidence": [
+       "Mobile first: the Q1 test implies Pro adoption below 15%, or engineering confirms the rewrite would end most mobile churn.",
+       "A higher Pro price: the $15 arm converts at least 80% as well as the $12 arm. At that point $15 earns the same or more ARR (12 ÷ 15 = 0.8).",
+       "Not launching: random-sample accounts show no productivity gain and win-loss work shows Routewise’s promotion, not its AI, drove the losses.",
+       "Thresholds are proposed management triggers."
+      ]
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "title": "Test in Q1, launch in Q2, review in Q3 and restart mobile on a fixed date",
+    "claims": [
+     {
+      "claim": "Copilot and Pro plan by quarter",
+      "evidence": [
+       "Q1: Make Copilot production-ready (14 engineers)",
+       "Q2: Launch Pro at $91 per seat. Move beta accounts onto Pro",
+       "Q3: Tune the allowance and overage on real usage",
+       "Q4: Renegotiate the inference contract before December expiry"
+      ]
+     },
+     {
+      "claim": "Mobile plan by quarter",
+      "evidence": [
+       "Q1: Rewrite paused, with the date re-baselined",
+       "Q2: Rewrite paused",
+       "Q3: The 14 engineers return to the rewrite",
+       "Q4: Rewrite in progress against the fixed date"
+      ]
+     },
+     {
+      "claim": "Commercial plan by quarter",
+      "evidence": [
+       "Q1: Random-sample price test ($12 and $15). Win-loss study",
+       "Q2: Pro leads every deal Routewise contests",
+       "Q3: Track Pro adoption and win rate",
+       "Q4: Plan the 2028 price, with inference costs falling"
+      ]
+     },
+     {
+      "claim": "Decision gates",
+      "evidence": [
+       "March go/no-go: implied adoption of at least 15%?",
+       "Q3 review: adoption, requests per seat, Copilot margin of 55% or more, win rate"
+      ]
+     },
+     {
+      "claim": "Decisions requested today",
+      "evidence": [
+       "1. Approve a Q2 2027 launch of Pro at $91 per seat, with Copilot and 600 requests per seat",
+       "2. Reject the $149 add-on and the free-in-Core option",
+       "3. Assign 14 engineers for Q1–Q2 and re-baseline mobile on a fixed date",
+       "4. Approve the Q1 price test and the March go/no-go"
+      ]
+     }
+    ]
+   },
+   {
+    "n": 14,
+    "title": "How the key numbers are built",
+    "claims": [
+     {
+      "claim": "ARR and gross profit today",
+      "evidence": [
+       "9,800 accounts × 6.2 seats × $79 × 12, at a 78% gross margin = $57.6M ARR, $44.9M gross profit"
+      ]
+     },
+     {
+      "claim": "CPO add-on claim",
+      "evidence": [
+       "46% × 9,800 × $149 × 12 = $8.06M"
+      ]
+     },
+     {
+      "claim": "Add-on scenarios",
+      "evidence": [
+       "7% / 10% / 14% × 9,800 × $1,788 a year. Inference: 6,800 requests × $0.009 × 12 per buyer. Less $0.6M platform cost = $1.23M / $1.75M / $2.45M ARR. GP $0.12M / $0.43M / $0.85M"
+      ]
+     },
+     {
+      "claim": "Pro scenarios",
+      "evidence": [
+       "15% / 25% / 33% × 9,800 × 6.2 seats × $12 × 12. Inference: 444 requests per seat (3,600 ÷ 8.1) × $0.009. Less $0.6M. Adoption rates are an assumption = $1.31M / $2.19M / $2.89M ARR. GP $0.27M / $0.86M / $1.32M"
+      ]
+     },
+     {
+      "claim": "Free in Core",
+      "evidence": [
+       "9,800 × 2,756 requests (or 1,900 at the median) × $0.009 × 12, plus $0.6M. GM = ($44.9M − cost) ÷ $57.6M = Cost $3.5M ($2.6M). GM 71.9% (73.5%)"
+      ]
+     },
+     {
+      "claim": "NRR points",
+      "evidence": [
+       "Expansion ARR ÷ $57.6M starting ARR = Pro base: 3.8 points"
+      ]
+     },
+     {
+      "claim": "Routewise exposure",
+      "evidence": [
+       "2,600 × 60% × 7 points × $5,878. Sales memo: 1,560 × 63% lost ÷ 3 × $5,878 = ≤ $0.64M a year (memo: $1.9M)"
+      ]
+     },
+     {
+      "claim": "Churn by reason",
+      "evidence": [
+       "1,190 churned accounts × share × $5,878 = Mobile $1.9M · price $1.5M · AI $0.4M"
+      ]
+     },
+     {
+      "claim": "Mobile delay",
+      "evidence": [
+       "$1.9M × 0.5 year × the share of mobile churn the rewrite removes (assumption: 50%, or 100% at worst) = $0.47M ($0.94M)"
+      ]
+     },
+     {
+      "claim": "Engineering",
+      "evidence": [
+       "14 engineers × $210K × 0.5 year = $1.47M one-off"
+      ]
+     }
+    ]
+   },
+   {
+    "n": 15,
+    "title": "Where we corrected internal claims, and the judgement calls behind this deck",
+    "claims": [
+     {
+      "claim": "“46% likely to buy, about $8M in year one” (CPO)",
+      "evidence": [
+       "A 6% response skewed to large accounts. Real paywall conversion was 14% among volunteers. Plan on $1.2–2.5M."
+      ]
+     },
+     {
+      "claim": "“Copilot recovers a third of the deals we lose to Routewise” (VP Sales)",
+      "evidence": [
+       "Mentioning AI is not the same as losing because of AI. At most, parity wins back the 7-point drop: ~109 deals, or $0.64M."
+      ]
+     },
+     {
+      "claim": "Beta renewal of 97% against 93%",
+      "evidence": [
+       "Volunteer selection. Not used as a benefit."
+      ]
+     },
+     {
+      "claim": "Top 10% of accounts make 58% of requests",
+      "evidence": [
+       "Inconsistent with their 14,500-request mean (which implies 40%). Product should reconcile the two."
+      ]
+     },
+     {
+      "claim": "Judgement calls we made (open to challenge)",
+      "evidence": [
+       "Pro adoption of 25% in the base case, set between the paywall rate (14%) and the 2023 tier precedent (33%).",
+       "The allowance (600 per seat) and the overage price ($20 per 1,000) are our design proposals, not figures from the pack.",
+       "The $0.6M platform cost is treated as cost of revenue. That is conservative for the margin test.",
+       "Mobile rewrite effect: we assume it halves mobile churn, and show an upper case where it ends it.",
+       "Churn uses the 1,190 accounts in Table 3. With a full year of 14% churn (~1,370 accounts), each figure rises ~15%. The recommendation does not change.",
+       "Costs use the beta mean of 3,600 requests rather than the lower figure that the 58% share implies.",
+       "No retention benefit from Copilot is counted in the base case."
+      ]
+     }
+    ]
+   }
+  ],
+  "recommendation": "Launch Copilot in Q2 2027 as part of a new Pro tier: $91 per seat ($79 Core + $12), including Copilot with 600 AI requests per seat per month, pooled per account ($20 per extra 1,000 requests overage). Reject the $149 add-on and the free-in-Core option. Assign 14 engineers to Copilot for Q1–Q2, and re-baseline the mobile rewrite two quarters later with a fixed date. Approve the Q1 price test and the March go/no-go checkpoint.",
+  "alternatives_considered": [
+   {
+    "option": "A · Defer: mobile first, Copilot in Q4 2027",
+    "treatment": "Rejected — ✗ Fails on value. Gives up ~$1.1M of Copilot ARR to save ~$0.5M of mobile churn. Routewise gets two more quarters. The order flips if Pro adoption is low (~15%) and the rewrite would end most mobile churn."
+   },
+   {
+    "option": "B · $149 per account add-on (CPO proposal)",
+    "treatment": "Rejected — ~ Passes, but weaker. Lower profit, draws heavy users, and the buying evidence comes from volunteers. $1.75M ARR base (10% adopt; $1.2–2.5M), +3.0 NRR points, $0.43M gross profit, 76.4% margin; the $8M survey-based case is overstated."
+   },
+   {
+    "option": "C · Pro tier at +$12 per seat with Copilot (recommended)",
+    "treatment": "Chosen — ✓ Passes all three. Higher expansion and profit, matches Routewise, and costs stay controlled. $2.19M ARR (25% adopt), +3.8 NRR points, $0.86M gross profit, 76.6% margin."
+   },
+   {
+    "option": "D · Copilot free in Core (Routewise-style)",
+    "treatment": "Rejected — ✗ Fails the margin test. Company gross margin 71.9–73.5%, below the 75% floor; −$3.5M Copilot gross profit. Breaches 75% if more than ~39% of accounts use it at the beta mean."
+   },
+   {
+    "option": "Higher Pro price ($15 per seat)",
+    "treatment": "Tested as an arm in the Q1 price test; would be adopted if the $15 arm converts at least 80% as well as the $12 arm."
+   },
+   {
+    "option": "Not launching",
+    "treatment": "Would change the recommendation only if random-sample accounts show no productivity gain and win-loss work shows Routewise’s promotion, not its AI, drove the losses."
+   }
+  ],
+  "assumptions_and_uncertainties": [
+   "All figures in the pack are fictional.",
+   "The beta accounts volunteered, so beta figures (e.g. +11% jobs per dispatcher-hour) are an upper bound.",
+   "Paywall buyers were volunteers and heavy users, so 14% is a ceiling; the planning range halves the paywall rate at the low end (7–14%).",
+   "Some of the win-rate drop is probably Routewise’s 20% promotion, so $0.64M is a ceiling.",
+   "Pro adoption of 25% in the base case, set between the paywall rate (14%) and the 2023 tier precedent (33%). Adoption rates are an assumption.",
+   "The allowance (600 per seat) and the overage price ($20 per 1,000) are design proposals, not figures from the pack; $12 is the only per-seat price in the pack.",
+   "The $0.6M platform cost is treated as cost of revenue (conservative for the margin test).",
+   "Mobile rewrite effect: assumed to halve mobile churn, with an upper case where it ends it.",
+   "Churn uses the 1,190 accounts in Table 3; with a full year of 14% churn (~1,370 accounts), each figure rises ~15%, and the recommendation does not change.",
+   "Costs use the beta mean of 3,600 requests rather than the lower figure the 58% share implies; the top-10% 58% share is inconsistent with their 14,500-request mean (implies 40%), and Product should reconcile.",
+   "No retention benefit from Copilot is counted in the base case; the 97% vs 93% renewal gap is probably selection.",
+   "Assumes adopters average 6.2 seats.",
+   "Inference price of $0.009 is fixed only until December 2027; list prices fell 35% in 12 months (upside not priced in).",
+   "Dispatcher hours saved (4.1 h) is self-reported, with no comparison group.",
+   "Risk: demand may not hold beyond volunteers; trigger below 15% implied adoption pauses launch.",
+   "Risk: usage and inference cost; trigger mean above 600 per seat or Copilot margin below 55%.",
+   "Risk: Routewise's AI may not be the cause of losses; trigger no recovery toward 44% by Q4 2027.",
+   "Risk: cost of the mobile delay; trigger mobile-related churn rising.",
+   "Thresholds are proposed management triggers."
+  ],
+  "next_steps": [
+   "Q1 2027: Make Copilot production-ready (14 engineers); pause the mobile rewrite with the date re-baselined",
+   "Q1 2027: Random-sample price test ($12 and $15) on non-beta accounts, and win-loss study separating AI from price",
+   "March go/no-go: implied adoption of at least 15%? If below, pause the launch and move the engineers back to mobile",
+   "Ask the CTO whether the 14 engineers can come from teams other than mobile",
+   "Q2 2027: Launch Pro at $91 per seat; move beta accounts onto Pro; Pro leads every deal Routewise contests",
+   "Q3 2027: The 14 engineers return to the mobile rewrite; tune allowance and overage on real usage; track Pro adoption and win rate",
+   "Q3 review: adoption, requests per seat, Copilot margin of 55% or more, win rate",
+   "H2/Q4 2027: Renegotiate the inference contract before December expiry; plan the 2028 price",
+   "Product should reconcile the top-10% usage share figures before launch",
+   "Track requests per seat and churn by reason each month"
+  ],
+  "extraction_notes": "The deck states its answer both in the slide 1 title (\"Dispatch Copilot: launch it in Q2 2027 inside a new Pro tier, not as a $149 add-on\") and in the slide 2 executive summary title. I used the slide 2 title as the governing thought, although it is two sentences. Chart data came through as flattened text only, so I matched values to labels based on the order they appear in (for example the win-rate bars on slide 5, the inference-cost bars on slide 7 and the NRR lever ranges on slide 10). The extraction contained no images."
+ },
+ "model": "claude-opus-5-5",
+ "effort": "medium",
+ "cost_usd": 0.345801,
+ "wall_s": 87.90897607803345,
+ "is_error": false,
+ "fidelity": {
+  "n_strings": 275,
+  "mean_overlap": 0.8509159547271924,
+  "share_ge_0_8": 0.7490909090909091,
+  "share_lt_0_5": 0.09090909090909091
+ }
+}

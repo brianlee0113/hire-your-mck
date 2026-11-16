@@ -1,0 +1,38 @@
+{
+ "x": "DFYRWG",
+ "y": "D5PS59",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both follow a clear pyramid: launch, reject the $149 add-on, choose Pro, manage the mobile delay. X's four-section structure is very clean, with each summary line mapped to one section. But X's governing thought says 'plan on about $2.9M', which is the 33% migration high case, while the body calls every other volunteer-based figure a ceiling. Its 'meets the NRR target' claim rests on that same unhedged case. Its Q3 gate also changes little, since the engineers return to mobile in Q3 anyway. Y opens with three explicit tests (NRR, margin, mobile delay), scores all four options against them, and carries a base case of $2.2M that matches its own caveats. Y's risks and triggers follow from the stated uncertainties. Y is slightly more consistent from top line to evidence.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred recommendation (Pro tier with a usage allowance, sized off the paywall test, mobile delay acknowledged). Y weighs the alternatives better. It treats 'defer Copilot, mobile first' as a real option, prices both sequences (~$0.5M–0.9M of mobile churn against ~$1.1M of deferred Pro ARR plus Routewise exposure), and states when the order flips. It puts a go/no-go in March, before launch, using a random-sample price test, and asks whether the 14 engineers can come from outside mobile. It also proposes an overage price and a $15 test arm. X weighs three packaging options but does not treat deferral as an option. Its gate comes after launch and its trigger ('sends spare engineers to mobile') is vague. X's cap of about 850 requests per seat is set by spending all the company margin headroom on Pro, which leaves no buffer. X does note that churned accounts do not come back, a point Y's deferred-ARR versus lost-churn comparison glosses over.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M vs $2.45M, inference of $32/$61/$131 per month, about 109 deals and $0.64M, and Pro at $2.89M for 33% migration. Both discount the survey for the 6% response rate and size skew, treat beta figures as upper bounds, and reject the VP Sales inference. Y uses the evidence more carefully in five places. It ranges Pro adoption at 15–33% with a 25% base rather than taking the 2023 precedent at face value. It converts beta usage to a per-seat figure (444) so the larger beta accounts do not distort base-wide costs; X applies 3,600 requests to all 9,800 accounts. It refuses to credit the 97% vs 93% renewal gap. It notes that new-customer wins do not move NRR. It spots that a top-decile mean of 14,500 implies a 40% share of requests, not the 58% the pack states. Y also computes gross profit and company margin for each option. X's figures are accurate, but it leans on the 33% case as its plan and compares Pro's high case with the add-on's ceiling ('18% above'). Y's weak points are minor: its 'low = the paywall rate' is 15% against 14%, and it sets deferred ARR against lost churn.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects: keep the launch, reject the $8M survey sizing in favour of the 14% paywall result, and move from the flat $149 add-on to a per-seat Pro tier because buyers are heavy users. Both also correct the VP Sales claim. Y goes a little further. It gives a planning range of $1.2–2.5M by halving the paywall rate for volunteer bias. It rates the add-on as 'passes, but weaker' with its own margin figures rather than simply ruling it out. It applies the same scepticism to its own Pro case. X revises the add-on correctly but then adopts the 33% precedent as its plan without the same discount.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents are defensible and meet all three criteria in the key: revealed demand, inference cost and the mobile trade-off. Y would serve the CEO better. It gives a ranged financial case with margin per option, considers deferral explicitly and says when it would win, sets a pre-launch test with a concrete threshold, and specifies the package (600 requests per seat pooled, $20 overage). It is also open about its judgement calls and catches a data inconsistency in the pack. X is tighter and accurate, and it rightly stresses that churned accounts are lost for good. But it plans on the optimistic 33% case, its gate is weaker, and its cap consumes all the margin headroom.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8223402,
+ "wall_s": 42.19997000694275
+}

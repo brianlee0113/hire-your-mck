@@ -1,0 +1,177 @@
+{
+ "blind_id": "D5PS59",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed (launch or not, how to package and price). It turns the three stated constraints into explicit pass/fail tests: NRR from 101% to 105%, gross margin of at least 75%, and the 14-engineer mobile delay. It identifies early that the answer turns on survey vs paywall demand, inference cost, the mobile trade-off and whether Routewise's AI is the cause.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, summary and slide titles form a clear chain: launch, Pro tier, guardrails, then decisions. Titles are claims that the slides support. The decisions list is repeated on slides 2 and 13, and the exec summary is dense, but there are no contradictions.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-did the key calculations and all of them check out. $8.06M vs $2.45M; inference of $32, $61 and $131; 109 wins, or $0.64M; Pro tier at $2.89M at 33%; churn $1.9M; the mobile delay of $0.47M. It also catches that a 58% share is inconsistent with the 14,500 top-decile mean (it implies about 40%), and it corrects the VP Sales memo ($1.9M). All the critical evidence is used, including the survey bias, volunteer bias and the Routewise discount. Weaknesses: the 25% base Pro adoption is an assumption bridging 14% and 33%, even though it is labelled. Pro inference is costed at the beta mean per seat, and adopters may be heavier users. The 2023 tier precedent is stretched.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is a Pro tier with a pooled allowance and overage, sized off the paywall test. It compares four options on the stated criteria. It quantifies the mobile trade-off in both directions (about $0.5M vs $1.1M) and accepts the delay explicitly with a fixed re-baseline date. It sets a go/no-go gate at 15% adoption, margin triggers, a $15 price arm, and conditions that would flip the answer. It avoids all the traps and handles the CPO hypothesis by revising it.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the language is plain. At 15 slides it is a bit long for the decision, and the decisions list and the risks are partly repeated.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Pro becomes the lead plan in every deal Routewise contests. It neutralises the “AI included” comparison, worth up to $0.64M of new ARR a year.",
+    "why": "This assumes full parity recovers the whole win-rate drop. That is partly offset by the document's own caveat about Routewise's discount."
+   },
+   {
+    "quote": "Pro tier base 25% adoption",
+    "why": "This is a judgement-call midpoint between 14% (a $149 add-on test) and 33% (a 2023 tier precedent). Neither source is a direct measurement of Pro adoption at +$12."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 in a new Pro tier at +$12 per seat. It includes a pooled allowance of 600 requests per seat, with overage billed above that. Reject the $149 add-on and free-in-Core. Assign 14 engineers and re-baseline the mobile rewrite two quarters later. Run a Q1 price test with a March go/no-go gate at 15% adoption.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It uses revealed demand (the paywall test), prices in variable inference cost with an allowance and overage, and explicitly weighs and accepts the mobile delay with a fixed date and a kill gate."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "It keeps 'launch' but rejects the $8M survey sizing, restating it as $2.5M at most from the paywall test. It also moves from a $149 add-on to a Pro tier because of heavy-user inference cost. It flags the survey's 6% response rate and size skew, and the volunteer bias in the beta."
+  },
+  "overall_comment": "This is a strong, well-calibrated deck. The numbers verify, the internal claims are corrected (CPO $8M, VP Sales $1.9M), the mobile trade-off is quantified, and the recommendation has gates and flip conditions. The main weakness is the assumed 25% Pro adoption, which is only partly evidenced. It is also a little long and repeats the decisions list.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.1668364,
+ "wall_s": 32.66623497009277,
+ "is_error": false,
+ "error_text": null
+}

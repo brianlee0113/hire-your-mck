@@ -1,0 +1,39 @@
+{
+ "x": "D4NLN6",
+ "y": "DP55VA",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same logical chain (churn diagnosis, pricing power by segment, option value, rollout), and in both the executive summary matches the body. X's hierarchy has one internal strain: the summary and several titles say mid-market and enterprise rises \"alone clear the target\" and that the plan meets it \"whatever SMB customers do\". X's own backup shows the margin is $0.13M and disappears if net retention slips one point or mid-market reacts at all. Y's governing thought, range-based summary (base to stress) and body agree throughout, and its headline that no pricing option reaches 15% alone is what its bridge shows. Y's hypothesis table also ties each claim to its test and verdict.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the key's preferred differentiated recommendation (R1): raise mid-market and enterprise within caps, hold the promotion cohort, gate SMB on a randomised +8% test, with guardrails. They differ on calibration and trade-offs. X takes mid-market to 12%, above the only tested level and on renewals the test did not cover, and assumes zero churn response in its base case. It then presents the growth target as cleared on a $0.13M margin. Y chooses the tested 10%, prices in a churn response for every segment in base and stress cases, and compares four options including an intermediate one (SMB +8% from January). It states explicitly what the gate costs (about $0.3M of upside) and what it buys. Y also tells the CEO that pricing closes only part of the gap and that $1.1–2.5M of new-logo ARR is needed, which is a more defensible position than X's claim that the target is met. X's fallback triggers and risk table are good, but Y's weighing of alternatives is more complete and more conservative where the evidence is thin.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the key calculations correctly: blended churn 1.7%→2.6% and ARR-weighted 0.8%→1.2%, promotion-cohort churn of 4.9%, the mix decomposition (X 91%, Y 94%, both within tolerance), the $7.57M realistic uplift, and the 2023 net of about 4.1%. Both split the exit survey by cohort, flag the undefined dashboard metric and caveat the 2024 new-sign-up test. X's weaknesses: it compares the 10.7% break-even for a 12% rise against the 3.6% loss from an 8% rise without scaling, giving \"3x\" where Y's per-point scaling gives about 2x. Its ARR bridge assumes no mid-market or enterprise churn at 12% and still asserts \"at least $99.03M whatever SMB customers do\". It also says the low-cost SMB tier was excluded \"by agreement at the brief\", which the pack does not support. Y's weaknesses: the 2.9x elasticity multiplier for the promotion cohort is inferred from price-citation shares, and the mid-market churn coefficient is taken from a conversion test. Both are loose inferences, but both are labelled as assumptions and bounded by a stress case. Y also uses evidence X underplays: the mid-market churn rise as a caution, the win-rate fall as acquisition rather than retention sensitivity, and an activation model showing a realistic 2.8% SMB churn rather than only an upper bound.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than adopting or rejecting it wholesale. Both accept that the churn rise is mostly a promotion mix effect, correct the $10.3M to $7.6M, and recognise price sensitivity in the promotion cohort and Inkwell pressure in SMB. Y reconciles the two views more explicitly: \"the CFO is right that the churn rise is not about the list price, and the CEO is right that the promotion cohort is fragile\". It backs the CEO's concern with numbers by showing that a rise on the cohort loses money even at the 2023 response. Y also revises the CFO's 12% down to the tested 10% and nets churn out of the uplift ($1.5–4.6M net), and it lays out a claim-by-claim verdict table covering the CFO and Customer Success claims. X keeps the CFO's 12% for mid-market without a churn charge and leans further toward the \"promotion problem\" framing. It still treats SMB price sensitivity as open and rejects the halving claim well.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both are strong, segment-differentiated answers that meet every defensibility criterion, with very similar rollout designs. Y would serve the CEO better because it is more honest about what pricing can deliver. It nets churn response out of every option, shows base and stress ranges, stays at the tested 10% for mid-market, and makes clear that the 15% target still needs $1.1–2.5M of new-logo ARR. X tells the CEO the target is cleared without SMB or new customers, which rests on zero mid-market churn at an untested 12% and a $0.13M margin that its own sensitivities overturn. Y also adds the forward-looking lesson on activation-blind discounts and a more realistic estimate of what onboarding can achieve. X's strengths are its clean break-even, risk owners and guardrail table, but they do not offset the over-confident headline.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1884922,
+ "wall_s": 58.04411602020264,
+ "error_text": null
+}

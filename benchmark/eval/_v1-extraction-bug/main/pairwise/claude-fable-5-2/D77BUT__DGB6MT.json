@@ -1,0 +1,39 @@
+{
+ "x": "D77BUT",
+ "y": "DGB6MT",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents reach the same answer (Pro tier at +$12 per seat with an allowance, Q4 2027 after the mobile rewrite, win-rate trigger to pull forward) and both use an answer-first structure. X's hierarchy is tighter: the governing thought splits into three pillars (prize is $1.2–2.9M, package in Pro with a 600-request allowance, mobile first), and each slide title states a claim that its calculations support. The margin claim in X's summary (75.9% worst case) is the number derived on slide 9. X has one small tension: the summary says reaching 105% NRR 'takes both' levers, while slide 13 shows Copilot alone gets there at 26% adoption and says only 'safest with both'. Y's structure is also logical (five key questions, sections that answer them), but it has more internal slippage. The summary says 'one in seven will pay' while the body calls 14% a ceiling and says true take-up is lower. The 'Pro with allowance: 76.0%' margin is actually computed at mean beta usage, not at the proposed allowance of about 1,330 requests, so the allowance claim and its supporting number do not line up. The allowance itself is left as 'set below break-even later'.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are effectively identical and both meet all three defensibility criteria: revealed demand, inference cost built into the packaging, and the mobile trade-off weighed explicitly. The difference is in how well the trade-offs are stress-tested. X gives low and base cases throughout (7% and 14% add-on, 14% and 33% Pro). It gives the timing comparison a 'half credit' sensitivity and a break-even: mobile-first wins if the rewrite fixes more than 26–52% of mobile churn. It quantifies the gross profit lost by deferring Copilot ($0.1–0.7M) and shows that the mobile fix plus 14% Pro adoption reaches 105%. It also attaches five explicit triggers that would flip the plan, including checking whether the 14 engineers can come from outside mobile, which would remove the trade-off. Its early-access test uses a random sample of non-volunteer Core accounts, which addresses the selection bias in the demand evidence. Y weighs the same options and adds a clear sequence table, but leans on upper bounds only. Its plan depends on 26–33% Pro take-up, with the 14% case only in a backup slide. It dismisses the cost of deferring Pro revenue as 'delayed, not lost'. It rules out staffing alternatives as out of scope, and its price test runs on beta accounts, who are volunteers again. Y's allowance is set at inference break-even, which is a weaker guardrail than X's.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M vs $2.45M, inference of $32.4 / $61.2 / $130.5 per month, 109 deals and $0.64M, and Pro ARR of $2.89M. Both discount the survey for its 6% response rate and larger respondents, treat 14% as a ceiling, flag beta selection bias, and rebut the VP Sales claim. X's check that the claim implies a 58% win rate, above the pre-AI level, is the sharper rebuttal; Y converts the claim to $1.9M and usefully notes that the loss notes cover all lost deals, not only Routewise ones. X's numbers reconcile throughout: the 34% add-on margin, the 76.5% / 75.9% / 74.1% / 71.9% company margin scenarios, the 26–52% break-even and the NRR bridge. The key evidentiary gap is in Y's margin guardrail. Its allowance of about 1,330 requests per seat is the point where inference equals the full $12 price, so at full use the Pro tier would have a negative margin after platform cost and company margin would fall to roughly 73%, below the floor. Yet the chart labels 76.0% as 'Pro with allowance', when that figure is at mean usage. X's 600-request allowance is shown to hold 75.9% in the worst case. Y's free-in-Core case uses median usage, which understates total cost, though it is labelled 'even at median'. Y's Pro inference cost on a per-account basis ($1.26M) matches the key; X's per-seat scaling is a disclosed and reasonable alternative.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO hypothesis as the key expects: keep 'launch', reject the $8M sizing and the flat $149 add-on, and repackage with margin guardrails. Both also change the timing, with the mobile trade-off made explicit and a planned response to the AI threat (win-rate gate, early access). X makes the revision the organising device: slide 3 states the hypothesis, tests it against five 'what would have to be true' conditions, gives a verdict on each (demand not supported, economics thin, competition partly, opportunity cost not supported, value unproven) and states the revised answer. It also keeps conditions under which the original Q2 timing would be restored. Y revises just as far in substance, with a clear from-to slide and a backup table that tests the CPO, VP Sales and Head of CS positions, but the treatment is less systematic and comes late or in the appendix.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents give the decision maker the same answer with largely the same correct core numbers, so the difference is in rigour and decision-usefulness. X is shorter and more robust. It offers a specific, tested margin guardrail: a 600-request allowance that holds 75.9% in the worst case. It runs low and base cases for adoption, a break-even for the timing call, and an NRR bridge that works at the conservative 14% adoption. It names explicit triggers and gates that would change the plan, and its early-access test on random non-volunteer accounts targets the biggest evidence weakness. Y is solid and has good touches: the gross-profit waterfall, the note on loss-note coverage, the inference price upside and a sequence comparison table. But its allowance is set at break-even and its margin claim is not actually computed at the allowance. Its plan leans on 26–33% take-up, and it treats the timing trade-off only with upper bounds. X would serve the executive team better.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.2007162,
+ "wall_s": 66.60817217826843,
+ "error_text": null
+}

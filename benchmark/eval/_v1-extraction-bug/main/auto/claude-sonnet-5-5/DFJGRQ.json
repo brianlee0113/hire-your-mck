@@ -1,0 +1,191 @@
+{
+ "blind_id": "DFJGRQ",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed: whether to launch in Q2, and how to package and price it. It uses all three constraints as criteria: NRR 101→105%, gross margin ≥75%, and the 14-engineer mobile trade-off. It sets out early that the answer turns on demand evidence, inference cost, the competitive effect and the mobile delay. It also adds a sequencing option the pack implies.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the six summary points and the slide titles line up, and the titles read as claims. Beta → demand → unit economics → packaging → margin → competition → mobile → NRR → sequencing → offer → plan → gates is a clean flow. One real gap remains. The plan keeps the mobile team 'fully staffed' through Q4, yet Copilot launch engineering needs 14 engineers for two quarters in H2. The document never says whether the rewrite finishes before then, so the trade-off is shifted rather than resolved. The 'Copilot slips the same two quarters' assumption is also confusing. Slides 13–15 partly repeat the earlier slides.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers check out. The survey case gives $8.1M and the test-based case about $2.5M at the high end. Inference cost is $17, $32, $61 and $131 per month. The win-rate effect is 109 deals, or $0.64M. Pro ARR is $2.9M. Mobile churn ARR is $2.18M. The Pro margin of about 55% matches the key's roughly 56%. All critical evidence is used: the paywall test, inference cost and usage concentration, the Routewise win-rate drop and discount confound, and the mobile vs AI churn reasons. It also covers beta bias and the 6% survey response from larger accounts. Weaknesses: the mobile-delay cost ($0.5–1.1M) rests on an assumed 50–100% fix rate with no support in the pack. 'Matches Routewise' is asserted without knowing Routewise's price. The Pro-tier slides give company-level margin but never a standalone Pro margin figure.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Revises the CPO hypothesis well. It rejects the $149 add-on and free-in-Core on the numbers. It recommends a Pro tier with a usage pool, a margin guardrail, a randomised paid pilot, explicit go/no-go gates, and triggers that would bring launch forward to Q2. It makes the mobile-vs-AI trade-off explicit and treats the decision as a close call. It avoids all the traps. The recommendation is defensible and matches the key's conditional-delay option and its Pro-tier option. The main weakness is that the two-quarter delay trade-off is not fully resolved against the H2 engineering need. The document also gives no interim AI response during the delay beyond the pilot.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slides 1–2, the language is plain, and each slide has a clear claim. At 17 slides and about 3,500 words it is long for this decision. The plan, gates and decisions slides, and the two appendices, repeat earlier content.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Pro at +$12/seat with 600 requests per seat matches Routewise",
+    "why": "The pack does not give Routewise's Pro price or allowance, so 'matches' is only an inference about inclusion."
+   },
+   {
+    "quote": "A two-quarter mobile delay loses an estimated $0.5–1.1M ARR for good.",
+    "why": "This depends on an assumed 50–100% fix rate for mobile churn, and on the assumption that the delay equals the lost fixed churn. The pack gives neither. The assumption is labelled in the appendix, but the headline states it with some certainty."
+   },
+   {
+    "quote": "the contract can be renegotiated for 2028",
+    "why": "The pack only says the price is fixed through December 2027. It says nothing about renegotiation terms."
+   },
+   {
+    "quote": "Keep the mobile team intact through Q2 ... Full team kept",
+    "why": "The plan assumes the 14-engineer Copilot launch work in H2 will not delay the mobile rewrite. The pack says it does delay it, and the document does not show how the rewrite finishes first."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Technician mobile rewrite — Protected: no engineers moved to Copilot ... Full team kept",
+    "quote_b": "Copilot launch engineering — Hardening, billing for Pro and usage packs; 14 engineers, two quarters",
+    "why": "The pack says 14 engineers for two quarters delays the mobile rewrite. If launch engineering runs in H2 while mobile is still being built, the mobile delay is deferred, not avoided. The document does not reconcile this, nor the 'Copilot slips by the same two quarters' assumption."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in a new Pro tier at $91 per seat with a pooled 600-request-per-seat allowance and paid extra packs. Target Q4 2027. Protect the mobile rewrite through Q2 and run a randomised paid pilot with go/no-go gates. Pull launch forward to Q2 if mobile can be staffed separately or the Q4 2026 win rate falls below 37% with no Routewise discount.",
+   "closest_plausible_id": "R3",
+   "defensible": "yes",
+   "rationale": "It uses revealed demand (14% paywall) over the survey and explains the gap. It prices inference cost into the packaging through the pool and margin checks. It weighs the mobile delay against the competitive threat and quantifies both. The H2 engineering-staffing question is left slightly open, but the conditions that would change the answer are explicit."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The CPO's $149 add-on and $8M forecast are rejected on evidence. The survey is biased by a 6% response and larger respondents, and 14% revealed take-up gives about $1.2–2.5M. Heavy buyers carry a 59% margin. The document keeps the idea of launching but changes the packaging to a Pro tier with a pool, and changes the timing. This matches the expected 'revise' handling. It also flags the beta bias, the Routewise discount confound, and that the 14% is itself a ceiling."
+  },
+  "overall_comment": "This is a strong, well-calibrated document. The numbers are correct and all critical evidence is used. The survey-vs-test gap is explained, and inference cost is turned into a pooled-allowance design with margin stress cases. The competitive effect is capped at a 109-deal ceiling and the VP Sales claim is rebutted. The mobile trade-off is quantified. The recommendation has gates and triggers that would change it. The main weaknesses are the unresolved engineering sequencing, since H2 launch work still needs the 14 engineers, and the reliance on an assumed mobile fix rate. The deck is also longer than needed, with some repetition.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1768364,
+ "wall_s": 40.02677321434021,
+ "is_error": false,
+ "error_text": null
+}

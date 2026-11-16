@@ -1,0 +1,39 @@
+{
+ "x": "DJAW9B",
+ "y": "DJLFHM",
+ "case": "c1-market-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same hierarchy: answer, why the US, route against the board's tests, payback risk, ambition reset, decisions. X's wording stays consistent with its own evidence on the key point: Amazon-led is 'the only route that stays inside the cash and margin guardrails', with payback separately marked at risk. Y says in its summary and in decision 1 that A is the 'only route that passes the investment, payback and margin tests', while its own scorecard marks payback AT RISK. X's seven-condition slide also ties each later section back to the governing thought. X has small slips of its own: the summary calls $6.4M the worst tested case while its chart shows −$7.5M, and it quotes group margin as ≥9.0% in one place and ≥8.8% in another. These are minor next to Y's overstatement.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred answer: Amazon-led with gates, retail only above 20% awareness, ambition moved to about 2032, Japan deferred to 2028. Both weigh Japan fairly and state the ambition-versus-guardrails trade-off. X goes further on what would trigger a change. Its gates have explicit if-met and if-missed branches, including scale back or exit at revenue below $5M or ACoS above 32%. It models a stall case at 200k units (−$6.3M by 2030, capped near $3.7M by exiting in 2028), which addresses the two Amazon-first peers that stalled. It also notes the plan is not conservative against Saebom's fourth year. Y's guardrails are sensible and quarterly, but softer: slow paid growth, re-forecast, and board review at the $4M envelope, with no exit criteria and no stall scenario. Y calling payback 'likely on the planning inputs' is a little generous given the 32% benchmark.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "The core numbers are the same and match the key in both: $10.73 and $4.01 per Amazon unit, $7.55 retail, B peak −$20.8M and 4.5% margin, A at +$2.4M / +$0.4M / −$2.3M, break-even ACoS 28.6% (26.9% with the tariff). Both test the 4.5 units-per-door and 25% ACoS assumptions and separate the $5.2B figure from the $3.6B skincare market. X adds more analysis: a sell-through-by-halo grid for B, a stall case, and a quantified version of the CEO's 2029 retail step. X also has more blemishes. It frames $40M as 'only about 1%' of the market, which touches the market-sizing trap. It extrapolates the pilot linearly to 333k units, though with a caveat. And it calls $6.4M the worst tested case when its own chart shows −$7.5M. Y is cleaner and stronger on the correlation memo (four separate reasons) and on the small competitor sample. Its one unsupported claim is that Amazon-first brands 'lost far less', since the pack gives no loss figures for them. X's depth and Y's cleanliness roughly cancel.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both keep the CEO's Amazon-first launch and add conditions, as the key expects, and both raise the retail awareness trigger from 15% to 20% using the delisting bar. X handles the hypothesis more rigorously. It breaks it into seven testable conditions with a verdict on each. It then models the CEO's 2029 national-retail step directly: group margin falls to 6.0% and cumulative cash to −$13.8M by 2030, so that step breaks the margin floor even at above-20% awareness sell-through. That shows why a cheaper retail format is needed as well as a higher trigger. Y's side-by-side of the CEO's gates and its proposed gates is clear and well argued, and it explicitly agrees with the CEO's sequence. But it argues the 2029 step mostly from the $2.4M of payback headroom rather than quantifying it.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents give the same recommendation on essentially the same model, and both meet all four defensibility criteria in the key. X serves the board somewhat better. It is more candid that 2030 payback is at risk. It gives gates with consequences and an exit path, quantifies the stall scenario, and shows that the CEO's own 2029 retail step would break the margin floor. Y is tighter, has fewer loose claims and a better critique of the correlation memo, but leaves the board with softer triggers and slightly overstates that A passes the payback test. The margin between them is small.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.3179802,
+ "wall_s": 63.13756799697876,
+ "error_text": null
+}

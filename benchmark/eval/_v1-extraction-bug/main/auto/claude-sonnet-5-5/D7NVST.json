@@ -1,0 +1,212 @@
+{
+ "blind_id": "D7NVST",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document frames the board decision as posed: launch in three cities in 2027, judged against the two stated constraints (profit within current cash, 12 months of runway) and the founders' month-18 contribution promise. Slide 2 turns these into five key questions, and the early slides show that the answer turns on unit economics and runway. It also includes the alternative path, 'what instead'. Small blemishes: the funding round is placed out of scope, and 'reach profit' is loosely worded.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the six summary points and the sections line up: market growth versus profit, unit economics, the pop-up, cash and runway, and the alternative. Most titles are claims backed by the slide's evidence. Flaws: the four section dividers all carry the same title, 'The market grows but does not pay'. Slide 37 is titled 'Four questions were left out' but is the appendix contents. Slide 16 says 'every other input is held at the plan's values' next to a $2.95 median figure, which does not fit that statement. Some slides are redundant, for example the repeated median and best-case tables, and slide 10 repeats slides 11 to 16.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers match my recomputation: median −$6.17, best combined −$1.76, pop-up −$12.57, Zipcart-fix −$1.05 (or −$0.48 with no volume loss), $7.2M spendable, $2.5M left (6.2 months), nine-store annual figures, and the CAC payback and acquisition bill. The incumbent losses and QuickBasket closures are used. The document also checks which plan inputs sit beyond the best observed site. It reads the pop-up's growth as promotion-supported. Weaknesses: it never computes the Zipcart fee-plus-promotion case at best observed density, where contribution would be positive (about $2.25). It also does not note that the 1,042 orders a day needed to break even is below the best observed 1,400. That leaves the Zipcart treatment one-sided. A few claims are overstated: 'regional scale loses more per order than national' rests on two operators, and 'ran below the benchmark on every input' ignores the lower fixed cost. The slide 16 median break-even note is mislabelled.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "It clearly recommends not launching and growing the software business, which is defensible and follows from the analysis. It compares three options against the board's criteria. It names the trade-offs: competing with customers, learning versus consuming runway, and growth versus losses. It sets four explicit gates with thresholds (including cash of at least $14.3M and rider cost below $24.8 an hour), a Q4 review, a no-capex way to gather evidence from a customer site, risks with early signals and owners, and next steps with owners and dates. It avoids all the traps. The main gap is the Zipcart fee evidence: it is dismissed using a median-density site only, and the best-density-with-fee case is not shown. The trial option is also reduced to 'one own dark store' without exploring a capped partner-store pilot, although the customer-site tracking partly covers that.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer and its reasons are in the first three slides, and the language is plain. But 45 slides and about 6,300 words is far more than the decision needs. Four identical divider slides, a five-slide appendix and several overlapping economics slides (10 to 16, 40, 41 and 44) add length. The generic divider titles are confusing.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Regional scale loses more per order than national",
+    "why": "This is inferred from just two operators with different business models, so it is not a validated causal or scale claim."
+   },
+   {
+    "quote": "a new regional entrant starts from a weaker position than both",
+    "why": "The pack gives no evidence about a new entrant's position relative to the incumbents."
+   },
+   {
+    "quote": "Its benchmarks come from customers' 14 sites, data they may stop sharing with a rival",
+    "why": "This is speculation about customer behaviour that the pack does not support."
+   },
+   {
+    "quote": "Paid channels usually cost more as they scale",
+    "why": "This is a general market assertion that is not in the pack."
+   },
+   {
+    "quote": "Parcelbird's own test ran below the benchmark on every input",
+    "why": "The pop-up's fixed cost ($650K) was below the benchmark ($1.15M), so 'every input' overstates."
+   },
+   {
+    "quote": "Running the software did not make Parcelbird a better operator",
+    "why": "One six-week temporary site is too small a base for a general causal conclusion."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "At the median's 2.4 orders an hour, a site breaks even only if riders cost $2.95 an hour — Every other input is held at the plan's values",
+    "correct": "$2.95 is the break-even rider cost with all benchmark-median inputs. With the plan's other inputs held and 2.4 orders an hour it would be about $17 an hour. The stated basis is wrong, though the $2.95 figure itself is right for the median."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Copying Zipcart's fee and promotion cuts still leaves a median site losing money",
+    "quote_b": "1,042 orders a day a median site would need at Zipcart's prices",
+    "why": "Not a strict contradiction, but 1,042 orders a day is below the best observed 1,400. So the fee-plus-promotion fix would turn a best-density site positive, and the document never says so. That weakens the one-sided 'fix still fails' framing."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Grow the software business (hire 2 engineers and 2 sales, close the 9 late-stage deals, support grocers' store-based fast delivery). Gather evidence from a customer site's economics at no cost. Revisit only if four gates pass, at a Q4 2027 review.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches the key's preferred answer. It computes contribution per order at median, best-observed and pop-up inputs. It separates market growth from profit. It tests the runway constraint ($7.2M spendable against $9.5M needed). It offers the software alternative, with gates and kill-style conditions."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "The founders' hypothesis is rejected, as the key expects. The document confirms the growth claim ('demand is real') but separates it from profitability. It shows the plan's +$2.02 needs every input above the best observed site. It uses the pop-up (−$12.6) and the incumbents' losses. It re-examines the Zipcart evidence as a fee-driven result with 14% fewer orders, and tests the same fix on a median site (−$1.05). It notes the survey versus retention gap. The Zipcart treatment stops short of showing the best-density case, so it is not fully balanced. The document states its assumptions and missing data clearly."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. Its recommendation is defensible and decision-ready, with gates, risks and owners. Contribution per order, the pop-up, the runway shortfall and the software alternative are all handled correctly. The weaknesses are length (45 slides, with repeated dividers and overlapping backups), a one-sided Zipcart analysis that never shows fee-plus-best-density would be positive, and a few mild overstatements. A mislabelled median break-even rider-cost note on slide 16 is a small flaw.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.2242424,
+ "wall_s": 53.612114906311035,
+ "is_error": false,
+ "error_text": null
+}

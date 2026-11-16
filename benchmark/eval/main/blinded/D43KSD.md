@@ -1,0 +1,878 @@
+## Part 1 · Normalised storyline
+
+**Governing thought:** Margin fell because of promotions, e-commerce and shrink, not mainly wages; a six-lever plan gets back to ~3.0% by FY2028 within the $25M budget
+
+**Executive summary:**
+1. What happened: Operating margin fell from 3.37% to 1.02% in two years (−$35M at FY2025 sales). Store labor explains just 0.30 pt of the 2.35-pt fall. Promotions (0.70), e-commerce fulfillment (0.84) and shrink (0.50) explain 2.04 pts, 87%.
+2. Why the draft plan falls short: Cutting store hours 8% and freezing e-commerce reaches only ~1.5% margin by FY2028 even if the cut costs nothing, once the 2027 wage rise is absorbed. It also puts fresh quality at risk: stores with the fewest labor hours already run 3.1% shrink against 2.3%.
+3. What we recommend: Fix the margin where it was lost: (1) reprice home delivery as tested; (2) cut the money-losing promotions and win back vendor funding; (3) restore receiving and produce routines to cut shrink; (4) schedule labor to demand rather than cut it across the board; (5) grow private label; (6) exit the nine stores with negative four-wall EBITDA, six of them as their leases expire.
+4. What it delivers: Operating income rises from $15.3M to ~$41.5M in FY2028, about 3.0% of ~$1.40B sales, after absorbing a $6.8M wage rise. One-time cost is ~$18M of the $25M ceiling. The base case is thin (2.96%), so ~$10M of contingency levers are worked in parallel.
+5. What to do first: Four moves in the next six months need ~$1.5M of one-time cost and add ~$7.9M a year: roll out delivery pricing, drop loss-making promotion events, reinstate receiving and rotation checks, and refuse the 3% delivery rate rise. This takes run-rate operating income to ~$23M, above the $20M covenant level.
+6. Decisions today: Approve the plan in place of the 8% hours cut; vote on a fix-or-exit test for the three stores with leases beyond 2027; authorise the $25M envelope and a lender briefing.
+
+**Slides (title → claims → evidence):**
+
+- Slide 1: Restoring operating margin to 3% by FY2028: fix where the margin was lost, starting with four quick, low-cost moves
+  - Claim: Restoring operating margin to 3% by FY2028: fix where the margin was lost, starting with four quick, low-cost moves
+- Slide 2: Margin fell because of promotions, e-commerce and shrink, not mainly wages; a six-lever plan gets back to ~3.0% by FY2028 within the $25M budget
+  - Claim: Operating margin fell from 3.37% to 1.02% in two years; store labor explains just 0.30 pt of the 2.35-pt fall
+    - Evidence: −$35M at FY2025 sales
+    - Evidence: Promotions (0.70), e-commerce fulfillment (0.84) and shrink (0.50) explain 2.04 pts, 87%
+  - Claim: Cutting store hours 8% and freezing e-commerce reaches only ~1.5% margin by FY2028 even if the cut costs nothing, once the 2027 wage rise is absorbed
+  - Claim: It also puts fresh quality at risk
+    - Evidence: stores with the fewest labor hours already run 3.1% shrink against 2.3%
+  - Claim: Fix the margin where it was lost: six levers (reprice delivery; cut money-losing promotions and win back vendor funding; restore receiving and produce routines; schedule labor to demand; grow private label; exit nine stores with negative four-wall EBITDA)
+  - Claim: Operating income rises from $15.3M to ~$41.5M in FY2028, about 3.0% of ~$1.40B sales, after absorbing a $6.8M wage rise
+    - Evidence: One-time cost is ~$18M of the $25M ceiling
+    - Evidence: The base case is thin (2.96%), so ~$10M of contingency levers are worked in parallel
+  - Claim: Four moves in the next six months need ~$1.5M of one-time cost and add ~$7.9M a year, taking run-rate operating income to ~$23M, above the $20M covenant level
+- Slide 3: Wages explain only 0.30 of the 2.35-point margin fall; promotions, e-commerce fulfillment and shrink explain 2.04 points
+  - Claim: Operating margin bridge FY2023 to FY2025
+    - Evidence: FY2023 operating margin 3.37
+    - Evidence: More promotional sales −0.70
+    - Evidence: Higher shrink −0.50
+    - Evidence: More private label +0.18
+    - Evidence: E-commerce fulfillment −0.84
+    - Evidence: Store labor −0.30
+    - Evidence: Occupancy & energy −0.20
+    - Evidence: Other SG&A 0.00
+    - Evidence: FY2025 operating margin 1.02
+    - Evidence: Gross margin: −1.02 pts; Operating costs: −1.34 pts
+  - Claim: In dollars, labor is the biggest cost increase: +$14.3M, FY2023–25
+  - Claim: But sales grew 5.8%, so labor rose only from 11.8% to 12.1% of sales
+    - Evidence: wages +9.4%, mostly offset by 6% fewer hours per $1,000 of sales
+  - Claim: The bigger leak is gross profit
+    - Evidence: $83M more sales brought in only $6.3M more gross profit
+  - Claim: E-commerce fulfillment cost rose 3.5× to $18.1M
+    - Evidence: orders grew from 453k to 1.33M
+  - Claim: Implication: a plan built only on labor addresses about 13% of the problem
+- Slide 4: Promotions and shrink explain all of the 1.0-point gross-margin fall, and the extra promotion has not paid for itself
+  - Claim: Gross margin bridge
+    - Evidence: FY2023 gross margin 26.04%
+    - Evidence: Promotional share 24% → 29%: −0.70 pts
+    - Evidence: Shrink 2.1% → 2.6% of sales: −0.50 pts
+    - Evidence: Private label 17.0% → 18.5%: +0.18 pts
+    - Evidence: FY2025 gross margin 25.02%
+    - Evidence: promotional sales earn 14 pts less margin than regular-price sales, private label 12 pts more than national brands; both unchanged FY2023–25
+  - Claim: The extra promotion cost ~$10.5M of margin in FY2025
+    - Evidence: promotional sales rose from 24% to 29% of sales
+  - Claim: 38% of FY2025 events lost money even after counting the extra units they sold
+  - Claim: Vendors now fund less
+    - Evidence: 46% of markdowns in FY2025, down from 55% in FY2023
+  - Claim: The comparison of comparable sales does not show profit; it pays for less than 2.3 pts of extra promotional share and does not control for store differences
+    - Evidence: +1.8% vs +0.2% is worth ~0.3% of sales in contribution (1.6 pts × 20%)
+  - Claim: Shrink cost $7.5M
+    - Evidence: fresh and produce waste is 45% of it, theft 35%, receiving and administrative errors 20%
+- Slide 5: E-commerce lost about $10M in FY2025 once delivery costs and sales diverted from stores are counted, not the 6.1% profit reported
+  - Claim: It leaves out delivery
+    - Evidence: Third-party delivery ($13.80 per delivered order) is booked by finance under fulfillment; fees recover only $3.10 of it
+    - Evidence: That alone is −6.5% of e-commerce sales and turns 6.1% into about −0.4%
+  - Claim: It treats every sale as new
+    - Evidence: Customers say 70% of what they buy online they would otherwise have bought in a Harlow store
+  - Claim: Corrected, the channel loses ~8% of its $128M sales, which is the 0.84-pt margin drag
+    - Evidence: Contribution on genuinely new sales 7.7
+    - Evidence: Picking (all 1.33M orders) −9.8
+    - Evidence: Third-party delivery (772k orders) −10.7
+    - Evidence: Delivery fees collected 2.4
+    - Evidence: Net e-commerce result −10.4
+  - Claim: Delivery is the problem, not the channel: click-and-collect is close to break-even
+    - Evidence: each delivered order costs $21.20 to pick and deliver against $3.10 in fees
+    - Evidence: −$12.34 per home-delivered order (58% of orders)
+    - Evidence: −$1.64 per click-and-collect order (42% of orders)
+  - Claim: Freezing the service at its current size locks in the ~$10M loss
+- Slide 6: Rolling out the tested delivery pricing saves ~$2.8M a year and keeps the service; click-and-collect should become the default
+  - Claim: Test results applied to the whole chain (FY2025 volumes) give a net gain of +$2.8M
+    - Evidence: Home-delivered orders 772k → 703k (−9%)
+    - Evidence: Click-and-collect orders 559k → 637k (+14%)
+    - Evidence: E-commerce sales $127.8M → $125.2M (−2%)
+    - Evidence: Fee collected per delivered order $3.10 → $6.40 (+$3.30)
+    - Evidence: Net fulfillment cost $18.1M → $15.1M (−$3.0M)
+    - Evidence: Contribution lost on sales that leave Harlow −$0.2M
+    - Evidence: E-commerce result, incremental basis −$10.4M → −$7.6M (+$2.8M)
+    - Evidence: fee test = 4 stores, 10 weeks, late FY2025; $7.99 fee and $100 free-delivery threshold (now $4.99 below $75)
+  - Claim: Roll out the $7.99 / $100 pricing chain-wide in Wave 1; it is tested, reversible and needs no capital
+  - Claim: Make click-and-collect the default; each order switched from delivery saves the $13.80 delivery cost (~$7.40 net of the new fee)
+  - Claim: Refuse the provider's 3% rise and rebid
+    - Evidence: ~$0.3M a year
+    - Evidence: Every 10% off the delivery rate is worth ~$1.0M (held as contingency)
+  - Claim: Test a second step (e.g. a delivery membership or a higher minimum basket) before committing it
+  - Claim: This keeps delivery, as the owners want. The remaining ~$7.6M a year is the visible cost of that choice
+- Slide 7: An 8% across-the-board hours cut would probably raise shrink: the stores with the fewest labor hours already lose 3.1% of sales
+  - Claim: Shrink by store labor intensity, FY2025
+    - Evidence: Q1, fewest labor hours per $ of sales 3.1%
+    - Evidence: Q2 2.7%
+    - Evidence: Q3 2.4%
+    - Evidence: Q4, most labor hours 2.3%
+    - Evidence: Managers of Q1 stores say produce rotation and receiving checks are skipped on busy days
+  - Claim: FY2023–25 trends
+    - Evidence: +9.4% hourly wage incl. benefits, $16.80 → $18.38
+    - Evidence: −6.0% labor hours per $1,000 of sales, 7.02 → 6.60
+    - Evidence: +0.5 pt shrink, 2.1% → 2.6% of sales ($7.5M)
+  - Claim: 8% blanket cut (draft) vs targeted (recommended)
+    - Evidence: Labor saving: ~$14.5M vs ~$5.1M net (−3% hours)
+    - Evidence: Shrink effect: risk of +0.6–0.7 pt (~$10M) vs −0.3 pt to Q4 level of 2.3% (+$4.2M)
+    - Evidence: Customer risk: checkout waits, stock-outs, weaker fresh (58% shop Harlow for produce) vs low; service measures tracked weekly
+    - Evidence: Net effect: ~$4.5M if shrink rises as feared vs ~$9.3M
+  - Claim: The ~$10M shrink estimate is an association, not a measured effect
+    - Evidence: applies the FY2023–25 pattern (hours per $1,000 of sales −6%, shrink +0.5 pts) to an 8% cut
+    - Evidence: Q3/Q4 have similar shrink, so their extra hours buy little
+- Slide 8: Cut the money-losing promotions, keep depth where ValuMart competes, and answer price perception with private label
+  - Claim: Spend promotion money where ValuMart competes and protect fresh quality everywhere
+    - Evidence: ValuMart has opened 11 stores in Harlow trade areas since 2023; nearby Harlow stores ran comparable sales of −4.2% vs +1.1% elsewhere
+    - Evidence: 41% now say Harlow is more expensive than other options (33% in FY2023)
+    - Evidence: Customers choose Harlow for fresh produce (58%) and convenience (44%), not for promotions
+  - Claim: Promotions and vendor funding +$9.2M
+    - Evidence: Drop the loss-making events: bring promotional share from 29% back to 25% (FY2023: 24%). +$5.5M
+    - Evidence: Win back vendor funding: fewer, larger events with a minimum funding share per event; 46% → 50%. +$3.7M
+    - Evidence: Contingency: returning to FY2023's 55% would add ~$4.6M more
+  - Claim: Keep promotion depth in stores within three miles of a ValuMart; judge every event on post-event profit, not sales
+  - Claim: Private label +$5.1M
+    - Evidence: Each point of mix from national brands to private label adds 0.12 pt of gross margin (12-pt margin premium)
+    - Evidence: Raise share from 18.5% to 21.5% by FY2028: about 1 pt a year against 0.75 pt a year historically
+  - Claim: Lead with value ranges in the categories most promoted against ValuMart, so private label carries the price message
+  - Claim: Plan targets for the gross-margin levers
+    - Evidence: Promotional sales share: 24.0% / 29.0% / 25% plan, +$5.5M
+    - Evidence: Vendor funding share of promotional markdowns: 55% / 46% / 50%, +$3.7M
+    - Evidence: Private-label share: 17.0% / 18.5% / 21.5%, +$5.1M
+    - Evidence: promotion sizing assumes 30% of the margin recovered is given back in lost volume; vendor funding assumes the 14-pt gap is net of funding, implying ~$113M of FY2025 markdowns
+- Slide 9: Exit the nine stores with negative four-wall EBITDA: six as their leases expire by end-2027, three through a fix-or-exit test the board votes on
+  - Claim: Economics of exit, FY2025 basis (6 stores / 3 stores / all 9)
+    - Evidence: Sales ~$78.7M / ~$39.3M / $118.0M
+    - Evidence: Four-wall EBITDA removed +$2.1M / +$1.0M / +$3.1M
+    - Evidence: Contribution on sales moved to nearby stores (25% × 12%) +$2.4M / +$1.2M / +$3.5M
+    - Evidence: Operating income gain a year +$4.4M / +$2.2M / +$6.6M
+    - Evidence: One-time cost ~$3.0M (allowance) / $7.5M lease exit + ~$1.5M / ~$12.0M
+    - Evidence: Payback < 1 year / ~4 years / ~2 years
+    - Evidence: Sales lost to Harlow ~$59M / ~$29.5M / $88.5M
+    - Evidence: Governance: management decision at lease expiry / board vote required
+  - Claim: Six stores: give landlords notice of non-renewal unless rent cuts turn four-wall EBITDA positive; close at lease expiry during 2027
+  - Claim: Three stores: run them for two quarters on the full plan; exit any still negative at the Q3 FY2027 review
+  - Claim: Payback runs past FY2028 for the three, but they lift FY2028 margin by ~0.2 pt and remove a recurring loss
+  - Claim: Protect transfers so at least 25% of sales follow
+- Slide 10: Together the levers lift operating income from $15.3M to ~$41.5M in FY2028, about 3.0% of sales, after absorbing the 2027 wage rise
+  - Claim: Operating income bridge, $M
+    - Evidence: FY2025 actual 15.3
+    - Evidence: 2027 minimum wage +4% −6.8
+    - Evidence: Delivery pricing +2.8
+    - Evidence: Promotion pruning +5.5
+    - Evidence: Vendor funding +3.7
+    - Evidence: Private label +5.1
+    - Evidence: Shrink +4.2
+    - Evidence: Labor scheduling +5.1
+    - Evidence: Exit 6 stores at lease end +4.4
+    - Evidence: Exit 3 stores (vote) +2.2
+    - Evidence: FY2028 plan 41.5
+    - Evidence: 3.0% target ≈ $42.0M
+  - Claim: Gross improvement $33.0M; net of wages +$26.2M
+  - Claim: 2.96% base case: within ~$0.5M of the target, so there is no slack
+  - Claim: If the wage rise touches only half the pay scale, margin is ~3.2%
+  - Claim: Contingency, ~$10M
+    - Evidence: vendor funding to 55% ($4.6M), wage pass-through below the full bill (up to $3.4M), labor at −4% net ($1.7M), delivery rate −10% ($1.0M)
+- Slide 11: The recommended plan addresses all four sources of the decline; the draft labor plan addresses one and stalls at ~1.5% margin
+  - Claim: Draft plan (CFO / COO) vs recommended plan
+    - Evidence: Diagnosis: Wage inflation is the main cause vs Promotions, e-commerce fulfillment and shrink caused 87% of the fall; labor 13%
+    - Evidence: FY2028 operating income: ~$12.5M–22.5M (0.8%–1.5%) vs ~$41.5M (~3.0%), with ~$10M contingency
+    - Evidence: Run-rate against the $20M covenant: ~$30M on paper; below $20M if shrink rises ~$10M vs ~$23M after Wave 1, without cutting hours
+    - Evidence: One-time cost: Negligible vs ~$18M of the $25M ceiling
+    - Evidence: Delivery service: Kept, losing ~$10M a year vs Kept, with the loss cut to ~$7.6M and click-and-collect as the default
+    - Evidence: Main risk: Shrink, checkout waits and stock-outs undermine fresh vs Execution across six workstreams; ValuMart reacting to fewer promotions
+    - Evidence: draft-plan FY2028 range = $15.3M + $14.5M labor saving − $7.3M wage rise (≈$22.5M, 1.5%), less up to ~$10M of shrink give-back (≈$12.5M, 0.8%)
+- Slide 12: Start with four moves that are tested or fully in management's control and cost ~$1.5M; the harder levers follow in 2027–28
+  - Claim: Wave 1 (Feb–Jul 2027)
+    - Evidence: Roll out $7.99 / $100 delivery pricing; make click-and-collect the default: +$2.8M, ~$0, High: 4-store, 10-week test, Head of E-commerce
+    - Evidence: Drop the loss-making promotion events (first half of the cut); keep depth near ValuMart: +$2.9M, ~$0.5M analytics, High: 38% of events lose money, Chief Merchant
+    - Evidence: Reinstate receiving checks and produce rotation in Q1–Q2 stores: +$2.2M, ~$1M of the shrink budget, Medium–high: quartile data, COO
+    - Evidence: Refuse the 3% delivery rate rise; open a rebid; stop the 8% blanket hours cut: Avoids −$0.3M, ~$0, High: within management control, CFO
+  - Claim: Wave 2 (H2 2027)
+    - Evidence: Rest of the promotion cut; vendor funding terms at the annual reviews: +$6.3M, —, Medium: depends on vendors, Chief Merchant
+    - Evidence: Demand-based scheduling (net −3% hours); rest of the shrink program: +$7.1M, ~$4M tools and training, Medium, COO
+    - Evidence: Exit six stores at lease expiry (notice by mid-2027): +$4.4M, ~$3M, Medium–high: past closures, CFO
+  - Claim: Wave 3 (FY2028)
+    - Evidence: Private label to 21.5%; fix-or-exit decision on three stores (Q3 FY2027 gate): +$7.3M, ~$11M, Medium, Chief Merchant / CEO
+- Slide 13: Wave 1 alone lifts run-rate operating income to ~$23M, above the $20M covenant level, without the blanket labor cut
+  - Claim: Wave 1 bridge, $M
+    - Evidence: FY2025 actual 15.3
+    - Evidence: Delivery pricing +2.8
+    - Evidence: Promotion pruning, first half +2.9
+    - Evidence: Receiving and rotation +2.2
+    - Evidence: Run-rate after Wave 1 23.2
+    - Evidence: Covenant minimum $20M
+  - Claim: FY2026 result is largely set by the time of the board meeting; the pack has no FY2026 actuals
+    - Evidence: FY2025 was $15.3M, $4.7M short of the covenant
+  - Claim: Brief the lender now with this plan. If FY2026 lands below $20M, ask for a waiver or reset based on the Wave 1 run-rate of ~$23M
+  - Claim: Mind the 2027 wage rise: Wave 2 must land during FY2027 to keep operating income above $20M if the covenant is rolled forward
+    - Evidence: it takes ~$7M out of FY2027
+    - Evidence: Wave 2 ... ~$13M
+  - Claim: Report monthly on run-rate by lever, so the lender sees delivery, not only intent
+- Slide 14: The plan needs ~$18M of one-time spend, leaving ~$7M of the $25M ceiling as contingency
+  - Claim: One-time cost by use
+    - Evidence: Lease exits, three stores (if the fix-or-exit test fails): $7.5M, Briefing pack estimate, Exit 3 stores +$2.2M
+    - Evidence: Closing costs, six stores at lease expiry: ~$3.0M, Allowance ~$0.5M a store, Exit 6 stores +$4.4M
+    - Evidence: Shrink program: ~$3.0M, Allowance, Shrink +$4.2M
+    - Evidence: Demand-based labor scheduling system and rollout: ~$2.0M, Allowance, Labor +$5.1M
+    - Evidence: Private label range development and packaging: ~$2.0M, Allowance, Private label +$5.1M
+    - Evidence: Promotion post-event analytics: ~$0.5M, Allowance, Promotions and vendor funding +$9.2M
+    - Evidence: Total committed ~$18.0M
+    - Evidence: Unallocated contingency ~$7.0M, within the $25M ceiling (FY2026–28)
+    - Evidence: only the $7.5M lease-exit cost is from the pack; other lines are planning allowances to be validated by finance before commitment
+- Slide 15: The main risks are ValuMart's response and the pace of execution; each has an early indicator and a pre-agreed response
+  - Claim: Risk register with early indicators, triggers and responses
+    - Evidence: Fewer promotions cost traffic to ValuMart: comparable sales and traffic near ValuMart vs rest; gap widens beyond the FY2025 5.3 pts; reinstate targeted, vendor-funded events in those stores only
+    - Evidence: Vendors resist higher funding: funded share of markdowns; below 48% by Q3 FY2027; cut further unfunded events; move volume to private label
+    - Evidence: Scheduling changes hurt service or fresh: checkout wait, out-of-stocks, shrink by labor quartile; Q1–Q2 shrink not falling within 2 quarters; pause hours trims; add receiving time
+    - Evidence: Delivery customers leave Harlow: e-commerce sales and click-and-collect share vs the test; sales fall more than 4% (twice the test); hold the fee; adjust the threshold first
+    - Evidence: Wage rise larger than planned: average hourly rate after the 2027 increase; above +4%; draw on contingency levers (~$10M)
+    - Evidence: Fewer sales follow closed stores: sales in receiving stores after each exit; below 25% of the closed store's sales; strengthen click-and-collect and loyalty offers locally
+- Slide 16: We ask the board for four decisions today
+  - Claim: Approve the margin plan and the FY2028 target of at least 3.0%
+    - Evidence: Replaces the 8% across-the-board hours cut. Quarterly reporting to the board on run-rate by lever
+  - Claim: Vote on the fix-or-exit rule for the three stores with leases beyond 2027
+    - Evidence: Exit any of the three still showing negative four-wall EBITDA at the Q3 FY2027 review; authorise up to $7.5M of lease-exit cost
+  - Claim: Authorise the one-time envelope of up to $25M for FY2026–28
+    - Evidence: ~$18M allocated across the plan, ~$7M held as contingency and released by the CEO and CFO against the lever milestones
+  - Claim: Endorse delivery repricing and an early lender briefing
+    - Evidence: Delivery stays, as the owners wish, at tested prices with click-and-collect as the default. The CFO briefs the lender on the plan and the Wave 1 run-rate before FY2026 results are final
+- Slide 17: How each lever is sized: every figure traces to the briefing pack, and the assumptions are explicit
+  - Claim: Lever sizing calculations and key assumptions
+    - Evidence: 2027 minimum wage: 4% × $181.9M store labor × 0.941; whole pay scale moves 4% (conservative); −6.8M
+    - Evidence: Delivery pricing: fulfillment $18.1M → $15.1M, less 2% sales × 30% new × 20¢; test results scale chain-wide; +$2.8M
+    - Evidence: Promotion pruning: (29% − 25%) × $1,503M × 14 pts × 70% × 0.941; 30% of the margin given back in lost volume; +$5.5M
+    - Evidence: Vendor funding: Markdowns ≈ $435.9M × 14 pts ÷ (1 − 46%) ≈ $113M; × 25/29 × 4 pts × 0.941; the 14-pt gap is net of vendor funding; +$3.7M
+    - Evidence: Private label: 3 pts × $1,503M × 12 pts × 0.941; pace of ~1 pt a year is achievable; +$5.1M
+    - Evidence: Shrink: (2.6% − 2.3%) × $1,503M × 0.941; chain can reach the Q4 level; +$4.2M
+    - Evidence: Labor scheduling: 3% × $181.9M × 0.941, net of hours added in Q1–Q2; net 3% achievable without service loss; +$5.1M
+    - Evidence: Exit 6 / 3 stores: ($3.1M EBITDA + $118M × 25% × 12%) × 6/9 and × 3/9; pro-rata split; +$4.4M / +$2.2M
+    - Evidence: proportional levers are scaled by 0.941 (continuing sales $1,414.5M ÷ $1,503M)
+- Slide 18: Judgement calls made where the briefing pack is silent or ambiguous
+  - Claim: Fiscal calendar: FY2025 is taken as February 2025 to January 2026; FY2027 is the first full year of the plan
+  - Claim: Covenant tested on the run-rate after Wave 1 since the pack gives no FY2026 actuals
+  - Claim: Delivery contract renews in 2026 and may already be signed
+    - Evidence: If it was signed at +3%, the cost is ~$0.3M a year and the rebid moves to the next window
+  - Claim: Finance's 20¢ contribution per new dollar is used rather than the e-commerce team's cost allocation
+  - Claim: The 14-pt promotional margin gap is read as net of vendor funding; if gross, the lever needs re-sizing
+    - Evidence: implies ~$113M of gross markdowns
+  - Claim: Nine weakest stores split assumed pro rata; closing costs beyond the $7.5M are allowances
+  - Claim: Only the 2027 minimum-wage step is modelled; other inflation is assumed to pass through prices
+  - Claim: The category team's +1.8% vs +0.2% is treated as a correlation
+
+**Recommendation:** Fix the margin where it was lost: (1) reprice home delivery as tested; (2) cut the money-losing promotions and win back vendor funding; (3) restore receiving and produce routines to cut shrink; (4) schedule labor to demand rather than cut it across the board; (5) grow private label; (6) exit the nine stores with negative four-wall EBITDA, six of them as their leases expire. Start with four Wave 1 moves (~$1.5M, ~$7.9M a year). Board to approve the plan in place of the 8% hours cut, vote on the fix-or-exit rule for three stores, authorise the $25M envelope, and endorse delivery repricing and an early lender briefing.
+
+**Alternatives considered:**
+- Draft plan (CFO / COO): cut scheduled store hours 8% across the board and freeze e-commerce at its current size: Rejected and replaced. It addresses one source of the decline (labor, ~13%), stalls at ~$12.5M–22.5M (0.8%–1.5%) FY2028 operating income, risks +0.6–0.7 pt shrink (~$10M) with net effect ~$4.5M if shrink rises as feared; run-rate below $20M covenant if shrink rises ~$10M; freezing e-commerce locks in the ~$10M loss.
+- Targeted, demand-based labor scheduling (net −3% hours): Recommended over the blanket cut: ~$5.1M net labor saving, shrink −0.3 pt (+$4.2M), net effect ~$9.3M, low customer risk.
+- Keep delivery vs. dropping it: Delivery is kept 'as the owners want', at tested prices with click-and-collect as default; the remaining ~$7.6M a year loss is 'the visible cost of that choice'.
+- Second delivery pricing step (e.g. delivery membership or higher minimum basket): To be tested before committing it.
+- Three stores with leases beyond 2027: exit vs fix: Run for two quarters on the full plan; exit any still negative at the Q3 FY2027 review (board vote).
+
+**Assumptions and uncertainties:**
+- The base case is thin (2.96%), within ~$0.5M of the target, so there is no slack; ~$10M of contingency levers are worked in parallel.
+- The ~$10M shrink estimate for an 8% cut is an association, not a measured effect.
+- The comparable-sales comparison (+1.8% vs +0.2%) does not control for store differences and is treated as a correlation.
+- E-commerce incremental view: 30% of e-commerce sales genuinely new × 20¢ contribution per new dollar (finance estimate); in-store-diverted sales add no contribution.
+- Delivery test results (4 stores, 10 weeks) are assumed to scale chain-wide.
+- Promotion sizing assumes 30% of the margin recovered is given back in lost volume.
+- Vendor funding assumes the 14-pt promotional margin gap is net of funding (~$113M markdowns); if gross, the lever needs re-sizing.
+- Private label pace of ~1 pt a year is assumed achievable (vs 0.75 pt historically).
+- Chain is assumed able to reach the Q4 shrink level of 2.3%.
+- Net 3% labor hours reduction assumed achievable without service loss.
+- Split of nine stores between six and three assumed pro rata; closure cost for the six (~$0.5M a store) is a planning allowance.
+- At least 25% of closed stores' sales assumed to transfer to nearby Harlow stores.
+- Wage line assumes the 4% minimum-wage rise flows through the entire store pay scale (conservative); only this step is modelled, other inflation assumed passed through prices.
+- Only the $7.5M lease-exit cost is from the pack; other one-time costs are planning allowances to be validated by finance.
+- No FY2026 actuals in the pack; covenant tested on run-rate after Wave 1.
+- Delivery contract renews in 2026 and may already be signed at +3%.
+- FY2025 taken as February 2025 to January 2026.
+- Main risks: ValuMart response to fewer promotions, vendor resistance, scheduling hurting service, delivery customers leaving, larger wage rise, fewer sales following closed stores.
+
+**Next steps:**
+- Wave 1 (Feb–Jul 2027): roll out $7.99 / $100 delivery pricing and make click-and-collect the default (Head of E-commerce)
+- Wave 1: drop the loss-making promotion events (first half of the cut), keep depth near ValuMart (Chief Merchant)
+- Wave 1: reinstate receiving checks and produce rotation in Q1–Q2 stores (COO)
+- Wave 1: refuse the 3% delivery rate rise, open a rebid, stop the 8% blanket hours cut (CFO)
+- Wave 2 (H2 2027): rest of the promotion cut; vendor funding terms at annual reviews; demand-based scheduling; rest of shrink program; exit six stores at lease expiry (notice by mid-2027)
+- Wave 3 (FY2028): private label to 21.5%; fix-or-exit decision on three stores (Q3 FY2027 gate)
+- CFO briefs the lender on the plan and Wave 1 run-rate before FY2026 results are final; ask for waiver or reset if FY2026 lands below $20M
+- Report monthly on run-rate by lever to the lender; quarterly reporting to the board
+- Finance to validate one-time cost allowances before commitment
+- Test a second delivery pricing step before committing it
+
+## Part 2 · Full slide text (mechanical extraction)
+
+=== Slide 1 ===
+[Title] Restoring operating margin to 3% by FY2028: fix where the margin was lost, starting with four quick, low-cost moves
+- HARLOW FRESH MARKETS  |  BOARD OF DIRECTORS, FEBRUARY 2027
+- Diagnosis of the FY2023–FY2025 margin decline, recommended plan, sequencing and decisions requested
+- Prepared for Dana Whitfield, Chief Executive Officer
+- Board pre-read and discussion document
+- Based solely on the board briefing pack. All figures in $ millions unless stated; fiscal years end in January.
+[Speaker notes] Title slide.
+
+=== Slide 2 ===
+[Title] Margin fell because of promotions, e-commerce and shrink, not mainly wages; a six-lever plan gets back to ~3.0% by FY2028 within the $25M budget
+- EXECUTIVE SUMMARY
+- What happened
+- Operating margin fell from 3.37% to 1.02% in two years (−$35M at FY2025 sales). Store labor explains just 0.30 pt of the 2.35-pt fall. Promotions (0.70), e-commerce fulfillment (0.84) and shrink (0.50) explain 2.04 pts, 87%.
+- Why the draft plan falls short
+- Cutting store hours 8% and freezing e-commerce reaches only ~1.5% margin by FY2028 even if the cut costs nothing, once the 2027 wage rise is absorbed. It also puts fresh quality at risk: stores with the fewest labor hours already run 3.1% shrink against 2.3%.
+- What we recommend
+- Fix the margin where it was lost: (1) reprice home delivery as tested; (2) cut the money-losing promotions and win back vendor funding; (3) restore receiving and produce routines to cut shrink; (4) schedule labor to demand rather than cut it across the board; (5) grow private label; (6) exit the nine stores with negative four-wall EBITDA, six of them as their leases expire.
+- What it delivers
+- Operating income rises from $15.3M to ~$41.5M in FY2028, about 3.0% of ~$1.40B sales, after absorbing a $6.8M wage rise. One-time cost is ~$18M of the $25M ceiling. The base case is thin (2.96%), so ~$10M of contingency levers are worked in parallel.
+- What to do first
+- Four moves in the next six months need ~$1.5M of one-time cost and add ~$7.9M a year: roll out delivery pricing, drop loss-making promotion events, reinstate receiving and rotation checks, and refuse the 3% delivery rate rise. This takes run-rate operating income to ~$23M, above the $20M covenant level.
+- Decisions today
+- Approve the plan in place of the 8% hours cut; vote on a fix-or-exit test for the three stores with leases beyond 2027; authorise the $25M envelope and a lender briefing.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 3 ===
+[Title] Wages explain only 0.30 of the 2.35-point margin fall; promotions, e-commerce fulfillment and shrink explain 2.04 points
+- DIAGNOSIS | WHERE THE MARGIN WENT
+- Reduces margin
+- Improves margin
+- Operating margin
+- Why labor looks like the cause
+- % of sales
+- In dollars, labor is the biggest cost increase: +$14.3M, FY2023–25.
+- But sales grew 5.8%, so labor rose only from 11.8% to 12.1% of sales: wages +9.4%, mostly offset by 6% fewer hours per $1,000 of sales.
+- The bigger leak is gross profit: $83M more sales brought in only $6.3M more gross profit.
+- E-commerce fulfillment cost rose 3.5× to $18.1M as orders grew from 453k to 1.33M.
+- Implication: a plan built only on labor addresses about 13% of the problem.
+- 3.37
+- −0.70
+- −0.50
+- +0.18
+- −0.84
+- −0.30
+- −0.20
+- 0.00
+- 1.02
+- FY2023 operating margin
+- More promotional sales
+- Higher shrink
+- More private label
+- E-commerce fulfillment
+- Store labor
+- Occupancy & energy
+- Other SG&A
+- FY2025 operating margin
+- Gross margin: −1.02 pts
+- Operating costs: −1.34 pts
+- Note: each driver is the change in its share of sales, FY2023 to FY2025; the three gross-margin drivers reconcile to the 1.02-pt gross-margin fall. Figures may not sum due to rounding.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 4 ===
+[Title] Promotions and shrink explain all of the 1.0-point gross-margin fall, and the extra promotion has not paid for itself
+- DIAGNOSIS | GROSS MARGIN
+- Reduces margin
+- Improves margin
+- Gross margin
+- The case for today's promotion levels does not hold up
+- % of sales; axis starts at 24.5%
+- The extra promotion cost ~$10.5M of margin in FY2025; promotional sales rose from 24% to 29% of sales.
+- 38% of FY2025 events lost money even after counting the extra units they sold.
+- Vendors now fund less: 46% of markdowns in FY2025, down from 55% in FY2023.
+- The comparison of comparable sales does not show profit: +1.8% vs +0.2% is worth ~0.3% of sales in contribution (1.6 pts × 20%). That pays for less than 2.3 pts of extra promotional share, and the comparison does not control for store differences.
+- Shrink cost $7.5M: fresh and produce waste is 45% of it, theft 35%, receiving and administrative errors 20%.
+- 26.04%
+- −0.70 pts
+- −0.50 pts
+- +0.18 pts
+- 25.02%
+- FY2023 gross margin
+- Promotional share 24% → 29%
+- Shrink 2.1% → 2.6% of sales
+- Private label 17.0% → 18.5%
+- FY2025 gross margin
+- Note: promotional sales earn 14 pts less margin than regular-price sales, private label 12 pts more than national brands; both unchanged FY2023–25.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 5 ===
+[Title] E-commerce lost about $10M in FY2025 once delivery costs and sales diverted from stores are counted, not the 6.1% profit reported
+- DIAGNOSIS | E-COMMERCE
+- FY2025 e-commerce profit on an incremental basis, $M
+- Two gaps in the e-commerce team's 6.1% figure
+- It leaves out delivery. Third-party delivery ($13.80 per delivered order) is booked by finance under fulfillment; fees recover only $3.10 of it. That alone is −6.5% of e-commerce sales and turns 6.1% into about −0.4%.
+- It treats every sale as new. Customers say 70% of what they buy online they would otherwise have bought in a Harlow store, where it earns the same margin without fulfillment cost.
+- Corrected, the channel loses ~8% of its $128M sales, which is the 0.84-pt margin drag seen on the previous page.
+- Delivery is the problem, not the channel: click-and-collect is close to break-even; each delivered order costs $21.20 to pick and deliver against $3.10 in fees.
+- Freezing the service at its current size locks in the ~$10M loss.
+- Contribution on genuinely new sales
+- 7.7
+- Picking (all 1.33M orders)
+- −9.8
+- Third-party delivery (772k orders)
+- −10.7
+- Delivery fees collected
+- 2.4
+- Net e-commerce result
+- −10.4
+- Contribution per order, FY2025
+- −$12.34
+- per home-delivered order (58% of orders)
+- −$1.64
+- per click-and-collect order (42% of orders)
+- Note: incremental view = 30% of e-commerce sales genuinely new to Harlow × 20¢ contribution per new dollar (finance estimate), less all fulfillment costs. Per-order figures use the $96 average basket.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 6 ===
+[Title] Rolling out the tested delivery pricing saves ~$2.8M a year and keeps the service; click-and-collect should become the default
+- LEVER | DELIVERY PRICING
+- Test results applied to the whole chain (FY2025 volumes)
+- How to act on it
+- FY2025 actual
+- At test pricing
+- Change
+- Roll out the $7.99 / $100 pricing chain-wide in Wave 1; it is tested, reversible and needs no capital.
+- Make click-and-collect the default in the app and at checkout; each order switched from delivery saves the $13.80 delivery cost (~$7.40 net of the new fee).
+- Refuse the provider's 3% rise (~$0.3M a year) and rebid. Every 10% off the delivery rate is worth ~$1.0M (held as contingency).
+- Test a second step (e.g. a delivery membership or a higher minimum basket) before committing it.
+- This keeps delivery, as the owners want. The remaining ~$7.6M a year is the visible cost of that choice.
+- Home-delivered orders
+- 772k
+- 703k
+- −9%
+- Click-and-collect orders
+- 559k
+- 637k
+- +14%
+- E-commerce sales
+- $127.8M
+- $125.2M
+- −2%
+- Fee collected per delivered order
+- $3.10
+- $6.40
+- +$3.30
+- Net fulfillment cost (picking + delivery − fees)
+- $18.1M
+- $15.1M
+- −$3.0M
+- Contribution lost on sales that leave Harlow
+- −$0.2M
+- Net gain to operating income
+- +$2.8M
+- E-commerce result, incremental basis
+- −$10.4M
+- −$7.6M
+- +$2.8M
+- Note: fee test = 4 stores, 10 weeks, late FY2025; $7.99 fee and $100 free-delivery threshold (now $4.99 below $75). Test response applied to FY2025 chain volumes; lost sales valued at 30% new × 20¢.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 7 ===
+[Title] An 8% across-the-board hours cut would probably raise shrink: the stores with the fewest labor hours already lose 3.1% of sales
+- LEVER | STORE LABOR AND SHRINK
+- Shrink by store labor intensity, FY2025 (% of sales)
+- Management's cut versus a targeted approach
+- Q1, fewest labor hours per $ of sales
+- 3.1%
+- 8% blanket cut (draft)
+- Targeted (recommended)
+- What it does
+- Cuts scheduled hours 8% in every store
+- Schedules to demand; trims hours in Q3–Q4 stores; adds receiving and rotation time in Q1–Q2 stores
+- Q2
+- 2.7%
+- Labor saving
+- ~$14.5M
+- ~$5.1M net (−3% hours)
+- Q3
+- 2.4%
+- Shrink effect
+- Risk of +0.6–0.7 pt (~$10M)
+- −0.3 pt to Q4 level of 2.3% (+$4.2M)
+- Q4, most labor hours
+- 2.3%
+- Customer risk
+- Checkout waits, stock-outs, weaker fresh (58% shop Harlow for produce)
+- Low; service measures tracked weekly
+- Managers of Q1 stores say produce rotation and receiving checks are skipped on busy days.
+- Net effect
+- ~$4.5M if shrink rises as feared
+- ~$9.3M
+- +9.4%
+- −6.0%
+- +0.5 pt
+- hourly wage incl. benefits, $16.80 → $18.38
+- labor hours per $1,000 of sales, 7.02 → 6.60
+- shrink, 2.1% → 2.6% of sales ($7.5M)
+- Note: the ~$10M shrink estimate applies the FY2023–25 pattern (hours per $1,000 of sales −6%, shrink +0.5 pts) to an 8% cut; it is an association, not a measured effect. Q3/Q4 have similar shrink, so their extra hours buy little.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 8 ===
+[Title] Cut the money-losing promotions, keep depth where ValuMart competes, and answer price perception with private label
+- LEVER | PROMOTIONS, VENDOR FUNDING AND PRIVATE LABEL
+- What customers and competitors tell us
+- Promotions and vendor funding
+- +$9.2M
+- Private label
+- +$5.1M
+- ValuMart has opened 11 stores in Harlow trade areas since 2023; nearby Harlow stores ran comparable sales of −4.2% vs +1.1% elsewhere.
+- 41% now say Harlow is more expensive than other options (33% in FY2023).
+- Customers choose Harlow for fresh produce (58%) and convenience (44%), not for promotions.
+- So: spend promotion money where ValuMart competes and protect fresh quality everywhere.
+- Drop the loss-making events: bring promotional share from 29% back to 25% (FY2023: 24%). +$5.5M.
+- Keep promotion depth in stores within three miles of a ValuMart; judge every event on post-event profit, not sales.
+- Win back vendor funding: fewer, larger events with a minimum funding share per event; 46% → 50%. +$3.7M.
+- Contingency: returning to FY2023's 55% would add ~$4.6M more.
+- Each point of mix from national brands to private label adds 0.12 pt of gross margin (12-pt margin premium).
+- Raise share from 18.5% to 21.5% by FY2028: about 1 pt a year against 0.75 pt a year historically.
+- Lead with value ranges in the categories most promoted against ValuMart, so private label carries the price message that blanket discounts carry today.
+- Plan targets for the gross-margin levers
+- FY2023
+- FY2025
+- FY2028 plan
+- Run-rate value
+- Promotional sales, share of sales
+- 24.0%
+- 29.0%
+- 25%
+- +$5.5M
+- Vendor funding, share of promotional markdowns
+- 55%
+- 46%
+- 50%
+- +$3.7M
+- Private-label sales, share of sales
+- 17.0%
+- 18.5%
+- 21.5%
+- +$5.1M
+- Note: promotion sizing assumes 30% of the margin recovered is given back in lost volume. Vendor funding assumes the 14-pt promotional margin gap is net of funding, implying ~$113M of FY2025 markdowns. Values sized on the continuing store base.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 9 ===
+[Title] Exit the nine stores with negative four-wall EBITDA: six as their leases expire by end-2027, three through a fix-or-exit test the board votes on
+- LEVER | STORE PORTFOLIO
+- Economics of exit, FY2025 basis
+- Recommendation
+- 6 stores, lease ends by 2027
+- 3 stores, lease beyond 2027
+- All 9
+- Six stores: give landlords notice of non-renewal unless rent cuts turn four-wall EBITDA positive; close at lease expiry during 2027.
+- Three stores: run them for two quarters on the full plan (pricing, shrink, scheduling). Exit any still negative at the Q3 FY2027 review. The board votes today on that rule and the $7.5M.
+- Payback runs past FY2028 for the three, but they lift FY2028 margin by ~0.2 pt and remove a recurring loss.
+- Protect transfers: move staff, loyalty data and click-and-collect points to the receiving stores so at least 25% of sales follow.
+- Sales
+- ~$78.7M
+- ~$39.3M
+- $118.0M
+- Four-wall EBITDA removed
+- +$2.1M
+- +$1.0M
+- +$3.1M
+- Contribution on sales moved to nearby Harlow stores (25% × 12%)
+- +$2.4M
+- +$1.2M
+- +$3.5M
+- Operating income gain a year
+- +$4.4M
+- +$2.2M
+- +$6.6M
+- One-time cost
+- ~$3.0M (allowance)
+- $7.5M lease exit + ~$1.5M
+- ~$12.0M
+- Payback
+- < 1 year
+- ~4 years
+- ~2 years
+- Sales lost to Harlow
+- ~$59M
+- ~$29.5M
+- $88.5M
+- Governance
+- Management decision at lease expiry
+- Board vote required
+- Note: the pack gives totals for the nine stores only; the split between the six and the three is assumed pro rata to store count. Closure cost for the six (~$0.5M a store) is a planning allowance, not from the pack.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 10 ===
+[Title] Together the levers lift operating income from $15.3M to ~$41.5M in FY2028, about 3.0% of sales, after absorbing the 2027 wage rise
+- THE PLAN
+- Headwind
+- Plan lever
+- Operating income, $M
+- Reading the bridge
+- Gross improvement $33.0M; net of wages +$26.2M.
+- 2.96% base case: within ~$0.5M of the target, so there is no slack.
+- If the wage rise touches only half the pay scale, margin is ~3.2%.
+- Contingency, ~$10M: vendor funding to 55% ($4.6M), wage pass-through below the full bill (up to $3.4M), labor at −4% net ($1.7M), delivery rate −10% ($1.0M).
+- 3.0% target ≈ $42.0M
+- +2.2
+- 41.5
+- +4.4
+- +5.1
+- +4.2
+- +5.1
+- +3.7
+- +5.5
+- 15.3
+- −6.8
+- +2.8
+- FY2025 actual
+- 2027 minimum wage +4%
+- Delivery pricing
+- Promotion pruning
+- Vendor funding
+- Private label
+- Shrink
+- Labor scheduling
+- Exit 6 stores at lease end
+- Exit 3 stores (vote)
+- FY2028 plan
+- Note: run-rate effects at FY2025 prices, sized on the store base continuing after exits. The wage line assumes the 4% minimum-wage rise flows through the entire store pay scale (conservative). FY2028 sales ~$1.40B after exits and promotion pruning.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 11 ===
+[Title] The recommended plan addresses all four sources of the decline; the draft labor plan addresses one and stalls at ~1.5% margin
+- THE PLAN | COMPARED WITH THE DRAFT
+- Draft plan (CFO / COO)
+- Recommended plan
+- Diagnosis
+- Wage inflation is the main cause
+- Promotions, e-commerce fulfillment and shrink caused 87% of the fall; labor 13%
+- Actions
+- Cut scheduled store hours 8%; freeze e-commerce at its current size
+- Reprice delivery; prune promotions and recover vendor funding; restore receiving and produce routines; schedule labor to demand; grow private label; exit nine loss-making stores
+- FY2028 operating income
+- ~$12.5M–22.5M (0.8%–1.5%)
+- ~$41.5M (~3.0%), with ~$10M contingency
+- Run-rate against the $20M covenant
+- ~$30M on paper; below $20M if shrink rises ~$10M
+- ~$23M after Wave 1, without cutting hours
+- One-time cost
+- Negligible
+- ~$18M of the $25M ceiling
+- Delivery service
+- Kept, losing ~$10M a year
+- Kept, with the loss cut to ~$7.6M and click-and-collect as the default
+- Main risk
+- Shrink, checkout waits and stock-outs undermine fresh, the main reason customers choose Harlow
+- Execution across six workstreams; ValuMart reacting to fewer promotions
+- Note: draft-plan FY2028 range = $15.3M + $14.5M labor saving − $7.3M wage rise (≈$22.5M, 1.5%), less up to ~$10M of shrink give-back (≈$12.5M, 0.8%).
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 12 ===
+[Title] Start with four moves that are tested or fully in management's control and cost ~$1.5M; the harder levers follow in 2027–28
+- SEQUENCING | WHAT TO DO FIRST
+- Action
+- Run-rate value
+- One-time cost
+- Evidence / confidence
+- Lead
+- Wave 1
+- Feb–Jul 2027
+- Roll out $7.99 / $100 delivery pricing; make click-and-collect the default
+- +$2.8M
+- ~$0
+- High: 4-store, 10-week test
+- Head of E-commerce
+- Drop the loss-making promotion events (first half of the cut); keep depth near ValuMart
+- +$2.9M
+- ~$0.5M analytics
+- High: 38% of events lose money
+- Chief Merchant
+- Reinstate receiving checks and produce rotation in Q1–Q2 stores
+- +$2.2M
+- ~$1M of the shrink budget
+- Medium–high: quartile data
+- COO
+- Refuse the 3% delivery rate rise; open a rebid; stop the 8% blanket hours cut
+- Avoids −$0.3M
+- ~$0
+- High: within management control
+- CFO
+- Wave 2
+- H2 2027
+- Rest of the promotion cut; vendor funding terms at the annual reviews
+- +$6.3M
+- —
+- Medium: depends on vendors
+- Chief Merchant
+- Demand-based scheduling (net −3% hours); rest of the shrink program
+- +$7.1M
+- ~$4M tools and training
+- Medium
+- COO
+- Exit six stores at lease expiry (notice by mid-2027)
+- +$4.4M
+- ~$3M
+- Medium–high: past closures
+- CFO
+- Wave 3
+- FY2028
+- Private label to 21.5%; fix-or-exit decision on three stores (Q3 FY2027 gate)
+- +$7.3M
+- ~$11M
+- Medium
+- Chief Merchant / CEO
+- Note: values are annual run-rate operating income at full effect. Wave timing assumes the plan is approved in February 2027 (start of FY2027). Confidence reflects the evidence in the pack.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 13 ===
+[Title] Wave 1 alone lifts run-rate operating income to ~$23M, above the $20M covenant level, without the blanket labor cut
+- SEQUENCING | LENDER TEST
+- Wave 1 action
+- Operating income, $M
+- What this means for the lender conversation
+- Timing: FY2026 closes in January 2027, so its result is largely set by the time of the board meeting. The pack has no FY2026 actuals; FY2025 was $15.3M, $4.7M short of the covenant.
+- Brief the lender now with this plan. If FY2026 lands below $20M, ask for a waiver or reset based on the Wave 1 run-rate of ~$23M.
+- Mind the 2027 wage rise: it takes ~$7M out of FY2027. Wave 2 (vendor funding, scheduling, the rest of promotions and shrink, ~$13M) must land during FY2027 to keep operating income above $20M if the covenant is rolled forward.
+- Report monthly on run-rate by lever, so the lender sees delivery, not only intent.
+- +2.2
+- 23.2
+- +2.9
+- Covenant minimum $20M
+- +2.8
+- 15.3
+- FY2025 actual
+- Delivery pricing
+- Promotion pruning, first half
+- Receiving and rotation
+- Run-rate after Wave 1
+- Note: Wave 1 values are on the FY2025 store base; promotion and shrink are the first half of each lever. FY2026 actuals are not in the pack.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 14 ===
+[Title] The plan needs ~$18M of one-time spend, leaving ~$7M of the $25M ceiling as contingency
+- RESOURCES
+- Use
+- One-time cost
+- Basis
+- Lever supported
+- Lease exits, three stores (if the fix-or-exit test fails)
+- $7.5M
+- Briefing pack estimate
+- Exit 3 stores, +$2.2M
+- Closing costs, six stores at lease expiry
+- ~$3.0M
+- Allowance, ~$0.5M a store
+- Exit 6 stores, +$4.4M
+- Shrink program: receiving tools, produce ordering and markdown, training
+- ~$3.0M
+- Allowance
+- Shrink, +$4.2M
+- Demand-based labor scheduling system and rollout
+- ~$2.0M
+- Allowance
+- Labor, +$5.1M
+- Private label range development and packaging
+- ~$2.0M
+- Allowance
+- Private label, +$5.1M
+- Promotion post-event analytics
+- ~$0.5M
+- Allowance
+- Promotions and vendor funding, +$9.2M
+- Total committed
+- ~$18.0M
+- Unallocated contingency
+- ~$7.0M
+- Within the $25M ceiling (FY2026–28)
+- Note: only the $7.5M lease-exit cost is from the pack; other lines are planning allowances to be validated by finance before commitment.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 15 ===
+[Title] The main risks are ValuMart's response and the pace of execution; each has an early indicator and a pre-agreed response
+- RISKS
+- Risk
+- Early indicator (tracked monthly)
+- Trigger
+- Pre-agreed response
+- Fewer promotions cost traffic to ValuMart
+- Comparable sales and traffic in stores within 3 miles of a ValuMart vs the rest
+- Gap widens beyond the FY2025 5.3 pts
+- Reinstate targeted, vendor-funded events in those stores only
+- Vendors resist higher funding
+- Funded share of markdowns, event by event
+- Below 48% by Q3 FY2027
+- Cut further unfunded events; move volume to private label
+- Scheduling changes hurt service or fresh
+- Checkout wait, out-of-stocks, shrink by labor quartile
+- Q1–Q2 shrink not falling within 2 quarters
+- Pause hours trims; add receiving time
+- Delivery customers leave Harlow
+- E-commerce sales and click-and-collect share vs the test
+- Sales fall more than 4% (twice the test)
+- Hold the fee; adjust the threshold first
+- Wage rise larger than planned
+- Average hourly rate after the 2027 increase
+- Above +4%
+- Draw on contingency levers (~$10M)
+- Fewer sales follow closed stores
+- Sales in receiving stores after each exit
+- Below 25% of the closed store's sales
+- Strengthen click-and-collect and loyalty offers locally
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 16 ===
+[Title] We ask the board for four decisions today
+- DECISIONS REQUESTED
+
+- Approve the margin plan and the FY2028 target of at least 3.0%
+- Replaces the 8% across-the-board hours cut. Quarterly reporting to the board on run-rate by lever, with the risk indicators on the previous page.
+
+- Vote on the fix-or-exit rule for the three stores with leases beyond 2027
+- Exit any of the three still showing negative four-wall EBITDA at the Q3 FY2027 review; authorise up to $7.5M of lease-exit cost.
+
+- Authorise the one-time envelope of up to $25M for FY2026–28
+- ~$18M allocated across the plan, ~$7M held as contingency and released by the CEO and CFO against the lever milestones.
+
+- Endorse delivery repricing and an early lender briefing
+- Delivery stays, as the owners wish, at tested prices with click-and-collect as the default. The CFO briefs the lender on the plan and the Wave 1 run-rate before FY2026 results are final.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 17 ===
+[Title] How each lever is sized: every figure traces to the briefing pack, and the assumptions are explicit
+- APPENDIX | LEVER SIZING
+- Lever
+- Calculation
+- Key assumption (not in pack)
+- FY2028 value
+- 2027 minimum wage
+- 4% × $181.9M store labor × 0.941
+- Whole pay scale moves 4% (conservative)
+- −6.8M
+- Delivery pricing
+- Fee-test response on FY2025 volumes: fulfillment $18.1M → $15.1M, less 2% sales × 30% new × 20¢
+- Test results scale chain-wide
+- +$2.8M
+- Promotion pruning
+- (29% − 25%) × $1,503M × 14 pts × 70% × 0.941
+- 30% of the margin given back in lost volume
+- +$5.5M
+- Vendor funding
+- Markdowns ≈ $435.9M promotional sales × 14 pts ÷ (1 − 46%) ≈ $113M; × 25/29 × 4 pts × 0.941
+- The 14-pt gap is net of vendor funding
+- +$3.7M
+- Private label
+- 3 pts × $1,503M × 12 pts × 0.941
+- Pace of ~1 pt a year is achievable
+- +$5.1M
+- Shrink
+- (2.6% − 2.3%) × $1,503M × 0.941
+- Chain can reach the Q4 level
+- +$4.2M
+- Labor scheduling
+- 3% × $181.9M × 0.941, net of hours added in Q1–Q2
+- Net 3% achievable without service loss
+- +$5.1M
+- Exit 6 / 3 stores
+- ($3.1M EBITDA + $118M × 25% × 12%) × 6/9 and × 3/9
+- Pro-rata split between the groups
+- +$4.4M / +$2.2M
+- Note: proportional levers are scaled by 0.941 (continuing sales $1,414.5M ÷ $1,503M) so they are not counted on the sales of exited stores.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.
+
+=== Slide 18 ===
+[Title] Judgement calls made where the briefing pack is silent or ambiguous
+- APPENDIX | DATA NOTES
+- Fiscal calendar. Fiscal years end in January; FY2025 is taken as February 2025 to January 2026. FY2026 therefore closes just before the February 2027 board, and FY2027 is the first full year of the plan.
+- Covenant. The pack gives no FY2026 actuals, so the covenant is tested on the run-rate after Wave 1, and a lender briefing is recommended in case FY2026 lands below $20M.
+- Delivery contract. It renews in 2026 and may already be signed. If it was signed at +3%, the cost is ~$0.3M a year and the rebid moves to the next window.
+- E-commerce economics. Finance's 20¢ contribution per new dollar is used rather than the e-commerce team's cost allocation. Sales that customers would have made in store are treated as adding no contribution.
+- Vendor funding. The 14-pt promotional margin gap is read as net of vendor funding, which implies ~$113M of gross markdowns. If it is gross, the lever needs re-sizing.
+- Nine weakest stores. Only totals are given; the split between the six and the three is assumed pro rata. Closing costs beyond the $7.5M lease exit are allowances.
+- Wage headwind. Only the 2027 minimum-wage step is modelled; other inflation is assumed to pass through prices, consistent with stable SG&A and gross-margin rates excluding the identified drivers.
+- Comparable-sales claim. The category team's +1.8% vs +0.2% is treated as a correlation; the pack does not show how much more those stores promote.
+- Source: Harlow Fresh Markets board briefing pack (FY2023–FY2025 actuals); team analysis.

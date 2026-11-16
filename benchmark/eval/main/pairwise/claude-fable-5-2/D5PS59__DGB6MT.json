@@ -1,0 +1,39 @@
+{
+ "x": "D5PS59",
+ "y": "DGB6MT",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X sets three tests up front (NRR, margin floor, mobile delay) and scores four options against them, so the governing thought, the option table, the financial case and the gates all follow one line. Its ranges carry through consistently: add-on 7–14%, Pro 15–33%, and the March gate at 15% matches the low case. Y is also well structured, with five sections that answer five sub-questions and lead to the governing thought. But Y has internal tensions. It calls 14% a ceiling for add-on take-up yet headlines Pro at 33% without discounting. Its 'allowance' is the break-even point where inference equals the full $12, which does not support the 'with allowance' margin claim. It also says Pro earns $2.9M while treating two quarters of that as costless to defer. X's hierarchy holds together slightly better.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reject the $149 add-on and free-in-Core and choose a Pro tier with usage limits; they differ on timing. X launches in Q2, which is the key's fully defensible R1. It accepts the mobile delay explicitly and prices both sequences (~$0.5–0.9M of mobile churn against ~$1.1M of deferred Pro ARR plus $0.3M of deals and $0.2M of AI churn). It states when the order flips, adds a random-sample March go/no-go, and asks whether the engineers can come from other teams. Y delays to Q4, which is the key's conditional R3. It meets the conditions reasonably: it quantifies the win-rate risk and sets a cheap trigger, the Q4 2026 win rate after the discount, read before engineers are committed. That gate is a strong piece of judgment. But Y's sequencing rests on excluding deferred Pro expansion from the cost of waiting and on an unconfirmed assumption that the rewrite finishes in Q2 2027. Its margin guardrail is also weaker: a break-even allowance of 1,333 against X's concrete 600-per-seat cap with overage pricing. X weighs the full set of alternatives, including defer, more evenly.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M against $2.45M, inference of $32/$61/$131 per account, about 109 deals or $0.64M, and Pro at $2.89M for 33% take-up. Both flag volunteer bias, survey non-response and the Routewise discount, and both debunk the Sales memo at $1.9M. X goes further in four ways. It discounts the paywall rate for the base (7–14%). It uses a 25% Pro base case with a 15–33% range rather than headlining the 33% precedent. It notes that new-customer wins do not move NRR and that upgrades lift NRR only once. It also catches an inconsistency in the pack: a 14,500 top-decile mean implies a 40% share of requests, not 58%. Y's weaker points are these. Its headline Pro case assumes 33% while its own table shows Pro at 14% earns $1.2M, less than the add-on, so 'Pro beats the add-on on revenue' depends on that assumption. Its allowance is set at zero margin. Its mobile-versus-Copilot comparison uses a 100% fix assumption for mobile and leaves out deferred Pro revenue, though it labels both sides as upper bounds. X's comparison of deferred ARR with permanent churn is also imperfect, but it is disclosed with a flip condition.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO hypothesis as the key expects: keep the launch, reject the $149 add-on and the $8M figure, and re-size on the 14% paywall result with inference cost for heavy buyers. Both explain the gap between survey and paywall through stated intent, the 6% response rate and the size skew, and both correct the Sales memo. Y adds the add-on's gross profit ($0.85M, about 34% margin) and explicitly confirms the Customer Success concern. X adds a discounted 7–14% planning range and a table of corrected internal claims. Y's move to Q4 is an allowed revision because it argues the mobile trade-off explicitly. Neither over- nor under-revises, so the difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents avoid every major trap and reach defensible conclusions. X serves the decision maker somewhat better. It gives ranges instead of point estimates and a concrete package: a 600-per-seat allowance, $20 per 1,000 overage, and a $15 test arm. It also gives a random-sample test with a numeric go/no-go, a fuller accounting of both sequences, and explicit conditions that would flip the recommendation. Y's mobile-first alternative is legitimate and its 'read the Q4 2026 win rate before committing engineers' gate is very useful. But its case leans on an undiscounted 33% Pro take-up, an unconfirmed mobile completion date, treating deferred Pro revenue as free, and a break-even allowance that does not protect margin.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1465322,
+ "wall_s": 62.21465086936951,
+ "error_text": null
+}

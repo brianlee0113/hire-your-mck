@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["scores", "unsupported_claims", "numerical_errors", "logical_contradictions", "critical_evidence",
+               "insights", "calculations", "tradeoffs", "traps", "recommendation", "hypothesis_handling",
+               "overall_comment", "source_guess"],
+  "$defs": {
+    "dim": {"type": "object", "additionalProperties": false, "required": ["rationale", "score"],
+            "properties": {"rationale": {"type": "string"}, "score": {"type": "integer", "minimum": 1, "maximum": 5}}},
+    "ynp": {"type": "string", "enum": ["yes", "partial", "no"]}
+  },
+  "properties": {
+    "scores": {
+      "type": "object", "additionalProperties": false,
+      "required": ["problem_framing", "storyline_coherence", "evidence_and_reasoning", "strategic_judgment", "clarity_and_concision"],
+      "properties": {
+        "problem_framing": {"$ref": "#/$defs/dim"},
+        "storyline_coherence": {"$ref": "#/$defs/dim"},
+        "evidence_and_reasoning": {"$ref": "#/$defs/dim"},
+        "strategic_judgment": {"$ref": "#/$defs/dim"},
+        "clarity_and_concision": {"$ref": "#/$defs/dim"}
+      }
+    },
+    "unsupported_claims": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["quote", "why"],
+                                                      "properties": {"quote": {"type": "string"}, "why": {"type": "string"}}}},
+    "numerical_errors": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["quote", "correct"],
+                                                    "properties": {"quote": {"type": "string"}, "correct": {"type": "string"}}}},
+    "logical_contradictions": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["quote_a", "quote_b", "why"],
+                                                          "properties": {"quote_a": {"type": "string"}, "quote_b": {"type": "string"}, "why": {"type": "string"}}}},
+    "critical_evidence": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "used"],
+                                                     "properties": {"id": {"type": "string"}, "used": {"$ref": "#/$defs/ynp"}}}},
+    "insights": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "reached"],
+                                            "properties": {"id": {"type": "string"}, "reached": {"$ref": "#/$defs/ynp"}}}},
+    "calculations": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "status"],
+                                                "properties": {"id": {"type": "string"}, "status": {"type": "string", "enum": ["correct", "partly_correct", "incorrect", "absent"]}}}},
+    "tradeoffs": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "identified"],
+                                             "properties": {"id": {"type": "string"}, "identified": {"$ref": "#/$defs/ynp"}}}},
+    "traps": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "fell_in"],
+                                         "properties": {"id": {"type": "string"}, "fell_in": {"$ref": "#/$defs/ynp"}}}},
+    "recommendation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["summary", "closest_plausible_id", "defensible", "rationale"],
+      "properties": {
+        "summary": {"type": "string"},
+        "closest_plausible_id": {"type": ["string", "null"]},
+        "defensible": {"$ref": "#/$defs/ynp"},
+        "rationale": {"type": "string"}
+      }
+    },
+    "hypothesis_handling": {
+      "type": "object", "additionalProperties": false,
+      "required": ["observed", "appropriate", "noticed_contradictions", "challenged_assumptions", "acknowledges_uncertainty",
+                   "unsupported_causal_claims", "rationale"],
+      "properties": {
+        "observed": {"type": "string", "enum": ["kept", "kept_with_conditions", "revised", "rejected", "not_addressed"]},
+        "appropriate": {"$ref": "#/$defs/ynp"},
+        "noticed_contradictions": {"$ref": "#/$defs/ynp"},
+        "challenged_assumptions": {"$ref": "#/$defs/ynp"},
+        "acknowledges_uncertainty": {"$ref": "#/$defs/ynp"},
+        "unsupported_causal_claims": {"type": "integer", "minimum": 0},
+        "rationale": {"type": "string"}
+      }
+    },
+    "overall_comment": {"type": "string"},
+    "source_guess": {
+      "type": "object", "additionalProperties": false, "required": ["guess", "confidence"],
+      "properties": {
+        "guess": {"type": "string", "enum": ["plain_prompt", "methodology_prompt", "specialised_tool", "cannot_tell"]},
+        "confidence": {"type": "string", "enum": ["low", "medium", "high"]}
+      }
+    }
+  }
+}

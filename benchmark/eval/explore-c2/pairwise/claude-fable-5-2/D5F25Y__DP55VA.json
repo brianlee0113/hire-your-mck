@@ -1,0 +1,38 @@
+{
+ "x": "D5F25Y",
+ "y": "DP55VA",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X runs a very tight pyramid: a governing thought, four section claims each with two evidence lines, and slide titles that restate those claims. Its blemishes are small: slide 10's title frames the 2023 rise negatively (\"left it higher than before\" on a 0.1 pp difference) while its body says \"the core tolerated the rise\", and slide 15 calls the enterprise 10% a \"tested price level\" though only mid-market was tested. Y is also consistent, with four pillars and net ranges that reconcile across slides 9 to 12 and 15. It carries more moving parts: an extra team hypothesis layer, \"three gated stages\" with only two gates named, and $2.2–3.6M versus $2.4–3.8M including activation. Its headline \"promotion problem, not a price problem\" is later nuanced by its own finding that the cohort leaves over price. Both hold together; X is marginally cleaner.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the same defensible answer (R1): mid-market +10%, enterprise within caps, SMB gated on an 8% renewal test, promotion cohort held and activated. Y weighs the trade-offs more fully. It compares four options, including \"faster SMB from January\", net of churn in base and stress cases. It gives a break-even (SMB pays only if churn reacts at less than about 2x the 2023 response) and prices the cost of testing first at about $0.3M. It sets explicit gates, triggers and responses (for example, mid-market churn above 1.0% leads to a cap at +5%). It also separates retention sensitivity from acquisition sensitivity to Inkwell, holds the new-customer list price at $15, and sizes the new-logo gap to the 15% target. X compares three options on gross uplift only, labels the targeted option \"low NRR risk\" without quantifying churn response, and sets a guardrail at the current churn level, which would be hard to tell from noise. X's judgment is sound but less tested.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both correct the $10.3M to $7.6M, and both note the dashboard figure matches neither weighted average. Both split the exit survey by cohort and caveat the 2024 sign-up test. Y goes further on the critical calculations. It derives the implied promotion-cohort churn of 4.9% and a clean mix/rate decomposition (1.04 pp and 0.06 pp). It computes the 2023 net of +4.1% and break-even multiples of about 2.1x and 2.0x. It checks survey weighting (47% of respondents against 56% of churners) and bounds the \"halve churn\" claim with an activation model (about 2.8%, upper bound about 2.0%). I checked Y's arithmetic and it holds. Y's weak points are modelled inferences: a 2.9x cohort elasticity taken from price-citation shares, a sign-up conversion difference used as a renewal churn coefficient, and trailing NRR used as the 2027 baseline. All are disclosed as assumptions and stress-tested, but they give false precision. X's numbers are correct but thinner. It never computes cohort churn or a break-even, reads the 2023 episode as net negative (\"$0.6M lost\") without netting the price gain, over-reads 1.9% against 1.8%, and calls the enterprise 10% \"tested\".",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "The key wants the CFO's view revised, not adopted or rejected wholesale, with both CFO and CEO recognised as partly right. Y does this explicitly: \"the CFO is right that the churn rise is not about the list price, and the CEO is right that the promotion cohort is fragile\". It rejects the $10.3M and the uniform 12%, and marks core price sensitivity as \"supported for retention; open for acquisition\" given the Inkwell win-rate fall. It also revises its own starting position on SMB from freeze to test on the 2023 evidence, and rejects the Customer Success halving claim with a quantified bound. X reaches a similar place implicitly: churn is a promotion effect, promotion customers left over price at discount end, the 12% is overstated, and SMB gets a test \"not a freeze and not a blind 12%\". But it never states the reconciliation of the two views, and its \"activation, not price, is the lever\" leans toward the CFO's framing. Its rebuttal of the halving claim is simpler but valid.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The recommendations are near-identical and both meet every defensibility criterion: mix effect separated from rate effect, both views reconciled, $10.3M corrected, pricing differentiated by segment. X is the leaner, cleaner read, with accurate core numbers. Y gives the CEO more to decide with: net-of-churn values with a stress case, the SMB break-even, an explicit comparison with a faster-SMB option, the cohort's implied 4.9% churn, quantified limits on onboarding, the new-logo gap to the 15% target, and concrete gates and triggers. Some of Y's model parameters are speculative, but they are disclosed and do not drive the direction of the recommendation. Y would serve the decision better.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9363242,
+ "wall_s": 54.229599952697754
+}

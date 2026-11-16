@@ -1,0 +1,191 @@
+{
+ "blind_id": "DVDM6F",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as launch or not and how to package and price it. Uses NRR 105%, the 75% gross-margin floor and the 14-engineer mobile delay as explicit criteria. The CPO hypothesis is tested through five conditions. Early on it identifies what the answer turns on: the share of accounts that move, usage cost, and the mobile trade-off.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The structure is clear: why launch, package and price, then trade-offs and plan. Titles are claims and the summary matches the sections. Two soft spots: the governing thought says Pro is 'the only option' that meets the objectives, yet slide 9 admits Pro and the add-on overlap on ARR. Slide 12 admits sequencing is 'a close call' on ARR. The deck is also long, with some redundancy between the summary, slides 3 and 9, and the appendices.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The calculations are mostly correct and transparent: $8.06M vs $2.45M, AI cost per account of $32/$61/$130, 109 wins ≈ $0.64M, Pro $2.89M, and the NRR and mobile ceilings. The deck catches real data inconsistencies: the top-10% share is 40%, not the stated 58%, and the churn counts differ. It uses survey bias, beta bias and Routewise's discount. Weaknesses: the 33% Pro take-up is anchored on the 2023 launch with the base case at the top of the range. The mobile-delay cost (25–75% prevented × 0.5 yr) and the 'late 2028 at best' timing for mobile-first are assumptions with no basis in the pack. Pro margin is shown at company level and at the allowance cap, not at actual mean usage.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A clear, defensible recommendation: launch in a Pro tier with a usage allowance and paid packs, sized from the paywall test. It rejects the $149 add-on and free-in-Core. It accepts the mobile delay explicitly, with mitigations and a date for the engineers to move to mobile. It has go/no-go gates (≥8% in Q1, ≥13% at Q3), sensitivities, risk owners and kill criteria. Alternatives are compared on the criteria. It avoids all the traps. Weakness: the mobile-vs-Copilot sequencing argument leans on soft timing assumptions, and base-case Pro take-up is optimistic.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slides 1–2 and the titles are plain. At 19 slides and a 13-bullet executive summary, it is longer than the decision needs. Three appendices and a repeated hypothesis test add bulk.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Mobile first: Late 2028 at best, likely to slip",
+    "why": "There is no basis in the pack for the timing of NRR under a mobile-first order, or for the claim that it would slip."
+   },
+   {
+    "quote": "Share of accounts that move to Pro within 12 months: base 33%, as in the 2023 tier launch",
+    "why": "The base case takes the top of the 2023 range. It is a different product, with different accounts and price, and the volunteer-skewed evidence is not applied to it."
+   },
+   {
+    "quote": "Prevents 25–75% of mobile-related churn (central 50%)",
+    "why": "This is a labelled assumption, but it drives the mobile-delay cost and sequencing argument and has no pack support."
+   },
+   {
+    "quote": "Only option that meets both the NRR and margin objectives",
+    "why": "Overstated. The add-on's range (76.2–76.6% margin, 2.1–4.3 NRR points) also meets the margin floor and overlaps with Pro on NRR. The deck's own slide 9 concedes this."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Launch Copilot in Q2 2027 inside a per-seat Pro plan: it is the only option that lifts NRR toward 105% and keeps gross margin above 75%",
+    "quote_b": "On ARR alone Pro and the add-on overlap ... Second best",
+    "why": "The headline claims exclusivity, but the body shows the add-on range also reaches the target at the top end and keeps margin above 75%. The advantage is not exclusive."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 inside a Pro plan at +$12 per seat. It has a pooled 500-requests-per-seat allowance and paid packs for heavy users. Drop the $149 add-on and free-in-Core. Accept the two-quarter mobile delay, then move the 14 engineers to mobile in Q3 2027. Plan on $1.7–2.9M ARR, with Q1, Q3 and Q2-2028 gates.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It sizes demand off revealed purchases. It controls inference cost with an allowance and packs, and weighs the mobile delay explicitly with mitigations. It sets gates and kill criteria. This matches R1 and meets all three defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The deck keeps 'launch' but changes the packaging, which is the expected handling. It breaks the $8M claim down to $2.45M, then $1.87M after adjusting for beta account size. It shows the margin and heavy-user problem for a flat $149 fee. It identifies the survey and beta biases and the Routewise discount confound. One mild causal overreach is the timing claim for the mobile-first order."
+  },
+  "overall_comment": "This is a strong, well-calibrated deck. It uses revealed demand, models inference cost, separates AI from Routewise's discount, and weighs the mobile delay explicitly. It also catches inconsistencies in the pack (58% vs 40%, 1,190 vs 1,372). Its weaknesses are an optimistic 33% base-case Pro take-up, soft assumptions in the mobile-delay and timing argument, an 'only option' headline that its own table undercuts, and length (19 slides).",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1865464,
+ "wall_s": 32.36789393424988,
+ "is_error": false,
+ "error_text": null
+}

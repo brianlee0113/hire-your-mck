@@ -1,0 +1,39 @@
+{
+ "x": "DQ7ZUH",
+ "y": "DLU8TF",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same chain: churn sits in the promotion cohort, pricing power sits in the larger segments, SMB is risky, so segment the rise and add guardrails. X's executive summary carries the full argument with numbers, including the corrected $7.6M, the net range and the explicit trade-off against the CFO plan, and those figures reconcile across the options table, plan and growth bridge. Y's hierarchy is tidy, with key questions and section summaries, but its headline 'only $0.6M of new ARR needed' and 'NRR about 114%' rest on gross uplift with no mid-market churn response. That sits awkwardly beside its own section saying mid-market churn is up for unexplained reasons and needs a control group. Y also labels $6.3M as net of 'churn' when only SMB churn is deducted.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the same defensible recommendation (R1/R2): +10% mid-market, enterprise at 7% capped and 10% uncapped, SMB held with a +8% test, promotion cohort activation. X weighs the trade-off more fully. It gives net ranges for each option under planning and stress cases, states that its plan yields $0.3–1.8M less than the CFO plan, and explains why 10% rather than 12% in mid-market. It also freezes promotion-cohort prices explicitly and admits $1.5–2.6M must still come from new customers. Y adds a mid-market renewal control group, which is a better design than X's threshold-only guardrail, and names owners. But its options comparison is qualitative, its claim that the plan 'meets both targets' depends on a no-churn assumption, and its mid-market trigger ('above 0.8%') sits at today's level.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: implied promotion churn of 4.9%, the mix effect, $7.6M gross, SMB net of $1.2M on the scaled 2023 pattern, break-even near 10.7% (about 2x the 2023 response), and the dashboard mismatch (1.7→2.6 and 0.8→1.2). X goes further and stays more conservative. It models a mid-market churn response against a 9.1% break-even with a stress case. It estimates that the activation gap explains only about 30% of the cohort's excess churn. It cross-checks the exit-survey mix (about 37% against 34% reported). It also labels every estimate. Y assumes zero churn response in the larger segments for its headline $4.3M, $0.6M and 114% figures. Its 'up to $1.5M a year' saved by re-activation is a crude upper bound, and its $1.3M SMB upside is a full-year figure for an H2 rollout. Y's 90% decomposition of extra lost customers and its response-multiple sensitivity table are good, but X is the more rigorous overall.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than accept or reject it. Each confirms the churn rise is a cohort mix effect, shows price still matters for the promotion cohort at discount expiry and for SMB because of Inkwell, and corrects the $10.3M. Both also deflate the 'halve SMB churn' claim to a best case of about a third. X reconciles the CFO and CEO views more explicitly ('the CFO is half right') and separates how much of the cohort's churn is activation versus the price step. That directly tests 'onboarding, not price'. X also takes the $10.3M correction through to net ($5.3M planning, $2.7M stress). Y stops at $6.3M with only SMB churn deducted, and leans a little more toward 'not a reaction to list prices'.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The recommendations are essentially identical and both meet every defensibility criterion. X serves the CEO better because its numbers are more decision-ready and more honest: net-of-churn ranges for each option, the explicit cost against the CFO plan, a realistic new-customer gap of $1.5–2.6M, pre-agreed triggers, and a list of open questions for Finance, Customer Success and Legal. Y's mid-market control group and clear ownership are real strengths. But its headline that the plan nearly reaches 15% with only $0.6M of new ARR rests on a zero-churn assumption in the larger segments, which could mislead the decision maker.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0451562,
+ "wall_s": 38.26077580451965,
+ "error_text": null
+}

@@ -1,0 +1,39 @@
+{
+ "x": "DLU8TF",
+ "y": "D67FCK",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both build a clean hierarchy to the same governing thought: diagnose churn, locate pricing power, size the options, then roll out. X maps five key questions one-to-one onto five sections, and every summary line is backed by a slide. Y uses three pillars plus actions and risks, with a hypothesis-test table that ties each finding to its effect on the answer. Each has one small internal inconsistency. X compares the CFO plan net of SMB churn ($6.3M) with its own plan before any churn response ($4.3M). Y's summary calls mid-market churn '~flat' while later flagging the 0.6% to 0.8% rise as unexplained, and its 'hold SMB until a test supports it' rests on a new sign-up test that does not measure the renewal churn the argument turns on. These roughly cancel.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the same defensible R1/R2 answer: +10% on mid-market and enterprise within caps, hold SMB, test +8%, run onboarding as a separate lever, fix the churn metric. Y weighs alternatives better. It compares four options, including segmented at 12%, on a consistent base and stress basis, states the trade-off explicitly (gives up about $1.8M against the CFO plan for no SMB downside), and adds a risk table and three pre-meeting data checks. X's option comparison is thinner: three options, and its own plan is not stressed for churn. X does have the better experimental design: an +8% test on a random half of non-promotion SMB renewals, a held-back mid-market renewal control group, and five explicit triggers. Y's SMB test on new sign-ups answers the renewal question less directly. On balance Y's trade-off weighing slightly outweighs X's stronger guardrails.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the critical calculations right: promotion cohort about 4.9%, blended 1.7% to 2.6% and ARR-weighted 0.8% to 1.2%, $7.6M repriceable, 2023 response 3.6%, and breakeven about twice 2023. Both note the undefined dashboard metric, split exit surveys by cohort, and caveat the 2024 sign-up test. I found no arithmetic errors in either. Y uses the evidence more deeply. It gives the explicit mix/rate split (1.04pp against 0.06pp), cross-checks it against the exit-survey shares (47% against 56% of churners), and models activation to show it explains only about 0.8pp of the cohort's 2.8pp excess churn, which sizes onboarding at about $0.4M. It also derives the 10.7% breakeven directly, notes account-size differences, separates in-year revenue from run-rate, and stress-tests mid-market. Y's weakest inference is treating a statistically insignificant conversion gap as a renewal elasticity, though this is flagged and conservative. X's weaker points are the 'up to $1.5M' onboarding figure, which assumes full convergence to 2.1%, a few unsupported glosses such as 'joined for a discount rather than a workflow need', and no churn reaction applied to its own plan.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "The key expects the CFO's hypothesis to be revised by reconciling both views. Y does this explicitly: 'the CFO and CEO are each half right' — the core base is not churning on price, but the cohort shows a sharp price step drives churn among unactivated customers. Its hypothesis table gives verdicts (holds, holds at 10%, not shown, holds smaller, fails), cuts $10.3M to $5.3M base and $2.7M stress, and downgrades the onboarding claim with a quantified reason. X reaches the same substantive revision: $10.3M becomes $6.3M, SMB is excluded, and halving churn is shown to be out of reach (a third at best). But X frames the diagnosis more one-sidedly ('not a reaction to list prices'), leaning toward the CFO's reading. It does not explicitly reconcile the CEO's concern beyond the Inkwell risk section.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The two documents give the same, key-aligned recommendation, and both do the critical analysis correctly. Y serves the CEO somewhat better. It compares options on a consistent base and stress basis, quantifies what is given up against the CFO plan, reconciles the CFO and CEO views explicitly, sizes onboarding realistically, and lists the decisions requested and the pre-meeting data checks. X's advantage is real but narrower: a better-designed SMB renewal test, a mid-market control group, and clear stop triggers. X's weaknesses are that its own plan is not stress-tested and its treatment of alternatives is thinner.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1600842,
+ "wall_s": 65.47707605361938,
+ "error_text": null
+}

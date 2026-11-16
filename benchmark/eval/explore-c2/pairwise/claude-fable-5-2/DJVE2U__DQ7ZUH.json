@@ -1,0 +1,38 @@
+{
+ "x": "DJVE2U",
+ "y": "DQ7ZUH",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean line from diagnosis (promotion-cohort mix effect) through pricing power by segment and a corrected CFO figure to a segmented plan. X's four numbered claims map neatly onto its sections. Its weak points are internal: the headline says churn is rising 'not because customers reject today's prices', while slide 6 says the cohort 'is the one group that reacts to price'. Its headline '$0.6M of new ARR to find' also assumes zero churn response, which sits awkwardly beside its own break-even slide. Y's summary carries the same gross and net figures through the options table, plan and growth bridge, and its 'half right' framing matches the slide evidence. Y has one small tension: the SMB go rule is set at the 2023 response (0.5 pt) while the test is sized to detect twice that. Net, Y is marginally more consistent.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the same defensible R1/R2 recommendation: +10% mid-market, 7–10% enterprise within caps, SMB held pending an 8% Q1 test, promotion cohort frozen and activated. Y weighs alternatives better. It sets out three options, including 'hold all prices', which answers the CEO's concern and which X never evaluates. It compares them on gross, net, customers lost, NRR, new ARR needed and reversibility, and states the trade-off: $0.3–1.8M less ARR than the CFO plan against 320–640 SMB customers kept. Y's guardrails are specific and set in advance: mid-market churn above 1.0% for a quarter, SMB test 0.5 pt above control, a cohort stop rule, and holdout measurement. X's stop rule ('pause when losses approach break-even') is vague and permissive, since it tolerates losing nearly all the gain. Y also flags the unexplained mid-market churn rise and the sub-200-seat exposure to Inkwell, and admits $1.5–2.6M must still come from new customers. X's '$0.6M to find' is rosier.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: 4.9% implied cohort churn, about 1.0 pp mix effect, $7.6M reachable uplift with matching waterfalls, the p/(1+p) break-even, the 2023 extra loss of 3.6%, and the dashboard reconciliation (1.7→2.6 and 0.8→1.2). Both caveat the 2024 test as new sign-ups only, and both show the 'halve SMB churn' claim exceeds what fixing the cohort could deliver. Y goes further with labelled, reproducible estimates. It nets the uplift for churn response (SMB scaled from 2023, with a 2× stress case). It estimates that the activation gap explains only about 30% of the cohort's excess churn, which directly tests the CFO's 'onboarding, not price' claim. It cross-checks the exit-survey mix (37% against 34% reported) and notes the cohort will shrink on its own, so a holdout is needed. Y's mid-market planning case leans on a non-significant conversion gap, but it is disclosed and conservative. X's growth bridge and 114% NRR rest on zero churn response, and its '$1.3M' SMB upside is a full-year run-rate that a Q1 test and later rollout could not deliver in 2027; Y correctly halves it to $0.7M. X has no outright errors but is less rigorous on net effects.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "The key expects a revision that credits both the CFO and the CEO and differentiates by segment. Both documents do this: they correct the $10.3M, reject the flat 12%, and separate mix from rate. Y is more explicit and balanced. It says 'the CFO is half right', and it quantifies that weak activation explains only part of the cohort's churn while the rest coincides with the discount ending, so price is real for that cohort. It also rejects the CEO-style 'hold everything' option with numbers. X's headline leans toward the CFO's diagnosis ('not because customers reject today's prices') and only acknowledges 'both views hold for this cohort' inside slide 6. It turns the CEO's worry into a gate but never tests the no-increase position.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The recommendation and core analysis are essentially the same and both meet every defensibility criterion. Y would serve the CEO better because it gives net-of-churn ranges with a stress case and an explicit three-option comparison including 'hold all prices'. It is honest that new-customer ARR is still needed, sets concrete triggers and checkpoints, and lists open questions for Finance, Customer Success and Legal: the mid-market churn rise, the sub-200-seat exposure and notice periods. X is tighter and accurate but relies on a no-churn bridge, has a vaguer stop rule and treats alternatives more thinly.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8394842,
+ "wall_s": 41.686970949172974
+}

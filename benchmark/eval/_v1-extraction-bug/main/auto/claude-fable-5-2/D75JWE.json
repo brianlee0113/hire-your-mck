@@ -1,0 +1,197 @@
+{
+ "blind_id": "D75JWE",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision exactly as posed and turns the board's two constraints (path to profit within current cash, at least 12 months of runway) into explicit criteria in the options table and the five 'what would have to be true' tests. It identifies early what the answer turns on: per-order economics at realistic inputs, affordability, and the software alternative. It treats the question as a choice among four levels of operating exposure rather than a bare yes/no, and flags the ambiguity in what the $9.5M covers.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, and the executive summary's three sections (economics fail, cannot afford to find out, software is the better route) are the body sections. Every title is a claim its slide supports with numbers, and the titles alone give the argument. The five conditions on slide 3 map cleanly to the sections. Minor blemishes only: the summary's 'every dark-store option breaks the runway floor' is slightly broader than slide 13, where a second pop-up stays within the floor, and slide 9 repeats pop-up drivers already shown on slide 6. Neither breaks the logic.",
+    "score": 5
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived every key figure and found no numerical errors: −$6.17, −$3.44, −$1.76, −$12.57, +$2.02, +$0.22, break-even AOVs of $63/$50/$44, CAGR 41.5%, the $8.19 bridge, CAC payback, pipeline ARR and the runway paths all check. Derivations are transparent and assumptions labelled. It uses the counter-evidence (Zipcart, the pop-up's rising volume). Flaws: the Zipcart levers are applied only to the median site (−$0.48, then −$1.05), omitting that the same levers at best observed density give about +$2.25, so 'better execution alone will not fix them' and the slide 10 title are stronger than the evidence. The claim that operating would put customer contracts at risk is not in the pack. The software break-even rests on opex held flat while ARR grows 2.7×, stressed only at +10% a year. The $37M figure mixes steady-state losses with ramp CAC.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Clear, defensible recommendation (R1) that follows from the analysis. Four options are compared on the board's own criteria plus exposure, downside and reversibility. The single-store pilot and a second pop-up are costed and rejected with reasons. Measurable reopening triggers, a sensitivity on software growth with a pre-agreed opex response, 90-day next steps and even founder motivation are covered. It avoids all the traps, engaging with the Zipcart evidence rather than ignoring it. One quibble: the reopening trigger excludes any extra fee, which forecloses the one route the Zipcart evidence suggests could work at high density. That stems from the one-sided fee analysis already penalised under evidence.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 1 and in the executive summary, the language is plain and precise, and the numbers carry their formulas. But 18 main slides plus 3 appendices (about 5,000 words) is more than this decision needs. Unit economics take four slides (5–8) plus a pop-up slide that partly repeats slide 6, and the approach slide duplicates the executive summary.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Operating would compete with grocers who are customers or prospects, which puts the $96k-a-year contracts at risk",
+    "why": "The pack does not say customers or prospects operate in the three target cities or would react to Parcelbird operating; it is a plausible inference presented as fact."
+   },
+   {
+    "quote": "The economics depend on the format itself (small basket, paid rider, dedicated store). Better execution alone will not fix them",
+    "why": "Overstated. With Zipcart's fee and promotion cut, a site at best observed density would earn about +$2.25 per order; the document only shows the median case."
+   },
+   {
+    "quote": "The pop-up's AOV was $31, so baskets are moving away from $45, not towards it",
+    "why": "One pop-up data point below the median does not establish a direction of travel for basket size."
+   },
+   {
+    "quote": "Parcelbird's median order-level result (−$2.67, next slide) sits between the two incumbents, which supports using the benchmarks",
+    "why": "The incumbents' 'contribution per order' definition is unknown (the document itself flags this ambiguity in appendix 3), so the comparison is weak validation."
+   },
+   {
+    "quote": "Pipeline left to competitors",
+    "why": "The pack mentions no software competitors."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Fund the $0.8M a year of software hires, build a store-based fast-delivery module with 2–3 design-partner grocers, and reopen the operator question only if four measurable triggers all hold.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "Meets all four defensibility criteria: per-order contribution computed at median, best observed and pop-up inputs; market growth separated from profitability; runway checked under two readings of the $9.5M; and the software alternative offered, with a single-store pilot costed and rejected."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "Starts from the founders' hypothesis, lists five conditions it needs and tests each against the pack; four fail and one is partly met. It shows the +$2.02 needs all four drivers to beat the best observed site, addresses the survey-versus-retention and growth-versus-losses contradictions, and takes on the Zipcart proof point rather than ignoring it. It concedes the pop-up is an early read with volume still rising. The two causal overreaches are that operating would put customer contracts at risk and that better execution alone cannot fix the economics, the latter because the fee case at best density is not shown."
+  },
+  "overall_comment": "Very strong document. Every required calculation is correct and transparently derived, and the analysis goes further than the key with a gap bridge, a break-even grid, CAC payback and a monthly runway model under two readings of the budget. The recommendation is defensible, compared against real alternatives on the board's own constraints, and comes with reopening triggers and a sensitivity on software growth. The main weakness is a one-sided treatment of the Zipcart evidence: the fee and promotion levers are applied only to a median site, without noting that at best observed density they would make an order profitable (about +$2.25). That makes 'better execution alone will not fix them' overstated and the 'no extra fee' trigger questionable. Smaller issues: an unsupported claim about channel conflict with customers, a software break-even that depends on flat opex, and more length than the decision needs.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 1.0819236,
+ "wall_s": 105.3777449131012,
+ "is_error": false,
+ "error_text": null
+}

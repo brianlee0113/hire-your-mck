@@ -1,0 +1,217 @@
+{
+ "blind_id": "D7JPQW",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The deck poses the question as the board does. It lists the success criteria explicitly: a path to profit within the $12.0M, 12 months of runway, and orders that make money on inputs already observed. It puts the five sub-questions up front and builds the sections around them. It identifies early what the answer turns on: per-order economics, runway and the alternative use of cash. It adds a sharp criterion, 'on inputs already observed', and treats the decision as launch versus software versus test, not as yes/no.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the five summary points and the section structure line up. Most titles are claims backed by the slide's numbers: market, unit economics, customers, cash and alternatives, and next steps. Reading the titles gives the argument. Weaknesses: the summary and slide 5 say 'no operator has yet shown it can make money' while slide 8 calls Zipcart's city 'profitable'. Slide 10's finding says 'even before the dark store is paid for' but shows the after-site-cost -$6.2. Five repeated Contents slides and a separate market summary slide add redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The core numbers check out and the derivations are transparent. Median contribution is -$6.17, with rider $7.40 and store $3.50. Best combined inputs give -$1.8. The pop-up gives -$12.6, from -$6.2 before site cost and -$6.4 for the site. The $63.4 break-even basket, the plan swing decomposition, the one-input-missed analysis, the Zipcart adjustment (-$1.05) and the runway (6.2 months against a $4.8M floor) are all right. The deck also spots that the $9.5M may exclude software burn. Gaps: it never shows best density at median AOV (-$3.44), the break-even AOV at best density (about $50), or the best-density-with-fee case (+$2.25), so the Zipcart evidence is only partly engaged. Slide 41 divides $4.8M by '$0.5M' to get 10.2 months, which is rounding of the displayed burn. Several overstatements: 'lose money on every order' for averages, and the Zipcart causal story 'not from scale' and 'densest city only'. The software break-even rests on 60% growth continuing, which is flagged as an assumption.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is a clear no-launch, with the money going to the 81%-margin software business. That is the key's R1 and is defensible. Alternatives are compared against the board's tests: launch as planned, a one-store test, and scaling the software. A capital-light grocer pilot is included. The key trade-offs are explicit: growth against negative economics, operator against supplier, and learning against runway. Four reopening gates are set, led by site economics, with owners, quarterly tracking and a Q4 review. The deck sizes the software upside and the cost of conflict with grocer customers. It does not fall into the market-growth, density-fixes-it, survey, promotion-growth or runway traps. It handles the Zipcart evidence reasonably. Minor weaknesses: software break-even depends on sustained 60% growth, and the grocer-rival risk is untested.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 3, and the language is plain. But the deck is 43 slides and about 5,900 words for a go/no-go on one decision. It has five repeated Contents slides and many backups, and several slides repeat the same unit-economics point (slides 10–15). The board could decide from about half of this.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "The profit came from charging more and serving fewer orders, not from scale",
+    "why": "The pack says only that volume fell 14% after the fee and promotion cut in Zipcart's densest city. It does not show that scale played no role."
+   },
+   {
+    "quote": "Made both changes in its densest city only",
+    "why": "The pack does not say the changes were limited to that city."
+   },
+   {
+    "quote": "Both incumbents lose money on every order",
+    "why": "The pack gives average contribution per order. It does not show every order loses money."
+   },
+   {
+    "quote": "Many joined on first-order credits",
+    "why": "The pack says only that CAC includes first-order credits, not that most customers joined on them."
+   },
+   {
+    "quote": "Zipcart's one profitable city shows the price of profit: a new fee and fewer promotions cost it 14% of orders",
+    "why": "The pack shows volume fell after the changes, not that the changes caused it. It also does not say this was the only profitable city."
+   },
+   {
+    "quote": "the software can break even on current cash",
+    "why": "This depends on 60% ARR growth continuing with only $0.8M of extra cost. It is flagged as an assumption in the backup but stated firmly in the headline."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "$4.8M ÷ $0.5M monthly burn (software plus the test store) = 10.2 months",
+    "correct": "$4.8M ÷ $0.5M = 9.6 months. The 10.2 figure implies a burn of about $0.47M that is shown rounded, so this is minor."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "The market grows about 40% a year, but no operator has yet shown it can make money in it",
+    "quote_b": "Zipcart's one profitable city shows the price of profit",
+    "why": "The deck says no operator has shown it can make money, then calls Zipcart's densest city profitable. It is really contribution-positive at +$0.40 per order, not profitable, so the wording is inconsistent."
+   },
+   {
+    "quote_a": "At benchmark medians an order loses money, even before the dark store is paid for",
+    "quote_b": "−$6.2 contribution per order after site costs, benchmark medians",
+    "why": "The finding refers to the before-site-cost loss (-$2.7), but the evidence number shown is the after-site-cost loss (-$6.2)."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Put $0.8M a year into the software business and store-based fast delivery for grocers. Reopen the operator question only when four gates are met: site economics first, then rider pay rules, outside funding and software at break-even.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "The recommendation follows from per-order contribution computed at benchmark and best-observed inputs, which is negative in every observed case. It also follows from the runway breach (about 6 months against the 12-month floor) and the software alternative. It includes a capital-light grocer pilot and explicit reopening gates, which meets all four defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "The deck rejects the founders' enter-now hypothesis for the right reasons. The plan needs every driver above the best observed site. The pop-up lost about $12.6 per order. The Zipcart fee and promotion cut still leaves -$1.05. Growth coexists with incumbent losses. Runway breaks even if the plan works. It separates market growth from profitability and survey intent from retention. It states the not-tested items, such as Midwest competition and the grocer-rivalry risk, and the software-growth assumption."
+  },
+  "overall_comment": "This is a strong, well-reasoned deck with accurate arithmetic. It frames the decision on the board's own criteria and rejects the founders' hypothesis on the evidence. It checks runway, offers the software alternative with a capital-light pilot, and sets reopening gates. Its flaws are modest. It never shows best density at median AOV or the best-density-with-fee case, so the Zipcart evidence is only partly engaged. It has a few causal overstatements about Zipcart and 'every order'. It rests the software break-even on sustained 60% growth. It contains a couple of small wording inconsistencies. At 43 slides with repeated Contents pages and heavy overlap in the unit-economics section, it is longer than the decision needs.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.33464089999999996,
+ "wall_s": 92.28415989875793,
+ "is_error": false,
+ "error_text": null
+}

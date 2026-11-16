@@ -1,0 +1,38 @@
+{
+ "x": "DU85N7",
+ "y": "DRS3DV",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both have a clean hierarchy that runs from governing thought through sections to slide evidence. X's four-part argument (value, add-on, Pro, mobile, conditions) is tight, but it has internal tensions. It says the base should convert below the paywall's 14% and that beta results are a ceiling, yet its headline plans on $2.9M at the undiscounted 33% precedent. It calls the $642K competitive figure an upper bound, then uses that upper bound to set the 51.7% threshold that makes Copilot-first the default. Its go/no-go test also runs in Q1, while the 14 engineers are already committed and the mobile delay is already incurred. Y organises everything around five conditions the CPO's plan needs, and each section answers one of them. Its ~$2M headline matches its 25% base case, and its sequencing conclusion follows from the same base assumptions it uses elsewhere. Y's small tension is a slide title saying mobile delay costs 'about twice as much' beside 'the money is close'; the text resolves this by separating lasting from deferred value.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on defensible answers under the key: X is R1 (Pro tier, guardrails, accepts the mobile delay explicitly) and Y is R3 with its conditions met (win-rate risk quantified, limited AI response via beta, pilot and early access in Routewise deals). The difference is how well the trade-offs are weighed. X's sequencing rests on one break-even built from Copilot's most favourable case (AI caused the whole drop, Copilot stops all AI churn). That contradicts its own argument that the discount confounds the drop; with AI explaining half, the threshold falls to about 26% and the default would flip. X discloses the upper bounds but still sets the default on them. Y runs a two-way sensitivity (share of mobile churn fixed × share of drop due to AI), shows mobile-first holds in most cells, adds qualitative tie-breakers (evidence quality, durability of churn reduction), and defines a mid-February trigger to revert to Q2. Y also weighs more options (add-on, Pro, free in Core, don't launch), tests Pro against a heavy-user mix, and sets a tighter allowance (500 vs X's 1,000 per seat, which leaves only 25% margin at the cap). Y's weak point is the assumption that the rewrite needs the 14 engineers only in H1; it flags this for confirmation. X does consider free-in-Core and proposes sensible launch conditions.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "The numbers in both check out: $8.06M vs $2.45M, inference of $17/$32/$61/$131 per month, 109 deals and $0.64M, $2.89M Pro ARR at 33%, the 58% win rate the sales memo implies, and the 40% vs 58% inconsistency in Table 2. Both rebut the VP Sales memo and flag survey and beta bias. Both put Pro margin near 67% using 444 requests per seat, above the key's 56%; only Y stress-tests this with a heavy-user case (74.1–74.8% uncapped). X's inferences are weaker in two places. It plans on the 33% precedent as the headline while saying real demand sits below the test rate. Its 51.7% break-even comes from one-sided upper bounds. Y uses ranges throughout (7–14% add-on, 14–33% Pro, base 25%), states its midpoint assumptions, and shows the calculations in an appendix. Y's own flaws are small: the 50% midpoints are assumptions rather than evidence, and the 21-month payback does not obviously reconcile with its footnote. Y also notes that new-logo wins do not count towards NRR and that the Q4 2026 win rate can test the discount confound.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both keep 'launch' and reject the $149 add-on and the $8M forecast, on the right grounds: stated vs revealed demand, survey non-response and size skew, and adverse selection on inference cost. Y is more explicit. It breaks the CPO's proposal into five conditions, gives each a verdict, keeps the one that is supported (strategic and NRR need) and revises price, packaging and timing. It also sizes below the test rate with a low case. X revises packaging and sizing well and shows that only the conversion rate separates $8M from $2.5M. But it replaces the CPO's figure with a headline at the optimistic end of the precedent range, and it keeps the Q2 timing on a break-even tilted towards Copilot.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents avoid the main traps and reach conclusions the key treats as defensible, with accurate core calculations. X is shorter, answers the Q2 question directly and gives clear launch conditions. Y would serve the executive team better for four reasons. Its sizing is more conservative and given as ranges. Its packaging is tested against a heavy-user mix. Its sequencing is analysed across both key uncertainties rather than on one upper-bound break-even. And it gives a concrete trigger and gates (the Q4 2026 win-rate read, pilot conversion of at least 10%) that say when to change course. Y also ties the decision to the NRR objective with a bridge showing what each lever contributes. Its main exposure is the unverified assumption that the rewrite frees the engineers after H1, which it flags as a January confirmation.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0177882,
+ "wall_s": 76.64306616783142
+}

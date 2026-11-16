@@ -1,0 +1,201 @@
+{
+ "blind_id": "DP2FVD",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document answers the board's question as posed, with a clear 'no' on the title slide and in the executive summary. It turns the stated objectives and constraints into explicit tests on slide 13: positive unit economics on the evidence, fit within cash while holding 12 months of runway, a path to profitability without a new round, and risk to the software business. It identifies early what the decision turns on: per-order contribution at observed inputs, the runway rule and the software alternative. It also notes that the pack does not say whether the $9.5M includes today's burn and tests both readings. Nothing material to fix.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the five summary points map onto the body sections, and nearly every title is a claim its slide supports, so the titles alone give the argument. Three flaws keep it from a 5. The lead summary headline ('Every order loses money in all the evidence we have') is contradicted by the document's own slide 9 (Zipcart's densest city at +$0.40) and by its own +$0.49 before site costs at best inputs. One reopening test misdescribes the Zipcart evidence it relies on. Slides 5, 6 and 14 overlap on the same point (the plan needs every input beyond the observed range), and slide 11 is a grab-bag of further risks rather than a single claim.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived every figure I relied on and the arithmetic holds. Per-order contribution is right at median (−$6.17; −$2.67 before site costs), best of each input (−$1.76), plan (+$2.02) and pop-up (−$12.57). Also correct: CAGR 41.5%, network totals (−$18.2M, −$8.1M, +$11.9M), single-input break-evens (AOV $63, 14.4 orders per rider-hour), the Zipcart fix at median (−$1.05) and at best inputs (+$3.97), CAC payback (15 and 28 months, 51% retention needed), the back-solved pop-up exit rate (~410 a day), and the software break-even (~month 26, $4.9M left; 45% growth gives month 32, $3.1M). All critical evidence is used, including the Zipcart evidence that cuts against the answer, and assumptions are labelled. Remaining issues are minor and do not change the result: 'Pricing, not density, did the work' is stronger than the evidence allows; 'same cities as the grocers we sell software to' is not in the pack; and the 'month 11' runway breach is inconsistent with the stated today's-burn basis (about month 13–14). The best-density-only case (−$3.44) is not shown separately, but the more generous −$1.76 case is.",
+    "score": 5
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear (decline the launch, fund the software hires, scope a store-based fast-delivery offer) and follows from the analysis. Three options are compared on the board's criteria, including a smaller own-store test that is rejected because the pop-up and even the best observed inputs lose money. Trade-offs are explicit: growth versus losses, operator versus supplier, and learning versus runway, with learning moved to customer sites at no capital cost. It says what would reopen the question, gives 90-day next steps, and avoids all six traps. It is candid that the software path is illustrative and fails below about 35% growth. Small weaknesses: one reopening test is loosely specified ('keeps most of its volume') and misreads Zipcart, and the software path holds other costs flat while ARR nearly triples. Neither undermines the recommendation.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on the first two slides, the language is plain, and footnotes state the basis of each calculation. For a fairly clear no-go, 13 body slides plus 3 appendix slides (about 3,500 words) is somewhat more than needed. The headline numbers (−$6.17, −$12.57, +$2.02) recur on many slides, and slide 6 and the sensitivity appendix add robustness more than new insight.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Parcelbird Now would run dark stores in the same cities as the grocers we sell software to.",
+    "why": "The pack does not say where software customers or pipeline grocers are located. The document labels channel conflict as team judgement, but the same-cities fact is asserted as true."
+   },
+   {
+    "quote": "Pricing, not density, did the work",
+    "why": "The pack says only that the positive result followed a fee and a promotion cut, and that it occurred in Zipcart's densest city. It does not isolate pricing from density, and the document's own numbers show the same fix is negative at median density and positive at best inputs."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "On even spending, the 12-month rule is broken around month 11.",
+    "correct": "On the document's stated basis (reserve of $4.8M at today's $0.4M/month burn, even spend of about $0.53M/month), cash falls below the reserve at about month 13–14. Month 11 holds only if the reserve is measured at the plan's average burn, which is not the stated basis. Minor; the conclusion is unaffected."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Every order loses money in all the evidence we have.",
+    "quote_b": "Contribution turned positive, at +$0.40 an order, in its densest city in Q4 2025.",
+    "why": "The summary headline is literally contradicted by the Zipcart evidence the document itself presents, and by its own +$0.49 before site costs at best inputs. It is an overstatement rather than a flaw in the recommendation."
+   },
+   {
+    "quote_a": "Order volume in that city fell 14% afterwards.",
+    "quote_b": "A customer site adds a service fee and keeps most of its volume, which Zipcart's 14% loss did not.",
+    "why": "A 14% loss means Zipcart kept 86% of its volume, which is most of it. The reopening test as worded was already met by Zipcart, so the threshold is mis-specified."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Approve about $0.8M a year for 2 engineers and 2 sales hires, scope a store-based fast-delivery offer for pipeline grocers, and agree reopening tests to be gathered from customer sites rather than own stores.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It meets all four defensibility criteria. It computes per-order contribution at median, best observed and pop-up inputs. It separates market growth (41.5% CAGR) from profitability (incumbent losses, city exits). It checks the runway constraint under both readings of the $9.5M. It offers the software alternative with a costed, sensitivity-tested path, and it explicitly rejects an own-store test in favour of capital-free learning at customer sites."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document rejects the founders' hypothesis on the evidence rather than by assertion. It concedes the growth claim (41.5% CAGR), then shows the plan's +$2.02 needs all four inputs beyond the best observed site, and that even the best of each input loses $1.76. It shows the pop-up did worse than the median on every input and that its growth was bought with promotions. It contrasts survey intent (44%) with month-three retention (22%). It engages with the Zipcart evidence by applying the fee and promotion cut to the benchmark (−$1.05 at median, +$3.97 at best inputs). It notes the founders' 'we run stores better' claim is undercut by their own pop-up, flags that 'nobody owns the Midwest' has no data behind it, and states what evidence would reopen the question. The one overstated causal claim is 'Pricing, not density, did the work', since the Zipcart result came from its densest city."
+  },
+  "overall_comment": "Very strong document. Every answer-key calculation is reproduced correctly, and it adds useful analysis beyond the key: single-input break-evens, a bridge from median to plan, CAC payback, both readings of the $9.5M, and a software break-even path with growth sensitivity. It reaches all nine insights, avoids all six traps, and lands on R1 with reopening tests and 90-day actions. The flaws are minor: an overstated lead headline that its own Zipcart slide contradicts, an overstated 'pricing, not density' takeaway, an unsupported 'same cities' assertion behind the channel-conflict risk, a mis-specified reopening test on fee and volume, a small basis inconsistency on the 'month 11' runway breach, and some repetition for the size of the decision. One note on the normalised storyline: Part 1 attaches +$1.80 to the AOV step and +$2.31 to the promotions step of the bridge. The correct values in the order shown are the reverse, and the vertical order in the mechanical extraction is consistent with the correct mapping, so I treated this as a normalisation artefact, not a document error. Weighted score: 4.65.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 1.0235436,
+ "wall_s": 137.32505226135254,
+ "is_error": false,
+ "error_text": null
+}

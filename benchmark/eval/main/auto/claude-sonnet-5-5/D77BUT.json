@@ -1,0 +1,187 @@
+{
+ "blind_id": "D77BUT",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the exact decision (launch or not, when, packaging and price). It tests the CPO hypothesis against explicit conditions. It uses the NRR 105% target, the 75% GM floor and the engineering and mobile trade-off as criteria. It identifies early what the answer turns on: demand sizing, inference cost and the mobile opportunity cost.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, executive summary and slide titles form one hierarchy, and the titles read as an argument. Triggers on slide 16 link back to the timing logic. Minor flaws: 14% is called a 'ceiling' for the add-on but is used as the 'low case' for Pro. Some slides are redundant (nav tracker repeated, add-on figures restated across slides 3, 4, 7 and 18).",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The calculations are correct and transparent: $8.06M vs $2.45M, $32.4/$61.2/$130.5 per month, 109 deals and $0.64M, Pro $2.89M, and the free-in-Core GM of 71.9%. It also adds the VP Sales sanity check (58% win rate) and a break-even request count. All critical evidence is used, including the survey's size skew. Weaknesses: Pro at 33% adoption is borrowed from the 2023 precedent with no volunteer haircut. The claim that the Q3 promo had ended by Q4 is not in the pack. Churned accounts are assumed average size, which is flagged. The mobile-fix and 50% credit effects are illustrative and labelled so.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Launch is kept but the packaging and sizing are revised to a Pro tier with a pooled allowance and top-ups. The doc compares the add-on, Pro and free-in-Core on ARR, margin, NRR and competitive fit. It weighs the mobile delay against the Copilot delay with a break-even (26–52%). It sets gates and triggers, owners and a paid early-access test. It avoids all the traps. A possible weakness is that it defers the defensive response by two quarters, though that is mitigated by the Gate 1 trigger.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 1 and in the executive summary. The deck is 19 slides and about 4,800 words, with repeated content and heavy appendices. That is long for the decision, but the language is plain.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Q4 2026 win rates come after the promo ended.",
+    "why": "The pack says only that the 20% promo was offered in Q3 2026. It does not say when it ended."
+   },
+   {
+    "quote": "Typical users never hit it. The beta average is 444 requests per seat",
+    "why": "This is an average of volunteer accounts. Per-seat usage for typical accounts is inferred rather than observed."
+   },
+   {
+    "quote": "Pro: Adoption 33% (2023 higher-tier precedent) base",
+    "why": "The doc treats the 2023 migration as a base case without adjusting for the different product or for volunteer bias, though it hedges with a low case."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "14% is a ceiling, not a base case.",
+    "quote_b": "Adoption: 33% (2023 higher-tier precedent) base, 14% low",
+    "why": "The same 14% figure is a ceiling for the add-on but the floor or low case for Pro. This is only partly explained by the lower effective price."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in a new Pro tier at +$12 per seat with a 600-request pooled allowance, but in Q4 2027 after the mobile rewrite. Retire the $149 add-on. Reset the case to $1.2–2.9M of ARR. Run paid early access in H1 2027. Pull the launch forward to Q2 if the Q4 2026 win rate stays at or below 37% or the engineers can come from outside mobile.",
+   "closest_plausible_id": "R3",
+   "defensible": "yes",
+   "rationale": "It uses revealed demand and accounts for inference cost through the allowance and top-ups. It weighs the mobile delay against the competitive threat with a quantified break-even and explicit triggers. It is close to R3 (delay to ship mobile first), with the win-rate risk quantified and a limited AI response (early access) planned."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "The doc keeps 'launch' but rejects the $8M sizing and the add-on packaging. It reconciles survey and paywall (46% vs 14%, 6% response rate, larger respondents). It shows the add-on margin and the top-decile cost problem. It treats the win-rate drop as confounded by the promo. It uses the mobile trade-off to change the timing. This matches the expected 'revise' handling."
+  },
+  "overall_comment": "This is a rigorous, well-calibrated document. The numbers check out, the traps are avoided, and the recommendation is defensible, with gates and triggers. It also sanity-checks the VP Sales claim and sizes the mobile-versus-Copilot delay with a break-even. Weaknesses are length and redundancy, a slightly optimistic 33% Pro adoption base, and a few small inferred assumptions. The 14% 'ceiling' is also used as Pro's low case.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1877444,
+ "wall_s": 41.664889097213745,
+ "is_error": false,
+ "error_text": null
+}

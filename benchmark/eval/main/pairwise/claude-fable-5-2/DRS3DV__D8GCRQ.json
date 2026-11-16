@@ -1,0 +1,39 @@
+{
+ "x": "DRS3DV",
+ "y": "D8GCRQ",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X's governing thought (Pro tier, Q4 2027, mobile first, about $2M) is carried through four executive-summary points that map onto the deck's sections, and slide 3 tests the CPO plan condition by condition before the deck works through each. Its one tension is slide 12, whose title says the mobile delay costs 'about twice as much' while the body says 'the money is close' once deferred profit is counted. Y is also cleanly structured around five key questions, but has more internal friction. It says to launch 'on the productivity case' and count no win-back gain, then uses the Routewise threat as a reason for Q2 timing. Its executive summary says NRR rises 'about 5 percentage points if 26% of accounts take Pro', conflating the 33% base case with the 26% threshold. Its Q1 test is meant to gate launch ('delay launch' if missed), yet the 14-engineer build, and so the mobile delay, is already under way by then. It also lists the two-quarter mobile slip as a 'success criterion', which presupposes the answer.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both choose a Pro tier with a usage allowance over the $149 add-on and free inclusion, which the key treats as defensible. They differ on timing. X delays Copilot to Q4 2027 and meets the key's conditions for that path: it quantifies the win-rate risk (up to $0.32M per half-year), plans a limited AI response (beta kept live, early access in Routewise deals, battlecard), and adds a sensitivity grid with a mid-February trigger to bring launch forward. It admits the money is close and names the tie-breakers. Y accepts the mobile delay explicitly, which is also defensible, but weighs it less well. Its own break-even says mobile-first wins if the rewrite keeps more than 34% of mobile churners, yet it chooses Copilot-first on the NRR-deadline argument without judging whether 34% is likely. Y's base case also rests on the 33% precedent, with the 26% NRR threshold sitting well above the 14% revealed rate; Y flags this as the highest risk but still commits engineering before the test reads. X also considers a 'don't launch' option and uses a more conservative 25% base with a 14% low case.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the required calculations: $8.06M against $2.45M, inference of $32.4 / $61.2 / $130.5 per month, 109 deals worth about $0.64M, and Pro at $2.89M for 33% take-up. Both treat the survey bias, the volunteer bias, the Routewise discount confound and the Sales memo correctly. X goes further in several places. It shows the Sales memo implies a 58% win rate, above the pre-AI 44%. It catches that Table 2 implies the top 10% generate about 40% of requests, not the stated 58%, and that 1,190 churn responses do not match 1,372 churned accounts. It gives low/base/high ranges, states the assumed 50% rewrite effect and 50% AI attribution, and runs a sensitivity grid on them. Its weaker spots are an opaque 21-month payback figure and a per-seat usage assumption (444 per seat) that gives lower Pro inference than a per-account mean would. Y's numbers are mostly sound, including 76.0% company margin and $1.26M inference, matching the key. But its executive summary misstates '5 pp if 26%', its base case leans on the 33% precedent while calling the result a 'margin of safety', and its mobile-side figure assumes the rewrite stops all mobile churn before deriving the 34% threshold it then does not assess.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both keep 'launch' and reject the $149 add-on and the $8M sizing in favour of revealed demand, as the key expects. X tests the CPO hypothesis explicitly against five necessary conditions, with evidence-quality verdicts, and revises price, packaging and timing; the timing change is argued with the mobile trade-off quantified, which the key allows. Y has a clear 'from-to' slide and keeps Q2 timing, also acceptable, but replaces the $8M with a $2.9M base case built on a single precedent rather than the paywall rate. That is a less conservative update, though Y flags it. X's revision is slightly more disciplined and more transparent.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents avoid every major trap and reach defensible recommendations with usage-capped Pro packaging. X serves the decision maker better. It gives ranges instead of a single optimistic base case, quantifies both sides of the mobile-versus-Copilot trade-off under stated assumptions, shows when the answer flips, and sets decision gates (a mid-February trigger and an end-Q2 pilot go/no-go) that preserve the option to launch sooner. Y is solid and takes the key's preferred 'launch in Q2' path, but its timing call runs against its own break-even analysis without resolving it. Its NRR case depends on 26–33% take-up, well above the only revealed-demand figure. Its pre-launch test cannot actually protect the mobile decision, because the engineers are already committed.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1880282,
+ "wall_s": 50.79123091697693,
+ "error_text": null
+}

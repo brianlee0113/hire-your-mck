@@ -1,0 +1,38 @@
+{
+ "x": "D25MSJ",
+ "y": "D6XYZ8",
+ "case": "c2-profitability",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both follow the same pyramid: diagnosis, labor, gross margin, e-commerce, then plan, with summary lines that map onto slide titles and evidence. Y is tighter and its governing thought names all four levers including store exits, which X's governing thought omits although its plan relies on them. Y's hierarchy has two internal breaks. Its slide 18 title claims a 3.1% margin \"on FY2025 sales\", but the levers are sized on $1,503M while the margin is divided by $1,412M. Its covenant claim of $33M counts full run-rate promotions and shrink gains in FY2026, while its own timeline phases those actions through FY2027–28. X's claims stay consistent: levers are sized on the post-exit base, the covenant case uses half the promotion reset, and the governing thought (\"get close to 3.0%\") matches the 2.97% result.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's preferred plan (R1) and reject the 8% hours cut with the same $4.5M net estimate. X weighs the trade-offs more fully. It has a dedicated slide on defending promotions only where ValuMart competes, and a break-even test for promotions. It compares draft and plan on margin, covenant, shopper risk and cost. It explicitly rejects closing delivery, cutting SG&A, price matching and price rises. It adds a sensitivity table (promotions deliver half, three stores kept, wage rise not absorbed) and a risk register with owners. X also admits the plan is $0.4M short and makes the delivery re-tender part of the plan. Y handles the store-exit trade-off well (payback, 2.9% without the three stores) and flags thin headroom. But it treats the ValuMart traffic risk in one line, does not consider exiting delivery, and presents full promotion reversal to 24% plus chain-wide shrink at best-quartile level without stress-testing.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Core numbers match the key in both: bridge ranking, labor at about 13%, e-commerce drag of $10.4M, fee gain of $2.8M, closures at $6.6M, gap of $29.8M. X uses the evidence more rigorously. It rebuilds the $18.1M fulfillment cost from order data and computes per-order losses ($12.34 delivered against $1.64 collected). It sizes shrink conservatively (Q1 and Q2 to the Q3 level, $3.5M) and says this treats correlation as causation. It rebuts the category team with a 3.5% break-even bar and a correlation caveat. Y has weaker inferences. It sizes levers on $1,503M but divides by $1,412M, which overstates the margin. It assumes chain-wide shrink reaches the best quartile's 2.3% just by moving hours. It credits the full $17.9M run rate in FY2026 to claim $33M against the covenant. Its rebuttal of the category team is only \"counts sales, not profit\". Y's fee-test decomposition is more transparent, but that does not offset the overstatements.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise management's hypothesis correctly and on the same evidence. Wages rose 9.4% but hours per $1,000 fell 6%, so labor is only 0.3 pp, about 13% of the decline. The hours cut could give back up to $10M through shrink, and freezing e-commerce locks in a $10M loss. Both keep the valid part, that wage pressure is real and rises 4% in 2027. X goes a little further. It quantifies the hours-per-$1,000 needed to absorb the 2027 rise (6.35), shows the draft plan reaches only 1.3–2.0% margin, and gives a FY2026 range of $19.8–29.8M for the draft, so the rejection is tested against the target and the covenant rather than only the diagnosis.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents share the diagnosis and the recommended levers, and both meet the key's defensibility criteria. X would serve the CEO better before a board and a lender. Its sizing is internally consistent and conservative, and it is candid that the plan lands at 2.97% with no cushion. Its covenant case is realistic ($23M using half the promotion reset, with the timing question flagged for the lender). It also gives sensitivities, risks with owners, KPIs and explicitly rejected alternatives. Y is more concise and equally correct on direction, but its headline 3.1% and its $33M FY2026 figure rest on inconsistent bases and full first-year run rates. That could mislead the board on headroom, and it gives less attention to the ValuMart traffic trade-off.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0057722,
+ "wall_s": 40.593177795410156
+}

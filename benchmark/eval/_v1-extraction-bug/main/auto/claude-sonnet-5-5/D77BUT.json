@@ -1,0 +1,191 @@
+{
+ "blind_id": "D77BUT",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Treats the question as launch or not, when, and how to package and price. Tests the CPO hypothesis against five explicit conditions. Uses the NRR 105% target and the 75% gross margin floor as criteria. Brings in the mobile-delay constraint from the start.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "Titles are claims and read as an argument: survey overstates demand, competitive upside is capped, Pro beats the add-on, mobile goes first, both levers are needed for NRR. The summary maps onto the sections. Small tension: slide 13 says sequence matters less than delivering both, yet the recommendation turns on sequence. The add-on vs Pro sizing is also repeated across several slides.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "All four required calculations are correct and transparent: $8.06M vs $2.45M; $32.4/$61.2/$130.5 inference per account per month; 109 deals and $0.64M; Pro $2.89M ARR with company GM 76.5% in the base case and 74.1% in the no-allowance stress case. All critical evidence is used, including evidence against the answer (Routewise promo, selection bias, survey response bias). It tests the VP Sales claim by showing it would imply a 58% win rate. Weaknesses: several scenario inputs are illustrative (7% haircut, 50% mobile fix, half credit), though labelled. Reusing the 14% add-on paywall rate as the Pro low case mixes two different offers. Calling 14% a ceiling is reasoned, not shown. Churned accounts are assumed to be average size.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Revises the CPO hypothesis: launches, but in a Pro tier with a usage allowance, sized off the paywall test. Compares add-on, Pro and free-in-Core on ARR, margin, NRR and competitive fit. Quantifies the mobile vs Copilot trade-off, with break-even thresholds. Gives explicit triggers that would bring the launch forward and a staffing check. Gives owners and dates. Avoids all six traps. The Q4 2027 delay assumes a symmetric two-quarter slip, which is flagged. Delaying Copilot also leaves the Routewise bundling gap open for a year, which is a real cost, but it is acknowledged and gated.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title and executive summary. The language is plain and the charts and tables are clear. But 19 slides and about 4,800 words is long for this decision, and there is repetition, such as the allowance, margin and Pro numbers on slides 7, 9, 10 and 18, plus a long appendix.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Losses to churn are permanent. An account that leaves while we wait for the mobile app does not come back when it ships",
+    "why": "Asserted as fact. The pack has no win-back data, and the claim is the basis for treating Copilot delay as cheaper."
+   },
+   {
+    "quote": "14% is a ceiling, not a base case",
+    "why": "Inferred from volunteer bias alone. The direction is plausible, but it is stated as a ceiling, and the 7% haircut has no data behind it."
+   },
+   {
+    "quote": "Copilot revenue is mostly postponed, not lost... Six months of deferral costs $0.1M–$0.7M of gross profit",
+    "why": "This assumes Routewise-driven losses and competitive position do not compound. It also assumes the delay is symmetric (two quarters), which the pack does not give."
+   },
+   {
+    "quote": "Pro pays for itself many times over at the hours the beta reported",
+    "why": "Rests on self-reported hours from volunteers and an unvalued hourly cost, though the document does caveat this."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "So what: the sequence matters less than delivering both by 2028.",
+    "quote_b": "Launch in Q4 2027: fixing the mobile app comes first",
+    "why": "The NRR slide says sequence is secondary, while the recommendation rests on sequence. This is a mild tension, not a true contradiction."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q4 2027, after the mobile rewrite, inside a new Pro plan at $91 per seat (+$12) with a pooled allowance of 600 requests per seat. Retire the $149 add-on. Size the case at $1.2–2.9M of ARR. Run paid early access in H1 2027 and bring the launch forward if the win-rate or staffing triggers fire.",
+   "closest_plausible_id": "R3",
+   "defensible": "yes",
+   "rationale": "It uses revealed demand over the survey, accounts for variable inference cost with an allowance and margin tests, and weighs the mobile delay against the competitive threat with quantified break-evens and triggers. It is a hybrid of R1 and R3: Pro packaging with a margin guardrail, sequenced after mobile, with a pre-set trigger that moves launch to Q2."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The CPO case is tested against five conditions. The $8M figure is shown to rest on stated intent, a 6% response rate and larger respondents. The paywall test gives $2.5M, with a lower illustrative case. The document keeps 'launch' but revises packaging, sizing and timing. This matches the expected handling of revising rather than rejecting."
+  },
+  "overall_comment": "This is a strong, well-calibrated document. It reconciles survey and paywall demand, prices in variable inference cost, caps the competitive upside because of the Routewise discount, and quantifies the mobile trade-off. All required calculations are correct. The recommendation is concrete, with gates and triggers. Weaknesses: several illustrative parameters, and the symmetric two-quarter delay assumption, which is flagged. It is also long (19 slides) for the decision, with repeated figures.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.22152840000000001,
+ "wall_s": 52.22462701797485,
+ "is_error": false,
+ "error_text": null
+}

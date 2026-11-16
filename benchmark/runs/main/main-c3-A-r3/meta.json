@@ -1,0 +1,225 @@
+{
+ "run_id": "main-c3-A-r3",
+ "case": "c3-ai-assistant",
+ "condition": "A",
+ "rep": 3,
+ "order": 40,
+ "phase": "main",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 469.5,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.325",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 28,
+      "duration_ms": 468619,
+      "duration_api_ms": 460921,
+      "total_cost_usd": 1.8469386000000003,
+      "usage": {
+       "input_tokens": 40,
+       "cache_creation_input_tokens": 82350,
+       "cache_read_input_tokens": 1069193,
+       "output_tokens": 48707,
+       "output_tokens_details": {
+        "thinking_tokens": 16640
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 82350,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1775,
+         "cache_read_input_tokens": 86003,
+         "cache_creation_input_tokens": 4297,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 4297
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 40,
+        "outputTokens": 48707,
+        "cacheReadInputTokens": 1069193,
+        "cacheCreationInputTokens": 82350,
+        "webSearchRequests": 0,
+        "costUSD": 1.8469386000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 16640,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 82350,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": " rewrite only just reach 105% in the low case. Neither gets there alone except at the high Pro uptake.\n7. **The rest:** economics with payback of about 2 years in the middle case (6.8 years in the low case), the launch plan, five checks at the end of Q3 2027, and six decisions for the executive team. The appendix holds the calculations, how much weight each piece of evidence can bear, and the choices I made.\n\n**Choices I made in place of asking you** (also listed on slide 16):\n- **Pro price:** kept at +$12 per seat, the option given in the briefing pack.\n- **Usage allowance and overage:** 600 AI requests per seat per month, then $20 per 1,000. These are my own design to protect margin, not figures from the pack.\n- **How many accounts move to Pro:** 14% to 33%, with 23% as a simple midpoint rather than a forecast.\n- **Account size:** customers who move to Pro average 6.2 seats, which is conservative.\n- **Platform cost:** the $0.6M a year counts against gross margin.\n- **Effect of the mobile rewrite:** I assumed it halves mobile-driven churn. This is purely illustrative because the pack gives no estimate, and it is the assumption that most affects how close the mobile-versus-Copilot call is.\n- **Timing:** the build runs Q1\u2013Q2 2027 and the 14 engineers return to mobile in Q3.\n\nFiles are in `./deliverable/`:\n- `Brightwork_Dispatch_Copilot_Launch_Decision.pptx`\n- `build_deck.py` (the script that generates the deck and computes every figure, so the numbers can be traced or changed)"
+    }
+   ],
+   "started": "2026-11-16T03:33:59+00:00",
+   "ended": "2026-11-16T03:41:49+00:00",
+   "session_id": "ea03abfc-02fe-4589-9838-7d89c1039b81",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 1.8469386000000003,
+  "duration_s": 469.5,
+  "api_s": 460.921,
+  "turns": 28,
+  "input_tokens": 40,
+  "output_tokens": 48707,
+  "cache_read_tokens": 1069193,
+  "cache_creation_tokens": 82350,
+  "cost_all_attempts_usd": 1.8469386000000003
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 1.8469386000000003,
+   "input": 40,
+   "output": 48707,
+   "cache_read": 1069193,
+   "cache_creation": 82350
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "Create a deck for Brightwork's CEO and executive team: Should Brightwork launch Dispatch Copilot in Q2 2027, and if so, how should it be packaged and priced?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "fc26c5b7dd5053b91834836b215eb78251a8131be8937c3416693232964a3b9e",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.325 (Claude Code)",
+ "plugin_snapshot_sha256": null,
+ "repo_head": "e1e6b315d9ab3ed0bb51f8544553ec89d804fcc1",
+ "packet_sha256": "8b9ddcb4efe84fb69297f21948ac4490060c38882288e506e449a4c370208718",
+ "files": [
+  {
+   "path": "workspace/deliverable/Brightwork_Dispatch_Copilot_Launch_Decision.pptx",
+   "bytes": 106023,
+   "sha256": "22671c704a8e86c75bb52341184ea4af3b61feb3fd7d3b658ec0c0c7f1a046e3"
+  },
+  {
+   "path": "workspace/deliverable/build_deck.py",
+   "bytes": 46736,
+   "sha256": "fd33c47e4c37afc3ddc89aa687dc61dbe4f5da16d97ffba6669925a6fec7d709"
+  }
+ ]
+}

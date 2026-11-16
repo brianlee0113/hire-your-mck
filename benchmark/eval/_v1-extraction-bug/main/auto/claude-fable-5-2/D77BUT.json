@@ -1,0 +1,195 @@
+{
+ "blind_id": "D77BUT",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Answers the question exactly as posed: whether to launch, when, in what package and at what price. The three stated objectives and constraints (105% NRR, 75% gross-margin floor, 14 engineers versus the mobile rewrite) are used as explicit decision criteria in the options table, the margin stress test and the NRR bridge. Slide 3 sets out early the five conditions the answer turns on (demand, economics, competition, opportunity cost, proven value). Nothing material to fix.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the executive summary maps onto the four sections, and nearly every title is a claim its slide supports with shown arithmetic. Three flaws. The summary says both levers are 'needed' for 105% NRR, while slide 13 shows Pro alone gets there at 26% adoption, below the document's own 33% base case. Slide 13 concludes 'the sequence matters less than delivering both', which undercuts the weight section 3 puts on sequence. The headline 'at most $0.6M at risk' from delaying Copilot leaves out the $0.1-0.7M of deferred gross profit that slide 12 itself quantifies. There is also some overlap between slides 3, 7, 15 and 16.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I recomputed every figure I relied on and found no numerical error: $8.06M vs $2.45M; $17.1/$32.4/$61.2/$130.5 per account; 59% and 12% margins; 109 deals and $0.64M; Pro ARR $2.89M/$1.22M; company GM 76.2%, 76.5%, 75.9%, 74.1% and 71.9%; churn ARR $2.18M/$0.48M; break-even 26-52%; NRR bridge to 105.0%. All four critical evidence items are used, along with the evidence that cuts against launching (selection bias, the Routewise promo, the survey's 6% response rate), and the 58% win-rate check on the VP Sales claim is a strong test. It falls short of 5 on four points. Pro cost rests on the unevidenced assumption that usage scales with seats, which gives a feature margin of 46% with platform cost (67% inference-only) against the key's 56%; this is mitigated by the stress cases. 'Q4 win rates come after the promo ended' is stated as fact and underpins Gate 1, but the pack does not say so. 14% is called a ceiling for the add-on yet used as the low case for Pro, with only the lower price as implicit justification. The headline timing comparison excludes deferred Pro gross profit.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A clear, defensible recommendation that follows from the analysis: Pro tier at +$12 per seat with a pooled allowance, sized off revealed demand, launched after the mobile rewrite. Three packaging options plus the sequencing alternatives are compared on the decision criteria (ARR, feature margin, company GM, NRR, fit against Routewise). All three key trade-offs are explicit. It gives a break-even for the mobile-first call (26-52% of mobile churn fixed), named triggers that would reverse the timing (Q4 win rate, engineer sourcing, rewrite efficacy), gates, owners and a paid early-access test on a random sample. It avoids all six traps. Reservations are minor: the competitive downside is framed as a static 'at most $0.6M', the Gate 1 read is a single quarter, and the low NRR case lands exactly on 105.0% using illustrative assumptions. All are disclosed.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on the title slide and in the executive summary, the language is plain, and calculations are shown where used. At 17 main slides plus two appendices and about 4,800 words it is longer than the decision needs. The hypothesis table, options table, risk table and assumption table repeat much of the same content, and the value-check on slide 10 adds little.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Q4 2026 win rates come after the promo ended.",
+    "why": "The pack says only that Routewise offered 20% off the first year in Q3 2026; it does not say the promotion ended. Gate 1 depends on this."
+   },
+   {
+    "quote": "Pricing per seat follows usage. Usage grows with dispatcher seats",
+    "why": "The pack has no usage-by-seat data. The $4.00 per seat cost and Pro's base-case margin depend on this scaling assumption, which is stated as fact on the slide."
+   },
+   {
+    "quote": "The 17 accounts paying $149 move to Pro. Most will pay less, which builds goodwill",
+    "why": "The buyers' seat counts are not in the pack. Buyers were heavy users from a larger-than-average beta group, and any account above 12.4 seats would pay more."
+   },
+   {
+    "quote": "Copilot and the mobile fix are both needed to lift NRR to 105%.",
+    "why": "Overstated: the document's own bridge shows Pro alone reaches 105% at 26% adoption, below its 33% base case."
+   },
+   {
+    "quote": "A flat price selects for heavy use. The accounts that paid used almost twice the beta mean, because they get the most from a fixed fee",
+    "why": "A causal explanation inferred from 17 buyers; the pack gives the usage level but not the reason."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Copilot and the mobile fix are both needed to lift NRR to 105%.",
+    "quote_b": "Copilot alone would need 26% of accounts on Pro to close the 4-point gap ($2.3M)",
+    "why": "The document's base case is 33% Pro adoption (+5.0 pts), which would reach 105% without the mobile fix. On its own numbers both levers are safer, not necessary."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot, but in Q4 2027 after the mobile rewrite rather than Q2, inside a new Pro plan at $91 per seat (+$12) with 600 pooled requests per seat and top-up packs. Size the case at $1.2-2.9M ARR, run paid early access on a random sample in H1 2027, and bring the launch forward to Q2 only if a stated trigger fires.",
+   "closest_plausible_id": "R3",
+   "defensible": "yes",
+   "rationale": "Meets all three defensibility criteria. It sizes demand from the paywall test and explains the survey gap. It builds inference cost into per-seat pricing with an allowance and stress-tests the 75% floor. It weighs the mobile delay against the competitive threat with a quantified break-even. It satisfies R3's conditions: the win-rate risk is quantified at $0.64M a year, and a limited AI response is planned (paid early access, the 'AI included in Pro' sales message, triggers to accelerate). The packaging matches R1."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "The document keeps 'launch' but revises sizing ($8M to $1.2-2.9M), packaging (add-on to a capped per-seat Pro tier) and timing (Q2 to Q4), each on evidence. It surfaces all four contradictions in the pack: survey vs paywall, AI pressure vs the mobile priority, beta gains vs selection bias, and the win-rate drop vs the Routewise promo. It tests the VP Sales claim arithmetically. Uncertainty is handled with labelled assumptions, break-evens and triggers. The two causal overreaches are minor: the reason flat pricing selects heavy users, and reading a Q4 win rate at or below 37% as 'AI is the likely cause' on the unstated premise that the promo ended."
+  },
+  "overall_comment": "Very strong document. Every figure I recomputed matches the pack or follows from it, all critical evidence and insights are covered, no trap is fallen into, and the recommendation comes with break-evens, triggers and a test design. The weaknesses are narrow. First, the summary's 'both needed' for NRR contradicts the document's own base case. Second, the headline cost of delaying Copilot omits the deferred gross profit that slide 12 quantifies. Third, the Pro cost base assumes usage scales with seats, so its feature margin (46% with platform, 67% inference-only) differs from the key's 56%; this is why Q4 is marked partly correct, though the stress cases bracket the difference. Fourth, the promo-ended premise behind Gate 1 is not in the pack. The deck is also somewhat longer and more repetitive than the decision needs. Weighted score: 4.4.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 1.0511356,
+ "wall_s": 126.42246913909912,
+ "is_error": false,
+ "error_text": null
+}

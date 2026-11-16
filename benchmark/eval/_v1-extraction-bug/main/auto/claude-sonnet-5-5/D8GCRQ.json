@@ -1,0 +1,188 @@
+{
+ "blind_id": "D8GCRQ",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision exactly as posed (launch in Q2 2027, how to package and price). It turns the NRR 101→105% target, the 75% margin floor and the mobile-delay constraint into explicit success criteria and tests each option against them. It identifies early that the answer turns on demand evidence, inference cost and the mobile trade-off.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, executive summary and sections line up. Titles are mostly claims backed by the slide evidence, and the chain runs value → packaging → financial targets → sequencing → plan. Weaknesses: five divider slides repeat the odd title 'Copilot creates value, but less than claimed'. The first summary point ('worth launching for productivity') sits awkwardly beside the document's own caveat that the gain is unproven outside volunteers. Slide 6 labels the hours-saved figure 'no matched comparison' next to a matched comparison.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers check out against the pack: $8.06M vs $2.45M, inference $17.1/$32.4/$61.2/$130.5, 109 deals ≈ $0.6M, Pro $2.89M, margin 75.97%, churn-reason ARR, 34% break-even, and payback. The doc rebuts the VP Sales memo (328 vs 109) and flags the Routewise 20% discount, the volunteer bias and the survey's 6% response rate. Residual flaws: it never states the add-on's 59% or Pro's ~56% product-level gross margin. The base case uses beta-mean usage for Pro buyers, although selection suggests heavier use (the allowance partly covers this). The 33% Pro take-up rests on one differently scoped precedent. The mobile-vs-Copilot comparison counts only half a year of churn ARR. 'Inference cost per request $0.01' is a rounding slip.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Recommends launch in Pro with a usage allowance, sized off the paywall test, with a randomized Q1 test of Pro against the add-on. It states the mobile delay trade-off explicitly with a break-even (34%). It compares Pro, the add-on and free inclusion on NRR, margin and fit, and sets gates and kill criteria (take-up ≥26%, margin ≥75%, productivity test, mobile restart) with owners. It avoids all key traps and revises the CPO hypothesis sensibly. It does not seriously consider a lower-priced add-on plus metering, and it relies on the 33% precedent for the base case.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slides 1–3 and the language is plain. The deck is 45 slides and about 6,500 words for a single launch decision. It has repeated divider slides with identical titles, several backups and extra mini-analyses (payback, 12.4-seat crossover), so it is longer than needed.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Twelve weeks is short for a lasting productivity effect",
+    "why": "Opinion presented as a fact; not in the pack. Minor and reasonable."
+   },
+   {
+    "quote": "Brightwork's win rate against Routewise fell from 44% to 37% as Routewise bundled AI and cut its price",
+    "why": "The title implies a causal link. The body does caveat it, so this is a minor overstatement."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Inference cost per request $0.01",
+    "correct": "$0.009 per request (a rounding display slip; the calculations use 0.009)"
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Self-reported, with no matched comparison",
+    "quote_b": "They also scheduled 11% more jobs per dispatcher-hour, against 2% for matched accounts",
+    "why": "The slide mixes a self-reported figure with no comparison and a matched comparison on the same slide. The label should apply only to the 4.1 hours."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 inside a Pro tier at +$12/seat with a 667-requests-per-seat allowance. Run a Q1 randomized test of Pro against the add-on, restart mobile in Q3 2027, and manage five measures with thresholds.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches R1. It uses revealed demand (14% vs 46%), accounts for inference cost with an allowance, and explicitly weighs the mobile delay against the Routewise threat with a break-even. It sets gates, and it accepts the two-quarter mobile delay explicitly rather than ignoring it."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "It keeps 'launch' but rejects the $149 add-on and the $8M figure. It rebuilds the $8.06M, shows the paywall-based $2.45M upper bound, and notes buyers are heavy users (41% of price goes to inference). It flags the survey bias and the volunteer bias, and it moves to a Pro tier with an allowance and a test that decides between the two. This is the revision the key expects."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. It catches the stated-vs-revealed gap, the variable inference cost, the VP Sales overreach, the Routewise discount confound and the mobile trade-off, and it quantifies each. The recommendation is defensible, with clear gates and owners. Its weaknesses are length (45 slides with repetitive divider slides), dependence on a single precedent (33%) for the base case, and no explicit product-level gross margin for the add-on or Pro. The mobile comparison is also somewhat simplified.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.2182824,
+ "wall_s": 41.63523292541504,
+ "is_error": false,
+ "error_text": null
+}

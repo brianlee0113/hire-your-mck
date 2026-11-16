@@ -1,0 +1,384 @@
+{
+ "run_id": "pilot-c5-A-r1",
+ "case": "c5-negative-entry",
+ "condition": "A",
+ "rep": 1,
+ "order": 5,
+ "phase": "pilot",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 820.3,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.325",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 52,
+      "duration_ms": 819528,
+      "duration_api_ms": 808475,
+      "total_cost_usd": 4.016210399999999,
+      "usage": {
+       "input_tokens": 70,
+       "cache_creation_input_tokens": 195890,
+       "cache_read_input_tokens": 3763952,
+       "output_tokens": 84801,
+       "output_tokens_details": {
+        "thinking_tokens": 40509
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 195890,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1071,
+         "cache_read_input_tokens": 200005,
+         "cache_creation_input_tokens": 3199,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3199
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 70,
+        "outputTokens": 84801,
+        "cacheReadInputTokens": 3763952,
+        "cacheCreationInputTokens": 195890,
+        "webSearchRequests": 0,
+        "costUSD": 4.016210399999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 40509,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 195890,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": "today's cash, with conditions.** In a simple model, $0.8M a year of new hires gets the business to break-even in months 26\u201332. That holds only if growth stays at 45\u201360% a year and other costs stay flat. At 30% growth, or with costs rising 10% a year at 45% growth, the cash runs out. The deck says so on slide 11.\n\n**Choices I made where I would have asked you** (also listed on slide 14 and in the README):\n- **Two cost measures.** The pack doesn't define \"contribution per order\", so I show it both before and after dark-store fixed costs.\n- **The $9.5M figure.** The pack doesn't say whether it includes today's $0.4M a month burn, so I show both readings. The runway rule is broken either way.\n- **The runway test** uses today's burn rate, which is the most lenient basis.\n- **The software cash path** is my own simple top-down model, not a forecast. Its assumptions are on slide 11.\n- **A data inconsistency.** The pack reports month-three retention from a six-week test, which can't fully observe it. The deck flags this for management to confirm rather than relying on it.\n- **A middle option.** I added a single permanent Columbus store as option B so the board has something between launching and not launching.\n\nFiles are in `./deliverable/`:\n- Parcelbird-Now-board-deck.pptx\n- Parcelbird-Now-board-deck.pdf\n- README.md\n\nThe charts in the PPTX are drawn shapes rather than chart objects, so they can be edited but not re-plotted from data. The scripts that build the deck are in `./build/`."
+    }
+   ],
+   "started": "2026-11-15T23:48:46+00:00",
+   "ended": "2026-11-16T00:02:26+00:00",
+   "session_id": "7d57733e-ce22-4e63-b622-ed4417974011",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 4.016210399999999,
+  "duration_s": 820.3,
+  "api_s": 808.475,
+  "turns": 52,
+  "input_tokens": 70,
+  "output_tokens": 84801,
+  "cache_read_tokens": 3763952,
+  "cache_creation_tokens": 195890
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 4.016210399999999,
+   "input": 70,
+   "output": 84801,
+   "cache_read": 3763952,
+   "cache_creation": 195890
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "Create a deck for Parcelbird's board: Should Parcelbird launch its own quick-commerce grocery delivery service in 2027?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "7264ba294d3f338fbb52f7c94ea4697e76f9f9b9276eecd6da81dbf74f0cad25",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.325 (Claude Code)",
+ "plugin_snapshot_sha256": null,
+ "repo_head": "e1e6b315d9ab3ed0bb51f8544553ec89d804fcc1",
+ "packet_sha256": "4fc9ae69881f7afe2f36c430baa40f8a21662f6231179ef24cbe92978bff7ade",
+ "files": [
+  {
+   "path": "workspace/build/cash_series.json",
+   "bytes": 1909,
+   "sha256": "6ac21e6e38da148abd26017ea075aea530027cc1d77005aa74e53307ed2d06e8"
+  },
+  {
+   "path": "workspace/build/deck.py",
+   "bytes": 41485,
+   "sha256": "b4e45812b76c53cec96a2e3abdb42ad4822af80abea1dbf27b82ac8bb1f8abe4"
+  },
+  {
+   "path": "workspace/build/engine.py",
+   "bytes": 14620,
+   "sha256": "0fcd5eb953c8bfccd91e8f1d905193f2134382bfbb0d882bc51e984501b1bc5c"
+  },
+  {
+   "path": "workspace/build/pdfpng/s01.png",
+   "bytes": 93839,
+   "sha256": "459692a9d3f5ccaf7dd03b569d25f414a1de604b6bd2f561b6f79707c8eef010"
+  },
+  {
+   "path": "workspace/build/pdfpng/s02.png",
+   "bytes": 299635,
+   "sha256": "c18ba84cc52d68aaeb18b37a7757b88f968f99ed166341680a86132589c05a63"
+  },
+  {
+   "path": "workspace/build/pdfpng/s03.png",
+   "bytes": 252732,
+   "sha256": "9e7a28422ce2a13091125144390a345ec8d8eb395de3205b564b4dc8754a1ffd"
+  },
+  {
+   "path": "workspace/build/pdfpng/s04.png",
+   "bytes": 165805,
+   "sha256": "908927aed4fd0c35ffb025b3f47b500708fab26bc622407bd47da666b4e1fa56"
+  },
+  {
+   "path": "workspace/build/pdfpng/s05.png",
+   "bytes": 229000,
+   "sha256": "bd234f609c37cf4f455742b538c3b059b2d55041649cf4d4f89e497f92b34b5c"
+  },
+  {
+   "path": "workspace/build/pdfpng/s06.png",
+   "bytes": 210490,
+   "sha256": "56783cbe5f1ca0c1b55152219ba94f0299339af61fa2d70d02e88b85b0e91126"
+  },
+  {
+   "path": "workspace/build/pdfpng/s07.png",
+   "bytes": 223575,
+   "sha256": "4369b3d569a18f1a670edc5cd33a78b0316e9bcb5bd85ebfa749a7e85598ba6b"
+  },
+  {
+   "path": "workspace/build/pdfpng/s08.png",
+   "bytes": 246972,
+   "sha256": "d6d4d8df9ee275cc3675ea7da21657d0e00446c75ce66361ed6f3d01b46f2cb4"
+  },
+  {
+   "path": "workspace/build/pdfpng/s09.png",
+   "bytes": 237259,
+   "sha256": "ca99ffd3988dba4a354d37cf782e457951418a4bdacc8aa6f54f95909bb910b3"
+  },
+  {
+   "path": "workspace/build/pdfpng/s10.png",
+   "bytes": 212577,
+   "sha256": "e5045a1a091f48ccdda0e21e57c0a9a9d9e60bd009122fe811db029236363833"
+  },
+  {
+   "path": "workspace/build/pdfpng/s11.png",
+   "bytes": 244022,
+   "sha256": "70690d72fd1ef33265b2b6a56bf9e37fc33c1a342fde092511582b472f8046b2"
+  },
+  {
+   "path": "workspace/build/pdfpng/s12.png",
+   "bytes": 254706,
+   "sha256": "1a05833fe7097013c9a5f6082ca1a46b451bc593f101b8861d305078013b1fef"
+  },
+  {
+   "path": "workspace/build/pdfpng/s13.png",
+   "bytes": 172888,
+   "sha256": "223e3028278de5425af1bf90933d4b708ce73f83338a0896da36d80831809460"
+  },
+  {
+   "path": "workspace/build/pdfpng/s14.png",
+   "bytes": 263714,
+   "sha256": "754658b01c63b84e0e97572396645cc48d6b9ad427610f06c5a785b8d858b585"
+  },
+  {
+   "path": "workspace/build/preview/s01.png",
+   "bytes": 68292,
+   "sha256": "7fe0fae5b8da344dbe2c0137534143a065e37d26ee41feff541e12396c41b91f"
+  },
+  {
+   "path": "workspace/build/preview/s02.png",
+   "bytes": 218563,
+   "sha256": "573585714adb1bdd09b9a0e5a2616f2554477095ad98a93a39a65f7af5615f87"
+  },
+  {
+   "path": "workspace/build/preview/s03.png",
+   "bytes": 184188,
+   "sha256": "9641038de9e45b89204eb709a1c16a33b720a3c01f9a433aa0a7f9926d2311c8"
+  },
+  {
+   "path": "workspace/build/preview/s04.png",
+   "bytes": 118792,
+   "sha256": "752a260fd9910b9f5464f89fb048816e66450c29e0bcefc2cf29d5812f978e78"
+  },
+  {
+   "path": "workspace/build/preview/s05.png",
+   "bytes": 166332,
+   "sha256": "4f78367f95e7c90cecffb090668d745af9a0b26d356320e3866426812818718a"
+  },
+  {
+   "path": "workspace/build/preview/s06.png",
+   "bytes": 151781,
+   "sha256": "898ba5edc91cfa9d052b76cac1573e4b88ee993f4ac4b727d55b599193ee5d77"
+  },
+  {
+   "path": "workspace/build/preview/s07.png",
+   "bytes": 161161,
+   "sha256": "ccfb55b47e3e29a9c890bcb4b60d32b17281f0abc9e047bde052a28b2643e170"
+  },
+  {
+   "path": "workspace/build/preview/s08.png",
+   "bytes": 181571,
+   "sha256": "1cb4d6c2a697db2658be59250f85dedc8c1efd8e37907e139ccdfa3821758e98"
+  },
+  {
+   "path": "workspace/build/preview/s09.png",
+   "bytes": 168355,
+   "sha256": "5159eb94d95ef60e2909aac20dc6754b5492157e24b116f688564077b8e9605c"
+  },
+  {
+   "path": "workspace/build/preview/s10.png",
+   "bytes": 148000,
+   "sha256": "03eaf8d3ac077955a56a9e61a59bfdb94a48829f99edfb550d14f79e375a62c1"
+  },
+  {
+   "path": "workspace/build/preview/s11.png",
+   "bytes": 175657,
+   "sha256": "2bf5141399d5fa4bdf4337801815d898807f6881cdbbdf6a56876d9fd9a96654"
+  },
+  {
+   "path": "workspace/build/preview/s12.png",
+   "bytes": 187592,
+   "sha256": "31fe39b697f72523fed73c1fe9ac3194df3efa52d680203fe2aa76145f575a87"
+  },
+  {
+   "path": "workspace/build/preview/s13.png",
+   "bytes": 125284,
+   "sha256": "d472c03a20ed18246c4f4090a84a8cfaa26e3a0cefbc5b665768200e22ac1e72"
+  },
+  {
+   "path": "workspace/build/preview/s14.png",
+   "bytes": 191069,
+   "sha256": "86c132f8c93e9e3ddcbcc2eedbf8212201b353b8ac0bc55e3287e680875fad45"
+  },
+  {
+   "path": "workspace/deliverable/Parcelbird-Now-board-deck.pdf",
+   "bytes": 3998134,
+   "sha256": "88e0d69899a3203a40932cfd8360b255dad9124ffa433d06f40186e48b8e10d4"
+  },
+  {
+   "path": "workspace/deliverable/Parcelbird-Now-board-deck.pptx",
+   "bytes": 73730,
+   "sha256": "020288be6c19aef45364cbacf7bf562ddfa7716a1a09350b7ff050d6a270ba9b"
+  },
+  {
+   "path": "workspace/deliverable/README.md",
+   "bytes": 1688,
+   "sha256": "ca1f180f7a7ee25c49f2adc3624af49cd311e245f6f4fbb8ad7ca6e40894185d"
+  }
+ ]
+}

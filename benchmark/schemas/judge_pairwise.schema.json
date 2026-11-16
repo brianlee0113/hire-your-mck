@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["coherence", "judgment", "evidence", "revision", "overall"],
+  "$defs": {
+    "q": {"type": "object", "additionalProperties": false, "required": ["reasons", "winner", "strength"],
+          "properties": {"reasons": {"type": "string"}, "winner": {"type": "string", "enum": ["X", "Y", "tie"]},
+                         "strength": {"type": "string", "enum": ["slight", "clear", "strong"]}}}
+  },
+  "properties": {
+    "coherence": {"$ref": "#/$defs/q"},
+    "judgment": {"$ref": "#/$defs/q"},
+    "evidence": {"$ref": "#/$defs/q"},
+    "revision": {"$ref": "#/$defs/q"},
+    "overall": {"$ref": "#/$defs/q"}
+  }
+}

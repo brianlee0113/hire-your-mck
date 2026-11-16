@@ -1,0 +1,39 @@
+{
+ "x": "DGB6MT",
+ "y": "D5PS59",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X's five summary points map one-to-one onto its sub-questions and sections (value, package, threat size, sequencing, plan). Each step leads to the governing thought: the threat is small and mobile churn is large, so mobile goes first. Y is also well structured (launch, package, guardrails, decisions), but has two tensions. Its 'launch now' pillar leans on a competitive threat it sizes at no more than $0.6M and says does not move NRR. Its 'protect mobile' guardrail sits beside a recommendation that pauses the rewrite for two quarters, while it also argues that holding 105% needs lower churn. X's hierarchy is slightly more consistent.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reject the $149 add-on and free-in-Core and choose a capped Pro tier. They differ on timing. Y matches the key's fully defensible R1: launch in Q2, accept the mobile delay explicitly, gate it with a March random-sample test, fix the mobile date, ask whether the 14 engineers can come from elsewhere, and state what would flip the order. It weighs four options, including deferral. X takes the conditional R3 route: it quantifies the win-rate risk and sets a trigger to bring the launch forward, but its 'limited AI response' in the interim is only a price test with beta accounts. X's margin guardrail is also looser: the allowance is anchored at the 1,333 break-even with 'set it lower later', against Y's concrete 600 per seat, $20 overage and 55% margin trigger. Each tilts the sequencing arithmetic its own way. Y compares one-off deferred Pro revenue with recurring churned ARR and assumes the rewrite only halves mobile churn. X leaves deferred Pro revenue out of its 1.9x ratio and assumes the rewrite ends all mobile churn. Y is more candid about the conditions under which its answer reverses.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the critical numbers right: $8.06M against $2.45M, inference of $32, $61 and $131 a month, about 109 deals or $0.64M, Pro at $2.89M, and the sales memo's implied $1.9M. Both flag volunteer bias, the survey's 6% response and size skew, the Routewise discount, and that loss-note mentions are not causes. X's Pro margin matches the key (inference about $1.26M) and its evidence-limits table is thorough. But X says true add-on take-up is below 14% and then uses 14% and the 33% precedent as point estimates in its headline comparisons. It also rests the Q4 timing on an unstated assumption that the rewrite finishes in Q2. Y haircuts adoption (7–14% for the add-on, 15/25/33% for Pro) and excludes the renewal gap as selection. It notes that new-customer wins do not move NRR and that upgrades lift NRR only once, and it catches a real inconsistency in the pack: a 14,500 top-decile mean implies a 40% share, not 58%. Y's weaknesses are the asymmetric mobile trade-off comparison and using 1,190 rather than about 1,372 churned accounts, which it discloses. On balance Y handles uncertainty slightly more carefully.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects. They keep 'launch', reject the $8M survey sizing in favour of the 14% paywall result, show that heavy-user inference cost undermines a flat $149 price, and move to a per-seat Pro tier with usage limits. Both also correct the VP Sales claim and confirm the Customer Success concern with data. X additionally revises timing, with an explicit mobile trade-off, which the key allows. Y keeps Q2 with explicit acceptance of the delay and a checkpoint, which the key also allows. Neither over- nor under-updates.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong, defensible documents that avoid all the main traps. X is more exhaustive and its mobile-first conclusion fits the churn evidence, but it depends on an unverified engineering timeline and on point estimates at the optimistic end, and its allowance guardrail is less developed. Y gives the executive team a tighter decision package: four explicit decisions, a concrete price, allowance and overage design, adoption ranges rather than point estimates, a March go/no-go that tests demand on a random sample before scaling, and stated conditions under which mobile-first or not launching would win. It also adds the NRR-versus-new-ARR distinction and the data inconsistency catch. Y's sequencing arithmetic is tilted toward its conclusion, but it discloses the flip conditions. Y serves the decision maker slightly better.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.2136122,
+ "wall_s": 80.18728399276733,
+ "error_text": null
+}

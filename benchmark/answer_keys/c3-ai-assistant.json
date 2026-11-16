@@ -1,0 +1,194 @@
+{
+  "case_id": "c3",
+  "title": "Brightwork — AI dispatch assistant",
+  "decision_question": "Should Brightwork launch Dispatch Copilot in Q2 2027, and if so, how should it be packaged and priced?",
+  "initial_hypothesis": {
+    "holder": "Chief Product Officer",
+    "statement": "Launch as a paid add-on at $149 per account per month; survey implies ~$8M new ARR in year one.",
+    "expected_handling": "revise",
+    "explanation": "Launching is supported (competitive defence, productivity signal), but the revenue case is not: the survey's 46% gives $8.1M, while the paywall test's 14% gives about $2.5M, and buyers are heavy users (6,800 requests/month → add-on gross margin about 59%). A good answer keeps 'launch' but revises the packaging/sizing, or argues a delay with the mobile-app trade-off explicitly."
+  },
+  "key_insights": [
+    {
+      "id": "K1",
+      "critical": true,
+      "text": "Stated vs revealed preference: 46% survey intent → $8.1M ARR; 14% paywall conversion → about $2.5M ARR. The $8M claim overstates by roughly 3x."
+    },
+    {
+      "id": "K2",
+      "critical": true,
+      "text": "Inference cost scales with usage: mean account $32/month, top-decile $130/month against a $149 price (gross margin 12% for the top decile). Paying adopters average 6,800 requests → about $61/month, 59% gross margin; add-on inference cost ≈ $1.0M a year at 14% adoption."
+    },
+    {
+      "id": "K3",
+      "critical": true,
+      "text": "The strategic case is defensive: win rate vs Routewise fell 44% → 37%, about 109 fewer wins a year ≈ $0.64M of new ARR a year; 31% of loss notes cite AI. But Routewise also discounted 20% in Q3, so the AI effect is uncertain."
+    },
+    {
+      "id": "K4",
+      "critical": true,
+      "text": "Trade-off with the mobile app: mobile reliability is the top churn reason (27%) and top request (38%); AI is a churn reason for only 6%. Delaying mobile by two quarters has a retention cost that must be weighed."
+    },
+    {
+      "id": "K5",
+      "critical": false,
+      "text": "Pro tier (+$12/seat): ≈ $2.89M ARR at 33% migration with ≈ $1.26M inference cost (gross margin ≈ 56%); needs usage caps or metering to protect the 75% company margin."
+    },
+    {
+      "id": "K6",
+      "critical": false,
+      "text": "Beta results are biased (volunteers, larger, more active): +9 pp net productivity and 97% vs 93% renewal are encouraging but not proof."
+    },
+    {
+      "id": "K7",
+      "critical": false,
+      "text": "Engineering cost ≈ $1.47M plus $0.6M/year run cost — small relative to ARR; the real cost is the mobile delay."
+    },
+    {
+      "id": "K8",
+      "critical": false,
+      "text": "The survey is weaker than it looks: a 6% response rate from larger accounts (9.4 vs 6.2 seats) — non-response and size bias on top of stated-vs-revealed preference."
+    }
+  ],
+  "required_calculations": [
+    {
+      "id": "Q1",
+      "text": "Survey-based vs test-based add-on ARR",
+      "expected": "$8.06M vs $2.45M",
+      "tolerance": "±$0.2M"
+    },
+    {
+      "id": "Q2",
+      "text": "Inference cost and gross margin per account at mean/top-decile/adopter usage",
+      "expected": "$32.4 / $130.5 / $61.2 per month",
+      "tolerance": "±$2"
+    },
+    {
+      "id": "Q3",
+      "text": "Competitive impact of the lower win rate",
+      "expected": "≈ 109 wins ≈ $0.64M new ARR a year",
+      "tolerance": "±20%"
+    },
+    {
+      "id": "Q4",
+      "text": "Pro-tier revenue and margin",
+      "expected": "$2.89M ARR, ≈56% gross margin",
+      "tolerance": "±$0.3M; ±5 pp"
+    }
+  ],
+  "decision_relevant_evidence": [
+    {
+      "id": "E1",
+      "critical": true,
+      "text": "Paywall test: 14% conversion, buyers average 6,800 requests"
+    },
+    {
+      "id": "E2",
+      "critical": true,
+      "text": "Inference cost per request and usage concentration"
+    },
+    {
+      "id": "E3",
+      "critical": true,
+      "text": "Win rate vs Routewise 44% → 37% and Routewise's bundling"
+    },
+    {
+      "id": "E4",
+      "critical": true,
+      "text": "Churn reasons: mobile 27% vs AI 6%; mobile app delay"
+    },
+    {
+      "id": "E5",
+      "critical": false,
+      "text": "Routewise's 20% first-year discount as an alternative explanation"
+    },
+    {
+      "id": "E6",
+      "critical": false,
+      "text": "Beta selection bias (volunteers, larger accounts)"
+    },
+    {
+      "id": "E7",
+      "critical": false,
+      "text": "Inference price trend (−35% in 12 months) and fixed contract to Dec 2027"
+    },
+    {
+      "id": "E8",
+      "critical": false,
+      "text": "Survey response rate (6%) and respondent size skew"
+    }
+  ],
+  "contradictory_evidence": [
+    "Survey 46% vs paywall 14%",
+    "Competitive pressure on AI vs customers' stated priority (mobile app)",
+    "Beta productivity gains vs selection bias",
+    "Win-rate drop: AI vs Routewise's simultaneous discount"
+  ],
+  "reasoning_traps": [
+    {
+      "id": "T1",
+      "text": "Sizing revenue from stated survey intent"
+    },
+    {
+      "id": "T2",
+      "text": "Ignoring variable inference cost (treating AI as zero marginal cost SaaS)"
+    },
+    {
+      "id": "T3",
+      "text": "Attributing the whole win-rate drop to AI"
+    },
+    {
+      "id": "T4",
+      "text": "Treating volunteer beta results as representative"
+    },
+    {
+      "id": "T5",
+      "text": "Ignoring the opportunity cost of delaying the mobile app"
+    },
+    {
+      "id": "T6",
+      "text": "Accepting the VP Sales claim that Copilot would recover a third of lost deals (a mention in loss notes is not proof the deal would have been won; Routewise also discounted)"
+    }
+  ],
+  "key_tradeoffs": [
+    {
+      "id": "X1",
+      "text": "Monetise (add-on revenue) vs defend (bundle to protect win rate/retention)"
+    },
+    {
+      "id": "X2",
+      "text": "Copilot now vs mobile app reliability (the top churn driver)"
+    },
+    {
+      "id": "X3",
+      "text": "Adoption vs gross margin (usage caps / metering)"
+    }
+  ],
+  "plausible_recommendations": [
+    {
+      "id": "R1",
+      "defensible": "yes",
+      "text": "Launch, packaged in a Pro tier (or included with a usage cap/metering), sized off the paywall test, with gross-margin guardrails; sequence or staff so the mobile app is not delayed, or accept the delay explicitly."
+    },
+    {
+      "id": "R2",
+      "defensible": "yes",
+      "text": "Launch as an add-on at a lower entry price plus usage-based pricing, sized off the 14% test, framed as defensive."
+    },
+    {
+      "id": "R3",
+      "defensible": "conditional",
+      "text": "Delay Copilot two quarters to ship the mobile app first — defensible if the win-rate risk is quantified and a limited AI response is planned."
+    },
+    {
+      "id": "R4",
+      "defensible": "no",
+      "text": "Launch the $149 add-on on the strength of the $8M survey-based forecast."
+    }
+  ],
+  "defensibility_criteria": [
+    "Uses revealed (test) rather than stated (survey) demand, or explains the gap",
+    "Accounts for variable inference cost in pricing/packaging",
+    "Weighs the mobile-app delay against the competitive AI threat"
+  ]
+}

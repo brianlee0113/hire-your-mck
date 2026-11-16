@@ -1,0 +1,191 @@
+{
+ "blind_id": "DMF5J6",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as which segments to reprice and what to hold. It uses the 15% ARR goal explicitly through the ARR bridge. It identifies early that the answer turns on the SMB promotion mix, price risk against Inkwell, and the realistic size of the CFO's $10.3M. It never tests the NRR >100% constraint explicitly, even though the bridge implies about 109%. The renewal-at-contract-terms constraint is used well.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, four summary points and four sections line up, and most titles are claims backed by the slide evidence. The main flaw is that slide 6 concludes 'the gap lies in setup, not in the product or its price', while slide 8 says 'Price drives the exits of promotion customers'. Slide 10's title says Inkwell 'does not compete' in mid-market, which the pack does not support. The slide 5 claim 'not proof that SMB rejects our prices' also sits uneasily with slide 9, 'Inkwell has made SMB price-sensitive'. The doc partly reconciles these, but they are visible tensions.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers I re-did all check out. Promo churn is 4.9%. The promo cohort is 56% of SMB losses and 36% of SMB customers. SMB is 94% of customers lost. The $7.57M uplift is split correctly into $2.5M, $4.2M and $0.9M. Break-even is 10.7% and 51% of the cohort. The ARR bridge adds up ($7.98M base, $3.485M, $0.672M, $0.76M). The survival maths gives $3.4M vs $2.4M. It rejects the 'halve churn' claim with reasoning and caveats the 2024 test. Weaknesses: it does not compute revenue-weighted or blended churn. It cites the 2023 rise (1.8→2.3%) without noting that churn settled at 1.9%, and it never computes the 2023 net outcome (about +4%). It claims Inkwell is absent from mid-market, but the pack only says deals above 200 seats. The bridge applies a 12-month NRR over a mid-2026 to end-2027 window and may double-count past price effects. There is no churn response on mid-market renewals.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is differentiated: raise mid-market 10% and enterprise to the cap, hold SMB, activate the promo cohort, test SMB on new sign-ups, and gate the SMB decision at Q3 on promo churn and win rate. This matches the key's R1/R2. It avoids all five traps. The CFO plan is rejected with a quantified comparison, and the CS claim is replaced with a realistic target. Trade-offs are mostly explicit. Gaps: no churn guardrail or kill criterion for the mid-market and enterprise rise itself, no lower-priced SMB tier option, little on renewal trust or NRR risk, and no cost for the activation programme.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and titles are plain claims. There are 19 slides, including 4 section dividers, and slide 6 is bullet-heavy with some repetition. Length is a bit long for the decision but not padded.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Pricing power sits in mid-market and enterprise, where customers stay for integrations and Inkwell does not compete",
+    "why": "The pack says Inkwell has not been seen in deals with more than 200 seats. Mid-market covers 51–1,000 employees, so smaller mid-market deals may still be exposed."
+   },
+   {
+    "quote": "So the gap lies in setup, not in the product or its price",
+    "why": "The pack shows 52% of promo churners cite price, and most left within two months of the discount ending. This overstates onboarding as the cause."
+   },
+   {
+    "quote": "Price drives the exits of promotion customers, not of the core",
+    "why": "The 18% of non-promo churners citing price is still a material share. Inkwell's effect on the core is shown by the win-rate fall, so 'not of the core' is too categorical."
+   },
+   {
+    "quote": "In 2023 an 8% rise lifted SMB churn from 1.8% to 2.3% for six months",
+    "why": "This is selectively quoted. The pack says churn then settled at 1.9%. Omitting that makes the precedent look worse than it was."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "So the gap lies in setup, not in the product or its price",
+    "quote_b": "Price drives the exits of promotion customers, not of the core: 52% of them cite it",
+    "why": "Slide 6 attributes promo-cohort churn to setup rather than price, but slide 8 says price drives their exits. The doc reconciles this only implicitly."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "partial"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "partly_correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise mid-market list prices 10% at renewal and enterprise up to the 7% cap (about $4.2M of 2027 ARR). Hold SMB prices, activate the 2,100 promo customers, test an SMB rise on new sign-ups, and gate the SMB decision at Q3 on promo churn near 2.1% and a stable win rate.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It differentiates by segment, separates the promo mix effect from the rate effect, corrects the $10.3M to $7.6M, and sets a gate for SMB. It lacks a guardrail on the mid-market and enterprise rise and an SMB tier option, but it is clearly defensible."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "It splits the CFO and CEO views. Slide 6 says the onboarding cohort effect 'supports the CFO's view'. Slides 8 and 9 show price and Inkwell risk in SMB, which supports the CEO. The CFO's 12% on all plans is rejected, the $10.3M is cut to $7.6M, and the recommendation differs by segment. Assumptions are stated, for example the 2024 test covered new sign-ups only, and survey response rates are unknown. Two causal claims are overstated: 'setup, not price' and 'Inkwell does not compete in mid-market'."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. It decomposes the churn rise into the promo cohort effect (4.9% implied) and a near-flat core. It corrects the CFO's $10.3M to $7.6M with a transparent build, and it gives a segment-differentiated plan with a Q3 gate. It rejects the 'halve churn' promise and caveats the 2024 test. Weaknesses are a tension between slides 6 and 8 on whether price or setup drives promo churn, an overstatement that Inkwell is absent from mid-market, and a selective reading of the 2023 precedent that omits the settle to 1.9%. It also skips revenue-weighted churn and the 2023 net outcome, never tests the NRR >100% constraint explicitly, and sets no churn guardrail on the mid-market rise. At 19 slides it is slightly long.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1545264,
+ "wall_s": 47.20933485031128,
+ "is_error": false,
+ "error_text": null
+}

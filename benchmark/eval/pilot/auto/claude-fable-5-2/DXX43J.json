@@ -1,0 +1,207 @@
+{
+ "blind_id": "DXX43J",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Slide 2 restates the board's question as posed, names the decision maker and timing, and turns the two stated constraints (profit path within the $12.0M with no new round; 12 months of runway at all times) into explicit success criteria that reappear as columns in the options table. It adds a third, sensible criterion (no harm to software growth) and labels what is out of scope. The five sub-questions (demand and CAC, per-order economics, cash and runway, software alternative, decision and reopening conditions) are the issues the answer turns on. It treats the decision as a choice among four routes rather than a bare yes/no.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the five executive-summary points are the five sections, and almost every title is a claim its slide supports with pack-derived numbers; the titles alone give the argument. It falls short of a 5 on three counts. Each section opens with a summary slide (5, 10, 19, 24) that repeats what follows, and the runway point is made three times (19, 20, 21). The claim that the software option 'meets both investor tests' is asserted in the options table without a slide showing the software path to profit. The reopening thresholds (positive variable contribution at the median site) sit loosely against slide 14, which shows that +$0.5 of variable contribution still needs 6,400 orders a day.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I recomputed every figure I relied on and found no error beyond rounding. The four per-order cases are right: median -6.167, best composite -1.757, plan +2.019, pop-up -12.572. So are the plan-to-benchmark bridge (2.75 / 1.36 / 2.324 / 1.751), break-even of 6,391 orders a day (836 on plan inputs), break-even AOV of $63.4, and all 16 cells of the sensitivity grid, including -3.4 at best density. The cash figures hold: $4.8M floor, $7.2M free, $2.5M and about six months left, -$4.7M on the stricter reading, about $18M a year lost at medians. The acquisition estimate ($27.5M; $13.7M at 900 a day), CAC payback (14.8 months), pipeline (86.6%, $0.864M, 87.5% cover) and 25.7 months of runway also check. Derivations are shown, evidence against the answer is used (growth is real, pop-up was still ramping, GMV is not revenue, survey and pop-up cover different groups), and a slide lists the pack's gaps. Blemishes: a few overstated claims ('did not carry over', 'negative under any definition', the 'generous' label on the acquisition estimate, 'many came for the discount'); the software profit path is asserted, not calculated; some displayed operands are rounded so the shown arithmetic does not reproduce ($12M / $0.5M shown as 25.7); and $0.8M a year is compared with an 18-month $9.5M. These do not affect the conclusions.",
+    "score": 5
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear, follows from the analysis and matches the key's preferred answer: decline, put the cash into software, and sell fast delivery to grocers. Four options are compared on the board's criteria with cash needs, including a costed one-store pilot ($3.6M) rejected because the 14 customer sites already supply the evidence. It states what would reopen the question (four signals), the risks of declining with owners and early warnings, and dated next steps. It avoids every trap: growth is separated from profit, density is tested at and beyond the best observed level, and the survey and pop-up growth are not taken as validation. Weaknesses: the software option's path to profitability, the investors' first objective, is not quantified; the module build and Q3 go-live with the same four hires is the author's assumption; and the reopening thresholds are necessary rather than sufficient by the document's own break-even maths. These are minor against an otherwise complete, decision-ready judgment.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 3 with the five reasons, and the language is plain and precise with almost no jargon. Derivations are laid out as simple arithmetic chains. But the document is long for a board go/no-go decision: about 24 main-body content slides plus eight backups and five dividers. The section-summary slides restate their sections, the runway point takes three slides, and backup slide 41 repeats slide 25. Most slides earn their place, so this is better than a 3, but it is not proportionate enough for a 5.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Our software know-how did not carry over: the pop-up lost about $12.60 an order",
+    "why": "A causal conclusion drawn from one six-week temporary site that was still ramping; the slide itself concedes the caveat. The closing line 'it does not transfer to running stores' is stated with more certainty than the evidence allows."
+   },
+   {
+    "quote": "Promotions averaged 12% of AOV, so many came for the discount",
+    "why": "The pack gives the promotion rate and retention but no evidence on why customers ordered or left; the causal link is inferred."
+   },
+   {
+    "quote": "Every order comes from a paid customer; the pop-up data shows no organic acquisition",
+    "why": "The pack gives only a $38 CAC; it does not show that organic acquisition was absent. The assumption also inflates the estimate, yet it is listed as a reason the estimate is 'generous to the plan'."
+   },
+   {
+    "quote": "Grocer software alone meets both investor tests, and goes live in Q3 2027",
+    "why": "The software path to profitability is never calculated (the business burns $0.4M a month today). The Q3 go-live and the idea that the four hires can build a new store-based delivery module are not in the pack."
+   },
+   {
+    "quote": "Both are negative under any definition",
+    "why": "The document itself notes that the incumbents' definition of contribution per order is not given, so 'under any definition' is overstated."
+   },
+   {
+    "quote": "Launching Parcelbird Now would turn us into a competitor of pipeline grocers who want fast delivery of their own",
+    "why": "The pack does not say where pipeline grocers operate or that they would see a conflict. The footnote labels this as judgment, but the title and bullets ('Sales cycles would lengthen', 'Data from customer sites would raise trust questions') state it as fact."
+   },
+   {
+    "quote": "The age group most likely to use the service",
+    "why": "The pack does not say that 25-39-year-olds are the likeliest users, nor that pop-up customers were 'of all ages'."
+   },
+   {
+    "quote": "Pay rules fall on the grocer, not on us",
+    "why": "This assumes a product design (the grocer's riders, dispatched by Parcelbird) and a regulatory incidence that the pack does not describe."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "The estimate is generous to the plan",
+    "quote_b": "Every order comes from a paid customer; the pop-up data shows no organic acquisition",
+    "why": "Assuming no organic customers raises the acquisition bill, so it works against the plan, not for it. The $27M headline is therefore not uniformly a conservative floor as presented. This is minor: the recommendation does not rest on it."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Spend $0.8M a year on four hires to scale the software business and build a store-based fast-delivery module for pipeline grocers, with two grocer pilots live in Q3 2027. Reopen the operator question only if four signals turn: median-site variable contribution, rider productivity, settled rider pay rules and committed funding.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It meets all four defensibility criteria. Per-order contribution is computed at median (-6.17), best composite (-1.76), best density (-3.4) and pop-up (-12.57) inputs. Market growth is explicitly separated from profitability, using the incumbents' losses and QuickBasket's exits. The runway constraint is checked ($2.5M and about six months left against a $4.8M floor). The software alternative is offered and sized. The one gap is that the software path to profitability is asserted, not calculated."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 3,
+   "rationale": "The document rejects the founders' hypothesis on the evidence, not by contrarianism. It grants that market growth is real (about 40% a year) and that the founders have a software edge, then shows the plan's +$2.02 needs all four levers above the best observed site and that every observed case is negative. It surfaces the three contradictions in the key: growth against losses, 44% stated intent against 22% retention, and plan inputs against benchmarks. It notes that 'nobody owns the Midwest' is unproven and lists the pack's gaps and the pop-up's ramp caveat. It leaves a conditional door open through four reopening signals. The three unsupported causal claims counted are: know-how 'did not carry over', customers 'came for the discount', and the customer-conflict effects."
+  },
+  "overall_comment": "This is a rigorous, well-argued document that reaches the key's preferred answer (R1) with every required calculation correct. I recomputed the four per-order cases, the bridge, the break-even figures, the sensitivity grid, the runway and pipeline maths, and the acquisition and payback estimates, and found no numerical errors beyond display rounding. On Q5 it gives year-on-year growth (44%, 38%, 41.7%) rather than a CAGR; I marked it correct because the headline figure is within tolerance of 41.5% and the insight is fully reached. On K3 it computes -$12.57 and links promotions to discount-seeking, but treats the 18% weekly growth as a caveat in the pop-up's favour rather than calling it promotion-fuelled; it does not treat that growth as validation.\n\nIt goes beyond the key with a $27M paid-acquisition estimate, a break-even density of 6,400 orders a day, a costed one-store pilot and a two-reading runway check. It reaches all eight insights, falls into none of the traps, and states reopening signals, risks of declining and owned next steps.\n\nWeaknesses:\n- **Software profit path:** the recommended option is said to meet the profitability test, but this is never calculated.\n- **Module build:** the fast-delivery module and its Q3 go-live with the same four hires are the author's extension of the pack.\n- **Overstated claims:** several lines run ahead of the evidence, notably 'did not carry over', 'under any definition', the conflict-of-interest effects and the 'generous' label on the acquisition estimate.\n- **Reopening thresholds:** they are necessary rather than sufficient by the document's own break-even maths.\n- **Length:** the document is longer and more repetitive than a board go/no-go decision needs.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "high"
+  }
+ },
+ "cost_usd": 1.2711836,
+ "wall_s": 183.32794189453125,
+ "is_error": false,
+ "error_text": null
+}

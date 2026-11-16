@@ -1,0 +1,38 @@
+{
+ "x": "DMF5J6",
+ "y": "DG2578",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean chain from governing thought through diagnosis, pricing power, the CFO plan and the recommended plan. X's four summary claims map one-to-one onto its sections, which is tidy. But X contradicts itself on price: slide 6 concludes the cohort gap 'lies in setup, not in the product or its price', while slide 8's title says 'Price drives the exits of promotion customers'. Its governing thought also leans on onboarding 'fixing' the cohort, yet slide 17 treats activation only as upside. Y resolves the same tension explicitly: the cohort's 'price' complaint is the discount ending, the core base is unchanged, and the live price pressure is Inkwell on new deals. Y's summary also answers the decision question directly ('Yes, but not 12% on every plan') and its options, trade-off and guardrail pages follow from it. Y's one soft spot is that its base case hits the target 'exactly' only by counting the conditional SMB +8%, though it flags that there is no margin.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's defensible segmented recommendation: raise mid-market and enterprise, hold and test SMB. Y weighs the alternatives better. It compares three options, including 'hold everything', which the key lists as an indefensible pole that should be rejected, and gives base and downside figures for each. It quantifies the trade-off against the CFO plan at about $1.6M and decomposes it. It adds churn guardrails with triggers and actions, a spare lever (mid-market to 12% in the second half), a renewal-sample test for SMB, and excludes the promotion cohort from any 2027 rise. X rejects the CFO plan on sound grounds (the $7.6M correction and the 51% cohort break-even) and gates the SMB decision, but it has no downside case and no mid-market guardrail despite acknowledging the renewal caveat. Its test covers new sign-ups only, which does not answer how existing SMB customers react at renewal. X also plans on the cohort dropping to 2.1% monthly churn from January, which is optimistic.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core numbers right: 4.9% implied cohort churn, the mix effect, $7.57M of repriceable ARR, and the 10.7% break-even in X. X's arithmetic is accurate (94% of lost logos are SMB, 56% of SMB losses come from the cohort, the bridge leaves $0.8M), and it caveats the exit surveys and the 2024 test. Y goes further and stays accurate. It quantifies the 2023 precedent (3.6% extra loss, scaled to 5.4% at 12%, about $1.3M) and applies it with a doubled downside for Inkwell. It rebuilds the dashboard metric three ways (1.7→2.6, 0.8→1.2), matching the key. It splits the cohort's excess churn into activation (about 0.8 points) and the discount ending (about 2.0 points), using the 3× relationship, to test the 'halve churn' claim. X dismisses that claim only by noting 1.55% is below the historical rate, then substitutes its own unsupported assumption that cohort churn falls to 2.1% immediately. Y's weaker points are the linear scaling of 2023 and counting a conditional +$0.4M in the base case, but both are disclosed. Y's line that 'price is not what is driving churn in any segment' is slightly strong but is qualified.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis in the direction the key expects: they keep 'churn is mostly a cohort and onboarding problem', reject 12% across the board, correct the $10.3M, and recognise the CEO's concern as valid in SMB because of Inkwell. Y reconciles the two views more precisely. It says explicitly where the CFO is right and uses that to justify going ahead in mid-market and enterprise in January. It then shows that onboarding alone explains under a third of the cohort's excess churn, with the rest being the discount ending, so neither 'onboarding, not price' nor 'price everywhere' holds wholesale. X credits the CFO too, but swings between 'setup, not price' and 'price drives exits', and it largely adopts the onboarding fix as the remedy without testing how much onboarding can explain.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both documents reach a defensible segmented recommendation with correct core analysis, and X is a tight, accurate, shorter argument. Y would serve the CEO better because it adds reasoning the decision needs, not just length. It gives an explicit option comparison with base and downside cases, a quantified trade-off against the CFO plan, and a tested view of how much onboarding can deliver. It sets guardrails and gates for each move, addresses the mid-market renewal uncertainty with a concrete trigger, and reconciles the dashboard metric. It also turns all this into five clear December decisions. X's optimistic activation assumption, missing downside case and internal tension on the role of price leave it the weaker of two good answers.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8339002,
+ "wall_s": 45.93690490722656
+}

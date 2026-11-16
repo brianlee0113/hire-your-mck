@@ -1,0 +1,39 @@
+{
+ "x": "DQ7ZUH",
+ "y": "D67FCK",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both lead with the same segmented answer and support it with the same chain: cohort diagnosis, pricing power by segment, corrected sizing, plan. Y's summary is answer-first with three numbered pillars that map one-to-one onto slide sections, and its hypothesis table ties each condition to a verdict and an effect on the answer. X's chain is also consistent but reads more as a sequence of findings. Each has one internal inconsistency. X says onboarding explains only about 30% of the cohort's excess churn, yet sets a cohort target and kill-trigger of roughly 2.1%. Y calls mid-market 'flat' in the summary while flagging its 0.6% to 0.8% rise elsewhere, and its SMB test on new sign-ups sits awkwardly with its own caveat about sign-up tests. Y's hierarchy is marginally tighter.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are near-identical (the key's R1): mid-market +10%, enterprise within caps, hold SMB and test +8%, exempt the promotion cohort. The differences are in design. X tests +8% on a randomised half of established customers' Q1 renewals, which directly addresses the pack's main open question (renewal sensitivity of non-promotion SMB after Inkwell). X also sets explicit pause triggers: mid-market churn above 1.0% for a quarter, and SMB test churn 0.5 pt above control. Y tests on new sign-ups, then would roll the rise out to the existing base. That repeats the sign-up-versus-renewal gap Y itself flags for the 2024 mid-market test. Y partly offsets this with a fourth option (segmented at 12%), an exception rule for accounts evaluating competitors, and useful pre-meeting data checks. Its mid-market guardrail is a success measure, not a trigger. X's test and guardrail design is the more defensible.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the key calculations correctly: implied cohort churn of about 4.9%, mix effect of about 1.0 pp of 1.1 pp, $7.57M gross, 10.7% break-even, the 2023 response, and blended churn of 1.7% to 2.6% (logo) and 0.8% to 1.2% (ARR-weighted). Both caveat the 2024 sign-up test and the undefined dashboard figure. Y goes slightly further. It puts a value on onboarding (about $0.4M) from the activation model, defines stress cases by reference to observed responses rather than an assumed 5%, includes an enterprise stress, and adds the count of lost new wins that would erase the SMB gain. It also discloses that the survey cross-check gives 47% against 56%. X's 2.1% cohort churn target is unsupported by its own activation estimate. Y's slips are minor: calling mid-market 'flat', and a headline that sets net $5.3M against gross $10.3M (explained in the body).",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's view as the key expects: churn is mostly a cohort mix effect, but that cohort leaves over price and Inkwell makes SMB price-competitive; $10.3M is cut to $7.6M gross; the uniform 12% is rejected; the 'halve churn' claim is rejected. Y is more explicit that the CFO and the CEO are each half right. It also lays out a conditions table showing which parts of the starting position hold, hold in reduced form, or fail, though the hypothesis it tests is its own rather than the CFO's verbatim. X says 'the CFO is half right' and answers the CEO's concern only implicitly.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents reach the same defensible conclusion from the same numbers, so the gap is small. X has the better SMB test (on renewals, not sign-ups) and clearer pre-agreed triggers and checkpoints. Y has a tighter argument, explicitly reconciles the CFO and CEO views, sizes onboarding realistically, weighs an extra option, and quantifies what happens if each main assumption is wrong. It also lists data pulls that could narrow the uncertainty before December. On balance Y serves the decision maker marginally better, despite the weaker SMB test design.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0093322,
+ "wall_s": 47.441205978393555,
+ "error_text": null
+}

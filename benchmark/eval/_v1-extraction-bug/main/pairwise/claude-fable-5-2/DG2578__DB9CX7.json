@@ -1,0 +1,39 @@
+{
+ "x": "DG2578",
+ "y": "DB9CX7",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean chain from diagnosis (SMB, then the promotion cohort) through segment headroom and value to plan and guardrails. X's governing thought matches its plan exactly: raise mid-market and enterprise, hold SMB until the test evidence is in, and every summary line maps to a slide that proves it. Y's governing thought says hold SMB \"until the promotion cohort is fixed and a price test passes\", but its plan tests and may roll out an SMB rise on non-promotion customers regardless of whether the cohort is fixed. Y's option comparison is also on a less consistent basis: the hold option has no figures, and the SMB rise is valued at a full-year $0.7M although it could only roll out in the second half. X carries one baseline, target and downside through all three options and reconciles the gap to the CFO plan line by line.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred differentiated recommendation: mid-market +10%, enterprise within caps, SMB held and tested, promotion cohort excluded, activation funded. X weighs the alternatives more fully. It compares three options on the same measures (net price ARR, exit ARR against the $98.9M target, NRR, new-customer ARR needed) in base and downside cases. It splits the $1.6M given up into SMB deferral and staying at the tested 10%, and shows that in the downside a January SMB rise nets about zero. Its guardrails have numeric triggers and a defined response (pause, multi-year price lock, second-half +12% lever), and its SMB test covers new sign-ups, which is where Inkwell bites. Y's judgment is sound and more conservative in one respect: it counts no SMB gain and leaves $0.8M to new customers. It also names mid-market renewals as the largest risk. But its guardrails are vague (\"no further fall\", \"well below 7.4% for the year\" read from a half-year test), its hold option is not quantified, and it holds uncapped enterprise contracts to 7% \"to keep one message\" without weighing what that gives up.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the critical calculations right: implied cohort churn of 4.9%, the 1.0 / 0.1 point mix and rate split, the blended churn measures of 1.7% to 2.6% and 0.8% to 1.2% that fail to match the dashboard, and about $7.6M repriceable. Both split the exit survey by cohort and caveat the 2024 new-sign-up test. X reproduces the key's $7.57M with the exact segment split and gives the range if all or none of the renewing enterprise contracts are capped. It scales the 2023 response to 12%, doubles it in a downside for Inkwell, and adds a mid-market downside. Y has the explicit 3.6% first-year extra loss and a correct break-even (7.4% for an 8% rise, with a sensitivity table), which X only shows implicitly. Y applies the unscaled 8% response to the 12% plan, though it labels this a floor. Y also overstates that 7% is \"the most enterprise can give\" when 40% is uncapped, and notes survey sample limits that X does not. X's weak point is a base case that lands \"exactly\" on target only by counting the unproven SMB test gain and activation gain, though it flags there is no margin and gives the downside. Net, X is slightly more rigorous on scenarios and Y slightly better on break-even.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO hypothesis rather than adopt or reject it wholesale. Each accepts that the churn rise is a cohort effect and not a core-base price rejection, rejects the uniform 12%, cuts the $10.3M to about $6–7M, and shows that the cohort's price complaints are the discount ending while Inkwell makes SMB price-competitive. Both also test the Customer Success claim and find activation explains only about 30% of the cohort's excess churn, which qualifies the CFO's \"onboarding, not price\" line. X is more explicit about the reconciliation. It states \"where the CFO is right\" and ties that to going ahead in mid-market and enterprise in January. It addresses the CEO's concern by keeping SMB prices flat so the 2027 churn signal stays readable. It replaces the \"halve churn\" target with specific activation and cohort-churn targets. Y reaches the same substance but leaves the both-partly-right framing more implicit.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents share the same defensible recommendation and the same core analysis, and both meet all four defensibility criteria. X would serve the CEO somewhat better. It puts the options side by side against the 15% and NRR objectives in base and downside cases, quantifies and decomposes what is given up against the CFO plan, and sets concrete go/no-go criteria and triggers with a defined response for each move. It also flags practical gaps such as notice periods and the missing new-customer plan. Y is solid and in places more conservative: it banks no SMB gain, gives an explicit break-even, and names mid-market renewals as the top risk. But its guardrails and option comparison are thinner, and it has a few loose statements.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0999881999999999,
+ "wall_s": 53.30345702171326,
+ "error_text": null
+}

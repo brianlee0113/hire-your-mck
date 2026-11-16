@@ -1,0 +1,194 @@
+{
+ "blind_id": "DB9CX7",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Slide 2 restates the decision as posed (whether, on which segments, by how much) and turns the two stated objectives into explicit success criteria, adding a sensible third (no churn rise outside the promotion cohort). The renewal-timing and enterprise-contract constraint is used as a binding input in the sizing rather than merely mentioned. The four sub-questions are the issues the answer turns on, and slide 26 tests the plan against the 15% and NRR objectives. Repackaging and a lower tier are scoped out with a stated reason (no plan-mix or usage data), which narrows the 'how' slightly but is transparent.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the four executive-summary points are the four sections, and every slide title is a claim that its slide's evidence supports. Reading titles alone gives the full argument: diagnosis, headroom by segment, value, then sequencing. Two small blemishes: the governing thought makes 'the promotion cohort is fixed' a condition for SMB, but the plan gates the SMB rollout only on the price test; and the section-summary and repeated contents slides add some restatement. Neither breaks the logic and I found no internal contradictions.",
+    "score": 5
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived every figure I relied on and they hold: blended churn 1.7%→2.6%, ARR-weighted 0.8%→1.2%, promotion-cohort churn 4.9% (103.1/2,100), 91% mix share, $65.5M renewing (76%), $7.55M after caps and $6.7M after an SMB churn response, $4.2M targeted, 109.3% weighted NRR, $0.8M gap, 7.4% break-even for an 8% rise, 3.6% first-year extra loss in 2023. All four required calculations are done transparently, and the document adds a well-flagged activation decomposition (about 30% of the cohort's excess churn) to bound the 'halve churn' claim. Evidence against its own answer is used: the new-sign-up limitation of the 2024 test, the pre-Inkwell 2023 precedent, and mid-market churn creeping up. Flaws are minor: rounding inconsistencies on slides 25 and 38 ($0.65M shown as $0.7M, $0.36M as $0.3M), a couple of small embellishments ('costly to replace mid-contract', 'most contracts' for 60% of ARR), and one flat causal headline on slide 10 that slide 12 itself hedges. None is material to the decision.",
+    "score": 5
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear, segment-differentiated, follows from the analysis, and is compared with the CFO's plan and a hold-all option on ARR, who bears the rise and the gap to Inkwell. It sets gates (SMB test with control, break-even threshold, activation stop rule), names risk owners, gives a scorecard, and flags mid-market renewal behaviour as the largest untested risk. It avoids all five traps. Material gaps: the SMB rollout gate is a full-year extra-loss figure (7.4%) that is to be decided on a Q2 read-out; mid-market has a watch point but no stop or rollback rule even though it carries most of the $4.2M; the plan does nothing about the falling SMB win rate against Inkwell on new deals beyond not raising price (a lower tier is scoped out); the pack's hint that Inkwell may be present in mid-market deals under 200 seats is not used to differentiate the 10% rise; and customer trust at renewal is touched only lightly.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 3, the language is plain and precise, and calculations are laid out so they can be checked. But about 40 slides and 5,600 words is more than this decision needs: four contents slides, three section-summary slides that restate what follows, the 4.9% derivation shown twice, and a six-slide appendix that partly repeats the body.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Both are costly to replace mid-contract",
+    "why": "The pack says only that customers rate integrations and the audit trail as the main reasons they stay; it gives nothing on replacement cost."
+   },
+   {
+    "quote": "The price shock was the discount ending, not our list price",
+    "why": "Stated flatly as a cause; the pack shows only the timing of departures and exit-survey shares, as the document itself concedes on slide 12."
+   },
+   {
+    "quote": "Customers who sent fewer than five documents in month one churn at three times the rate of the rest, in both groups (section 9 of the pack)",
+    "why": "The pack gives the 3x ratio for SMB customers overall; 'in both groups' is a modelling assumption attributed to the pack."
+   },
+   {
+    "quote": "Most contracts cap yearly rises at 7%",
+    "why": "The pack says 60% of enterprise ARR is under capped contracts; it says nothing about the share of contracts."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "− $0.7M ARR lost if 3.6% more customers leave in year one, as in 2023",
+    "correct": "$16.6M × 1.08 × 3.6% ≈ $0.65M, so $0.6M rounded; the net of about $0.68M is right. Immaterial display inconsistency."
+   },
+   {
+    "quote": "One and a half times 2023: 5.4%; $0.3M",
+    "correct": "$1.328M − $17.93M × 5.4% ≈ $0.36M, so about $0.4M. Immaterial."
+   }
+  ],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise mid-market 10% and enterprise 7% at 2027 renewals from January (about $4.2M); hold SMB list prices, exclude the 2,100 promotion customers from any rise and run an activation programme for them; test an 8% rise on a random part of non-promotion SMB renewals in H1 2027 and roll out in H2 only if extra churn stays well below the 7.4% break-even; fix the churn definition for the board.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It meets all four defensibility criteria. It separates the mix effect from the rate effect (promotion cohort 4.9% against 2.1%, 91% of the rise). It reconciles the CFO and CEO views: churn is mostly the cohort, but price matters at discount expiry and against Inkwell in SMB. It corrects the $10.3M to $7.55M before churn and $6.7M after. Pricing differs by segment, with a staged SMB test and guardrails."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document neither adopts nor rejects the CFO's view wholesale. It confirms that the churn rise is mostly the promotion cohort (non-promotion SMB 2.0%→2.1%), which supports the CFO's diagnosis, but shows that the cohort leaves over price when the discount ends and that Inkwell has made SMB price-competitive, which supports the CEO's concern for that segment. It cuts the $10.3M to about $6.7M, replaces the uniform 12% with a segment-differentiated plan, bounds the 'halve churn' claim at about a third, and flags the undefined dashboard metric. Uncertainty is explicit: the 2024 test covered new sign-ups only, 2023 pre-dates Inkwell, and the pack shows timing not cause. The one over-firm causal statement is the slide 10 headline that the price shock was the discount ending, which slide 12 hedges."
+  },
+  "overall_comment": "Weighted score 4.65 (framing 5, coherence 5, evidence 5, judgment 4, clarity 4). This is a very strong document: it reaches every key insight, does all four required calculations correctly, uses all critical evidence, avoids all five traps, and lands on a segment-differentiated recommendation with tests, gates, owners and a scorecard. Its original additions are well caveated: the activation decomposition that bounds the onboarding claim, the bridge to the 15% target, and the break-even sensitivity for an SMB rise. I marked Q4 and K6 as reached even though the break-even is computed for the proposed 8% rise (7.4%) rather than the key's 12% (10.7%); the method and the 2023 precedent (3.6% extra loss, about 4.1% net) match the key. The weaknesses are in the decision mechanics and the length. The SMB gate is a full-year loss threshold read at Q2; mid-market has no stop rule despite carrying most of the value; the governing thought's condition that the promotion cohort be 'fixed' is not turned into a gate; and nothing addresses the falling SMB win rate on new deals. A few minor rounding slips and small embellishments do not affect the conclusion. At about 40 slides the document is longer than the decision needs.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 1.1211116,
+ "wall_s": 133.3293218612671,
+ "is_error": false,
+ "error_text": null
+}

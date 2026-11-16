@@ -1,0 +1,263 @@
+{
+ "run_id": "pilot-c2-C-r1",
+ "case": "c2-profitability",
+ "condition": "C",
+ "rep": 1,
+ "order": 0,
+ "phase": "pilot",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 3397.3,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "hire-your-mck:hire-your-mck",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "hire-your-mck",
+        "path": "/private/tmp/claude-501/-Users-brianlee0113-Developer-slides-like-a-consultant/ecc57932-fbce-495b-95b7-2715fee2e303/scratchpad/hymwork/_plugin/hire-your-mck-132dffb7fdfd",
+        "source": "hire-your-mck@inline",
+        "version": "1.2.0"
+       },
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.325",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 10,
+      "duration_ms": 278744,
+      "duration_api_ms": 2677240,
+      "total_cost_usd": 10.771899999999999,
+      "usage": {
+       "input_tokens": 20,
+       "cache_creation_input_tokens": 36341,
+       "cache_read_input_tokens": 3347921,
+       "output_tokens": 29672,
+       "output_tokens_details": {
+        "thinking_tokens": 10412
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 36341,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1468,
+         "cache_read_input_tokens": 348882,
+         "cache_creation_input_tokens": 1402,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1402
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 156,
+        "outputTokens": 237431,
+        "cacheReadInputTokens": 14562105,
+        "cacheCreationInputTokens": 420150,
+        "webSearchRequests": 0,
+        "costUSD": 10.771899999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 142526,
+        "cacheCreationEphemeral5mInputTokens": 83655,
+        "cacheCreationEphemeral1hInputTokens": 336495,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 1,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 1
+       },
+       "started_in_background": 1,
+       "max_depth": 1,
+       "spawned_by_subagents": 0,
+       "completed": 1,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {
+        "general-purpose": 1
+       }
+      }
+     },
+     "result_text_tail": " Titles that claimed more than the evidence shows were toned down.\n- The targeted hours trim was added after the reviewer asked why every hours cut was rejected.\n\n**Numbers:** 230 in total. 110 come straight from the pack, 74 are calculations from them, and 46 are our estimates, each shown with its basis on the slide. Nothing on the slides is left as a placeholder. Of the 10 hypotheses tested, 6 were confirmed, 3 revised, and 1 refuted: management's view that wage inflation is the main cause.\n\n**Choices I made in your absence** (all in `decisions-log.md`):\n- A deep deck of about 50 slides, longer than the usual 30\u201340, because the answer needs a context section, three analysis sections and a plan section.\n- Executive summary bullets have one sub-point each, so the first page fits at full type size.\n- Every lever is sized at FY2025 volumes with no market growth.\n- The closure gain is split between the six stores and the three by store count, because the pack has no store-level figures; store-level profit should be confirmed before the vote.\n\nI couldn't open the slides as images in this environment, so the layout check rests on the renderer's own warnings. Please page through the deck once before the meeting.\n\nNext, I can switch the theme, add a slide showing what happens if Harlow does nothing, or fill in the backup levers once you have markdown and wage data.\n\nFiles are in `deliverable/`:\n- harlow-margin.pptx\n- harlow-margin-sources.xlsx\n- harlow-margin.json\n- decisions-log.md"
+    }
+   ],
+   "started": "2026-11-15T22:52:08+00:00",
+   "ended": "2026-11-15T23:48:46+00:00",
+   "session_id": "64e5cf4b-4d7b-4127-a645-33ea19810f4d",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 10.771899999999999,
+  "duration_s": 3397.3,
+  "api_s": 2677.24,
+  "turns": 10,
+  "input_tokens": 20,
+  "output_tokens": 29672,
+  "cache_read_tokens": 3347921,
+  "cache_creation_tokens": 36341
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 10.771899999999999,
+   "input": 156,
+   "output": 237431,
+   "cache_read": 14562105,
+   "cache_creation": 420150
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "/hire-your-mck Create a deck for Harlow Fresh Markets' CEO, for the February 2027 board meeting: How should Harlow reverse its declining operating margin, and which actions should it take first?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "7ec417ac0f8d2503f6252d8fe8704dc598cf034ef270cfa65943d7b629d626a7",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.325 (Claude Code)",
+ "plugin_snapshot_sha256": "132dffb7fdfd3a7051ef36443c1557726ed3bf2771417f187a4ef9ee367c6715",
+ "repo_head": "e1e6b315d9ab3ed0bb51f8544553ec89d804fcc1",
+ "packet_sha256": "a65b3ee12ed8a937a40a16f9eaff5b57c885d21c9fd60d7cb54e7617ec48a017",
+ "files": [
+  {
+   "path": "workspace/deliverable/decisions-log.md",
+   "bytes": 2809,
+   "sha256": "43152ea0f723c4b1836f5472966c53095b5f89e8dd6a2d6b1f5fab3dd2009595"
+  },
+  {
+   "path": "workspace/deliverable/harlow-margin-sources.xlsx",
+   "bytes": 134862,
+   "sha256": "311ffc3855c58d6636d5626f7e0acda1682e8fdf78318a35331bbff6122c6b7b"
+  },
+  {
+   "path": "workspace/deliverable/harlow-margin.json",
+   "bytes": 215898,
+   "sha256": "dbd5a69f3ca7b0e8503e34c4ee2d3df7ec4e3b0e89f0dfbe095b5310da395b0b"
+  },
+  {
+   "path": "workspace/deliverable/harlow-margin.pptx",
+   "bytes": 216359,
+   "sha256": "faa0696d71e25accd56200b6290218b8a57e71d56092f250591754d526896c27"
+  },
+  {
+   "path": "workspace/work/build.py",
+   "bytes": 17637,
+   "sha256": "6990e54465e62d5a5b44d9b72e2efb0d9b61fa5a3adb063b9ccc0e194b974f3f"
+  },
+  {
+   "path": "workspace/work/data.py",
+   "bytes": 37579,
+   "sha256": "b3dd68627410e48f81a7d94baba8186b04bcef466aaa488c32a661adea437461"
+  },
+  {
+   "path": "workspace/work/harlow-margin.json",
+   "bytes": 215898,
+   "sha256": "dbd5a69f3ca7b0e8503e34c4ee2d3df7ec4e3b0e89f0dfbe095b5310da395b0b"
+  },
+  {
+   "path": "workspace/work/slides.py",
+   "bytes": 54981,
+   "sha256": "1b97aa4faddd525dddf2b16f4a71bffbd273054ca1589fa0aa9773ebf9feb2a2"
+  }
+ ]
+}

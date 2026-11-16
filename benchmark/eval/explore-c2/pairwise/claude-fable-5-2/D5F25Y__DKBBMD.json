@@ -1,0 +1,38 @@
+{
+ "x": "D5F25Y",
+ "y": "DKBBMD",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X has a very tidy pyramid: the governing thought breaks into four claims, each with two supporting facts, and the sections map onto them exactly. It has small internal tensions: slide 6 says \"activation, not price, is the lever\" while slide 9 argues SMB is price-exposed to Inkwell, and slide 10's title says the 2023 rise left churn higher while its body says the core tolerated it. Y's chain is equally consistent: criteria, where churn rose, why, price versus onboarding, competitor, segment verdicts, test of the CFO plan, options, bridge, SMB plan, gates, risks, decisions. Y explicitly reconciles the price and onboarding readings rather than leaving them in tension, and its executive summary ties to the objectives (15% growth, NRR). One minor wobble in Y is holding \"Business $29\" under the SMB plan while raising mid-market list prices. Net difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's preferred recommendation (R1/R2): mid-market +10%, enterprise within caps, SMB held with an 8% holdout test and an activation programme, with the promotion cohort excluded. Y weighs the trade-offs more fully. It nets the CFO plan for an SMB churn response ($5.0–6.3M) and shows an SMB +12% rise could net anywhere from $1.25M to about zero against a 10.7% break-even. It compares options on end-2027 ARR and NRR against both objectives, and admits the CFO plan would clear 15% on paper while its own plan falls $0.7M short. Its checkpoints have graded thresholds tied to break-even, plus a risk table with signals and responses. X's options table is sound but thinner: no break-even and no churn-adjusted value for the CFO plan. Its mid-market guardrail (pause if churn exceeds today's 0.8%) would trip on noise. X only says pricing alone cannot reach the target, without sizing the gap.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core numbers right: segment concentration, the roughly 1.0 of 1.1 pp mix effect, $7.57M reachable uplift, and the dashboard mismatch (1.7%→2.6% and 0.8%→1.2%). Both caveat the 2024 new-sign-up test and reject the unsupported \"halve churn\" claim with the same one-third ceiling. Y goes further and stays correct: implied promotion-cohort churn of 4.9%, break-even of 9.1% and 10.7%, and the 2023 precedent turned into 3.6 points of extra customer loss (matching the key). It also cross-checks the exit-survey mix (47% of respondents versus 56% of churners) and estimates that activation explains only about 0.8 of the 2.8-point gap. Y's modelled assumptions (linear scaling, the 2× stress case, trailing NRR repeating with price added on top) are speculative but labelled; \"the worst is probably behind us\" is a soft inference. X has small faults: it over-reads 1.9% versus 1.8% as \"never back to the starting point\", cites a \"renewal calendar\" that is not in the pack, and omits the break-even and the explicit cohort churn rate.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis appropriately: they reject the uniform 12% and the $10.3M, and accept that the churn rise is mostly the promotion cohort rather than core customers rejecting price. Y handles the two-sided nature more precisely. It says outright that \"both sides are partly right\": the CFO is right about the core base, the CEO is right that price drives exits where customers face a jump (the +100% step at discount expiry) and at the point of sale against Inkwell. It also shows activation explains only part of the cohort's excess churn, so the CFO's \"onboarding, not price\" is only partly upheld. X leans further toward the CFO's framing (\"activation, not price, is the lever\"), though it does acknowledge price complaints at discount expiry and the Inkwell exposure, so it does not adopt either view wholesale.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The two reach the same defensible segmented recommendation and avoid all the main traps. Y gives the CEO more to decide with: a churn-adjusted value for the CFO plan, break-even thresholds, an explicit reconciliation of the CFO and CEO views, a bridge to the 15% goal with the residual gap named, graded checkpoints, a risk table with responses, and a list of data gaps. X is tighter and correct on the essentials but lighter on the quantified trade-off and on guardrail design. Y's extra modelling carries assumptions, but they are flagged and do not drive the recommendation.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8197322,
+ "wall_s": 36.64503788948059
+}

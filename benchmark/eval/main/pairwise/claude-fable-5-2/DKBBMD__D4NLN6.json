@@ -1,0 +1,39 @@
+{
+ "x": "DKBBMD",
+ "y": "D4NLN6",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents have a tight hierarchy. X's executive summary runs churn location, then where price matters, then the $10.3M correction, then the recommendation and what it delivers, and each point maps to a slide with a claim-style title. Y organises around five sub-questions, with section summaries that roll up cleanly to the governing thought. X has one tension: its plan lands at +14.2%, short of the 15% objective, but it says so in the summary and gives the bridge. Y has a different one: the title 'mid-market has shown it will pay more' rests on a 10% test of new sign-ups, while the plan charges 12% at renewal, and the caveat sits lower down. Neither tension breaks the logic, and the difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the key's preferred differentiated recommendation: raise mid-market and enterprise, hold SMB behind a +8% test, fund activation, and exclude the promotion cohort. Both compare the same three options.\n\nX sets mid-market at the tested 10% and steps to 12% only if an April checkpoint passes. Its thresholds are tied to break-even maths (pause at 1.2% a month against a break-even of about 1.6%). It also notes that a list rise hurts new SMB sign-ups against Inkwell, and it admits the plan needs $0.7M of new-logo ARR or checkpoint upside.\n\nY goes straight to 12% on mid-market renewals, beyond the tested level and on an untested population. That choice looks driven by clearing the target on paper ($99.03M against $98.9M). The margin is $0.13M, and Y's own sensitivity table shows it disappears if NRR slips one point or mid-market reacts. Y's mid-market guardrail (churn 'at or below 0.8%') is not calibrated to break-even and would trigger on noise. Y also rules a lower-priced SMB tier out of scope, whereas X keeps packaging as a fallback.\n\nY's plan does meet the stated objective and is transparent about its risks, so it is defensible. X weighs the trade-offs more carefully.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: promotion-cohort churn of about 4.9%, roughly 90% of the SMB rise from mix, a reachable $7.57M, a 10.7% break-even, the blended churn measures against the dashboard, and the 47% against 56% survey cross-check.\n\nX goes further in three places:\n- It scales the 2023 churn response from 8% to 12% (5.4%) and adds a 2x stress case that lands on break-even.\n- It computes a mid-market break-even (9.1%) and compares it with annual churn.\n- It shows activation explains only about 0.8 of the 2.8-point promo gap, which tests the onboarding claim directly, and labels that estimate directional.\n\nY has more weak spots:\n- It applies the unscaled 3.6% reaction from the 8% rise to a 12% rise, giving a rosier $1.67M net.\n- 'Mid-market has shown it will pay more' overstates a non-significant test of new sign-ups.\n- It claims exclusions were made 'by agreement at the brief', which the pack does not support.\n- 'At least $99.03M whatever SMB customers do' depends on zero mid-market churn response and NRR repeating.\n\nY's $1.48M ceiling on activation value is a useful addition. X has small speculative statements ('worst is probably behind us', 'many likely to Inkwell'), but they are hedged.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis in the right direction. They accept that the churn rise is mostly a promotion-cohort mix effect, reject the uniform 12%, correct the $10.3M to $7.6M, and reject the 'halve churn' claim, capping the gain at about a third.\n\nX reconciles the competing views explicitly on one slide: the CFO is right that the core base is not leaving over price, the CEO is right that price drives exits where customers face a jump, and Customer Success is only partly right because activation explains a minority of the gap. It also flags Inkwell as the reason the CFO's 'not a price problem' cannot be extended to SMB going forward.\n\nY also reconciles the views (price drove the promotion cohort out, not the core base). But it leans more towards the CFO's framing in its section title and keeps the CFO's 12% for mid-market, justified mainly as 'the CFO's rate'. X's update is more closely tied to what the evidence supports.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents meet all the defensibility criteria and avoid the main traps. X would serve the CEO better. Its price levels are matched to the tested evidence, with a gated step to 12%, and its checkpoints are tied to break-even thresholds. Its SMB downside modelling is more careful, with a scaled response and a stress case. It tests the onboarding explanation quantitatively, and it is candid that the plan reaches 14.2% and what closes the gap.\n\nY is thorough and assigns clear owners, and its plan clears the target on paper. But it does so by a $0.13M margin, using an untested 12% on renewals and an assumption of zero churn response, and it makes a few overclaims. X also makes the same case in roughly half the length.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0897802,
+ "wall_s": 47.72115397453308,
+ "error_text": null
+}

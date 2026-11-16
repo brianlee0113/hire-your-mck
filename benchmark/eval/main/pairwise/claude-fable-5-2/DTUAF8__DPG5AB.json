@@ -1,0 +1,39 @@
+{
+ "x": "DTUAF8",
+ "y": "DPG5AB",
+ "case": "c1-market-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same argument: the US is worth entering, retail fails the limits, Amazon passes but payback hinges on ad cost, Japan is safe but small, $40M must be reset. X's chain is tighter: the 28.6% break-even leads directly to a 28% ceiling, which drops to about 27% if the duty rises, and each section summary feeds the governing thought. Y has an internal tension. It says Option A 'passes every financial test in the plan case', then tells the board to plan on 30–32% ACoS, where its own table shows payback is missed. Its stop trigger at 32% sits well above its own 28.6% break-even, and its tariff checkpoint ('absorb unless ACoS is above plan') ignores that the pilot is already above plan.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred recommendation: Amazon-led with gates, retail only above 20% awareness, $40M reset, Japan deferred. Both weigh Japan honestly: X shows Japan returns more cash above about 26% ACoS, and Y says Japan is the only option that pays back in every case. X's gates are calibrated to the board's payback constraint: a 28% ceiling, lowered to 27% on a duty rise, plus a repeat floor and an awareness gate. Y adds useful elements: a $4M envelope sized to the combined downside, a door test to measure the halo, and an explicit 'what would change our view'. But Y's triggers are looser than the constraint: ACoS between 28.6% and 32% breaks payback without tripping anything, and its planning base of 30–32% implies missing payback without saying so in the recommendation. X's weakness is that its remedy ('slow the ramp') also hurts payback through volume, which it only partly acknowledges.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the key's numbers accurately: unit contributions, B's $20.8M peak and 4.5% margin, A's cumulative cash of +2.4 / +0.4 / −2.3 at 25% / 28% / 32% ACoS, the 28.6% break-even, and the 17% vs 5% growth and 14.7% share. Both test the 4.5 units per door and 25% ACoS assumptions against the benchmarks, debunk the halo correlation, set aside the $5.2B figure, and treat the four competitor brands as direction, not proof. X goes further on the critical payback evidence: the tariff cuts break-even to 26.9% so the pilot case fails (−$0.7M), Japan beats A above 25.9% ACoS, and B corrected for halo and sell-through needs about $26M. Y adds a 30% case, a severe case, a 27.0% break-even at −10% volume, and correctly notes the pilot's month-on-month growth slowed. X instead extrapolates the pilot's monthly gains linearly to 366,000 units, though it hedges this as unproven. Y's 29% extrapolation to 2031–32 and its use of Saebom as a reach benchmark are mildly speculative but flagged. I checked the arithmetic in both and found no errors.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CEO's hypothesis as the key expects: keep with conditions. Each keeps the Amazon-first route, raises the retail awareness trigger from 15% to 20% using the 3.5 median against the 4.0 delisting line, replaces the 25% ACoS assumption, and resets the $40M ambition. X has an explicit from-to slide and adds a duty-adjusted ACoS ceiling. Y adds a door test before any national retail and a requirement that retail cover its own fixed costs. The difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong, defensible answers that meet all four defensibility criteria with correct numbers. X serves the board slightly better because its gates map directly onto the binding constraint, payback. It quantifies the ACoS–tariff interaction (26.9% break-even, pilot case fails) and it is consistent from break-even to ceiling to action. Y is tighter and offers valuable extras: the $4M envelope, the door test, the note on pilot deceleration, and an explicit 'what would change our view'. But Y's planning base of 30–32% ACoS and its 32% stop trigger tolerate a zone where the board's payback rule is broken, and its tariff checkpoint understates the risk given the pilot already runs at 28%.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.2429002000000002,
+ "wall_s": 52.254693269729614,
+ "error_text": null
+}

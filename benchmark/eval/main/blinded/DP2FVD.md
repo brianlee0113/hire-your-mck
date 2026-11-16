@@ -1,0 +1,835 @@
+## Part 1 · Normalised storyline
+
+**Governing thought:** Recommendation: do not launch Parcelbird Now in 2027; put the cash behind the software business instead
+
+**Executive summary:**
+1. Every order loses money in all the evidence we have. At the median of the 14 sites our software runs, an order loses $6.17 after site costs ($2.67 even before them). Our own Columbus pop-up lost $12.57 an order. The founders' +$2.02 needs all four main inputs better than the best site has achieved.
+2. The market is growing, but nobody in it makes money. US quick-commerce GMV grew 41.5% a year in 2022–25, yet Zipcart (−$1.90/order) and QuickBasket (−$3.40/order) both lose money. QuickBasket closed 4 of its 11 cities in 2025.
+3. The plan does not fit within our cash. Holding 12 months of runway leaves $7.2M to spend; the plan needs $9.5M to month 18, and even then it reaches only contribution breakeven, not profit. At median economics, nine stores lose ~$18M a year, more than the $12.0M in the bank.
+4. The software business is a better use of the same cash. About $0.8M a year of hires to work a 37-grocer pipeline (9 at late stage, ≈$0.86M of ARR). If 60% growth holds, our illustrative path breaks even around month 26 with ≈$4.9M still in the bank.
+5. Parcelbird can profit from quick commerce as the software supplier, without taking on the operator's losses.
+
+**Slides (title → claims → evidence):**
+
+- Slide 1: Should Parcelbird launch its own quick-commerce grocery delivery service in 2027?
+  - Claim: Recommendation: no. Do not launch Parcelbird Now in 2027; invest the cash in the software business instead
+  - Claim: Based only on the January 2027 briefing pack; no external research. The pack's figures are synthetic benchmark data.
+- Slide 2: Recommendation: do not launch Parcelbird Now in 2027; put the cash behind the software business instead
+  - Claim: Every order loses money in all the evidence we have.
+    - Evidence: At the median of the 14 sites our software runs, an order loses $6.17 after site costs ($2.67 even before them).
+    - Evidence: Our own Columbus pop-up lost $12.57 an order.
+    - Evidence: The founders' +$2.02 needs all four main inputs better than the best site has achieved.
+  - Claim: The market is growing, but nobody in it makes money.
+    - Evidence: US quick-commerce GMV grew 41.5% a year in 2022–25
+    - Evidence: Zipcart (−$1.90/order) and QuickBasket (−$3.40/order) both lose money
+    - Evidence: QuickBasket closed 4 of its 11 cities in 2025.
+  - Claim: The plan does not fit within our cash.
+    - Evidence: Holding 12 months of runway leaves $7.2M to spend; the plan needs $9.5M to month 18
+    - Evidence: even then it reaches only contribution breakeven, not profit
+    - Evidence: At median economics, nine stores lose ~$18M a year, more than the $12.0M in the bank.
+  - Claim: The software business is a better use of the same cash.
+    - Evidence: About $0.8M a year of hires to work a 37-grocer pipeline (9 at late stage, ≈$0.86M of ARR).
+    - Evidence: If 60% growth holds, our illustrative path breaks even around month 26 with ≈$4.9M still in the bank.
+  - Claim: Parcelbird can profit from quick commerce as the software supplier, without taking on the operator's losses.
+  - Claim: Decisions requested today
+    - Evidence: Decline the Parcelbird Now launch (nine dark stores in three cities) for 2027.
+    - Evidence: Approve about $0.8M a year for 2 engineers and 2 sales hires to scale the software business.
+    - Evidence: Direct management to scope a store-based fast-delivery offer for the grocers in our pipeline who want one.
+    - Evidence: Agree the evidence that would reopen the question (slide 13), gathered from customer sites rather than from our own stores.
+- Slide 3: Quick commerce is growing over 40% a year, as the founders say, but the operators in it are losing money
+  - Claim: Quick commerce is growing over 40% a year
+    - Evidence: US quick-commerce GMV: 2022 $1.8B, 2023 $2.6B, 2024 $3.6B, 2025 $5.1B
+    - Evidence: Year-on-year growth +44%, +38%, +42%; 2022–25 compound annual growth 41.5%
+  - Claim: Growth is real; profit is not. The national leader loses $1.90 on each order at about $1.2B of revenue.
+    - Evidence: Zipcart (national): Revenue $1,200M; EBITDA −$310M; EBITDA margin −26%; contribution per order −$1.90
+    - Evidence: QuickBasket (regional): Revenue $210M; EBITDA −$96M; EBITDA margin −46%; contribution per order −$3.40
+    - Evidence: QuickBasket closed 4 of its 11 cities (36%) in 2025.
+  - Claim: A fast-growing market tells us nothing about whether a new, smaller entrant can make money in it.
+  - Claim: “Nobody owns the Midwest”: the pack has no data on Midwest competitors. The regional operator's retreat suggests the gap may be about economics rather than opportunity.
+- Slide 4: At the benchmark median, every order loses $2.67 before site costs and $6.17 after them
+  - Claim: The order is underwater before rent.
+    - Evidence: Gross margin on goods (27% × $34) $9.18
+    - Evidence: Delivery fee, net +$1.99
+    - Evidence: Picking and packing −$3.10
+    - Evidence: Rider cost −$7.40
+    - Evidence: Payment and packaging −$1.30
+    - Evidence: Promotions (6% of AOV) −$2.04
+    - Evidence: Contribution before site costs −$2.67
+    - Evidence: Dark-store fixed cost −$3.50
+    - Evidence: Contribution after site costs −$6.17
+  - Claim: Rider cost is the largest cost: $7.40 an order, 22% of the basket.
+    - Evidence: Rider cost = $17.75 per hour ÷ 2.4 orders per rider-hour
+  - Claim: Density spreads the $1.15M fixed cost over more orders, but it cannot fix a negative variable margin. However many orders a site handles, the median order still loses $2.67.
+    - Evidence: Fixed = $1.15M ÷ (900 orders × 365 days)
+  - Claim: These are not hypothetical figures: they are the median of 14 sites running Parcelbird software today.
+    - Evidence: Parcelbird briefing pack, Table 3 (median of 14 software-customer sites, 2025)
+- Slide 5: The founders' plan turns positive only by beating the best site observed on all four main inputs at once
+  - Claim: The founders' plan requires inputs beyond the evidence on all four main inputs
+    - Evidence: Average order value: median $34, best $42, plan $45 — $3 above the best site
+    - Evidence: Orders per rider-hour: 2.4, 3.0, 3.5 — above the observed range (1.9–3.0)
+    - Evidence: Orders per site per day: 900, 1,400, 1,800 — above the observed range (400–1,400)
+    - Evidence: Promotions, % of AOV: 6%, 6%, 2% — one-third of the level at every site observed
+  - Claim: Contribution outcomes by case
+    - Evidence: Contribution before site costs, per order: −$2.67 / +$0.49 / +$3.77
+    - Evidence: Contribution after site costs, per order: −$6.17 / −$1.76 / +$2.02
+    - Evidence: Nine-store network, per year: −$18.2M / −$8.1M / +$11.9M
+  - Claim: Even at the best of each input, an order still loses $1.76 after site costs. The founders' plan has to beat that on all four inputs together.
+    - Evidence: “Best observed” takes the best value of each input. The best order value and the best density were at different sites; no site has achieved them together.
+- Slide 6: No single input closes the gap; the plan needs all four to move beyond anything observed
+  - Claim: Any one input alone, all others at benchmark median, cannot reach breakeven within observed ranges
+    - Evidence: Average order value: needed $63, best observed $42
+    - Evidence: Orders per rider-hour: needed 14.4, best observed 3.0
+    - Evidence: Orders per site per day: Not possible², best observed 1,400
+    - Evidence: Promotions cut to zero: −$4.13, n/a
+    - Evidence: ² The order loses money before site costs, so more volume cannot reach breakeven.
+  - Claim: Bridge from benchmark median to founders' plan, $ per order after site costs
+    - Evidence: Benchmark median −$6.17
+    - Evidence: AOV $34 → $45 +$2.31
+    - Evidence: Rider productivity 2.4 → 3.5/hr +$2.32
+    - Evidence: Density 900 → 1,800/day +$1.75
+    - Evidence: Promotions 6% → 2% +$1.80
+    - Evidence: Founders' plan $2.02
+  - Claim: Plan with one input set back to the evidence
+    - Evidence: Density at 1,400/day (best site) +$1.52
+    - Evidence: Promotions at 6% (every site observed) +$0.22
+    - Evidence: Riders at 2.4/hr (benchmark median) −$0.31
+    - Evidence: AOV at $34 (benchmark median) −$0.73
+- Slide 7: Our own Columbus pop-up did worse than the benchmark median on all four operating inputs, losing $12.57 an order
+  - Claim: The pop-up did worse than the benchmark median on all four operating inputs
+    - Evidence: Average order value: pop-up $31, median $34, plan $45
+    - Evidence: Promotions, % of AOV: 12%, 6%, 2%
+    - Evidence: Orders per rider-hour: 2.1, 2.4, 3.5
+    - Evidence: Orders per site per day: 280, 900, 1,800
+    - Evidence: Fixed cost per order: $6.36, $3.50, $1.75
+    - Evidence: Contribution before site costs: −$6.21, −$2.67, +$3.77
+    - Evidence: Contribution after site costs: −$12.57, −$6.17, +$2.02
+    - Evidence: Pop-up fixed cost = $650,000 a year ÷ (280 × 365)
+  - Claim: To be fair to the test: it ran for six weeks on a temporary site, and orders grew 18% a week. The site was running at about 410 orders a day by week six — the bottom of the benchmark range, less than a quarter of the plan's 1,800.
+    - Evidence: Working back from 11,800 orders
+  - Claim: The growth was bought with 12% promotions and a $38 acquisition cost.
+  - Claim: The founders argue that running the software makes us better operators. The one site we ran ourselves did worse than our customers' median on all four operating inputs.
+- Slide 8: Demand is shallower than the survey suggests, and at plan economics each customer takes over two years to pay back
+  - Claim: Stated intent overstates use
+    - Evidence: 44% of 1,500 Columbus residents aged 25–39 said they would use 15-minute delivery at least weekly
+    - Evidence: 22% of pop-up customers were still ordering in month three, at 3.1 orders a month (less than weekly)
+    - Evidence: $38 customer acquisition cost in the pop-up (paid social and first-order credits)
+  - Claim: Each customer acquired yields about 0.68 orders a month from month three (22% × 3.1). At the plan's +$2.02, recovering $38 takes about 19 orders.
+  - Claim: Months to recover the $38 acquisition cost
+    - Evidence: Founders' plan, before site costs: +$3.77/order — 15 months
+    - Evidence: Founders' plan, after site costs: +$2.02/order — 28 months
+    - Evidence: Benchmark median or pop-up: −$6.17 / −$12.57 per order — Never: every order adds to the loss
+  - Claim: A 12-month payback would need about 51% of customers still ordering at 3.1 a month: more than twice the pop-up's 22%.
+- Slide 9: Zipcart's one contribution-positive city shows the price: a $3.99 fee, almost no promotions and 14% fewer orders
+  - Claim: Contribution turned positive, at +$0.40 an order, in its densest city in Q4 2025, following a new $3.99 service fee on every order and a cut in promotions to 1% of order value.
+    - Evidence: Order volume in that city fell 14% afterwards.
+    - Evidence: Across the whole company, Zipcart still loses $1.90 an order.
+  - Claim: Pricing, not density, did the work. The precedent supports charging customers more. It does not support the founders' density-led plan.
+  - Claim: Zipcart's fix applied to our benchmark median is still negative at the median
+    - Evidence: Benchmark median −$6.17
+    - Evidence: $3.99 service fee +$3.99
+    - Evidence: Promotions 6% → 1% +$1.70
+    - Evidence: 14% fewer orders −$0.57
+    - Evidence: Benchmark with Zipcart's fix −$1.05
+    - Evidence: The 14% volume loss raises fixed cost per order from $3.50 to $4.07.
+  - Claim: The same fix at the best observed inputs gives about +$3.97, but no site has achieved those inputs together. Whether a fee holds volume can be tested at a customer's site without our own capital.
+- Slide 10: The plan breaks the 12-month runway rule even on its own numbers, and a new funding round is unlikely
+  - Claim: Cash available against the plan's requirement
+    - Evidence: Cash in the bank $12.0M
+    - Evidence: Reserve for 12 months' runway at today's $0.4M/month burn −$4.8M
+    - Evidence: Available to deploy $7.2M
+    - Evidence: Plan: cash needed to month 18 $9.5M
+    - Evidence: Shortfall: $2.3M
+  - Claim: If it includes today's burn: $2.5M left at month 18
+    - Evidence: That is about 5 months of runway at the plan's average burn. On even spending, the 12-month rule is broken around month 11.
+  - Claim: If it is on top of today's burn: cash runs out around month 13
+    - Evidence: Combined burn of ~$0.93M a month leaves a $4.7M deficit by month 18.
+  - Claim: Either way, month 18 is the plan's contribution breakeven, not company profitability, and the lead investor calls a new round “unlikely”.
+  - Claim: This is the most generous test: once the stores open, the burn rises and so does the 12-month reserve.
+    - Evidence: At the benchmark median, the nine stores would lose ~$18M a year in steady state.
+- Slide 11: Three further risks point the same way: rider pay rules, competing with our own customers, and a distracted core business
+  - Claim: Rider pay rules: Two of our three launch cities are considering minimum pay standards for delivery workers.
+    - Evidence: Every $1 an hour on rider cost adds $0.42 to each order at benchmark productivity.
+    - Evidence: Across nine stores at median volume, that is ≈$1.2M a year for each $1 an hour.
+    - Evidence: Rider cost is already the largest cost per order.
+  - Claim: Competing with our own customers: Parcelbird Now would run dark stores in the same cities as the grocers we sell software to.
+    - Evidence: Several pipeline grocers want to launch their own fast delivery, and Parcelbird would become their rival.
+    - Evidence: The 9 late-stage deals (≈$0.86M of ARR) are the most exposed.
+    - Evidence: The risk is untested: we recommend asking 2–3 customers directly before any future decision.
+  - Claim: A distracted core business: The software business has 81% gross margin and 60% growth, and needs only ~$0.8M a year to scale.
+    - Evidence: Parcelbird Now would commit 79% of our cash to an operating business with thin margins.
+    - Evidence: Founders' time would move from product and sales to rents, riders and stock.
+    - Evidence: A failed launch would put the software business at risk too.
+  - Claim: The founders' plan keeps rider cost at today's $17.75 an hour and does not price in either of the other two risks.
+  - Claim: Even if the unit economics worked, Parcelbird Now would expose us to higher rider costs, strain customer relationships and pull focus from a business that already works.
+- Slide 12: Backing the software business offers a path to profitability within current cash
+  - Claim: What we already have
+    - Evidence: $4.1M ARR, growing 60% a year, at 81% gross margin.
+    - Evidence: 37 grocers in the pipeline, 9 at late stage. At $96k per contract that is ≈$0.86M of late-stage ARR and ≈$3.55M if every deal closed.
+    - Evidence: Another year of 60% growth means ≈26 new contracts at $96k; the pipeline holds 37.
+  - Claim: Demand that fits the product: several pipeline grocers want fast delivery from their existing stores. Our software can serve the quick-commerce trend without us running stores.
+  - Claim: Cost: ≈$0.8M a year
+    - Evidence: 2 engineers and 2 sales hires. This raises the burn from $0.40M to ≈$0.47M a month.
+  - Claim: Illustrative cash balance by month
+    - Evidence: Software-first: breakeven ~month 26, $4.9M left
+    - Evidence: Parcelbird Now, $9.5M all-in: $2.5M at month 18, still burning
+    - Evidence: Parcelbird Now, $9.5M on top: −$4.7M at month 18
+  - Claim: Sensitivity: at 45% growth the software path breaks even ~month 32 with $3.1M left. Below ~35% it does not work within current cash (at 30%, cash runs out first).
+- Slide 13: Against the board's own tests, only the software-first option passes; Parcelbird Now should wait for evidence from customer sites
+  - Claim: A. Launch Parcelbird Now as proposed (9 stores, 3 cities) fails all four tests
+    - Evidence: Positive unit economics: Fails — −$6.17/order at median
+    - Evidence: Fits in cash: Fails — Needs $9.5M; $7.2M available
+    - Evidence: Path to profitability: Fails — Contribution breakeven only, at month 18
+    - Evidence: Risk to software business: Fails — High: competes with customers
+  - Claim: B. Smaller own-store test (1–2 Columbus stores)
+    - Evidence: Positive unit economics: Fails — Pop-up −$12.57; small sites carry more fixed cost per order
+    - Evidence: Fits in cash: Partly — Loses ≈$2.0M per store a year at median, plus $0.6M capex
+    - Evidence: Path to profitability: Fails — Adds losses; no route to profit by itself
+    - Evidence: Risk to software business: Partly — Medium: same conflict, smaller scale
+  - Claim: C. Software-first, with a store-based fast-delivery offer — Recommended; passes all four tests
+    - Evidence: Positive unit economics: Passes — 81% gross margin software
+    - Evidence: Fits in cash: Passes — +$0.8M/yr; runway rule holds
+    - Evidence: Path to profitability: Passes — Illustrative breakeven ~month 26 if growth ≥ ~35%
+    - Evidence: Risk to software business: Passes — Low: sells into the trend
+  - Claim: What would reopen the question
+    - Evidence: A customer site keeps positive contribution after site costs for two consecutive quarters.
+    - Evidence: A customer site adds a service fee and keeps most of its volume, which Zipcart's 14% loss did not.
+    - Evidence: Month-three retention near 51% (pop-up: 22%), which would recover the $38 acquisition cost within 12 months.
+    - Evidence: Rider minimum-pay rules in Columbus, Indianapolis and Kansas City are settled and their cost is known.
+- Slide 14: Even with the founders' rider and promotion assumptions, the order makes money only at basket sizes and densities no site has reached together
+  - Claim: At benchmark rider productivity and promotions, no combination of basket size and density is profitable, including the plan's $45 and 1,800 a day.
+    - Evidence: Benchmark (2.4/hr, 6%), columns 280/400/900/1,400/1,800 orders per day:
+    - Evidence: $31: −$14.55, −$11.17, −$6.80, −$5.55, −$5.05
+    - Evidence: $34: −$13.92, −$10.54, −$6.17, −$4.92, −$4.42
+    - Evidence: $42: −$12.24, −$8.86, −$4.49, −$3.24, −$2.74
+    - Evidence: $45: −$11.61, −$8.23, −$3.86, −$2.61, −$2.11
+  - Claim: With the founders' assumptions, the order turns positive only from about $42 and 1,400 a day, or $45 and 900, and no site has achieved those together.
+    - Evidence: Founders' (3.5/hr, 2%), columns 280/400/900/1,400/1,800 orders per day:
+    - Evidence: $31: −$10.98, −$7.61, −$3.23, −$1.98, −$1.48
+    - Evidence: $34: −$10.23, −$6.86, −$2.48, −$1.23, −$0.73
+    - Evidence: $42: −$8.23, −$4.86, −$0.48, +$0.77, +$1.27
+    - Evidence: $45: −$7.48, −$4.11, +$0.27, +$1.52, +$2.02
+    - Evidence: outlined cells are outside the range observed at the 14 sites (400–1,400 orders a day)
+- Slide 15: Per-order contribution, line by line, for the four cases used in this paper
+  - Claim: Per-order contribution for Columbus pop-up / Benchmark median / Best observed / Founders' plan
+    - Evidence: Gross margin on goods (27% of AOV): $8.37 / $9.18 / $11.34 / $12.15
+    - Evidence: + Delivery fee, net of payment cost: $1.99 in all cases
+    - Evidence: − Picking and packing labour: −$3.10 in all cases
+    - Evidence: − Rider cost ($17.75/hr ÷ orders per rider-hour): −$8.45 / −$7.40 / −$5.92 / −$5.07
+    - Evidence: − Payment processing and packaging: −$1.30 in all cases
+    - Evidence: − Promotions (% of AOV): −$3.72 / −$2.04 / −$2.52 / −$0.90
+    - Evidence: = Contribution before site costs: −$6.21 / −$2.67 / +$0.49 / +$3.77
+    - Evidence: − Dark-store fixed cost per order: −$6.36 / −$3.50 / −$2.25 / −$1.75
+    - Evidence: = Contribution after site costs: −$12.57 / −$6.17 / −$1.76 / +$2.02
+    - Evidence: Memo inputs: $31 / 2.1 / 280 / 12%; $34 / 2.4 / 900 / 6%; $42 / 3.0 / 1,400 / 6%; $45 / 3.5 / 1,800 / 2%
+    - Evidence: Pop-up fixed cost: $650,000 a year; all other cases $1.15M a year per site.
+- Slide 16: How the numbers were built, and the judgement calls made where the briefing pack was silent
+  - Claim: Contribution per order: AOV × 27% + $1.99 fee − picking − (rider cost per hour ÷ orders per rider-hour) − payment and packaging − promotions. After site costs also subtracts fixed cost ÷ (orders per day × 365).
+  - Claim: “Best observed” combines the best value of each input across sites, which flatters the case; no single site achieved them together.
+  - Claim: Network totals: Nine stores at steady state, 365 days a year; excludes head office, launch marketing, capex and ramp-up.
+  - Claim: The $9.5M: The pack does not say whether it includes today's $0.4M monthly burn. Both readings are shown; the recommendation holds under either.
+  - Claim: Runway rule: Tested at today's burn (the most favourable test for the plan). Spending is assumed even over 18 months, since the pack gives no phasing.
+  - Claim: Pop-up exit rate: Back-solved
+    - Evidence: 11,800 orders over six weeks at 18% weekly growth puts week one at ≈1,250 orders and week six at ≈2,860 (≈410 a day).
+  - Claim: Software path: Treat it as illustrative, not a forecast.
+    - Evidence: today's costs are ≈$0.68M a month ($0.28M gross profit + $0.40M burn), plus $0.07M a month for the hires
+    - Evidence: Breakeven ARR ≈$11.0M
+  - Claim: Option B: A smaller own-store test was added as a middle option for comparison; the founders did not propose it.
+
+**Recommendation:** Do not launch Parcelbird Now in 2027; put the cash behind the software business instead. Decline the Parcelbird Now launch (nine dark stores in three cities) for 2027; approve about $0.8M a year for 2 engineers and 2 sales hires to scale the software business; direct management to scope a store-based fast-delivery offer for the grocers in our pipeline who want one; agree the evidence that would reopen the question, gathered from customer sites rather than from our own stores.
+
+**Alternatives considered:**
+- A. Launch Parcelbird Now as proposed (9 stores, 3 cities): Rejected: fails all four tests — −$6.17/order at median; needs $9.5M with $7.2M available; contribution breakeven only, at month 18; high risk: competes with customers.
+- B. Smaller own-store test (1–2 Columbus stores): Rejected: considered as a middle option (not proposed by the founders). Fails unit economics (pop-up −$12.57; small sites carry more fixed cost per order); partly fits cash (loses ≈$2.0M per store a year at median, plus $0.6M capex); fails path to profitability (adds losses; no route to profit by itself); medium risk: same conflict, smaller scale.
+- C. Software-first, with a store-based fast-delivery offer: Recommended: passes all four tests — 81% gross margin software; +$0.8M/yr, runway rule holds; illustrative breakeven ~month 26 if growth ≥ ~35%; low risk: sells into the trend.
+- Zipcart-style fix (service fee and promotion cut): Applied to the benchmark median it is still negative (−$1.05); supports charging customers more but not the founders' density-led plan; whether a fee holds volume can be tested at a customer's site without our own capital.
+
+**Assumptions and uncertainties:**
+- Based only on the January 2027 briefing pack; no external research. The pack's figures are synthetic benchmark data.
+- Incumbents may define contribution per order differently from our model.
+- The pack has no data on Midwest competitors.
+- “Best observed” takes the best value of each input; no site has achieved them together, which flatters the case.
+- Annual figures are steady state for nine stores at 365 days, before head-office costs, launch marketing and ramp-up.
+- Bridge steps are applied in the order shown; changing the order changes the size of each step slightly but not the total.
+- Pop-up ran six weeks on a temporary site; exit rate (~410 orders a day) is back-solved from 11,800 orders at 18% weekly growth.
+- Payback assumes no further churn after month three, which flatters the result.
+- The pack does not say whether the $9.5M includes today's $0.4M monthly burn, so both readings are shown; the recommendation holds under either.
+- Runway rule tested at today's burn (most favourable to the plan); spending assumed even over 18 months since the pack gives no phasing.
+- The founders' plan keeps rider cost at today's $17.75 an hour; two of three launch cities are considering minimum pay standards.
+- Channel conflict is the team's judgement; the pack contains no direct customer reaction to Parcelbird Now. The risk is untested.
+- Software path is illustrative, not a forecast: burn = operating loss, other costs flat, growth compounds monthly. At 45% growth breakeven ~month 32 with $3.1M left; below ~35% it does not work within current cash.
+
+**Next steps:**
+- Hire the 2 engineers and 2 sales staff; prioritise the 9 late-stage grocers.
+- Scope a store-based fast-delivery module with 2–3 pipeline grocers.
+- Add site-level contribution reporting to the software, so the 14 customer sites track the reopening tests.
+- Bring a first read on the reopening tests to the board in Q3 2027.
+- Ask 2–3 customers directly about channel conflict before any future decision.
+
+## Part 2 · Full slide text (mechanical extraction)
+
+=== Slide 1 ===
+[Title] Should Parcelbird launch its own quick-commerce grocery delivery service in 2027?
+- BOARD PAPER  ·  JANUARY 2027
+- Recommendation: no. Do not launch Parcelbird Now in 2027; invest the cash in the software business instead
+- Prepared for the Parcelbird board (two founders, two investors).
+- Based only on the January 2027 briefing pack; no external research. The pack's figures are synthetic benchmark data.
+
+=== Slide 2 ===
+[Title] Recommendation: do not launch Parcelbird Now in 2027; put the cash behind the software business instead
+- EXECUTIVE SUMMARY
+
+- Every order loses money in all the evidence we have.
+- At the median of the 14 sites our software runs, an order loses $6.17 after site costs ($2.67 even before them). Our own Columbus pop-up lost $12.57 an order. The founders' +$2.02 needs all four main inputs better than the best site has achieved.
+- DECISIONS REQUESTED TODAY
+- Decline the Parcelbird Now launch (nine dark stores in three cities) for 2027.
+- Approve about $0.8M a year for 2 engineers and 2 sales hires to scale the software business.
+- Direct management to scope a store-based fast-delivery offer for the grocers in our pipeline who want one.
+- Agree the evidence that would reopen the question (slide 13), gathered from customer sites rather than from our own stores.
+
+- The market is growing, but nobody in it makes money.
+- US quick-commerce GMV grew 41.5% a year in 2022–25, yet Zipcart (−$1.90/order) and QuickBasket (−$3.40/order) both lose money. QuickBasket closed 4 of its 11 cities in 2025.
+
+- The plan does not fit within our cash.
+- Holding 12 months of runway leaves $7.2M to spend; the plan needs $9.5M to month 18, and even then it reaches only contribution breakeven, not profit. At median economics, nine stores lose ~$18M a year, more than the $12.0M in the bank.
+- The software business is a better use of the same cash.
+- About $0.8M a year of hires to work a 37-grocer pipeline (9 at late stage, ≈$0.86M of ARR). If 60% growth holds, our illustrative path breaks even around month 26 with ≈$4.9M still in the bank.
+
+- Parcelbird can profit from quick commerce as the software supplier, without taking on the operator's losses.
+- Source: Parcelbird briefing pack, January 2027; team analysis. All per-order figures are steady-state contribution after site costs unless stated.
+
+=== Slide 3 ===
+[Title] Quick commerce is growing over 40% a year, as the founders say, but the operators in it are losing money
+- MARKET
+- US quick-commerce grocery sales (GMV), $ billions
+- Incumbent operators, 2025
+
+- Operator
+- Revenue
+- EBITDA
+- EBITDA margin
+- Contribution per order
+- $5.1B
+- Zipcart (national)
+- $1,200M
+- −$310M
+- −26%
+- −$1.90
+- QuickBasket (regional)
+- $210M
+- −$96M
+- −46%
+- −$3.40
+
+- $3.6B
+- QuickBasket closed 4 of its 11 cities (36%) in 2025.
+- $2.6B
+- $1.8B
+- Growth is real; profit is not.
+- The national leader loses $1.90 on each order at about $1.2B of revenue. A fast-growing market tells us nothing about whether a new, smaller entrant can make money in it.
+- “Nobody owns the Midwest”: the pack has no data on Midwest competitors. The regional operator's retreat suggests the gap may be about economics rather than opportunity.
+
+- 2022
+- 2023
+- 2024
+- 2025
+- +44%
+- +38%
+- +42%
+- Year-on-year growth shown between bars; 2022–25 compound annual growth 41.5%
+- Source: Parcelbird briefing pack, January 2027; team analysis. EBITDA margin = EBITDA ÷ revenue. Incumbents may define contribution per order differently from our model.
+
+=== Slide 4 ===
+[Title] At the benchmark median, every order loses $2.67 before site costs and $6.17 after them
+- UNIT ECONOMICS: BENCHMARK
+- Contribution per order at benchmark-median inputs, $
+- The order is underwater before rent.
+- Rider cost is the largest cost: $7.40 an order, 22% of the basket.
+- Density spreads the $1.15M fixed cost over more orders, but it cannot fix a negative variable margin. However many orders a site handles, the median order still loses $2.67.
+- These are not hypothetical figures: they are the median of 14 sites running Parcelbird software today.
+- $12
+- +$1.99
+- −$3.10
+- $9
+- $9.18
+- −$7.40
+- $6
+- $3
+- $0
+- −$1.30
+- −$2.04
+- −$3
+- −$2.67
+- −$3.50
+- −$6
+- −$6.17
+- Gross margin on goods (27% × $34)
+- Delivery fee, net
+- Picking and packing
+- Rider cost
+- Payment and packaging
+- Promotions (6% of AOV)
+- Contribution before site costs
+- Dark-store fixed cost
+- Contribution after site costs
+- Source: Parcelbird briefing pack, Table 3 (median of 14 software-customer sites, 2025); team analysis. Rider cost = $17.75 per hour ÷ 2.4 orders per rider-hour. Fixed = $1.15M ÷ (900 orders × 365 days).
+
+=== Slide 5 ===
+[Title] The founders' plan turns positive only by beating the best site observed on all four main inputs at once
+- UNIT ECONOMICS: FOUNDERS' PLAN
+- Benchmark median
+- Best observed site¹
+- Founders' plan
+- Plan versus the evidence
+- Average order value
+- $34
+- $42
+- $45
+- $3 above the best site
+- Orders per rider-hour
+- 2.4
+- 3.0
+- 3.5
+- Above the observed range (1.9–3.0)
+- Orders per site per day
+
+- 1,400
+- 1,800
+- Above the observed range (400–1,400)
+- Promotions, % of AOV
+- 6%
+- 6%
+- 2%
+- One-third of the level at every site observed
+- Contribution before site costs, per order
+- −$2.67
+- +$0.49
+- +$3.77
+- Contribution after site costs, per order
+- −$6.17
+- −$1.76
+- +$2.02
+- Nine-store network, per year
+- −$18.2M
+- −$8.1M
+- +$11.9M
+- ¹ “Best observed” takes the best value of each input. The best order value and the best density were at different sites; no site has achieved them together.
+- Even at the best of each input, an order still loses $1.76 after site costs. The founders' plan has to beat that on all four inputs together.
+- Source: Parcelbird briefing pack, January 2027; team analysis. Annual figures are steady state for nine stores at 365 days, before head-office costs, launch marketing and ramp-up.
+
+=== Slide 6 ===
+[Title] No single input closes the gap; the plan needs all four to move beyond anything observed
+- UNIT ECONOMICS: WHAT IT WOULD TAKE
+- Benchmark median to founders' plan, $ per order after site costs
+- Any one input alone, all others at benchmark median
+- To break even, would need…
+- Needed
+- Best observed
+- $2.02
+- Average order value
+- $63
+- $42
+- $2
+- +$1.80
+- Orders per rider-hour
+- 14.4
+- 3.0
+- Orders per site per day
+- Not possible²
+- 1,400
+- $0
+- +$1.75
+- Promotions cut to zero
+- −$4.13
+- n/a
+- −$2
+- +$2.32
+- ² The order loses money before site costs, so more volume cannot reach breakeven.
+- Plan with one input set back to the evidence
+- −$4
+- +$2.31
+- Plan, except…
+- Per order
+- Promotions at 6% (every site observed)
+- +$0.22
+- −$6
+- −$6.17
+- Riders at 2.4/hr (benchmark median)
+- −$0.31
+- AOV at $34 (benchmark median)
+- −$0.73
+- Benchmark median
+- AOV $34 → $45
+- Rider productivity 2.4 → 3.5/hr
+- Density 900 → 1,800/day
+- Promotions 6% → 2%
+- Founders' plan
+- Density at 1,400/day (best site)
+- +$1.52
+- Source: Parcelbird briefing pack, January 2027; team analysis. Bridge steps are applied in the order shown; changing the order changes the size of each step slightly but not the total.
+
+=== Slide 7 ===
+[Title] Our own Columbus pop-up did worse than the benchmark median on all four operating inputs, losing $12.57 an order
+- COLUMBUS POP-UP TEST
+- Columbus pop-up
+- Benchmark median
+- Founders' plan
+- To be fair to the test
+- It ran for six weeks on a temporary site, and orders grew 18% a week. Working back from 11,800 orders, the site was running at about 410 orders a day by week six. That is the bottom of the benchmark range, less than a quarter of the plan's 1,800.
+- Average order value
+- $31
+- $34
+- $45
+- Promotions, % of AOV
+- 12%
+- 6%
+- 2%
+- Orders per rider-hour
+- 2.1
+- 2.4
+- 3.5
+- Orders per site per day
+
+- 1,800
+- Fixed cost per order
+- $6.36
+- $3.50
+- $1.75
+- What it tells us
+- The growth was bought with 12% promotions and a $38 acquisition cost. The founders argue that running the software makes us better operators. The one site we ran ourselves did worse than our customers' median on all four operating inputs.
+- Contribution before site costs
+- −$6.21
+- −$2.67
+- +$3.77
+- Contribution after site costs
+- −$12.57
+- −$6.17
+- +$2.02
+- Source: Parcelbird briefing pack, section 7 (six weeks, one temporary site, autumn 2026); team analysis. Pop-up fixed cost = $650,000 a year ÷ (280 × 365).
+
+=== Slide 8 ===
+[Title] Demand is shallower than the survey suggests, and at plan economics each customer takes over two years to pay back
+- CUSTOMERS
+- WHAT PEOPLE SAY
+- WHAT CUSTOMERS DID
+- WHAT IT COST
+- 44%
+- 22%
+- $38
+- of 1,500 Columbus residents aged 25–39 said they would use 15-minute delivery at least weekly
+- of pop-up customers were still ordering in month three, at 3.1 orders a month (less than weekly)
+- customer acquisition cost in the pop-up (paid social and first-order credits)
+- Months to recover the $38 acquisition cost
+- Stated intent overstates use
+- Each customer acquired yields about 0.68 orders a month from month three (22% × 3.1). At the plan's +$2.02, recovering $38 takes about 19 orders.
+- A 12-month payback would need about 51% of customers still ordering at 3.1 a month: more than twice the pop-up's 22%.
+- Founders' plan, before site costs
+- +$3.77/order
+- 15 months
+- Founders' plan, after site costs
+- +$2.02/order
+- 28 months
+- Benchmark median or pop-up
+- −$6.17 / −$12.57 per order
+- Never: every order adds to the loss
+- Source: Parcelbird briefing pack, section 8; team analysis. Payback assumes no further churn after month three, which flatters the result.
+
+=== Slide 9 ===
+[Title] Zipcart's one contribution-positive city shows the price: a $3.99 fee, almost no promotions and 14% fewer orders
+- THE ZIPCART PRECEDENT
+- What happened at Zipcart
+- Zipcart's fix applied to our benchmark median, contribution per order after site costs, $
+- Contribution turned positive, at +$0.40 an order, in its densest city in Q4 2025.
+- That followed a new $3.99 service fee on every order and a cut in promotions to 1% of order value.
+- Order volume in that city fell 14% afterwards.
+- Across the whole company, Zipcart still loses $1.90 an order.
+- $0
+- +$1.70
+- −$0.57
+- −$1.05
+- −$2
+- +$3.99
+- −$4
+- −$6
+- −$6.17
+- Pricing, not density, did the work
+- The precedent supports charging customers more. It does not support the founders' density-led plan.
+- Benchmark median
+- $3.99 service fee
+- Promotions 6% → 1%
+- 14% fewer orders
+- Benchmark with Zipcart's fix
+- Still negative at the median. The same fix at the best observed inputs gives about +$3.97, but no site has achieved those inputs together. Whether a fee holds volume can be tested at a customer's site without our own capital.
+- Source: Parcelbird briefing pack, section 11 (founders' investor update; Zipcart shareholder letter); team analysis. The 14% volume loss raises fixed cost per order from $3.50 to $4.07.
+
+=== Slide 10 ===
+[Title] The plan breaks the 12-month runway rule even on its own numbers, and a new funding round is unlikely
+- CASH AND RUNWAY
+- Cash available against the plan's requirement, $M
+- Two readings of the $9.5M
+- Cash in the bank
+- If it includes today's burn: $2.5M left at month 18
+- That is about 5 months of runway at the plan's average burn. On even spending, the 12-month rule is broken around month 11.
+- $12.0M
+- Reserve for 12 months' runway at today's $0.4M/month burn
+- −$4.8M
+- Available to deploy
+- If it is on top of today's burn: cash runs out around month 13
+- Combined burn of ~$0.93M a month leaves a $4.7M deficit by month 18.
+- $7.2M
+- Plan: cash needed to month 18
+- $9.5M
+- Shortfall: $2.3M
+- Either way, month 18 is the plan's contribution breakeven, not company profitability, and the lead investor calls a new round “unlikely”.
+- This is the most generous test: once the stores open, the burn rises and so does the 12-month reserve. At the benchmark median, the nine stores would lose ~$18M a year in steady state.
+- Source: Parcelbird briefing pack, sections 1, 3 and 9; team analysis. The pack does not say whether the $9.5M includes today's $0.4M monthly burn, so both readings are shown. Month-18 runway uses the plan's average burn.
+
+=== Slide 11 ===
+[Title] Three further risks point the same way: rider pay rules, competing with our own customers, and a distracted core business
+- FURTHER RISKS
+- Rider pay rules
+- Competing with our own customers
+- A distracted core business
+- Two of our three launch cities are considering minimum pay standards for delivery workers.
+- Parcelbird Now would run dark stores in the same cities as the grocers we sell software to.
+- The software business has 81% gross margin and 60% growth, and needs only ~$0.8M a year to scale.
+- Every $1 an hour on rider cost adds $0.42 to each order at benchmark productivity.
+- Across nine stores at median volume, that is ≈$1.2M a year for each $1 an hour.
+- Rider cost is already the largest cost per order.
+- Several pipeline grocers want to launch their own fast delivery, and Parcelbird would become their rival.
+- The 9 late-stage deals (≈$0.86M of ARR) are the most exposed.
+- The risk is untested: we recommend asking 2–3 customers directly before any future decision.
+- Parcelbird Now would commit 79% of our cash to an operating business with thin margins.
+- Founders' time would move from product and sales to rents, riders and stock.
+- A failed launch would put the software business at risk too.
+- The founders' plan keeps rider cost at today's $17.75 an hour and does not price in either of the other two risks.
+- Even if the unit economics worked, Parcelbird Now would expose us to higher rider costs, strain customer relationships and pull focus from a business that already works.
+- Source: Parcelbird briefing pack, January 2027; team analysis. Channel conflict is the team's judgement; the pack contains no direct customer reaction to Parcelbird Now.
+
+=== Slide 12 ===
+[Title] Backing the software business offers a path to profitability within current cash
+- THE ALTERNATIVE
+- What we already have
+- Illustrative cash balance by month, $M
+- $4.1M ARR, growing 60% a year, at 81% gross margin.
+- 37 grocers in the pipeline, 9 at late stage. At $96k per contract that is ≈$0.86M of late-stage ARR and ≈$3.55M if every deal closed.
+- Another year of 60% growth means ≈26 new contracts at $96k; the pipeline holds 37.
+- Demand that fits the product: several pipeline grocers want fast delivery from their existing stores. Our software can serve the quick-commerce trend without us running stores.
+
+- Software-first
+- breakeven ~month 26, $4.9M left
+
+- Parcelbird Now, $9.5M all-in
+- $2.5M at month 18, still burning
+
+- Cost: ≈$0.8M a year
+- 2 engineers and 2 sales hires. This raises the burn from $0.40M to ≈$0.47M a month.
+- −3
+- Parcelbird Now, $9.5M on top
+- −$4.7M at month 18
+- −6
+
+- Months from launch decision
+- Sensitivity: at 45% growth the software path breaks even ~month 32 with $3.1M left. Below ~35% it does not work within current cash (at 30%, cash runs out first).
+- Source: Parcelbird briefing pack, sections 1 and 10; team analysis. Illustrative: burn = operating loss, other costs flat, growth compounds monthly; Now lines assume even spending.
+
+=== Slide 13 ===
+[Title] Against the board's own tests, only the software-first option passes; Parcelbird Now should wait for evidence from customer sites
+- OPTIONS AND RECOMMENDATION
+- Option
+- Positive unit economics on the evidence
+- Fits in cash with ≥12 months' runway
+- Path to profitability without a new round
+- Risk to the software business
+- A. Launch Parcelbird Now as proposed
+- 9 stores, 3 cities
+- Fails
+- −$6.17/order at median
+- Fails
+- Needs $9.5M; $7.2M available
+- Fails
+- Contribution breakeven only, at month 18
+- Fails
+- High: competes with customers
+- B. Smaller own-store test
+- 1–2 Columbus stores
+- Fails
+- Pop-up −$12.57; small sites carry more fixed cost per order
+- Partly
+- Loses ≈$2.0M per store a year at median, plus $0.6M capex
+- Fails
+- Adds losses; no route to profit by itself
+- Partly
+- Medium: same conflict, smaller scale
+- C. Software-first, with a store-based fast-delivery offer
+- Recommended
+- Passes
+- 81% gross margin software
+- Passes
+- +$0.8M/yr; runway rule holds
+- Passes
+- Illustrative breakeven ~month 26 if growth ≥ ~35%
+- Passes
+- Low: sells into the trend
+- What would reopen the question
+- Next 90 days if the board agrees
+- A customer site keeps positive contribution after site costs for two consecutive quarters.
+- A customer site adds a service fee and keeps most of its volume, which Zipcart's 14% loss did not.
+- Month-three retention near 51% (pop-up: 22%), which would recover the $38 acquisition cost within 12 months.
+- Rider minimum-pay rules in Columbus, Indianapolis and Kansas City are settled and their cost is known.
+- Hire the 2 engineers and 2 sales staff; prioritise the 9 late-stage grocers.
+- Scope a store-based fast-delivery module with 2–3 pipeline grocers.
+- Add site-level contribution reporting to the software, so the 14 customer sites track the reopening tests.
+- Bring a first read on the reopening tests to the board in Q3 2027.
+- Source: Parcelbird briefing pack, January 2027; team analysis. A smaller test of our own (one or two stores) was considered as a middle option. Each symbol carries a label, so the table does not rely on colour.
+
+=== Slide 14 ===
+[Title] Even with the founders' rider and promotion assumptions, the order makes money only at basket sizes and densities no site has reached together
+- APPENDIX A1: SENSITIVITY
+- Benchmark rider productivity (2.4/hr) and promotions (6%)
+- Founders' rider productivity (3.5/hr) and promotions (2%)
+- Orders per site per day
+- Orders per site per day
+- AOV
+
+- 1,400
+- 1,800
+- AOV
+
+- 1,400
+- 1,800
+- $31
+- −$14.55
+- −$11.17
+- −$6.80
+- −$5.55
+- −$5.05
+- $31
+- −$10.98
+- −$7.61
+- −$3.23
+- −$1.98
+- −$1.48
+- $34
+- −$13.92
+- −$10.54
+- −$6.17
+- −$4.92
+- −$4.42
+- $34
+- −$10.23
+- −$6.86
+- −$2.48
+- −$1.23
+- −$0.73
+- $42
+- −$12.24
+- −$8.86
+- −$4.49
+- −$3.24
+- −$2.74
+- $42
+- −$8.23
+- −$4.86
+- −$0.48
+- +$0.77
+- +$1.27
+- $45
+- −$11.61
+- −$8.23
+- −$3.86
+- −$2.61
+- −$2.11
+- $45
+- −$7.48
+- −$4.11
+- +$0.27
+- +$1.52
+- +$2.02
+- How to read it
+- Rows $31 (pop-up), $34 (median), $42 (best), $45 (plan). Columns 280 (pop-up), 400 and 1,400 (ends of the observed range), 900 (median), 1,800 (plan). Cells outlined in grey sit outside the observed density range.
+- At benchmark rider productivity and promotions, no combination of basket size and density is profitable, including the plan's $45 and 1,800 a day. With the founders' assumptions, the order turns positive only from about $42 and 1,400 a day, or $45 and 900, and no site has achieved those together.
+- Source: Parcelbird briefing pack, January 2027; team analysis. Cells show contribution per order after site costs ($); outlined cells are outside the range observed at the 14 sites (400–1,400 orders a day).
+
+=== Slide 15 ===
+[Title] Per-order contribution, line by line, for the four cases used in this paper
+- APPENDIX A2: UNIT ECONOMICS DETAIL
+- $ per order
+- Columbus pop-up
+- Benchmark median
+- Best observed¹
+- Founders' plan
+- Gross margin on goods (27% of AOV)
+- $8.37
+- $9.18
+- $11.34
+- $12.15
+- + Delivery fee, net of payment cost
+- $1.99
+- $1.99
+- $1.99
+- $1.99
+- − Picking and packing labour
+- −$3.10
+- −$3.10
+- −$3.10
+- −$3.10
+- − Rider cost ($17.75/hr ÷ orders per rider-hour)
+- −$8.45
+- −$7.40
+- −$5.92
+- −$5.07
+- − Payment processing and packaging
+- −$1.30
+- −$1.30
+- −$1.30
+- −$1.30
+- − Promotions (% of AOV)
+- −$3.72
+- −$2.04
+- −$2.52
+- −$0.90
+- = Contribution before site costs
+- −$6.21
+- −$2.67
+- +$0.49
+- +$3.77
+- − Dark-store fixed cost per order
+- −$6.36
+- −$3.50
+- −$2.25
+- −$1.75
+- = Contribution after site costs
+- −$12.57
+- −$6.17
+- −$1.76
+- +$2.02
+- Memo: inputs (AOV / orders per rider-hour / orders per day / promotions)
+- $31 / 2.1 / 280 / 12%
+- $34 / 2.4 / 900 / 6%
+- $42 / 3.0 / 1,400 / 6%
+- $45 / 3.5 / 1,800 / 2%
+- ¹ The best value of each input, which no single site achieved. Pop-up fixed cost: $650,000 a year; all other cases $1.15M a year per site. Delivery fee and payment and packaging are the same in all cases.
+- Source: Parcelbird briefing pack, Table 3 and section 7; team analysis.
+
+=== Slide 16 ===
+[Title] How the numbers were built, and the judgement calls made where the briefing pack was silent
+- APPENDIX A3: METHOD AND JUDGEMENT CALLS
+- Contribution per order
+- AOV × 27% + $1.99 fee − picking − (rider cost per hour ÷ orders per rider-hour) − payment and packaging − promotions. After site costs also subtracts fixed cost ÷ (orders per day × 365).
+- “Best observed”
+- Combines the best value of each input across sites, which flatters the case; no single site achieved them together.
+- Network totals
+- Nine stores at steady state, 365 days a year; excludes head office, launch marketing, capex and ramp-up.
+- Incumbent comparison
+- Zipcart and QuickBasket contribution figures are from the pack; their definitions may differ from ours.
+- The $9.5M
+- The pack does not say whether it includes today's $0.4M monthly burn. Both readings are shown; the recommendation holds under either.
+- Runway rule
+- Tested at today's burn (the most favourable test for the plan). Spending is assumed even over 18 months, since the pack gives no phasing.
+- Pop-up exit rate
+- Back-solved: 11,800 orders over six weeks at 18% weekly growth puts week one at ≈1,250 orders and week six at ≈2,860 (≈410 a day).
+- Software path
+- Burn is taken as operating loss, so today's costs are ≈$0.68M a month ($0.28M gross profit + $0.40M burn), plus $0.07M a month for the hires. Other costs are held flat and ARR growth compounds monthly. Breakeven ARR ≈$11.0M. Treat it as illustrative, not a forecast.
+- Option B
+- A smaller own-store test was added as a middle option for comparison; the founders did not propose it.
+- Source: Parcelbird briefing pack, January 2027. All figures in the pack are synthetic benchmark data; no external research was used.

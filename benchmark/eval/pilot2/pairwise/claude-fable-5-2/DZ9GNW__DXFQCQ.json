@@ -1,0 +1,39 @@
+{
+ "x": "DZ9GNW",
+ "y": "DXFQCQ",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents run diagnosis, options, plan, guardrails and decisions, and in both the titles are backed by the evidence beneath them. Y's is slightly tighter: an answer-first summary with four numbered pillars that map onto its four sections, and one base/downside frame carried through the value, options, bridge and plan slides. X's 11-point summary is more of a list and carries a tension: it calls the promotion cohort 'an onboarding problem', yet also says the cohort left on the jump to full price and that 'price would accelerate it'. X's slide 10 title asserts onboarding 'can bring SMB churn back to about 2.1%' while the body caveats that this is an upper bound. Y has small blemishes of its own: the governing thought says '+10% for mid-market and enterprise' although most enterprise ARR is capped at 7%, and 'every signal points the same way' overstates given the unexplained mid-market churn rise.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The two recommendations are almost identical and both meet the key's R1/R2: mid-market +10%, enterprise within caps, hold SMB with a gated +8% test, no rise for the promotion cohort, tripwires. The difference is in how alternatives are weighed. Y sets out four options, including 'hold all prices', with base and downside net ARR for each. That shows the CFO's plan and the recommended plan converge at about $2.0M in the downside, so the CFO's extra $1.2M is a bet on SMB sensitivity being unchanged since Inkwell. Y also separates Inkwell's effect on acquisition from its effect on retention, and so tests the SMB price on new sign-ups as well as renewals. X weighs the trade-off honestly ($0.8–2.0M less on paper in exchange for not betting the SMB base) and adds a useful power calculation for the SMB test and a 'can we read churn in 2027' argument. But X models no churn response for mid-market or enterprise and no baseline attrition, so its 14.2% growth and $0.6M gap to target are optimistic next to Y's 12.8% and $1.9M.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: implied promotion-cohort churn of 4.9%, a mix effect of about 1.0 of 1.1 points, $7.57M before churn response, break-even of 10.7%, the 2023 response of 3.6% scaled to 5.4%, and the dashboard figure that reconciles to neither 1.7→2.6% nor 0.8→1.2%. I checked Y's segment model and X's bridges and found no arithmetic errors. X is the more restrained: it uses the 2024 new-sign-up test only qualitatively and says plainly that mid-market and enterprise reactions are not modelled. Its weaknesses are a gross uplift that ignores customers who churn before repricing, and a claim that the cohort is 'an onboarding problem' that goes beyond the 52% price citations and the timing of exits. Y uses the critical evidence more deeply. Its activation decomposition (the 3× churn ratio explains only about 30% of the cohort's excess churn) tests the CFO's claim directly, and it also derives the 56% share of churners, the survivorship adjustment and a cross-check on the survey mix. But Y builds on shaky inferences: a renewal elasticity taken from a statistically insignificant new-sign-up conversion gap, a 2.9× multiplier for the cohort taken from survey shares, and a headline that the $10.3M 'is really ~$4.2M' with false precision. These are flagged and stress-tested, but they are still model artefacts. The strengths and weaknesses roughly offset.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "The key expects the CFO's hypothesis to be revised by reconciling both views: the churn rise is mostly cohort mix (the CFO is right), but that cohort leaves over price when the discount ends and SMB is now price-competitive (the CEO is right). Y does this explicitly. It calls the CFO 'half right', shows by decomposition that activation explains only about 30% of the cohort's excess churn with the rest a reaction to the discount ending, corrects the $10.3M, and rejects the uniform 12%. It also dismisses the Customer Success 'halve churn' claim with numbers ($0.3M from full activation, $1.0M at most). Y's slide 3 does test a hypothesis of its own rather than the pack's, but it shows real updating: the January SMB rise becomes test-first. X also corrects the $10.3M, replaces the flat 12% and tempers the 'halve churn' claim. But it leans further towards the CFO's diagnosis than the evidence supports ('the CFO is right that this is mostly an onboarding problem'; 'the promotion cohort is an onboarding problem'). It treats the price signal mainly as a reason not to raise prices for the cohort, not as part of the diagnosis.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both documents reach the same defensible segmented recommendation, avoid every trap in the key and give the CEO clear decisions with guardrails. Y would serve the CEO somewhat better for four reasons: it reconciles the CFO's and CEO's views more accurately (onboarding and price each quantified); it compares options on base and downside and shows the CFO's plan has no downside advantage; it gives a more realistic picture of the gap to 15% ($1.9M against X's $0.6M); and it separates Inkwell's effect on acquisition from its effect on retention. X is leaner, more transparent about what it has not modelled, and has the better-specified SMB test. But its 'onboarding problem' framing and its gross uplift figures are a little less faithful to the evidence. Y's weakness is modelled precision resting on thin elasticity assumptions, which its downside case and caveats partly offset.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0813402,
+ "wall_s": 69.90489506721497,
+ "error_text": null
+}

@@ -1,0 +1,203 @@
+{
+ "blind_id": "DQ9QG6",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed, with the board's two tests (profit within the cash, 12 months of runway) as explicit criteria. Sub-questions are sensible and turn on the right issues: per-order economics, Columbus evidence, runway, and the alternative use of cash. Small flaws: the software roadmap is listed as out of scope yet it is the recommendation, and it adds a 'contribution by month 18' criterion that is the founders' claim, not the board's.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the five summary points and the five sections line up. Slide titles are claims and the evidence supports them. The logic runs from market growth, to per-order loss, to Columbus, to cash, to the alternative. Weaknesses: heavy repetition (slides 9, 11, 21 and 42 repeat the same table; four Contents slides) and the appendix duplicates body content.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The core numbers check out: median -6.17, best observed -1.76, pop-up -12.57, plan +2.02, runway 2.5M ≈ 6 months, Zipcart-fix -1.05 and -0.48, break-even AOV 63.4, and the software break-even and pipeline maths. It handles the Zipcart evidence carefully, including the volume loss. Gaps: it does not compute contribution at best density alone (about -3.44) or the break-even AOV at best density (about $50). It does not compute the Zipcart-fee case at best density (about +$2.25). The $13.7M acquisition estimate rests on a shaky 'regulars ÷ 22%' construction. A few claims are overstated, such as 'at no cost to Parcelbird' and '25 months of runway'. It never names the 18% weekly growth as promotion-fuelled.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Clear no-launch recommendation that fits the key's R1. The software alternative is quantified, and the store-based fast-delivery module sells picks and shovels to grocers who want delivery. Four re-entry tests with status and gates act as kill criteria. It sets out the trade-offs and risks, including that the software path depends on 60% growth (cash falls under the floor at 30% growth). It avoids all the traps, including the Zipcart one and the runway one. It does not consider a capped test, but that is not required.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slides 1–3 and the language is plain. But 48 slides and about 7,300 words are well beyond what the decision needs. There are four repeated Contents slides, and the same unit-economics table recurs several times. Many appendix slides add little.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Customer sites running the store-based module will generate this evidence at no cost to Parcelbird",
+    "why": "Overclaims. Building and piloting the module costs engineering time, and nothing shows that customer sites will share or yield the data."
+   },
+   {
+    "quote": "A grocer would hesitate to run its stores on a rival's software",
+    "why": "Asserted as fact about the pipeline grocers. The pack gives no evidence of this."
+   },
+   {
+    "quote": "Bigger baskets work against the quick top-up use",
+    "why": "The pack lists this only as an uncertainty and gives no evidence."
+   },
+   {
+    "quote": "about 25 months of runway at the end of 2027",
+    "why": "The derivation is not shown and does not follow clearly from the stated $7.4M cash and the 2028 loss."
+   },
+   {
+    "quote": "Filling nine stores to the median would cost about $13.7M in customer acquisition",
+    "why": "The figure is built by dividing the regulars needed by the 22% month-3 retention rate. That treats every non-retained customer as pure waste and ignores their orders, so the estimate is shaky. It is presented as a headline claim that 'density cannot be bought'."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Out of scope: ... The software product roadmap",
+    "quote_b": "fund four software hires and sell store-based fast delivery to grocers",
+    "why": "The recommendation centres on a software roadmap addition (a store-based delivery module), which the framing slide lists as out of scope. This is minor."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "partial"
+   },
+   {
+    "id": "K3",
+    "reached": "partial"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "partly_correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Fund four software hires, close the 9 late-stage grocers, and sell store-based fast delivery to grocers. Reopen an own service only if four re-entry tests are met.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches R1. It computes per-order contribution under benchmark and best inputs, separates market growth from profitability, checks the runway constraint (about 6 months against the 12-month floor), and offers the software alternative with explicit gates. It also covers the Zipcart fee evidence and the risk to the software path."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It accepts the growth claim ('founders are right about growth') but rejects the profitability claim. It shows the plan needs every input beyond the best observed site, and that Zipcart's positive city came from a fee and a promotion cut and was followed by a 14% volume fall. It states its assumptions and the pack's gaps, such as the missing city-level rival data and the unclear $9.5M reading. It does not describe the pop-up's weekly growth as promotion-driven."
+  },
+  "overall_comment": "This is a strong, accurate deck with a defensible, well-gated recommendation. The core calculations are correct and the Zipcart, runway and software-alternative points are handled well. It misses the best-density-only and break-even-AOV-at-best-density calculations. It also leans on a questionable acquisition-cost estimate and a few overclaims. It is much longer than needed, with repeated slides and appendix material.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.2072444,
+ "wall_s": 40.16592311859131,
+ "is_error": false,
+ "error_text": null
+}

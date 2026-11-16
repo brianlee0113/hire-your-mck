@@ -1,0 +1,39 @@
+{
+ "x": "DB9CX7",
+ "y": "DRT5H8",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean pyramid from a segmented governing thought through four supporting points. X maps four sub-questions to four sections, and each summary line is backed by a slide whose title states the same claim. Its one loose end is that the governing thought makes SMB wait until the cohort is 'fixed', while the plan rolls out on the test result alone. Y is equally tight and adds a hypothesis-test slide linking evidence to verdicts. Its flaw is that the summary headline says churn is 'not because customers are reacting to price', while slide 5 says the promotion cohort left over price. The flaws are of similar size.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's preferred recommendation (R1/R2): raise mid-market and enterprise, hold SMB, exempt the promotion cohort, and run a randomised 8% test on core SMB with a break-even rule. X keeps mid-market at the tested 10% and enterprise at 7%, which is conservative and anchored to evidence, but it compares options on a single case and assumes no mid-market churn response. Y compares no increase, uniform 12%, targeted, and a 10% variant on base and downside values, SMB exposure, Inkwell premium and new-customer ARR needed. That makes the trade-off explicit: about $1.0M of base case given up for a higher downside floor. Y's choice of 12% in mid-market goes beyond the tested level and rests on its own linear assumption, and its 1.0% churn trigger would be noisy on one quarter of renewals. It does name that risk and provides a fallback to 10%. Y weighs the alternatives more fully; X's level is safer.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the critical calculations correctly: promotion-cohort churn of about 4.9%, the 91% mix share, both churn blends against the undefined dashboard figure, about $7.6M repriceable ARR, the 7.4% break-even for an 8% rise, and the 30% activation share. X adds few assumptions of its own and footnotes that the 2025 survey figure is for all SMB, not core. Its weakness is assuming zero mid-market and enterprise churn response 'as in the 2024 test', which leans on the new-sign-up test, though it flags this. Y cross-checks the cohort estimate against the exit-survey mix (47% vs 56%), flags the unexplained mid-market churn rise, applies churn haircuts and a doubled downside everywhere, and checks the statistical power of the SMB test. But its mid-market and enterprise elasticities are built by transplanting the 2023 SMB reaction and treating a non-significant conversion gap as a churn rate. Its power calculation also assumes all 3,800 core accounts renew in Q1, and it states the 19% to 18% core comparison without X's caveat. Y's richer use of evidence is offset by more constructed assumptions.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis in the direction the evidence supports: churn is mostly a cohort effect, price matters for the promotion cohort and SMB competition, and the $10.3M is overstated. Y does this explicitly. A dedicated slide breaks the CFO's proposal into four conditions and marks each as holding or failing, with the effect on the answer. It states plainly that the CFO is right that core churn is not about price but wrong that churn is only an onboarding problem, and it turns the correction into a budget reset. X reaches the same reconciliation ('the price shock was the discount ending, not our list price') and corrects the $10.3M, but spreads it across slides and never sets out which parts of the CFO's and CEO's views survive. Both also test the Customer Success claim that onboarding will halve churn. Y adds that first-month activation cannot be applied retroactively to existing customers.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The two documents share nearly the same analytical core and the same defensible recommendation. Y serves the CEO somewhat better. It reconciles the CFO's and CEO's views explicitly, gives base and downside values for each option, and nets churn out of the price uplift rather than assuming none. It also specifies the SMB test with a decision rule and power check, and frames five concrete December decisions including resetting the budget line. X is more conservative, and arguably safer, in holding mid-market at the tested 10%. It is careful about caveats, but it offers a single-case valuation and a less explicit treatment of the initial hypothesis. Y's 12% mid-market choice and constructed elasticities are the main reasons the margin is not larger.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1597002,
+ "wall_s": 52.425626039505005,
+ "error_text": null
+}

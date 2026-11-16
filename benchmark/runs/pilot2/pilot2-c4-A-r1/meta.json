@@ -1,0 +1,300 @@
+{
+ "run_id": "pilot2-c4-A-r1",
+ "case": "c4-pricing-churn",
+ "condition": "A",
+ "rep": 1,
+ "order": 5,
+ "phase": "pilot2",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 605.3,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.325",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 42,
+      "duration_ms": 604292,
+      "duration_api_ms": 594624,
+      "total_cost_usd": 2.4875944000000003,
+      "usage": {
+       "input_tokens": 50,
+       "cache_creation_input_tokens": 116205,
+       "cache_read_input_tokens": 1701772,
+       "output_tokens": 60870,
+       "output_tokens_details": {
+        "thinking_tokens": 27389
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 116205,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1352,
+         "cache_read_input_tokens": 121737,
+         "cache_creation_input_tokens": 1782,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1782
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 50,
+        "outputTokens": 60870,
+        "cacheReadInputTokens": 1701772,
+        "cacheCreationInputTokens": 116205,
+        "webSearchRequests": 0,
+        "costUSD": 2.4875944000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 27389,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 116205,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": "second-half renewals, worth up to +$0.7M.\n  - No increase for the promotion group, plus an onboarding programme.\n- **Against the objectives.** The plan adds $4.3M from price and keeps net revenue retention near 114%. Existing customers alone grow ARR 14.2%; about $0.6M from new customers reaches 15%. On paper it brings in $0.8\u20132.0M less than the CFO's plan, and the deck says so.\n- **Two claims the deck pushes back on.** \"Halve SMB churn\" would mean 1.55%, which is below any SMB level since 2023. A realistic target is about 2.1%, which keeps up to roughly $1.0M of revenue. The board dashboard's \"1.4% \u2192 2.3%\" can't be reproduced from the segment data under any obvious definition.\n\n**Choices I made on your behalf** (also listed in the appendix):\n- **Mid-market at 10%, not 12%:** 10% is the level the 2024 test covered.\n- **SMB test at +8%:** this is the 2023 increase, so that year's reaction is a usable comparison.\n- **Enterprise uncapped contracts at up to +10%.**\n- **Enterprise contracts renewing in 2027 assumed 60% capped,** the same share as the whole enterprise book.\n- **2027 retention before price assumed equal to the last 12 months.**\n- **Renewals assumed spread evenly through the year.**\n- **Not modelled because the pack doesn't cover them:** new-customer sales, margin and the cost of the onboarding programme. Hitting 15% depends on new-customer sales, so the deck asks leadership to confirm that number.\n\nFiles are in `./deliverable/`:\n- Palisade_2027_pricing_decision.pptx"
+    }
+   ],
+   "started": "2026-11-16T00:22:29+00:00",
+   "ended": "2026-11-16T00:32:34+00:00",
+   "session_id": "36813479-922b-4bb0-9772-397107c095b6",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 2.4875944000000003,
+  "duration_s": 605.3,
+  "api_s": 594.624,
+  "turns": 42,
+  "input_tokens": 50,
+  "output_tokens": 60870,
+  "cache_read_tokens": 1701772,
+  "cache_creation_tokens": 116205,
+  "cost_all_attempts_usd": 2.4875944000000003
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 2.4875944000000003,
+   "input": 50,
+   "output": 60870,
+   "cache_read": 1701772,
+   "cache_creation": 116205
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "Create a deck for Palisade Docs' CEO and leadership team: Should Palisade raise prices in 2027 while customer churn is rising, and if so, how?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "fba93ba6ea8936d43b2b7511a6ce673060e9e2cdebc056d17e6cc6f67795583a",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.325 (Claude Code)",
+ "plugin_snapshot_sha256": null,
+ "repo_head": "e1e6b315d9ab3ed0bb51f8544553ec89d804fcc1",
+ "packet_sha256": "691d61d8044ee3528ee58bc24f96bb2f901c46fa602ae30ed862191bddaabe99",
+ "files": [
+  {
+   "path": "workspace/build/deck.py",
+   "bytes": 37460,
+   "sha256": "d174d234afe2227047b14d18f910fd65ea54147868dd137aa1a287687f94984f"
+  },
+  {
+   "path": "workspace/build/kit.py",
+   "bytes": 11768,
+   "sha256": "c01807f838e61b083108ffcf3f66adeb605b91f577a59c1cfbea29d2875c1a82"
+  },
+  {
+   "path": "workspace/build/preview/slide-01.png",
+   "bytes": 52199,
+   "sha256": "aee41fd74b2e3233f819d0e061701439a7252b49a6c4091eb40f2fe153988a3a"
+  },
+  {
+   "path": "workspace/build/preview/slide-02.png",
+   "bytes": 167563,
+   "sha256": "12883df00501e009a9fe77283521f98b0d90f1dd064e71f0742682e76a3ea670"
+  },
+  {
+   "path": "workspace/build/preview/slide-03.png",
+   "bytes": 122062,
+   "sha256": "dfcc6eaf172808c7e6ad8d82e52ebbb12dc84071a3f9f3bf91a140f943e063aa"
+  },
+  {
+   "path": "workspace/build/preview/slide-04.png",
+   "bytes": 101670,
+   "sha256": "e95d723161fc0138dfac9078ffccec088906cce1d3e6cf77ef1d3e3ce757d3dd"
+  },
+  {
+   "path": "workspace/build/preview/slide-05.png",
+   "bytes": 106216,
+   "sha256": "bca89482de7d536b0c651e77ea4be6383689cb03a923b16f890184edc5538329"
+  },
+  {
+   "path": "workspace/build/preview/slide-06.png",
+   "bytes": 112113,
+   "sha256": "09dc05360e2bb37a914ff0930d1648d7b64787aee8d78d84d41e22a978d07d3d"
+  },
+  {
+   "path": "workspace/build/preview/slide-07.png",
+   "bytes": 75434,
+   "sha256": "d83a21287e55276fecb0342e1749be335997c29a1d12ca94aead675e88dc3291"
+  },
+  {
+   "path": "workspace/build/preview/slide-08.png",
+   "bytes": 139409,
+   "sha256": "66654f5ce45f9fe2eb1e935d0482c42b1319ad8e549f9d82a3fea57b7bc8531b"
+  },
+  {
+   "path": "workspace/build/preview/slide-09.png",
+   "bytes": 122586,
+   "sha256": "8294ae7fe0a16a7976fdbec6cdaaaa6f1e8aaad4b196ee43a7cf18f644d81922"
+  },
+  {
+   "path": "workspace/build/preview/slide-10.png",
+   "bytes": 113526,
+   "sha256": "a350aedd9bb344f7bf39e61fd992e165cdd580a43f1fee7731412bac7e97cf00"
+  },
+  {
+   "path": "workspace/build/preview/slide-11.png",
+   "bytes": 112682,
+   "sha256": "f60537f9710f69eebf817fd34e2f60ba315b9c225a17dd0dd5fd9ea733df21bb"
+  },
+  {
+   "path": "workspace/build/preview/slide-12.png",
+   "bytes": 100348,
+   "sha256": "2005ebd8e25c966b27776670dad0880e17c8a02276bbf3af602f5d9b91d7a4ab"
+  },
+  {
+   "path": "workspace/build/preview/slide-13.png",
+   "bytes": 121517,
+   "sha256": "639b6d41d62f628d43b39391b249e9af87341750a3309f649e1cff131a532080"
+  },
+  {
+   "path": "workspace/build/preview/slide-14.png",
+   "bytes": 140219,
+   "sha256": "e61f390c4fb440e924a5cb49bf197c8d1935b89c1755ff9be39124723f6d36b5"
+  },
+  {
+   "path": "workspace/deliverable/Palisade_2027_pricing_decision.pptx",
+   "bytes": 68799,
+   "sha256": "28025ebc3a79da3259acb3d7bcbb00121a07202097a3f960f7c8e43c7bac4ea6"
+  }
+ ]
+}

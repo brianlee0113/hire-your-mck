@@ -1,0 +1,11 @@
+add(B("b6", "4", "Only the plan's inputs make a single store profitable; at the median each store loses about $2.0M a year",
+      "item", "data-table",
+      {"kind": "table", "table_type": "data", "columns": ["Contribution per order", "Orders per site per day", "One store, $M a year", "Nine stores, $M a year"],
+       "rows": [
+           {"label": "Founders' plan", "cells": [{"point": P("cpo_p")}, {"point": P("opd_p")}, {"point": P("site_p")}, {"point": P("net_p")}]},
+           {"label": "Best observed, combined", "cells": [{"point": P("cpo_b")}, {"point": P("opd_b")}, {"point": P("site_b")}, {"point": P("net_b")}]},
+           {"label": "Benchmark median", "highlight": True, "cells": [{"point": P("cpo_m")}, {"point": P("opd_m")}, {"point": P("site_m")}, {"point": P("net_m")}]}]},
+      of="4b1", nums=[("$2.0M", "site_m")], unit_line="**Annual contribution after site costs**, full-year run rate at each case's inputs",
+      footnotes=["Contribution per order × orders a day × 365 days; no ramp-up; excludes capex, launch marketing and head-office costs",
+                 "A low-density site loses less in total than the median only because it sells fewer loss-making orders"]))
+

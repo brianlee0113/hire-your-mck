@@ -1,0 +1,1 @@
+/hire-your-mck {task}

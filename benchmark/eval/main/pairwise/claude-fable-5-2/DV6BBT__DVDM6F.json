@@ -1,0 +1,39 @@
+{
+ "x": "DV6BBT",
+ "y": "DVDM6F",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both build a clean hierarchy from governing thought through sections to evidence. X is organised around five sub-questions, each answered by a section whose titles match the executive summary. Y groups its summary into launch, packaging and trade-offs, and adds an explicit 'what would have to be true' test of the CPO plan. Each has one internal tension. X tells the reader to 'plan on about $2.9M' although its own slides say the 33% migration comes from another tier at another price, with only a fifth of headroom. Y calls Pro the 'only option' meeting both objectives although its own table shows the add-on at 76% margin and up to +4.3 NRR points. These roughly cancel.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the same defensible answer (the key's R1): Pro tier at +$12 per seat with a usage allowance, mobile next, delay accepted explicitly. Y weighs it better in four ways. It plans on a range ($1.7–2.9M) rather than the single 33% precedent. It puts 'don't launch / mobile first' in the options table alongside the add-on and free bundle. It admits that on permanent ARR mobile-first may lose slightly less, and names timing against the NRR target as the deciding factor. It gates the launch with a Q1 test on randomly chosen non-volunteer accounts, with go/no-go thresholds and a rule against falling back to the free bundle, and adds concrete mobile mitigations (outreach, dated roadmap, no follow-on AI work). X is also careful: it has break-even take-up, a capped free tier option and a 'narrowly' verdict on the delay. But it rests the sequencing call on the claim that Pro revenue is 'near-certain', which its own caveats on migration undercut, and it launches without testing outside volunteers. Y's per-account price-burden analysis (+63% for a 3-seat account, tied to price being 22% of churn) is a further trade-off X does not surface.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M vs $2.45M, inference of $17/$32/$61/$130 per account, 109 deals and $0.64M, Pro at $2.89M, and free-in-Core margin of 71.9%. Both dismantle the Sales memo ($1.93M vs $0.64M), flag the Routewise discount, and treat beta and survey figures as biased. X adds some sharp caveats: loss notes cover all lost deals, the two win-rate periods differ in length, renewal was measured while Copilot was free, and 17 of 120 is too small a sample. Y adds that Brightwork was already losing 56% of these deals before Routewise had AI. Y also catches two inconsistencies in the pack: the top 10% at 14,500 requests implies 40% of volume, not 58%, and 1,190 churned accounts does not match the 1,372 implied by 14% churn. Y's weaker points are assumptions it discloses: scaling 14% to 10.7% by seat ratio, and the 25–75% mobile-fix range. X's weaker points are the 'near-certain' revenue claim and a 29% break-even that sets only Routewise ARR against the mobile ceiling. Y's 'late 2028 at best, likely to slip' for mobile-first is also asserted rather than shown. Y is slightly ahead on scrutiny of the data.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CPO hypothesis as the key expects: keep the launch, reject the $8M sizing and the flat $149 add-on. Y does it explicitly. It restates the hypothesis, breaks it into five conditions, and gives a verdict on each: demand and flat-price economics not supported, value and NRR need supported, mobile delay partly supported. It then says which parts are kept and which are changed, and resets the plan number to a range based on what customers actually paid. X reaches the same revision and shows that 30.7% of the plan survives the paywall test, plus a waterfall down to under $1M of gross profit. But the revision is spread through the storyline rather than tested as a hypothesis, and X replaces one point estimate ($8M) with another ($2.9M) that rests on a single precedent.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents share a recommendation and most of the arithmetic, so the difference lies in how well each prepares the executive team to decide and to manage the risk. Y gives a planning range rather than a point estimate, an explicit test of the CPO's plan, and a like-for-like options table that includes not launching. It is candid that the sequencing is a close call on ARR. It also gives a staged plan: a Q1 test on non-volunteers, Q3 and 2028 gates, and mobile mitigations, which answers the key uncertainty of whether the gains hold beyond volunteers. Y also flags inconsistencies in the pack and shows how the add-on's price burden falls on small accounts. X is rigorous and has useful break-even and sensitivity work, but it leans on the 33% precedent for its headline, calls the Pro revenue 'near-certain', and launches without validating outside the volunteer group.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1673642,
+ "wall_s": 52.426985025405884,
+ "error_text": null
+}

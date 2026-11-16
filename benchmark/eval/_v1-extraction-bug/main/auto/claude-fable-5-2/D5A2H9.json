@@ -1,0 +1,203 @@
+{
+ "blind_id": "D5A2H9",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document answers the question exactly as posed (launch in 2027 or not) for the right decision maker. It uses both stated constraints as criteria: the 12-month runway floor gets its own slide and a row in the comparison table, and the 'no new round' statement is used to show there is no safety net. It identifies early what the answer turns on: four plan inputs each beyond the best observed site, and cash. The one soft spot is that the investors' 'path to profitability within current cash' objective is applied to the operator plan but not explicitly to the recommended software path; I penalise that under strategic judgment rather than here.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the four summary points map onto the body sections (market, unit economics, plan vs observed, pop-up, Zipcart, cash, risks, alternative, decision), and nearly every title is a claim its slide supports. Reading the titles alone gives the argument. Two titles do not match their evidence. Slide 6 says best observed on every input 'would at best break even', but its own table and the executive summary give −$1.76; break-even (−$0.08) needs promotions at 2%, which no benchmark site has shown. Slide 3 says operators 'lose money on every order', which slide 8 then qualifies with Zipcart's positive city. Slide 11 calls store cost 'the biggest single line' while slides 4 and 10 say rider cost is the biggest. These are small but real mismatches in an otherwise tight hierarchy. Note: the bridge labels in the normalised storyline look mis-assigned (average order +$1.75), but the four step values in the raw slide text are the correct set, so I treat that as an extraction artefact.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I recomputed every material figure and found no errors. Per-order contribution: median −$6.17 (−$2.67 before store), best on every input −$1.76, best plus 2% promotions −$0.08, plan +$2.02, pop-up −$12.57. Nine-store annual results: −$18.2M, −$8.1M, +$11.9M. Break-even rider productivity 3.75; CAGR 42% (41.5%); EBITDA margins −26% and −46%. Pop-up run-rates of about 180 to 410 orders a day follow from 11,800 orders at 18% weekly growth. CAC payback of about 19 orders, the Zipcart overlay (−$1.05 at median, +$3.97 at best inputs with the 14% volume loss), runway ($2.5M, about 6 months, $2.3M short of the $4.8M floor), the $16.7M alternative reading, rider sensitivity ($0.29–$0.42 per order, about $1.7M a year) and pipeline values ($0.86M, $3.55M) all check. All critical evidence is used, including the Zipcart evidence that cuts against the answer, and Appendix B states the judgment calls. Minor calibration issues only: 'survives missing any one target (+$0.22 to +$1.52)' holds only if the miss lands at best observed, not at the median, and this basis is unstated; the claim that pipeline grocers would be competitors in the three launch cities is not in the pack; and the 21% ARR uplift assumes all nine late-stage deals close (caveated in the source note). None is material to the conclusion.",
+    "score": 5
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear and follows from the analysis: decline, fund software, and set three explicit triggers to reopen the question. The triggers are well built (contribution at a 1,400+ orders/day site for two quarters, a fee test where volume holds, funding that keeps the runway) and can be observed on customer sites at no cost. The operator and software paths are compared on cash, unit economics, runway, customer relationship and regulatory exposure. Zipcart is engaged rather than dismissed, and no trap is fallen into. Three gaps keep this from a 5. First, the software path is not held to the investors' profitability test: the document shows about $0.86M ARR against $0.8M of cost, assuming all nine deals close, and gives no view on when the company stops burning. Second, the proposed fast-delivery-from-store module targets a use case the document's own numbers show losing $2.67 per order at the median even with no store cost, and the implication for grocer demand and retention is not flagged. Third, a small capped own test is not explicitly weighed as an alternative, though the customer-site triggers partly substitute for it.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title of slide 2, with the four reasons and the three board decisions on the same page. The language is plain and precise, with almost no jargon. Twelve body slides plus two appendices (about 2,700 words) is proportionate to a bet-the-company board decision. There is some repetition of the −$6.17 figure and overlap between the scenario slide and Appendix A, and the risk slide is arguably optional, but nothing is padding.",
+    "score": 5
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Parcelbird Now would compete with them in Columbus, Indianapolis and Kansas City.",
+    "why": "The pack does not say where the pipeline grocers operate or that any are in the three launch cities."
+   },
+   {
+    "quote": "Our benchmark data comes from 14 customer sites. Using it to compete with those customers puts their trust at risk.",
+    "why": "Plausible inference, but the pack contains no evidence on customer reaction or data-use terms; it is stated as fact rather than as a hypothesis."
+   },
+   {
+    "quote": "nine late-stage deals would add ~21% to ARR for $0.8M a year",
+    "why": "Assumes all nine late-stage deals close and ties them to the four hires. The pack gives no close rates and links the $0.8M to scaling the software business in general. It is caveated only in a source note and appendix."
+   },
+   {
+    "quote": "the operators already in it lose money on every order",
+    "why": "The pack gives negative average contribution per order; Zipcart was contribution-positive in its densest city, as the document itself shows on slide 8."
+   },
+   {
+    "quote": "At median density that store costs $3.50 per order, the biggest single line separating a loss from break-even.",
+    "why": "Rider cost ($7.40) is the larger line, as the document says elsewhere, and the median order loses $2.67 even with no store cost."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Even if every store matched the best observed value on every input, Parcelbird Now would at best break even per order",
+    "quote_b": "Even the best observed value for every input, combined, still loses $1.76.",
+    "why": "Best observed inputs give −$1.76, not break-even. The near break-even figure (−$0.08) needs promotions at 2%, which is a plan assumption and not an observed value. The mismatch is modest and understates the case against the plan."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Approve about $0.8M a year for two engineers and two sales hires to close the nine late-stage software deals, commission a plan for a fast-delivery-from-store module for pipeline grocers, hold the 12-month runway floor, and reopen the operator question only if three triggers are met (positive contribution for two quarters at a 1,400+ orders/day mid-size-city site, evidence that customers accept a service fee, and funding that keeps 12+ months of runway plus clarity on rider pay rules).",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "All four defensibility criteria are met. Per-order contribution is computed at median, best observed and pop-up inputs. Market growth is explicitly separated from profitability. The runway constraint is checked ($2.5M left, about 6 months against a 12-month floor). The software alternative is offered, with explicit conditions for revisiting."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The founders' hypothesis is rejected on the evidence, not by contrarianism. The document accepts that growth is real (42% CAGR) and separates it from profitability. It tests each of the four plan inputs against the best observed site and shows the pop-up fell below the median on all four. It sets survey intent (44%) against month-three retention (22%), and it engages the Zipcart counter-example by applying the fee, the promotion cut and the volume loss to Parcelbird's own benchmarks. It also challenges the 'our software makes us better operators' premise, noting the benchmark sites already run on that software. Uncertainty is acknowledged in Appendix B and in the reopening triggers. The one mildly causal reading is that Zipcart's pricing 'cost it 14% of its volume'; the pack gives only the sequence, though the inference is reasonable."
+  },
+  "overall_comment": "A very strong document: weighted score 4.5 (framing 5, coherence 4, evidence 5, judgment 4, clarity 5). Every material number checks against the pack, all five required calculations are right, all critical evidence is used, and the Zipcart counter-evidence is quantified properly (still −$1.05 at median density, positive only at best-ever inputs). The recommendation matches the key's preferred answer (R1) and adds concrete triggers for reopening the question, observable at no cost on customer sites.\n\nWhat keeps it from top marks:\n- **Title mismatch on slide 6.** The title says best observed inputs \"at best break even\", but the table and the executive summary give −$1.76.\n- **Software path not tested for profitability.** The document does not show when the company stops burning cash on the recommended path, and the 21% ARR uplift assumes all nine late-stage deals close.\n- **Module economics unflagged.** The fast-delivery-from-store module targets a use case the document's own model shows losing $2.67 per order at the median before any store cost.\n- **Unsupported side claims.** Competition with pipeline grocers in the three launch cities, and the customer-trust risk, are not in the pack.\n- **No explicit capped-test alternative.** The customer-site triggers partly cover this, but a small own test is never weighed.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.9504956000000001,
+ "wall_s": 137.3145751953125,
+ "is_error": false,
+ "error_text": null
+}

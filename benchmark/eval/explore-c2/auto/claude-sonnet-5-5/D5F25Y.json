@@ -1,0 +1,191 @@
+{
+ "blind_id": "D5F25Y",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the question as a by-segment 'whether and how' decision. It uses the 15% growth target ($12.9M), the renewal-timing and cap constraints, and the churn concern as explicit criteria. It identifies early that the answer turns on SMB mix, the CFO's inflated $10.3M and Inkwell. Weakness: the NRR>100% overall objective is handled qualitatively. The blended NRR of about 109% is never computed, and the post-rise NRR is never estimated.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the four-part summary, the section dividers (Churn, 12% plan, Headroom, Plan) and the action titles line up well. Reading the titles gives the argument. Small blemishes: slide 6 says 'left over price' and then 'Activation, not price, is the lever'. Slide 10's title reads the 2023 precedent negatively, yet its bullets say the core 'tolerated the rise'. The section dividers add some redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers check out: reachable uplift $7.566M, 76% renewing, 96% and 74% SMB shares, 91% mix share, 59% and 33% of the target, $4.27M targeted uplift, $1.3M SMB test. Segment-split exit reasons, the activation data and the dashboard mismatch are all used. Gaps: the implied promo-cohort churn of about 4.9% is not stated. The break-even extra churn (about 10.7%) is never computed. The 2023 precedent is read as a churn cost ($0.6M lost) rather than netted against the revenue gain, so it looks worse than it was. The 'low NRR risk' label for option B is asserted, not quantified. The claim 'customers … face real switching costs at renewal' goes beyond the advisory-board evidence.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is a differentiated plan: mid-market +10% and enterprise within caps from January, an SMB test with a holdout and a go/no-go, and the promo cohort priced only after activation. This matches the key's R1/R2. It compares three alternatives, states what the targeted plan gives up ($3.3M), and rejects the CS 'halving' claim with a quantified cohort-fix ceiling (32%). It sets a guardrail, gate dates and owners. Weaknesses: the SMB 8% test is justified by the 2023 precedent, which predates Inkwell. Enterprise 10% where uncapped has no direct test support. Brand/trust trade-off at renewal is only implicit. Churn response is not netted from the $4.3M.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2. Slides are single-message with plain language. At 19 slides including four dividers and a roadmap, it is a bit longer than the decision strictly needs, and a few slides are repetitive.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Churn is rising because of the 2025 SMB promotion, not because core customers reject our prices",
+    "why": "Mostly supported by the mix decomposition. But mid-market churn also rose, and the Inkwell win-rate fall shows some price pressure. The causal 'not' is stated more firmly than the evidence supports."
+   },
+   {
+    "quote": "Activation, not price, is the lever",
+    "why": "The promo cohort cites price at 52%. Whether activation fixes churn once the discount ends is an open uncertainty in the pack, not a demonstrated result."
+   },
+   {
+    "quote": "customers who stay for integrations and the audit trail face real switching costs at renewal",
+    "why": "The advisory board says why customers stay. It does not measure switching costs or renewal price tolerance."
+   },
+   {
+    "quote": "Low: rises only where NRR is 112–118%",
+    "why": "The risk to overall NRR is asserted without any estimate of churn response or of overall NRR after the rise."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Promotion customers never set the product up and left over price once their discount ended",
+    "quote_b": "Activation, not price, is the lever",
+    "why": "The slide's own exit-survey evidence (52% cite price) shows price matters for this cohort at discount expiry. Calling activation the lever downplays that. The tension is mild and partly reconciled elsewhere."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "partial"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "absent"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Differentiated 2027 plan. Mid-market +10% and enterprise within caps from January, worth about $4.3M. SMB 8% renewal test with a holdout, go/no-go at end of Q2 2027. Promo cohort priced only after activation. Cohort fix planned instead of the CS 'halving'. Churn guardrail and a defined board churn metric.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It separates the cohort/mix effect from the rate effect, reconciles the CFO and CEO views, corrects the $10.3M to $7.6M, and differs by segment. It matches the key's R1/R2, with a staged test and guardrails."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "The CFO's 'onboarding, not price' view is partly confirmed: 91% of the SMB rise comes from the promo cohort. The CFO's uniform 12% and $10.3M are rejected for SMB exposure to Inkwell, renewal timing and caps. The CEO's concern is addressed by a segment split, a test and a guardrail. The mid-market test-vs-renewal caveat and the unknown exit-survey sample sizes are flagged. The causal wording 'not because core customers reject our prices' is slightly strong."
+  },
+  "overall_comment": "This is a strong, accurate and well-structured deck. The calculations are correct, including the $7.57M reachable uplift, the 91% mix share and the weighted churn figures. It splits exit reasons by cohort, calls out the undefined dashboard metric, and challenges the CS 'halving' claim with a quantified ceiling. It recommends a segment-differentiated plan with gates and a guardrail. Main gaps: no break-even or net analysis of the 2023 precedent (K6/Q4), so the precedent is read as a pure churn cost. NRR is not quantified after the rise. The brand and trust trade-off is only implicit. The test-vs-renewal generalisation is caveated but still used to anchor the 10% level. A few slides could be merged.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.168196,
+ "wall_s": 44.62048697471619,
+ "is_error": false,
+ "error_text": null
+}

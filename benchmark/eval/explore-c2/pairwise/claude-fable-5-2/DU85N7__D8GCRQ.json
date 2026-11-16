@@ -1,0 +1,38 @@
+{
+ "x": "DU85N7",
+ "y": "D8GCRQ",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same five-part logic (value, packaging, financial targets, mobile sequencing, launch plan). X is tighter: its governing thought carries both the packaging call and the re-sized revenue case, and each summary claim is backed by evidence that points the same way. Its mobile claim (\"worth paying unless the rewrite fixes most of it\") matches its 51.7% break-even and its pre-sign-off gate. Its one loose joint is listing 26% Pro uptake as a launch condition when it can only be read after launch. Y has more tension. Its summary claim \"Launch in Q2 2027 for the NRR deadline\" is supported by a break-even line (34%) that on its face favours mobile first. It says \"launch on the productivity case\" while calling that gain unproven and letting the NRR deadline tip the call. It also says to drop the $149 add-on while keeping it as the test arm and fallback.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred recommendation (Pro tier, usage allowance, sized off revealed demand, mobile delay accepted explicitly) and reject the add-on and free-in-Core with numbers. X handles the mobile trade-off better: it turns it into a decision rule (above about half of mobile churn fixed, put mobile first), assigns that estimate before sign-off, and asks whether the 14 engineers can come from elsewhere. Y handles the pricing uncertainty better: it names Pro take-up as the highest risk, gives the 28% crossover against the add-on, tests Pro take-up on non-beta accounts before launch, and keeps a fallback. X only tracks take-up after launch and leans on the 33% precedent with less scepticism than it applies to the survey and paywall. Y's margin guardrail is also checked against heavier usage; X's is not. These strengths roughly offset.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: $8.06M vs about $2.5M, inference at $32.4 / $61.2 / $130.5, 109 deals and about $0.64M, Pro at $2.89M, the 26% NRR threshold, and the sales memo overstating by three times. Both flag volunteer, survey and discount confounds. X uniquely spots that the pack's 58% top-decile share conflicts with Table 2 (40%), and shows the survey case would breach the margin floor (74.7%). But X's Pro cost assumes adopters use the beta per-seat average (444 per seat, $0.96M, 66.7% margin). That sits oddly with its own argument that heavy users self-select, and it is outside the key's roughly 56%. X's 1,000-per-seat allowance also does not hold the floor at full use: by my arithmetic company margin would be about 74.5%, so the \"allowance keeps margin at 76.5%\" claim rests on average usage, not on the cap. Y uses 3,600 per account ($1.26M, matching the key), runs a sensitivity table showing 74.1% without a cap and 75.7% at its full 667 allowance, reconciles 1,190 against 1,372 churned accounts, and tabulates the bias of each source. Y's flaws are small: a $0.01 rounding in one backup table, the 58% used unchecked, and AI-driven churn left out of the Copilot side of the mobile break-even.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects: keep the launch, reject the $149 add-on, rebuild the $8M from the 46% survey figure and replace it with about $2.5M at the paywall rate, and note that even 14% is an upper bound. Both also correct the VP Sales claim. X puts the correction in its governing thought (\"about $2.9M, not $8M\"). Y adds an explicit from-to slide showing five changes to the current proposal. Neither over- nor under-revises; the difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents reach the same recommendation by very similar logic, so the gap is small. X is more concise, has the cleaner storyline, and gives the executive team a sharper rule on the mobile trade-off, plus a staffing check. Y is more robust where the recommendation is most exposed. It treats the 33% Pro take-up as the main risk and tests it before launch, with a 28% crossover and an add-on fallback. Its usage allowance is shown to hold the 75% floor under heavier usage, whereas X's does not at full use. Its Pro cost base matches the key. Y's weaker points are the 34% break-even that sits awkwardly with its sequencing call and some internal tension in the summary. On balance Y gives the decision maker a slightly safer basis for the pricing and margin commitments.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1710122,
+ "wall_s": 86.58284211158752
+}

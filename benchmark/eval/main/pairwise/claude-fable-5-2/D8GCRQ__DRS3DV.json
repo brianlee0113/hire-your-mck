@@ -1,0 +1,39 @@
+{
+ "x": "D8GCRQ",
+ "y": "DRS3DV",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean chain from governing thought to sections to numbers. Y opens by testing the CPO's plan against five conditions it needs, and each verdict maps directly to a part of the recommendation (size, packaging, timing, validation). X's five-question structure is also consistent, but has internal tensions. Its own break-even says delaying mobile costs more if the rewrite keeps over 34% of mobile churners, yet it recommends Copilot first on an NRR-deadline argument that is asserted rather than shown. It asks the executive team to 'drop the $149 add-on' while the Q1 test 'decides between' Pro and add-on and the fallback is to switch to the add-on. It launches 'on the productivity case' while saying that case is unproven until the Q1 test. Y has one mild tension: a slide title says mobile delay costs 'about twice as much' while the text says 'the money is close'. That is disclosed and resolved by named tie-breakers.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on defensible answers: a Pro tier at +$12 per seat with a usage allowance, sized off revealed demand. X accepts the two-quarter mobile delay explicitly (R1). Y sequences mobile first (R3) and meets the conditions for that: it quantifies the win-rate risk ($0.64M ceiling, $0.32M base) and plans a limited AI response (beta kept live, early access in Routewise deals, randomised pilot, mid-February trigger to bring launch forward). Y weighs the sequencing trade-off more rigorously, with a two-way sensitivity table, break-evens of 26–40%, an honest 'money is close' and three tie-breakers. It also sees that tier migration is a one-off NRR step, so a later launch may fit a 2028 NRR measure better; X's deciding argument assumes the opposite without examining it. Y includes a 'don't launch' option and uses a more conservative 25% base take-up against X's 33% from a single precedent. X's thresholds (26% take-up, 28% to beat the add-on, 34% break-even) and risk owners are good, but its sequencing call runs against its own lost-ARR arithmetic and its NRR-timing logic is weaker. Y's mid-February trigger for an end-Q2 launch is tight on feasibility, a minor flaw.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M vs $2.45M; inference at $17.1/$32.4/$61.2/$130.5 a month; 109 deals and $0.64M; Pro at $2.89M with 33% take-up. Both treat the paywall 14% as a ceiling, flag volunteer bias, separate Routewise's AI from its discount, and dismantle the Sales memo (328 of 983 losses). Y goes a little further: it states the 59% and 12% add-on margins, shows the memo implies a 58% win rate above the pre-AI 44%, and catches that Table 2 implies the top 10% generate about 40% of requests, not the stated 58%. It also notes that new-logo wins do not count toward NRR. Y adds more assumptions (50% rewrite effectiveness, 50% AI attribution, a 7% low case, 444 requests per seat), but each is labelled, ranged and sensitivity-tested. X is disciplined about upper bounds and its margin and allowance maths is sound. Its weaker points are a headline NRR case resting on the 33% precedent, and a simple ARR-over-ARR lift that ignores when migration falls relative to 2028. X computes company margin and contribution but never states the tier's own margin.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CPO's hypothesis as the evidence requires: keep 'launch', reject the $8M survey-based sizing and the flat $149 add-on, and move to per-seat Pro with an allowance. X sets this out in a clear from-to slide covering five changes and keeps the Q2 date with an explicit mobile restart. Y breaks the hypothesis into five necessary conditions, gives each a verdict (supported, unproven or not supported) and updates only where the evidence fails, keeping the strategic need and revising price, packaging and timing. Y's handling is slightly more systematic and also tests the timing element of the hypothesis against the mobile evidence; X keeps the timing on a less well-supported argument. Both fall within the expected handling.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents are strong and avoid every major trap: survey sizing, zero-marginal-cost thinking, attributing the whole win-rate drop to AI, volunteer bias, the mobile opportunity cost and the Sales memo. Y serves the decision maker better. It gives ranges with a conservative base case rather than a single precedent-driven number. It quantifies both sides of the sequencing trade-off with sensitivity and a concrete trigger to reverse course. It notices NRR mechanics and a data inconsistency that X misses, and it uses the waiting period to validate with non-volunteers while keeping a limited competitive response. X's packaging analysis, allowance design and thresholds are equally good, but its decisive sequencing argument is weaker and partly contradicted by its own break-even. It also asks for approval to launch and drop the add-on before the test that it says decides between them.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.2223082,
+ "wall_s": 57.12862682342529,
+ "error_text": null
+}

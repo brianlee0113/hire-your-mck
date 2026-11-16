@@ -1,0 +1,39 @@
+{
+ "x": "D5PS59",
+ "y": "D77BUT",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean hierarchy from governing thought to pillars to slides, and both use the same Pro-tier package. X's three pillars (launch, package as Pro, guardrails) hold together, but the third is labelled \"Protect mobile\" while the action is to delay mobile two quarters. X also says fixing mobile is needed to close the NRR gap and is the top churn driver, then argues against prioritising it. Y's chain is more direct: the prize is smaller than claimed, Pro with an allowance protects margin, mobile causes 4.5x the churn so it goes first, and both levers are needed for 105%. Y's line that \"the sequence matters less than delivering both\" slightly softens its timing pillar but does not contradict it.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach conclusions the key treats as defensible: X is R1 (Pro tier in Q2, accepting the mobile delay explicitly) and Y is R3 with its conditions met (win-rate risk quantified at $0.6M or less, limited AI response through paid early access, triggers to bring launch forward). Both reject the add-on and free-in-Core on margin grounds and design the same allowance and overage. The difference is the sequencing trade-off. X compares about $1.1M of deferred Pro ARR with about $0.5M of mobile churn as if they were like-for-like, though the first is postponed revenue and the second is a permanent loss. Y makes that distinction explicitly, gives a break-even (the rewrite must remove 26–52% of mobile churn), and places its gates (Q4 2026 win rate, CTO staffing) before engineers are committed. X's March go/no-go is a sensible reversible design, but it fires after a quarter of mobile delay has already been incurred. X's 25% base adoption is more prudent than Y's 33%, though Y sets its plan on the 14% low case.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the required calculations correctly: $8.06M vs $2.45M, inference of $17/$32/$61/$131 per month, about 109 deals and $0.64M, Pro at $2.89M for 33% uptake, and free-in-Core at 71.9%. Both discount the survey for response rate and size skew, treat 14% as a ceiling, refute the VP Sales claim and leave beta retention out of the case. X adds two sharp catches: the 58% share is inconsistent with the 14,500 top-decile mean (which implies 40%), and the 31% of loss notes covers all Q3 losses, not only Routewise deals. Y adds decision-relevant checks: the VP claim would imply a 58% win rate, Pro with no allowance falls to 74.1% if upgraders behave like paywall buyers, and paywall-buyer and top-decile margins are 59% and 12%. X's main weakness is the mobile trade-off, where it treats deferred expansion ARR as equivalent to permanent churn, and its \"defer fails on value\" verdict rests on that. Y's weaknesses are a 33% base case taken from a different tier launch and an assumption that the Routewise promotion ended after Q3. The balance is close.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects: keep the launch, reject the $8M sizing in favour of the paywall evidence, and replace the flat $149 add-on with a per-seat Pro tier and usage guardrails. X does this through its demand slide and an appendix of corrected internal claims, and keeps the Q2 timing. Y tests the hypothesis openly on a dedicated slide against five conditions (demand, economics, competition, opportunity cost, proven value) with a verdict on each, then shows which failures changed the answer. That includes the hypothesis's implicit assumption that the mobile delay is cheap. Y's change of timing is argued through the mobile trade-off, as the key allows. Y's treatment is more explicit and traceable; X's is equally sound in substance.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong documents that avoid every trap in the key, share the same packaging and compute the numbers accurately. X is tighter, uses a more conservative base case and spots a data inconsistency in the pack. Y serves the decision maker somewhat better on the hardest part of the decision, Copilot versus mobile. It separates permanent churn loss from postponed revenue, gives a break-even threshold to challenge, stress-tests margin without the allowance, and ties each assumption to a test, an owner and a trigger that can be read before engineers are committed. X's Q2 conclusion is equally defensible, but its sequencing argument rests on a weaker comparison.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1038682,
+ "wall_s": 69.35170197486877,
+ "error_text": null
+}

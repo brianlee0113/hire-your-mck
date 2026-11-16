@@ -1,0 +1,39 @@
+{
+ "x": "DFJGRQ",
+ "y": "DVDM6F",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X's hierarchy holds from top to bottom. The governing thought (Pro tier, mobile first, Q4) is carried by each summary point and each slide: the beta signal is real but unproven, the prize is $1.2–2.9M, flat pricing draws heavy users, mobile is the bigger churn driver, 105% NRR needs both levers, so protect the one that compounds. The triggers for a Q2 launch follow from the same logic. Y's structure (why launch, package, trade-offs) is clean, but its governing thought overreaches its own evidence. It says Pro is the 'only option' that lifts NRR and holds the 75% floor, yet its own table shows the add-on at 76.2–76.6% margin and +2.1 to +4.3 NRR points, while Pro's low case (+3.0) also misses +4. Y also says 'we need both' levers and that mobile first 'may lose slightly less' ARR, then recommends delaying mobile on an NRR-timing argument that is asserted rather than shown. 'None is a reason to delay' sits uneasily with a 'close call'.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "judgment": {
+   "reasons": "Both land on defensible conclusions under the key: Pro tier with a usage pool, sized off the paywall test, with the mobile trade-off made explicit. Y launches in Q2 and accepts the mobile delay with mitigations (Customer Success outreach, dated roadmap, engineers move to mobile in Q3). X delays to Q4 but meets the key's conditions for that route: it quantifies the win-rate risk (at most $0.56M over two quarters), plans a limited AI response (paid random pilot in H1), and sets two triggers for reverting to Q2. X weighs the trade-off more carefully. It distinguishes permanent churn loss from deferred revenue, gates the engineering spend on pilot results, and names what would flip the answer. Y's deciding argument is that only Copilot-first reaches 105% by H1 2028, which is weakly supported: a Q4 2027 launch would still put most of the migration uplift into 2028. Y's Q1 test is also less of a gate, because the 14 engineers are already committed and the mobile delay already incurred. Y does offer a stronger sensitivity table and risk register, and avoids two more quarters without an AI answer to Routewise.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the key calculations correctly: $8.06M vs $2.45M, inference cost of $32/$61/$131 per account, 109 deals and $0.64M, Pro at $2.89M, engineering at $1.47M, and the margin stress cases (74.1% with no pool). Both reject the VP Sales claim and discount the beta and the survey. X adds a confidence range on the paywall rate (9–22%), per-account margins (59% and 12%), and the observation that Routewise's AI launched only in September, the last month of Q3, which further weakens attribution of the win-rate drop to AI. X also halves both adoption rates symmetrically for its low case. Y's credit is spotting two inconsistencies in the pack: the top-decile share computes to 40%, not 58%, and 1,190 churned accounts does not match the 1,372 implied. Against that, Y has more unsupported or overstated claims: 'only option' meeting both objectives, 'Routewise has made AI a must-have', and mobile-first reaching 105% 'late 2028 at best, likely to slip'. Its 6.2/8.1 scaling to 10.7% is ad hoc, and it treats the low cases asymmetrically (add-on halved to 7%, Pro cut only to 20%), which favours its preferred option. X's 50–100% mobile-fix assumption is generous to mobile but is flagged.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO hypothesis as the key expects: keep 'launch', reject the $8M sizing in favour of the paywall evidence, and replace the flat $149 add-on with a per-seat Pro tier with a usage allowance. Y is more explicit and disciplined. It breaks the hypothesis into five conditions that would have to be true, tests each against the evidence, and states which parts survive (value, need for paid expansion) and which fail (46% uptake, flat-price economics), with the mobile delay marked 'partly'. X reaches the same revisions and also revises the timing, with a quantified trade-off and triggers to revert. That is legitimate under the key, but X does not test the hypothesis component by component. The difference is small.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong, numerically sound documents that avoid every trap in the key and recommend the same packaging. X serves the decision maker slightly better. Its argument is internally consistent, it treats the mobile-versus-Copilot trade-off in line with the churn evidence, it commits the engineering spend only after a random-account pilot, and it gives explicit January triggers to revert to Q2. Y is a credible alternative with good sensitivity analysis, risk owners, the catch on inconsistent pack data and a clear hypothesis test. But its headline 'only option' claim is contradicted by its own table, and its deciding NRR-timing argument is thinly supported given that it concedes mobile-first may lose less ARR.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1676282,
+ "wall_s": 76.26039910316467,
+ "error_text": null
+}

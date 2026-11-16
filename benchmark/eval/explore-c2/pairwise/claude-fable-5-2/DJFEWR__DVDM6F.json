@@ -1,0 +1,38 @@
+{
+ "x": "DJFEWR",
+ "y": "DVDM6F",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X runs a tight four-part chain (why launch, prize, packaging, conditions), and each slide title is directly backed by its own evidence. Its small flaws: the summary sizes the prize on the add-on ($2.5M) while recommending Pro ($2.9M), and the 'both at their ceiling' net of $2.4M mixes a best-case win-back with a worst-case mobile cost. Y is also well structured (launch, packaging, trade-offs), but its governing thought overclaims. It calls Pro 'the only option' that lifts NRR and holds margin, while its own table shows the add-on at 76.2% margin and up to +4.3 NRR points, and its text admits 'on ARR alone Pro and the add-on overlap'. Y also says fixing all mobile churn adds 'only' 3.8 points against a 4.0 need, which is a thin basis for 'retention fixes alone cannot get there'. X's hierarchy is marginally more consistent with its evidence.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred conclusion: launch in a Pro tier with a usage allowance, sized off the paywall test, with the mobile delay accepted explicitly. Y weighs the alternatives far more fully. It compares four packages (no launch/mobile first, free in Core, add-on, Pro) on NRR, margin, payback, price impact and fit with Routewise. It also runs a direct Copilot-first versus mobile-first comparison and concedes that 'on permanent ARR this is a close call' before deciding on timing against the NRR target. Y adds sensitivity breakpoints (26% and 21% migration, 75% mobile-fix share), a Q1 non-volunteer test with go/no-go thresholds, and concrete mobile mitigations (engineers move to mobile in Q3, Customer Success outreach). X weighs the add-on against Pro well and quantifies the mobile delay at a ceiling of $1.1M, but never evaluates delaying Copilot or bundling it free. Its mobile mitigation is only 'lock the new date', and it plans on a 33% point estimate despite noting the 2023 tier had no AI.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M versus $2.45M, inference at $32/$61/$130 per account, 109 deals and $0.64M, Pro at $2.89M, and company margin of 74.1% without a cap. Both rebut the Sales memo with the 328-versus-109 comparison and flag Routewise's discount, the volunteer bias and the survey skew. Y goes further. It gives ranges instead of points (7–14% add-on, 20–33% Pro) and computes add-on gross profit after inference and platform cost. It notes that new-logo ARR does not count toward NRR, shows the price impact by account size, and catches two inconsistencies in the pack (the 58% top-decile share versus the 40% implied by Table 2, and 1,190 versus 1,372 churned accounts). Y's weak spots are flagged assumptions: scaling 14% to 10.7% by seat ratio, the 25–75% mobile-fix range, and the 'only option' overclaim. X's weak spots are the 33% Pro uptake used as the planning number, the net-ARR sum that adds win-back at its maximum, and the untested claim that use rises with seats. X's observation that loss notes cover all lost deals, not only Routewise ones, is a good catch. Y uses the critical evidence more completely and more cautiously.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects: keep the launch, reject the $149 add-on and the $8M forecast, and re-base on revealed demand. Y does this more rigorously. It breaks the hypothesis into five conditions that would have to hold, shows which fail (demand, flat-price economics) and which hold (value, need, the delay with conditions), and resets the plan to a range of $1.7–2.9M. It also discounts the paywall rate further for volunteer bias. X revises clearly too ('size on what accounts paid, not what admins said', and 14% is a ceiling). But it replaces the $8M with a single $2.9M number resting on the 2023 tier precedent, which is somewhat less cautious.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents give the same defensible recommendation, with correct core numbers and all the traps avoided. Y serves the decision maker better for four reasons. It tests the alternatives the executive team will actually debate (mobile first, free bundle). It is honest that the sequencing is a close call and says what tips it. It plans on a range with explicit breakpoints. And it gives a staged plan with a Q1 non-volunteer test, go/no-go thresholds, a pack price and five concrete decisions. X is tighter and slightly more internally consistent, and its conclusions are sound. But it leaves the mobile-versus-Copilot trade-off less explored and relies on a 33% point estimate and a net-ARR sum that flatters the case.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9263402,
+ "wall_s": 45.67550182342529
+}

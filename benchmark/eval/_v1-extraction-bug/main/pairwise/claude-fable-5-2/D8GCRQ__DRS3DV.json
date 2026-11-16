@@ -1,0 +1,39 @@
+{
+ "x": "D8GCRQ",
+ "y": "DRS3DV",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Y runs a tight chain: the governing thought (Pro tier, Q4, mobile first) is carried by four summary points, a slide that tests the CPO's plan against five conditions, and sections that each answer one of them. Its main wobble is slide 12, whose title says the mobile delay costs 'about twice as much' while the body says 'the money is close'. X is orderly but has more internal tension. It downplays win-back and retention in section 1, then uses the Routewise threat as a reason to launch first in section 4. Its own 34% break-even leans toward mobile first, yet it concludes Copilot first. It asks the executives to drop the add-on in January while the Q1 test is said to 'decide between' Pro and the add-on. It also launches 'on the productivity case' that it says is unproven.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "judgment": {
+   "reasons": "Both land on defensible conclusions: X on a Pro tier in Q2 with the mobile delay accepted explicitly, Y on a Pro tier after the mobile rewrite. Y meets the conditions for a delay, since it quantifies the win-rate risk ($0.64M ceiling, $0.32M base) and plans a limited AI response (beta kept live, early access in Routewise deals, a mid-February trigger). Y weighs the trade-off more fully, with a sensitivity grid on rewrite effectiveness and AI attribution, explicit break-evens of 26–40%, and a 'don't launch' option. It also uses a more cautious 25% base take-up and discloses that the low case misses 105%. X's timing call rests on the NRR deadline, but it does not consider that tier migration is a one-off expansion, a point that weakens its tie-breaker. X's base case leans on the single 33% precedent. X is candid about its break-evens (28%, 26%, 34%). Y's weaknesses are that its 50% midpoints are arbitrary, though labelled, and that it reads the engineering constraint as a straight swap, which it flags for confirmation.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M against $2.45M, inference of $32/$61/$131 per month, 109 deals worth $0.64M, Pro at $2.89M, and the engineering cost of $1.47M. Both discount the survey, the beta and the Sales memo, and both flag the Routewise discount as a confound. Y adds sharper inferences: the memo implies a 58% win rate, above the 44% before Routewise launched AI. It also spots that Table 2 implies the top 10% send about 40% of requests, not the 58% stated, and that new-logo wins do not count toward NRR. It states the 59% and 12% add-on margins explicitly. X is disciplined in using upper bounds instead of invented midpoints, and its break-evens are correct. But its claim that the base case delivers 'NRR about 106%' treats a one-off migration as a 2028 result, and it shows inference cost as $0.01 in one table. Y relies on more assumed parameters (50% rewrite effect, 50% AI attribution, per-seat usage scaling) and assumes the promotion ended in Q3, though all but the last are labelled.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both keep 'launch' and reject the $8M figure and the $149 add-on, replacing them with a metered Pro tier sized from the paywall test and the 2023 precedent. Both also reject the Sales memo's claim. X has a clear from-to slide and keeps the Q2 timing with a fixed mobile restart. Y tests the CPO's plan against five explicit conditions, keeps only the strategic need, and revises timing as well as price and packaging, with a trigger to return to Q2 if the evidence shifts. Y's handling is the more systematic and more closely tied to evidence, but X's is also appropriate.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents are numerically sound and avoid every trap in the pack. Y would serve the executive team better for three reasons. First, it gives ranges with a conservative base case instead of leaning on the 33% precedent. Second, it shows how NRR actually responds: migration is a one-off, the low case misses the target, and both levers are needed for a margin of safety. Third, it turns the mobile-versus-Copilot trade-off into a sensitivity grid with a concrete, datable trigger (the Q4 2026 win rate). X is thorough and honest about its break-evens, but its timing recommendation sits uneasily with its own 34% break-even and rests on an NRR-deadline argument it does not examine.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.2915482,
+ "wall_s": 73.10539221763611,
+ "error_text": null
+}

@@ -1,0 +1,181 @@
+{
+ "blind_id": "DQ7ZUH",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as 'raise or not, and how' and answers by segment. It uses the stated constraints (+15% ARR, NRR above 100%, renewal timing, enterprise caps) as criteria. It identifies early that the answer turns on the promotion-cohort mix, the $10.3M overstatement and segment differences. It also builds the +15% bridge and flags that new-customer ARR is still needed.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the summary points and the slide titles line up. The sequence is: churn concentrated in the promo cohort, then why the cohort leaves, then pricing power by segment, then the CFO's $10.3M corrected, then SMB and mid-market economics, then options, plan, bridge, onboarding, guardrails and decisions. Titles are claims that the slides support. There is minor redundancy: the plan, the decisions slide and the summary repeat each other, and the 16-slide length is a little heavy. 'Hold SMB' sits next to a Q1 +8% SMB test, which is explained but slightly blurs the message.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Key numbers are correct: promo churn 4.9%, a 1.0 pp mix effect out of 1.1 pp, $7.57M gross, break-even 10.7% and 9.1%, blended churn 1.7→2.6 and 0.83→1.19, and the 56% share of churners. The dashboard mismatch is noted. It uses the 52% vs 18% exit-survey split and the 2023 precedent (noting it predates Inkwell). It caveats that the 2024 test covered new sign-ups, and it stress-tests this. Weaknesses: the activation decomposition (~30%) rests on strong assumptions. Adding 109% NRR growth to a price-rise effect risks double counting. The 2.1% mid-market loss rate taken from the test gap is thin. The per-segment gross figures are not shown in the deck, but the segment totals are correct.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is differentiated: +10% in mid-market, enterprise up to caps with a 10% target elsewhere, SMB held with a randomised test and a go/no-go rule, the promo cohort frozen plus an activation push, and pause triggers. It compares three options plus variants on ARR, churn, NRR and reversibility. It reconciles the CFO and CEO views ('half right'). It rejects the 'halve churn' claim with evidence. It names conditions and checkpoints and gives actionable next steps. The brand and trust trade-off at renewal is only lightly covered. Choosing 10% rather than 12% in mid-market is slightly conservative but justified.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the language is plain. The 16 slides are somewhat more than the decision needs, with repetition across the summary, plan, decisions and appendix. It is still readable and the labelling of estimates is clear.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "The activation gap accounts for ~0.8 of the cohort's ~2.8-point excess churn (~30%). The rest coincides with the discount ending.",
+    "why": "This is built on the assumption that the 3× activation effect applies cleanly and the 72% activation figure holds for non-promo customers. It is labelled est., but it is presented fairly precisely."
+   },
+   {
+    "quote": "NRR stays at ~112–113%.",
+    "why": "This assumes the trailing NRR of about 109% holds and adds the price effect on top. It risks double counting, since the trailing NRR already includes past price effects and churn."
+   },
+   {
+    "quote": "Planning case: renewal losses equal the 2024 test's relative conversion gap (2.1%).",
+    "why": "A non-significant new-sign-up conversion gap is used as a proxy for renewal loss. It is flagged as a caveat but still anchors the planning case."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Differentiated increase: mid-market +10% at renewal, enterprise up to the 7% cap and a 10% target elsewhere, SMB list held with a Q1 +8% randomised test and a go/no-go rule, promo cohort frozen plus an activation programme, and one churn definition. Estimated $4.3M gross and $2.4–3.5M net.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches the key's differentiated approach. It separates the mix effect from the rate effect, corrects the $10.3M to $7.6M, reconciles the CFO and CEO views, and sets guardrails and kill criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It calls the CFO 'half right': churn is mostly a promo-cohort mix effect, but the cohort is price-sensitive and Inkwell is a real threat. It replaces the uniform 12% with a segmented plan and corrects the $10.3M. This matches the expected 'revise'. It also challenges the 'halve churn' claim and the undefined dashboard metric."
+  },
+  "overall_comment": "This is a strong, well-calibrated deck. Its numbers check out, it separates the cohort mix effect from the rate effect, and it corrects the CFO's $10.3M. Its segmented recommendation has explicit alternatives, triggers and next steps. The main weaknesses are some assumption-heavy estimates (the activation split, NRR layered on price effects), thin treatment of the trust/brand trade-off, and a length that is slightly more than the decision needs.",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1638544,
+ "wall_s": 30.08574104309082,
+ "is_error": false,
+ "error_text": null
+}

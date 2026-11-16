@@ -1,0 +1,197 @@
+{
+ "blind_id": "DTEJJT",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as launch or not in 2027. Uses the 12-month runway floor and the no-new-round constraint as explicit criteria, including in the options table. It names the three issues the answer turns on early: unit economics, pop-up evidence and cash. It does not set out the investors' 'path to profitability within current cash' objective as a separate criterion. It also never considers a capital-light partner test, only a permanent own-store test.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, executive summary, sections and slide titles line up as one argument: market growth without profit, then negative unit economics, then a weak pop-up, then broken runway, then the software alternative with reopen conditions. Most titles are claims that the slide's evidence supports. Section dividers and the market-title slide add little. Slides 17 and 18 and the repeated runway messages overlap a little.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The core numbers check out: median -6.17, best inputs -1.76, pop-up -12.57, plan +2.02, runway 2.5M and 6.2 months, floor 4.8M, nine-store loss of 18.2M, break-even order value of 46.7, CAC per retained customer of 172.7 and payback, and 10.3 contracts. Derivations are shown. Caveats are honest, for example the ambiguity over whether the $9.5M includes current burn, and payback that is flattering. The Zipcart fee case is described but never recomputed on Parcelbird inputs ($3.99 fee, 1% promotions, volume -14%). The best-density-only figure of -3.44 is not shown. CAGR appears only as 2.8x and yearly growth rates. There are a few mildly unsupported causal or mechanism claims.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation not to launch and to scale the software is defensible and follows from the analysis. The options are compared against the board criteria. Reopen conditions work as gates (a profitable network site, settled rider pay rules, funding that keeps the floor). Next steps are concrete and owned. It avoids the main traps. Gaps: it does not test whether the Zipcart fee route could work for Parcelbird, and it does not offer a capital-light partner-store test with kill criteria. Its claim that Parcelbird 'cannot copy' the fee is rhetorical.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2. The language is plain and the numbers are traceable. At 23 slides with five section dividers, and with some overlapping cash and runway slides, it is somewhat longer than the decision needs, though each content slide mostly earns its place.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "they bought the 18% weekly growth",
+    "why": "Causal claim. The pack gives no evidence separating promotion effects from other drivers of order growth."
+   },
+   {
+    "quote": "as riders waited for scattered orders",
+    "why": "Mechanism for the lower orders per rider-hour is invented. The pack only gives 2.1 per hour."
+   },
+   {
+    "quote": "which can only push this line up",
+    "why": "Overstated. Minimum-pay rules are only being considered, and their effect is uncertain."
+   },
+   {
+    "quote": "Our plan charges only the $1.99 delivery fee, so it cannot copy the route to profit that Zipcart took",
+    "why": "The plan could add a service fee. The document never tests that scenario on Parcelbird's own inputs."
+   },
+   {
+    "quote": "Asked of the age group most likely to use it",
+    "why": "The pack does not say the 25–39 group is the most likely users."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now. Scale the software (2 engineers and 2 sales hires at $0.8M a year) and package fast delivery from grocers' existing stores. Revisit operating only when a network site is profitable after store costs, rider pay rules are settled, and funding keeps 12 months of runway.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches R1 and meets all the defensibility criteria: contribution computed at benchmark, best-observed and pop-up inputs; market growth separated from profitability; the runway constraint checked; and the software alternative offered. Explicit reopen gates and next steps strengthen it."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "It accepts the market-growth half of the founders' view but rejects the unit-economics half. It shows the plan beats the best observed site on four inputs, that even the best combined inputs lose $1.76, and that the pop-up lost $12.57. It treats Zipcart's single profitable city as dependent on a fee, promotion cuts and a 14% volume loss. It contrasts survey intent with retention. It does not quantify the Zipcart fee scenario on Parcelbird's inputs."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. All the main calculations match my re-derivation. It reaches a defensible R1-type recommendation with reopen gates and owned next steps. Its main gaps are that it does not recompute the Zipcart $3.99-fee and 1%-promotion case on Parcelbird's inputs (key item K9), it never offers a capital-light partner test, and it is a little long, with a few small unsupported mechanism claims.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1602944,
+ "wall_s": 46.49035120010376,
+ "is_error": false,
+ "error_text": null
+}

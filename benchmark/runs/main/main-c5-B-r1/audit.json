@@ -1,0 +1,29 @@
+{
+ "run_id": "main-c5-B-r1",
+ "condition": "B",
+ "status": "complete_no_pptx",
+ "events": 453,
+ "tools": {
+  "Bash": 22,
+  "Read": 29,
+  "Skill": 1,
+  "Write": 1
+ },
+ "subagent_calls": 0,
+ "skill_available": false,
+ "skill_text_seen": false,
+ "models_used": [
+  "claude-opus-5-5"
+ ],
+ "flags": {
+  "repo_or_key_access": [],
+  "network_attempts": [
+   "{\"command\": \"cd $TMPDIR && python3 -m venv pbvenv && ./pbvenv/bin/pip install -q python-pptx matplotlib 2>&1 | tail -3; ./pbvenv/bin/python -c \\\"import pptx, matplotlib; print(pptx.__version__, matplotlib.__version__)\\\"; echo $TMPDIR\", \"description\": \"Create venv and install python-pptx and matplotl",
+   "{\"command\": \"cd $TMPDIR/pb && cat > t.svg <<'EOF'\\n<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"1280\\\" height=\\\"720\\\" viewBox=\\\"0 0 1280 720\\\">\\n<rect width=\\\"1280\\\" height=\\\"720\\\" fill=\\\"#fcfcfb\\\"/>\\n<text x=\\\"60\\\" y=\\\"80\\\" font-family=\\\"Helvetica Neue\\\" font-size=\\\"30\\\" font-weight=\\\"bold\\\" f",
+   "{\"command\": \"cd $TMPDIR/pb && cat > t2.svg <<'EOF'\\n<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"1280\\\" height=\\\"720\\\" viewBox=\\\"0 0 1280 720\\\">\\n<rect width=\\\"1280\\\" height=\\\"720\\\" fill=\\\"#fff\\\"/>\\n<text x=\\\"60\\\" y=\\\"80\\\" font-family=\\\"HelveticaNeue-Bold\\\" font-size=\\\"30\\\" fill=\\\"#0b0b0b\\\">A: "
+  ],
+  "sandbox_denials": 7,
+  "permission_denials": 0
+ },
+ "clean": true
+}

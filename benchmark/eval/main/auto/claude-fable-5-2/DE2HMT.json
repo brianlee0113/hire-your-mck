@@ -1,0 +1,204 @@
+{
+ "blind_id": "DE2HMT",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document answers the exact board question (launch in 2027 or not) and uses both stated constraints, profit within current cash and 12 months of runway at all times, as explicit rows in the options comparison. It identifies early the four things the founders' case depends on (market profit, unit economics, funding, alternatives) and tests each. It also notes the no-follow-on-funding constraint and widens the choice to four options instead of a bare yes/no. Nothing material is missing.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the four executive-summary points are the four body sections, and each slide title is a claim its slide supports with a calculation. Reading the titles alone gives the argument: growth without profit, negative unit economics, a fragile plan, a weak pop-up, CAC not repaid, the Zipcart lever insufficient, runway breached, software alternative, options, recommendation, risks, triggers. Minor blemishes: the approach slide largely repeats the summary, the pop-up appears on two slides, and the 'reading B' cash figures differ between slide 10 and appendix A2. None breaks the logic.",
+    "score": 5
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived the core numbers and they match the pack and the key to the cent: −$6.17 median, −$1.76 best-combined, +$2.02 plan, −$12.57 pop-up, 41.5% CAGR, $2.5M / about 6 months of runway, and the Zipcart-adjusted −$0.48 before and −$1.05 after the volume loss. Derivations are transparent and evidence against the answer (Zipcart, pop-up growth, founders' density upside) is engaged. The flaws are modest but real. Slide 10's reading B (−$4.7M at flat burn, 'runs out ≈ month 15') does not match appendix A2 (−$2.5M); flat-burn arithmetic gives about month 13. The $27M acquisition sizing in a slide title rests on a rough steady-state method. The headline software break-even at month 26 depends on a constructed flat-cost-base assumption, though it is labelled and stress-tested. A few assertions are unsupported, such as competitors serving the grocers and the cause of Zipcart's volume loss. It also does not state outright that, with the fee, a site at best observed density would be profitable; it frames this only as '35% above the median'.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear and follows from the analysis: decline the launch and the own-store pilot, fund software hires in tranches, and build a fast-delivery offer for grocers validated with late-stage prospects. Four options are compared on the board's own criteria plus upside, downside and reversibility. The operator-versus-enabler trade-off is explicit, and the pilot is rejected with a costed reason (it breaches the floor and adds little beyond what the 14 sites already show). The document says what would change the answer (five measurable reopening triggers), stress-tests its own alternative (floor holds down to about 34% growth), and gives 90-day actions with measures. It avoids all six traps and quantifies the founders' forgone upside.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the first line of the executive summary, the language is plain and the calculations are shown inline. But at 19 slides and roughly 5,000 words it is longer than the decision needs. The approach slide restates the summary, the pop-up is covered twice, and the risk and trigger slides overlap. The assumptions appendix also carries irrelevant production notes (format, palette).",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Competitors serve the grocers who want fast delivery",
+    "why": "The pack mentions no competing software vendors; this status-quo downside is asserted without basis."
+   },
+   {
+    "quote": "Zipcart’s one profitable city needed price rises and lost volume as a result (page 9).",
+    "why": "The pack says only that volume fell 14% afterwards; the causal link is inferred, not stated."
+   },
+   {
+    "quote": "If losses run at median levels, the cash runs out within the first year",
+    "why": "This implicitly assumes nine stores at full median volume from day one; no ramp or timing is modelled to support 'within the first year'."
+   },
+   {
+    "quote": "Higher fees work against the impulse, convenience use that quick commerce depends on (uncertainty noted in the briefing pack)",
+    "why": "The pack's stated uncertainty is about raising AOV, not about fees; the attribution to the pack is stretched."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "In the second, cash runs out around month 15 (appendix A2).",
+    "correct": "On slide 10's own flat-burn arithmetic ($9.5M ÷ 18 + $0.4M ≈ $0.93M a month, giving −$4.7M at month 18), cash runs out at about month 13. Month 15 holds only under the appendix's declining-burn model, which gives −$2.5M at month 18, not −$4.7M."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Today’s $0.4M/month burn × 18, if not included ... −$7.2M ... −$4.7M",
+    "quote_b": "Parcelbird Now, reading B $9.5M evenly over 18 months + existing software burn (no new hires) −$2.5M M2 ≈M15",
+    "why": "The same scenario shows two different month-18 cash positions (−$4.7M on slide 10, −$2.5M in appendix A2) because the slide uses flat burn and the appendix a declining-burn model. It is minor and does not change the conclusion, since both readings breach the floor."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027 and do not run a one-store pilot. Approve $0.8M a year of software hires in two tranches tied to bookings, develop a store-based fast-delivery software offer validated with late-stage pipeline grocers, and adopt five measurable triggers plus a quarterly runway check for reopening the operator decision.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It meets all four defensibility criteria. It computes per-order contribution at pop-up, median, best-observed and plan inputs. It separates 41.5% market growth from operator losses. It checks runway ($2.5M, about 6 months, against the 12-month floor) under two readings. It offers the software alternative with a stress-tested cash path."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document starts from the founders' 'launch' hypothesis, sets out four conditions it needs, and rejects it on the evidence. It grants the part that holds: growth is real, so the market test is 'half met'. It shows each plan input exceeds the best observed value, that the pop-up fell below the median on all four, and that the Zipcart fee lever still leaves a median site at −$1.05. It quantifies the forgone upside if the founders are right (+$12M a year) and sets triggers for reopening. It weighs survey intent against retention and plan against benchmark. The one causal overreach is attributing Zipcart's volume fall to the fee."
+  },
+  "overall_comment": "This is a very strong document. Every required calculation matches the key, including the Zipcart-adjusted median economics (−$0.48 before and −$1.05 after the volume loss), and the recommendation is the key's preferred R1, with gated software hiring and explicit reopening triggers. It goes beyond the key in useful ways: a one-input-at-a-time sensitivity on the plan, CAC payback by scenario, a rider-pay sensitivity, and a stress-tested software cash model. Its weaknesses are secondary. The 'reading B' cash figures differ between slide 10 and the appendix. The $27M acquisition sizing is rough but sits in a slide title. The software break-even headline rests on a constructed flat-cost assumption, though this is disclosed and stress-tested. A few assertions are unsupported. The document is longer and more repetitive than the decision needs. Weighted score: 4.65.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "high"
+  }
+ },
+ "cost_usd": 1.1834956,
+ "wall_s": 149.30571794509888,
+ "is_error": false,
+ "error_text": null
+}

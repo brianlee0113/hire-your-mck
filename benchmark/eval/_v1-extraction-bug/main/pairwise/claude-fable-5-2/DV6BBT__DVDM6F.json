@@ -1,0 +1,39 @@
+{
+ "x": "DV6BBT",
+ "y": "DVDM6F",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean line from decision question to recommendation, and both land on the same answer. X's five sub-questions map one-to-one onto its summary claims and slides, and each claim carries the number that supports it (26.3% break-even vs 33% precedent, 71.9% margin for free-in-Core, $1.1M vs $1.44M for sequencing). Its weak spot is a headline of 'plan on about $2.9M' when its own slides call the 33% a precedent from another tier at another price. Y's launch / packaging / trade-offs structure is equally tidy, and its five-condition test slide ties evidence to the conclusion well. Its weak spot is the governing thought that Pro is 'the only option' meeting NRR and margin: its own comparison table shows the add-on at 76.2-76.6% margin and up to +4.3 NRR points, Pro's low case at +3.0 missing the target, and it says 'on ARR alone Pro and the add-on overlap'. Each has one overreach at the top of the pyramid, of similar size.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the answer key's preferred recommendation (Pro tier, usage allowance, sized off the paywall test, mobile delay accepted explicitly), and both reject the add-on and free-in-Core for sound reasons. Y weighs the trade-offs better in four ways. It plans on a range ($1.7-2.9M) rather than a point estimate at the optimistic precedent. It adds a Q1 test on randomly chosen non-volunteer accounts with go/no-go thresholds, which directly addresses the biggest uncertainty. It gives concrete mitigation for the mobile delay (Customer Success outreach, dated roadmap, no follow-on AI features, remaining team on reliability fixes). And it admits that on permanent ARR mobile-first 'may lose slightly less', then names what actually decides it (timing against the 2028 NRR target). Y also adds a real packaging argument: a flat $149 is +63% for a 3-seat account when price is already 22% of churn. X's sequencing analysis is good, with an explicit 29% decision threshold and 'narrowly' in the headline. But it calls Pro revenue 'near-certain', offers only a fixed restart date and monthly watch as mitigation, and has no pre-launch validation step.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get every required calculation right: $8.06M vs $2.45M, inference of $32 / $61 / $130 per account, 109 deals and $0.64M, Pro at $2.89M, and the $1.93M implied by the Sales memo. Both treat beta and survey bias, the Routewise discount confound and the loss-note fallacy properly. X has sharp observations of its own: the loss notes cover all lost deals, not only Routewise ones; the two win-rate periods differ in length; renewal was measured while Copilot was free; 17 of 120 cannot distinguish 13% from 14%. It also derives a correct overage floor ($36 per thousand) and free-tier cap (172 requests per seat), and stays disciplined by using upper bounds instead of invented parameters. Y goes a step further in scrutinising the pack. It catches that the top-decile figures imply 40% of requests, not the stated 58%, and that 1,190 churned accounts does not match the 1,372 implied by 14% churn. It notes Brightwork was already losing 56% of Routewise deals before the AI launch. It also sizes the NRR ceiling from fixing mobile (3.8 points). Against that, Y introduces more assumed parameters (14% scaled by seat ratio to 10.7%, 25-75% mobile churn prevented, a 20% low case for Pro), though all are flagged. X's 'near-certain' revenue claim and Y's 'only option' claim are comparable overstatements. Y is slightly ahead on critical use of the evidence.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO hypothesis as the answer key expects: keep the launch, reject the $8M sizing and the $149 add-on packaging, and resize from the paywall test with inference cost included. Y does this more explicitly. It breaks the hypothesis into five conditions that would have to be true, gives a verdict on each (two not supported, two supported, one partly), and states the revised answer: launch stands, packaging changes. It also discounts the 14% further for volunteer bias into a 7-14% range and asks the executive team to formally reset the plan to $1.7-2.9M. X revises just as correctly in substance: 30.7% of the planned ARR survives, 14% is treated as a ceiling, and the add-on shrinks to under $1M of gross profit. But it does so implicitly through the storyline, and its replacement headline number sits at the optimistic end.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents reach the same defensible recommendation with accurate numbers and avoid every trap in the answer key, so the gap is in decision usefulness, not correctness. Y would serve the CEO better. It gives a range to plan on instead of a point estimate, a pre-launch test on non-volunteers with go/no-go thresholds, staged review gates, concrete mitigation for the mobile delay, and five explicit decisions to approve. It is candid that sequencing is a close call on ARR and that timing decides it. It also surfaces inconsistencies in the pack and the price-regressivity argument against a flat fee. X is rigorous and in places more disciplined, with its break-even headroom analysis, 29% sequencing threshold, and overage and cap derivations. But it is somewhat more confident in the 2023 precedent and thinner on validation and mitigation.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.2140442,
+ "wall_s": 63.8346471786499,
+ "error_text": null
+}

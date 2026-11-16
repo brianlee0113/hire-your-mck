@@ -1,0 +1,27 @@
+{
+ "run_id": "pilot2-c1-A-r1",
+ "condition": "A",
+ "status": "complete",
+ "events": 538,
+ "tools": {
+  "Bash": 30,
+  "Read": 4,
+  "Skill": 1,
+  "Agent": 1
+ },
+ "subagent_calls": 1,
+ "skill_available": false,
+ "skill_text_seen": false,
+ "models_used": [
+  "claude-opus-5-5"
+ ],
+ "flags": {
+  "repo_or_key_access": [],
+  "network_attempts": [
+   "{\"command\": \"cd .. && rm work/t.pptx && python3 -m venv $TMPDIR/venv && $TMPDIR/venv/bin/pip install -q pillow python-pptx 2>&1 | tail -2; $TMPDIR/venv/bin/python -c \\\"import PIL, pptx; print(PIL.__version__, pptx.__version__)\\\"\", \"description\": \"Install Pillow in a temp venv for preview rendering\","
+  ],
+  "sandbox_denials": 3,
+  "permission_denials": 0
+ },
+ "clean": true
+}

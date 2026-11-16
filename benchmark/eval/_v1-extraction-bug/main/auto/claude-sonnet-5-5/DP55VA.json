@@ -1,0 +1,196 @@
+{
+ "blind_id": "DP55VA",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document frames the decision as 'whether and how', and uses the 15% ARR and NRR>100% objectives plus the renewal and cap constraints as explicit criteria. It adds a bridge to $98.9M and shows that pricing closes only ~28% of the gap. It finds early that the answer turns on segment, cohort and renewal timing. It also reframes the CFO and CEO views as each partly right. Weaknesses: Inkwell's effect on SMB is left as 'out of scope', and a made-up 'week 1 hypothesis' is used as the framing device.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought is clear: targeted increase, +10% mid-market, enterprise up to caps, SMB gated. The summary, sections (why churn, where price can go, what options are worth, how to execute) and claim-style titles line up well. The titles alone give the argument. Flaws: net ARR is $2.2–3.6M on slides 10 and 15 but $2.4–3.8M on slide 12 (the activation $0.2M is added in one place and not the other). Slide 10 shows option C beating B in the stress case too (2.20 vs 2.17), so the gate rationale rests only on a 3× tail. Slides 3 and 14 also add some redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers check out. Promo churn of 4.91% is implied correctly, and the mix split of +1.04 and +0.06 pts is right. Weighted churn is 1.7→2.6% and 0.8→1.2%. The $7.566M gross uplift is derived transparently and the walk from $10.32M is correct. The 2023 response of 3.6% and net +4.1% are right, and the break-even at ~2× the 2023 response checks out. The activation arithmetic is also correct. It uses the exit-survey split, the test caveat and the dashboard mismatch. Weaknesses: it never states the 10.7% break-even for the blanket 12%, and it states the 'promo problem, not a price problem' headline more strongly than the evidence supports. The k for mid-market is extrapolated from a non-significant new-signup test. The k for the promo cohort (2.9×) is scaled from survey citation shares, which is a stretch, though it is labelled an assumption.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is a differentiated, gated increase: mid-market +10%, enterprise to cap, SMB test then go/no-go, promo cohort frozen with an activation programme. This matches the defensible R1/R2. Four alternatives are compared quantitatively. It gives explicit triggers (MM churn >1.0%, SMB test arm >0.5 pt, citations >25%), owners and dates. It rejects the CFO's $10.3M and the Customer Success claim with calculations, and none of the traps are fallen into. Gaps: the SMB response to Inkwell (a lower tier or packaging) is deferred as out of scope. Brand and trust at renewal is barely discussed. B's edge over C is thin on the document's own stress numbers.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title and executive summary on slides 1–2, and the language is plain. But 18 slides and ~4,300 words is long for this decision. The slide 3 hypothesis table, the repeated option tables and three appendices duplicate content. The executive summary is dense, with 15 bullets.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Rising churn is a promotion problem, not a price problem",
+    "why": "Overstated headline. The same deck shows the promo cohort leaves over price (52% cite price) and that Inkwell has cut the SMB win rate, so price is part of the story."
+   },
+   {
+    "quote": "Initial hypothesis (week 1): raise prices for mid-market and enterprise ... freeze SMB",
+    "why": "This invents an analysis history that is not in the pack. The pack's hypotheses were the CFO's and CEO's."
+   },
+   {
+    "quote": "Inkwell may reach smaller mid-market deals (≤200 seats).",
+    "why": "Speculation. The pack only says Inkwell has not been seen above 200 seats. It is hedged with 'may', so it is a minor point."
+   },
+   {
+    "quote": "k, SMB promo cohort: 1.30% per pt (base) ... 2.9× non-promo, from price citations of 52% vs 18%",
+    "why": "The price elasticity is scaled directly from survey citation shares. This is an assumption with no real basis, though it is labelled."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Total 2.4 – 3.8 (slide 12) vs 'together they are worth $2.2–3.6M' (slide 15)",
+    "correct": "The model gives 2.2–3.6 before activation, or about 2.4–3.8 including the $0.2M activation. The totals are used inconsistently across slides."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "C beats B by $0.3M in the base case but bets $16.6M of SMB ARR on an untested assumption",
+    "quote_b": "Chart stress case: B 2.1722; C 2.20009",
+    "why": "C also matches or beats B in the stress case. B's advantage rests only on the 3× tail (-0.6), so the 'narrower range' justification is thinner than the title on slide 10 implies."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "partial"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "partial"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Targeted, gated increase: +10% mid-market at renewal from January, enterprise up to the 7% cap (+10% where uncapped), a randomised +8% SMB non-promo renewal test with a July go/no-go, a price freeze for the promo cohort plus an activation programme, and a defined board churn metric and new-logo plan. Net about $2.2–3.6M.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It differs by segment, separates the cohort mix effect from the rate effect, corrects the $10.3M to $7.6M gross, and reconciles the CFO and CEO views. It gives gates and kill triggers. It matches the key's R1/R2."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document rejects the blanket 12% and the 'onboarding halves churn' claim. It also does not accept the CEO's 'price rise will worsen churn' wholesale. It says the CFO is right that the rise is not about list price and the CEO is right that the cohort is fragile. This is the expected revise-by-segment handling. The headline 'promotion problem, not price' leans slightly too far toward the CFO, but the body qualifies it."
+  },
+  "overall_comment": "This is a strong, quantitatively sound deck. The mix decomposition, the corrected $7.6M uplift, the cohort-split exit survey, the activation test of the Customer Success claim and the dashboard mismatch are all handled correctly. The recommendation is differentiated and gated, with clear triggers. Weaknesses: it is long, with some redundancy. The net-ARR totals are inconsistent across slides ($2.2–3.6M vs $2.4–3.8M). The 10.7% blanket break-even is not stated. The SMB response to Inkwell is deferred. B's edge over C is thin on the document's own numbers.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.2088644,
+ "wall_s": 50.86883497238159,
+ "is_error": false,
+ "error_text": null
+}

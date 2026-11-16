@@ -1,0 +1,186 @@
+{
+ "blind_id": "D5PS59",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document restates the decision exactly as posed (launch in Q2 2027, and how to package and price) and turns the pack's three constraints into explicit tests on slide 3: the 4-point NRR gap (~$2.3M), the 3-point margin headroom (~$1.7M) and the 14-engineer, two-quarter mobile delay. It identifies early what the answer turns on: stated versus revealed demand, usage-driven inference cost, the size of the Routewise threat and the mobile trade-off. It also notes that new-customer wins do not move NRR, which keeps the objectives straight. Nothing material is missing.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the executive summary's three blocks (launch, package as Pro, guardrails) map onto the body, and the titles alone give the argument. Two flaws keep it from a 5. First, the paywall rate is called a ceiling for the add-on (7–14%) but is the low case for Pro (15–33%), and the headline claim that the add-on 'would earn less' depends on that asymmetry. Second, slide 8's title says only Pro passes all three tests while option B is marked 'passes, but weaker'. There is also some repetition: the decisions appear twice and Appendix B restates the body.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived nearly every figure and they are correct and transparent: $8.06M vs $2.45M; inference of $17/$32/$61/$131; 109 deals and $0.64M; Pro ARR of $1.31M/$2.19M/$2.89M; company margins of 76.4–76.7%; free-in-Core at 71.9–73.5%; churn ARR by reason; $1.47M engineering. All critical evidence is used, including evidence against the recommendation (mobile 27% vs AI 6%, the Routewise discount, volunteer bias, survey non-response). It also catches a real inconsistency in the pack (a 14,500 top-decile mean implies a 40% share, not 58%). Three material flaws remain. (1) Pro base adoption of 25% against add-on base of 10% is a judgement call that drives the 'Pro earns more' conclusion; at the tested 14% the add-on earns $2.45M ARR and $0.85M gross profit, about the same as Pro's base. (2) The sequencing comparison sets $1.1M of 'forgone' Pro ARR against $0.5M of churned ARR, but the first is six months of deferred revenue at full run-rate adoption and the second is permanently lost recurring revenue. (3) Costing Pro at 444 requests per seat assumes usage scales with seats, which the pack does not show; this gives lower inference cost than the key's 3,600 per account.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear and defensible (the key's R1): a Pro tier sized off revealed demand, with a pooled allowance and overage as margin guardrails, and the mobile delay accepted explicitly with a fixed date. Four alternatives are compared on the stated criteria, including defer and free-in-Core. The trade-offs are explicit, and there are triggers, a March go/no-go, a $15 price arm with a break-even rule, and statements of what would flip the answer. None of the key's traps is fallen into. It is held below 5 because the Copilot-first versus mobile-first call rests on the unlike comparison described above, which favours the recommendation; a like-for-like valuation could plausibly reverse the order. The March gate also comes after a quarter of the mobile delay has already been incurred.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title and executive summary, with the decisions requested stated up front. Language is plain and precise and the calculations are traceable in an appendix. The deck is dense, though: 15 slides with heavy tables, the decision list repeated, and Appendix B largely restating the body. That is slightly more than the decision needs, though each slide has a purpose.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Revenue grows with account size, which is what drives usage.",
+    "why": "The pack does not show that AI usage scales with seat count. It shows usage is highly concentrated (top 10% make 58% of requests) and that beta accounts are larger and more active. The per-seat cost model (444 requests per seat) and the pricing rationale depend on this untested link."
+   },
+   {
+    "quote": "Holding Copilot back until mobile ships would forgo ~$1.1M or more of Copilot ARR.",
+    "why": "The ARR is deferred by two quarters, not forgone, and the figure assumes full run-rate adoption (25%) from day one, although the 2023 precedent took a year. It is set against permanently churned ARR, so the comparison is not like-for-like and overstates the cost of mobile-first."
+   },
+   {
+    "quote": "A $149 add-on would earn less",
+    "why": "This is stated as fact but rests on assumed adoption of 25% for Pro against 10% for the add-on. At the only tested rate (14%) the add-on yields $2.45M ARR and $0.85M gross profit, roughly equal to Pro's base case. No evidence in the pack gives Pro adoption at +$12 per seat."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Low = the paywall rate.",
+    "correct": "The Pro low case uses 15%, but the paywall rate in the pack is 14% (17 of 120 = 14.2%), and that was for a $149 per-account offer among volunteers. Minor mislabel; the arithmetic at 15% ($1.31M) is correct."
+   }
+  ],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 inside a new Pro tier at $91 per seat (Core + $12), with a pooled allowance of 600 AI requests per seat and $20 per 1,000 overage. Reject the $149 add-on and free-in-Core. Accept a two-quarter mobile delay with a fixed re-baselined date. Run a random-sample price test in Q1 with a March go/no-go at 15% implied adoption.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It meets all three defensibility criteria. Demand is sized from the paywall test, with the survey gap explained (6% response, large-account skew, stated intent). Variable inference cost is built into the packaging through the allowance, overage and a margin trigger. The mobile delay is quantified and weighed against the competitive threat, with conditions under which the order would flip. The weak point is that the sequencing arithmetic favours Copilot-first by comparing deferred run-rate ARR with permanently churned ARR."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document keeps 'launch' but rejects the CPO's $149 add-on and the $8M forecast. It shows the survey figure is 46% × 9,800 × $149 × 12 = $8.06M against $2.45M at the 14% paywall rate, and explains the gap through non-response, size skew and stated intent. It also corrects the VP Sales claim ($1.9M implied against a ceiling of $0.64M), treats the win-rate drop as having two possible causes, and treats beta results as upper bounds. This matches the expected 'revise' handling and is not contrarian. The one unsupported causal claim is that account size drives usage, which underpins the per-seat pricing."
+  },
+  "overall_comment": "Very strong document: the weighted score is 4.15 (framing 5; coherence, evidence, judgment and clarity 4 each). It frames the decision precisely, gets essentially every calculation right, uses all the critical evidence including what cuts against it, corrects both internal claims and avoids every trap in the key. The recommendation is clear, gated and actionable.\n\nThree weaknesses hold it below top marks:\n- **Adoption asymmetry:** the claim that Pro out-earns the add-on rests on assumed adoption of 25% against 10%. The same paywall rate is treated as a ceiling for the add-on and a floor for Pro; at the tested 14% the add-on roughly matches Pro's base case.\n- **Sequencing comparison:** two quarters of deferred Pro revenue at full run-rate are set against permanently churned mobile ARR. This overstates the case for Copilot-first.\n- **Per-seat usage assumption:** the cost model assumes usage scales with seats, which the pack does not establish. This is why the Pro margin differs from the key's ~56%.\n\nThe March gate and the Q1 random-sample test mitigate the first weakness but not the second.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 1.0698076,
+ "wall_s": 137.2562780380249,
+ "is_error": false,
+ "error_text": null
+}

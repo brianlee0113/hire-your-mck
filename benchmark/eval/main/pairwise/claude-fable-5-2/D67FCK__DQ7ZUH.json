@@ -1,0 +1,39 @@
+{
+ "x": "D67FCK",
+ "y": "DQ7ZUH",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same clean chain: churn sits in the promotion cohort, pricing power sits in mid-market and enterprise, the CFO's figure shrinks, so raise by segment. X's summary is organised as three pillars that map onto its sections, and its hypothesis table links each condition to the answer. Y's summary flows as diagnosis, CFO half right, sizing, recommendation, trade-off, decisions, and its titles carry the argument equally well. Each has one small internal tension. X's summary calls mid-market churn '~flat' while later flagging the 0.6% to 0.8% rise as unexplained and needing diagnosis. Y says activation explains only about 30% of the cohort's excess churn, yet sets a cohort target of 2.1% and titles the slide 'up to a third'. The difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are substantively the same (R1): +10% mid-market, enterprise at 7% capped and 10% otherwise, hold SMB and test +8%, fund onboarding, define churn. The difference is in how the trade-offs are operationalised. Y's SMB test is run on half of Q1 renewals of established customers, which is the population the decision would affect, with a go/no-go rule tied to the 2023 response. X's test is on new self-serve sign-ups and is then used to reprice the existing base from July. That repeats the sign-up-versus-renewal gap X itself flags for the mid-market test. Y also sets advance triggers: pause mid-market if churn exceeds 1.0% for a quarter, a Q1 renewal-loss trigger, and a stop rule for cohort investment. It weighs reversibility, measures onboarding against a holdout because the cohort will shrink anyway, and raises notice periods and SMB packaging against Inkwell as a fallback. X has strengths Y lacks: an explicit option D (segmented at 12%), a concession lever for accounts evaluating a competitor, and a fuller risk table with quantified sensitivities. On balance Y's test design and guardrails make its recommendation slightly more defensible.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the key calculations correctly: promotion-cohort churn of about 4.9%, the 1.0pp mix versus 0.1pp rate split, $7.57M gross, 10.7% break-even, the 3.6% extra loss in 2023, and blended churn of 1.7% to 2.6% (logo) and 0.8% to 1.2% (ARR). Both caveat the new-sign-up test and note the 2023 precedent predates Inkwell. X goes a little further and is a little tighter. It quantifies onboarding at about $0.4M from the activation model rather than giving a best-case bound. It adds customer-weighted churn excluding the cohort (1.6% to 1.7%). It stress-tests enterprise as well as mid-market, and states that in-year revenue is roughly half of run-rate. Y's claim that the CFO plan's extra ARR is 'almost all from SMB' is overstated: in the planning case about $0.5M of the $1.8M gap is mid-market, and in the stress case the gap is not SMB at all. Y's 2.1% cohort churn target also runs beyond its own finding that activation explains about 30% of the excess. X's '~flat' for mid-market in the summary is a minor loose characterisation. Y does add a useful scale check, that break-even in mid-market would need churn to roughly double. Net, X is slightly cleaner.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis in the direction the evidence supports. They accept that churn is not a broad price problem, reject the uniform 12% and the $10.3M, and recognise price sensitivity in the cohort and Inkwell pressure in SMB. Both also reject the Customer Success 'halve churn' claim with the same arithmetic. X is more explicit and more balanced. It says the CFO and CEO are 'each half right', and lays out a five-condition table with a verdict for each (holds, holds at 10%, not shown, holds but smaller, fails) and the effect on the answer. One weakness is that the 'initial hypothesis' X tests is its own segmented starting point, not the CFO's stated one, though the CFO's claims are tested directly on later slides. Y states 'the CFO is half right' and devotes a slide to testing the CFO proposal, but addresses the CEO's concern only implicitly. X has a slight edge for the transparency of what was kept and what was changed.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents reach the same recommendation with near-identical numbers and both meet every defensibility criterion: mix versus rate separated, both views reconciled, $10.3M corrected, pricing differentiated by segment. X is marginally more rigorous analytically, with its hypothesis table, quantified onboarding value, option D and sensitivity table. Y is marginally more useful for a CEO whose worry is that a price rise pushes churn higher. Its SMB test measures renewals of established customers, where X's measures new sign-ups and so does not answer the question it then decides. Y also provides advance stop triggers and checkpoints, considers reversibility, measures onboarding against a holdout, and surfaces the legal and notice-period questions. The gap is small, but Y's plan is the one that can be executed and stopped more safely.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0868522,
+ "wall_s": 65.2698061466217,
+ "error_text": null
+}

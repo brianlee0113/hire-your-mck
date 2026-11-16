@@ -1,0 +1,39 @@
+{
+ "x": "DE2HMT",
+ "y": "D7NVST",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X builds the whole document on four tests of the founders' hypothesis (market, unit economics, funding, alternatives). Each test maps to a section, a verdict, a line in the executive summary and later a reopening trigger, so the hierarchy is the same from governing thought down to evidence. Its governing thought also claims the software business can break even on today's cash, and slide 11 supports that directly. Y is also well ordered around five key questions with section summaries, and its executive summary lines match its slide titles. But it treats Zipcart twice (market and unit economics), and its exec-summary support for the software alternative is thin: one line that late-stage deals exceed the hires. Y's governing thought does not show that the alternative meets the board's profitability objective. Both are coherent; X is tighter.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred conclusion (R1: do not launch, grow the software, sell fast delivery to grocers), and both reject a one-store own pilot. X weighs the alternatives more fully. It compares four options, including the status quo, against both board conditions. It quantifies the pilot at about $3.4M and shows it breaches the runway floor by month 6, and that capex plus site cost alone exceed the roughly $1.5M of headroom. It models whether the software path actually reaches profit within current cash (break-even around month 26, cash low point $5.4M) and stress-tests it down to about 34% growth and with costs rising. It also names the upside forgone if the founders are right (+$12M a year) and sets reopening triggers. Y's option table is qualitative. Its pilot rejection rests on \"a median store loses about $2.0M a year\" plus channel conflict, and its software case is a static 25.7 months of runway plus pipeline value, which does not show a path to profitability. Y's gates and risk owners are useful, and its Q4 2027 review using a customer site's data is a sensible capital-light learning step, but X has an equivalent in its triggers drawn from benchmark-site data.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get every required calculation right: median −$6.17, best combined −$1.76, pop-up −$12.57, plan +$2.02, CAGR about 41.5–42%, and $2.5M or about 6 months of runway at month 18. Both reach −$1.05 for a median site with Zipcart's fee, promotion cut and volume loss, and a 1,042 orders-a-day break-even. Neither tests the Zipcart levers at best observed density. Y adds some correct points X lacks: the −$0.48 no-volume-loss case from the key, a low-end-of-range case (−$12.5), the share of the plan's gain beyond observed inputs (46%), and a rider-cost break-even ($24.8 an hour). X adds a correct one-at-a-time sensitivity (87–136% of plan profit wiped out), rider-pay sensitivity ($0.42 per $1 an hour), a retention threshold for payback, and a sound software cash model with its assumptions stated. X is more careful to label inference: it flags channel conflict as \"our inference\", where Y asserts that grocers \"may stop sharing\" data and that the pipeline is at risk without that caveat. X also notes that survey intent and retention are different measures. X's payback uses contribution before site costs (15 months) and Y's uses after (28 months); both are defensible and both conclude there is no payback at the median. X has one unexplained chart label (\"Cash $7.5M start\"). Overall the two are near parity on accuracy, with X slightly ahead on labelling inference and on using the software-side evidence.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both reject the founders' hypothesis on the right grounds while granting what is true in it. X does this explicitly: it starts from the founders' \"launch\", sets out four conditions that would have to hold, and gives a verdict on each. The market test is \"half met\" (growth is real, profit is not), and X is fair to the pop-up (six weeks, temporary site, week-6 run rate about 410 a day). It notes that the benchmark sites already run Parcelbird software, which undercuts \"we run them better\". It keeps the option open with measurable triggers. Y also concedes the growth claim, says the six-week test is a starting point rather than a steady state, and observes that the founders quoted only Zipcart's result. Both engage with the Zipcart evidence instead of ignoring it or treating it as proof. Y's −$0.48 case is slightly more complete, while X notes the plan does not use the fee lever and gives the density needed (1,211 a day, 35% above median). Neither shows that the best observed density with a fee would be positive, so neither fully credits the partial support for the founders. X's explicit hypothesis-test structure and reversal conditions make its handling a little more disciplined.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents are strong and numerically sound, and both avoid all the traps: growth is separated from profit, the best observed case is checked, the pop-up's growth is read as promotion-fuelled, the runway constraint is tested, and the Zipcart evidence is addressed. X serves the board better because it answers the investors' actual objective. It shows the software path reaches break-even within current cash and stays above the runway floor, with stress tests. It quantifies why even a one-store pilot breaches the floor, compares four options including the status quo, and gives specific decisions, tranche-linked hiring and reopening triggers. Y has some useful extras (the −$0.48 case, rider-pay break-even, low-end benchmark case, risk owners), but its case for the alternative is thinner and its pilot rejection is less rigorous.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1623641999999998,
+ "wall_s": 49.257725954055786,
+ "error_text": null
+}

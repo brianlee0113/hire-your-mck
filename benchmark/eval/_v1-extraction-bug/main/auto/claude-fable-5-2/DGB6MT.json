@@ -1,0 +1,209 @@
+{
+ "blind_id": "DGB6MT",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document restates the decision exactly as posed (launch in Q2 2027, package, price) and turns the NRR target, the 75% margin floor and the 14-engineer constraint into explicit success criteria on the key-questions slide. It identifies the four issues the answer turns on (paid demand, package economics, size of the Routewise threat, mobile trade-off) up front, and states what it scoped out (hiring, Core price, own model) and why. Nothing material to fix.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the five summary points map one-to-one to the sections, and almost every title is a claim its slide supports; the titles alone give the argument. Flaws: the margin guardrail does not hold together, because the 1,333-per-seat allowance would not bind in the document's own 74.1% heavy-user scenario. The headline 'Pro beats the add-on on revenue' depends on a 33% assumption that the backup shows reverses at 14%. The same calculations are replayed across slides 19–21 and 25–27.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived every key figure and they are correct: $8.06M vs $2.45M add-on ARR; inference of $17.1/$32.4/$61.2/$130.5 a month; 109.2 deals and $0.64M; Pro $2.89M ARR with $1.26M inference; company margins of 76.2%/76.0%/74.1%/73.5%; the 26.3% NRR threshold; $1.47M engineering. All critical evidence is used, including the survey response bias, beta selection and the Routewise discount, and upper bounds are labelled. Material flaws: Pro's 33% take-up comes from a different tier launch and is set against a 14% the document itself calls a ceiling; the allowance is not shown to protect the margin; the delay comparison leaves out two quarters of forgone Pro revenue; 'true take-up below 14%' is asserted rather than shown; AI churn is mis-ranked as fifth of six.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear and follows from the analysis: Pro tier with a pooled allowance and request packs, mobile rewrite first, Copilot in Q4 2027. Packaging and sequencing alternatives are compared on the decision criteria, and there is an explicit trigger to bring the launch forward (Q4 2026 win rate still near 37%), plus gates, owners and a scorecard. It avoids all six traps. Flaws: the timing rests on a mechanical comparison of two upper bounds ($1.1M vs $0.6M) that excludes forgone Pro revenue; there is no interim AI response for competitive deals during the delay beyond the beta price test; Pro is approved 'now' on an untested 33% precedent, with the 14% downside only in backup.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 3 and the language is plain and precise. But 43 slides and about 6,000 words is well beyond what this decision needs: five agenda dividers, the win-rate and delay calculations each shown three times, and a next-steps slide that repeats the roadmap. The 13-line executive summary is dense but usable.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Both demand readings come from accounts larger than the typical customer, which puts true take-up below 14%",
+    "why": "Base take-up was never measured; a plausible inference from the size skew is stated as fact."
+   },
+   {
+    "quote": "Volunteers who chose to try Copilot renew more anyway",
+    "why": "The pack does not give volunteers' baseline renewal behaviour; a selection effect is asserted as fact."
+   },
+   {
+    "quote": "Pro adds $2.9M of ARR and reaches 2.4 times as many accounts",
+    "why": "Stated unconditionally in the summary, but it rests on 33% migration from a different 2023 tier, compared with a 14% the document calls a ceiling. At 14% take-up Pro yields $1.2M, half the add-on."
+   },
+   {
+    "quote": "Pro revenue is delayed, not lost: its $1.4M of half-year revenue still arrives, two quarters later",
+    "why": "Two quarters of Pro revenue (about $0.5M of gross profit) are forgone under the delay and are left out of the $1.1M vs $0.6M comparison."
+   },
+   {
+    "quote": "Gate: win rate after the discount ended",
+    "why": "The pack says only that Routewise offered 20% off in Q3 2026; it does not say the promotion ended, so the Q4 reading may not separate the two causes."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "AI features, 6%: fifth of six reasons, behind price and missing integrations",
+    "correct": "Sixth (last) of the six reasons in Table 3; 'Other' at 16% and 'Went out of business / sold' at 14% also rank above it."
+   },
+   {
+    "quote": "$12 per seat a month ÷ $0.01 per request = 1,333.3 requests per seat a month",
+    "correct": "The divisor is $0.009 per request ($12 ÷ $0.009 = 1,333); at $0.01 the result would be 1,200. The result is right but the displayed input is rounded wrongly."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "A pooled allowance of about 1,330 requests per seat keeps Pro's AI cost below the $12 each seat pays ... Pro with allowance: 76.0%",
+    "quote_b": "Pro without allowance: if Pro attracts users as heavy as the paywall buyers, margin falls to 74.1% ... Pro without allowance uses 6,800 requests a month per account",
+    "why": "6,800 requests on a 6.2-seat account is about 1,100 per seat, inside the 1,333 allowance (about 8,270 per account). The proposed allowance would not stop the 74.1% scenario, so the 76.0% 'with allowance' figure is really just the mean-usage case."
+   },
+   {
+    "quote_a": "Even 14% is a ceiling: the buyers came from volunteers, who are larger and more active than the base",
+    "quote_b": "Pro earns more ARR, even against the add-on's ceiling ... $2.9M Pro ARR at 33% take-up",
+    "why": "Paid demand evidence is discounted for the add-on, but an untested 33% precedent from a different tier is accepted for Pro. The document's own backup shows Pro at 14% earns $1.2M, below the add-on's $2.45M, so the revenue ranking is not robust."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch in Q2 2027. Keep the 14 engineers on the mobile rewrite and launch Copilot in Q4 2027 inside a new Pro plan at $12 more per seat, with a pooled request allowance and paid request packs; drop the $149 add-on. Price-test Pro and measure productivity in non-volunteers during Q1–Q3 2027, and bring the launch forward only if the Q4 2026 win rate against Routewise stays near 37%.",
+   "closest_plausible_id": "R3",
+   "defensible": "yes",
+   "rationale": "It meets all three defensibility criteria: demand is sized from the paywall test and the survey gap is explained; inference cost is built into the packaging through the allowance, packs and margin scenarios; and the mobile delay is weighed against a quantified AI threat ($0.64M a year ceiling, $0.32M for two quarters). It combines R3's timing with R1's packaging. R3's condition is mostly met: the win-rate risk is quantified and there is an acceleration trigger, but the 'limited AI response' is only a price test with beta accounts, not a response in competitive deals."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document keeps 'launch Copilot' but revises package (Pro tier), price ($12 a seat), usage limits, timing (Q4 2027) and sizing ($2.5M add-on ARR and $0.85M gross profit instead of $8M). It sets the 46% survey against the 14% paywall result, flags the 6% response rate and size skew, and tests the VP Sales and Customer Success positions as well. Uncertainty is carried through upper-bound labels, an assumptions table and gates. The one asserted causal claim is that volunteers 'renew more anyway'."
+  },
+  "overall_comment": "Strong, numerically clean work: every key calculation checks against the pack, all critical evidence and trade-offs are covered, no trap is fallen into, and the recommendation (Pro tier, mobile first, Copilot in Q4 2027 with a win-rate trigger) is defensible and actionable. Main weaknesses: the Pro-versus-add-on revenue ranking depends on an untested 33% precedent while the add-on's 14% is treated as a ceiling; the proposed 1,333-per-seat allowance would not prevent the document's own heavy-user margin breach; the delay comparison omits forgone Pro revenue; and at 43 slides, with repeated calculations, it is much longer than the decision needs. Weighted score about 4.05.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 1.1552316,
+ "wall_s": 134.50624322891235,
+ "is_error": false,
+ "error_text": null
+}

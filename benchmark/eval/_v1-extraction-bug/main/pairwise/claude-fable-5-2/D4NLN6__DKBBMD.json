@@ -1,0 +1,39 @@
+{
+ "x": "D4NLN6",
+ "y": "DKBBMD",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both follow the same logical arc: where churn rises, whether price is the cause, what the CFO's number is really worth, the segmented plan, then rollout. Y's summary and slide titles line up cleanly, and it states its one soft spot openly: the plan reaches 14.2% and needs $0.7M from new logos or checkpoints. Its only small tension is the line 'SMB pricing is not needed to reach the goal' on a bridge that falls $0.7M short. X's hierarchy is also sound but has more internal strain. The governing thought says mid-market 'has shown it will pay more' at 12%, while its own slides say the test was at 10% on new sign-ups only. The headline says the target is met 'whatever SMB customers do', yet its backup shows a 1-point NRR slip or a mid-market reaction puts it below target, with only $0.13M of margin. The same section title, 'Rising churn is a promotion problem', also heads sections on pricing power, economics and implementation.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the defensible differentiated answer: raise mid-market and enterprise within caps, hold SMB pending a +8% controlled test, exclude the promo cohort, run activation, and set guardrails. Y's calibration is better. It prices mid-market at the only tested level (10%) with an explicit April gate to step up to 12%, and it sets pause thresholds from break-even maths (1.2% against about 1.6% a month). It admits the plan falls $0.7M short of 15% without new logos rather than engineering a clearance. It also notes that a list rise hits new SMB sign-ups where 62% of contested deals are already lost. X takes the CFO's 12% in mid-market, above the tested level and on untested renewals, apparently so the target clears by $0.13M, and its own largest risk sits on exactly that step. X does weigh three options and offers a 10% fallback. But it rules the low-cost SMB tier out of scope 'by agreement at the brief', which the pack does not support, and its 'meets the target whatever SMB does' framing overstates robustness. Y's trade-off statement, giving up as much as $2M of paper ARR to avoid an unmeasured SMB bet that is recoverable by July, is sharper.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the critical calculations right: implied promo churn of 4.9%, about 90% of the rise from mix, $7.57M reachable, 10.7% break-even, the 3.6% 2023 reaction, the unreconcilable dashboard figure, and the 47% versus 56% survey cross-check. Y adds two useful inferences. It scales the 2023 reaction linearly to 12% (5.4%) with a 2x stress case that lands on break-even, where X applies the unscaled 3.6% from an 8% rise to a 12% rise, flattering the CFO's SMB case. Y also decomposes the gap and finds activation explains only about 0.8 of the 2.8-point difference, which tempers the onboarding story with a stated caveat. Y has minor slips: the SMB checkpoint upside uses the full $21.0M rather than the $16.6M non-promo base, and a -$0.02M is shown as +0.02. X is more internally consistent on that item and adds a useful $1.48M ceiling for the onboarding budget. But X overstates the mid-market evidence ('has shown it will pay more', 'clearest sign of pricing power') from a non-significant new-sign-up test, and asserts the target is cleared on a razor-thin margin that depends on NRR repeating. X does caveat both, but its headline claims run ahead of the evidence more than Y's do.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than accept or reject it wholesale. Both correct the $10.3M, separate mix from rate effect, and reject the 'halve churn' claim. Y reconciles the competing views explicitly: the CFO is right that the core base is not leaving over price 'yet', the CEO is right that price drives exits where customers face a jump, and Customer Success is only partly right because activation explains a minority of the gap. Y also revises the 12% rate itself down to the tested 10%. X's framing ('Rising churn is a promotion problem', 'not because our core customers reject our prices') leans closer to the CFO's reading. It acknowledges Inkwell and holds SMB, but keeps the CFO's 12% in mid-market with thinner justification and gives the CEO's concern less explicit credit. Both avoid the traps, but Y's update is more balanced and more explicitly tied to the evidence.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both are strong, defensible documents that meet all four defensibility criteria with essentially the same analytical backbone. Y would serve the CEO better. It is more honest about what the plan does and does not deliver (14.2% before new logos), and it keeps mid-market at the tested level with a gated step-up. It stress-tests the SMB rise more conservatively and reconciles the CFO, CEO and Customer Success views explicitly. It ends with six concrete decisions and pre-agreed thresholds grounded in break-even points. X has greater depth, including the onboarding budget ceiling, a sensitivity table and a more detailed test design. But it leans on the CFO's untested 12% in mid-market to claim the target is cleared by $0.13M, and its headline certainty exceeds what its own sensitivities support.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1028362,
+ "wall_s": 47.95572900772095,
+ "error_text": null
+}

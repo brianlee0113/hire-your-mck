@@ -1,0 +1,39 @@
+{
+ "x": "DG2578",
+ "y": "DRT5H8",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same clean chain: churn diagnosis, pricing power by segment, corrected $10.3M, options, plan, guardrails. Both summaries open with 'churn is a cohort problem, not a price problem' and later show the cohort left mostly because its discount ended. Y resolves that tension openly: slide 3 gives 'holds, with a caveat' and slide 5 says the CFO is right on core churn but wrong that it is only onboarding. X leaves it standing: slide 6 says price is not driving churn in any segment, while its own slide 11 attributes about two-thirds of the cohort's excess churn to the discount ending. X's headline of reaching 'exactly +15% before new customers' also rests on conditional items (SMB test passing, activation gain) that its own later slides treat as uncertain. Y's headline numbers ($4.1M committed, $0.5M option, $0.9M gap) match its body throughout.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the key's preferred differentiated plan: raise mid-market and enterprise within caps, hold SMB, exempt the promotion cohort, test +8% on core SMB with a gate, and both weigh a no-increase option and the CFO plan. X is more prudent on mid-market: it stays at the tested +10% and keeps +12% as a later lever, which is better sequencing than Y's +12% with a fallback, since renewals already repriced cannot easily be walked back. Y frames the trade-off better: it gives up about $1.0M of base case for a higher downside floor ($3.1M against $2.5M), keeps the SMB gain as an uncommitted option, leaves onboarding gains out of the plan, and explicitly holds new SMB list prices against Inkwell. Y's test decision rule is derived from a break-even calculation; X's thresholds are reasonable but asserted. X counts the conditional SMB and activation gains in its base case to claim the target is met, which flatters the plan. On balance Y is slightly ahead.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the critical numbers right: 4.9% implied cohort churn, the 1.0 pp mix against 0.1 pp rate split, $7.57M repriceable, the 7% caps, the activation split, and the dashboard figure matching no definition. Y goes further in four places. It computes a break-even loss rate (7.4% for +8%) and uses it for the test rule. It cross-checks the cohort's share of churners from the exit survey (47%) against the count-based figure (56%). It applies a churn response to every segment in the base case, where X's base case for the CFO plan nets off only SMB churn. It flags the unexplained mid-market rise from 0.6% to 0.8% as a watch item. Y's mid-market elasticity is weakly grounded (SMB relative reaction and a non-significant conversion gap), but it is conservative and labelled. X's statement that price is not driving churn in any segment overstates against the 52% figure it reports, and its +$0.3M activation gain sits in the base case despite its own scepticism. X's handling of the 2024 test (staying at the tested level) is the more careful inference.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis correctly: keep the increase for mid-market and enterprise, reject it for SMB, and cut the $10.3M. Y does this explicitly on a dedicated slide that breaks the hypothesis into four testable conditions with a verdict on each. It reconciles the CFO and CEO views as the key expects: the CFO is right that core churn is not about price, wrong that churn is only onboarding, because the promotion cohort has shown it is very price-sensitive. X also credits the CFO ('where the CFO is right') and rejects the 12% uniform rise, but it leans further toward the CFO's framing with 'price is not what is driving churn in any segment' and treats the cohort's price exits mainly as a mix effect. That gives less weight to the CEO's concern, though X's Inkwell analysis partly covers it. Both reject the 'halve SMB churn' claim with sound arithmetic.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The two documents reach essentially the same defensible recommendation with the same core calculations, so the difference is in rigour and candour. Y gives the CEO a more honest planning picture: $4.1M committed, the SMB gain as an option, onboarding gains excluded, and a $0.9M new-customer gap to plan for. X's 'exactly on target' depends on conditional gains. Y also reconciles the CFO and CEO positions more explicitly, derives its test thresholds from a break-even, and reports a budget hole against the $10.3M. X's advantage is the more cautious mid-market level (tested +10% with an upside lever), which is a real point in its favour, and it is shorter. Overall Y serves the decision slightly better.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0818122,
+ "wall_s": 53.14393377304077,
+ "error_text": null
+}

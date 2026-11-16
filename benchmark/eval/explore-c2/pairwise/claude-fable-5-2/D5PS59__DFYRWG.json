@@ -1,0 +1,38 @@
+{
+ "x": "D5PS59",
+ "y": "DFYRWG",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents run the same arc: launch, reject the $149 add-on, choose Pro, manage the mobile delay. X sets three tests up front (NRR, margin floor, mobile delay) and scores every option against them, so the summary, option table, financial case and triggers all trace back to one frame. Its base case (25% adoption, $2.2M) sits consistently between the evidence it treats as floor and ceiling. Y's four-section pyramid is clean, but its governing thought is internally inconsistent: it calls the paywall 14% 'a ceiling, not a base case' for the add-on, then plans on $2.9M for Pro using the undiscounted 33% precedent as a point estimate. Its claim that Pro is '18% above the add-on's best case' compares Pro's high case with the add-on's ceiling. Y's slide 4 title also presents the renewal gap as a benefit while the body calls it an upper bound.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred R1 (Pro tier with usage guardrails, mobile delay accepted explicitly). X weighs the alternatives better. It evaluates four options including deferring Copilot for mobile, quantifies both sides of the sequencing trade-off (~$0.5M of avoidable churn against ~$1.1M of deferred expansion plus win-rate and AI-churn exposure), and states when the order flips. Its March go/no-go on a random-sample price test comes before most of the engineering spend, and it has explicit triggers for not launching, moving to mobile first, or pricing at $15. Its allowance (600 per seat, inference capped at 45% of the uplift, $20 per 1,000 overage) leaves margin buffer. Y never assesses deferral as an option and compares only three packaging choices. Its gate is in Q3 2027, after launch, when the engineers return to mobile anyway, so it has little decision force. Y's 850-per-seat allowance is derived by spending the whole company margin headroom down to exactly 75%, which leaves no buffer. Y's one distinctive good move is the cheap Q4 2026 win-rate check to separate AI from the promotion.",
+   "winner": "X",
+   "strength": "strong"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M against $2.45M, inference of $32 / $61 / $131 per month, ~109 deals and $0.64M, and $2.89M for Pro at 33%. Both note the Routewise discount, the volunteer bias and the survey's 6% response and size skew. X goes further in three places. It spots that the 58% top-decile share conflicts with the 14,500 mean, which implies about 40%. It notes the 31% of loss notes covers all Q3 losses, not only Routewise deals, and that parity can only win back the 7-point drop. It scales usage per seat (444 per seat) so Pro costs are not overstated for smaller accounts. It also gives ranges (add-on 7–14%, Pro 15–33%), excludes the renewal gap from the case, and labels its own assumptions. X's weak spots are that the 25% base and the 'rewrite halves mobile churn' figure are assumptions, and that it sets deferred ARR against permanent churn; all three are disclosed. Y's arithmetic is correct, but it adopts the 2023 tier precedent as its plan figure without discount or range, cites the renewal gap in a headline, and uses the '5.5 times' ratio of two small percentages. Its mobile-risk figure (14% × 27% × ARR) is a reasonable upper bound.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO hypothesis as the key expects: keep 'launch', reject the $149 add-on and the $8M survey sizing, and explain the gap through stated versus revealed preference, survey bias and heavy-user inference cost. Both also reject the VP Sales 'recover a third' claim. X's revision is more disciplined. It replaces $8M with a $1.2–2.5M range for the add-on and a 15–33% range for Pro, with a base case anchored between the paywall rate and the precedent, and it validates that with a random-sample test before commitment. Y corrects the survey optimism but then substitutes another untested optimistic point estimate (33%, $2.9M) as the planning number. That partly repeats the error it criticises, even though it labels the figure an assumption.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both documents land on a defensible recommendation, avoid the main traps and compute the key figures correctly. X would serve the CEO better. It gives a ranged financial case, a full option set including deferral, a quantified mobile trade-off with flip conditions, a pre-commitment go/no-go test, concrete package parameters with margin buffer, and a clear list of decisions requested. It also surfaces a data inconsistency and separates its own assumptions from pack facts. Y is tighter and sound, but it plans on the high-case $2.9M, has a weaker gate, sets the allowance at the margin floor, and does not assess the mobile-first alternative.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8375802,
+ "wall_s": 48.40514612197876
+}

@@ -1,0 +1,39 @@
+{
+ "x": "DRT5H8",
+ "y": "DB9CX7",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents put the answer first and support it with the same logical chain: cohort diagnosis, pricing power by segment, value, then rollout. X's executive summary carries the numbers through consistently ($10.3M to $7.6M to $5.0M to $4.1M), and its slide 3 ties each condition of the CFO's plan to evidence, a verdict and an effect on the answer. Its one loose point is the headline 'not because customers are reacting to price', which sits awkwardly with its own finding that the promotion cohort left over price, though slide 5 reconciles this. Y's question tree is clean and its titles are consistent, but the link from 'SMB cannot take a rise' to the numbers is weaker: its own 12% model shows SMB netting about +$1.7M, so the hold rests on qualitative Inkwell risk and a backup sensitivity table. Y's '32% largest possible cut' also conflicts with its own footnote that activating other customers could add more.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on a defensible differentiated recommendation: raise mid-market and enterprise, hold SMB, exempt the promotion cohort and test core SMB. X weighs the alternatives more fully. It gives base and downside values for no increase, uniform 12%, targeted, and a +10% mid-market variant, and states the trade explicitly: about $1.0M of base case given up for a higher downside floor ($3.1M against $2.5M). Its guardrails are operational: a 1.0% mid-market churn trigger with fallback to +10%, and an SMB rule to roll out only at 0.6pp a month or less against a 1.2pp break-even. Y's choice of the tested 10% for mid-market and a flat 7% for enterprise is conservative and defensible, but it assumes zero churn response in both segments. Its guardrails are vaguer ('well below 7.4% for the year', mid-market churn 'at or below today's level' with no fallback action). It also holds uncapped enterprise contracts to 7% for 'one message' without valuing what that gives up, and rules repackaging out of scope.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core numbers right: promotion-cohort churn of about 4.9%, about 91% of the SMB rise from the cohort, $7.6M repriceable, 7.4% break-even for an 8% rise, the 3.6% extra loss in 2023, and the dashboard figure matching neither blend. Both caveat the new-sign-up test and question the 'halve churn' claim. X goes further: it nets churn give-back by segment, runs a 2x downside, cross-checks the cohort's churner share against the exit surveys (47% against 56%), derives the 1.35% activated-churn floor, and sizes the SMB test's statistical power. Some of X's inputs are extrapolated, such as applying the 2023 SMB relative reaction to mid-market and enterprise, a judgement-based 2x for the promotion cohort, and test power that assumes most core SMB renews in Q1. These are flagged as assumptions with sensitivities. Y is more careful on some epistemic points: it notes there are no survey sample sizes, that the pack shows 'timing, not cause', and that the 2025 survey baseline is not a like-for-like non-promotion figure. But Y's $6.7M for the 12% plan assumes no mid-market or enterprise churn response, and its 32% 'largest possible' onboarding cut is an overclaim its own footnote undercuts.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "X treats the CFO's proposal explicitly as the initial hypothesis and breaks it into four conditions. It keeps what the evidence supports (churn is not a base-wide price reaction; mid-market and enterprise can absorb a rise) and revises what fails (SMB, and the $10.3M). It also reconciles the two views directly: 'The CFO is right that core churn is not about price, but wrong that churn is only an onboarding problem', since the promotion cohort has shown itself price-sensitive. It tests the Customer Success claim quantitatively as well. Y reaches a similar revised position, with 'the price shock was the discount ending, not our list price', $6.7M instead of $10.3M, and activation explaining about 30% of the cohort's extra churn. But Y does this implicitly across sections, without setting out what in the CFO's and CEO's positions is kept and what is rejected, and it nets less churn out of the headline figure.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both documents meet all the defensibility criteria: they separate the mix effect from the rate effect, reconcile the two views, correct the $10.3M and differentiate by segment. X would serve the CEO better. It quantifies base and downside for every option, makes the risk-and-return trade explicit, and gives concrete triggers and fallbacks with an April checkpoint. It specifies a powered SMB test with a decision rule, resets the budget line, and shows exactly where the CFO's hypothesis holds and where it fails. Y is sound, appropriately cautious on mid-market (the tested 10%) and careful on caveats. But its valuation ignores any churn response outside SMB, its guardrails are less actionable, and its numbers argue less strongly for holding SMB.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1043002,
+ "wall_s": 40.19019603729248,
+ "error_text": null
+}

@@ -1,0 +1,39 @@
+{
+ "x": "D5A2H9",
+ "y": "DQ9QG6",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents run a clean hierarchy from governing thought to summary to slide titles, and both reach the same conclusion. X is tighter: its four summary points map one-to-one onto slides and carry the key numbers. Y uses an explicit question tree with five sub-questions, each answered by a section summary and supporting slides, and this holds together consistently. Each has a small wobble. X's slide 6 title says 'at best break even', but that depends on a hybrid case (best observed inputs plus a 2% promotion rate) rather than the best observed case of −$1.76. Y lists the software product roadmap as out of scope and then recommends a store-based delivery module, and its section title 'buying them would cost more than the cash' rests on a heavily assumed estimate. The difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both recommend the key's preferred answer: do not launch, fund the software business, and sell store-based fast delivery to grocers. Both also set re-entry triggers that customer sites can prove at no cost to Parcelbird, which is a sound substitute for a capped test. Y weighs the alternative more fully. It tests the software path against the investors' actual objective, a path to profitability within current cash: break-even at about $11M ARR, cash of $5.4M at end 2028, and a 30%-growth case that breaches the runway floor. It also names the risks of saying no (a rival enters, software growth slows, grocers go elsewhere), with mitigations and owners. X asserts that the software path keeps the runway rule and costs $0.8M a year, but never checks whether it reaches profitability. X's comparison table and its channel-conflict and rider-pay risks are good, and its triggers usefully include a price-acceptance test, but the alternative is less stress-tested.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "The core numbers are right in both: −$6.17 at the median, −$1.76 at best observed, −$12.57 for the pop-up, +$2.02 for the plan, $2.5M and about six months of runway, about 42% growth, and −$1.05 for the Zipcart fix at the median. I rechecked the secondary calculations and they hold in both. Y adds valid analyses aimed at the 'density will fix it' trap: single-lever break-evens ($63 order value, 14.4 orders per rider-hour), the order being negative before store cost, the no-volume-loss Zipcart case (−$0.48), a rider-pay break-even, and a software cash model with sensitivity. Its $13.7M acquisition estimate is arithmetically right but rests on strong assumptions, which it flags, and the headline 'density cannot be bought' is stronger than that supports. X is accurate and uniquely computes the upside Zipcart case (+$3.97 at best observed inputs). But it then says the fix works 'only alongside best-ever order value and density'; in fact best density alone would be positive with the fee (about +$1.90 to +$2.25). Its 'survives missing any one target' range also uses an unstated best-observed baseline. Y uses the critical evidence in more depth; X is more balanced on Zipcart.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both reject the founders' hypothesis on the right grounds. They concede that growth is real, show that no observed input set is profitable, show that the plan exceeds the best site on four inputs, treat the pop-up growth as promotion-bought, and show the runway breach even on plan. X deals more even-handedly with the evidence that partly supports the founders. It labels Zipcart as counter-evidence, shows that the fee and promotion levers would make a best-observed site clearly positive (+$3.97) while a median site still loses about $1, and writes a price-acceptance test into its reopening triggers. Y engages with Zipcart only through the median store (−$0.48 and −$1.05) and frames it purely as a failure. It never acknowledges that the fix would work at the best observed density, so its update is more one-sided. Y's re-entry tests are concrete but leave out the pricing lever.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both would lead the board to the same defensible decision, with correct core arithmetic and all the critical insights covered: unit economics, the plan against best observed, the pop-up, the growth-versus-profit distinction, runway, and Zipcart. X is more concise and more balanced on the Zipcart counter-evidence. Y gives the board more to decide with: it tests whether the recommended software path meets the investors' profitability and runway objectives, including a downside case; it shows that no single lever rescues the median store; it sets out the risks of saying no; and it assigns owners and timing. Those additions bear on the decision and are correct, which slightly outweighs Y's one-sided Zipcart treatment and its speculative acquisition estimate.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0970202,
+ "wall_s": 74.46895599365234,
+ "error_text": null
+}

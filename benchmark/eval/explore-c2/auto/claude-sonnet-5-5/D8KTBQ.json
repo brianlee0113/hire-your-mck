@@ -1,0 +1,189 @@
+{
+ "blind_id": "D8KTBQ",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as the board's launch/no-launch question. Uses the runway floor and the investors' no-new-funding stance as explicit criteria, and sets the plan against the benchmark and best observed sites. It also turns the open question into reopening conditions. It never frames the Zipcart fee/density route as a possible way to make the economics work, and it treats the smaller test only briefly.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "Governing thought, five summary points, section dividers and slide titles line up well. Each title is a claim and the evidence supports it. The titles alone give the argument: market growth without profit, then negative unit economics, weak customers, runway breach, and software as the alternative. Minor issues: the payback slide and the survey/retention comparison are slightly loose, and the software option's own month-18 runway is only touched on.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The core numbers check out: median -6.17, best composite -1.76, pop-up -12.57, break-even basket $63.4, runway 2.5M and 6.3 months, nine-store loss -18.2M, and the software figures. The roughly 6-month runway and the generous/strict cash reading are handled well. Gaps: the Zipcart fee-plus-1%-promotion scenario is never applied to Parcelbird's own inputs (about +2.25 at best density, about -0.48 at median), so the key's critical K9 is only partly used. Break-even AOV at best density (about $50) and the explicit 41.5% CAGR are missing. The 28-month payback divides CAC by retention and then by retained-customer contribution at plan economics, which is a somewhat odd construct. The claim 'Density alone had not made that city profitable' is an inference.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A clear 'do not launch' recommendation that follows from the analysis, which is defensible under R1. It compares three options, states conditions for reopening, and gives owners and timings. It avoids the market-growth, density, survey and promotion-growth traps. It does not weigh a capital-light grocer-partner test; the smaller test is dismissed as 'already tested' by a pop-up that was a different, own-site design. Kill criteria are framed as reopening conditions rather than test gates. The Zipcart evidence is addressed critically but not quantified for Parcelbird. Software costs and runway at month 18 with the hires are not fully reconciled with the 12-month floor.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and titles are plain. Section dividers and several calculation slides (break-even basket, CAC payback, nine-store loss) add length, and 22 slides is somewhat long for this decision. Some of the content is useful rather than padding.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Larger baskets would likely cost more to pick, so the true break-even basket is higher",
+    "why": "Not in the pack. It is hedged with 'likely', but it is still an assumption stated as a conclusion."
+   },
+   {
+    "quote": "Density alone had not made that city profitable",
+    "why": "The pack says only that the profit followed a fee and a promotion cut. It gives no evidence on what density alone would have done."
+   },
+   {
+    "quote": "Half as many kept ordering as said they would use it weekly",
+    "why": "Compares different populations and measures (stated weekly intent vs month-3 retention). The doc caveats this, but the headline is still overstated."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "partial"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "partial"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now. Put about $1.2M into scaling the software for grocers who want their own fast delivery. Reopen the operator question only if four conditions are met.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It computes per-order contribution at median and best observed inputs, separates market growth from profitability, checks the runway breach, and offers the software alternative. This meets all four defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It rejects the founders' 'enter now, density fixes it' view. The reasons are that the plan sits beyond every observed input, every observed case loses money, growth coexists with incumbent losses, and the launch breaks the runway floor. It examines the Zipcart fee evidence, including the 14% volume drop, and judges the proof point thin. It does not model what the fee would do to Parcelbird's own economics."
+  },
+  "overall_comment": "This is a strong, well-argued document with correct core calculations and a defensible do-not-launch recommendation backed by the runway breach. It misses the Zipcart-fee scenario applied to Parcelbird's inputs, the break-even AOV at best density, and any capital-light test option with kill criteria. It is also somewhat long at 22 slides.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.152232,
+ "wall_s": 33.52363395690918,
+ "is_error": false,
+ "error_text": null
+}

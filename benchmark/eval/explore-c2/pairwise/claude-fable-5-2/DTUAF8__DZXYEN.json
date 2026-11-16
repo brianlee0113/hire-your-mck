@@ -1,0 +1,38 @@
+{
+ "x": "DTUAF8",
+ "y": "DZXYEN",
+ "case": "c1-market-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same logical chain (US worth entering, only Amazon fits the limits, retail fails, gate on ad cost) and their summaries map cleanly to the sections. X's governing thought carries the payback condition (\"if ad cost holds near 28%\"), and its gates follow from its own numbers: a 28% ceiling under a 28.6% break-even, lowered to about 27% if duty rises because break-even falls to 26.9%. Y's hierarchy is tighter and shorter, but its recommendation contradicts its own analysis in two places. It sets the ad-cost gate at 29%, above the 28.6% break-even it derives. It also says to plan at 28% ACoS and at 25% duty, a combination its own figures show does not pay back (break-even 26.9%). Y's title \"Amazon-led generates cash from 2028 onward\" holds only at 25% ACoS; its own 28% appendix shows 2028 negative. X has one small tension: a 31% repeat floor above the pilot's 29% while still launching four SKUs.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the defensible conclusion: Amazon-led with gates, retail only above 20% awareness, and the $40M goal reset to about $26M in 2030. X weighs the trade-offs more honestly. It states that Japan returns more cash by 2030 than Option A at any ACoS above about 25.9%, then argues for the US on growth and sequences Japan for 2028. Y dismisses Japan mainly as \"small\" and defers it without a trigger or a cash comparison at the pilot's ACoS. X's gates are fuller (ad cost, duty-contingent ceiling, repeat purchase, awareness) and each has an if-missed action. X also tests volume: at 80% of plan, end-2030 cash is only $0.1M even at 25% ACoS. Y's single ad-cost gate at 29% sits above break-even, so it would trigger only after payback is already lost, and it has no repeat-purchase or volume gate. Y's useful additions are a next step to rebuild the plan with per-SKU economics and a stated $2.2M at risk before the first gate.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the key numbers correctly: contribution of $4.73 at 25% ACoS and $4.01 at 28%, retail $7.55, Option A cumulative cash of $2.40M / $0.38M / −$2.32M, break-even 28.6% (26.9% at 25% duty), Option B at −$20.8M with 4.5% group margin, and K-beauty share of 14.7%. Both set aside the $5.2B figure, challenge the 0.71 correlation, and note that only one of three Amazon-first peers scaled. X uses the evidence further: a full ACoS-by-duty grid including the 38% case, Option B corrected for both the halo and 2.6 units per door (−$26.4M), the roughly 32 units per door needed to cover retail's fixed costs, the Japan-versus-US crossover, a volume sensitivity, and the point that delisted brands may be missing from the memo's sample. Y asserts \"ad cost, not volume, decides the payback year\" with no volume test, and X's 80%-volume case contradicts it. Y shows the break-even derivation more transparently and gives the combined 32%-plus-duty downside. X's one soft spot is a linear extrapolation of pilot growth to about 366,000 units, though it labels this unproven.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both handle the CEO's hypothesis as the key expects: keep the Amazon-first route, add conditions, and adjust specific terms. Both replace the 25% ACoS assumption with the pilot's 28%, raise the retail awareness trigger from 15% to 20% using the 3.5 median against the 4.0 delisting line, fix labels through an own US entity, and reset the $40M goal to about $26M in 2030. Y's \"five settings\" slide adds planning for 25% duty. X instead makes the ad-cost ceiling duty-contingent and adds that any later retail case must be sized to the shelf. X's conditions are calibrated to the break-even (ceiling 28% against 28.6%), while Y's 29% hold point is looser than the payback threshold it derives, which weakens the condition attached to the hypothesis.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents share the same underlying model and the same defensible recommendation, so the difference is in how well each prepares the board for the real trade-offs. X gives the board more to decide with: an honest statement that Japan beats the Amazon route on cash to 2030 unless ACoS stays near 25%, a volume sensitivity, a fully corrected Option B, and gates whose thresholds match the payback break-even and adjust for the tariff. Y is more concise and its break-even build is easier to follow, but its 29% ad-cost gate and its \"plan at 28% ACoS and 25% duty\" settings contradict its own payback arithmetic, and it treats Japan and volume risk thinly. X would serve the decision maker better despite its length.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1203802,
+ "wall_s": 50.690579891204834
+}

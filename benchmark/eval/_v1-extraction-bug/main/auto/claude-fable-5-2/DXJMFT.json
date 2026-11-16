@@ -1,0 +1,198 @@
+{
+ "blind_id": "DXJMFT",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document answers the board's question exactly as posed (launch in 2027 or not) and turns the two stated constraints, profitability within current cash and 12 months of runway at all times, into explicit decision criteria (slides 3, 11, 12). Slide 3 sets out early the six conditions the founders' case needs (profit pool, per-order economics, capability edge, CAC payback, cash fit, best alternative use), which are the issues the answer turns on. It also flags where the pack is ambiguous (definition of contribution, whether the $9.5M includes core burn) and shows the answer holds under both readings. Nothing material to fix.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question; the four summary points (market, economics, funding, alternative) are the sections; every slide title is a claim its slide supports, and the titles alone give the argument. The flow from market to unit economics, plan stretch, pop-up, customers, Zipcart counter-case, cash, options, risks, triggers and decisions has no gaps. Minor blemishes only: slide 3 partly restates slide 2, the scenario table recurs on slides 6, 8 and 18, and 'lose money on every order' sits slightly awkwardly beside Zipcart's one positive city, which the deck itself addresses on slide 10.",
+    "score": 5
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived every key figure and they hold: median -$6.17, best observed combined -$1.76, pop-up -$12.57, plan +$2.02, break-even AOVs $63/$50, CAGR 41.5%, Zipcart moves on the median store -$0.48 then -$1.05 after the 14% volume loss, break-even 1,042 orders a day, $7.2M spendable against $9.5M, $2.5M (about 6 months) left, 9-store loss $18.2M. The extras (CAC payback, pop-up ramp of 179 to 408 a day, $266M scale check) are also correct, and derivations are transparent. Evidence that cuts against the answer is engaged (Zipcart, pop-up growth, 'it was early'). Flaws: the slide 7 sensitivity chart attaches the wrong values to at least two drivers (density and promotions swapped; the raw chart data even puts a positive value against riders, contradicting the title), although the conclusion is unaffected. The headline claim that software 'can reach profitability within current cash' rests on a constructed model holding opex flat while ARR grows 2.7x; this is disclosed as optimistic but the governing thought states it more firmly than the pack supports. The Zipcart moves are applied only to the median store, not to the best observed density (about +$2.25), and 'top-quartile density' is not in the pack.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A clear, defensible recommendation (decline the launch, software-first, sell store-based fast delivery to pipeline grocers) follows directly from the analysis. Three options are compared on the stated criteria with a cash model for each; the trade-offs (growth versus economics, operator versus supplier, learning versus runway) are explicit. It says what would change the answer through four re-entry triggers, names the main risk to its own recommendation (ARR growth below 34%), phases hires against signed contracts and gives owners, dates and a 90-day checkpoint. It avoids all six traps, including a calibrated treatment of Zipcart ('a profitable route may exist'). Small weaknesses: the pilot option is an own-dark-store pilot rather than a capital-light partner test, and trigger 2's thresholds ($42, 3.0 per hour, 1,050 a day) would still lose money without a fee by the deck's own arithmetic, though trigger 1 covers this.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title of slide 2 with the reasons and the decisions requested; language is plain and precise, and every number is labelled. But 19 slides and roughly 4,500 words is more than this decision needs: slide 3 largely repeats the summary, the scenario table appears three times (slides 6, 8, 18), and the software cash model takes two slides plus an options table. Proportionate enough for a board, but not lean.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "A profitable route may exist, but only at top-quartile density with premium pricing.",
+    "why": "The pack gives no quartiles; the document's own break-even of 1,042 orders a day is 16% above the median in a 400–1,400 range, which is above-median, not shown to be top-quartile."
+   },
+   {
+    "quote": "Competes with the grocers we sell to; distracts the team",
+    "why": "Channel conflict and distraction are plausible inferences but are not in the pack and are stated as fact in the options table."
+   },
+   {
+    "quote": "Incumbents are retreating (QuickBasket −4 cities) and lose money per order",
+    "why": "Only QuickBasket closed cities; the pack shows no retreat by Zipcart."
+   },
+   {
+    "quote": "reviewed quarterly from the data our software already collects across the 14 customer sites (no extra cost)",
+    "why": "The pack says the benchmarks come from customer sites but does not say the software captures site fixed cost, retention or CAC, nor that tracking is free."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Orders/day 1,800 → 900 +0.22; Promotions 2% → 6% +0.27",
+    "correct": "Density at the median gives +$0.27 per order (2.02 − 1.75) and promotions at 6% give +$0.22 (2.02 − 1.80); the labels are swapped. In the raw chart data the values are rotated further (riders +0.22, orders/day −0.31), where riders should be −$0.31. The conclusion is unaffected."
+   }
+  ],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027 and do not extend the pop-up; put $0.8M a year into software hires phased against signed contracts, build a store-based fast-delivery offer for pipeline grocers, and adopt four re-entry triggers tracked through customer sites, with a 90-day checkpoint.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "Meets all four defensibility criteria: computes per-order contribution at median, best observed and pop-up inputs; separates 41.5% market growth from incumbent losses; checks the runway constraint under both readings of the $9.5M; and offers the software alternative with a tested growth threshold and explicit re-entry conditions."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "The document states the founders' hypothesis explicitly, breaks it into six testable conditions and rejects it on the evidence: negative contribution at median, best observed and pop-up inputs; the plan beating the best observed site on all four drivers; survey intent (44%) against observed retention (22%); and the runway breach. It challenges the capability claim with the pop-up result, concedes the pop-up was early, treats Zipcart's positive city fairly ('a profitable route may exist') and sets triggers for reconsidering. This is evidence-led rejection, not contrarianism."
+  },
+  "overall_comment": "Very strong work: weighted score 4.65 (framing 5, coherence 5, evidence 4, judgment 5, clarity 4). Every required calculation is correct and transparent, and the document goes beyond the key with correct break-even AOVs, CAC payback, a pop-up ramp estimate, a scale sanity check and a quantified Zipcart read-across. It rejects the founders' hypothesis on the evidence, tests the runway constraint under both readings of the $9.5M, and gives the board concrete decisions, owners, re-entry triggers and a checkpoint. What keeps it from a clean sweep: the slide 7 sensitivity chart has mislabelled values; the headline that software reaches profitability within current cash depends on a self-built flat-opex model (disclosed as optimistic, but stated firmly in the governing thought); the Zipcart moves are not run on the best observed density, the strongest counter-case; and the deck is longer and more repetitive than the decision requires.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 1.0667516,
+ "wall_s": 128.132728099823,
+ "is_error": false,
+ "error_text": null
+}

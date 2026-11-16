@@ -1,0 +1,191 @@
+{
+ "blind_id": "DFJGRQ",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The title slide restates the decision exactly as posed and the document answers both halves: whether to launch in Q2 (no, Q4, with two explicit triggers for Q2) and how to package and price (Pro at +$12/seat with a pooled allowance). All three stated objectives and constraints are used as decision criteria: 105% NRR (slide 10), the 75% gross-margin floor (slides 6-7) and the 14-engineer conflict with the mobile rewrite (slides 11, 13). The issues the answer turns on (survey versus paywall, heavy-user cost, mobile versus AI as a churn driver, the Routewise confound) are named in the executive summary.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the executive-summary points map one-to-one to the body sections, and every title is a claim its slide supports; the titles alone give the argument. One material gap sits in the sequencing logic. The plan keeps mobile 'as planned' through Q3-Q4 while 14 engineers do Copilot launch work in the same quarters, and decision 2 says no engineers move from mobile 'until' the end-of-Q2 gate. The document never shows that the mobile rewrite finishes in H1 or that the conflict disappears in H2, so the delay may be postponed rather than avoided. Slide 3's title also states a causal effect that its own body then qualifies. Some figures repeat across slides 4, 6, 7 and 10.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-did the calculations and found no numerical error: $8.1M versus $1.2-2.5M add-on ARR, $17/$32/$61/$131 inference cost with 89/78/59/12% margins, Pro $1.4-2.9M, the 109-deal / $0.64M win-rate ceiling, 328 deals / $1.9M for the Sales claim, 70.3% / 74.1% / 75.9% / 76.0-76.6% company margins, the 64% adoption break-even, the 9-22% interval on 17 of 120, and the NRR and delay arithmetic. All four critical evidence items are used, and evidence against the recommendation is shown (beta gains, win-rate drop, 'close call'). Assumptions are mostly labelled. It falls short of 5 on a few points. 'Usage is per seat' underpins the pricing metric but the pack has no usage-by-seat data. The mobile delay cost rests on an assumed 50-100% of stated mobile churn being fixed, which is generous and decides a call the document itself says is close. '14% is a ceiling' and 'Copilot raised productivity and renewals' are stated more firmly than the evidence allows.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear and follows from the analysis: Pro tier with a pooled allowance and overage packs, sized off the paywall test, mobile protected, launch in Q4. Three packaging options and two sequencing options are compared on the stated criteria (ARR, contribution, NRR, company margin, payback, competitive fit, heavy-user exposure). The trade-offs are explicit and quantified, and the sequencing is honestly called close. It gives triggers to bring launch forward to Q2, four pilot gates with thresholds, a list of what would change the answer, and owned next steps. It avoids all six traps and caps the Sales claim at a third of its size. The remaining weakness is the unresolved H2 staffing question, which is flagged only as 'CTO to confirm'.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title and on slide 2, the language is plain and the derivations are shown in an appendix. At 17 slides and about 3,500 words it is somewhat longer than the decision needs. The same ARR, margin and NRR ranges recur on slides 4, 6, 7 and 10, and the plan, gates and decisions slides overlap.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Per seat, because usage is per seat.",
+    "why": "The pack gives no data on requests by seat count. It says only that beta accounts are larger and that usage is concentrated in the top 10%. The per-seat pool design depends on this claim (also stated as 'Usage scales with account size')."
+   },
+   {
+    "quote": "14% is a ceiling.",
+    "why": "A plausible inference from volunteer bias, but stated as fact. The pack does not establish that base-wide conversion must be lower, and the 9-22% interval on the same slide already extends above 14%."
+   },
+   {
+    "quote": "In the beta, Copilot raised dispatcher productivity and renewals",
+    "why": "A causal statement drawn from self-selected volunteers against 'matched' accounts with unstated criteria. The document's own body says the effect is not proven."
+   },
+   {
+    "quote": "Cheaper AI at launch: the inference contract runs to December 2027; a Q4 launch spends only one quarter on today's price.",
+    "why": "A Q4 2027 launch still pays the contract price, and whether prices fall after 2027 is listed in the pack as an uncertainty. Slide 5 itself calls this 'upside, not assumed'."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Technician mobile rewrite: Protected: no engineers moved to Copilot; Full team kept; Continues as planned",
+    "quote_b": "No engineers move from mobile to Copilot until the pilot gate at the end of Q2. ... Copilot launch engineering: Hardening, billing for Pro and usage packs — 14 engineers, two quarters [Q3–Q4]",
+    "why": "The pack says the 14 Copilot engineers delay the mobile rewrite by two quarters. The plan implies engineers move off mobile after Q2 yet shows mobile continuing as planned in H2. Unless the rewrite finishes in H1, which is never stated, the delay is postponed rather than avoided, and the 'mobile first avoids $0.5–1.1M' comparison weakens."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot only inside a new Pro plan at $91 per seat (Core + $12) with 600 pooled AI requests per seat and overage packs at $20 per 1,000. Target Q4 2027 rather than Q2, keep the mobile rewrite fully staffed through H1, and run a paid pilot on about 500 random accounts with end-of-Q2 gates. Bring launch forward to Q2 if Copilot can be staffed without the mobile team or if the Q4 2026 win rate against Routewise fell below 37% with no discount running.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "The recommendation meets all three defensibility criteria. It sizes demand off the 14% paywall test and explains the gap to the survey. It builds inference cost into the packaging through a per-seat pool and overage packs, with stress tests against the 75% floor. It weighs the mobile delay ($0.5–1.1M) against the competitive AI threat (at most about $0.6M) in numbers. It is R1's packaging combined with R3's timing, and R3's conditions are also met: the win-rate risk is quantified and a limited AI response (the paid pilot) is planned. The weakness is that the H2 engineering conflict with mobile is assumed away rather than resolved."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document keeps 'launch' but revises the CPO's packaging, sizing and timing. It replaces the $8.1M survey figure with $1.2–2.5M from the paywall test and cites the 6% response rate and the 9.4-seat respondent skew. It shows that buyers are heavy users at 59% margin. It moves the offer to a Pro tier with a usage pool. It addresses all four contradictions in the pack: survey versus paywall, AI pressure versus mobile priority, beta gains versus selection bias, and the win-rate drop versus Routewise's discount. It also notes that Routewise's AI launched only in the last month of Q3. Uncertainty is handled with ranges, labelled assumptions, gates and a list of what would change the answer. The one causal overreach is slide 3's title, 'Copilot raised dispatcher productivity and renewals', which the slide body then qualifies."
+  },
+  "overall_comment": "Weighted score 4.4 (framing 5, coherence 4, evidence 4, judgment 5, clarity 4). Every number I re-derived matches the pack, all four required calculations are correct, all critical evidence is used and no trap is fallen into. The recommendation is specific, with triggers, pilot gates and stated conditions that would change the answer.\n\nThe main flaw is in the sequencing. The plan shows 14 engineers on Copilot in Q3–Q4 while the mobile rewrite 'continues as planned', without establishing that the rewrite is finished or that the conflict has gone by then. The mobile-first case also rests on an assumed 50–100% fix of stated mobile churn, in what the document itself calls a close call.\n\nSmaller issues: 'usage is per seat' has no support in the pack, '14% is a ceiling' is stated as fact, and the same figures repeat across several slides in a 17-slide deck. One minor point not counted as an error: the churn account counts (about 370 and 80) use 14% × 9,800 = 1,372 churned accounts, where the pack's Table 3 has n = 1,190.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.9953436,
+ "wall_s": 121.73486518859863,
+ "is_error": false,
+ "error_text": null
+}

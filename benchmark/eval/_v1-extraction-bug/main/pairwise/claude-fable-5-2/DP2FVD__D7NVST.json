@@ -1,0 +1,39 @@
+{
+ "x": "DP2FVD",
+ "y": "D7NVST",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X's governing thought breaks into five summary claims (unit economics, market, cash, software alternative, supplier role), and each maps to a slide whose title states the finding. The options table on slide 13 tests each option against the same four criteria the argument was built on. Y's five-question structure is logical and its section summaries help, but the hierarchy is looser. Its executive summary mixes levels, and the same section title ('The market grows but does not pay') heads every section, including cash and the alternative. One headline contradicts its own evidence: the slide title says the nine late-stage deals are worth 'more than the hires', while the slide shows $0.70M gross profit against $0.8M of hire cost. Slide 16 also mixes median and plan inputs confusingly. Y adds useful analyses, but they sit beside the main line rather than tightening it.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred answer (R1): decline, back the software business, and reopen only on evidence gathered from customer sites at no capital cost. Both also consider and reject a smaller own-store test, on the grounds that even a median store loses about $2.0M a year. X weighs the recommended alternative more rigorously. It models a path to profitability within current cash (breakeven around month 26 with about $4.9M left) and states where it fails (growth below about 35%). That speaks directly to the investors' objective. Y asserts that the software path 'meets both board conditions' but shows only runway (25.7 months), not profitability, and rests on the claim that late-stage deals cover the hires. Y does add things X lacks: a table of risks of saying no with signals and owners, and gates that include a rider-cost threshold. X's reopening criteria include a fee-and-volume test at a customer site, which is a sharper use of the Zipcart evidence. On balance X is slightly more defensible.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the required numbers right: median −$6.17, best combined −$1.76, pop-up −$12.57, Zipcart fix −$1.05, the $7.2M/$2.3M runway shortfall, about 28 months payback and roughly 41–42% market growth. I checked the derived figures in both and they hold: X's single-input break-evens ($63 AOV, 14.4 orders per rider-hour), its sensitivity grid and its 51% retention threshold; Y's 46.1% share, $24.8/hour rider break-even, 1,042 and 6,387 break-even densities and $13.7M acquisition bill. Y uses some critical evidence more fully. It gives the Zipcart fix without volume loss (−$0.48, matching the key) and the break-even density at Zipcart pricing, and its $13.7M customer-fill cost is a valuable original inference. But Y has a headline slip: it compares $864K of ARR with $0.8M of hire cost and calls the hires covered, when its own gross profit figure is $0.70M and the comparison assumes all nine deals close. Y also asserts the channel conflict (customers in the same cities, data sharing withdrawn) without flagging it as judgement. X labels that risk explicitly as untested team judgement, labels its software model as illustrative with a sensitivity, and shows both readings of the $9.5M with timing. Both overstate slightly that pricing rather than density drove Zipcart's result. X is marginally cleaner on unsupported claims; Y is marginally richer on the critical evidence.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both reject the founders' hypothesis on the right grounds. Each concedes that the 40%+ growth is real, then shows that the +$2.02 needs all four inputs above the best observed site. Each treats the pop-up's 18% weekly growth as promotion-bought and far below benchmark, and each tests the 'we run sites better' claim against the pop-up. Both engage fairly with the evidence that partly supports the founders: they apply Zipcart's fee and promotion cut to the median site, get −$1.05, and note the 14% volume loss. Y adds the −$0.48 case without volume loss and the break-even density of 1,042. X adds the best-observed case (+$3.97) and proposes testing fee elasticity at a customer site. Both acknowledge the test's limits (six weeks, temporary site) and leave the 'nobody owns the Midwest' claim as untested. Both set explicit conditions for reopening. The difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents are strong, numerically accurate and reach the same defensible conclusion with reopening gates. X serves the board slightly better. Its argument is tighter and more consistent. It shows that the recommended software path can reach profitability within current cash and says when it would not. It is also more careful to label judgement calls and ambiguities, including the two readings of the $9.5M and the untested channel conflict. Y has real strengths: the $13.7M acquisition bill, the rider-pay break-even, the Zipcart no-volume-loss case, and risk owners. Against that, its structure is looser, its headline claim that late-stage deals cover the hires does not hold on its own gross profit figure, and its claim that software meets the profitability condition is asserted rather than shown.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1303242,
+ "wall_s": 68.1033980846405,
+ "error_text": null
+}

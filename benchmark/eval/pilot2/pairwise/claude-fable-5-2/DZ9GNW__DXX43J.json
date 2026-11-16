@@ -1,0 +1,39 @@
+{
+ "x": "DZ9GNW",
+ "y": "DXX43J",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both lead with an answer and carry it through action titles to the evidence. Y's hierarchy is cleaner: one key question, five sub-questions, five section answers, each with a summary slide and supporting pages that map one-to-one to the executive summary. X's eleven-point summary mixes findings, plan and outcomes but is internally consistent. X has one mild internal tension: it headlines the promotion cohort as 'an onboarding problem' and titles a slide 'Onboarding can bring SMB churn back to about 2.1%', while its own evidence says leavers went when the discount ended and survivors may already churn less. Y's line ('a promotion problem; onboarding helps but is not the fix; plan for the rest to leave') stays consistent from diagnosis to action. Y's repeated divider titles are extraction artefacts and are ignored.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are essentially identical and match the key's preferred differentiated option: +10% mid-market, enterprise to the 7% cap or 10%, hold SMB and split-test +8% in Q1, exclude the promotion cohort. X weighs the trade-offs more concretely. It prices the cost against the CFO plan ($0.8–2.0M) and the cost of 10% versus 12% in mid-market ($0.7M). It gives a mid-market break-even (about 1.6% monthly churn) and a 1.2% tripwire, and an SMB gate of 0.6 points with a power check and an honest limit on what the test can detect. It also stages SMB by half-year. Y adds an explicit no-rise option ($4.9M gap), owners and a risk table, and has more realistic expectations of onboarding. But its mid-market guardrail is only 'pause if churn rises', and its SMB gate of about 1 point sits at break-even with test sizing deferred to finance. X's guardrails make the same recommendation slightly more defensible.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the required numbers right: implied cohort churn 4.9%, mix about 1.0 of 1.1 points, $7.57M uplift, 2023 reaction 3.6% (5.4% scaled to 12%), break-even at about twice the 2023 reaction, and the dashboard mismatch (1.7→2.6 and 0.8→1.2). Both caveat the new-sign-up test and the pre-Inkwell precedent. Y uses the critical evidence more deeply. It combines the 41%/72% activation shares with the 3× churn ratio to show activation explains only about 0.8 of the cohort's 2.8 extra points. It cross-checks the cohort estimate against the exit survey (implied 37% versus 34% reported). It flags the missing survey response rates and the possible double-count of enterprise escalators in NRR, and it treats 2023 as a floor. X adds valid calculations of its own (test standard error, mid-market break-even). But its headline that the cohort is 'an onboarding problem' and that onboarding can return SMB churn to 2.1% is weakly supported, and the 30% decomposition contradicts it. X also has a small rounding inconsistency ($0.8M versus $0.7M gap to the CFO plan). Y has one minor table slip, showing 109% against 'NRR by segment'.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both reject 12% across the board, correct the $10.3M to $7.6M and differentiate by segment. The key says both views are partly right: the rise is a cohort mix effect, but those customers leave over price when the discount ends. Y reconciles this explicitly. It calls churn 'a promotion problem', attributes only about 30% of the cohort's excess churn to weak activation and the rest to the discount ending, and so revises both the CFO's 'onboarding, not price' diagnosis and the Customer Success 'halve churn' claim with numbers. X separates mix from rate and notes that 'price' means the jump to full price. But it then concludes 'the CFO is right that this is mostly an onboarding problem' and sets an onboarding target of returning the cohort to 2.1%. That adopts the CFO's diagnosis more wholesale than the evidence supports. X tests the halving claim only against historical levels.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The two documents give the CEO the same defensible decision with the same core numbers, so the difference is in the quality of the supporting reasoning. X is tighter and more operational: quantified tripwires, test power, and an explicit cost against the CFO plan. Y gives a more accurate diagnosis: it shows the cohort's churn is mostly a discount-expiry effect that onboarding can only partly fix, so the CEO should plan for runoff rather than expect the cohort to converge on 2.1%. It also cross-checks its estimates, flags the possible escalator double-count, and compares a no-rise option. Y's sharper reconciliation of the CFO and CEO views and its more realistic onboarding expectation outweigh X's better guardrails, but only narrowly.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.166472,
+ "wall_s": 59.62860703468323,
+ "error_text": null
+}

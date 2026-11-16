@@ -1,0 +1,193 @@
+{
+ "blind_id": "D8KTBQ",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document answers the board's question exactly as posed, with a clear \"do not launch\" in the first line. It uses the two stated constraints (12-month runway floor, no new funding round) as explicit tests and identifies early what the decision turns on: per-order economics at observed inputs and cash. It frames three options (full launch, smaller test, scale software) rather than a bare yes/no. The gap is that the investors' objective of a path to profitability within current cash is applied only to the launch. It is never tested for the recommended software path beyond \"new contracts have to pay for the hires\". The option table's criteria also omit runway and profitability as explicit columns.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, and the five executive-summary points map one-to-one onto the five sections. Every content slide title is a claim backed by a calculation or pack data on that slide, so the titles alone give the argument: growing market, no one profits, every observed input set loses money, the plan sits outside the observed range, customers do not pay back, runway breaks, software is the better use of cash, conditions to reopen. There are no gaps or material redundancy. The only blemish is wording: slide 5 says incumbents lose money on \"every order they deliver\" while slide 6 shows one Zipcart city at +$0.40, though slide 6 reconciles this as network average versus densest city.",
+    "score": 5
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived every figure and found no numerical errors: median −$6.17, composite best −$1.76, pop-up −$12.57, plan +$2.02, break-even basket $63.4 at median costs, 27.6-month payback, $2.5M and 6.3 months of runway, −$18.2M, −$8.1M and +$11.9M network contribution, and the software figures ($3.55M, $864K, about 26 months). Derivations are transparent and assumptions are labelled, including which costs sit outside contribution and the two readings of the $9.5M. Evidence against the answer is surfaced: market growth, the Zipcart city and the 18% weekly pop-up growth. Two material gaps remain. First, the Zipcart fee lever is described but never run through Parcelbird's own economics, so the document does not show whether a $3.99 fee and 1% promotions would turn best-density or median sites positive. That leaves the strongest counter-argument qualitatively dismissed (\"thin\") rather than quantitatively bounded. Second, the headline software upside of $3.6M assumes all 37 pipeline grocers sign; this is flagged as an upper bound in a footnote but used unqualified in the executive summary. Smaller points: the market CAGR is given as a year-on-year range rather than a single figure, and \"every order\" overstates an average.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation (decline the launch, scale the software) follows directly from the analysis and matches a fully defensible answer. It separates growth from profitability, checks the runway under two readings of the $9.5M, sets four reopen conditions with current status, and gives owned, dated next steps. It also notices that the software hires would themselves pull runway below the floor by month 18 unless new contracts pay for them, and assigns a burn plan. It avoids all the key traps. Two weaknesses keep it from a 5. The smaller-test alternative is dismissed in one line (\"the pop-up already tested one site\") with no cost figure and no consideration of a capped, capital-light test with a grocer partner. And the fee-based model is not tested as a possible changer of the answer. The learning-versus-runway trade-off is therefore only partly worked.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer and its five reasons are on the first content page, the language is plain and precise, and each analytic slide carries one message with a visible derivation. Length is somewhat more than the decision needs: 22 slides include a title, five section dividers and a next-steps page, and slides 11 (break-even basket) and 17 (network loss) reinforce points already made rather than add new ones. The proportion is reasonable but not minimal.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "both incumbents lose money at EBITDA and on every order they deliver",
+    "why": "The pack gives average contribution per order, not every order. The document's own next slide shows Zipcart's densest city at +$0.40 per order in Q4 2025."
+   },
+   {
+    "quote": "The pipeline could add $3.6M of ARR for about $1.2M of new cash to month 18",
+    "why": "This assumes all 37 pipeline grocers sign. The pack gives no win rates. The document labels it an upper bound only in a slide 19 footnote, yet uses it unqualified as the headline comparison in the executive summary."
+   },
+   {
+    "quote": "Customers stay less and cost more to win than the plan needs",
+    "why": "The pack does not state the plan's retention or acquisition-cost assumptions, so \"than the plan needs\" is asserted. The supporting evidence is the document's own payback estimate, not a plan requirement."
+   },
+   {
+    "quote": "Larger baskets would likely cost more to pick, so the true break-even basket is higher",
+    "why": "Nothing in the pack links picking cost to basket size; Table 3 holds picking cost at $3.10 across all AOV cases. The claim is hedged but has no basis in the pack."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Put about $1.2M to month 18 into two engineers and two sales hires to scale the software for grocers who want their own fast delivery. Reopen the operator question only when four conditions hold: a customer site with positive contribution per order, customers who repay acquisition cost, settled rider pay rules, and outside funding for the launch.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "The recommendation meets all four defensibility criteria. It computes per-order contribution at median, best observed, pop-up and plan inputs. It separates market growth from profitability. It checks the runway constraint (about 6 months against the 12-month floor). It offers the software alternative with costs and pipeline figures. It also sets explicit reopen conditions."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "The document rejects the founders' hypothesis on the evidence, not by contrarianism. It concedes the 40%+ growth claim is accurate (38–44% a year), then shows contribution is negative at the pop-up, median and best observed inputs, and that the plan's +$2.02 needs all four drivers beyond the best observed site. It addresses the contradictory signals directly: market growth versus incumbent losses, 44% survey intent versus 22% retention, 18% weekly growth alongside 12% promotions, and the Zipcart city result alongside its fee, promotion cut and 14% volume loss. It states what the pack does not show (no Midwest data, undefined incumbent contribution, no win rates, the ambiguous scope of the $9.5M) and sets conditions for reopening. The one shortfall is that it does not quantify what a Zipcart-style fee would do to Parcelbird's own economics. The attribution of Zipcart's turnaround to the fee and promotion cut is mechanically justified, so I count no unsupported causal claims."
+  },
+  "overall_comment": "This is a strong, accurate document with a defensible recommendation; the weighted score is 4.25. Every calculation I re-did matches, including all four contribution cases, the break-even basket, the payback, the runway and the network loss. The storyline runs cleanly from market to economics to customers to cash to the software alternative, with reopen conditions and owned next steps. It also spots that the software hires would pull runway below the floor unless new contracts fund them.\n\nThe main weaknesses are:\n- **Zipcart fee not quantified:** the fee and promotion-cut lever is described but never applied to Parcelbird's own unit economics, so the best argument for the founders is dismissed qualitatively rather than bounded.\n- **Smaller test dismissed too quickly:** a capped or capital-light test is rejected in one line on the strength of a six-week pop-up, with no cost figure.\n- **Software upside overstated in the headline:** the $3.6M assumes 100% pipeline conversion, and the caveat sits only in a footnote.\n- **Profitability criterion applied one-sidedly:** the path to profitability within current cash is tested for the launch but not for the recommended software path.\n- **Minor overstatement:** \"every order\" is claimed where the pack gives an average.\n- **Length:** five section dividers and two reinforcing slides add somewhat more than the decision needs.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.8678079999999999,
+ "wall_s": 102.02562808990479,
+ "is_error": false,
+ "error_text": null
+}

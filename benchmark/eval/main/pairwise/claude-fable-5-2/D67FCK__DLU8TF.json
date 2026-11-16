@@ -1,0 +1,39 @@
+{
+ "x": "D67FCK",
+ "y": "DLU8TF",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents run a clean chain from governing thought to sections to evidence, and both reach the same segmented answer. X's three pillars (churn is a cohort effect; pricing power sits in mid-market and enterprise; the CFO's number is overstated) each map to a section, and its figures are treated the same way throughout, with base and stress cases for every option. Y's five key questions also map neatly to sections. But Y nets the CFO's plan for SMB churn ($6.3M) while headlining its own plan gross ($4.3M, 'before any churn response'), so the executive summary's '$0.6M of new ARR needed' rests on an unlike-for-like comparison. Y also says onboarding cannot deliver its best case, then sizes it at that best case ('up to $1.5M'). X has a small tension of its own: it says the core base is not more price-sensitive yet holds SMB because of Inkwell, though it reconciles this through the win-rate evidence.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's preferred recommendation: +10% on mid-market and enterprise (7% where capped), hold SMB and test +8%, fund onboarding, fix the churn metric. X weighs the alternatives more explicitly. It compares four options, including segmented at 12%, on base and stress ARR, NRR and new-customer ARR needed, and it states the trade-off as $1.8M of base-case upside given up to remove the SMB downside. It also lists three data checks to run before the December meeting. Y compares three options only qualitatively, and puts a lower-priced SMB tier out of scope. Y's implementation judgment is better in one respect: it tests SMB on renewals and holds back a mid-market renewal control group, which directly addresses the sign-up-versus-renewal uncertainty. X's SMB test uses new sign-ups, the same limitation it criticises in the 2024 mid-market test. On balance X's quantified trade-offs slightly outweigh Y's better test design.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: promotion-cohort churn of about 4.9%, the mix effect of about 1.0pp, the $7.6M repriceable figure, the 10.7% (about 2x the 2023 response) break-even, and the dashboard reconciliation (1.7% to 2.6% by customer, 0.8% to 1.2% by ARR). X goes further and with more care. It applies a churn reaction to mid-market and enterprise as well as SMB ($5.3M base, $2.7M stress), and nets its own plan the same way ($3.5M / $2.4M). It builds an activation model showing activation explains only about 0.8pp of the cohort's 2.8pp excess churn, so onboarding is worth about $0.4M. It cross-checks the cohort's share of churners against the exit survey and notes that in-year revenue is about half the ARR figure. Its one stretch is using the non-significant conversion gap as a proxy for renewal loss, but that is flagged and conservative. Y assumes zero churn response in the larger segments for its headline $4.3M and $0.6M figures, and corrects the CFO's figure only to $6.3M. Its 'up to $1.5M' for onboarding assumes the full best case that it elsewhere calls unrealistic, and it over-reads 1.9% versus 1.8% as a 'lasting cost' of the 2023 rise. Y does add useful caveats: the 2024 test predates Inkwell and its sample size is unknown.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "X handles the competing views explicitly. It states that 'the CFO and CEO are each half right', runs a five-part hypothesis table with a verdict on each (holds, holds at 10%, not shown, holds but smaller, fails), and corrects the $10.3M through timing, caps and churn down to $5.3M / $2.7M. It also refutes the 'halve SMB churn' claim with numbers and a mechanism. Y revises the CFO's view correctly in substance: it rejects the uniform 12%, cuts $10.3M to $6.3M and shows that halving churn is out of reach. But the reconciliation of the two views is implicit, and the correction to the CFO's figure is only partial because it applies no churn reaction in mid-market. Y's line that existing SMB customers 'have not yet moved' while new buyers are more price-sensitive is a good nuance, but X's treatment is more complete and more balanced.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The two documents make the same defensible recommendation and both avoid the main traps: blended churn, unsplit exit surveys and the face-value $10.3M. X would serve the CEO better because its numbers are more decision-ready. It gives base and stress cases for every option, treats churn reaction consistently, sizes onboarding realistically at about $0.4M, states the growth-target gap honestly at $1.5M to $2.6M of new-customer ARR, reconciles the CFO and CEO views explicitly, and lists data checks to run before the meeting. Y's main advantage is its renewal-based SMB test and mid-market control group, which is a better experimental design than X's sign-up test. But Y's headline economics are gross and optimistic ($4.3M, only $0.6M of new ARR needed), and its onboarding value is a best-case upper bound.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1098362,
+ "wall_s": 46.92267608642578,
+ "error_text": null
+}

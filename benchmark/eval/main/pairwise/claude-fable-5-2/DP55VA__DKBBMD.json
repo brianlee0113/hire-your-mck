@@ -1,0 +1,39 @@
+{
+ "x": "DP55VA",
+ "y": "DKBBMD",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same clean hierarchy: a segmented governing thought, then churn diagnosis, pricing headroom, option values and a gated rollout, with titles that carry the argument. X's numbers reconcile throughout (gross $7.6M, net $1.5–4.6M, plan $2.2–3.6M, bridge to $96.4–97.8M), but its headline \"a promotion problem, not a price problem\" sits a little awkwardly beside an SMB hold justified by price sensitivity to Inkwell. Y's storyline tracks the decision question more directly (where churn rose, why, price or onboarding, Inkwell, segment verdicts), but it has small tensions of its own: \"SMB pricing is not needed to reach the goal\" although the plan falls $0.7M short and part of the gap-closing upside is an SMB rise, and it holds the $29 Business plan while raising mid-market. These roughly cancel.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the same defensible recommendation (R1/R2): mid-market +10%, enterprise to caps, SMB held with a randomised +8% test, promo cohort frozen, activation programme, gates. X weighs the alternatives more fully: four options including \"SMB +8% from January\", each valued net of churn in base and stress cases, and it quantifies what the test costs (about $0.3M of upside to cap the downside). It also values the blanket plan net of churn in every segment, so its comparison with the CFO plan is more realistic. Y's option table counts churn only in SMB, which makes the CFO plan appear to clear the 15% goal (15.1–16.6%) while the recommended plan does not; Y then has to argue for giving up \"paper ARR\" on risk grounds alone. Y adds useful touches: a mid-market step-up gate to 12%, three-tier thresholds, the enterprise figure as a ceiling, and not banking onboarding savings. X's trade-off analysis is still the more rigorous.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the critical calculations right: promo churn of about 4.9%, the mix effect of about 1.0 of 1.1 points, the $7.6M corrected uplift, blended churn of 1.7→2.6% and 0.8→1.2%, and the break-even (Y states 10.7%; X states the equivalent 2.0× the 2023 response). X goes further and its arithmetic checks out: the 2023 net of +4.1%, revenue per lead of +7.7% in the mid-market test, an activation model bounding SMB churn at 2.8% and 2.0%, segment-level net values, and a power check on the SMB test. X does rest on some stretched but disclosed parameters: promo-cohort elasticity of 2.9× taken from the price-citation ratio, and a mid-market renewal elasticity taken from the new-sign-up conversion test (stress-tested with the SMB 2023 response). Y avoids those stretches but treats mid-market and enterprise churn response as zero in its net figures, which overstates both the CFO plan ($5.0–6.3M) and its own $4.3M. Y's activation ceiling (3.1→2.1%) is cruder, and \"many likely to Inkwell\" is unsupported. Both caveat the 2024 test as new sign-ups only.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than adopt or reject it wholesale: both correct the $10.3M, separate mix from rate effects, split the exit survey by cohort and reject the \"halve churn\" claim. Y engages the pack's competing views most directly. It has a slide framed as \"onboarding problem or price problem?\" that concludes both sides are partly right (the core base is not leaving over price yet; price does drive exits where customers face a jump), and a dedicated Inkwell slide showing SMB is price-sensitive at the point of sale. That matches the expected reconciliation closely. X reaches a similar place (\"the CFO is right that the churn rise is not about the list price, and the CEO is right that the promotion cohort is fragile\") and tests the CFO and Customer Success claims explicitly. But it frames the revision around its own invented \"week 1\" hypothesis, and its headline \"a promotion problem, not a price problem\" leans further towards the CFO than the evidence warrants.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents recommend essentially the same segmented, gated plan and both meet every defensibility criterion. X gives the CEO a more rigorous basis for the decision: values net of churn in all segments, base and stress cases, an extra \"faster SMB\" option, a quantified cost of testing first, a tighter bound on what onboarding can deliver, and a consistent message that no pricing option reaches 15% on its own. Y is tighter and reconciles the CFO and CEO views more evenly, with good checkpoint design. Its weakness is that it ignores churn response outside SMB, which flatters the CFO plan and leaves the recommendation looking as if it trades away goal attainment. X is modestly more useful.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0971722,
+ "wall_s": 63.62403416633606,
+ "error_text": null
+}

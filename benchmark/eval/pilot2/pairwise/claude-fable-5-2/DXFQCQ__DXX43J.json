@@ -1,0 +1,39 @@
+{
+ "x": "DXFQCQ",
+ "y": "DXX43J",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same clean chain: churn diagnosis, pricing power by segment, value, plan. X's executive summary carries the numbers the slides then derive ($10.3M to $7.6M to $4.2M; plan $3.0M; $1.9M gap), and its hypothesis table ties each claim to a verdict. Y's summary maps neatly onto its five sub-questions and is equally easy to follow. Its weakness is that the headline \"adds about $4.3M\" and \"only $0.6M from new customers\" are before-churn figures, while the CFO's plan is quoted net of SMB churn ($6.3M), so the comparison mixes bases. X's base and downside figures are on one basis throughout.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the same defensible answer (R1/R2): +10% mid-market and enterprise within caps, hold SMB, test +8%, exclude the promo cohort. X weighs the alternatives better. It compares hold, CFO and recommended plans on base and downside net ARR, and shows the CFO's extra $1.2M depends on SMB while both plans give about $2.0M in the downside. It also gives numeric guardrails per segment, including a mid-market churn trigger and a watch on accounts of 200 seats or fewer, and is candid that no option reaches 15% without new customers. Y's own numbers make the CFO's plan look better ($6.3M net, target met with no new ARR), and its rejection rests only on a 2.6x reaction threshold. Y's SMB gate (extend if extra churn is under about 1 pp, the break-even level) would approve a rollout that nets roughly zero; X's gate at the 2023 level of 0.5 pp is sounder. Y also puts packaging out of scope, though it keeps it as a fallback.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: promo churn about 4.9%, 56% of churners, the activation decomposition at about 30%, $7.57M after renewals and caps, 3.6% extra loss in 2023, blended and ARR-weighted churn against the dashboard, and the 37% vs 34% cross-check. X goes further by netting baseline and price-induced churn in every segment, and by deriving break-even p/(1+p) (10.7% at 12%, matching the key) with base and downside per segment. Its calibrations are stretched: mid-market elasticity from a non-significant sign-up test, and promo sensitivity at 2.9x from survey shares. But they are disclosed, err conservative, and are stress-tested. Y presents the targeted rise gross of churn and builds the bridge to 15% on it, which understates the gap ($0.6M against X's $1.9M), and it assumes zero mid-market reaction in the numbers. Y does add useful caveats: enterprise escalators may be double-counted, and 2023 churn settled a notch higher. Y's check that halving SMB churn would need the cohort at about 0.5% a month is sharp; X makes the equivalent point (1.55% is below the 2.1% core rate).",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's position rather than adopt or reject it wholesale. Both separate the mix effect from the rate effect, show that price is a real exit reason for the promo cohort when the discount ends, and correct the $10.3M. X adjudicates the internal views more explicitly: the CFO is \"half right\" (core customers are not leaving over price, the promo cohort is), the CEO's concern is validated for SMB via Inkwell, and the Customer Success claim is not credible. X also takes the value down to net of churn and records how its own starting view changed (SMB from January rise to test first). Y reaches the same reconciliation but mostly implicitly, and corrects the $10.3M only to the pre-churn $7.6M for its headline.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The recommendations are nearly identical and both meet all four defensibility criteria. X serves the CEO better because its numbers are net of churn, and its options are compared on base and downside on one basis. It is honest that pricing alone leaves about a $1.9M gap to the 15% target, and it has concrete triggers to pause or stop. Y is rigorous and transparent, but its gross $4.3M headline and $0.6M gap give a rosier picture than its own caveats support, and its SMB gate is set at break-even.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1516042,
+ "wall_s": 49.24285387992859,
+ "error_text": null
+}

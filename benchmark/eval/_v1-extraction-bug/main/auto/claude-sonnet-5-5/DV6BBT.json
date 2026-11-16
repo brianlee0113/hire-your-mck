@@ -1,0 +1,196 @@
+{
+ "blind_id": "DV6BBT",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the exact question (launch in Q2 2027, package and price). Uses NRR 101→105%, the 75% gross-margin floor, the Routewise response and the mobile delay as explicit criteria. Breaks the question into five sub-questions and tests each package against the NRR and margin criteria. It identifies early that the answer turns on paywall versus survey demand, inference cost and the mobile trade-off. Nothing material is missed.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, summary and sections line up: demand, Routewise, package, mobile trade-off, launch plan. Most titles are full claims that their slides support, so the titles read as an argument. Flaws: the divider slides repeat the title 'Customers value Copilot, but fewer will pay than planned' five times, which is redundant and mislabels sections 2–5. The 'near-certain' revenue gain sits uneasily with the doubts raised earlier about the 33% migration rate. Otherwise the logic is tight.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "All key calculations check out. Survey versus paywall gives $8.06M versus $2.45M. Inference is $32.4, $130.5 and $61.2 per account per month. The Routewise gap is 109 deals, about $0.64M. Pro ARR is $2.89M. The Pro margin is derived per seat, which is more careful than the key. Critical evidence is used throughout, including the cutting evidence: the Routewise 20% discount, loss notes counting all lost deals, the volunteer bias and the survey's 6% response rate. It also dismantles the VP Sales claim. Weaknesses: the claim that the revenue gain is 'near-certain' rests on a 33% migration rate from a different tier. Paywall buyers are assumed to have 8.1 seats. It compares a deferred revenue flow ($1.44M) with ARR at risk ($1.1M), which is loose. One or two small unsupported assertions.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Revises the CPO hypothesis: launch, but as a Pro tier with a usage allowance and metered overage, sized on the paywall result. Compares add-on, Pro, free-in-Core, a capped free tier and mobile-first on NRR, margin and Routewise. States the mobile trade-off explicitly, with a 29% breakeven for what would flip the decision. Gives risks with triggers, owners and a six-month review. It avoids all the traps. Weaknesses: it chooses launch-first 'narrowly' on an unknown, and asserts a near-certain revenue gain. It treats Pro migration as NRR expansion without a pilot or gate before committing the engineers. It asserts that Pro 'matches Routewise' although Routewise's price is unknown.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 3 with a clear governing thought. The deck runs to 40 slides and about 6,000 words, with five identical divider slides, several backup slides and heavy cross-referencing codes. That is more than a launch/package decision needs, so there is some padding. Language is plain and precise.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Launch first: the revenue gain is near-certain, while the churn loss is a ceiling",
+    "why": "The Pro revenue rests on a 33% migration rate from a different tier at a different price. The document itself says that is doubtful, so 'near-certain' is overstated."
+   },
+   {
+    "quote": "Median account: cheap to serve, but the least likely to pay a flat fee",
+    "why": "The pack has no evidence on which accounts bought. Only the buyers' average usage (6,800 requests a month) is given."
+   },
+   {
+    "quote": "Matches the rival's package at half the add-on's price",
+    "why": "Routewise's Pro price is not in the pack, as the document concedes elsewhere, so 'matches' and the price comparison are not supported."
+   },
+   {
+    "quote": "Paywall-buyer use: 6,800 requests a month over 8.1 seats",
+    "why": "Assumes the paywall buyers have the beta's average seat count. The pack does not give their seats."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Launch first: the revenue gain is near-certain",
+    "quote_b": "The 33% comes from another tier at another price, so Pro's fifth of headroom is the margin for that doubt",
+    "why": "Describing the revenue as near-certain conflicts with the document's own doubt about the migration assumption that drives it."
+   },
+   {
+    "quote_a": "At worst the mobile delay puts about $1.1M of ARR permanently at risk",
+    "quote_b": "the delay postpones an improvement, it adds no new churn",
+    "why": "The ARR is called 'permanently lost' in one place but a postponed improvement in another. The framing is inconsistent, though not fatal."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 as a Pro plan at $12 more per seat. Include about 444 requests per seat a month, with overage at $36 or more per thousand requests. Do not offer the $149 add-on. Restart mobile in Q3 2027 and review at six months. Plan on about $2.9M of new ARR.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It uses the paywall result instead of the survey. It accounts for inference cost through the usage allowance and the margin analysis. It weighs the mobile delay against the competitive threat and states the 29% threshold that would flip the decision. Its main weakness is that launching first rests on an unknown. It also leans on the 33% migration rate from a different tier."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It keeps the launch but rejects the $149 add-on and the $8M sizing. Survey intent is 3.3 times paid take-up, so the add-on gives about $2.5M, and heavy buyers erode its margin. It flags the survey's size bias and 6% response rate, the volunteer bias and the Routewise discount confound. It re-sizes on the paywall result and moves to a Pro tier. This matches the expected 'revise' handling."
+  },
+  "overall_comment": "This is a strong, numerically accurate deck. It reaches every key insight and critical evidence item and avoids every trap. It revises the CPO hypothesis in the right direction and gives a defensible Pro-with-allowance recommendation. It is explicit about the mobile trade-off and sets decision gates. Weaknesses: 40 slides is long, with five duplicated divider titles. The 'near-certain' revenue claim is overstated against the migration-rate doubt. The Routewise price comparison is asserted without data.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.2131944,
+ "wall_s": 47.217644929885864,
+ "is_error": false,
+ "error_text": null
+}

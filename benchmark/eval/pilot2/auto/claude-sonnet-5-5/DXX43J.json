@@ -1,0 +1,183 @@
+{
+ "blind_id": "DXX43J",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as where and how much to raise, not yes/no. Uses the 15% ARR target, the NRR floor of 100% and renewal and cap constraints as explicit criteria. Sub-questions identify the issues the answer turns on: promo cohort versus price rejection, mid-market acceptance, and SMB under Inkwell. Out-of-scope items are stated. Brand and trust at renewal is only lightly framed.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, five summary points and the section structure line up. Titles are claims backed by the slide evidence. The numbered backup references work. Weaknesses: six identical divider slides titled 'Churn is a promotion problem', which is the wrong title for most sections; the onboarding material sits oddly under the churn section; slide 26 says the risk is SMB while also saying a mid-market slip matters more. The out-of-scope packaging item is also the fallback.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Numbers check out against the pack. Segment churn is 1.7→2.6% logo-weighted and 0.8→1.2% ARR-weighted. Promo cohort churn is 4.9% (103/2100). The 12% plan yields $7.566M with a correct waterfall (1.728, 0.738, 0.288). Mid-market $3.485M and enterprise $0.787M. The 2023 reaction is 3.6%, and the 8% SMB case nets $0.7M with break-even near 2.1x. The retention bridge sums to 93.98. The dashboard mismatch is noted. Critical evidence is all used, and the 2024 test and the cohort estimate are caveated. Gaps: the mix decomposition is not stated as '1.0 of 1.1 pp'; the 10.7% break-even for 12% is not stated directly; the bridge adds a price rise onto NRR that already includes expansion, which is flagged only partly. The activation split is a modelled estimate with heavy assumptions, which is labelled.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Recommends a differentiated plan: 10% at mid-market, enterprise at 10% or the 7% cap, SMB held with a randomised Q1 test, and the promo cohort left at its current price with an activation push. The alternatives are compared quantitatively (12% plan, no rise, 8% SMB, 12% mid-market). It gives a pass/fail gate, kill conditions, owners and dates, and a mid-market renewal read-and-pause rule. It rejects the 'onboarding halves churn' claim with numbers. It avoids all five traps and revises both the CFO's and the CEO's positions. Weaker points: the cheaper-tier response to Inkwell is parked as out of scope, and the brand/trust trade-off is thin.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 3 and the executive summary is crisp. The deck is long at 42 slides, with six repeated divider slides and many backups, and is more than the decision strictly needs. Language is plain and the numbers are traceable.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Losing the discount, not our list price, drives these exits",
+    "why": "This is an inference. 52% of promo churners cite price and most leave within two months of the discount ending, but the exit survey cannot separate discount loss from list-price rejection."
+   },
+   {
+    "quote": "2023 SMB reaction ... this is a floor for 2027, not a forecast",
+    "why": "Directionally reasonable given Inkwell, but asserted without evidence that the reaction is larger now. Elsewhere the document says the Inkwell effect is unknown."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "The retention floor is not where the risk lies; the risk is SMB customers lost to Inkwell",
+    "quote_b": "A mid-market slip matters more than any SMB move",
+    "why": "The same slide names SMB as the main risk and mid-market as the larger exposure, which is inconsistent. This is minor."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise 10% at mid-market renewals and enterprise renewals (7% where capped). Hold SMB at $15 and test 8% on half of non-promo SMB renewals in Q1, with a gate of extra churn under about 1 pp. Leave the promo cohort's price unchanged and run an activation push. Replace the dashboard churn figure with segment and cohort measures.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It differentiates by segment, separates the cohort mix effect from a rate effect, corrects the $10.3M to $7.6M, and includes a staged test with guardrails. This meets all of the key's defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document rejects the uniform 12% and the $10.3M, and also rejects the CEO's blanket caution. It keeps the CFO's view that the churn rise comes from the cohort rather than core price rejection, and the CEO's view that SMB is price-exposed under Inkwell. It recommends a segment-differentiated rise, which matches the expected 'revise'. It is slightly more categorical than the evidence on the cause of the exits."
+  },
+  "overall_comment": "This is a strong, numerically accurate deck. It decomposes the churn rise into a promo-cohort mix effect, corrects the CFO's $10.3M to $7.57M with a transparent waterfall, and shows that onboarding cannot halve churn. It then recommends a segment-differentiated rise with a randomised SMB test and an explicit gate. The main weaknesses are length (42 slides, with repeated divider titles), a thin treatment of the trust/brand trade-off, the 12% break-even stated only indirectly, and an NRR-based bridge that is only partly caveated for double-counting.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.22054,
+ "wall_s": 42.09632992744446,
+ "is_error": false,
+ "error_text": null
+}

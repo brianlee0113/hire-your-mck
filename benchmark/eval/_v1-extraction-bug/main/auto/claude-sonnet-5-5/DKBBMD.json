@@ -1,0 +1,181 @@
+{
+ "blind_id": "DKBBMD",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as 'raise or not, and how', and answers it by segment. Uses the 15% ARR goal, the NRR>100% floor and the renewal/cap constraint as explicit criteria on Slide 3. Identifies early that the answer turns on SMB versus the other segments, on the promo mix effect, and on the $10.3M overstatement.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, summary points and slide titles line up. The titles read as an argument: churn is an SMB story, the promo cohort explains most of it, price matters only for promo churners and through Inkwell, the $10.3M shrinks, so segment the increase. Options and risks follow from this. Slide 10's 'coin-flip' title is a little loose, and the appendices add some redundancy.",
+    "score": 5
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers check out: promo churn 4.9%, 1.0 of 1.1 pp explained, $7.57M capturable with a per-step bridge, break-even 9.1% and 10.7%, blended churn 1.7%→2.6% and revenue-weighted 0.8%→1.2%. The 2023 precedent is rescaled sensibly and flagged as pre-Inkwell. The 2024 test is caveated as new sign-ups only. The CS 'halve churn' claim is tested against the pack. Minor overreach: 'the worst is probably behind us' and 'many likely to Inkwell' have no basis in the pack. The NRR bridge may double count price and expansion, and the activation decomposition relies on an assumed 3× ratio, though it is labelled directional.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is differentiated: mid-market +10%, enterprise to contract terms, SMB held with a randomised test, the promo cohort excluded and activation funded. It compares the CFO plan with hold-all, states the trade-offs, and sets checkpoints with thresholds inside break-even, plus risks and next steps. It avoids all the traps. The weakness is that the recommended plan reaches only about 14.2% and relies on an unforecast new-logo residual to meet the 15% objective, while the CFO option clears 15% on paper. The deck is honest about this but does not close the gap.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the language is plain. At 18 slides with two appendices, it is somewhat long for the decision. Slides 11–16 partly repeat the recommendation.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "The worst is probably behind us",
+    "why": "The promo cohort still churns at an implied 4.9% in H1 2026, and the pack does not show that its churn has peaked."
+   },
+   {
+    "quote": "SMB losses: ~320–640 customers, many likely to Inkwell.",
+    "why": "The destination of lost customers is not in the pack. The loss counts also rest on a linear scaling of the 2023 pattern."
+   },
+   {
+    "quote": "Uncapped enterprise contracts set at 10%",
+    "why": "The 10% is the author's assumption, and the pack gives no basis for uncapped enterprise tolerance. It is labelled a judgement call, so this is minor."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Segmented increase. Mid-market +10% at renewal, enterprise to contract terms (7% where capped, 10% otherwise), SMB list held in H1 with a randomised +8% renewal test, the promo cohort excluded, and an activation programme. Gates in April and July. $4.3M, up to $5.1M, reaching about $98.3M before new logos.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It separates the mix effect from the rate effect, reconciles the CFO and CEO views, corrects the $10.3M, and differs by segment with guardrails. It falls short of the 15% goal without new-logo ARR, but it says so openly."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The deck keeps the CFO's 'it's a mix/onboarding' point for the SMB churn rise and the CEO's 'price matters' point for promo churners and Inkwell. It rejects the uniform 12% and the $10.3M, and moves to a segmented plan. This is the expected 'revise' handling."
+  },
+  "overall_comment": "This is a strong, well-reasoned deck. All the key calculations are correct and every critical evidence item is used. It reconciles the competing views by segment and corrects the CFO's $10.3M. It adds a test design, checkpoints and kill thresholds. Weaknesses are a few small overreaches, a recommended plan that misses the 15% goal without an unforecast new-logo residual, and some length.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.1622244,
+ "wall_s": 27.436444997787476,
+ "is_error": false,
+ "error_text": null
+}

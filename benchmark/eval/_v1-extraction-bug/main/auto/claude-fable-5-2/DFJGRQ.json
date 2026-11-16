@@ -1,0 +1,190 @@
+{
+ "blind_id": "DFJGRQ",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document answers the question exactly as posed: whether to launch in Q2 2027 (no, Q4), and how to package and price (Pro tier at Core + $12 with a pooled allowance). All three stated constraints are used as explicit decision criteria: the 105% NRR target (slide 10), the 75% gross-margin floor (slides 6-7) and the 14-engineer mobile trade-off (slides 9, 11). It names both internal positions (CPO, Head of Customer Success) and identifies early what the answer turns on: revealed versus stated demand, heavy-user inference cost, and the cost of delaying mobile. Nothing material to fix.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the executive-summary points map one-to-one onto the body sections, and the titles alone give the argument. Each title is a claim that its slide's numbers support. Two flaws keep it from a 5. First, the sequencing conclusion is stated more firmly in the title and summary ('costs more lasting revenue', 'at most ~$0.6M at risk') than the body supports: the ranges overlap ($0.5-1.1M against up to $0.6M plus $0.1-0.5M deferred) and the body calls it 'a close call'. Second, the plan shows the mobile rewrite with 'full team kept' all year while Copilot takes 14 engineers in H2, without saying where they come from or whether the rewrite is finished by Q2. There is also some overlap between slides 6 and 7, and between slides 2, 12 and 15.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived every number I relied on and all match the pack: $8.06M against $2.45M; inference cost of $17/$32/$61/$131 with margins of 89/78/59/12%; 109 deals and $0.64M; Pro at $2.89M; company gross margin of 76.2-76.6% (add-on), 76.0-76.5% (Pro), 75.9% and 74.1% in the stress cases, 70.3% free in Core; the 64% break-even adoption; the 9-22% interval on 17 of 120; and paybacks. All four required calculations are done transparently, with an appendix. All critical evidence is used, including evidence against the product (volunteer bias, the survey's 6% response and size skew, Routewise's discount, and the September launch falling in the last month of Q3). Claims are calibrated, with ceilings and halved low cases. Remaining weaknesses are minor and mostly labelled: the assumption that the rewrite removes 50-100% of mobile-attributed churn has no basis in the pack, 'usage is per seat' is asserted without per-seat data, and 'a third or less' slightly understates the top of the range (36%).",
+    "score": 5
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear and follows from the analysis. Three packaging options and two sequencing options are compared on the stated criteria (ARR, contribution, NRR, gross margin, payback, competitive fit, heavy-user exposure). Trade-offs are explicit, with two triggers for a Q2 launch, four quantified pilot gates, a list of what would change the answer, and owned next steps. It avoids all six traps. It is not a 5 for three reasons. The decision to delay rests on what the document itself calls a close call, driven by an unevidenced assumption about how much churn the rewrite fixes. The plan does not resolve where the 14 engineers come from in H2 without delaying mobile anyway. And the interim competitive response during a nine-month gap against Routewise is thin: a 500-account pilot of existing customers does nothing for new-customer deals, where the win-rate loss is measured.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title slide and the executive summary, in plain and precise language, with sources and assumptions labelled. At 17 slides and about 3,600 words it is somewhat longer than the decision needs. Slides 6 and 7 partly duplicate the margin comparison, and the offer and decisions are restated on slides 2, 12 and 15. The two appendix slides do earn their place by making the arithmetic checkable.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Usage scales with account size; a flat price does not.",
+    "why": "The pack gives no per-seat usage data. It says only that beta accounts are larger and more active and that usage is concentrated in the top 10%. The same assertion ('Per seat, because usage is per seat') is the stated reason for per-seat pricing."
+   },
+   {
+    "quote": "Cheaper AI at launch: the inference contract runs to December 2027; a Q4 launch spends only one quarter on today's price.",
+    "why": "This assumes the price falls after December 2027. The pack lists the post-2027 price path as an open uncertainty, and a Q4 2027 launch would still be at today's contract price."
+   },
+   {
+    "quote": "A cleaner read on Routewise: two more quarters of win-rate data without its discount.",
+    "why": "The pack does not say Routewise's discount has ended. The document itself notes elsewhere that Sales must confirm this."
+   },
+   {
+    "quote": "Customer Success's main fear is addressed before Copilot adds support load.",
+    "why": "The pack does not say Copilot adds support load, and it does not establish that the mobile rewrite will be finished (or the fear addressed) within the two protected quarters."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Real buying behaviour points to $1.2–2.9M of new ARR in year one, a third or less of the $8M forecast",
+    "correct": "The top of the range is $2.9M ÷ $8.06M ≈ 36%, slightly more than a third. The add-on high case ($2.45M) is 30%. Minor wording slip, not material to the argument."
+   }
+  ],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot only inside a new Pro plan at $91 per seat (Core + $12), with 600 pooled AI requests per seat and overage packs at $20 per 1,000, targeting Q4 2027 rather than Q2. Keep the mobile rewrite fully staffed through H1 and run a paid pilot on about 500 random accounts with a control group, with four go/no-go gates at the end of Q2. Bring the launch forward to Q2 if Copilot can be staffed without the mobile team, or if the Q4 2026 win rate against Routewise fell below 37% with no discount running.",
+   "closest_plausible_id": "R3",
+   "defensible": "yes",
+   "rationale": "The recommendation combines R3's timing (mobile first, Copilot two quarters later) with R1's packaging (Pro tier, usage pool, margin guardrails). It meets all three defensibility criteria: it sizes demand from the paywall test and explains the survey gap; it builds inference cost into the packaging and stress-tests the 75% floor; and it quantifies the mobile delay ($0.5-1.1M) against the competitive risk (at most $0.56M). R3's conditions are met: the win-rate risk is quantified as a ceiling, and a limited AI response is planned (the H1 paid pilot plus explicit Q2 triggers). That interim response is thin for new-customer deals, though."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document keeps 'launch' but rejects the $149 add-on and the $8M figure, which matches the key's expected handling (revise). It re-sizes demand from the 14% paywall result ($1.2-2.5M), explains the survey gap (6% response, larger respondents, intent is not purchase), and shows that add-on buyers are heavy users at 59% margin. It surfaces all four contradictions in the pack: survey versus paywall; AI pressure versus the mobile priority; beta gains versus volunteer bias; and the win-rate drop versus Routewise's discount. It also challenges the VP Sales claim (109 deals as a ceiling against 328 claimed). The one mild causal overstatement is the slide 3 title ('Copilot raised dispatcher productivity and renewals'), which is qualified in the same sentence and on the slide."
+  },
+  "overall_comment": "This is a very strong document. Every figure I re-derived matches the pack, all four required calculations are done and shown, all critical evidence is used, and none of the six traps is fallen into. It goes beyond the key in useful ways: a margin stress test with and without the usage pool, a 64% break-even adoption rate, a confidence interval on the paywall test, the observation that Routewise's AI launched only in the last month of Q3, and the point that Pro lifts NRR once while a churn fix persists.\n\nThe main weaknesses are in the sequencing argument:\n- **Close call stated firmly.** The summary and slide 11 title say mobile delay costs more, but the ranges overlap and the body calls it a close call.\n- **Unevidenced assumption.** The mobile-delay cost depends on the rewrite removing 50-100% of mobile-attributed churn, which the pack does not support (the document labels this).\n- **H2 staffing.** The plan does not say where the 14 Copilot engineers come from in H2 if the mobile team stays intact.\n- **Interim competitive response.** There is little to help new-customer deals against Routewise before Q4.\n\nThere is also some redundancy across the summary, offer and decision slides. Weighted score: 4.4.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 1.0642876000000001,
+ "wall_s": 139.36007809638977,
+ "is_error": false,
+ "error_text": null
+}

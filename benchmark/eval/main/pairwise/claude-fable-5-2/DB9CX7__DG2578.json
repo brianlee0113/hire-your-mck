@@ -1,0 +1,39 @@
+{
+ "x": "DB9CX7",
+ "y": "DG2578",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same logical chain: churn is a cohort effect, headroom sits in mid-market and enterprise, the $10.3M is overstated, so raise by segment and test SMB. X has a clean four-question tree whose section titles match its executive summary. One small mismatch: its governing thought says hold SMB \"until the promotion cohort is fixed\", but the plan rolls SMB out in H2 on the test alone, with the cohort simply excluded. Y's executive summary carries the whole argument, including the explicit trade-off against the CFO plan and the decisions required. Its option table, target bridge, gap decomposition and guardrails all reconcile to the same numbers (6.3/4.5, 4.7/3.8, 98.9/97.8, 1.62). Y is slightly tighter from governing thought through to decisions.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's preferred segmented recommendation (R1/R2), exclude the promotion cohort, and gate SMB on a controlled test. Y weighs the alternatives more fully. It compares three options on base and downside cases, covering net price ARR, exit ARR, new-customer ARR needed and NRR. It decomposes the $1.6M given up against the CFO plan into SMB deferral and staying at the tested 10%. It shows the January SMB rise nets about zero in the downside. It notes that neither plan counts lost new deals to Inkwell. Its guardrails are trigger-and-action pairs: pause mid-market if churn exceeds 1.0% for two months, extend to 12% if it holds, and specific SMB go/no-go criteria. It also flags renewal notice periods and the missing new-bookings plan. X's weighing is sound: an options table, an explicit 7.4% break-even, a sensitivity table and a risk register. But its options carry single-point values, the mid-market renewal risk it calls the largest is not quantified, and its guardrails are less operational.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the critical calculations right. Each derives the 4.9% cohort churn and the roughly 1.0 pp mix versus 0.1 pp rate split. Each shows blended churn of 1.7% to 2.6% and ARR-weighted churn of 0.8% to 1.2%, neither matching the dashboard. Each arrives at about $7.57M repriceable, and each attributes about 30% of the cohort's excess churn to activation. Both caveat the 2024 new-sign-up test and reject the \"halve churn\" claim with a bound.\n\nX's advantages: an explicit break-even (7.4% for an 8% rise), a sensitivity table, the 3.6% first-year loss from 2023, and careful caveats (timing is not cause, no survey sample sizes, the estimate describes the surviving cohort). Its weakness is applying the unscaled 8% response to the 12% plan, though it labels this a floor.\n\nY's advantages: it scales the 2023 response to 12%, adds a downside that includes a mid-market reaction, and bounds the enterprise cap assumption (0.67 to 1.15). Its weaknesses are a slightly strong claim that price is not driving churn in any segment, and a base case that hits the target \"exactly\" only by stacking an assumed $0.3M activation gain and a passed SMB test. Both of those are disclosed and removed in the downside.\n\nThe strengths and weaknesses roughly offset.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than adopt or reject it wholesale. They accept that the churn rise is mostly a cohort and mix effect, reject the 12% across-the-board rise and the $10.3M, and recognise price pressure in SMB through Inkwell. Y makes the reconciliation explicit. It states \"where the CFO is right\" and ties that directly to going ahead in mid-market and enterprise in January. It separates price as a churn driver (it is not one for the core base) from price as a decider of new SMB deals (it is one), which addresses the CEO's concern precisely. It also sizes the onboarding lever at $0.3M, with upside to $1.0M. X reaches the same substantive position, noting that the price shock was the discount ending and that activation explains about 30%, but it reconciles the CFO and CEO views less explicitly.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong documents that meet every defensibility criterion: they separate mix from rate, reconcile both internal views, correct the $10.3M and differentiate pricing by segment. Y would serve the CEO somewhat better. It gives base and downside cases for each option against the 15% and NRR objectives, quantifies the trade-off against the CFO plan, sets concrete go/no-go and pause triggers, and lists the specific decisions and evidence gaps (notice periods, new-customer plan) for December. X is equally rigorous on the diagnostics and has a more explicit break-even and sensitivity analysis, but its option comparison and guardrails are less decision-ready.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0562842,
+ "wall_s": 49.48470687866211,
+ "error_text": null
+}

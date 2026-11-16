@@ -1,0 +1,39 @@
+{
+ "x": "DQ7ZUH",
+ "y": "D67FCK",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same logical chain: cohort diagnosis, pricing power by segment, corrected CFO sizing, options, plan. Y is answer-first, with three numbered pillars that map directly onto its sections, and its onboarding numbers stay consistent throughout (cohort churn 4.9% to about 4.1%, about $0.4M). X's storyline is also clean, but it contradicts itself on onboarding: slide 4 says activation explains only about 0.8 of the 2.8-point excess, yet the target and stop trigger ask for cohort churn 'toward 2.1%', and the slide 12 title implies onboarding could cut SMB churn by up to a third. Y has its own inconsistencies: it caveats the new-sign-up test for mid-market and then designs the SMB test on new sign-ups, and its headline sets a net $5.3M against the gross $10.3M. On balance Y's hierarchy is slightly tighter.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are almost identical and both fit the key's preferred differentiated answer: +10% mid-market, enterprise within caps, hold and test SMB, exempt the promotion cohort, fund activation. The difference is in the test and guardrails. X tests +8% on a randomised half of established customers' Q1 renewals, with a churn-based go/no-go rule, which directly addresses the pack's main open question (how price-sensitive existing non-promotion SMB customers are). X also sets pre-agreed triggers by segment and a 'what would change our mind' threshold for mid-market. Y tests on new self-serve sign-ups and would then roll +8% out to SMB, with the upside computed on existing non-promotion ARR. That repeats the sign-up-to-renewal generalisation Y itself flags as unproven. Y does add a useful option D (12% in mid-market and enterprise), a +5% exception policy and a risk table showing the effect if each assumption is wrong. X's cohort target of 2.1% is unrealistic by its own analysis. Net, X's staging and guardrails are more defensible.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce every required calculation correctly: implied cohort churn of about 4.9%, the 1.0-point mix effect against 0.1-point rate effect, $7.57M gross, the 10.7% break-even, the 2023 response of 3.6% scaled to 5.4%, and the dashboard reconciliation (1.7% to 2.6% customer-weighted, 0.8% to 1.2% ARR-weighted). Both use the same activation model. Y uses the evidence a little more richly: ARR per customer for the cohort against other SMB, onboarding sized at about $0.4M, a stress case anchored to an analogy, and the number of lost new wins that would erase the SMB gain. But Y overstates in places: mid-market is called 'roughly flat' in the summary, 'the core base has not become more price-sensitive' is asserted while the pack leaves it open, and sign-up conversion is used as the gate for an SMB rise. X is more careful in wording ('not more price-sensitive yet', 'main open question') but implies onboarding could cut SMB churn by up to a third and sets a 2.1% cohort target its own decomposition does not support. These roughly cancel.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis in the way the key expects: churn is mostly a cohort mix effect (supporting the CFO), price is real for the cohort and Inkwell makes SMB exposed (supporting the CEO), $10.3M is corrected to $7.6M, and the uniform 12% is rejected for a segmented rise. Both also reject the 'halve SMB churn' claim with the same arithmetic. Y is more explicit: it says the CFO and CEO are each half right, and it lays out a what-would-have-to-be-true table with verdicts (holds, holds at 10%, not shown, fails) and the effect of each on the answer. The hypothesis in that table is Y's own framing, not the CFO's verbatim, but the CFO's claims are tested within it. X says 'the CFO is half right' and addresses the CEO's concern only implicitly.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents reach essentially the same conclusion from the same correct analysis, so the margin is small. Y is better packaged for a decision: answer-first, an explicit hypothesis test, four options, a sized onboarding lever, a risk table with sensitivities and pre-meeting data checks. X is stronger where the decision is actually staged. Its SMB test measures renewal churn among established customers, the uncertainty the pack names, rather than sign-up conversion. Its mid-market and SMB triggers are agreed in advance with thresholds derived from the break-even and the 2023 response. Y's sign-up-based gate for an SMB rise could lead to a wrong second-half decision on the existing base. X's weak point is the unrealistic 2.1% cohort target. On balance X's execution logic would serve the CEO marginally better.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0813002,
+ "wall_s": 65.69300293922424,
+ "error_text": null
+}

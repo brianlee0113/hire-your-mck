@@ -1,0 +1,38 @@
+{
+ "x": "D5F25Y",
+ "y": "D4NLN6",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same clean chain: churn diagnosis, sizing of the CFO plan, segment pricing power, plan. X's hierarchy is tighter: each executive-summary line maps to one section and its numbers (96%, 91%, $7.6M, $4.3M, 33%) recur consistently. Its one wobble is slide 10, whose title stresses that the 2023 rise left churn higher while its bullets say the core tolerated it. Y is organised around five sub-questions tied to the 15% growth and 100% NRR objectives, which is a fuller logic. But its headline that mid-market and enterprise rises clear the target \"whatever SMB customers do\" is undercut by its own backup, where a 1-point NRR slip or a mid-market reaction misses the target. It also sets the criterion that each move rests on segment evidence, then goes past the tested 10% to 12%.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach a defensible differentiated answer (R1/R2): raise mid-market and enterprise within caps, test 8% on non-promotion SMB, hold the promotion cohort and fix activation. X's 10% for mid-market sits at the tested level and is the more conservative call. Y takes 12%, flags it as a step beyond the evidence, names it the largest exposure and sets a fallback to 10% with a churn trigger. Y weighs the trade-offs more fully. It quantifies the SMB break-even (10.7%, three times the 2023 reaction) and shows the CFO's SMB rise would pay on 2023 behaviour, with Inkwell as the open risk. It compares the three options on ARR outcome and NRR, sets an explicit go/no-go gate (within 0.5 pp of control), and adds a risk table and guardrails including the Inkwell win rate. It also notes that some mid-market accounts sit below 200 seats and explicitly scopes out a low-cost tier. X's options table is sound but thinner: no break-even, no defined test criteria, one guardrail. Y's weakness is over-confidence that the target is cleared on a $0.13M margin.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "X's arithmetic checks out throughout (96%, 74%, 91%, 76%, $7.57M, $4.3M, 33%, 59%, $0.6M) and it makes few unsupported claims. Its slips are small: it calls enterprise rises \"tested price levels\" and spins the 2023 settle at 1.9% as \"never back\". It omits the implied promotion-cohort rate and any break-even. Y delivers all four required calculations correctly: blended and ARR-weighted churn, implied 4.9% cohort churn with the 1.0/0.1 pp split, the $7.57M, and the 10.7% break-even against a 3.6% 2023 reaction. It cross-checks the cohort share of leavers against the exit-survey mix (47% vs 56%) and tabulates what each piece of evidence cannot show. Its numbers also check out ($93.98M, $5.05M, $0.34M, $100.7M, $97.96M, $1.48M). Y's weaknesses are heavier assumptions: 2026 NRR held and added to price uplift with no interaction, a \"whatever SMB customers do\" claim on a thin margin, and an invented \"by agreement at the brief\". These are mostly disclosed and sensitivity-tested.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis appropriately. They accept that the churn rise is a promotion-cohort mix effect, which is the CFO's point. They also show that price is the reason those customers leave and that Inkwell makes SMB price-sensitive, which is the CEO's point. Both correct the $10.3M to $7.6M and reject both the uniform 12% and a freeze. Y is more calibrated on what to keep. It retains the CFO's 12% where the evidence supports pricing power, shows the SMB rise would actually pay if customers react as in 2023, and identifies exactly when the CFO would be wrong (three times the 2023 reaction, with Inkwell present). It also notes that non-promotion churners cite price at the old rate even after Inkwell launched. X reaches the same reconciliation more briefly (\"not a freeze and not a blind 12%\") without quantifying where the CFO's SMB case holds or breaks.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents meet all four defensibility criteria and avoid the main traps. X is concise, accurate and conservative, and would serve the CEO adequately. Y gives more to decide with. It ties the plan to the 15% growth and NRR objectives, quantifies the SMB break-even and the 2023 precedent, and defines the test design and pass criterion. It provides sensitivities showing what breaks the plan, a risk table with owners and fallbacks, and monthly guardrails. Its main flaw is over-stating that the target is cleared regardless of SMB, on a thin margin and a held-NRR assumption. That flaw is disclosed in its own sensitivity table and does not change the direction of the recommendation. The extra length buys real analytical content, not padding.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0167321999999999,
+ "wall_s": 60.69857311248779
+}

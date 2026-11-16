@@ -1,0 +1,27 @@
+{
+ "run_id": "main-c1-B-r3",
+ "condition": "B",
+ "status": "complete",
+ "events": 550,
+ "tools": {
+  "Bash": 19,
+  "Read": 32,
+  "Skill": 1,
+  "Write": 4
+ },
+ "subagent_calls": 0,
+ "skill_available": false,
+ "skill_text_seen": false,
+ "models_used": [
+  "claude-opus-5-5"
+ ],
+ "flags": {
+  "repo_or_key_access": [],
+  "network_attempts": [
+   "{\"command\": \"cd work && python3 - <<'EOF'\\nimport re\\nsrc = open('lib.py').read()\\n# real bullets with hanging indent\\nsrc = src.replace('''        b = p.get(\\\"bullet\\\", bullet)\\n        t = p[\\\"t\\\"]\\n        if b:\\n            t = (\\\"\\u2022  \\\" if b is True else b) + t\\n        _runs(par, t, p.get("
+  ],
+  "sandbox_denials": 1,
+  "permission_denials": 0
+ },
+ "clean": true
+}

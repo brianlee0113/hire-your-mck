@@ -1,0 +1,38 @@
+{
+ "x": "DFYRWG",
+ "y": "D77BUT",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X has a very tight pyramid: one governing thought, four section claims, each backed by two evidence lines that map directly to slides, and the alternatives table restates the same logic. Its one soft spot is the Q3 gate that 'sends spare engineers to mobile', which adds little because those engineers return to mobile anyway. Y is also well structured (hypothesis test, then worth launching, packaging, timing, risks), and its triggers trace back to its own break-evens. But Y has two small internal tensions. It argues firmly for mobile first, then says 'the sequence matters less than delivering both'. And its trigger to pull the launch forward if the win rate stays at or below 37% sits oddly with its own finding that, even with full AI credit, mobile-first still wins if the rewrite fixes more than 52% of mobile churn. X is marginally cleaner.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on defensible answers: X on a Pro tier in Q2 with a usage cap and the mobile delay accepted explicitly; Y on a Pro tier in Q4 after mobile, with the win-rate risk quantified and a limited AI response (paid early access, an 'AI included in Pro' sales message). Y weighs the central trade-off more rigorously. It compares like with like: ARR permanently lost from a two-quarter mobile delay ($0.5–1.1M) against a two-quarter Copilot delay (at most $0.6M), and notes that Pro revenue is deferred rather than lost. It then derives a break-even (the rewrite must fix 26–52% of mobile churn) and names triggers that would reverse the order. X justifies the delay by setting $1.1M of churn risk against the full $2.89M of Pro ARR, which ignores that waiting only postpones that revenue, and it never treats 'mobile first' as an alternative. X also plans on a single $2.9M point estimate from the 2023 precedent, while Y gives a $1.2–2.9M range and tests on non-volunteers before general availability. Y's allowance of 600 requests per seat leaves margin headroom (75.9%); X's 850 runs the company exactly to the 75% floor.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both are numerically accurate on the required calculations: $8.1M against $2.45M, inference of $32/$61/$131 a month, about 109 deals and $0.64M, and $2.89M for Pro. X's figures check out (41% of price, 5,297-request break-even, $1.93M for the Sales claim, 17-month payback), and it flags the survey, beta and promotion biases. Y goes further on the critical evidence. It shows the VP Sales claim implies a 58% win rate, above the pre-AI level. It computes feature margins (34% and 46%) and company margin under a stress case (74.1% uncapped, 75.9% capped). It rates how far each beta measure can be trusted, leaves retention upside out of the case, sizes AI churn at $0.48M and builds an NRR bridge. Its assumptions (7% haircut, 50% fix rate, usage per seat) are labelled as illustrative and collected in an appendix. X's weaker points are treating 33% migration as the planning figure with no low case, and leading with 'productivity rose 5.5 times as much' before caveating it. Y's per-account reading of hours saved is debatable but conservative.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both keep 'launch' and correctly drop the $149 add-on and the $8M figure, citing the paywall test, the survey's response bias and the heavy usage of buyers. Y handles the hypothesis more deliberately. It sets out five conditions the CPO's plan needs, gives each a verdict (demand not supported, economics thin, competition partly, opportunity cost not supported, value unproven) and revises both packaging and timing accordingly. Its replacement size is anchored at the low end to revealed demand (14%). X revises packaging and sizing well but swaps the survey-based $8M for a single precedent-based $2.9M. It keeps the Q2 timing without testing that part of the hypothesis as hard, though it does accept the delay explicitly.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both avoid the main traps and reach conclusions the answer key treats as defensible. X is concise, clean and correct, and a decision maker could act on it. Y serves the decision better because it treats timing as the real choice: it quantifies both sides of the mobile-versus-Copilot delay on a comparable basis and gives break-evens and explicit triggers, including a January win-rate check that could restore Q2. It also sizes the case as a range tied to the paywall test, stress-tests the margin with headroom, and uses the waiting period to run a paid test on a random sample. Its minor tensions, and the risk of ceding two quarters to Routewise, are acknowledged and mitigated. X's single-point $2.9M plan, zero-headroom cap and thinner case for accepting the mobile delay leave the executive team less well equipped.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9500522,
+ "wall_s": 67.89215612411499
+}

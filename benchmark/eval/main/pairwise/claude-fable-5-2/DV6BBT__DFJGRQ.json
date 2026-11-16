@@ -1,0 +1,39 @@
+{
+ "x": "DV6BBT",
+ "y": "DFJGRQ",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean hierarchy from governing thought through summary to slide titles. X's five sections map one-to-one to its sub-questions and the numbers reconcile. But its sequencing conclusion sits awkwardly against its own evidence: it headlines mobile as the bigger churn problem and caps Routewise's threat at $0.6M, then launches Copilot first 'narrowly' on a test whose deciding variable it marks 'unknown'. Y's chain is tighter: mobile drives more churn, churn losses are permanent while Pro revenue is only deferred, Pro is a one-time step while mobile compounds, so mobile goes first, with stated triggers for Q2. Y's weak spot is that the 14-engineer build in Q3–Q4 may still pull from mobile; it flags this as an assumption for the CTO to confirm but does not resolve it.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reject the $149 add-on and free-in-Core and choose a per-seat Pro tier with a usage allowance and paid overage, which meets the key's criteria. They differ on sequencing. X accepts the mobile delay explicitly (R1) and gives a break-even (the rewrite preventing under 29% of mobile churn), but it tips the close call with a claim that Pro revenue is 'near-certain', which rests on a 2023 precedent from a different tier. Y delays Copilot two quarters (R3) and meets the key's conditions: it quantifies the win-rate risk (at most about $0.56M) and plans a limited AI response through a paid pilot on about 500 random accounts. Y also sets two triggers that would bring launch back to Q2, pilot gates before engineering is spent, and the point that 105% NRR needs both levers. Y uses the waiting period to resolve the pack's main uncertainties (volunteer bias, the Routewise discount). Its unverified assumption that Copilot slips only two quarters is a weakness, but it is disclosed.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the required calculations accurately: $8.06M vs $2.45M, inference of $17/$32/$61/$131, 109 deals at about $0.64M, Pro at $2.89M, and the 328-deal rebuttal of the Sales memo. Both treat beta and survey bias and the Routewise discount properly. X adds useful extras: per-seat scaling of inference, break-even take-up of 26.3% and 13.2%, a $36 overage floor and a 172-request free cap, all of which check out. X also overreaches in places: it calls the Pro revenue gain 'near-certain', sizes the $1.44M deferral as if migration were instant, and plans on the 33% point estimate. Y uses ranges throughout, adds a correct 9–22% interval on the 17-of-120 paywall result, and stress-tests margin (75.9% at full pool, 74.1% with no pool, 64% adoption limit), all correct. Y also notes Routewise's AI launched only in the last month of Q3, which weakens attribution of the win-rate drop to AI. Y's 50–100% mobile-churn-fix range and symmetric two-quarter slip are unsupported but flagged as assumptions.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects. They keep 'launch', replace the $149 add-on with a capped Pro tier, and cut the $8M to what the paywall test supports, explaining the gap through stated versus revealed preference and survey non-response. Both also reject the VP Sales claim on the same grounds. X keeps the Q2 timing and accepts the mobile delay explicitly. Y revises the timing as well, with the mobile trade-off quantified and conditions for reverting to Q2. Y's range ($1.2–2.9M) is a little better calibrated than X's $2.9M planning figure, while X stays closer to the part of the hypothesis the evidence supports. These offset.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong, numerically sound and avoid every trap in the key. X is more exhaustive on unit economics and gives a direct answer on Q2, but its sequencing call rests on an overstated 'near-certain' revenue gain and runs against its own evidence that mobile is the larger churn problem. Y gives the decision maker more to act on: ranges rather than point estimates, the insight that Pro is a one-time NRR step while mobile compounds, a random paid pilot to settle the volunteer-bias question, clear triggers for a Q2 launch, and go/no-go gates. Y's unresolved question of where the 14 engineers come from in H2 keeps the margin modest.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.2092041999999998,
+ "wall_s": 82.42887902259827,
+ "error_text": null
+}

@@ -1,0 +1,196 @@
+{
+ "blind_id": "D8GCRQ",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document restates the decision exactly as posed (launch in Q2 2027, and how to package and price) and uses the pack's stated objectives as explicit success criteria: NRR 101% to 105% by 2028, gross margin at or above 75%, and the two-quarter mobile delay. It breaks the decision into five questions that match what the answer turns on: value and competitive need, packaging, financial targets, sequencing against mobile, and execution. It treats the decision as a choice between routes (Pro tier, add-on, free in Core; Copilot first or mobile first), not a yes/no. It states what is out of scope. One small liberty: it turns the engineering constraint into a criterion that mobile 'slips by no more than two quarters', which is reasonable.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the five summary points are the five sections, and nearly every title is a claim its slide supports. Three flaws keep it from a 5. First, section 1 says to 'launch on the productivity case' while the next slide says that gain is proven only among volunteers; the link is a Q1 gate that only appears at the end. Second, slide 17 says the Q1 test 'decides between' Pro and the add-on, yet the first next step asks the executive team to drop the add-on in January, and the add-on reappears as a fallback on slide 35. Third, the sequencing section gives a 34% break-even that, on the document's own numbers, favours mobile first if the rewrite works, then recommends Copilot first on the NRR deadline without saying which side of 34% is likely. There is also redundancy: the churn chart appears twice and the contents slide five times.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-did the calculations and they match the pack: $8.06M against $2.45M; inference of $17.1, $32.4, $61.2 and $130.5 per month; 41.1% of the add-on price; 109 deals and about $0.64M; Pro at $2.89M with $1.26M inference; company margin of 76.0%, 76.2% and 73.5%; 26.3% and 28% take-up thresholds; $1.47M build; 17 and 27 month payback; the 34% break-even. All critical evidence is used, including evidence against the recommendation (mobile 27% against AI 6%, the Routewise discount, volunteer bias, the 6% survey response). The win-back and add-on figures are correctly treated as upper bounds. What stops a 5 is that the headline claims ('Pro clears both financial targets', 'margin of safety', 'NRR about 106%') rest on one 2023 precedent the document itself calls 'not a forecast', and its own slide 23 shows only 2.1 pp at the paywall rate. The NRR arithmetic also treats a one-time migration as the 2028 NRR level. 'An allowance keeps the floor at any usage' is overstated: at full allowance use the floor breaks above roughly 52% take-up. The backup table shows inference at $0.01 per request instead of $0.009.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is clear and follows from the analysis: launch in a Pro tier with a usage allowance, sized off revealed demand, accepting the mobile delay explicitly with a fixed Q3 restart. Three packaging options and two sequencing options are compared on the stated criteria (ARR, company margin, NRR, lost-for-good ARR, competition). All three key trade-offs are explicit. It says what would change the answer: 26% and 28% take-up, the 75% margin floor, a non-volunteer productivity gate, the 34% break-even. Next steps have owners and dates. It avoids all six traps and rejects both the CPO's $8M and the VP Sales claim with numbers. Remaining gaps are small: it gives no view on whether the rewrite would keep more than 34% of mobile churners, a one-quarter test cannot really read a 12-month take-up rate, and it does not consider a narrower AI release or partial staffing.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the governing thought and the executive summary, the language is plain, and derivations are laid out step by step. But 45 slides and about 6,500 words is substantially more than this decision needs: five repeated contents slides, a seven-slide appendix that largely restates the body, and a duplicated churn chart. Internal page codes such as '1c2', '4a1' and 'b4' are opaque to a reader. Several slides (reconciliation of base figures, the eight inputs, the from/to table) do not earn their place.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Pro closes the gap with a margin of safety",
+    "why": "The 5.0 pp lift assumes 33% take-up from a 2023 tier with different content and price. The document's own slide 23 shows only 2.1 pp at the paywall rate, and there is no demand evidence at $12 per seat."
+   },
+   {
+    "quote": "A per-seat allowance keeps the floor at any usage",
+    "why": "Overstated. The allowance is set at half the premium, so incremental margin is about 50%. If Pro accounts use the full allowance, company margin falls below 75% once take-up passes roughly 52%. It also depends on overage terms not yet set."
+   },
+   {
+    "quote": "Average account: pays half the add-on price, so more accounts can say yes",
+    "why": "The pack has no evidence on price sensitivity or take-up at $12 per seat; the causal link from lower price to higher adoption is assumed."
+   },
+   {
+    "quote": "chose to join, and are larger and more active than the base, traits that renew more anyway",
+    "why": "The pack does not say larger or more active accounts renew at higher rates, and the comparison group is described as matched."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Inference cost per request | $0.01 | Provider contract, fixed through December 2027 (§5)",
+    "correct": "$0.009 per request. This is a rounding display error in the backup table; the calculations elsewhere use $0.009."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Pro out-earns the add-on's best case (14% buying) only above 28% take-up, so the Q1 test decides between them",
+    "quote_b": "Approve the Q2 2027 launch inside a Pro tier at $12 more per seat, and drop the $149 add-on",
+    "why": "The document says the Q1 test will decide between Pro and the add-on, yet asks the executive team to drop the add-on in January, before the test. It then keeps the add-on as a fallback on slide 35 ('Reprice, or switch to the add-on')."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 inside a new Pro tier at $12 more per seat, with a pooled allowance of 667 AI requests per seat a month and metered overage, instead of the $149 add-on. Size the case at about $2.9M ARR, not $8M. Run a randomized Q1 2027 test on non-beta accounts. Accept the two-quarter mobile delay with a fixed Q3 2027 restart, and manage five thresholds (take-up, margin, productivity, win rate, mobile restart).",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It meets all three defensibility criteria. It sizes the add-on from the paywall test and explains the gap to the survey. It builds inference cost into packaging through the per-seat allowance, with company margin tested at several usage levels. It weighs the mobile delay against the competitive threat with numbers ($0.94M against $0.32M lost for good, 34% break-even) and accepts the delay explicitly with a fixed restart."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document keeps 'launch' and revises packaging and sizing, which is the handling the key expects. It rebuilds the CPO's $8M as 46% × 9,800 × $149 × 12 = $8.06M and replaces it with $2.45M from the paywall test, treated as an upper bound because the buyers were volunteers. It notes the survey's 6% response rate and larger respondents. It shows buyers are heavy users, with inference taking 41% of the add-on price. It also cuts the VP Sales claim to an upper bound of 109 deals and $0.6M, citing the Routewise discount, and counts no retention gain from the volunteer beta. The one unsupported causal step is that the lower per-seat price will let 'more accounts say yes'. The 33% Pro base case comes from a single precedent, which the document flags and proposes to test."
+  },
+  "overall_comment": "This is a strong document. Every required calculation is done correctly and shown, all critical evidence is used including what cuts against the answer, all six traps are avoided, and the recommendation (Pro tier with a usage allowance, mobile delay accepted with a fixed restart) is defensible, with explicit thresholds and owners. The weaknesses are these: (1) headline claims that Pro 'clears' the NRR target with a 'margin of safety' rest on one 2023 precedent the document itself calls not a forecast, and the NRR arithmetic treats a one-time migration as the 2028 level; (2) the sequencing break-even of 34% is left without a view on which side is likely; (3) the document asks to drop the add-on before the test it says will decide between the two; (4) the claim that the allowance protects the floor 'at any usage' is overstated; and (5) at 45 slides, with repeated contents pages and a restating appendix, it is much longer than the decision needs.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "high"
+  }
+ },
+ "cost_usd": 1.2385755999999999,
+ "wall_s": 144.06425404548645,
+ "is_error": false,
+ "error_text": null
+}

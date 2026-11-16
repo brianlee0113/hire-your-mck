@@ -1,0 +1,39 @@
+{
+ "x": "D77BUT",
+ "y": "DGB6MT",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both follow the same clean chain: demand, package, competitive threat, timing, plan. X's governing thought, executive summary and slide titles line up closely, and slide 3 ties the whole argument to five conditions the CPO plan must meet. X has one small tension: the summary says both levers are 'needed' for 105% NRR, while slide 13 shows Copilot alone suffices at 26% adoption (it says 'safest with both'). Y's sub-question structure is equally tidy, but its packaging section has an internal inconsistency. The titled allowance of about 1,330 requests per seat is the point where inference equals the $12 price, so it leaves no margin. Y's own stress case (6,800 requests per account, about 1,100 per seat at 6.2 seats) sits below that allowance, so the allowance would not prevent the 74.1% margin breach it is said to prevent. The 'Pro with allowance 76.0%' figure is in fact the mean-usage case, not a capped case. Y's summary also contrasts '$0.85M of gross profit' with '$8M of ARR', which mixes units.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the same defensible answer: Pro tier at +$12 per seat with a usage allowance, mobile rewrite first, Copilot in Q4 2027, brought forward if the Q4 2026 win rate stays near 37%. X weighs the trade-offs more rigorously. It sizes the mobile-versus-Copilot delay under full and half credit on each side and derives a break-even (the rewrite must fix 26–52% of mobile churn), where Y compares only symmetric upper bounds. X plans on a range ($1.2–2.9M, with 14% as the low case) and shows 105% NRR is reached with the mobile fix plus 14% Pro adoption; Y's headline rests on the single 2023 precedent of 33% and a 26% target. X adds two triggers Y lacks: launch in Q2 if the 14 engineers can come from outside mobile, and launch Copilot first if the rewrite removes too little churn. X tests Pro on a random sample of Core accounts, whereas Y's price test stays with beta volunteers, the bias it criticises. X's 600-request allowance is designed to hold the margin floor; Y's 1,330 does not. Y does well to list out-of-scope options (hiring, Core price, own model) and to state that Copilot's case rests on revenue rather than retention.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M vs $2.45M add-on ARR, inference of $32 / $61 / $131 per account, about 109 deals and $0.64M from the win-rate fall, and $2.89M Pro ARR. Both handle survey bias, volunteer bias, the Routewise discount confound and the VP Sales claim correctly. X's arithmetic checks out throughout, including the stress cases (74.1% without allowance, 75.9% at the cap, 71.9% free in Core) and the neat check that the VP's claim implies a 58% win rate. X scales Pro usage per seat (444 × 6.2), which gives a lower inference cost than the key's 3,600 per account, but the assumption is disclosed and stress-tested. Y's arithmetic is also accurate, and it uses the more conservative 3,600 per account. Y adds useful caveats X lacks: loss notes cover all lost deals, not only Routewise ones, and a 90-day renewal window cannot show annual churn. Y's weakness is the allowance inference: 1,330 per seat is a zero-margin break-even, would not bind on its own heavy-user stress case, and the '76.0% with allowance' figure is not a capped scenario. The claim that the allowance protects the 75% floor is therefore unsupported. Y's free-in-Core case uses median usage and is labelled as such.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO hypothesis as the key expects: keep 'launch', reject the $8M survey sizing in favour of the paywall evidence, replace the flat $149 add-on with a metered per-seat tier, and argue the delay with the mobile trade-off made explicit and quantified. X does this more transparently. Slide 3 lists five conditions the hypothesis needs and gives a verdict on each (demand not supported, economics thin, competition partly, opportunity cost not supported, value unproven), then states the revised answer and the triggers that would restore Q2 timing. Y's from-to slide and its table of the three internal positions (CPO, VP Sales, Head of CS) are also good, but Y replaces the survey number with a single 33% precedent rather than a range, and compares gross profit with ARR when rebutting the $8M.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents recommend essentially the same thing and both meet all three defensibility criteria. X would serve the CEO better. Its margin guardrail actually holds the 75% floor under stress, while Y's 1,330 allowance is a zero-margin break-even that would not bind on Y's own stress case. X's timing argument is tested with sensitivities and a break-even, not only upper bounds. Its revenue plan is a range anchored on the paywall low case, and its triggers and random-sample early-access test are more decision-ready. Y is accurate on the core numbers and adds a few sharp caveats (loss notes cover all deals, the short renewal window), but its allowance logic is flawed and its plan leans on the 33% precedent.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.2051242,
+ "wall_s": 64.28866815567017,
+ "error_text": null
+}

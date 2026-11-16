@@ -1,0 +1,208 @@
+{
+ "blind_id": "DJEKEZ",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision exactly as posed (launch own quick-commerce in 2027). It uses both board conditions, a path to profit within cash and a 12-month runway floor, as explicit criteria in the options table. It identifies early that the answer turns on per-order contribution and cash. It also tests the founders' three claims one by one.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, summary, and slide titles line up well. The titles are claims and carry the argument: market grows but incumbents lose, own data lose, plan beyond best site, runway breached, software is the alternative. Weaknesses: option C is said to 'meet both conditions', but the document's own numbers show a falling runway (30 to 26 months), flat burn reaching the floor in about 18 months anyway, and a 'path to profit' that is only 'close to the hiring cost'. Slides 5, 6, 7, 8 and 15 overlap on the same unit-economics build-up.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The core calculations are correct and transparent: median -$6.17, best composite -$1.76, pop-up -$12.57, plan +$2.02, CAGR 41.5%, runway $2.5M vs $4.8M, and the Zipcart playbook -$1.05 (matches the key). The sensitivity analysis, the ~6,400 orders/day density needed, and the payback analysis are good additions. It handles the stricter reading of the $9.5M and flags its own assumptions. Flaws: the one-store pilot 'breach around month 8' does not follow from its stated assumptions (about month 12). It does not compute the best-density case with the Zipcart fee (about +$2.25) or the break-even AOV (~$50). A few mild overstatements, such as 'worse on every input' and 'fastest-growing part of grocery'.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "It gives a clear 'do not launch' recommendation, which the key treats as defensible. It compares three options on the board's criteria. The trade-offs are explicit: growth vs losses, operator vs supplier, learning vs runway. It adds reopen triggers (positive contribution for two quarters, rider pay settled, funding or 24+ months of runway), a review in H1 2028, and concrete next steps. It avoids all the traps and engages the Zipcart evidence with a bounded test. Weaknesses: it does not show that a best-density site with the fee could be positive (it only says Zipcart did it in its densest city). The pilot dismissal rests on a shaky month-8 number. Option C's own runway and burn problem is acknowledged but not resolved. It does not weigh a capital-light, capped test with grocer partners as an explicit kill-criteria experiment.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on page 2 and the titles are plain and numeric. At 16 slides, though, the unit economics are restated across slides 5, 6, 7, 8 and 15, and slide 16 is long. This is somewhat more than the decision needs, though the appendix is separate.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Option C keeps Parcelbird in the fastest-growing part of grocery",
+    "why": "The pack gives no comparison of quick commerce with other grocery segments. Only quick-commerce GMV growth is given."
+   },
+   {
+    "quote": "The 14 benchmark sites already run on Parcelbird software, so our edge is already in their numbers",
+    "why": "These are customers' sites, not operated by Parcelbird. Treating software capability as the operating edge is an inference stated as fact."
+   },
+   {
+    "quote": "Our own pop-up did worse than that median on every input",
+    "why": "The pop-up's fixed cost ($650k) is lower than the median site's ($1.15M), so 'every input' is an overstatement."
+   },
+   {
+    "quote": "with no dark-store rent or capex for anyone",
+    "why": "The pack only says grocers want to launch fast delivery from existing stores. It does not say they would incur no capex."
+   },
+   {
+    "quote": "Only option meeting both board conditions",
+    "why": "No profitability path is shown for option C. The document says only that 9 deals give ~$0.70M gross profit 'close to' the $0.8M hiring cost, and it admits burn must fall."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Breached around month 8 (at today's $0.4M burn)",
+    "correct": "With $12.0M cash, a $4.8M floor, $0.4M/month burn, $0.6M capex and about $0.17M/month of median-store losses, the floor is reached around month 11–12, not month 8."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Of three options, only focusing on the software business meets both of the board's conditions",
+    "quote_b": "Even with no new spending, flat burn would reach the floor in about 18 months, so the core business needs to cut its burn whatever the board decides.",
+    "why": "Option C is said to meet the runway and profitability conditions, yet its own runway falls from 30 to ~26 months. The document concedes the floor is reached anyway and that profitability is not shown. The 'meets both' claim is overstated."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now. Decline the nine-store plan, fund about $0.8M a year of software hires to sell store-based fast delivery to grocers, and adopt triggers to reopen the operator question, with a review in H1 2028.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches R1. It computes per-order contribution under benchmark and best-observed inputs, separates market growth from profitability, and checks the runway constraint. It offers the software alternative with explicit reopen conditions. A capped, capital-light test was not weighed as a distinct option, and the one-pilot dismissal has a numerical flaw, but the conclusion is robust."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It splits the founders' claim into three parts. The market growth is accepted (41.5%) but shown to coexist with incumbent losses and city closures. The software-edge and month-18 positivity claims are rejected, because the plan needs every input to beat the best site on record and the pop-up lost $12.57 per order. Zipcart's fee evidence is tested (-$1.05 at median) rather than ignored or accepted. It does not compute the best-density-with-fee case, so it is only partly complete there. It is candid about its assumptions."
+  },
+  "overall_comment": "This is a strong, numerically accurate board paper that rejects the founders' hypothesis on the right grounds. The per-order contribution cases, the pop-up decomposition, the runway test ($2.5M vs a $4.8M floor, plus the stricter reading), and the Zipcart playbook test all check out against the pack. The document also adds useful sensitivity and density-needed analyses and clear reopen triggers. Flaws: the one-store pilot 'month 8' breach is miscomputed, the best-density-plus-fee case and the break-even AOV are missing, option C is claimed to meet both board conditions on thin evidence, and the unit economics are repeated across too many slides.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.18653440000000002,
+ "wall_s": 56.696786880493164,
+ "is_error": false,
+ "error_text": null
+}

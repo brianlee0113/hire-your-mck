@@ -1,0 +1,39 @@
+{
+ "x": "D8GCRQ",
+ "y": "DDW9Z9",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both reach the same governing thought (Pro tier at +$12 per seat with a usage allowance, mobile restarted in Q3). Y's hierarchy is tighter: each executive-summary answer (launch, packaging, price, value, NRR, guardrails) maps to one slide, and the logic is consistent throughout — launch for competitive defence, rest the business case on expansion, pair it with mobile to reach 105%. X has internal tensions. It says to launch 'on the productivity case' while calling that gain unproven outside volunteers. It sizes the Routewise threat as small, then uses it to tip the sequencing call. Its summary line 'NRR rises about 5 percentage points if 26% of accounts take Pro' conflates the 33% base case with the 26% break-even. Its headline 'Pro clears both financial targets' sits uneasily with its own slide showing only 2.1 points at the paywall rate.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's preferred recommendation (R1) and weigh all three trade-offs. X adds a free-in-Core option, a 34% break-even for the mobile delay, and a randomized Q1 test on non-beta accounts before launch, which is a real strength. But X's base case leans on the single 33% precedent to claim Pro alone meets the NRR target 'with a margin of safety'. Y frames take-up as a 14–33% range, states that Copilot alone is unlikely to reach 105%, and makes the mobile rewrite a necessary second lever. It also admits the sequencing is 'a close call' and shows a 6.8-year payback in the low case. Y's treatment of the mobile trade-off is better integrated with the objective, and its guardrails have concrete thresholds (8% on Pro, 41% win rate, $5.40 per seat). X's pre-launch test partly offsets its optimism, so the gap is modest.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the required calculations correctly: $8.06M vs $2.45M, inference of $32/$61/$131 per month, 109 deals worth about $0.64M, and $2.89M of Pro ARR. Both treat the win-rate figure as an upper bound because of Routewise's discount, reject the VP Sales inference, and flag the survey and beta biases. X is more thorough on beta bias (matching, no holdout) and more conservative on Pro inference ($1.26M, matching the key). Its flaws are the '5 points at 26%' slip and the over-claimed 'margin of safety'. Y scales usage per seat (444 per seat), giving lower inference ($0.96M) and a 67% uplift margin that is more optimistic than the key's roughly 56%, though the assumption is stated. Y's 'both levers reach 105%' headline rests on an illustrative assumption that the rewrite halves mobile churn, which it flags. Y uniquely quantifies the VP Sales claim at $1.93M and gives per-usage add-on margins of 59% and 12%. The strengths and weaknesses roughly offset.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects: keep the launch, reject the $149 add-on, and reject the $8M forecast using the 14% paywall result, survey bias and the heavy-user cost profile of buyers. X has an explicit from-to slide covering five changes. But X replaces the $8M with a single $2.9M figure from the 2023 precedent, whereas Y resets the target to a $1.2M–$2.9M range anchored at the low end on revealed demand. Y also takes the Head of Customer Success's mobile concern further by making the rewrite a required lever for the NRR goal. Y's revision is slightly better calibrated to the evidence.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The recommendations are near-identical and both meet all three defensibility criteria. Y serves the decision maker somewhat better: it is sized on a range tied to revealed demand, honest that Pro alone probably will not reach 105% and that the low case is thin, explicit that the sequencing call is close, and ends with clear decisions and quantified review gates. X is richer in analysis (free-in-Core option, break-even thresholds, pre-launch randomized test), but its headline that Pro clears the targets rests on one precedent, and it carries a few internal inconsistencies that could leave executives over-confident.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1413082,
+ "wall_s": 57.08313703536987,
+ "error_text": null
+}

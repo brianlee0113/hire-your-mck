@@ -1,0 +1,38 @@
+{
+ "x": "DMSC9L",
+ "y": "D5QQY9",
+ "case": "c1-market-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents have a clean, consistent hierarchy. X runs four sections (why US/Amazon, why not retail, what Amazon depends on, how to proceed), and each summary line maps to a slide title and its evidence. Y runs whether/route/how and adds a slide that breaks the CEO's hypothesis into four testable conditions with verdicts, which then feed the board decisions. Y's governing thought carries the payback condition, and its gate thresholds (28%, 34%) are derived from the model and reused in the recommendation. X's guardrails are consistent with its 28.6% break-even but less tightly tied to what happens when one is breached. One small tension in Y: the governing thought says payback depends on pilot-level ad cost, yet it recommends accepting a slip; Y flags this explicitly as a board call. The difference is small.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred conclusion: Amazon-led with gates, retail rejected, the $40M ambition reset, and the retail awareness gate raised to 20%. Y weighs the trade-offs more fully. It concedes that Japan yields more four-year cash unless US ACoS stays below about 26%, then argues the US case on what it builds; X only says the cash is 'similar', which holds at the 25% plan ACoS but not at the pilot's 28%. Y turns the ACoS risk into a staged commitment with green/amber/red thresholds and stated actions, including freeing the 2028 slot for Japan. It also asks the board to pre-agree whether a payback slip is acceptable, which names the constraint trade-off directly. Y adds a 12-month door test at 4.0 units before any national retail roll-out and considers waiting a year. X's four guardrails are sensible but trigger only a 'board review', with no stated consequence and no position on what to do if payback is missed. Y's '$40M by about 2032' rests on extrapolating 29% growth and is speculative, though labelled conditional.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both match the key on the core numbers: $4.73 Amazon contribution at 25% ACoS, $7.55 retail, Option B peak of $20.8M, 4.5% group margin in 2027, 28.6% break-even ACoS, −$2.3M at 32%, $26.4M of 2030 revenue, and −$26.4M for B at 2.6 units with no halo. Both catch the $5.2B definition, the correlation behind the halo and the awareness-band mismatch. Y uses the critical evidence more fully: it shows the pilot 28% case (+$0.4M, $4.01 a unit), an ACoS-by-volume grid, ten downside cases with peak cash and margin, the tariff effect on cumulative cash (break-even falls to 27.0%), FX, a stall case modelled on Gaon Lab and Yeoreum, and what B would need to pay back (a 3.1x halo or 23.5 units per door). Spot checks of the stall case and the 38% case hold. Y also checks the 300,000-unit plan against the June run-rate and flags its assumption, and notes that even the top quartile of the below-10% band (3.4) misses 4.0. X shows only the 25% and 32% cases, expresses the tariff only per unit, and its 'similar cash' claim against Japan glosses over the ACoS sensitivity. Both slightly over-read Saebom as reaching $30M 'on Amazon' before adding doors. Y's 2032 extrapolation is its weakest inference.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "The expected handling is to keep the CEO's hypothesis with conditions. Both keep the Amazon-first route, add ACoS gates, reset the $40M ambition and correctly raise the retail awareness trigger from 15% to 20% using the awareness-band sell-through data. Y handles the hypothesis more explicitly: it splits it into four conditions with verdicts (two hold, one holds only if ACoS stays at or below 28.6%, the retail trigger does not hold). It also replaces the dated 2029 retail commitment with an earned option that requires a door test and a measured halo, and compares the CEO's triggers with the recommended ones line by line. X makes the same substantive updates but more implicitly, and keeps a 'test with one retailer' step without specifying the proof required.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both are strong, defensible documents that match the key's preferred recommendation and avoid the main traps. X is tighter and gets the essentials right. Y serves the board better: it sizes the downside (peak cash at most $7.2M across ten cases, margin floor intact), isolates payback as the one real risk, and turns that into a staged funding decision with thresholds derived from the model. It is candid that Japan wins on four-year cash at realistic ACoS, and it puts the constraint trade-off to the board as an explicit decision (accept a payback slip or not). X leaves the board with review triggers but no pre-agreed response and a thinner sensitivity base.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.075752,
+ "wall_s": 38.80505180358887
+}

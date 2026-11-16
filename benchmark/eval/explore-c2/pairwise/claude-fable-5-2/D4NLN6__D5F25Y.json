@@ -1,0 +1,38 @@
+{
+ "x": "D4NLN6",
+ "y": "D5F25Y",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same sound hierarchy: churn diagnosis, segment pricing power, sizing of the CFO plan, recommendation, rollout. X maps five explicit sub-questions to five sections, and each summary line is backed by the slides beneath it. Its one strain is the claim that the target is cleared \"whatever SMB customers do\", which its own backup shows fails if net retention slips one point. Y is tighter and equally consistent from governing thought to next steps. Its small strains are a slide title stressing that the 2023 rise hurt while a bullet says the core tolerated it, and \"tested price levels\" applied to an enterprise rise that was never tested. The difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the key's preferred differentiated plan: raise mid-market and enterprise within caps, hold SMB pending an 8% test on non-promotion renewals, and run activation for the promotion cohort. X weighs the options against both stated objectives, building a 2027 ARR bridge and net retention estimate for each of the three options. It quantifies what the CFO plan adds ($1.33M) and under what condition, sets a concrete pass criterion for the SMB test (within 0.5 pp of control), and names fallbacks and owners for each risk. Its weak point is taking the CFO's 12% on mid-market renewals, beyond the 10% tested on new sign-ups, with only $0.13M of margin over the target; it does flag this as the largest risk, with a fallback to 10%. Y's 10% is better anchored to the test, and it is candid that pricing covers only 33% of the growth target. But Y never shows whether the 15% target is reachable, leaves the test's go/no-go criteria to be designed, and weighs the SMB trade-off qualitatively only.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "X completes all the key's calculations correctly: blended and ARR-weighted churn (1.7% to 2.6%, 0.8% to 1.2%), implied promotion churn of 4.9%, the 91% mix share, the $7.57M reachable uplift, the 10.7% break-even, and the 2023 reaction of 3.6% netting $1.67M. It also cross-checks the cohort's share of leavers against the exit-survey mix (47% against 56%), states the limits of each evidence source, and runs sensitivities, including mid-market reacting as SMB did in 2023. Its overreaches are \"mid-market has shown it will pay more\" used to justify 12% at renewal, a floor that depends on net retention holding at 109.3%, and an invented \"agreed at the brief\" scope exclusion. Y's numbers are also correct (96% and 74% shares, $7.6M, $4.3M, the 32% ceiling on the onboarding claim), and it caveats the sign-up test and the missing survey sample sizes. But Y omits the break-even analysis and the explicit cohort churn rate, and gives only a rough $0.6M figure for the 2023 precedent. Both avoid the traps on blended churn, the $10.3M, the survey split and the halving claim; X simply uses the critical evidence more fully.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis as the key expects. They accept that the churn rise is a promotion mix effect (non-promotion SMB 2.0% to 2.1%), reject the $10.3M and the uniform 12%, and acknowledge the CEO's concern is valid for SMB because of Inkwell and the cohort's price exits. Both also deflate the Customer Success halving claim to a ceiling of about a third. X goes further in testing the hypothesis rather than only overruling it: it shows a 12% SMB rise would pay on 2023 behaviour up to three times the 2023 reaction, then explains why Inkwell makes that precedent a floor, not a forecast. It also notes that non-promotion price complaints stayed flat even after Inkwell launched. Y updates the mid-market level more cautiously, to the tested 10%, whereas X keeps the CFO's 12% there on thinner evidence. On balance X's reconciliation of the two views is more complete.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both reach a defensible, segment-differentiated recommendation and avoid every major trap. X serves the CEO better because it ties the plan to the two stated objectives with an explicit ARR bridge and net retention estimates. It quantifies the SMB break-even against the 2023 precedent, specifies the test's pass criterion, and gives guardrails, fallbacks and sensitivities that show exactly where the plan could miss. Y is concise, accurate and more conservative on the mid-market level, but it leaves open whether the 15% target is met, how much SMB churn the plan can absorb, and what passes the test. X's weaknesses are the untested 12% on mid-market renewals and a thin margin over the target, both disclosed with a fallback.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9706922,
+ "wall_s": 50.53233098983765
+}

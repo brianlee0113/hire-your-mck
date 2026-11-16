@@ -1,0 +1,181 @@
+{
+ "blind_id": "DB9CX7",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as which segments, how much and how to sequence, and uses both objectives (15% ARR growth, NRR above 100%) and the renewal and cap constraints as criteria. It names the sub-questions up front. It adds a sensible criterion that churn must not rise outside the promotion cohort. It scopes out repackaging with reasons.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the four-part summary and the slide claims line up, and most titles are real claims. The answer is segmented and consistent throughout. Flaws: the section divider and contents slides all carry the title 'Why churn is rising', which is wrong for sections 2–4. Slide 5's claim that the core base 'shows no sign of rejecting today's prices' sits uneasily with the Inkwell win-rate fall. The 40 slides contain some redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers check out. Segment churn is blended correctly (1.7→2.6%, 0.8→1.2%). The promotion cohort comes out at 4.9% with a 91% mix share. The 12% plan is corrected to $7.9M, then $7.6M after caps, then $6.7M. Renewing ARR is $65.5M, NRR is 109.3% and the 8% break-even is 7.4%. The exit survey is split by cohort. The 2024 test is caveated as covering new sign-ups only, and the undefined dashboard metric is flagged. The activation decomposition is transparent. Weaknesses: no break-even for the 12% increase (about 10.7%), some overstatement ('the price shock was the discount ending, not our list price'), and the NRR-based bridge to the 15% target is rough. The 30% activation split rests on an assumed equal activated-customer churn.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is differentiated: mid-market 10% and enterprise 7% now, with SMB held, the promotion cohort excluded, and an SMB test at 8%. It is clear and defensible. Alternatives are compared on ARR and risk, with the $2.6M given up made explicit. It sets kill criteria (extra churn near twice the 2023 response, a Q2 stop rule for the activation programme). It names owners and dates. It treats the onboarding-halving claim sceptically. The brand and trust cost of renewal increases is not explicit, and an SMB tier or price response to Inkwell is only lightly considered.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 3 and the plain language is good. But 40 slides and about 5,600 words is long for this decision. The repeated divider slides, the many backups and some repetition (the $4.2M and $6.7M figures recur) pad the document.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "The price shock was the discount ending, not our list price",
+    "why": "The pack shows only timing and exit-survey shares. It does not show that list price played no role, and the win-rate fall suggests some price pressure."
+   },
+   {
+    "quote": "the core base shows no sign of rejecting today's prices",
+    "why": "Non-promo churn is flat, but the win rate against Inkwell fell from 51% to 38%, which is a price-related signal in the core SMB base. The claim is too strong."
+   },
+   {
+    "quote": "Onboarding is unlikely to cut SMB churn by much more than a third",
+    "why": "The 32% cap is a model bound that assumes only the promotion cohort is fixed. The document itself says activating other customers could add more."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "partial"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise mid-market 10% and enterprise 7% at renewal from January 2027. Hold SMB list prices. Exclude the 2,100 promotion customers and run an activation programme for them. Test an 8% rise on non-promotion SMB renewals in H1 2027 and roll out only if extra churn stays well below 7.4%.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It is differentiated by segment and corrects the CFO's $10.3M to about $6.7M. It separates the promotion mix effect from the rate effect, keeps SMB behind a staged test with guardrails, and sets stop criteria. This matches the key's defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "The document partly accepts the CFO view that churn comes from the promotion cohort and not from list price. It rejects a uniform 12% increase on the evidence of the $10.3M overstatement, renewal timing, the enterprise caps and Inkwell. It also keeps the CEO's concern alive for SMB through the test and stop rules. This is a segment-by-segment revision, as the key expects."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. It reaches every critical insight: the mix decomposition, the $10.3M correction, the cohort split of exit reasons, and the caveat on the new-signup test. It makes a defensible segmented recommendation with gates. Weaknesses are length, with 40 slides and mislabelled divider titles, a few overconfident causal statements, no explicit 12% break-even, and only thin treatment of the trust/NRR trade-off.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1997504,
+ "wall_s": 39.26619291305542,
+ "is_error": false,
+ "error_text": null
+}

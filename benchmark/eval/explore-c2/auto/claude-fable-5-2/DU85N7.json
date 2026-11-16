@@ -1,0 +1,190 @@
+{
+ "blind_id": "DU85N7",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document answers the question exactly as posed: whether to launch in Q2 2027, and how to package and price. It uses all three stated constraints as explicit criteria: the NRR gap of 4 points, the 75% gross margin floor, and the 14-engineer mobile delay. The few issues the answer turns on (stated versus paid demand, usage-driven cost, mobile sequencing) are named in the executive summary. Nothing material is missing from the framing.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the five summary points are the five sections, and nearly every title is a claim its slide supports. Three flaws keep it from a 5. First, the document is sceptical of the 14% paywall rate for the add-on (\"expect less\") but takes the 33% tier analogue for Pro at face value in the headline $2.9M. Second, slide 13's title credits the usage allowance with the 76.5% company margin, yet that figure is computed at average usage and does not depend on the allowance. Third, section 1 mixes productivity value and competitive value under one heading.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-did every key calculation and they hold: $8.06M versus $2.48M, inference of $17.1 / $32.4 / $61.2 / $130.5 a month, 109 wins worth $642K, Pro ARR of $2.89M, company margin of 71.9% / 76.2% / 76.5%, the 26.3% break-even uptake, churn of $2.18M versus $0.48M, and the 51.7% sequencing break-even. All critical evidence is used, including evidence against the recommendation (mobile churn, volunteer bias, the Routewise discount). The document also catches an inconsistency in the pack: 58% stated versus 40% implied for the top tenth's share of requests. Two material flaws remain. The Pro margin of 66.7% assumes Pro movers use the beta average per seat, although the document itself argues heavy users self-select; the key's figure is about 56%. And \"closes the NRR gap\" treats a one-off migration uplift as meeting a 2028 NRR target, resting on a single 2023 analogue. \"14% is an upper bound\" is also stated with more certainty than the evidence gives.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation follows from the analysis and matches a defensible route in the key (Pro tier with a usage allowance, sized conservatively). Three packaging options and two sequencing options are compared on revenue, margin and NRR. The mobile trade-off is quantified with a break-even, and the document says what would flip the answer: the rewrite removing more than about half of mobile churn. There are four conditions with thresholds, a go/no-go test on random accounts, a check on whether engineers can come from elsewhere, and named owners and dates. It avoids all six traps. Small weaknesses: the 2% test threshold is a low bar, and NRR closure is overstated. Neither undermines the decision.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the first content slide and the language is plain and precise. Thirteen content slides is proportionate to the decision. However, five section dividers repeat the summary, several slides carry dense footnotes, and there are references to a workbook the reader cannot see. That is some redundancy, short of a 5.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "A Pro plan at $12 more per seat earns more, keeps margin and closes the NRR gap",
+    "why": "The 5-point uplift is a one-off migration effect in the launch year, based on a single 2023 tier analogue with different content. The pack's target is 105% NRR by 2028, and the document does not show the uplift persists."
+   },
+   {
+    "quote": "14% is itself an upper bound: buyers came from volunteers with 8.1 seats, against 6.2 in the base",
+    "why": "This is a reasonable inference but stated as certain (\"at most\"). The pack gives no data on base conversion, and the paywall window was only four weeks."
+   },
+   {
+    "quote": "Routewise does not charge extra",
+    "why": "The pack says only that Routewise includes AI scheduling in its Pro plan. It gives no information on whether that plan costs more than Routewise's base plan."
+   },
+   {
+    "quote": "Copilot lifted dispatcher productivity by 9 percentage points over matched accounts",
+    "why": "This is causal wording on a volunteer, non-randomised beta. The document does caveat it and asks for a randomised test, so the overreach is in the title only."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Each paying account was matched by three who only said yes",
+    "correct": "46% / 14.2% is about 3.2 survey intenders per payer, which means about 2.2 who only said yes for each one who paid. The 3.2x figure itself is right. Minor."
+   }
+  ],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 inside a Pro plan at $12 more per seat, with 1,000 requests per seat included and 3.6 cents per request above that. Plan on about $2.9M ARR rather than $8M. The launch is conditional on a Q1 randomised test, the usage allowance, tracking 26% Pro uptake, and a pre-sign-off check on whether the mobile rewrite would remove more than about half of mobile churn (if so, mobile goes first). The mobile rewrite restarts in Q3 2027.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It meets all three defensibility criteria. Demand is sized from the paywall test and the gap to the survey is explained. Variable inference cost drives the packaging choice and the allowance design. The mobile delay is weighed against the AI threat with a quantified break-even and an explicit acceptance of the delay."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document keeps \"launch\" but rejects the $149 add-on and the $8M sizing. It shows the CPO's figure comes from swapping 14% paid conversion for 46% survey intent, and that the survey had a 6% response rate from larger accounts. It also challenges the VP Sales memo (a third of losses is three times what the whole win-rate drop can explain) and notes the Routewise discount as a confounder. It treats beta results as a ceiling pending a randomised test. The one mild causal overreach is the slide 4 title saying Copilot \"lifted\" productivity, which is caveated in the same title."
+  },
+  "overall_comment": "Very strong document: weighted score 4.4 out of 5. All four critical evidence items are used, all six traps are avoided, and every key calculation reproduces from the pack. It adds useful analysis beyond the key: company gross margin under each packaging option, the Pro uptake needed to close the NRR gap, and a break-even for the mobile sequencing decision. It also spots that the pack's 58% usage-concentration figure does not match Table 2 (which implies 40%).\n\nMain weaknesses:\n- **Pro margin:** the 66.7% figure assumes Pro movers use the beta average per seat. The document argues heavy users self-select into the add-on but does not apply that to Pro; the key's figure is about 56%. The usage allowance limits the downside.\n- **NRR claim:** \"closes the NRR gap\" treats a one-off migration uplift, based on a single 2023 analogue, as meeting a 2028 target.\n- **Uneven scepticism:** the 14% paywall rate is called an upper bound, while the 33% tier analogue anchors the headline $2.9M.\n- **Length:** five section dividers and dense footnotes add some redundancy.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "high"
+  }
+ },
+ "cost_usd": 0.7916635999999999,
+ "wall_s": 103.79707884788513,
+ "is_error": false,
+ "error_text": null
+}

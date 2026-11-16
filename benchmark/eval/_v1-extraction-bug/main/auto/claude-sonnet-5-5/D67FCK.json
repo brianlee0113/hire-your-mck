@@ -1,0 +1,177 @@
+{
+ "blind_id": "D67FCK",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as 'raise or not, and by how much, by segment'. It uses the +15% ARR and NRR>100% objectives as explicit criteria and notes ARR growth is the binding one. It also uses the renewal-timing and enterprise-cap constraints. It identifies early that churn is a cohort issue. Small weakness: Slide 3's 'initial hypothesis' is its own, not the CFO's or CEO's stated view. Slide 5 does address both views.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, executive summary, titles and slides line up: diagnose churn, locate pricing power, size the options, then give moves and risks. Titles are claims and the sections follow the summary. Minor flaws: the hypothesis slide sits oddly before the diagnosis, and the SMB test is on new sign-ups yet leads to repricing the existing base. Option D and the 'leadership could choose D' remark leave the recommendation slightly open-ended.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Every required calculation is correct and transparent. Promo churn is 4.9%. The mix effect is 1.04pp. Revenue-weighted churn is 0.8%→1.2%, with blended logo churn 1.7%→2.6%. The $10.3M bridges to $7.57M with the correct segment split (2.52/4.18/0.86). The 10.7% breakeven and the 2023 response are right. It cross-checks with the exit survey, notes the dashboard cannot be reproduced, and flags the new-sign-up versus renewal caveat. Weaknesses: the price-response parameters are extrapolated linearly, and the 3× activation model is an assumption. The Inkwell effect is only reflected as a 2× stress case. I found no material numerical errors.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Differentiated recommendation (MM/Ent +10%, hold SMB, test +8%, fund onboarding). It compares four options on ARR, NRR and the new-customer need, with base and stress cases. It names the trade-offs (upside against Inkwell risk, tested price level against more ARR) and gives go/no-go rules, success measures, owners and pre-meeting data checks. It avoids all the traps and rebuts the CS onboarding claim with numbers. Weakness: the SMB test uses new sign-ups to justify repricing existing customers. The 10% versus 12% choice for MM is somewhat arbitrary given that 12% is just as untested for enterprise.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slides 1–2. The slides are clear and the numbers are plain. At 17 slides with two appendices, the document is long for a single pricing decision. Slides 6, 7 and 14 add detail beyond what is needed, and the executive summary is dense.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Existing customers have switching costs, so they are probably less sensitive",
+    "why": "The pack has no evidence on renewal sensitivity. The document labels the claim as unproven, so this is a minor issue."
+   },
+   {
+    "quote": "Exposure only at the small end of MM",
+    "why": "The pack says only that Inkwell has not been seen in deals above 200 seats. It does not say Inkwell is present in small mid-market deals."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise mid-market and enterprise +10% at renewal (7% where capped) from January 2027. Hold SMB list prices and run a +8% sign-up test with a July go/no-go. Fund targeted onboarding, worth about $0.4M. Reject the uniform 12%. Fix the churn metric.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It differentiates by segment, separates the cohort mix effect from the rate effect, and corrects the $10.3M to $7.57M gross and $5.3M net. It has staged gates and guardrails, and it meets the key's defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "The document says the CFO and CEO are each half right. It attributes the SMB rise to the promotion cohort (a mix effect) while noting that the cohort left on price when the discount ended and that Inkwell has made SMB price-competitive. It corrects the $10.3M and replaces the uniform 12% with a segmented plan. It also challenges the onboarding claim. This matches the expected 'revise' handling."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. It reaches every key insight and gets every required calculation right: the 4.9% cohort rate, the 1.0pp mix effect, the $7.57M repriceable ARR and the 10.7% breakeven. The recommendation is differentiated and gated, and the alternatives are compared on the stated objectives. The main weaknesses are length (17 slides) and extrapolating price-response parameters linearly. The SMB test on new sign-ups would also be used to justify repricing existing customers, which is the same sign-up-versus-renewal gap it flags for mid-market.",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1707204,
+ "wall_s": 28.424031019210815,
+ "is_error": false,
+ "error_text": null
+}

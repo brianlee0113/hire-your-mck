@@ -1,0 +1,355 @@
+{
+ "run_id": "main-c1-B-r1",
+ "case": "c1-market-entry",
+ "condition": "B",
+ "rep": 1,
+ "order": 1,
+ "phase": "main",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 797.1,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.325",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 45,
+      "duration_ms": 796474,
+      "duration_api_ms": 785718,
+      "total_cost_usd": 3.2361050000000002,
+      "usage": {
+       "input_tokens": 54,
+       "cache_creation_input_tokens": 141661,
+       "cache_read_input_tokens": 2300705,
+       "output_tokens": 82123,
+       "output_tokens_details": {
+        "thinking_tokens": 34782
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 141661,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1483,
+         "cache_read_input_tokens": 148501,
+         "cache_creation_input_tokens": 1349,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1349
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 54,
+        "outputTokens": 82123,
+        "cacheReadInputTokens": 2300705,
+        "cacheCreationInputTokens": 141661,
+        "webSearchRequests": 0,
+        "costUSD": 3.2361050000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 34782,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 141661,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": "he removal line. The deck recommends raising the trigger to 20% and running a store test first.\n- **The $40M goal:** no route reaches $40M by 2030 within the limits. Amazon-led reaches about $26M in 2030, and about $40M around 2032 if it keeps growing ~29% a year.\n\n**What the deck asks the board to decide:**\n- Approve the first stage, which needs $1.9\u20132.9M of cash in 2027.\n- Adopt ad-cost checkpoints for early 2028: continue as planned at 28% or less, continue with a spending freeze at 28\u201334%, cut back above 34%.\n- Decide in advance whether a 1\u20132 year payback delay is acceptable in the middle case.\n- Restate the $40M goal as a path to about 2032.\n- Replace the store trigger with the stricter one above.\n\n**Choices I made where I would have asked you** (all listed on appendix slide 19):\n- **\"On the way to $40M by 2030\":** I read it as a direction rather than a hard 2030 target, since no option reaches $40M by then.\n- **Awareness:** I used 4% among all skincare buyers. Using 9% among K-beauty buyers gives the same result.\n- **Inventory:** stock is four months of landed product cost, with the build-up counted as cash out.\n- **One-off costs:** store fixtures and launch fees are counted as costs in the year they occur.\n- **Tariff:** if the duty rises to 25%, I assumed it takes effect from mid-2027.\n- **Japan:** the scale-up is treated as extra on top of the group's existing plan.\n- **Market size:** I used $3.6B, not the $5.2B trade-press figure, which includes makeup and hair care."
+    }
+   ],
+   "started": "2026-11-16T00:47:07+00:00",
+   "ended": "2026-11-16T01:00:24+00:00",
+   "session_id": "0a6b6928-322f-4a33-ba1c-900af7fd2b9b",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 3.2361050000000002,
+  "duration_s": 797.1,
+  "api_s": 785.718,
+  "turns": 45,
+  "input_tokens": 54,
+  "output_tokens": 82123,
+  "cache_read_tokens": 2300705,
+  "cache_creation_tokens": 141661,
+  "cost_all_attempts_usd": 3.2361050000000002
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 3.2361050000000002,
+   "input": 54,
+   "output": 82123,
+   "cache_read": 2300705,
+   "cache_creation": 141661
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "Create a deck for Onsoo Botanicals' CEO and board: Should Onsoo enter the US market in 2027, and if so, by which route?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.\n\nHow to approach it:\n- Work hypothesis-driven. State an initial answer early, write down what would have to be true for it to hold, test each of those against the evidence, and change the answer if the evidence does not support it.\n- Build the storyline with the pyramid principle: one governing thought that answers the question, an executive summary up front whose points become the sections, and the supporting arguments and evidence beneath each point.\n- Keep every grouping MECE (mutually exclusive, collectively exhaustive).\n- Give every slide an action title: a full-sentence takeaway that the slide's content proves.\n- Base the recommendation on evidence. Quantify where the data allows and show the calculations, weigh the alternatives and their trade-offs, and state the key assumptions, risks and uncertainties.",
+ "prompt_sha256": "6fde0e2ee09a9e7b98487207bdaab070bae8236be7790fff8466d87cd2fa20ae",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.325 (Claude Code)",
+ "plugin_snapshot_sha256": null,
+ "repo_head": "e1e6b315d9ab3ed0bb51f8544553ec89d804fcc1",
+ "packet_sha256": "76b3fb49ff605d65d989ca71906ebbd68809f221bc038b6903d4a7598004e3aa",
+ "files": [
+  {
+   "path": "workspace/deliverable/Onsoo_US_entry_board_deck.pptx",
+   "bytes": 91094,
+   "sha256": "8fc3e24c6e3619909f6f98282c69b71ce57322e0f29a2a32fd42fa6ebb6f6f99"
+  },
+  {
+   "path": "workspace/deliverable/README.md",
+   "bytes": 630,
+   "sha256": "24897acf6bca3da841bb3358cacf8fb6baa3a1438939acca4c46d7938a2730fe"
+  },
+  {
+   "path": "workspace/deliverable/onsoo_us_entry_model.py",
+   "bytes": 5488,
+   "sha256": "64f1fc47367235e82a6f5338cfd916e1969d949e44bb19c9bebe89761da1e2e4"
+  },
+  {
+   "path": "workspace/work/build.py",
+   "bytes": 51694,
+   "sha256": "f07b4b7beb69f5f1f17aff2702ececf2f51ee4e749a3870c01555b40f1c14372"
+  },
+  {
+   "path": "workspace/work/decklib.py",
+   "bytes": 12009,
+   "sha256": "611dd2292629e9477ab7fafe5323a85e124b6414d843195bb7f6206e42ad0ebb"
+  },
+  {
+   "path": "workspace/work/model.py",
+   "bytes": 5493,
+   "sha256": "a87690f7118fbd7523bcc3165a5cc9e3512965fd28bc7ed9c2ac17af1268bbbb"
+  },
+  {
+   "path": "workspace/work/model_core.py",
+   "bytes": 2832,
+   "sha256": "bc067fde431c8acecad19dc5d2ce91f8b6265ba8da9a735e7263b14ddb07d580"
+  },
+  {
+   "path": "workspace/work/preview/s01_title.png",
+   "bytes": 43557,
+   "sha256": "caa6c6eaf3f467562dbcdf9ea5085f20eedd1a22eed172898a957e5a373054e3"
+  },
+  {
+   "path": "workspace/work/preview/s02_exec.png",
+   "bytes": 131678,
+   "sha256": "675c45bad93f7085ddcc3b2349060f483bb2a205f3bb2e205eceeb0b3161c7dd"
+  },
+  {
+   "path": "workspace/work/preview/s03_hypothesis.png",
+   "bytes": 114048,
+   "sha256": "e9b04c559de4b4893eecf51071b4b9ef3d643019f4867b3b5f52cd4ba0f172bb"
+  },
+  {
+   "path": "workspace/work/preview/s04_market.png",
+   "bytes": 90786,
+   "sha256": "e597a612fef71883c0e781580dabf4382d171d18e2050c9322d70b85c7e23ece"
+  },
+  {
+   "path": "workspace/work/preview/s05_pilot.png",
+   "bytes": 92271,
+   "sha256": "ed54708c14705d14fbe5269ffd4bb0f6eff30ae9ef939e30de2cb8de18590c8f"
+  },
+  {
+   "path": "workspace/work/preview/s06_japan.png",
+   "bytes": 99042,
+   "sha256": "42ee95eaf70b093d1d5329eb2dd22339f85d68043f4b8292e4f3eb0b4d5f25e8"
+  },
+  {
+   "path": "workspace/work/preview/s07_unit.png",
+   "bytes": 114639,
+   "sha256": "7df9ee677af0929ffed25f5b17d1fd623f10eb2841669de4ed244b45fe030cdb"
+  },
+  {
+   "path": "workspace/work/preview/s08_tests.png",
+   "bytes": 92973,
+   "sha256": "9503ad9bc37d1fb6d65a20bb9e20e5b45dc66bd4a4e9183b830f40e7476dff0f"
+  },
+  {
+   "path": "workspace/work/preview/s09_retail.png",
+   "bytes": 103407,
+   "sha256": "1fa259dddaeffb4e0804bdca581463c7cb99d618e760f7a1b6b6b5a8995768f8"
+  },
+  {
+   "path": "workspace/work/preview/s10_ambition.png",
+   "bytes": 103347,
+   "sha256": "15a2fd1d2b2e071828104c28717658f2801b850896adbcd03ad204c0109b4bb9"
+  },
+  {
+   "path": "workspace/work/preview/s11_acos.png",
+   "bytes": 126785,
+   "sha256": "2d31b8f72872a67826c82dfdcee857628b0aaf5f02578276d6e362b4180db155"
+  },
+  {
+   "path": "workspace/work/preview/s12_scenarios.png",
+   "bytes": 127090,
+   "sha256": "71f4cf5360384efb7c00968fefcdf00790f2bdbd8cca7fb1f6e9e4eb7c3a91b7"
+  },
+  {
+   "path": "workspace/work/preview/s13_gates.png",
+   "bytes": 133488,
+   "sha256": "c95bc57be41c45f97e23b0f5edd843a842ba0bb008e5ab4a0654e237dacbd009"
+  },
+  {
+   "path": "workspace/work/preview/s14_retailoption.png",
+   "bytes": 103807,
+   "sha256": "c0e195ffaf34f1bd0061fe8b3ccd87d23656b1f38e04b789d0b644392cd22dd0"
+  },
+  {
+   "path": "workspace/work/preview/s15_risks.png",
+   "bytes": 103769,
+   "sha256": "3f0428f7c5253ad4873169185ebc0bcb834b72885e64ea5c2744231870e2a79e"
+  },
+  {
+   "path": "workspace/work/preview/s16_decisions.png",
+   "bytes": 94691,
+   "sha256": "4053eb9e8a2f8e850a96d8d0dc5cf52c66f486eee3ad7f07268834fbc0af7ad3"
+  },
+  {
+   "path": "workspace/work/preview/s17_appA.png",
+   "bytes": 92487,
+   "sha256": "a13e5d9c2301b7c15eaae4fa101d776039ac27f1df863772b7d0d72b1df8cf88"
+  },
+  {
+   "path": "workspace/work/preview/s18_appB.png",
+   "bytes": 105450,
+   "sha256": "dcbcdb420a0bde8875dd8ce0d1d89779285fc3aa9cf471f37e9f21c130f0f7b2"
+  },
+  {
+   "path": "workspace/work/preview/s19_appC.png",
+   "bytes": 99884,
+   "sha256": "c19096ad640083cdf4bd9a8a1d9bec6e0050ac33c0071842ebe2edd4594510a8"
+  },
+  {
+   "path": "workspace/work/results.json",
+   "bytes": 12020,
+   "sha256": "5ef8ea311c289b519dd25d527aed1c795a4752c45654a911b983db952964ff8a"
+  },
+  {
+   "path": "workspace/work/sens.py",
+   "bytes": 1577,
+   "sha256": "100495ad5ceb26a9756cfcab66da19501ced3974971d0d6de6e075c767f9bc79"
+  }
+ ]
+}

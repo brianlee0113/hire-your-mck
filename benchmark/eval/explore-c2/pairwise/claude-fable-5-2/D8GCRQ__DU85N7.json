@@ -1,0 +1,38 @@
+{
+ "x": "D8GCRQ",
+ "y": "DU85N7",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same five-step logic (value, why not the add-on, Pro economics, mobile trade-off, launch plan), and in both the summary maps cleanly onto the sections. X is consistent across a much longer document, but its summary conflates two figures: it says NRR rises about 5 points if 26% take Pro, when 5 points needs 33% and 26% is the break-even. X's headline reason to launch (productivity) is also not what its business case counts, which is Pro revenue from the 2023 precedent. Y is tighter and each section title is a claim, but it has its own wobbles: the 76.5% margin attributed to the allowance actually comes from an average-usage assumption, and one of its four 'launch conditions' (26% uptake) can only be read after launch. The flaws are of similar size.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the same defensible recommendation (the key's R1): launch in a Pro tier with a usage allowance, sized off the paywall test, with a Q1 test on non-volunteers and a fixed Q3 mobile restart. X weighs packaging better: it shows Pro beats the add-on's best case only above 28% take-up, admits the edge rests on one precedent, tests Pro against the add-on before launch and keeps the add-on as a fallback. It also sets five measures with if-missed actions and owners. Y handles the mobile trade-off slightly better: it makes the rewrite's expected churn effect a pre-sign-off gate and asks whether the 14 engineers can come from other work, an option X dismisses as out of scope. But Y asserts Pro 'earns more' without the break-even, and its response to low uptake ('add other NRR levers') is vague. X also overrides a low 34% mobile break-even on the NRR-deadline argument, though it does so openly. On balance X weighs two of the three key trade-offs (monetise vs defend, adoption vs margin) more rigorously.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "X reproduces all four required calculations within tolerance: $8.06M vs $2.45M; inference of $32.4, $130.5 and $61.2 a month; 109 deals and $0.64M; Pro at $2.89M with $1.26M inference. It adds checked sensitivities: the 56% usage threshold for free-in-Core, margin at four usage levels, and a 667-request allowance that holds margin at 75.7% even at full use. It also tabulates the bias in each evidence source and reconciles 1,190 churned accounts against the 14% churn rate. Its only slip is a display rounding of $0.009 to $0.01. Y's arithmetic is internally correct and it makes two good catches: the 58% vs Table 2's implied 40% inconsistency, and that the loss notes cover all lost deals rather than Routewise deals. But Y's Pro economics rest on an optimistic assumption (444 requests per seat applied to 6.2-seat accounts), giving a 66.7% Copilot margin against the key's roughly 56%. It ignores the adverse selection it documented for the add-on. Its 1,000-request allowance costs $9 of the $12 premium, so at full allowance company margin would fall to about 74.5%, contradicting its claim that the allowance keeps margin above the floor. Y's sequencing break-even also assumes Copilot stops all AI churn.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both keep 'launch' and revise packaging and sizing as the key expects. Both rebuild the CPO's $8.06M, replace it with about $2.5M from the paywall test, flag 14% as an upper bound from volunteers, and note the survey's 6% response and size skew. Both show the VP Sales claim is about three times the whole win-rate drop. X adds an explicit from-to slide of five changes to the proposal and fairly notes the add-on at its upper bound would still lift NRR 4.3 points, keeping it as a tested fallback. Y puts the revision in the governing thought ('$2.9M, not $8M') and adds that at 46% adoption the add-on would itself breach the margin floor. The handling is equally appropriate.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The recommendations are essentially identical and both meet all three defensibility criteria, so the difference is in rigour. X's numbers match the key throughout, and its margin guardrail is verified to hold at full allowance. It shows the take-up level at which Pro stops beating the add-on and tests that before launch with a fallback. Y is more concise, has a sharper pre-sign-off gate on the mobile question, and spots a real data inconsistency. But its Pro margin is optimistic, and its allowance design does not actually guarantee the 75% floor it claims. A decision maker would get a somewhat more reliable basis from X, though Y's mobile gate and staffing check are worth borrowing.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1550522,
+ "wall_s": 80.08193778991699
+}

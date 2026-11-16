@@ -1,0 +1,187 @@
+{
+ "blind_id": "DG2578",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as 'whether and how', and uses the 15% ARR target, the NRR>100% goal and the renewal/cap constraints as explicit criteria. It separates the CFO, CEO and Customer Success views and identifies early that the answer turns on segment, cohort mix and the real size of the uplift.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, summary and slide titles line up as a claim-driven chain: where churn rises, why, where headroom is, what the $10.3M really is, the options, trade-off, guardrails, decisions. Minor flaws: slide 6's 'price is not driving churn in any segment' sits awkwardly with slide 5's 52% of the cohort citing price (reinterpreted as discount ending). The options slide has some overlap with the plan slides.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers check out: cohort churn 4.9%, mix of 1.0 pp against a rate effect of 0.1 pp, $7.57M repriceable, the segment bridge, blended churn of 1.7%→2.6% and ARR-weighted 0.8%→1.2%. The activation split is transparent. It uses the 2023 precedent scaled to 12% and carries the pre-Inkwell caveat and the new-signup test caveat. Gaps: no explicit break-even extra churn (about 10.7%) and no net 2023 outcome, only the scaled loss. The claim that price is 'not driving churn in any segment' is overstated. The assumption that all capped contracts fall in the renewing enterprise ARR is flagged but is a simplification.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Recommends a differentiated increase: mid-market +10%, enterprise within caps, SMB held with a test and a June gate, the promotion cohort excluded, and activation funded with realistic targets. Compares the CFO plan, hold-and-fix-onboarding and the segmented plan on the decision criteria. States the ARR trade-off against the CFO plan (about $1.6M). Gives guardrails, kill criteria and a conditional lever to move mid-market to 12%. Rejects the 'halve churn' claim with reasoning. The plan lands exactly on target with no margin, and the document says so.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on the first two slides and the language is plain. At 17 slides it is somewhat long and carries some repetition (options, trade-off and plan slides overlap). The appendix is reasonable for the complexity.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Price is not what is driving churn in any segment, but only in SMB is price what decides new deals",
+    "why": "Overstated: 52% of promotion-cohort churners cite price, and the document itself reinterprets this as discount expiry. The causal claim is stronger than the evidence."
+   },
+   {
+    "quote": "Halving needs a rate below anything SMB has recorded.",
+    "why": "The pack only shows 1.8% as the earliest SMB rate (2023); 'anything recorded' goes beyond the data."
+   },
+   {
+    "quote": "Inkwell is winning new SMB business on price",
+    "why": "The win-rate fall coincides with the Inkwell launch but is not proven causal. It is also reasonable and consistent with the pack."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Price is not what is driving churn in any segment",
+    "quote_b": "Promotion-cohort churners, H1 2026: 52% cite price; the cohort's 'price' is the discount ending",
+    "why": "Mild tension: price/discount expiry is a major churn driver for the cohort, which a segment-wide 'not price' claim understates. The document partly reconciles this by calling it discount expiry."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "partial"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Segmented increase: mid-market +10% at renewal and enterprise at contract terms (7% where capped) from January. Reject 12% across the board. Hold SMB through June while an +8% test runs, with a go/no-go gate. Exclude the promotion cohort. Fund activation with realistic targets. Fix the board churn metric.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "Differentiates by segment, separates the cohort mix effect from the rate effect, corrects the $10.3M to about $7.6M, and states the conditions, guardrails and kill criteria. It meets all four defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "Rejects the 12%-on-everything plan but credits the CFO where right ('the churn rise is mostly an onboarding and cohort problem'). It also respects the CEO's concern by holding SMB, where Inkwell and price sensitivity matter. It differentiates by segment, so it neither adopts nor rejects either view wholesale. This matches the expected 'revise'."
+  },
+  "overall_comment": "A strong, numerically accurate document. It decomposes the churn rise correctly (about 4.9% cohort churn, mix 1.0 pp of 1.1 pp), cuts the CFO's $10.3M to $7.57M, and builds a segmented plan with options, a trade-off quantification, guardrails and gates. Weaknesses: no explicit break-even churn calculation, one overstated line about price not driving churn anywhere, and some length and overlap in the middle slides.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.1751604,
+ "wall_s": 38.61913704872131,
+ "is_error": false,
+ "error_text": null
+}

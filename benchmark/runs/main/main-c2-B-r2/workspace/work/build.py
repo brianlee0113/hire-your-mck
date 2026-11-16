@@ -1,0 +1,524 @@
+import sys, os
+sys.path.insert(0, os.path.dirname(__file__))
+from lib import *
+
+D = Deck()
+SRC_PACK = "Source: Harlow briefing pack"
+T_ES, T1, T2, T3, T4, TA = ("Executive summary", "1  Diagnosis: what drove the decline", "2  Options: why the labor-cut plan falls short",
+                           "3  Recommended plan: levers and sizing", "4  Sequencing, capital and risks", "Appendix")
+
+# ---------------------------------------------------------------- 1 Title
+s = D.slide(None, None, number=False)
+rect(s, 0, 0, W, H, NAVY)
+text(s, 0.8, 2.0, 11.5, 1.6, "Reversing the margin decline: restoring a 3% operating margin by FY2028",
+     36, bold=True, color="FFFFFF", name="cover title")
+text(s, 0.8, 3.75, 11.5, 0.5, "Margin plan for the Board of Directors  ·  February 2027", 18, color="CDE2FB")
+text(s, 0.8, 4.3, 11.5, 0.5, "Presented by Dana Whitfield, CEO, Harlow Fresh Markets", 14, color="FFFFFF")
+text(s, 0.8, 6.55, 11.8, 0.5, "Built only from the internal briefing pack (FY2023–FY2025 actuals). All company figures are synthetic "
+     "benchmark data. $ figures in millions unless stated.", 10, color="B7D3F6")
+
+# ---------------------------------------------------------------- 2 Executive summary
+s = D.slide(T_ES, "Fix gross margin and delivery economics rather than cutting labor: four quick moves protect the FY2026 "
+            "covenant, and the full plan restores 3.0% by FY2028",
+            source="Source: briefing pack Tables 1–6 and §7–9; team analysis. All FY2028 figures are run-rate on the FY2025 sales base.")
+pts = [
+    ("The decline is mainly in gross margin and e-commerce, not wages",
+     "Operating margin fell 2.35 pts (3.37% → 1.02%). Gross margin lost 1.02 pts (promotions −0.70, shrink −0.50, private label +0.18) "
+     "and e-commerce fulfillment 0.84 pts. Store labor cost only 0.30 pts, because 6% higher productivity absorbed most of the 9.4% wage rise."),
+    ("Management's 8% labor cut would not reach the target",
+     "It saves $14.6M, but thinner staffing is linked to higher shrink worth an estimated $5–10M. FY2026 operating income would land at "
+     "$19–24M against the $20M covenant, and FY2028 margin at only 0.9–1.2%."),
+    ("A margin-led plan restores ~3.0% for ~$20M of one-time cost",
+     "Six levers backed by Harlow's own data (promotions, shrink, labor rebalancing, six lease lapses, private label, delivery fees) "
+     "take operating income to ~$36M (2.5%) after the 2027 wage step. Three negotiated levers (vendor funding, three lease exits, the "
+     "delivery contract) add ~$6M, for ~$42M, or 3.0%."),
+    ("Act first on what is fast, cheap and proven, and hold contingencies",
+     "In the first 90 days: roll out the tested delivery fee, cancel money-losing promotions, protect fresh and receiving hours, and "
+     "reject the 3% delivery-rate rise. FY2026 then reaches ~$24M (about $4M above the covenant). 3.0% has no cushion, so contingency levers are pre-agreed."),
+]
+y0 = 1.72
+for i, (h_, b_) in enumerate(pts):
+    yy = y0 + i * 1.18
+    number_badge(s, LM, yy + 0.05, i + 1)
+    text(s, LM + 0.6, yy, 11.6, 0.34, h_, 14, bold=True, color=NAVY)
+    text(s, LM + 0.6, yy + 0.34, 11.6, 0.8, b_, 11.5, color=INK, name=f"es{i}")
+text(s, LM, 6.36, CW, 0.5, [[("Decisions requested today: ", {"bold": True}),
+     ("adopt this plan in place of the 8% labor cut; approve up to $20.5M of one-time spend; schedule a vote on exiting three long-lease stores.", {})]],
+     11.5, fill=PANEL, anchor="mid", name="es-ask")
+
+# ---------------------------------------------------------------- 3 Hypothesis test
+s = D.slide(T_ES, "We started with a 'margin, not wages' hypothesis. The evidence supports the diagnosis, but commercial fixes "
+            "alone reach only ~1.8%, so the answer had to grow",
+            source="Initial hypothesis set at kick-off, before the analysis. Sources: Tables 1–6, §7–9; calculations on slides 4–16.")
+text(s, LM, 1.6, CW, 0.55, [[("Initial hypothesis: ", {"bold": True}),
+     ("the margin fell because of promotions, shrink and loss-making e-commerce growth, not wages, so Harlow can get back to 3% by "
+      "fixing gross margin and e-commerce alone, with no labor action or store closures.", {})]], 11.5, name="hyp")
+rows = [["What would have to be true", "What the evidence shows", "Verdict"],
+        ["1  Labor is a minor cause of the decline", "Labor explains 0.30 of the 2.35-pt fall (13%). Wage +9.4%, hours per $1,000 of sales −6%", "Supported"],
+        ["2  Gross-margin erosion comes from drivers Harlow controls", "Promo mix (−0.70), shrink (−0.50) and private label (+0.18) add up to the full −1.02 pts", "Supported"],
+        ["3  The extra promotions are not paying back", "38% of events lose money; vendor funding fell 55% → 46%; the 'more expensive' score rose 33% → 41%", "Supported, but the response to ValuMart is uncertain"],
+        ["4  E-commerce loses money and repricing fixes it", "It loses ~$10.4M on an incremental basis. The fee test recovers ~$2.5M, but delivery still loses $9 per order", "Partly: repricing helps but does not fix it"],
+        ["5  Gross-margin and e-commerce fixes alone reach 3%", "Promo, shrink, private label and fees add ~$18.8M, but the wage step and delivery rate (−$7.6M) leave ~$26.5M, or 1.8%", "Not supported"]]
+table(s, LM, 2.25, CW, [3.3, 6.4, 2.6], rows, size=11, name="hyp-table", max_h=3.3)
+text(s, LM, 5.35, CW, 1.05, [[("Revised answer: ", {"bold": True, "color": NAVY}),
+     ("keep the gross-margin and e-commerce core, and add two levers the first hypothesis left out: (a) targeted labor productivity to absorb "
+      "the 2027 wage step, rather than an 8% cut, and (b) exits from the weakest stores, starting with the six whose leases lapse by 2027. "
+      "Vendor funding and the delivery contract close the last gap.", {})]], 11.5, fill=PANEL, name="revised")
+
+# ---------------------------------------------------------------- 4 Margin bridge
+s = D.slide(T1, "Gross margin and e-commerce explain 80% of the 2.35-point fall in operating margin; store labor explains only 13%",
+            source="Source: Table 1. Each line is taken as a % of sales; FY2023 3.37% − FY2025 1.02% = 2.35 pts. Other SG&A was flat at 4.70% of sales. "
+                   "Margin figures are rounded.")
+text(s, LM, 1.65, 7.6, 0.3, "Operating margin bridge, FY2023 → FY2025, % of sales (pts)", 11, bold=True, color=INK2)
+waterfall(s, LM + 0.1, 2.15, 7.4, 4.55,
+          [("FY2023 margin", 3.37, "total"), ("Gross margin", -1.02, "delta"), ("E-commerce fulfillment", -0.84, "delta"),
+           ("Store labor", -0.30, "delta"), ("Occupancy & energy", -0.20, "delta"), ("Other SG&A", 0.0, "delta"), ("FY2025 margin", 1.02, "total")],
+          vmax=3.8, fmt="{:+.2f}", tfmt="{:.2f}%", cat_size=10)
+X = 8.4
+text(s, X, 1.7, 4.4, 0.3, "What the bridge shows", 12, bold=True, color=NAVY)
+text(s, X, 2.05, 4.4, 4.7, [
+    [("Gross margin (−1.02 pts, 43%): ", {"bold": True}), ("gross profit stayed flat ($369.8M → $376.1M) while sales rose $83M", {})],
+    [("E-commerce (−0.84 pts, 36%): ", {"bold": True}), ("net fulfillment cost went from $5.2M to $18.1M as orders tripled", {})],
+    [("Labor (−0.30 pts, 13%): ", {"bold": True}), ("labor is the largest cost increase in dollars (+$14.3M), which is why it looks like the cause, but most of that just tracked sales", {})],
+    [("Momentum: ", {"bold": True}), ("margin has fallen 1.10 and then 1.25 pts a year. One more year like FY2025 would take margin to about −0.2%, an operating loss, against a $20M covenant", {})],
+], 11.5, bullets=True, name="bridge-notes")
+
+# ---------------------------------------------------------------- 5 Labor
+s = D.slide(T1, "Wages rose 9.4%, but 6% fewer hours per sales dollar absorbed most of it, so labor cost only 0.3 points of margin",
+            source="Source: Table 3. Labor % of sales = hourly wage × hours per $1,000 ÷ 1,000. Effects are calculated in sequence (wage first at FY2023 hours). "
+                   "Table 3 inputs are rounded, so the net (+0.34) differs slightly from Table 1 (+0.30).")
+cards = [("Wage effect", "+1.11 pts", "($18.38 − $16.80) × 7.02 hours\n÷ 1,000", ORANGE),
+         ("Productivity effect", "−0.77 pts", "(6.60 − 7.02) hours × $18.38\n÷ 1,000", BLUE),
+         ("Net change in labor % of sales", "+0.34 pts", "11.79% → 12.13%\n(reported: 11.8% → 12.1%)", TOTAL)]
+for i, (a, b, c, col) in enumerate(cards):
+    xx = LM + i * 4.15
+    rect(s, xx, 1.75, 3.9, 0.07, col)
+    text(s, xx, 1.9, 3.9, 0.35, a, 13, bold=True, color=INK2)
+    text(s, xx, 2.25, 3.9, 0.75, b, 34, bold=True, color=INK, name=False)
+    text(s, xx, 3.05, 3.9, 0.65, c, 11, color=INK2, name=f"card{i}")
+text(s, LM, 3.95, 12.3, 0.3, "So what for the plan", 13, bold=True, color=NAVY)
+text(s, LM, 4.3, 12.3, 2.5, [
+    [("Wage inflation is real, but it is not the main cause: ", {"bold": True}),
+     ("at FY2023 productivity, FY2025 labor would have cost $193.9M ($18.38 × 7.02 ÷ 1,000 × $1,503M) instead of $181.9M. Harlow has already taken out about $12M through productivity.", {})],
+    [("Productivity gains have not been free: ", {"bold": True}),
+     ("over the same two years shrink rose from 2.1% to 2.6% of sales, and it is highest in the stores with the fewest hours (slide 9).", {})],
+    [("Labor still needs action, because the 2027 minimum-wage step adds ~$7M: ", {"bold": True}),
+     ("+4% on the $181.9M labor bill is $7.3M. The plan offsets most of it through targeted scheduling (−3% net hours, $5.2M) rather than an across-the-board cut.", {})],
+], 12.5, bullets=True, name="labor-sowhat")
+
+# ---------------------------------------------------------------- 6 Gross margin drivers
+s = D.slide(T1, "Promotions (−0.70 pts) and shrink (−0.50 pts) account for the whole 1.02-point gross-margin fall; private label offset only 0.18",
+            source="Source: Table 2 and notes. Promo effect = change in promo share × 14-pt margin gap; private-label effect = change in share × 12-pt gap; "
+                   "shrink is booked inside gross profit, so it hits margin one for one.")
+text(s, LM, 1.65, 7.2, 0.3, "Gross-margin change by driver, FY2023 → FY2025 (pts of sales)", 11, bold=True, color=INK2)
+hbars(s, LM, 2.1, 7.3, 3.4,
+      [("More promotional sales", -0.70, ORANGE), ("Higher shrink", -0.50, ORANGE), ("More private label", 0.18, BLUE),
+       ("Total explained", -1.02, TOTAL)], vmin=-1.45, vmax=0.35, label_w=2.4, size=11)
+text(s, LM, 5.65, 7.3, 1.1, "Actual change: 26.04% (369.8 ÷ 1,420) → 25.02% (376.1 ÷ 1,503) = −1.02 pts. The three drivers explain all of it, "
+     "so there is no unexplained cost or price residual left to chase.", 11, color=INK2, name="gm-note")
+rows = [["Driver", "FY2023", "FY2025", "Change", "× margin gap", "Effect"],
+        ["Promo share of sales", "24.0%", "29.0%", "+5.0 pts", "−14 pts", "−0.70"],
+        ["Private-label share", "17.0%", "18.5%", "+1.5 pts", "+12 pts", "+0.18"],
+        ["Shrink, % of sales", "2.1%", "2.6%", "+0.5 pts", "−1 for 1", "−0.50"],
+        ["Total", "", "", "", "", "−1.02"]]
+table(s, 8.2, 1.75, 4.6, [2.2, 1.0, 1.0, 1.1, 1.2, 0.9], rows, size=10, bold_rows=(4,), shade_rows=(4,),
+      align=["l", "r", "r", "r", "r", "r"], name="gm-table")
+text(s, 8.2, 4.0, 4.6, 2.6, [
+    [("Promotions are the largest single driver: ", {"bold": True}), ("every extra point of promo share costs ~$2.1M a year (1% × $1,503M × 14 pts).", {})],
+    [("Shrink is the second: ", {"bold": True}), ("every 0.1 pt is ~$1.5M a year.", {})],
+], 11, bullets=True, name="gm-sowhat")
+
+# ---------------------------------------------------------------- 7 Promotions
+s = D.slide(T1, "The promotion surge is not buying the traffic it was meant to defend: 38% of events lose money and price perception got worse",
+            source="Source: Table 2 notes; §9 customer survey (n = 3,100) and ValuMart comps; §10 category-team claim. The break-even uses Finance's "
+                   "20-cent contribution per new sales dollar.")
+boxes = [("38%", "of FY2025 promotional events lost money, even after counting the extra units they sold"),
+         ("55% → 46%", "share of promotional markdowns funded by vendors, FY2023 → FY2025. Harlow now pays more of each markdown itself"),
+         ("33% → 41%", "customers who say Harlow is 'more expensive than other options', despite five more points of promoted sales"),
+         ("−4.2% vs +1.1%", "FY2025 comparable sales in stores within 3 miles of a new ValuMart vs other stores. Deeper promotions did not protect them")]
+for i, (big, small) in enumerate(boxes):
+    xx = LM + i * 3.1
+    rect(s, xx, 1.75, 2.9, 1.8, PANEL)
+    text(s, xx + 0.1, 1.85, 2.7, 0.6, big, 24, bold=True, color=NAVY, name=False)
+    text(s, xx + 0.1, 2.5, 2.7, 1.35, small, 11, color=INK, name=f"promo-box{i}")
+text(s, LM, 3.85, 6.0, 0.3, "The category team's evidence does not hold up", 13, bold=True, color=NAVY)
+text(s, LM, 4.2, 6.0, 2.6, [
+    "The claim: stores with the deepest promotions grew comps 1.8% against 0.2% for the rest (+1.6 pts)",
+    "Even if all of that gap were caused by promotions, 1.6% × 20% contribution = 0.32 pts of sales. That pays for only 2.3 pts of extra promo share (0.32 ÷ 0.14), and the chain added 5.0 pts",
+    "It is a correlation: it says nothing about the 38% of events that lose money, or about profit",
+], 12, bullets=True, name="promo-claim")
+text(s, 6.9, 3.85, 5.9, 0.3, "Implication for the plan", 13, bold=True, color=NAVY)
+text(s, 6.9, 4.2, 5.9, 2.6, [
+    "Cut the losing events first. There is a clear profit case, and the risk sits mainly in ValuMart-exposed stores",
+    "Make vendor funding a condition of running an event, to restore part of the 9-pt funding drop",
+    "Compete on value through private label (12 pts more margin) and fresh produce, the #1 reason to shop Harlow (58%), not through deeper national-brand markdowns",
+], 12, bullets=True, name="promo-impl")
+
+# ---------------------------------------------------------------- 8 E-commerce economics
+s = D.slide(T1, "E-commerce loses about $10M a year once delivery costs and cannibalization are counted, not the 6.1% profit reported to the board",
+            source="Source: Tables 1 and 5; §7 survey (70% would otherwise buy in store) and Finance's 20-cent contribution per new sales dollar. FY2025: 1,331k orders × $96 = $127.8M; "
+                   "58% delivered = 772k orders. Rebuilding $18.1M of fulfillment from Table 5 matches Table 1.")
+text(s, LM, 1.65, 6.6, 0.3, "E-commerce economics on an incremental basis, FY2025, $M", 11, bold=True, color=INK2)
+hbars(s, LM, 2.05, 6.6, 3.3,
+      [("Contribution on new sales (30% × $127.8M × 20%)", 7.67, BLUE), ("Picking ($7.40 × 1,331k)", -9.85, ORANGE),
+       ("Third-party delivery ($13.80 × 772k)", -10.65, ORANGE), ("Delivery fees ($3.10 × 772k)", 2.39, BLUE),
+       ("Net economic contribution", -10.44, TOTAL)], vmin=-11.5, vmax=9.0, fmt="{:+.1f}", label_w=3.2, size=10.5)
+text(s, LM, 5.6, 6.6, 1.2, [[("Why the team's +6.1% (~$7.8M) is wrong: ", {"bold": True}),
+     ("it leaves out third-party delivery ($8.3M net of fees, booked by Finance under 'E-commerce fulfillment') and treats every online sale as new to "
+      "Harlow, when customers say only 30% is.", {})]], 11, fill=PANEL, name="ecom-team")
+text(s, 7.5, 1.65, 5.3, 0.3, "Contribution per order, FY2025", 11, bold=True, color=INK2)
+rows = [["$ per order", "Home delivery", "Click & collect"],
+        ["Contribution on new sales ($96 × 30% × 20%)", "+5.76", "+5.76"],
+        ["Picking", "−7.40", "−7.40"],
+        ["Third-party delivery", "−13.80", "–"],
+        ["Delivery fee collected", "+3.10", "–"],
+        ["Net per order", "−12.34", "−1.64"],
+        ["Total, FY2025 ($M)", "−9.5", "−0.9"]]
+table(s, 7.5, 2.0, 5.3, [2.9, 1.2, 1.2], rows, size=10.5, bold_rows=(5,), shade_rows=(5, 6), align=["l", "r", "r"], name="ecom-unit")
+text(s, 7.5, 4.55, 5.3, 2.2, [
+    [("Growth made it worse: ", {"bold": True}), ("net fulfillment rose from $5.2M to $18.1M as the delivered share went from 45% to 58% and delivery fees fell from $3.40 to $3.10.", {})],
+    [("Delivery would need a ~$15.40 fee to break even. ", {"bold": True}), ("Click-and-collect breaks even if 39% of its sales are new to Harlow.", {})],
+], 11.5, bullets=True, name="ecom-notes")
+
+# ---------------------------------------------------------------- 9 Shrink vs labor
+s = D.slide(T1, "Shrink climbs steeply in thinly staffed stores, so an 8% hours cut would give back $5–10M of its $14.6M saving",
+            source="Source: Tables 3 and 4; §6 shrink composition and store-manager interviews. Equal sales weight per quartile is assumed (the quartile average, 2.63%, matches the "
+                   "chain's 2.6%). The time-series link is a correlation, used here as a risk range, not a forecast.")
+text(s, LM, 1.65, 5.6, 0.3, "Shrink by labor-intensity quartile, FY2025, % of sales", 11, bold=True, color=INK2)
+vbars(s, LM + 0.2, 2.15, 5.2, 3.6, [("Q1\nfewest hours", 3.1, ORANGE), ("Q2", 2.7), ("Q3", 2.4), ("Q4\nmost hours", 2.3)], vmax=3.5, cat_h=0.6)
+text(s, LM, 5.9, 5.6, 0.9, "Shrink flattens above Q3 staffing (2.4% → 2.3%) but rises steeply below it (2.7%, 3.1%). Where the hours are cut matters more than how many.",
+     11, color=INK2, name="shrink-note")
+text(s, 6.6, 1.65, 6.2, 0.3, "Sizing the shrink risk of the 8% cut", 13, bold=True, color=NAVY)
+rows = [["Step", "Value"],
+        ["Labor saving: 8% × $181.9M", "+$14.6M"],
+        ["FY2023→25: hours per $1,000 −6.0% while shrink rose +0.5 pts", "0.083 pts per 1% of hours"],
+        ["Implied shrink rise from a further 8% cut", "+0.33 to +0.67 pts"],
+        ["Shrink cost (× $1,503M), at half to full link", "−$5.0M to −$10.0M"],
+        ["Net saving before any lost sales", "+$4.6M to +$9.6M"]]
+table(s, 6.6, 2.0, 6.2, [4.2, 2.0], rows, size=10.5, bold_rows=(5,), shade_rows=(5,), align=["l", "r"], name="shrink-table")
+text(s, 6.6, 4.3, 6.2, 2.5, [
+    [("The mechanism is plausible: ", {"bold": True}), ("65% of shrink is waste (45%) or receiving and admin errors (20%), the tasks that store managers in Q1 stores say get skipped on busy days.", {})],
+    [("Sales risk on top: ", {"bold": True}), ("longer checkout waits and stock-outs are untested. Every 1% of sales lost at 20% contribution costs a further ~$3M.", {})],
+], 12, bullets=True, name="shrink-mech")
+
+# ---------------------------------------------------------------- 10 Options
+s = D.slide(T2, "Of the four options, only the margin-led plan reaches 3%; the labor-cut plan stalls near 1% and leaves the covenant to chance",
+            source="Sources: slides 4–16. Management plan: 15.3 + 14.6 − shrink 5.0–10.0 − wage step on remaining hours 6.7 − delivery rate rise 0.3. "
+                   "Option D is the upper bound of the remaining delivery loss after repricing (703k orders × $9.04).")
+rows = [["", "A  Management plan:\n8% labor cut, freeze e-commerce", "B  Defend on price:\ndeeper promotions vs ValuMart", "C  Margin-led plan\n(recommended)", "D  Plan C, then exit\nhome delivery"],
+        ["FY2026 operating income\n(covenant ≥ $20M)", "$19–24M: at risk if shrink responds", "Below $15M: each +1 pt of promo share costs $2.1M", "~$24M: ~$4M headroom", "As C"],
+        ["FY2028 operating margin", "0.9–1.2%", "Under 1%: continues the trend that took margin from 3.4% to 1.0%", "~3.0% (2.5% from levers backed by Harlow data)", "Up to ~3.5% (+$6M at most)"],
+        ["One-time cost (cap $25M)", "~$0", "Low", "~$20M", "C + delivery wind-down"],
+        ["Fit with board constraints", "Yes", "Yes", "Yes; three exits need a board vote", "No: owners want delivery kept"],
+        ["Main risk", "Shrink, service levels and checkout waits; does not address 87% of the decline", "Margin erosion with no evidence of traffic payback", "Executing nine levers at once; ValuMart response to fewer promotions", "Customer loss; breaks an owner commitment"],
+        ["Assessment", "Reject", "Reject", "Adopt", "Hold as a fallback"]]
+table(s, LM, 1.7, CW, [2.3, 2.6, 2.6, 2.6, 2.2], rows, size=11, shade_rows=(6,), first_col_bold=True, bold_rows=(6,), name="options", max_h=4.2)
+text(s, LM, 5.75, CW, 0.95, [[("Why C over A: ", {"bold": True, "color": NAVY}),
+     ("A acts on the 13% of the decline that came from labor and creates new shrink risk. C acts on promotions, shrink and e-commerce, which caused 80% of the decline, "
+      "and uses labor only to absorb the 2027 wage step. C costs ~$20M more one-time, but the payback is under one year.", {})]], 12, fill=PANEL, name="whyC")
+
+# ---------------------------------------------------------------- 11 Lever table
+s = D.slide(T3, "Nine levers add about $34M by FY2028 before headwinds: six rest on Harlow's own data, three depend on negotiation or a board vote",
+            source="Base = 58 stores less six lease lapses: sales base $1,444M (= 1,503 − 75% × $78.7M), remaining labor $172M. Full plan = base plus the three extra "
+                   "levers; the base levers shrink slightly because three more stores close. Assumptions in appendix A1.")
+rows = [["Lever", "How it is sized", "Base plan\n$M", "Full plan\n$M", "Evidence"],
+        ["1  Reset promotions", "Promo share 29% → 24%: 5% × $1,444M moves to regular price (+14 pts), less 15% volume loss at 20%", "+6.4", "+6.3", "Post-event review"],
+        ["2  Cut shrink", "2.6% → 2.2%: Q1–Q2 stores to Q3 level (−0.25 pt) + 13% less fresh waste (−0.15 pt)", "+5.8", "+5.7", "Quartile data"],
+        ["3  Rebalance labor", "Net −3% hours, taken in Q3–Q4 stores; × $172M labor in remaining stores", "+5.2", "+5.1", "Table 3/4"],
+        ["4  Let six leases lapse", "Remove −$2.07M four-wall EBITDA + 25% × $78.7M transferred × 12%", "+4.4", "+4.4", "Past closures"],
+        ["5  Grow private label", "18.5% → 20.5% share (trend +0.75 pt a year) × 12-pt margin gap × $1,444M", "+3.5", "+3.4", "Trend"],
+        ["6  Reprice delivery", "Fee test applied chain-wide: −$3.0M fulfillment, less 2% e-commerce sales × 20%", "+2.5", "+2.5", "In-market test"],
+        ["Headwinds", "2027 wage step: +4% × remaining labor after cut; delivery rate +3%", "−7.1", "−6.9", "Pack §11"],
+        ["Base plan: operating income / margin", "$36.1M on $1,431M sales (15.3 + 27.8 − 7.1)", "2.5%", "", ""],
+        ["7  Vendor funding", "46% → 50% of markdowns × ~$88M implied gross markdown pool", "", "+3.5", "Estimate"],
+        ["8  Exit three long-lease stores", "+$2.2M a year ($1.03M EBITDA + 25% × $39.3M × 12%); $7.5M one-time lease exit", "", "+2.2", "Board vote"],
+        ["9  Delivery contract", "−5% rate instead of +3%: 8% × $13.80 × 703k delivered orders", "", "+0.8", "Negotiation"],
+        ["Full plan: operating income / margin", "$42.3M on $1,401M sales (15.3 + 33.9 − 6.9)", "", "3.0%", ""]]
+table(s, LM, 1.65, CW, [2.6, 6.0, 1.0, 1.0, 1.6], rows, size=10, bold_rows=(8, 12), shade_rows=(7, 8, 12),
+      align=["l", "l", "r", "r", "l"], name="levers", max_h=5.2)
+
+# ---------------------------------------------------------------- 12 FY2028 bridge
+s = D.slide(T3, "The full plan lifts operating income from $15M to ~$42M (3.0%) by FY2028; the six data-backed levers alone reach 2.5%",
+            source="Source: slide 11. FY2028 run-rate with FY2025 prices and volumes; no like-for-like sales growth and no inflation other than the known 2027 wage step. "
+                   "Margins are on post-closure sales: $1,431M (base) and $1,401M (full).")
+text(s, LM, 1.65, 8, 0.3, "Operating income bridge, FY2025 → FY2028 run-rate, $M", 11, bold=True, color=INK2)
+waterfall(s, LM, 2.1, CW, 4.7,
+          [("FY2025", 15.3, "total"), ("Promotions", 6.43, "delta"), ("Shrink", 5.78, "delta"), ("Labor rebalance", 5.24, "delta"),
+           ("Six lease lapses", 4.43, "delta"), ("Private label", 3.47, "delta"), ("Delivery fees", 2.49, "delta"),
+           ("2027 wage step", -6.78, "delta"), ("Delivery rate +3%", -0.29, "delta"), ("Base plan\n2.5%", 36.07, "sub"),
+           ("Vendor funding", 3.52, "delta"), ("3 lease exits (net)", 1.92, "delta"), ("Delivery contract", 0.78, "delta"),
+           ("Full plan\n3.0%", 42.27, "sub")],
+          vmax=46, fmt="{:+.1f}", tfmt="{:.1f}", cat_size=10, cat_h=0.65, refline=(0.03 * 1401.3, "", 9), total_colors={13: NAVY, 9: TOTAL})
+text(s, 9.3, 1.62, 3.5, 0.3, "Black line: 3.0% of $1,401M = $42.0M", 9.5, color=INK, align="r", name=False)
+
+# ---------------------------------------------------------------- 13 Promotions plan
+s = D.slide(T3, "Resetting promotions is the largest lever: cutting less than half of the money-losing events is worth ~$6M a year, more if vendors fund the rest",
+            source="Source: Table 2 and notes. Lever value = (shifted sales − lost volume) × 14 pts − lost volume × 20% contribution, on the $1,444M post-closure base. "
+                   "Vendor pool = 14 pts × 24% × $1,444M ÷ 54% (Harlow's unfunded share), about $90M.")
+text(s, LM, 1.65, 6.2, 0.3, "Three moves", 13, bold=True, color=NAVY)
+text(s, LM, 2.0, 6.2, 2.1, [
+    [("Cancel or redesign events that fail the post-event test. ", {"bold": True}), ("Target: promo share back to the FY2023 level of 24%. That means cutting ~17% of promoted sales (5 ÷ 29), well under the 38% of events that lose money.", {})],
+    [("No funding, no feature. ", {"bold": True}), ("Run an event only if the vendor covers at least 50% of the markdown. Each point of funding is worth ~$0.9M.", {})],
+    [("Move the value message to private label and fresh. ", {"bold": True}), ("Private label carries a 12-pt margin premium and answers the 'more expensive' perception without national-brand markdowns.", {})],
+], 12, bullets=True, name="promo-moves")
+text(s, LM, 4.25, 6.2, 1.3, [[("Guardrail for ValuMart stores: ", {"bold": True}),
+     ("phase the cuts in the stores within 3 miles of a ValuMart last, and track their comps weekly against the rest. "
+      "Keep promotion depth there if the comps gap widens beyond the FY2025 level (−5.3 pts).", {})]], 11, fill=PANEL, name="promo-guard")
+text(s, 7.1, 1.65, 5.7, 0.3, "Lever value depends on how much volume is lost", 13, bold=True, color=NAVY)
+rows = [["Share of shifted volume lost", "Lever value, $M/yr", "Note"],
+        ["0%", "+10.1", "All shifted units sell at regular price"],
+        ["15%", "+6.4", "Plan assumption"],
+        ["30%", "+2.7", "Downside case (slide 20)"],
+        ["41%", "±0.0", "Break-even: 0.14 ÷ (0.14 + 0.20)"]]
+table(s, 7.1, 2.0, 5.7, [2.0, 1.5, 2.7], rows, size=10.5, shade_rows=(2,), bold_rows=(2,), align=["l", "r", "l"], name="promo-sens")
+text(s, 7.1, 3.9, 5.7, 1.6, [
+    "Shifted sales: 5% × $1,444M = $72.2M. At a 15% loss, $10.8M of sales disappears and $61.4M is sold at regular price",
+    "+$61.4M × 14 pts = +$8.6M; −$10.8M × 20% = −$2.2M; net = +$6.4M",
+    "Using 20% for lost units is conservative: promoted units earned 14 pts less margin than average",
+], 11.5, bullets=True, name="promo-calc")
+text(s, LM, 5.6, CW, 0.55, [[("Success measures: ", {"bold": True, "color": NAVY}),
+     ("promo share 29% → 24%; vendor funding 46% → ≥50%; every event passes the post-event profit test before it repeats; comps gap in ValuMart stores no wider than −5.3 pts.", {})]],
+     11.5, name="promo-kpi")
+
+# ---------------------------------------------------------------- 14 Shrink & labor plan
+s = D.slide(T3, "Rebalance labor rather than cut it: protecting fresh and receiving hours and trimming 3% where shrink is flat beats the 8% cut by $1–6M",
+            source="Source: Tables 3 and 4; §6. Equal quartile sales weights assumed. 13% waste reduction = 0.15 pt ÷ 1.17 pt of waste (45% × 2.6%). "
+                   "Hours are cut in Q3–Q4 stores, where shrink differs by only 0.1 pt.")
+rows = [["Quartile", "FY2025 shrink", "Target", "Labor move"],
+        ["Q1 (fewest hours)", "3.1%", "2.4%", "Ring-fence produce rotation and receiving checks; add task hours"],
+        ["Q2", "2.7%", "2.4%", "Ring-fence fresh and receiving tasks"],
+        ["Q3", "2.4%", "2.4%", "Schedule to demand: share of the −3% net hours"],
+        ["Q4 (most hours)", "2.3%", "2.3%", "Schedule to demand: largest share of the −3%"],
+        ["Chain average", "2.63%", "2.38%", "−0.25 pt from staffing"],
+        ["Plus chain-wide fresh-waste program", "", "−0.15 pt", "Ordering and markdown discipline on fresh"],
+        ["Chain target", "2.6%", "2.2%", "−0.40 pt × $1,444M = +$5.8M"]]
+table(s, LM, 1.7, 7.4, [2.2, 1.1, 0.9, 3.5], rows, size=10.5, bold_rows=(7,), shade_rows=(5, 7), align=["l", "r", "r", "l"], name="shrink-plan")
+text(s, 8.3, 1.65, 4.5, 0.3, "Compared with the 8% cut, $M a year", 13, bold=True, color=NAVY)
+rows = [["", "8% cut", "Rebalance"],
+        ["Labor saving", "+14.6", "+5.2"],
+        ["Shrink", "−10.0 to −5.0", "+5.8"],
+        ["Net", "+4.6 to +9.6", "+11.0"],
+        ["Service risk", "High", "Low"]]
+table(s, 8.3, 2.0, 4.5, [1.6, 1.5, 1.4], rows, size=10.5, bold_rows=(3,), shade_rows=(3,), align=["l", "r", "r"], name="cmp")
+text(s, 8.3, 3.75, 4.5, 1.85, [
+    "Rebalancing is still worth $1.4–6.4M more a year than the 8% cut, before counting the cut's untested sales risk",
+    "−3% net hours is half the pace of FY2023–25 (−6% in two years), so it is achievable with scheduling tools, not layoffs",
+    "If shrink falls only half as much, the rebalance still nets +$8.1M",
+], 11, bullets=True, name="cmp-notes")
+text(s, LM, 5.65, CW, 1.1, [[("How it works in a store: ", {"bold": True, "color": NAVY}),
+     ("produce rotation and receiving checks become scheduled, protected tasks with their own hours, so they are not skipped on busy days. Q3–Q4 schedules follow "
+      "the hourly traffic curve. Each store is measured on shrink and labor % together, so neither can be improved at the other's expense.", {})]], 12, fill=PANEL, name="instore")
+
+# ---------------------------------------------------------------- 15 E-commerce plan
+s = D.slide(T3, "Keep delivery but charge for it: rolling out the tested fee saves $3.0M for a 2% e-commerce sales loss, and the contract renewal can add $0.8M",
+            source="Source: Table 5 and §7 fee test (4 stores, 10 weeks), applied to the FY2025 base. Assumes chain-wide results match the test and lost sales are lost to Harlow at 20% contribution "
+                   "(conservative: some will shift to stores).")
+rows = [["FY2025 base → after chain-wide rollout", "Today", "After", "Change"],
+        ["Home-delivery orders (−9%)", "772k", "703k", "−69k"],
+        ["Click-and-collect orders (+14%)", "559k", "637k", "+78k"],
+        ["Average fee per delivered order", "$3.10", "$6.40", "+$3.30"],
+        ["Picking cost ($7.40 per order)", "$9.85M", "$9.91M", "+$0.06M"],
+        ["Third-party delivery ($13.80)", "$10.65M", "$9.69M", "−$0.96M"],
+        ["Delivery fees collected", "−$2.39M", "−$4.50M", "−$2.11M"],
+        ["Net fulfillment cost", "$18.11M", "$15.11M", "−$3.00M"],
+        ["Lost contribution: 2% × $127.8M × 20%", "", "", "+$0.51M"],
+        ["Net operating-income gain", "", "", "+$2.49M"]]
+table(s, LM, 1.7, 7.0, [3.4, 1.1, 1.1, 1.2], rows, size=10.5, bold_rows=(7, 9), shade_rows=(7, 9), align=["l", "r", "r", "r"], name="fee-table")
+text(s, 7.9, 1.65, 4.9, 0.3, "Delivery still loses $9.04 per order after repricing, so:", 11.5, bold=True, color=NAVY, name="ecom-h")
+text(s, 7.9, 2.05, 4.9, 4.8, [
+    [("Don't grow delivery: ", {"bold": True}), ("keep the 'freeze' for home delivery only; each extra delivered order loses ~$9.", {})],
+    [("Steer to click-and-collect: ", {"bold": True}), ("it loses only $1.64 per order and breaks even if 39% of its sales are new. Pickup capacity is funded in the capital plan.", {})],
+    [("Reject the proposed 3% rate rise ", {"bold": True}), ("in the 2026 renewal and put the contract out to tender. Each 1% of rate is ~$0.1M; −5% instead of +3% is worth $0.8M.", {})],
+    [("Fallback, if renewal fails: ", {"bold": True}), ("limit delivery to dense zones or a higher minimum basket. This keeps delivery 'in some form', as the owners want.", {})],
+], 11, bullets=True, name="ecom-plan")
+text(s, LM, 5.05, 7.0, 0.3, "Contribution per order after repricing ($)", 11, bold=True, color=INK2)
+for i, (a_, b_, c_) in enumerate([("Home delivery", "−9.04", "+5.76 − 7.40 − 13.80 + 6.40 (was −12.34)"),
+                                   ("Click & collect", "−1.64", "+5.76 − 7.40 (unchanged)"),
+                                   ("Break-even delivery fee", "$15.44", "7.40 + 13.80 − 5.76: not realistic, so contain volume")]):
+    xx = LM + i * 2.37
+    rect(s, xx, 5.4, 2.25, 0.06, ORANGE if i < 2 else TOTAL)
+    text(s, xx, 5.5, 2.25, 0.3, a_, 11, bold=True, color=INK2, name=False)
+    text(s, xx, 5.8, 2.25, 0.45, b_, 22, bold=True, color=INK, name=False)
+    text(s, xx, 6.28, 2.25, 0.6, c_, 9.5, color=INK2, name=f"pord{i}")
+
+# ---------------------------------------------------------------- 16 Stores
+s = D.slide(T3, "Let the six expiring leases lapse (+$4.4M a year, no exit fee) and put the three long-lease stores to a board vote (+$2.2M a year for $7.5M)",
+            source="Source: Table 6. The pack gives only totals for the nine stores, so a pro-rata split (6/9 and 3/9) is assumed; store-level data should confirm it before each lease decision. "
+                   "Closure running costs (~$0.5M per store) are a team assumption.")
+rows = [["$M", "Six stores, leases end by 2027", "Three stores, longer leases", "All nine"],
+        ["Sales (pro rata)", "78.7", "39.3", "118.0"],
+        ["Four-wall EBITDA removed", "+2.07", "+1.03", "+3.10"],
+        ["Contribution kept: 25% of sales move × 12%", "+2.36", "+1.18", "+3.54"],
+        ["Operating-income gain a year", "+4.43", "+2.21", "+6.64"],
+        ["Chain sales lost (75% of store sales)", "−59.0", "−29.5", "−88.5"],
+        ["One-time cost", "~3.0 closure costs", "7.5 lease exit + ~1.5 closure", "~12.0"],
+        ["Payback on one-time cost", "< 1 year", "3.4 yrs (lease exit only); 4.1 yrs (all-in)", ""],
+        ["Governance", "CEO decision at expiry", "Board vote required", ""]]
+table(s, LM, 1.7, 8.0, [3.0, 1.9, 2.3, 1.0], rows, size=10.5, bold_rows=(4,), shade_rows=(4,), align=["l", "r", "r", "r"], name="stores")
+text(s, 8.9, 1.65, 3.9, 0.3, "How to decide", 13, bold=True, color=NAVY)
+text(s, 8.9, 2.0, 3.9, 4.8, [
+    "Default for the six: do not renew. Before each expiry, renew only if the landlord's rent offer makes four-wall EBITDA positive",
+    "The three need a board vote: bring the case to the board after two quarters of the commercial fixes. Exit if four-wall EBITDA is still negative",
+    "Closing all nine would lower chain sales by ~6% but raise margin, because the lost sales carried negative contribution",
+    "Check ValuMart overlap first. If these stores face ValuMart, the trade-area comps trend (−4.2%) strengthens the case",
+], 11, bullets=True, name="stores-decide")
+text(s, LM, 5.55, 8.0, 1.2, [[("Why not exit all nine now? ", {"bold": True, "color": NAVY}),
+     ("the three long-lease stores have the weakest payback in the plan (3.4–4.1 years) and need a board vote. Waiting two quarters costs ~$1.1M of benefit, "
+      "and it avoids paying $7.5M to exit stores that the commercial fixes might turn around.", {})]], 11.5, fill=PANEL, name="why-not-9")
+
+# ---------------------------------------------------------------- 17 Sequencing
+s = D.slide(T4, "Act first on the four moves that are fast, cheap and already proven; they carry FY2026 while the slower levers build",
+            source="Run-rate values from slide 11. Timing assumes the board approves in February and Wave 1 starts at once. 'Proven' means backed by an in-market test or Harlow's own historical data.")
+rows = [["Wave", "Action", "Run-rate $M", "Time to full effect", "One-time cost", "Why in this wave"],
+        ["1  First 90 days", "Roll out $7.99 fee / $100 free-delivery threshold", "+2.5", "~2 months", "~0", "Tested in market; reversible"],
+        ["", "Cancel failing promotions; no funding, no feature", "+6.4", "2–3 promo cycles", "$1.5M analytics", "Largest lever; post-event data in hand"],
+        ["", "Stop the 8% cut; ring-fence fresh and receiving hours", "(protects shrink)", "Immediate", "~0", "Prevents a $5–10M shrink loss"],
+        ["", "Reject the 3% delivery rate rise; tender the contract", "+0.8", "At 2026 renewal", "~0", "Time-bound: contract renews in 2026"],
+        ["2  FY2026 H2 – FY2027", "Do not renew the six expiring leases", "+4.4", "As leases end, by end 2027", "~$3.0M", "No exit fee; no board vote needed"],
+        ["", "Demand-based scheduling in Q3–Q4 stores (−3% hours)", "+5.2", "6–9 months", "$1.5M tools", "Offsets the 2027 wage step"],
+        ["", "Fresh-waste and receiving program", "+5.8", "9–12 months", "$3.5M", "Needs process change and tools"],
+        ["", "Private-label range expansion; vendor-funding round", "+3.5 / +3.5", "12–24 months", "$2.0M", "Range work and annual vendor cycle"],
+        ["3  FY2027 – FY2028", "Board vote and exit of three long-lease stores", "+1.9", "FY2027", "$9.0M", "Needs the vote and turnaround evidence"]]
+table(s, LM, 1.7, CW, [1.7, 3.8, 1.2, 1.7, 1.4, 2.5], rows, size=10, shade_rows=(1, 2, 3, 4), align=["l", "l", "r", "l", "l", "l"], name="waves", max_h=4.3)
+for i, (a_, b_, c_) in enumerate([("Wave 1", "+$9.7M run-rate", "$1.5M one-time; most is reversible within a quarter"),
+                                   ("Wave 2", "+$22.4M run-rate", "$10.0M one-time; process, range and lease changes"),
+                                   ("Wave 3", "+$1.9M run-rate", "$9.0M one-time; board vote; lowest return")]):
+    xx = LM + i * 4.15
+    rect(s, xx, 5.75, 3.95, 0.06, [BLUE, NAVY, TOTAL][i])
+    text(s, xx, 5.85, 3.95, 0.35, a_ + ":  " + b_, 13, bold=True, color=INK, name=f"wave{i}")
+    text(s, xx, 6.2, 3.95, 0.6, c_, 10.5, color=INK2, name=f"wavec{i}")
+
+# ---------------------------------------------------------------- 18 FY2026 covenant
+s = D.slide(T4, "The Wave 1 and early Wave 2 actions lift FY2026 operating income to ~$24M, about $4M above the $20M covenant floor",
+            source="In-year capture assumed: fees 80%, promotions 50%, shrink 35%, private label 25%, labor 50%, two of six closures at mid-year; wage step in the last month only "
+                   "(January 2027); ~$2M of one-time costs expensed. Assumes the FY2023–25 drift stops once the actions start.")
+text(s, LM, 1.65, 8.6, 0.3, "FY2026 operating income bridge, $M", 11, bold=True, color=INK2)
+waterfall(s, LM, 2.1, 8.6, 4.7,
+          [("FY2025", 15.3, "total"), ("Promotions", 3.21, "delta"), ("Labor rebalance", 2.62, "delta"), ("Shrink", 2.02, "delta"),
+           ("Delivery fees", 1.99, "delta"), ("Private label", 0.87, "delta"), ("Two closures", 0.74, "delta"),
+           ("Wage step (1 month)", -0.57, "delta"), ("Delivery rate", -0.14, "delta"), ("One-time costs", -2.0, "delta"),
+           ("FY2026", 24.04, "sub")],
+          vmax=28, fmt="{:+.1f}", tfmt="{:.1f}", cat_size=9.5, cat_h=0.65, refline=(20.0, "Covenant floor: $20M", 0), total_colors={10: NAVY})
+text(s, 9.5, 1.7, 3.3, 0.3, "Why act now", 13, bold=True, color=NAVY)
+text(s, 9.5, 2.05, 3.3, 4.8, [
+    "Doing nothing points to an operating loss: margin has fallen ~1.2 pts a year",
+    "Management's plan gives $19–24M even if the full cut lands on day one. Ours matches its best case without the shrink and service risk, and keeps building to ~$42M",
+    "Our plan has ~$4M of headroom; 60% of the in-year gain comes from promotions and fees, which can start within weeks",
+    "Each month of delay in Wave 1 costs ~$0.75M of FY2026 operating income",
+], 11, bullets=True, name="cov-why")
+
+# ---------------------------------------------------------------- 19 Capital
+s = D.slide(T4, "The plan needs $20.5M of one-time cost, leaving $4.5M of the $25M envelope in reserve for contingencies",
+            source="Only the $7.5M lease-exit cost comes from the pack; all other amounts are team planning estimates and should be confirmed by Finance before the board meeting.")
+rows = [["Use", "$M", "Basis", "Lever supported"],
+        ["Lease exits, three long-lease stores", "7.5", "Briefing pack, Table 6", "8"],
+        ["Closure costs, nine stores (~$0.5M each)", "4.5", "Estimate: severance, fixtures, inventory", "4, 8"],
+        ["Fresh-ordering, receiving and loss-prevention tools", "3.5", "Estimate", "2"],
+        ["Private-label range development", "2.0", "Estimate", "5"],
+        ["Promotion analytics and post-event review tooling", "1.5", "Estimate", "1, 7"],
+        ["Labor scheduling and task-management system", "1.5", "Estimate", "3"],
+        ["Total committed", "20.5", "", ""],
+        ["Reserve (released by the board)", "4.5", "Contingency levers, slide 20", ""],
+        ["Envelope FY2026–FY2028", "25.0", "Board constraint", ""]]
+table(s, LM, 1.7, 8.2, [3.8, 0.8, 2.8, 1.2], rows, size=10.5, bold_rows=(7, 9), shade_rows=(7, 9), align=["l", "r", "l", "l"], name="capital")
+text(s, 9.1, 1.7, 3.7, 4.9, [
+    [("Return: ", {"bold": True}), ("~$27M a year of run-rate operating-income gain (full plan, after headwinds) for $20.5M one-time, a payback of under one year overall.", {})],
+    [("Lowest return: ", {"bold": True}), ("the three-store exit, with a 4.1-year all-in payback. It is the item to defer if cash gets tight.", {})],
+    [("Note: ", {"bold": True}), ("the e-commerce fee change and the promotion cuts, the two fastest levers, need almost no capital.", {})],
+], 11, bullets=True, name="capital-notes")
+
+# ---------------------------------------------------------------- 20 Risks
+s = D.slide(T4, "3.0% has no cushion: each key risk would cost about 0.2–0.3 points, so the board should track early signals and pre-agree contingency levers",
+            source="Sensitivities are one at a time on the full plan (3.02%), except the combined downside. Contingency values: promo share to 22% (~$1.26M per pt); vendor funding 50% → 55% "
+                   "(~$0.9M per pt); sales growth at 20% contribution with fixed costs flat.")
+rows = [["Risk", "If it happens", "FY2028 margin", "Early signal", "Response"],
+        ["Fewer promotions lose more volume (ValuMart)", "30% of shifted volume lost instead of 15%: −$3.6M", "2.78%", "Weekly comps, ValuMart vs other stores", "Hold depth in exposed stores; push private label"],
+        ["Shrink improves only half as much", "−0.2 pt instead of −0.4 pt: −$2.8M", "2.81%", "Monthly shrink by quartile", "More fresh-ordering and loss-prevention spend from reserve"],
+        ["Vendors refuse extra funding", "No recovery from 46%: −$3.5M", "2.77%", "Outcome of the annual vendor round", "Cut unfunded events: promo share to 22%"],
+        ["Wage rise above plan", "+6% instead of +4% in 2027: −$3.3M", "2.78%", "State and market wage data", "Faster scheduling roll-out"],
+        ["Delivery contract worse", "Each 1% of rate: −$0.1M", "≈0.01 pt per 1%", "2026 renewal", "Tender; fall back to zone limits"],
+        ["Combined downside", "Volume loss, half the shrink gain and no vendor funding together", "2.32% ($32M)", "", "Covenant still met; trigger the contingency levers"]]
+table(s, LM, 1.7, CW, [2.4, 3.0, 1.2, 2.4, 3.3], rows, size=10, shade_rows=(6,), bold_rows=(6,), align=["l", "l", "r", "l", "l"], name="risks", max_h=3.9)
+text(s, LM, 5.15, CW, 1.15, [[("Contingency levers (not in the plan): ", {"bold": True, "color": NAVY}),
+     ("promo share down to 22% (+$2.5M); vendor funding back to its FY2023 level of 55% (+$4.4M more); delivery restricted to dense zones; like-for-like sales growth, "
+      "where each 1% is worth ~$2.8M at 20% contribution. Other uncertainties: how customers react to the labor changes (untested), "
+      "and whether occupancy and SG&A keep rising faster than sales (+0.2 pt in FY2023–25).", {})]], 11, fill=PANEL, name="contingency")
+
+# ---------------------------------------------------------------- 21 Decisions
+s = D.slide(T4, "We ask the board for three decisions today and propose five measures to track progress every quarter",
+            source="KPI baselines are FY2025 values from the briefing pack.")
+dec = [("Replace the draft plan", "Adopt the margin-led plan and a FY2028 target of at least 3.0% in place of the 8% labor-hour cut. Keep the freeze for home delivery only."),
+       ("Approve the capital", "Up to $20.5M of one-time spend over FY2026–FY2028, with the remaining $4.5M held in reserve and released by the board."),
+       ("Set up the store vote", "Ask management to bring the case for the three long-lease stores to the Q3 FY2026 meeting. Non-renewal of the six expiring leases is the default.")]
+for i, (h_, b_) in enumerate(dec):
+    yy = 1.75 + i * 1.05
+    number_badge(s, LM, yy + 0.03, i + 1)
+    text(s, LM + 0.6, yy, 6.0, 0.32, h_, 13.5, bold=True, color=NAVY)
+    text(s, LM + 0.6, yy + 0.33, 6.0, 0.7, b_, 11, name=f"dec{i}")
+rows = [["KPI (quarterly)", "FY2025", "FY2028 target"],
+        ["Promotional share of sales", "29.0%", "24%"],
+        ["Vendor funding of markdowns", "46%", "≥50%"],
+        ["Shrink, % of sales", "2.6%", "2.2%"],
+        ["Net e-commerce fulfillment cost", "$18.1M", "≤$15M"],
+        ["Operating income (covenant ≥ $20M in FY2026)", "$15.3M", "~$42M (3.0%)"]]
+table(s, 7.4, 1.75, 5.4, [2.9, 1.1, 1.4], rows, size=10.5, align=["l", "r", "r"], name="kpi")
+text(s, LM, 5.1, CW, 1.6, [[("What changes for management: ", {"bold": True, "color": NAVY}),
+     ("the category team is measured on promotion profit, not comps; the e-commerce team reports contribution including delivery and on an incremental "
+      "basis; store operations is measured on shrink as well as labor hours. These changes fix the three measurement errors that hid the decline.", {})]],
+     11.5, fill=PANEL, name="mgmt")
+
+# ---------------------------------------------------------------- A1 Assumptions
+s = D.slide(TA, "A1. The key assumptions behind the numbers, and the choices we made where the pack was silent",
+            source="All choices were made without access to management; each should be confirmed before the board meeting.")
+rows = [["Area", "Assumption / choice", "Effect if wrong"],
+        ["Fiscal timing", "The pack treats FY2026 as the first plan year (labor plan, covenant, capital window) and has no FY2026 actuals. We follow it. If FY2026 has already closed by February 2027, the covenant test is settled and Year 1 shifts to FY2027", "Sequencing holds; less time to reach run-rate by FY2028"],
+        ["Sales base", "FY2028 is shown at FY2025 volumes and prices, with no like-for-like growth and no cost inflation except the 2027 wage step", "Growth is upside (~$2.8M per 1%); cost drift is downside"],
+        ["Wage step", "+4% applied to the whole store labor bill (conservative: not all staff are on minimum wage)", "Each 1 pt is ~$1.7M"],
+        ["E-commerce", "30% of online sales are new to Harlow (survey), the same for delivery and click-and-collect; the fee test scales chain-wide", "C&C per-order economics are sensitive to this share"],
+        ["Promotions", "15% of shifted promo volume is lost, valued at 20% contribution; the 14-pt gap is read as net of vendor funding (this drives the ~$90M vendor-pool estimate)", "Slide 13 sensitivity; vendor-pool estimate"],
+        ["Shrink", "Quartiles carry equal sales; reallocating hours to Q1–Q2 brings them to Q3 shrink", "Half the effect: −$2.8M"],
+        ["Stores", "The six and the three stores are pro-rata shares of the nine-store totals; 25% sales transfer at 12% (past closures)", "Store-level data needed before each decision"],
+        ["One-time costs", "All except the $7.5M lease exit are team estimates; ~$2M expensed in FY2026", "Covenant headroom moves one for one"]]
+table(s, LM, 1.65, CW, [1.6, 7.2, 3.5], rows, size=9.5, first_col_bold=True, name="assump", max_h=5.2)
+
+# ---------------------------------------------------------------- A2 E-commerce reconciliation
+s = D.slide(TA, "A2. Our e-commerce cost model reproduces Table 1's fulfillment line exactly in every year, so the unit economics can be trusted",
+            source="Source: Table 5 (orders, delivered share, unit costs, fees) and Table 1 (fulfillment line). Net = orders × picking + delivered orders × (delivery cost − fee).")
+rows = [["$M unless stated", "FY2023", "FY2024", "FY2025"],
+        ["Orders (k) × average basket = e-commerce sales", "453 × $94 = 42.6", "865 × $95 = 82.2", "1,331 × $96 = 127.8"],
+        ["Delivered orders (k)", "204 (45%)", "450 (52%)", "772 (58%)"],
+        ["Picking", "3.26", "6.31", "9.85"],
+        ["Third-party delivery", "2.63", "6.03", "10.65"],
+        ["Delivery fees", "−0.69", "−1.44", "−2.39"],
+        ["Net fulfillment, model", "5.2", "10.9", "18.1"],
+        ["Net fulfillment, Table 1", "5.2", "10.9", "18.1"],
+        ["E-commerce sales as share of total (check vs Table 5)", "3.0%", "5.6%", "8.5%"],
+        ["Net contribution per delivered order ($)", "−11.06", "−11.80", "−12.34"]]
+table(s, LM, 1.7, 9.0, [4.2, 1.6, 1.6, 1.6], rows, size=10.5, bold_rows=(6, 7), shade_rows=(6, 7), align=["l", "r", "r", "r"], name="recon")
+text(s, 9.8, 1.7, 3.0, 4.9, [
+    "Loss per delivered order = contribution on new sales (basket × 30% × 20%) − picking − delivery + fee",
+    "Losses per order rose each year: delivery cost +$0.90, picking +$0.20 and fees −$0.30, only partly offset by a $2 larger basket",
+    "The delivered share rising from 45% to 58% mixed the business toward its most loss-making order type",
+], 10.5, bullets=True, name="recon-notes")
+
+# ---------------------------------------------------------------- A3 Management plan arithmetic
+s = D.slide(TA, "A3. Run through the same model, management's plan clears the covenant only if shrink barely responds, and misses 3% by $27–32M",
+            source="Shrink range: FY2023\u201325 relation (+0.5 pt shrink for \u22126% hours) applied to the 8% cut at half and full strength. Wage step on hours after the cut (92% of $181.9M). "
+                   "E-commerce frozen at FY2025 size; no gross-margin actions.")
+rows = [["$M", "FY2026: low shrink", "FY2026: high shrink", "FY2028: low shrink", "FY2028: high shrink"],
+        ["FY2025 operating income", "15.3", "15.3", "15.3", "15.3"],
+        ["8% labor-hour cut (8% \u00d7 $181.9M)", "+14.6", "+14.6", "+14.6", "+14.6"],
+        ["Shrink rise (+0.33 / +0.67 pt \u00d7 $1,503M)", "\u22125.0", "\u221210.0", "\u22125.0", "\u221210.0"],
+        ["2027 wage step (+4% on remaining hours)", "\u22120.6 (1 month)", "\u22120.6", "\u22126.7", "\u22126.7"],
+        ["Delivery rate +3%", "\u22120.1", "\u22120.1", "\u22120.3", "\u22120.3"],
+        ["Operating income", "24.1", "19.1", "17.9", "12.9"],
+        ["Operating margin", "1.6%", "1.3%", "1.2%", "0.9%"],
+        ["Versus requirement", "+$4.1M vs covenant", "\u2212$0.9M vs covenant", "\u2212$27M vs 3.0%", "\u2212$32M vs 3.0%"]]
+table(s, LM, 1.7, CW, [3.6, 2.2, 2.2, 2.2, 2.2], rows, size=11, bold_rows=(6, 8), shade_rows=(6, 7, 8), align=["l", "r", "r", "r", "r"], name="mgmt-math")
+text(s, LM, 5.0, CW, 1.2, [[("Reading: ", {"bold": True, "color": NAVY}),
+     ("even in the favorable case the plan passes the covenant by only ~$4M and then erodes as the 2027 wage step arrives, because it leaves promotions, shrink and "
+      "delivery losses (80% of the decline) untouched. Untested sales losses from service cuts are not included; each 1% of sales costs ~$3M more.", {})]], 12, fill=PANEL, name="mgmt-read")
+
+D.save(sys.argv[1])
+print("slides", D.n)
+for w_ in WARN: print(w_)

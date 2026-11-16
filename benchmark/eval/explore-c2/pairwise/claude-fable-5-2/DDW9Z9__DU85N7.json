@@ -1,0 +1,38 @@
+{
+ "x": "DDW9Z9",
+ "y": "DU85N7",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean line from governing thought to slides. X's summary answers launch, packaging, price, value, NRR and guardrails in turn, and each claim is backed by a slide whose numbers match it; for example, the margin claim for the 600-request allowance is shown at 75.9% with every seat at the cap. Y's pyramid is tidy, but two top-level claims are looser than their support. First, 'a usage allowance keeps company gross margin at 76.5%' is computed at average usage of 444 requests per seat, not at the 1,000 allowance, so the allowance is not what holds the margin. Second, the governing thought says to plan on $2.9M, which is the 33% precedent case, while Y's own condition treats 26% as the bar and admits the 2023 tier differed. X has a small tension in calling 14% a ceiling for the add-on and a low case for Pro, but it explains the basis.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the key's preferred answer: launch in a Pro tier with a usage allowance and restart mobile straight after. X weighs it more defensibly. It sizes a range of 14–33% adoption ($1.2M–$2.9M), admits the low case is thin (6.8-year payback), and says the mobile sequencing is a close call. It also sets an allowance that actually bounds the margin risk and attaches five thresholds with a stated response if each is missed. Y adds useful things X lacks: a free-in-Core alternative (71.9% margin), a break-even rule for mobile-first (51.7%), a pre-sign-off estimate of mobile efficacy, and a check on whether engineers can come from elsewhere. But Y plans on the top-of-range 33% as its base case and claims Pro alone closes the NRR gap. Its 1,000-request allowance costs $9 of the $12 uplift; by my calculation, full use at 33% adoption would put company margin near 74.5%, below the floor Y says it protects. Its productivity gate (beat the matched accounts' 2% gain) is also a low bar.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the required calculations correctly: $8.06M vs $2.45M, inference of $32/$61/$131 per month, 109 deals or $0.64M, and Pro at $2.89M. Both discount the survey, the volunteer beta, the win-rate attribution and the sales memo. I found no arithmetic errors in X: the margin scenarios (76.5%, 75.9%, 74.1%), the $1.93M sales-memo figure, the NRR bridge and the paybacks all check, and its evidence-weight table says how each source was used. Y's arithmetic also checks (74.7% at survey uptake, 71.9% free in Core, 58% implied win rate). Y makes two sharp catches X misses: Table 2 implies the top 10% sent 40% of requests, not the 58% the pack states, and the 31% of loss notes covers all lost deals, not Routewise deals. Against that, Y's claim that its allowance keeps margin above the floor is an unsupported inference, because it never tests full-allowance or heavy-adopter usage on Pro. It also rests its headline on the single 2023 precedent. X stress-tests exactly that adverse-selection case.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects: keep the launch, reject the $149 add-on, and replace the $8M with a figure built on paid conversion. Both explain the gap through stated versus revealed preference, the 6% response rate and the larger respondents, and both treat 14% as an upper bound for the base. X goes a step further in the right direction. It resets the target to a range of $1.2M–$2.9M with a $2.0M midpoint, anchored at the low end on the paywall rate, and it also revises the VP Sales claim ($1.9M down to at most $0.64M). Y replaces the $8M with a single $2.9M figure taken from the 33% precedent. That is better grounded than the survey, but it is still the optimistic end, so it partly repeats the original over-confidence. Y's implied 58% win rate is a neat rebuttal of the sales memo.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong documents that avoid every trap in the key and reach the same defensible recommendation. X would serve the executive team better for three reasons. It gives a range for planning instead of a top-of-range point estimate. Its usage allowance demonstrably holds the 75% margin floor in the worst case, where Y's design would breach it at full use. And it is candid that the low case is thin and the mobile call is close, with a review that says what to do if each threshold is missed. Y's distinctive contributions are real: the free-in-Core option, the break-even rule for sequencing, the check on alternative engineering staffing, and the catch on the pack's 58% versus 40% inconsistency. They do not outweigh the optimistic headline number and the untested margin guardrail.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9281802,
+ "wall_s": 69.91390109062195
+}

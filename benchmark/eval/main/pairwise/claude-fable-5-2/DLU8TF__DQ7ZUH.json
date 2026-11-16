@@ -1,0 +1,39 @@
+{
+ "x": "DLU8TF",
+ "y": "DQ7ZUH",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same logical chain: churn diagnosis, pricing power by segment, CFO figure corrected, options, plan, guardrails. X's five-section pyramid is clean, and its section claims map well to evidence slides. X has small internal tensions. It says the segmented rise 'meets both targets' while still needing new-customer ARR and assuming zero mid-market churn response. Its headline 'not a reaction to list prices' sits awkwardly beside an SMB section arguing that price risk is real. Its $1.3M SMB 'upper bound in 2027' conflicts with its own H2-only roll-out. Y's executive summary carries the diagnosis, the reconciliation ('CFO is half right'), the corrected number, the recommendation and the trade-off in one consistent line. Its net ranges flow consistently through the options table, the plan and the growth bridge.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are essentially identical and match the key's R1/R2: 10% mid-market, enterprise 7% where capped and 10% elsewhere, SMB held with an +8% randomised test, promotion-cohort activation, and guardrails. Y weighs the trade-offs more fully. It quantifies the cost of choosing the segmented plan over the CFO's ($0.3–1.8M less ARR against 320–640 extra SMB customers lost). It gives planning and stress cases for mid-market churn, adds a reversibility criterion, and explains why 10% rather than 12%. It freezes the promotion cohort's price with a stated reason, uses a holdout for the activation programme, and flags notice periods and contract terms. It also says plainly that $1.5–2.6M of new-customer ARR is still needed. X's claim that only $0.6M is needed rests on no price-driven churn in mid-market, which is optimistic even though X flags it. X does add a renewal control group for mid-market, which is a real strength, and explicitly lists the branches it scoped out. But X scopes out the low-priced SMB tier, whereas Y keeps packaging against Inkwell as a fallback and a 2028 item.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the key calculations correctly: promotion-cohort churn of about 4.9%, the $7.6M gross figure, blended churn of 1.7→2.6% by customers and 0.8→1.2% by ARR, and the dashboard mismatch. Both scale the 2023 response to 5.4% and note that the 2024 test covered new sign-ups only. Y goes further in several places. It states the mix decomposition as 1.0 of 1.1 pp and gives the 10.7% and 9.1% break-evens. It works out that the activation gap explains only about 0.8 of the cohort's 2.8-point excess churn, a valid and decision-relevant inference. It cross-checks the exit survey (about 37% implied against 34% reported). It notes the cohort will shrink on its own, so a before/after comparison would mislead. It corrects the SMB H2 upside to $0.7M for half a year of renewals, and distinguishes run-rate from in-year revenue. X's errors are minor. Its $1.3M SMB upper bound ignores the H2 timing. Its $6.3M CFO net and 114% NRR assume no mid-market response. X does compute the 2023 extra loss of 3.6% and the 90.4% share of the rise in lost customers. Y's use of the 2.1% relative conversion gap as a renewal-loss proxy is a stretch, but it is labelled as an assumption and paired with a stress case.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis in the right direction: they reject the uniform 12%, correct the $10.3M, and differentiate by segment. Y reconciles the two internal views explicitly. It says the CFO is 'half right': churn is not a broad price problem, but the promotion cohort is highly price-sensitive and Inkwell is hurting SMB. It then shows that activation explains only about 30% of the cohort's excess churn, with the rest coinciding with the discount ending. That is the key's point that both readings are partly true. X's headline ('not from a reaction to list prices') leans closer to adopting the CFO's diagnosis. It treats the price complaints mainly as an artefact of the discount ending, though its SMB section does acknowledge Inkwell and the 2023 response. Both reject the claim that onboarding will halve churn, using the same best case of about a third. Y adds the holdout and the natural wash-out of the cohort.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The recommendation is the same and defensible in both, and both meet all four defensibility criteria. Y serves the CEO better for four reasons. It gives net-of-churn ranges rather than an optimistic point estimate. It quantifies the trade-off against the CFO's plan. It reconciles the CFO's and CEO's views with an explicit decomposition. And it surfaces practical preconditions: notice periods, the new-bookings outlook, and a holdout for onboarding. X is solid and adds a useful mid-market renewal control group. But it understates the remaining growth gap and tilts its diagnosis toward 'not price'.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0450362,
+ "wall_s": 37.35284090042114,
+ "error_text": null
+}

@@ -1,0 +1,187 @@
+{
+ "blind_id": "DDW9Z9",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed: launch or not, how to package and price it. Uses the NRR 105% target, the 75% gross margin floor and the 14-engineer mobile delay as explicit criteria (slides 6, 8, 9). It names early the questions the answer turns on: stated vs revealed demand, variable inference cost, and the mobile trade-off. It also compares three options, including holding.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the six summary points and the slide titles line up, and the titles carry the argument. Evidence flows from competitive pressure to demand sizing, unit economics, packaging, options, the mobile trade-off, NRR, payback, plan and gates. Small blemishes: 14% is called a ceiling for the add-on but the low case for Pro. Slide 2 says Copilot alone is unlikely to reach 105%, while slide 9 shows the high case does. Some appendix redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers check out: $8.06M vs $2.45M, $61 and $131 per month of inference, 109 wins and $0.64M, $2.89M Pro ARR, $6,770 per Pro deal, and company gross margin of 76.5%. The VP Sales claim is re-derived at $1.93M and rebutted. The win-rate drop is flagged as confounded by Routewise's discount, and the survey and beta biases are called out. Weaknesses: the mobile-efficacy assumption of halving mobile churn is invented, though labelled illustrative, and it drives the NRR bridge and the delay costs. 'Even 14% is a ceiling' is plausible but not proven. Pro inference is costed per seat from beta-mean usage ($4.00), which gives a more optimistic margin than a per-account calculation (about 56% per the key). Total add-on inference cost is not shown.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A clear, defensible recommendation: launch in a Pro tier with an allowance and overage, sized off the paywall test rather than the survey, with the mobile delay accepted explicitly and bounded by a restart commitment. It compares hold, add-on and Pro on revenue, margin, fit and mobile impact. It calls the sequencing 'a close call' and states what flips it. Q3 gates carry thresholds and consequences, and there are concrete decisions and next steps. It avoids all six traps. Residual uncertainty: the NRR math depends on an assumed mobile efficacy.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2, and the titles are plain claims. At 16 slides and about 3,200 words it is longer than the decision strictly needs, with three appendix slides and some repetition across the summary, options and economics slides. It is still readable and well organised.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Even 14% is likely a ceiling.",
+    "why": "Reasoned from the volunteer bias, but there is no direct evidence on non-volunteer adoption. It also sits awkwardly with using 14% as the low case for Pro."
+   },
+   {
+    "quote": "Mobile rewrite halves mobile-driven churn",
+    "why": "The pack gives no efficacy estimate. It is labelled illustrative, but it drives the NRR bridge and the delay-cost comparison."
+   },
+   {
+    "quote": "this will likely grow as Routewise sells its AI",
+    "why": "Forecast that AI-driven churn will grow, with no supporting evidence in the pack."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Copilot alone is unlikely to get there; Copilot plus the mobile rewrite does, even in the low case.",
+    "quote_b": "Pro tier only, high (33%): 106.0%",
+    "why": "Slide 9 shows Copilot alone reaching 105% in the high case, so 'unlikely' is a judgment, not a contradiction. The low-case claim of 'does' is only just met (105.0%) and relies on the assumed mobile efficacy."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch in Q2 2027 inside a Pro tier at +$12 per seat with a 600-request-per-seat pooled allowance and $20 per 1,000 overage, with no standalone $149 add-on. Return the 14 engineers to mobile in Q3. Set the target at $1.2–2.9M expansion ARR, and run a Q3 review with five checks.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches R1. It sizes revenue from the paywall test, caps inference cost to protect the 75% margin floor, and weighs the mobile delay explicitly. It also gives gates and a restart commitment, so it meets all three defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "It keeps 'launch' but rejects the $8M sizing: the 46% survey intent gives $8.1M, and the 14% paywall test gives $2.5M at most. It then repackages as a Pro tier, because add-on buyers are heavy users with a margin of 59% for buyers and 12% for the top decile. It also challenges the win-rate attribution and the beta bias. This matches the expected 'revise' handling."
+  },
+  "overall_comment": "This is a strong, well-calibrated deck. The calculations are correct and transparent, the survey and paywall demand signals are reconciled, and inference cost is handled through an allowance design. The win-rate drop is treated as only partly attributable to AI, and the mobile trade-off is quantified and openly called close. The weaknesses are small. The mobile-efficacy figure is invented, though labelled illustrative. The Pro margin uses per-seat beta-mean usage, which is more favourable than the key's per-account view. The deck is somewhat long.",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1629004,
+ "wall_s": 33.072391748428345,
+ "is_error": false,
+ "error_text": null
+}

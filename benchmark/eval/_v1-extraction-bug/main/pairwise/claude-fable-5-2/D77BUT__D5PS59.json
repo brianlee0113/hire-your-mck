@@ -1,0 +1,39 @@
+{
+ "x": "D77BUT",
+ "y": "D5PS59",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean answer-first hierarchy with the same Pro-tier design. X's is tighter: slide 3 tests the CPO plan against five conditions, and each failed condition maps to a section (demand, packaging, timing) that supports the governing thought. Its one soft spot is slide 13 saying 'the sequence matters less than delivering both', which slightly undercuts the Q4 timing claim. Y's three-test frame (NRR, margin, mobile delay) is also consistent, but the summary heading 'Protect mobile' sits awkwardly with pausing the rewrite for two quarters. Y's verdict that deferral 'fails on value' rests on a single comparison that does not fully carry it.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on defensible recommendations: Y on a Q2 Pro-tier launch that accepts the mobile delay explicitly, X on a mobile-first delay with the win-rate risk quantified and paid early access as the limited AI response. X weighs the central trade-off more soundly. It separates permanently lost churn ARR from merely postponed Pro revenue, gives a break-even (the rewrite must fix 26–52% of mobile churn), and sets triggers that would pull the launch forward (Q4 2026 win rate, CTO staffing from outside mobile). Y's timing rests on ~$1.1M of 'forgone' Pro ARR against ~$0.5M of mobile churn, which sets deferred revenue against permanent ARR loss and so tilts the case toward launching first. Y's March go/no-go also comes after the 14 engineers have already left mobile for a quarter. Y does state when the order flips and adds a useful $15 price arm, but its weighing is less rigorous.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the required figures: $8.06M vs $2.45M, inference of $32/$61/$131 per account, ~109 deals and $0.64M, and Pro at $2.89M. Both treat the paywall rate as a ceiling, discount the volunteer beta, exclude retention upside, refute the VP Sales claim and note that win-back does not count in NRR. All of X's calculations check out, including the 74.1% uncapped and 75.9% capped margin cases. Y has two sharp catches X lacks: the 58% usage share is inconsistent with the 14,500 top-decile mean (which implies 40%), and the 31% of loss notes covers all Q3 losses, not only Routewise deals. Against that, Y's key timing inference treats deferred Pro ARR as lost, and it labels 15% as 'the paywall rate'. X's small weakness is assuming the Routewise promotion has ended by Q4 2026. X's inference at the crux is the more valid, so it edges ahead despite Y's data catches.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both keep 'launch' and correctly revise the CPO's sizing ($8M to about $1.2–2.9M) and packaging ($149 add-on to a capped per-seat Pro tier), citing the stated-versus-revealed gap and the survey's response bias. X does this more explicitly: it breaks the hypothesis into five testable conditions and gives graded verdicts (demand not supported, economics holds but thin, competition partly, opportunity cost not supported, value unproven). It revises timing as well, on quantified evidence. Y's revision is equally correct on sizing and packaging and its appendix lists the corrected claims, but it keeps the Q2 timing on a weaker comparison.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents share most of the analysis and the same package: Pro at +$12 per seat, a 600-request pooled allowance and $20 overage packs. They differ on timing, and both timings are defensible under the key. X gives the decision maker a sounder treatment of the central mobile-versus-Copilot trade-off: permanent versus deferred losses, an explicit break-even, and January gates that can bring the launch back to Q2. Y is more concise and decisive and catches a data inconsistency, but its sequencing case overstates the cost of deferral, and its go/no-go comes after the mobile team has already been diverted. X serves the decision somewhat better.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1148282,
+ "wall_s": 70.53505897521973,
+ "error_text": null
+}

@@ -1,0 +1,5654 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_deep",
+ "meta": {
+  "title": "Should Parcelbird launch its own quick-commerce service?",
+  "subtitle": "Board discussion document on Parcelbird Now",
+  "company_name": "Parcelbird",
+  "audience": "Board (two founders, two investors)",
+  "purpose": "Should Parcelbird launch Parcelbird Now, its own 15-minute grocery delivery service in three Midwest cities, in 2027, and reach profit within its $12.0M cash?",
+  "date": "2026-11-15",
+  "language": "en-US",
+  "confidentiality": "Synthetic benchmark data: the company, competitors and figures are fictional",
+  "theme": "navy",
+  "deck_type": "client_diagnostic"
+ },
+ "inputs": [
+  {
+   "id": "in-1",
+   "kind": "file",
+   "label": "Parcelbird board briefing pack (synthetic benchmark data)",
+   "content": "evidence/briefing-pack.md"
+  },
+  {
+   "id": "in-2",
+   "kind": "qa_answer",
+   "label": "Choices made without the user (unavailable during the work)",
+   "content": "Mode deck_deep (board decision); material = briefing pack only; audience = board, approve or reject; theme navy; deck type client diagnostic, 30–40 slides; $9.5M read as covering all company spending to month 18 (the reading kinder to the plan); contribution per order shown before and after site fixed costs."
+  }
+ ],
+ "problem": {
+  "statement": "Should Parcelbird launch Parcelbird Now, its own 15-minute grocery delivery service in three Midwest cities, in 2027, and reach profit within its $12.0M cash?",
+  "decision_maker": "The board: two founders and two investors",
+  "success_criteria": [
+   "A path to profitability within the current $12.0M cash, with no new round",
+   "At least 12 months of runway at all times",
+   "No harm to the growth of the software business"
+  ],
+  "deadline": "Board meeting, January 2027",
+  "accuracy": "Order of magnitude: enough to tell profit from loss per order and to test the runway rule",
+  "out_of_scope": [
+   "A new funding round",
+   "Cities beyond the three",
+   "Buying an incumbent"
+  ],
+  "one_day_answer": {
+   "situation": "Parcelbird sells dark-store software growing 60% a year and holds $12.0M of cash",
+   "complication": "The founders want to operate stores, but stores on our own software lose money per order and the plan needs more cash than the runway rule allows",
+   "resolution": "Decline the launch in 2027 and sell fast delivery from grocers' own stores as software instead"
+  }
+ },
+ "issue_tree": [
+  {
+   "id": "n1",
+   "code": "1",
+   "label": "Demand",
+   "hypothesis": "Midwest shoppers will order 15-minute groceries often enough to fill nine dark stores"
+  },
+  {
+   "id": "n1a",
+   "code": "1a",
+   "parent": "n1",
+   "hypothesis": "US quick-commerce grocery sales keep growing about 40% a year",
+   "priority": {
+    "importance": "medium",
+    "influence": "low"
+   },
+   "workplan": {
+    "analysis": "Year-on-year GMV growth 2022–25",
+    "exhibit": "column-time-series, 2022–25",
+    "sources": [
+     "Briefing pack Table 1"
+    ]
+   },
+   "finding": {
+    "verdict": "confirmed",
+    "note": "GMV grew 44%, 38% and 42% a year to $5.1B in 2025"
+   }
+  },
+  {
+   "id": "n1b",
+   "code": "1b",
+   "parent": "n1",
+   "hypothesis": "Columbus shoppers will order 15-minute groceries at least weekly",
+   "priority": {
+    "importance": "high",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "Stated weekly use against pop-up retention and frequency",
+    "exhibit": "kpi-big-numbers",
+    "sources": [
+     "Resident survey",
+     "Pop-up customer data"
+    ]
+   },
+   "finding": {
+    "verdict": "revised",
+    "note": "44% say weekly, but only 22% of pop-up customers still order in month three, 3.1 times a month"
+   }
+  },
+  {
+   "id": "n1c",
+   "code": "1c",
+   "parent": "n1",
+   "hypothesis": "Customers can be acquired at a cost the order margin repays",
+   "priority": {
+    "importance": "high",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "Acquisition needed to reach plan density; CAC payback",
+    "exhibit": "calculation-bridge",
+    "sources": [
+     "Pop-up customer data",
+     "Founders' plan"
+    ],
+    "knock_out": true
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "Plan density in nine stores needs about $27.5M of paid acquisition, 2.3 times cash"
+   }
+  },
+  {
+   "id": "n2",
+   "code": "2",
+   "label": "Unit economics",
+   "hypothesis": "A Parcelbird dark store reaches contribution profit per order by month 18"
+  },
+  {
+   "id": "n2a",
+   "code": "2a",
+   "parent": "n2",
+   "hypothesis": "Dark stores on our software make money per order at benchmark medians",
+   "priority": {
+    "importance": "high",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "Per-order waterfall at benchmark medians",
+    "exhibit": "waterfall-bridge",
+    "sources": [
+     "Briefing pack Table 3"
+    ],
+    "knock_out": true
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "Median store loses $2.67 before and $6.17 after site fixed costs per order"
+   }
+  },
+  {
+   "id": "n2b",
+   "code": "2b",
+   "parent": "n2",
+   "hypothesis": "The founders' plan inputs sit within what customer sites already achieve",
+   "priority": {
+    "importance": "high",
+    "influence": "high"
+   },
+   "workplan": {
+    "analysis": "Plan inputs against median, best and range; plan-to-benchmark bridge; break-even density",
+    "exhibit": "heatmap; waterfall; calculation-bridge",
+    "sources": [
+     "Briefing pack Table 3"
+    ],
+    "knock_out": true
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "Plan beats the best site on all four levers; at best AOV and rider speed break-even needs 6,391 orders a day"
+   }
+  },
+  {
+   "id": "n2c",
+   "code": "2c",
+   "parent": "n2",
+   "hypothesis": "Our software know-how lets us run a store better than the benchmark",
+   "priority": {
+    "importance": "high",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "Pop-up per-order result against the other cases",
+    "exhibit": "bar-ranking; text-columns",
+    "sources": [
+     "Pop-up test"
+    ]
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "Pop-up lost $12.57 an order, twice the benchmark median loss"
+   }
+  },
+  {
+   "id": "n2d",
+   "code": "2d",
+   "parent": "n2",
+   "hypothesis": "Incumbents show that the model pays at scale",
+   "priority": {
+    "importance": "medium",
+    "influence": "low"
+   },
+   "workplan": {
+    "analysis": "Incumbent contribution per order and EBITDA margin",
+    "exhibit": "multi-chart-panel",
+    "sources": [
+     "Briefing pack Table 2"
+    ]
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "Zipcart −$1.90 and QuickBasket −$3.40 per order; QuickBasket closed 4 of 11 cities"
+   }
+  },
+  {
+   "id": "n3",
+   "code": "3",
+   "label": "Capital",
+   "hypothesis": "The launch fits within $12.0M of cash while keeping 12 months of runway"
+  },
+  {
+   "id": "n3a",
+   "code": "3a",
+   "parent": "n3",
+   "hypothesis": "The plan's $9.5M leaves 12 months of runway at all times",
+   "priority": {
+    "importance": "high",
+    "influence": "high"
+   },
+   "workplan": {
+    "analysis": "Cash bridge to the runway floor; runway at month 18",
+    "exhibit": "waterfall-bridge; kpi-big-numbers",
+    "sources": [
+     "Briefing pack sections 1, 3, 9"
+    ],
+    "knock_out": true
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "Only $7.2M sits above the floor; the plan leaves 6.3 months of runway at month 18"
+   }
+  },
+  {
+   "id": "n3b",
+   "code": "3b",
+   "parent": "n3",
+   "hypothesis": "Store losses stop by month 18, so no further cash is needed",
+   "priority": {
+    "importance": "high",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "Yearly loss of nine stores at benchmark medians",
+    "exhibit": "calculation-bridge",
+    "sources": [
+     "Briefing pack Table 3"
+    ]
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "Nine stores at benchmark lose about $18.2M a year, 1.5 times cash"
+   }
+  },
+  {
+   "id": "n4",
+   "code": "4",
+   "label": "Alternative",
+   "hypothesis": "Launching beats putting the same cash into the software business"
+  },
+  {
+   "id": "n4a",
+   "code": "4a",
+   "parent": "n4",
+   "hypothesis": "The software business has less upside than the launch",
+   "priority": {
+    "importance": "high",
+    "influence": "high"
+   },
+   "workplan": {
+    "analysis": "Pipeline value against ARR; cost and runway of four hires",
+    "exhibit": "waterfall-bridge; kpi-big-numbers",
+    "sources": [
+     "Briefing pack section 10"
+    ]
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "Pipeline worth $3.55M of ARR, 87% of today's base, for $0.8M a year"
+   }
+  },
+  {
+   "id": "n4b",
+   "code": "4b",
+   "parent": "n4",
+   "hypothesis": "Operating our own stores would not hurt sales of the software to grocers",
+   "priority": {
+    "importance": "high",
+    "influence": "high"
+   },
+   "workplan": {
+    "analysis": "What pipeline grocers want against what Parcelbird Now would do",
+    "exhibit": "text-columns",
+    "sources": [
+     "Briefing pack section 10"
+    ]
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "Several pipeline grocers want their own fast delivery; Parcelbird Now would compete with them"
+   }
+  },
+  {
+   "id": "nx1",
+   "label": "Rider pay rules",
+   "hypothesis": "City minimum pay standards for delivery workers will decide store economics",
+   "priority": {
+    "importance": "medium",
+    "influence": "low"
+   },
+   "cut_reason": "Set by city councils, not the board; it can only deepen a loss that already exists"
+  },
+  {
+   "id": "nx2",
+   "label": "New funding",
+   "hypothesis": "A new funding round could pay for the launch",
+   "cut_reason": "Out of scope: the lead investor calls a round for a delivery operator unlikely"
+  },
+  {
+   "id": "nx3",
+   "label": "Buy an incumbent",
+   "hypothesis": "Buying or partnering with an incumbent would be cheaper than building stores",
+   "cut_reason": "Out of scope: no deal data in the pack and no funding for a deal"
+  },
+  {
+   "id": "nx4",
+   "label": "Other cities",
+   "hypothesis": "Larger cities would fill dark stores faster than our three Midwest cities",
+   "cut_reason": "Out of scope: the proposal covers Columbus, Indianapolis and Kansas City"
+  }
+ ],
+ "storyline": {
+  "governing_thought": "Do not launch Parcelbird Now in 2027; sell fast delivery to grocers as software instead",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "Quick commerce is growing, but shoppers are not loyal enough to fill a store affordably",
+    "supports": [
+     "L1",
+     "1a1",
+     "1b1",
+     "1c1"
+    ],
+    "sub_points": [
+     {
+      "text": "US quick-commerce sales grew 42% in 2025, to $5.1B",
+      "slide_id": "1a1"
+     },
+     {
+      "text": "Filling nine stores would take about $27M of paid acquisition",
+      "slide_id": "1c1"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "No observed dark store makes money per order; only the founders' plan does",
+    "supports": [
+     "L2",
+     "2a1",
+     "2b1",
+     "2b2",
+     "2b3",
+     "2c1",
+     "2c2",
+     "2d1"
+    ],
+    "sub_points": [
+     {
+      "text": "At benchmark medians a store loses about $6 on every order",
+      "slide_id": "2a1"
+     },
+     {
+      "text": "Our own pop-up lost about $12.60 an order",
+      "slide_id": "2c1"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "The launch breaks the 12-month runway rule even if every plan assumption holds",
+    "supports": [
+     "L3",
+     "3a1",
+     "3a2",
+     "3b1"
+    ],
+    "sub_points": [
+     {
+      "text": "The plan needs $9.5M; only $7.2M sits above the runway floor",
+      "slide_id": "3a1"
+     }
+    ]
+   },
+   {
+    "id": "4",
+    "text": "Software is the better use of the cash, and its grocers want fast delivery",
+    "supports": [
+     "L4",
+     "4a1",
+     "4a2",
+     "4b1"
+    ],
+    "sub_points": [
+     {
+      "text": "The grocer pipeline is worth 87% of today's ARR, for $0.8M a year of hires",
+      "slide_id": "4a1"
+     }
+    ]
+   },
+   {
+    "id": "5",
+    "text": "Decline the launch, build fast delivery for grocers, reopen only if four signals turn",
+    "supports": [
+     "L5",
+     "5a",
+     "5b",
+     "5c",
+     "5d"
+    ],
+    "sub_points": [
+     {
+      "text": "Grocer software alone meets both investor tests, and goes live in Q3 2027",
+      "slide_id": "L5"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Decline Parcelbird Now as proposed and adopt the four reopening signals",
+    "owner": "Board",
+    "timing": "Jan 2027"
+   },
+   {
+    "action": "Hire two engineers and two sales staff",
+    "owner": "CEO",
+    "timing": "Q1 2027"
+   },
+   {
+    "action": "Scope store-based fast delivery with two pipeline grocers",
+    "owner": "Product lead",
+    "timing": "Q1 2027"
+   },
+   {
+    "action": "Close the nine late-stage grocers",
+    "owner": "Sales lead",
+    "timing": "By Q3 2027"
+   },
+   {
+    "action": "Review the reopening signals against customer-site data",
+    "owner": "Board",
+    "timing": "Q4 2027"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "1",
+   "title": "Demand will not fill the stores",
+   "tracker_label": "Demand",
+   "exec_item_id": "1",
+   "tree_node": "n1",
+   "lead_slide": "L1",
+   "question": "Will Midwest shoppers order often enough, at an acquisition cost we can carry, to fill nine dark stores?"
+  },
+  {
+   "id": "2",
+   "title": "Stores lose money per order",
+   "tracker_label": "Unit economics",
+   "exec_item_id": "2",
+   "tree_node": "n2",
+   "lead_slide": "L2",
+   "question": "Can a Parcelbird dark store reach contribution profit per order by month 18?"
+  },
+  {
+   "id": "3",
+   "title": "The cash does not stretch",
+   "tracker_label": "Capital",
+   "exec_item_id": "3",
+   "tree_node": "n3",
+   "lead_slide": "L3",
+   "question": "Does the launch fit within $12.0M of cash while keeping 12 months of runway?"
+  },
+  {
+   "id": "4",
+   "title": "Software is the better bet",
+   "tracker_label": "Alternative",
+   "exec_item_id": "4",
+   "tree_node": "n4",
+   "lead_slide": "L4",
+   "question": "Would the same cash do more in the software business?"
+  },
+  {
+   "id": "5",
+   "title": "How to make it happen",
+   "tracker_label": "Plan",
+   "exec_item_id": "5",
+   "lead_slide": "L5",
+   "question": "What should the board decide in January, and what would make us reopen the question?"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "q",
+   "role": "problem_statement",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "d1",
+   "role": "agenda_tracker",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Demand for quick commerce is growing, but in Columbus it is not loyal enough to fill a dark store affordably"
+   },
+   "message_type": "argument",
+   "archetype": "numbered-levers",
+   "unit_line": "**What we found on each demand question**, latest data in the briefing pack",
+   "body": {
+    "kind": "levers",
+    "headers": [
+     "Finding",
+     "Evidence"
+    ],
+    "items": [
+     {
+      "code": "1a",
+      "text": "The market is real and still growing fast, as the founders say",
+      "point": {
+       "data_ref": "g25"
+      },
+      "metric": "growth in US quick-commerce grocery sales, 2025"
+     },
+     {
+      "code": "1b",
+      "text": "Stated interest is high, but few pop-up customers kept ordering",
+      "point": {
+       "data_ref": "ret3"
+      },
+      "metric": "of pop-up customers still ordering in month three"
+     },
+     {
+      "code": "1c",
+      "text": "Each customer is costly to win, and too few stay to fill a store",
+      "point": {
+       "data_ref": "cac"
+      },
+      "metric": "acquisition cost per pop-up customer, paid social and first-order credits"
+     }
+    ]
+   },
+   "so_what": "Growth in the market does not settle the decision; whether each store can be filled at a cost we can carry does",
+   "so_what_style": "line"
+  },
+  {
+   "id": "1a1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "tree_node": "n1a",
+   "lead_message": {
+    "text": "Quick commerce is a real growth market: US sales nearly tripled from 2022 to reach $5.1B in 2025",
+    "numbers": [
+     {
+      "text": "$5.1B",
+      "data_ref": "gmv25"
+     }
+    ],
+    "highlights": [
+     "2025"
+    ],
+    "clauses": 1
+   },
+   "message_type": "time-series",
+   "archetype": "column-time-series",
+   "rationale": "Four periods -> column-time-series",
+   "unit_line": "**US quick-commerce grocery sales (GMV)**, $ billions, 2022–25",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "The founders' growth claim holds",
+     "big_number": {
+      "data_ref": "g25"
+     },
+     "caption": "growth in 2025, after 44% in 2023 and 38% in 2024",
+     "bullets": [
+      "**Every year:** growth stayed close to the 40% a year the founders cite, while the market nearly tripled",
+      "**Growth is not profit:** both incumbents still lose money on every order (2d)",
+      "**Midwest gap unproven:** the pack has no data on who serves our three cities, so 'nobody owns the Midwest' is still a claim"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "2022",
+     "2023",
+     "2024",
+     "2025"
+    ],
+    "series": [
+     {
+      "name": "GMV",
+      "points": [
+       {
+        "data_ref": "gmv22"
+       },
+       {
+        "data_ref": "gmv23"
+       },
+       {
+        "data_ref": "gmv24"
+       },
+       {
+        "data_ref": "gmv25"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "2025"
+    ],
+    "value_format": "0.0"
+   },
+   "footnotes": [
+    "Market GMV is gross merchandise value; it is not comparable one to one with operator revenue in Table 2 of the pack"
+   ]
+  },
+  {
+   "id": "1b1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "tree_node": "n1b",
+   "lead_message": {
+    "text": "Interest overstates the habit: 44% say they would order weekly, yet only 22% of pop-up customers stayed",
+    "numbers": [
+     {
+      "text": "44%",
+      "data_ref": "sv_w"
+     },
+     {
+      "text": "22%",
+      "data_ref": "ret3"
+     }
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "kpi-big-numbers",
+   "unit_line": "**Demand for 15-minute delivery in Columbus**, survey and pop-up customer data, 2026",
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "sv_w"
+      },
+      "caption": "of residents aged 25–39 say they would use it at least weekly",
+      "relation": "Survey of 1,500 Columbus residents",
+      "drivers": [
+       "Stated intent, not behavior",
+       "The age group most likely to use the service",
+       "Says nothing about price or promotions"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "ret3"
+      },
+      "caption": "of pop-up customers still ordering in month three",
+      "relation": "Pop-up customer data, autumn 2026",
+      "drivers": [
+       "Measured on 11,800 orders in six weeks",
+       "Promotions averaged 12% of AOV, so many came for the discount",
+       "Most acquired customers stop within three months"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "freq"
+      },
+      "caption": "orders a month by the customers who stayed",
+      "relation": "Pop-up customer data, autumn 2026",
+      "drivers": [
+       "Less than once a week, even among loyal users",
+       "About 37 orders a year per retained customer",
+       "Too few to spread a $1.15M site cost"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "The survey and the pop-up cover different groups (residents aged 25–39 against pop-up customers of all ages), so the two shares are not a like-for-like gap"
+   ]
+  },
+  {
+   "id": "1c1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "tree_node": "n1c",
+   "lead_message": {
+    "text": "Filling nine stores to plan density would take about $27M of paid customer acquisition, more than twice our cash",
+    "numbers": [
+     {
+      "text": "$27M",
+      "data_ref": "acq_t"
+     }
+    ]
+   },
+   "message_type": "component",
+   "archetype": "calculation-bridge",
+   "unit_line": "**Paid acquisition needed to reach 1,800 orders a day in nine stores**, $ millions, team estimate from pop-up data",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "retc"
+      },
+      "caption": "retained customers a store needs: 1,800 orders a day at 3.1 orders a month each"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "ret3"
+      },
+      "caption": "of acquired customers still ordering in month three (pop-up)"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "cac"
+      },
+      "caption": "acquisition cost per customer (pop-up)"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "stores"
+      },
+      "caption": "dark stores in the founders' plan"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "acq_t"
+      },
+      "caption": "of paid acquisition, against $12.0M in the bank"
+     }
+    ],
+    "assumptions_header": "The estimate is generous to the plan",
+    "assumptions": [
+     "Customers still ordering in month three keep ordering 3.1 times a month, with no further churn",
+     "Every order comes from a paid customer; the pop-up data shows no organic acquisition",
+     "Even at the benchmark median of 900 orders a day, acquisition would cost about $13.7M",
+     "The founders' $9.5M budget covers capex, launch marketing and losses together"
+    ]
+   }
+  },
+  {
+   "id": "d2",
+   "role": "agenda_tracker",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L2",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "No observed dark store makes money per order; the plan works only by beating the best site on every lever"
+   },
+   "message_type": "argument",
+   "archetype": "numbered-levers",
+   "unit_line": "**What we found on each unit-economics question**, $ per order unless stated",
+   "body": {
+    "kind": "levers",
+    "headers": [
+     "Finding",
+     "Evidence"
+    ],
+    "items": [
+     {
+      "code": "2a",
+      "text": "At benchmark medians a store loses money on every order",
+      "point": {
+       "data_ref": "site_m"
+      },
+      "metric": "site contribution per order, median of 14 sites on our software"
+     },
+     {
+      "code": "2b",
+      "text": "The plan needs every lever above the best site observed",
+      "point": {
+       "data_ref": "opd_p"
+      },
+      "metric": "orders a day per store in the plan, against 1,400 at the best site"
+     },
+     {
+      "code": "2c",
+      "text": "Our own pop-up did worse than the benchmark",
+      "point": {
+       "data_ref": "site_u"
+      },
+      "metric": "site contribution per order, Columbus pop-up"
+     },
+     {
+      "code": "2d",
+      "text": "Both incumbents lose money per order at scale",
+      "point": {
+       "data_ref": "zcpo"
+      },
+      "metric": "contribution per order at Zipcart, the national leader"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2a1",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "tree_node": "n2a",
+   "lead_message": {
+    "text": "At benchmark medians a dark store loses about $6 on every order, and rider cost is the largest drain",
+    "numbers": [
+     {
+      "text": "$6",
+      "data_ref": "site_m"
+     }
+    ],
+    "highlights": [
+     "Rider cost"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "bar-ranking",
+   "rationale": "Signed per-order lines in model order -> bar (the renderer's waterfall cannot cross zero)",
+   "unit_line": "**Contribution per order at the median of 14 sites on our software**, $ per order, 2025",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "Riders, not rent, sink the order",
+     "big_number": {
+      "data_ref": "rsh"
+     },
+     "caption": "of variable cost per order goes to riders",
+     "bullets": [
+      "**Before rent:** the order already loses money before site fixed costs, so volume alone cannot fix it",
+      "**Rider cost:** at 2.4 orders an hour, each delivery carries more rider time than the delivery fee and promotions together",
+      "**Site fixed cost:** $1.15M a year spread over 900 orders a day; it halves only if density doubles"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "Goods margin",
+     "Delivery fee",
+     "Promotions",
+     "Picking, packing",
+     "Rider cost",
+     "Payment, packaging",
+     "Site fixed cost",
+     "Site contribution"
+    ],
+    "series": [
+     {
+      "name": "Per order",
+      "points": [
+       {
+        "data_ref": "gmo_m"
+       },
+       {
+        "data_ref": "c_fee"
+       },
+       {
+        "data_ref": "cpr_m"
+       },
+       {
+        "data_ref": "c_pick"
+       },
+       {
+        "data_ref": "crd_m"
+       },
+       {
+        "data_ref": "c_pay"
+       },
+       {
+        "data_ref": "cfx_m"
+       },
+       {
+        "data_ref": "site_m"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Rider cost"
+    ],
+    "value_format": "0.00"
+   },
+   "footnotes": [
+    "Goods margin is AOV of $34 × 27%; rider cost is $17.75 an hour ÷ 2.4 orders; site fixed cost is $1.15M ÷ (900 orders × 365 days). Full model in the appendix"
+   ]
+  },
+  {
+   "id": "2b1",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "tree_node": "n2b",
+   "lead_message": {
+    "text": "The founders' plan sits above the best site observed on all four operating levers at once",
+    "highlights": [
+     "Founders' plan"
+    ],
+    "count_word": 4,
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "heatmap",
+   "rationale": "Several cases on several measures -> heatmap with the median on top",
+   "unit_line": "**Operating inputs by case**, 14 customer sites on our software, 2025; Columbus pop-up, autumn 2026",
+   "body": {
+    "kind": "table",
+    "table_type": "heatmap",
+    "columns": [
+     "AOV, $",
+     "Promotions, % of AOV",
+     "Orders per rider-hour",
+     "Orders per site a day"
+    ],
+    "low_is_better": [
+     "Promotions, % of AOV"
+    ],
+    "rows": [
+     {
+      "label": "Benchmark median",
+      "benchmark": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "aov_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "pr_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "rph_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "opd_m"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Columbus pop-up",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "pu_aov"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "pu_pr"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "pu_rph"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "pu_opd"
+        }
+       }
+      ],
+      "note": "Below the median on all four"
+     },
+     {
+      "label": "Best observed site",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "aov_b"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "pr_b"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "rph_b"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "opd_b"
+        }
+       }
+      ],
+      "note": "Best AOV and best density came from different sites"
+     },
+     {
+      "label": "Founders' plan",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "aov_p"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "pr_p"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "rph_p"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "opd_p"
+        }
+       }
+      ]
+     }
+    ],
+    "verdict_header": "Read-across"
+   },
+   "callout": {
+    "target": "Founders' plan",
+    "header": "Above every site",
+    "detail": "Rider speed and density sit above the top of the benchmark range"
+   },
+   "footnotes": [
+    "Benchmark range: 1.9–3.0 orders per rider-hour and 400–1,400 orders per site a day. No site achieved the best AOV and the best density together"
+   ]
+  },
+  {
+   "id": "2b2",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "tree_node": "n2b",
+   "lead_message": {
+    "text": "The plan's $2 profit an order becomes a $6 loss at benchmark levels, and lower AOV alone erases it",
+    "numbers": [
+     {
+      "text": "$2",
+      "data_ref": "site_p"
+     },
+     {
+      "text": "$6",
+      "data_ref": "site_m"
+     }
+    ],
+    "highlights": [
+     "Lower AOV"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "bar-ranking",
+   "rationale": "Bridge from plan to benchmark as signed steps -> bar (the renderer's waterfall cannot cross zero)",
+   "unit_line": "**Site contribution per order, founders' plan to benchmark median**, $ per order",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "Each lever alone takes most of the margin",
+     "big_number": {
+      "data_ref": "aovsh"
+     },
+     "caption": "of the swing from plan to benchmark comes from a lower AOV",
+     "bullets": [
+      "**Lower AOV:** $34 instead of $45 removes more than the whole plan margin on its own",
+      "**Slower riders:** 2.4 instead of 3.5 orders an hour; even the best site reached only 3.0",
+      "**Promotions and density:** each removes most of the plan margin; the pop-up ran promotions at 12% of AOV"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "Founders' plan",
+     "Lower AOV",
+     "Higher promotions",
+     "Slower riders",
+     "Lower density",
+     "Benchmark median"
+    ],
+    "series": [
+     {
+      "name": "Per order",
+      "points": [
+       {
+        "data_ref": "site_p"
+       },
+       {
+        "data_ref": "st_aov"
+       },
+       {
+        "data_ref": "st_pr"
+       },
+       {
+        "data_ref": "st_rd"
+       },
+       {
+        "data_ref": "st_dn"
+       },
+       {
+        "data_ref": "site_m"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Lower AOV"
+    ],
+    "value_format": "0.00"
+   },
+   "footnotes": [
+    "Steps are calculated in the order shown; another order changes the size of each step slightly, not the total"
+   ]
+  },
+  {
+   "id": "2b3",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "tree_node": "n2b",
+   "lead_message": {
+    "text": "Even with the best AOV and rider speed combined, a store would need about 6,400 orders a day to break even",
+    "numbers": [
+     {
+      "text": "6,400",
+      "data_ref": "be_b"
+     }
+    ]
+   },
+   "message_type": "component",
+   "archetype": "calculation-bridge",
+   "unit_line": "**Orders a day a store needs to cover its fixed cost**, best observed AOV and rider speed, 2025 inputs",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "fxd"
+      },
+      "caption": "site fixed cost a day: $1.15M a year spread over every day"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "var_b"
+      },
+      "caption": "variable contribution per order at $42 AOV and 3.0 orders per rider-hour"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "be_b"
+      },
+      "caption": "orders a day to break even"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "opd_b"
+      },
+      "caption": "orders a day at the best site observed"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "be_x"
+      },
+      "caption": "times the best density any site has reached"
+     }
+    ],
+    "assumptions_header": "Only the plan's own AOV and rider speed bring break-even within reach",
+    "assumptions": [
+     "With the plan's $45 AOV, 2% promotions and 3.5 orders an hour, break-even falls to about 836 orders a day",
+     "No site has combined the best AOV with the best density; this case is already generous",
+     "The benchmark range for orders per site a day runs from 400 to 1,400",
+     "Fixed cost per site stays at $1.15M a year at any volume"
+    ]
+   }
+  },
+  {
+   "id": "2c1",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "tree_node": "n2c",
+   "lead_message": {
+    "text": "Our software know-how did not carry over: the pop-up lost about $12.60 an order, twice the benchmark loss",
+    "numbers": [
+     {
+      "text": "$12.60",
+      "data_ref": "site_u"
+     }
+    ],
+    "highlights": [
+     "Columbus pop-up"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "Four cases ranked on one measure -> bar",
+   "unit_line": "**Site contribution per order by case**, $ per order, 2025 inputs; pop-up autumn 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "Our test came in last",
+     "big_number": {
+      "data_ref": "pux"
+     },
+     "caption": "the benchmark median loss per order",
+     "bullets": [
+      "**Columbus pop-up:** missed the median on AOV, promotions and rider speed, at under a third of median density",
+      "**Fair caveat:** six weeks on a temporary site, and orders grew 18% a week, so density was still rising",
+      "**Best observed:** still loses money, even as a composite of two different sites"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "Founders' plan",
+     "Best observed site",
+     "Benchmark median",
+     "Columbus pop-up"
+    ],
+    "series": [
+     {
+      "name": "Site contribution per order",
+      "points": [
+       {
+        "data_ref": "site_p"
+       },
+       {
+        "data_ref": "site_b"
+       },
+       {
+        "data_ref": "site_m"
+       },
+       {
+        "data_ref": "site_u"
+       }
+      ]
+     }
+    ],
+    "sort": "desc",
+    "highlight": [
+     "Columbus pop-up"
+    ],
+    "value_format": "0.00"
+   },
+   "footnotes": [
+    "Pop-up fixed cost is the temporary site's annualised $650,000; at a permanent site's $1.15M the loss per order would be larger"
+   ]
+  },
+  {
+   "id": "2c2",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "tree_node": "n2c",
+   "lead_message": {
+    "text": "The pop-up lost money on demand and labor levers that our software alone does not set"
+   },
+   "message_type": "argument",
+   "archetype": "text-columns",
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "Our software already runs the benchmark stores",
+      "point": {
+       "data_ref": "sites14"
+      },
+      "point_caption": "grocer sites on Parcelbird software",
+      "detail": [
+       "Inventory, picking and rider dispatch already run on our product",
+       "Their median store still loses money on each order (2a)",
+       "Owning the store adds no capability these sites lack"
+      ]
+     },
+     {
+      "header": "The pop-up's gaps were in demand",
+      "point": {
+       "data_ref": "pu_aov"
+      },
+      "point_caption": "pop-up AOV, against a $34 median",
+      "detail": [
+       "Promotions at 12% of AOV, twice the median",
+       "280 orders a day, under a third of the median",
+       "Small baskets and heavy discounts are shopper behavior, not software"
+      ]
+     },
+     {
+      "header": "Operating adds risks the software never carries",
+      "emphasis": true,
+      "point": {
+       "data_ref": "cac"
+      },
+      "point_caption": "to acquire each customer",
+      "detail": [
+       "Paid acquisition for every shopper we serve",
+       "Rider pay set by city rules in two of our three cities",
+       "A $1.15M fixed cost a year for every store"
+      ]
+     }
+    ]
+   },
+   "so_what": "The founders' edge is real but sits in software; it does not transfer to running stores",
+   "so_what_style": "bar"
+  },
+  {
+   "id": "2d1",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "tree_node": "n2d",
+   "lead_message": {
+    "text": "Scale has not fixed the model: both incumbents lose money on every order, and the regional player is shrinking",
+    "clauses": 2
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Two clauses, one claim -> two panels, no arrow (B-09)",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "Each order loses money at both incumbents",
+      "unit_line": "**Contribution per order**, $, 2025",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Zipcart (national)",
+        "QuickBasket (regional)"
+       ],
+       "series": [
+        {
+         "name": "Contribution per order",
+         "points": [
+          {
+           "data_ref": "zcpo"
+          },
+          {
+           "data_ref": "qcpo"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "QuickBasket (regional)"
+       ],
+       "value_format": "0.00"
+      }
+     },
+     {
+      "header": "Losses run at a quarter to almost half of revenue",
+      "unit_line": "**EBITDA margin**, % of revenue, 2025",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Zipcart (national)",
+        "QuickBasket (regional)"
+       ],
+       "series": [
+        {
+         "name": "EBITDA margin",
+         "points": [
+          {
+           "data_ref": "zm"
+          },
+          {
+           "data_ref": "qm"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "QuickBasket (regional)"
+       ],
+       "value_format": "0%"
+      }
+     }
+    ]
+   },
+   "so_what": "QuickBasket closed 4 of its 11 cities in 2025: an open market can mean the economics fail, not that nobody has tried",
+   "so_what_style": "line",
+   "footnotes": [
+    "Incumbents' definition of contribution per order is not given in the pack and may differ from ours; Zipcart revenue $1,200M, QuickBasket $210M"
+   ]
+  },
+  {
+   "id": "d3",
+   "role": "agenda_tracker",
+   "section_id": "3",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L3",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "The launch cannot be funded within the investors' rules, even before the stores underperform"
+   },
+   "message_type": "argument",
+   "archetype": "numbered-levers",
+   "unit_line": "**What we found on each funding question**, $ millions unless stated",
+   "body": {
+    "kind": "levers",
+    "headers": [
+     "Finding",
+     "Evidence"
+    ],
+    "items": [
+     {
+      "code": "3a",
+      "text": "The plan's budget alone breaks the 12-month runway floor",
+      "point": {
+       "data_ref": "gap"
+      },
+      "metric": "against the runway floor if the plan runs exactly to budget"
+     },
+     {
+      "code": "3b",
+      "text": "At benchmark economics, losses would not stop at month 18",
+      "point": {
+       "data_ref": "site_m"
+      },
+      "metric": "site contribution per order at benchmark medians, still negative at any density observed"
+     }
+    ]
+   },
+   "so_what": "A new round is the only way to close the gap, and the lead investor calls one unlikely",
+   "so_what_style": "line"
+  },
+  {
+   "id": "3a1",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "tree_node": "n3a",
+   "lead_message": {
+    "text": "Even if every assumption holds, the $9.5M plan needs 1.3 times the cash the 12-month runway floor leaves free",
+    "numbers": [
+     {
+      "text": "$9.5M",
+      "data_ref": "plan"
+     },
+     {
+      "text": "1.3 times",
+      "data_ref": "phr"
+     }
+    ],
+    "highlights": [
+     "Plan cash need"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "Cash available against cash needed -> bar",
+   "unit_line": "**Cash against the runway floor**, $ millions, today to month 18 of the plan",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "The plan needs more than the rule frees up",
+     "big_number": {
+      "data_ref": "phr"
+     },
+     "caption": "the cash available above the runway floor",
+     "bullets": [
+      "**Runway floor:** 12 months at today's $0.4M monthly burn must stay in the bank",
+      "**Plan cash need:** about $2.3M more than the floor allows, a gap only an unlikely new round could fill"
+     ],
+     "implication": "The plan fails the investors' test before any of its operating assumptions is checked"
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "Cash today",
+     "Runway floor",
+     "Free cash above the floor",
+     "Plan cash need"
+    ],
+    "series": [
+     {
+      "name": "Cash",
+      "points": [
+       {
+        "data_ref": "cash"
+       },
+       {
+        "data_ref": "flr"
+       },
+       {
+        "data_ref": "hr"
+       },
+       {
+        "data_ref": "plan"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Plan cash need"
+    ],
+    "value_format": "0.0"
+   },
+   "footnotes": [
+    "We read the $9.5M as covering all company spending to month 18, the reading kinder to the plan; if it comes on top of today's burn, the shortfall is larger (3a)"
+   ]
+  },
+  {
+   "id": "3a2",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "tree_node": "n3a",
+   "lead_message": {
+    "text": "Once its budget is spent, the plan would leave about six months of runway, half the floor the investors set"
+   },
+   "message_type": "item",
+   "archetype": "kpi-big-numbers",
+   "unit_line": "**Cash position at month 18 of the founders' plan**, two readings of the $9.5M budget",
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "c18"
+      },
+      "caption": "cash left at month 18 if the plan runs exactly to budget",
+      "relation": "$12.0M today less the plan's $9.5M",
+      "drivers": [
+       "Assumes stores turn profitable on schedule",
+       "No cushion for a slower ramp"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "rw18"
+      },
+      "caption": "months of runway left at today's $0.4M burn",
+      "relation": "Against the 12 months the investors require",
+      "drivers": [
+       "Breaches the floor well before month 18",
+       "Leaves the board negotiating from weakness"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "c18s"
+      },
+      "caption": "cash at month 18 if the $9.5M comes on top of today's burn",
+      "relation": "Stricter reading of the founders' plan",
+      "drivers": [
+       "Cash would run out before month 18",
+       "The pack does not say which reading the founders meant"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Runway at month 18 is measured at today's burn; the plan's own burn after month 18 is not given in the pack"
+   ]
+  },
+  {
+   "id": "3b1",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "tree_node": "n3b",
+   "lead_message": {
+    "text": "If the stores settle at benchmark medians, nine sites would lose about $18M a year, 1.5 times our cash",
+    "numbers": [
+     {
+      "text": "$18M",
+      "data_ref": "loss9"
+     },
+     {
+      "text": "1.5 times",
+      "data_ref": "lossx"
+     }
+    ]
+   },
+   "message_type": "component",
+   "archetype": "calculation-bridge",
+   "unit_line": "**Yearly store loss at benchmark medians**, $ millions, team estimate from 2025 benchmark inputs",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "sl_m"
+      },
+      "caption": "a year per store: about −$6.17 an order on 900 orders a day, all year (2a)"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "stores"
+      },
+      "caption": "stores in the founders' plan"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "loss9"
+      },
+      "caption": "a year across nine stores, before head office and acquisition"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "cash"
+      },
+      "caption": "cash in the bank today"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "lossx"
+      },
+      "caption": "times our cash, lost every year"
+     }
+    ],
+    "assumptions_header": "The estimate is a floor, not a worst case",
+    "assumptions": [
+     "Stores run at benchmark medians from the first day, with no ramp-up losses",
+     "Head-office costs and customer acquisition come on top of the store loss",
+     "Rider pay standards under discussion in two of the three cities would deepen the loss"
+    ]
+   }
+  },
+  {
+   "id": "d4",
+   "role": "agenda_tracker",
+   "section_id": "4",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L4",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Putting the cash into the software business beats operating stores and keeps us on our customers' side"
+   },
+   "message_type": "argument",
+   "archetype": "numbered-levers",
+   "unit_line": "**What we found on the alternative**, $ millions",
+   "body": {
+    "kind": "levers",
+    "headers": [
+     "Finding",
+     "Evidence"
+    ],
+    "items": [
+     {
+      "code": "4a",
+      "text": "The software pipeline offers more upside than the launch, at a fraction of the cash",
+      "point": {
+       "data_ref": "pipe"
+      },
+      "metric": "of annual contract value across 37 pipeline grocers"
+     },
+     {
+      "code": "4b",
+      "text": "Operating our own stores would put us in competition with grocers who want to buy fast delivery",
+      "point": {
+       "data_ref": "hire"
+      },
+      "metric": "a year to scale the software team that would build it"
+     }
+    ]
+   }
+  },
+  {
+   "id": "4a1",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "tree_node": "n4a",
+   "lead_message": {
+    "text": "The grocer pipeline is worth 87% of today's ARR, enough to nearly double the software business without a store",
+    "numbers": [
+     {
+      "text": "87%",
+      "data_ref": "pipesh"
+     }
+    ],
+    "highlights": [
+     "Late-stage grocers"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "waterfall-bridge",
+   "rationale": "ARR today plus pipeline -> waterfall",
+   "unit_line": "**Software ARR if pipeline grocers sign**, $ millions, at the $96,000 average contract",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "The near-term step is already large",
+     "big_number": {
+      "data_ref": "pipesh"
+     },
+     "caption": "of today's ARR sits in the pipeline",
+     "bullets": [
+      "**Late-stage grocers:** nine contracts worth about a fifth of today's ARR, the part to close in 2027",
+      "**Earlier stages:** the larger part; the pack gives no conversion rate, so the full bar is a ceiling",
+      "**Margin:** software earns an 81% gross margin, against 27% on groceries before any delivery cost"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "waterfall",
+    "categories": [
+     "ARR today",
+     "Late-stage grocers",
+     "Earlier-stage grocers",
+     "ARR if all sign"
+    ],
+    "series": [
+     {
+      "name": "ARR",
+      "points": [
+       {
+        "data_ref": "arr"
+       },
+       {
+        "data_ref": "late"
+       },
+       {
+        "data_ref": "early"
+       },
+       {
+        "data_ref": "arr_all"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Late-stage grocers"
+    ],
+    "value_format": "0.00"
+   },
+   "footnotes": [
+    "Nine late-stage and 28 earlier-stage grocers, each valued at the $96,000 average contract"
+   ]
+  },
+  {
+   "id": "4a2",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "tree_node": "n4a",
+   "lead_message": {
+    "text": "Scaling the software costs $0.8M a year and still keeps about 26 months of runway, more than twice the floor",
+    "numbers": [
+     {
+      "text": "$0.8M",
+      "data_ref": "hire"
+     },
+     {
+      "text": "26 months",
+      "data_ref": "swr"
+     }
+    ]
+   },
+   "message_type": "item",
+   "archetype": "kpi-big-numbers",
+   "unit_line": "**Cost and runway of scaling the software business**, 2027",
+   "basis": {
+    "header": "How we estimated runway",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "cash"
+      },
+      "caption": "cash today"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "swb"
+      },
+      "caption": "monthly burn: $0.4M today plus $0.8M a year of hires"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "swr"
+      },
+      "caption": "months of runway, no new gross profit counted"
+     }
+    ]
+   },
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "hire"
+      },
+      "caption": "a year for two engineers and two sales hires",
+      "relation": "The only new cost the software path needs",
+      "drivers": [
+       "Under a tenth of the plan's $9.5M",
+       "No capex, leases or riders"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "swr"
+      },
+      "caption": "months of runway with the hires",
+      "relation": "Against the 12-month floor",
+      "drivers": [
+       "Before any gross profit from new contracts",
+       "Leaves room to act if the market shifts"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "cover"
+      },
+      "caption": "of the hires' cost covered by gross profit from the nine late-stage grocers",
+      "relation": "Late-stage contracts at an 81% gross margin",
+      "drivers": [
+       "The hires nearly pay for themselves in year one",
+       "Earlier-stage grocers add on top"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4b1",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "tree_node": "n4b",
+   "lead_message": {
+    "text": "Launching Parcelbird Now would turn us into a competitor of pipeline grocers who want fast delivery of their own"
+   },
+   "message_type": "argument",
+   "archetype": "text-columns",
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "Grocers are asking for fast delivery of their own",
+      "point": {
+       "data_ref": "pipe_n"
+      },
+      "point_caption": "grocers in the software pipeline",
+      "detail": [
+       "Several want to launch fast delivery from their existing stores",
+       "Existing stores avoid a $0.6M build-out per dark store",
+       "They bring their own shoppers and baskets"
+      ]
+     },
+     {
+      "header": "Parcelbird Now would chase the same shoppers",
+      "detail": [
+       "A grocer choosing software would be buying from a rival delivery service",
+       "Data from customer sites would raise trust questions",
+       "Sales cycles would lengthen as grocers weigh the conflict"
+      ]
+     },
+     {
+      "header": "Store-based fast delivery is the product to build",
+      "emphasis": true,
+      "point": {
+       "data_ref": "sw_gm"
+      },
+      "point_caption": "gross margin on software",
+      "detail": [
+       "Extends the picking and dispatch we already sell",
+       "Captures quick-commerce growth through grocers' own demand",
+       "Needs the four planned hires, not new capital"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "The pack says 'several' grocers want their own fast delivery without giving a count; the conflict risk is our judgment"
+   ]
+  },
+  {
+   "id": "d5",
+   "role": "agenda_tracker",
+   "section_id": "5",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L5",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Of four options, only fast-delivery software for grocers meets both investor tests and builds on what we sell",
+    "highlights": [
+     "Fast delivery for grocers, as software"
+    ],
+    "count_word": 4,
+    "clauses": 1
+   },
+   "message_type": "structure",
+   "archetype": "harvey-ball-table",
+   "layout": {
+    "variant": "full"
+   },
+   "unit_line": "**Options against the board's criteria**, team assessment; cash need to month 18, $ millions",
+   "basis": {
+    "header": "How we estimated the pilot",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "capex1"
+      },
+      "caption": "capex for one store"
+     },
+     {
+      "op": "+",
+      "point": {
+       "data_ref": "pil_l"
+      },
+      "caption": "18 months of store loss at benchmark medians (3b)"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "pil"
+      },
+      "caption": "cash need for a one-store pilot, before acquisition"
+     }
+    ]
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "harvey",
+    "columns": [
+     "Profit path in current cash",
+     "Keeps 12 months of runway",
+     "Builds on our software",
+     "No conflict with customers",
+     "Cash need",
+     "Verdict"
+    ],
+    "rows": [
+     {
+      "label": "Nine dark stores (founders' plan)",
+      "cells": [
+       {
+        "rating": 0
+       },
+       {
+        "rating": 0
+       },
+       {
+        "rating": 1
+       },
+       {
+        "rating": 0
+       },
+       {
+        "point": {
+         "data_ref": "plan"
+        }
+       },
+       {
+        "text": "Decline: fails both investor tests"
+       }
+      ]
+     },
+     {
+      "label": "One-store pilot in Columbus",
+      "cells": [
+       {
+        "rating": 1
+       },
+       {
+        "rating": 3
+       },
+       {
+        "rating": 1
+       },
+       {
+        "rating": 1
+       },
+       {
+        "point": {
+         "data_ref": "pil"
+        }
+       },
+       {
+        "text": "Not now: 14 sites already give the evidence"
+       }
+      ]
+     },
+     {
+      "label": "Fast delivery for grocers, as software",
+      "highlight": true,
+      "cells": [
+       {
+        "rating": 3
+       },
+       {
+        "rating": 4
+       },
+       {
+        "rating": 4
+       },
+       {
+        "rating": 4
+       },
+       {
+        "point": {
+         "data_ref": "swc"
+        }
+       },
+       {
+        "text": "Recommended"
+       }
+      ]
+     },
+     {
+      "label": "Software as it is today",
+      "cells": [
+       {
+        "rating": 2
+       },
+       {
+        "rating": 4
+       },
+       {
+        "rating": 3
+       },
+       {
+        "rating": 3
+       },
+       {
+        "point": {
+         "data_ref": "zero"
+        }
+       },
+       {
+        "text": "Safe, but leaves grocer demand unserved"
+       }
+      ]
+     }
+    ],
+    "legend": "Team assessment from the briefing pack; full circle = meets the criterion"
+   },
+   "footnotes": [
+    "Software options' cash need is the four hires over 18 months; the 'as it is today' option adds no spend beyond today's burn"
+   ]
+  },
+  {
+   "id": "5a",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "A 2027 plan puts fast delivery into grocers' stores by the third quarter without opening a store of our own"
+   },
+   "message_type": "structure",
+   "archetype": "timeline-roadmap",
+   "layout": {
+    "variant": "full"
+   },
+   "unit_line": "**Workplan for the recommended option**, by quarter, 2027",
+   "body": {
+    "kind": "timeline",
+    "periods": [
+     "Q1 2027",
+     "Q2 2027",
+     "Q3 2027",
+     "Q4 2027"
+    ],
+    "rows": [
+     {
+      "label": "Board and hiring",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q1 2027",
+        "label": "Decide; hire two engineers, two sales"
+       }
+      ]
+     },
+     {
+      "label": "Software sales",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q3 2027",
+        "label": "Close the nine late-stage grocers"
+       }
+      ]
+     },
+     {
+      "label": "Store-based delivery module",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q1 2027",
+        "label": "Scope with grocers"
+       },
+       {
+        "start": "Q2 2027",
+        "end": "Q3 2027",
+        "label": "Build and test",
+        "emphasis": true
+       }
+      ]
+     },
+     {
+      "label": "Grocer pilots",
+      "bars": [
+       {
+        "start": "Q3 2027",
+        "end": "Q4 2027",
+        "label": "Two pipeline grocers go live"
+       }
+      ]
+     },
+     {
+      "label": "Board review",
+      "bars": [
+       {
+        "start": "Q4 2027",
+        "end": "Q4 2027",
+        "label": "Review reopening signals"
+       }
+      ]
+     }
+    ],
+    "milestones": [
+     {
+      "at": "Q1 2027",
+      "label": "Board decision"
+     },
+     {
+      "at": "Q3 2027",
+      "label": "Module live"
+     }
+    ]
+   },
+   "so_what": "Every step uses the existing team plus four hires; none needs capex, leases or riders",
+   "so_what_style": "bar"
+  },
+  {
+   "id": "5b",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Parcelbird would capture quick-commerce growth as the supplier of fast delivery rather than its operator"
+   },
+   "message_type": "argument",
+   "archetype": "from-to",
+   "body": {
+    "kind": "from_to",
+    "from_label": "From: Parcelbird Now, our own stores",
+    "to_label": "To: fast delivery for grocers, as software",
+    "rows": [
+     {
+      "label": "Customers",
+      "from": "We buy each one at $38",
+      "to": "Grocers' existing shoppers",
+      "to_detail": "No paid acquisition on our books"
+     },
+     {
+      "label": "Stores",
+      "from": "Nine new dark stores at $0.6M each",
+      "to": "Grocers' existing stores",
+      "to_detail": "No capex or leases"
+     },
+     {
+      "label": "Riders",
+      "from": "Ours, in cities weighing minimum pay",
+      "to": "The grocer's, dispatched by us",
+      "to_detail": "Pay rules fall on the grocer, not on us"
+     },
+     {
+      "label": "Margin",
+      "from": "27% on goods, negative per order",
+      "to": "81% gross margin on software",
+      "to_detail": "Recurring contracts"
+     },
+     {
+      "label": "Grocers",
+      "from": "Competitors",
+      "to": "Customers and partners",
+      "to_detail": "Pipeline of 37 protected"
+     }
+    ]
+   }
+  },
+  {
+   "id": "5c",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Four signals would justify reopening the operator question, and none of them holds today",
+    "count_word": 4,
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "unit_line": "**Reopening signals for an own-store launch**, benchmark median today against the threshold",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Today",
+     "Threshold to reopen"
+    ],
+    "rows": [
+     {
+      "label": "Variable contribution per order, median site",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "var_m"
+        }
+       },
+       {
+        "text": "Positive for two quarters running"
+       }
+      ],
+      "note": "Reported by our own customer sites"
+     },
+     {
+      "label": "Orders per rider-hour, median site",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "rph_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "rph_b"
+        }
+       }
+      ],
+      "note": "Top of today's benchmark range"
+     },
+     {
+      "label": "Rider pay rules in our three cities",
+      "cells": [
+       {
+        "text": "Under discussion in two cities"
+       },
+       {
+        "text": "Settled, with cost per order known"
+       }
+      ],
+      "note": "Track city council calendars"
+     },
+     {
+      "label": "Funding for an operator",
+      "cells": [
+       {
+        "text": "A round called unlikely"
+       },
+       {
+        "text": "Committed, outside the runway floor"
+       }
+      ],
+      "note": "Investors' call, not ours"
+     }
+    ],
+    "verdict_header": "How we track it"
+   },
+   "callout": {
+    "target": "Variable contribution per order, median site",
+    "header": "Watch first",
+    "detail": "Our own customer data shows it every quarter"
+   }
+  },
+  {
+   "id": "5d",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Declining the launch carries three risks, each with an owner and an early warning",
+    "count_word": 3,
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "What could go wrong",
+     "How we reduce it",
+     "Owner"
+    ],
+    "rows": [
+     {
+      "label": "A rival takes the Midwest",
+      "cells": [
+       {
+        "text": "An operator builds density in our cities first"
+       },
+       {
+        "text": "Sell store-based delivery to grocers there first"
+       },
+       {
+        "text": "CEO"
+       }
+      ],
+      "note": "New dark-store openings"
+     },
+     {
+      "label": "Grocers do not buy the module",
+      "cells": [
+       {
+        "text": "Demand for store-based delivery proves thin"
+       },
+       {
+        "text": "Pilot with two late-stage grocers before the full build"
+       },
+       {
+        "text": "Product lead"
+       }
+      ],
+      "note": "Pilot sign-ups by Q2"
+     },
+     {
+      "label": "The growth story weakens",
+      "cells": [
+       {
+        "text": "Investors see a smaller ambition"
+       },
+       {
+        "text": "Lead with 60% ARR growth and the pipeline"
+       },
+       {
+        "text": "Founders"
+       }
+      ],
+      "note": "Quarterly ARR growth"
+     }
+    ],
+    "verdict_header": "Early warning"
+   }
+  },
+  {
+   "id": "app",
+   "role": "appendix_divider",
+   "status": "filled"
+  },
+  {
+   "id": "bx",
+   "role": "backup",
+   "section_id": "1",
+   "status": "filled",
+   "tree_node": [
+    "nx1",
+    "nx2",
+    "nx3",
+    "nx4"
+   ],
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Four branches were left out on purpose, three by the brief and one because the board cannot move it"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "body": {
+    "kind": "table",
+    "table_type": "definition",
+    "columns": [
+     "Hypothesis",
+     "Why it is not in the deck"
+    ],
+    "rows": [
+     {
+      "label": "Rider pay rules",
+      "cells": [
+       {
+        "text": "City minimum pay standards will decide store economics"
+       },
+       {
+        "text": "Set by city councils, not the board; it would only deepen a loss that already exists (2a)"
+       }
+      ]
+     },
+     {
+      "label": "New funding",
+      "cells": [
+       {
+        "text": "A new round could fund the launch"
+       },
+       {
+        "text": "Out of scope: the lead investor calls a delivery round unlikely"
+       }
+      ]
+     },
+     {
+      "label": "Buy an incumbent",
+      "cells": [
+       {
+        "text": "Buying or partnering with QuickBasket would be cheaper than building"
+       },
+       {
+        "text": "Out of scope: no valuation data and no funding for a deal"
+       }
+      ]
+     },
+     {
+      "label": "Other cities",
+      "cells": [
+       {
+        "text": "Larger cities would fill stores faster"
+       },
+       {
+        "text": "Out of scope: the proposal covers Columbus, Indianapolis and Kansas City"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "b2",
+   "role": "backup",
+   "section_id": "1",
+   "status": "filled",
+   "backup_of": "1c1",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Even at the founders' own margin, an acquired customer takes about 15 months to repay its $38 cost",
+    "numbers": [
+     {
+      "text": "15 months",
+      "data_ref": "pb_p"
+     }
+    ]
+   },
+   "message_type": "component",
+   "archetype": "calculation-bridge",
+   "unit_line": "**Months to repay customer acquisition cost**, founders' plan contribution, pop-up retention, team estimate",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "cac"
+      },
+      "caption": "to acquire a customer (pop-up)"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "opm"
+      },
+      "caption": "orders a month per acquired customer from month three: 22% × 3.1"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "var_p"
+      },
+      "caption": "variable contribution per order in the founders' plan"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "pb_p"
+      },
+      "caption": "months to repay; at benchmark margins it never repays"
+     }
+    ],
+    "assumptions_header": "Generous to the plan on purpose",
+    "assumptions": [
+     "Orders in months one and two and any later churn are left out; the two roughly offset",
+     "The plan's variable contribution is before site fixed costs",
+     "At the benchmark median, variable contribution per order is negative, so no number of orders repays the $38"
+    ]
+   }
+  },
+  {
+   "id": "b1",
+   "role": "backup",
+   "section_id": "2",
+   "status": "filled",
+   "backup_of": "2a1",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "One per-order model runs all four cases; only AOV, promotions, rider speed and density change"
+   },
+   "message_type": "item",
+   "archetype": "data-table",
+   "unit_line": "**Per-order model by case**, $ per order; 2025 benchmark inputs, 2027 plan, autumn 2026 pop-up",
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "How it is calculated",
+     "Benchmark median",
+     "Best observed",
+     "Founders' plan",
+     "Columbus pop-up"
+    ],
+    "rows": [
+     {
+      "label": "Goods margin",
+      "highlight": false,
+      "cells": [
+       {
+        "text": "AOV × 27%"
+       },
+       {
+        "point": {
+         "data_ref": "gmo_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "gmo_b"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "gmo_p"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "gmo_u"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Delivery fee",
+      "highlight": false,
+      "cells": [
+       {
+        "text": "Net of payment cost"
+       },
+       {
+        "point": {
+         "data_ref": "c_fee"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "c_fee"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "c_fee"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "c_fee"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Promotions",
+      "highlight": false,
+      "cells": [
+       {
+        "text": "AOV × promotions share"
+       },
+       {
+        "point": {
+         "data_ref": "cpr_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "cpr_b"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "cpr_p"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "cpr_u"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Picking and packing",
+      "highlight": false,
+      "cells": [
+       {
+        "text": "Per order"
+       },
+       {
+        "point": {
+         "data_ref": "c_pick"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "c_pick"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "c_pick"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "c_pick"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Rider cost",
+      "highlight": false,
+      "cells": [
+       {
+        "text": "$17.75 an hour ÷ orders per rider-hour"
+       },
+       {
+        "point": {
+         "data_ref": "crd_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "crd_b"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "crd_p"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "crd_u"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Payment and packaging",
+      "highlight": false,
+      "cells": [
+       {
+        "text": "Per order"
+       },
+       {
+        "point": {
+         "data_ref": "c_pay"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "c_pay"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "c_pay"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "c_pay"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Variable contribution",
+      "highlight": false,
+      "cells": [
+       {
+        "text": "Sum of the lines above"
+       },
+       {
+        "point": {
+         "data_ref": "var_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "var_b"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "var_p"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "var_u"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Site fixed cost",
+      "highlight": false,
+      "cells": [
+       {
+        "text": "Fixed cost a year ÷ yearly orders"
+       },
+       {
+        "point": {
+         "data_ref": "cfx_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "cfx_b"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "cfx_p"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "cfx_u"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Site contribution",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Variable contribution less site fixed cost"
+       },
+       {
+        "point": {
+         "data_ref": "site_m"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "site_b"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "site_p"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "site_u"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Pop-up fixed cost is its annualised $650,000 at 280 orders a day; other cases use $1.15M a year per store. Values rounded to one decimal; the source workbook holds exact figures"
+   ]
+  },
+  {
+   "id": "b3",
+   "role": "backup",
+   "section_id": "2",
+   "status": "filled",
+   "backup_of": "2b2",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "At the benchmark AOV, no mix of rider speed and density, even the plan's, makes a store profitable"
+   },
+   "message_type": "item",
+   "archetype": "heatmap",
+   "unit_line": "**Site contribution per order at $34 AOV and 6% promotions**, $ per order, by orders per rider-hour (rows) and orders per site a day (columns)",
+   "body": {
+    "kind": "table",
+    "table_type": "heatmap",
+    "columns": [
+     "400 a day",
+     "900 a day",
+     "1,400 a day",
+     "1,800 a day"
+    ],
+    "rows": [
+     {
+      "label": "1.9 orders per rider-hour",
+      "highlight": false,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "sg00"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg01"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg02"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg03"
+        }
+       }
+      ]
+     },
+     {
+      "label": "2.4 orders per rider-hour",
+      "highlight": false,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "sg10"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg11"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg12"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg13"
+        }
+       }
+      ]
+     },
+     {
+      "label": "3.0 orders per rider-hour",
+      "highlight": false,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "sg20"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg21"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg22"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg23"
+        }
+       }
+      ]
+     },
+     {
+      "label": "3.5 orders per rider-hour",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "sg30"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg31"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg32"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "sg33"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Rows 1.9 and 3.0 are the ends of the benchmark range; 2.4 is the median; 3.5 is the founders' plan. Columns 400 and 1,400 are the ends of the range; 1,800 is the plan"
+   ]
+  },
+  {
+   "id": "b4",
+   "role": "backup",
+   "section_id": "2",
+   "status": "filled",
+   "backup_of": "2b2",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "At benchmark operations a store needs a basket of about $63 to break even, nearly twice the median",
+    "numbers": [
+     {
+      "text": "$63",
+      "data_ref": "be_aov"
+     }
+    ]
+   },
+   "message_type": "component",
+   "archetype": "calculation-bridge",
+   "unit_line": "**AOV needed to break even at benchmark median operations**, $ per order, 2025 inputs",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "cost_net"
+      },
+      "caption": "per-order picking, rider, payment and site cost, less the $1.99 delivery fee"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "mrate"
+      },
+      "caption": "of each basket kept: 27% goods margin less 6% promotions"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "be_aov"
+      },
+      "caption": "AOV to break even"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "aov_m"
+      },
+      "caption": "median AOV today"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "be_aovx"
+      },
+      "caption": "times the median basket"
+     }
+    ],
+    "assumptions_header": "A bigger basket is the lever that matters most, and the hardest",
+    "assumptions": [
+     "The best site observed reached $42, and the pop-up $31",
+     "Larger baskets risk losing the quick top-up use case, a risk the pack flags",
+     "Rider speed and density held at benchmark medians of 2.4 and 900"
+    ]
+   }
+  },
+  {
+   "id": "b5",
+   "role": "backup",
+   "section_id": "3",
+   "status": "filled",
+   "backup_of": "3a1",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Five gaps in the briefing pack would sharpen the numbers but cannot reverse the answer"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "body": {
+    "kind": "table",
+    "table_type": "definition",
+    "columns": [
+     "What is missing",
+     "Why it does not change the answer"
+    ],
+    "rows": [
+     {
+      "label": "Plan cash by month",
+      "cells": [
+       {
+        "text": "When the $9.5M is spent and what it includes"
+       },
+       {
+        "text": "Under either reading the plan breaks the runway floor (3a)"
+       }
+      ]
+     },
+     {
+      "label": "Midwest competitors",
+      "cells": [
+       {
+        "text": "Who already serves our three cities"
+       },
+       {
+        "text": "The case fails on store economics, whoever competes (2a)"
+       }
+      ]
+     },
+     {
+      "label": "Pipeline conversion",
+      "cells": [
+       {
+        "text": "How many pipeline grocers usually sign"
+       },
+       {
+        "text": "The late-stage nine alone nearly cover the hires (4a)"
+       }
+      ]
+     },
+     {
+      "label": "Incumbents' definitions",
+      "cells": [
+       {
+        "text": "What their contribution per order includes"
+       },
+       {
+        "text": "Both are negative under any definition (2d)"
+       }
+      ]
+     },
+     {
+      "label": "Pop-up after six weeks",
+      "cells": [
+       {
+        "text": "Where density would settle after the ramp"
+       },
+       {
+        "text": "Even the plan's density loses money at today's AOV (backup)"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "b6",
+   "role": "backup",
+   "section_id": "4",
+   "status": "filled",
+   "backup_of": "4a1",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "The nine late-stage grocers alone would add about a fifth to ARR at software margins"
+   },
+   "message_type": "item",
+   "archetype": "data-table",
+   "unit_line": "**Software pipeline by stage**, $ millions a year at the $96,000 average contract, 2026",
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "Grocers",
+     "Contract value a year",
+     "Share of today's ARR"
+    ],
+    "rows": [
+     {
+      "label": "Late stage",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "late_n"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "late"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "latesh"
+        }
+       }
+      ],
+      "note": "Close in 2027"
+     },
+     {
+      "label": "Earlier stages",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "early_n"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "early"
+        }
+       },
+       {
+        "text": "No conversion rate in the pack"
+       }
+      ],
+      "note": "A ceiling, not a forecast"
+     },
+     {
+      "label": "Whole pipeline",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "pipe_n"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "pipe"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "pipesh"
+        }
+       }
+      ],
+      "note": "Several want fast delivery"
+     }
+    ],
+    "verdict_header": "How to read it"
+   },
+   "footnotes": [
+    "Late-stage gross profit at the 81% software margin is about $0.70M a year, against $0.8M a year for the four hires"
+   ]
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "arr",
+   "label": "Parcelbird software ARR",
+   "value": 4.1,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "ARR is $4.1M, growing 60% a year, gross margin 81%.",
+   "locator": "Briefing pack, section 1",
+   "slide_id": "4a1"
+  },
+  {
+   "id": "arr_g",
+   "label": "Parcelbird ARR growth a year",
+   "value": 0.6,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "ARR is $4.1M, growing 60% a year, gross margin 81%.",
+   "locator": "Briefing pack, section 1",
+   "slide_id": "L1"
+  },
+  {
+   "id": "sw_gm",
+   "label": "Parcelbird software gross margin",
+   "value": 0.81,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "ARR is $4.1M, growing 60% a year, gross margin 81%.",
+   "locator": "Briefing pack, section 1",
+   "slide_id": "4b1"
+  },
+  {
+   "id": "cash",
+   "label": "Parcelbird cash in the bank",
+   "value": 12.0,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "The company has $12.0M in cash and burns $0.4M a month.",
+   "locator": "Briefing pack, section 1",
+   "slide_id": "3a1"
+  },
+  {
+   "id": "burn",
+   "label": "Parcelbird monthly cash burn",
+   "value": 0.4,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "The company has $12.0M in cash and burns $0.4M a month.",
+   "locator": "Briefing pack, section 1",
+   "slide_id": "3a1"
+  },
+  {
+   "id": "q15",
+   "label": "Promised delivery time of Parcelbird Now",
+   "value": 15,
+   "unit": "minutes",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "a 15-minute grocery delivery service from its own dark stores in Columbus, Indianapolis and Kansas City",
+   "locator": "Briefing pack, section 1",
+   "slide_id": "L1"
+  },
+  {
+   "id": "floor_m",
+   "label": "Minimum runway the board requires",
+   "value": 12,
+   "unit": "months",
+   "period": "at all times",
+   "source_id": "s1",
+   "excerpt": "Keep at least 12 months of runway at all times.",
+   "locator": "Briefing pack, section 3",
+   "slide_id": "3a1"
+  },
+  {
+   "id": "f40",
+   "label": "Market growth claimed by the founders",
+   "value": 0.4,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "Quick commerce is growing over 40% a year and nobody owns the Midwest.",
+   "locator": "Briefing pack, section 4",
+   "slide_id": "L1"
+  },
+  {
+   "id": "m18",
+   "label": "Month by which the founders expect contribution profit per order",
+   "value": 18,
+   "unit": "months",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "our model shows contribution profit per order by month 18.",
+   "locator": "Briefing pack, section 4",
+   "slide_id": "L1"
+  },
+  {
+   "id": "gmv22",
+   "label": "US quick-commerce grocery sales (GMV), 2022",
+   "value": 1.8,
+   "unit": "$B",
+   "period": "2022",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"US quick-commerce grocery sales (GMV), $ billions\"; column 2022 = \"1.8\"",
+   "locator": "Briefing pack, section 5, Table 1",
+   "geography": "US",
+   "slide_id": "1a1"
+  },
+  {
+   "id": "gmv23",
+   "label": "US quick-commerce grocery sales (GMV), 2023",
+   "value": 2.6,
+   "unit": "$B",
+   "period": "2023",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"US quick-commerce grocery sales (GMV), $ billions\"; column 2023 = \"2.6\"",
+   "locator": "Briefing pack, section 5, Table 1",
+   "geography": "US",
+   "slide_id": "1a1"
+  },
+  {
+   "id": "gmv24",
+   "label": "US quick-commerce grocery sales (GMV), 2024",
+   "value": 3.6,
+   "unit": "$B",
+   "period": "2024",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"US quick-commerce grocery sales (GMV), $ billions\"; column 2024 = \"3.6\"",
+   "locator": "Briefing pack, section 5, Table 1",
+   "geography": "US",
+   "slide_id": "1a1"
+  },
+  {
+   "id": "gmv25",
+   "label": "US quick-commerce grocery sales (GMV), 2025",
+   "value": 5.1,
+   "unit": "$B",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"US quick-commerce grocery sales (GMV), $ billions\"; column 2025 = \"5.1\"",
+   "locator": "Briefing pack, section 5, Table 1",
+   "geography": "US",
+   "slide_id": "1a1"
+  },
+  {
+   "id": "zrev",
+   "label": "Zipcart revenue",
+   "value": 1200,
+   "unit": "$M",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"Zipcart (national)\", column Revenue = \"$1,200M\"",
+   "locator": "Briefing pack, section 5, Table 2",
+   "slide_id": "2d1"
+  },
+  {
+   "id": "zebitda",
+   "label": "Zipcart EBITDA",
+   "value": -310,
+   "unit": "$M",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"Zipcart (national)\", column EBITDA = \"−$310M\"",
+   "locator": "Briefing pack, section 5, Table 2",
+   "slide_id": "2d1"
+  },
+  {
+   "id": "zcpo",
+   "label": "Zipcart contribution per order",
+   "value": -1.9,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"Zipcart (national)\", column Contribution per order = \"−$1.90\"",
+   "locator": "Briefing pack, section 5, Table 2",
+   "slide_id": "L2"
+  },
+  {
+   "id": "qrev",
+   "label": "QuickBasket revenue",
+   "value": 210,
+   "unit": "$M",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"QuickBasket (regional)\", column Revenue = \"$210M\"",
+   "locator": "Briefing pack, section 5, Table 2",
+   "slide_id": "2d1"
+  },
+  {
+   "id": "qebitda",
+   "label": "QuickBasket EBITDA",
+   "value": -96,
+   "unit": "$M",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"QuickBasket (regional)\", column EBITDA = \"−$96M\"",
+   "locator": "Briefing pack, section 5, Table 2",
+   "slide_id": "2d1"
+  },
+  {
+   "id": "qcpo",
+   "label": "QuickBasket contribution per order",
+   "value": -3.4,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"QuickBasket (regional)\", column Contribution per order = \"−$3.40\"",
+   "locator": "Briefing pack, section 5, Table 2",
+   "slide_id": "2d1"
+  },
+  {
+   "id": "qcities",
+   "label": "QuickBasket cities at the start of 2025",
+   "value": 11,
+   "unit": "cities",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "QuickBasket closed 4 of its 11 cities in 2025.",
+   "locator": "Briefing pack, section 5",
+   "slide_id": "L1"
+  },
+  {
+   "id": "qclosed",
+   "label": "QuickBasket cities closed",
+   "value": 4,
+   "unit": "cities",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "QuickBasket closed 4 of its 11 cities in 2025.",
+   "locator": "Briefing pack, section 5",
+   "slide_id": "L1"
+  },
+  {
+   "id": "sites14",
+   "label": "Customer sites in the benchmark",
+   "value": 14,
+   "unit": "sites",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "industry benchmarks from Parcelbird's software customers (14 sites, 2025)",
+   "locator": "Briefing pack, section 6, Table 3 heading",
+   "slide_id": "2c2"
+  },
+  {
+   "id": "aov_m",
+   "label": "AOV, benchmark median site",
+   "value": 34,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Average order value (AOV)\", column Benchmark median = \"$34\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "aov_b",
+   "label": "AOV, best observed site",
+   "value": 42,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Average order value (AOV)\", column Best observed site = \"$42\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "aov_p",
+   "label": "AOV, founders' plan",
+   "value": 45,
+   "unit": "$",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Average order value (AOV)\", column Founders' plan = \"$45\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "gm",
+   "label": "Gross margin on goods (same in all cases)",
+   "value": 0.27,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Gross margin on goods\", column Benchmark median = \"27%\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "fee",
+   "label": "Delivery fee per order, net (same in all cases)",
+   "value": 1.99,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Delivery fee collected per order, net of payment cost on it\", column Benchmark median = \"$1.99\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "5c"
+  },
+  {
+   "id": "pick",
+   "label": "Picking and packing labor per order (same in all cases)",
+   "value": 3.1,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Picking and packing labor per order\", column Benchmark median = \"$3.10\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "5c"
+  },
+  {
+   "id": "rhr",
+   "label": "Rider cost per hour (same in all cases)",
+   "value": 17.75,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Rider cost per hour (wage, insurance, vehicle)\", column Benchmark median = \"$17.75\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "rph_m",
+   "label": "Orders per rider-hour, benchmark median",
+   "value": 2.4,
+   "unit": "orders",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Orders delivered per rider-hour\", column Benchmark median = \"2.4\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "rph_b",
+   "label": "Orders per rider-hour, best observed site",
+   "value": 3.0,
+   "unit": "orders",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Orders delivered per rider-hour\", column Best observed site = \"3.0\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "rph_p",
+   "label": "Orders per rider-hour, founders' plan",
+   "value": 3.5,
+   "unit": "orders",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Orders delivered per rider-hour\", column Founders' plan = \"3.5\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "fixed",
+   "label": "Dark-store fixed cost per site a year (same in all cases)",
+   "value": 1.15,
+   "unit": "$M",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Dark-store fixed cost per site per year (rent, staff, utilities)\", column Benchmark median = \"$1.15M\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "opd_m",
+   "label": "Orders per site a day, benchmark median",
+   "value": 900,
+   "unit": "orders",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Orders per site per day\", column Benchmark median = \"900\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "opd_b",
+   "label": "Orders per site a day, best observed site",
+   "value": 1400,
+   "unit": "orders",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Orders per site per day\", column Best observed site = \"1,400\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "opd_p",
+   "label": "Orders per site a day, founders' plan",
+   "value": 1800,
+   "unit": "orders",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Orders per site per day\", column Founders' plan = \"1,800\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "L2"
+  },
+  {
+   "id": "pay",
+   "label": "Payment processing and packaging per order (same in all cases)",
+   "value": 1.3,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Payment processing and packaging per order\", column Benchmark median = \"$1.30\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "5c"
+  },
+  {
+   "id": "pr_m",
+   "label": "Promotions, % of AOV, benchmark median",
+   "value": 0.06,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Promotions and discounts, % of AOV\", column Benchmark median = \"6%\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "pr_b",
+   "label": "Promotions, % of AOV, best observed site",
+   "value": 0.06,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Promotions and discounts, % of AOV\", column Best observed site = \"6%\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "pr_p",
+   "label": "Promotions, % of AOV, founders' plan",
+   "value": 0.02,
+   "unit": "%",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "Table 3 \"Promotions and discounts, % of AOV\", column Founders' plan = \"2%\"",
+   "locator": "Briefing pack, section 6, Table 3",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "rph_lo",
+   "label": "Lowest orders per rider-hour in the benchmark range",
+   "value": 1.9,
+   "unit": "orders",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "The benchmark range for orders per rider-hour is 1.9–3.0 and for orders per site per day 400–1,400.",
+   "locator": "Briefing pack, section 6, note under Table 3",
+   "slide_id": "b3"
+  },
+  {
+   "id": "opd_lo",
+   "label": "Lowest orders per site a day in the benchmark range",
+   "value": 400,
+   "unit": "orders",
+   "period": "2025",
+   "source_id": "s1",
+   "excerpt": "The benchmark range for orders per rider-hour is 1.9–3.0 and for orders per site per day 400–1,400.",
+   "locator": "Briefing pack, section 6, note under Table 3",
+   "slide_id": "b3"
+  },
+  {
+   "id": "pu_orders",
+   "label": "Columbus pop-up orders in six weeks",
+   "value": 11800,
+   "unit": "orders",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "11,800 orders; AOV $31; orders grew 18% a week on average.",
+   "locator": "Briefing pack, section 7",
+   "slide_id": "L1"
+  },
+  {
+   "id": "pu_aov",
+   "label": "Columbus pop-up AOV",
+   "value": 31,
+   "unit": "$",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "11,800 orders; AOV $31; orders grew 18% a week on average.",
+   "locator": "Briefing pack, section 7",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "pu_g",
+   "label": "Columbus pop-up weekly order growth",
+   "value": 0.18,
+   "unit": "%",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "11,800 orders; AOV $31; orders grew 18% a week on average.",
+   "locator": "Briefing pack, section 7",
+   "slide_id": "L1"
+  },
+  {
+   "id": "pu_pr",
+   "label": "Columbus pop-up promotions, % of AOV",
+   "value": 0.12,
+   "unit": "%",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "Promotions averaged 12% of AOV; riders delivered 2.1 orders per hour; the site averaged 280 orders a day;",
+   "locator": "Briefing pack, section 7",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "pu_rph",
+   "label": "Columbus pop-up orders per rider-hour",
+   "value": 2.1,
+   "unit": "orders",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "Promotions averaged 12% of AOV; riders delivered 2.1 orders per hour; the site averaged 280 orders a day;",
+   "locator": "Briefing pack, section 7",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "pu_opd",
+   "label": "Columbus pop-up orders a day",
+   "value": 280,
+   "unit": "orders",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "Promotions averaged 12% of AOV; riders delivered 2.1 orders per hour; the site averaged 280 orders a day;",
+   "locator": "Briefing pack, section 7",
+   "slide_id": "2b1"
+  },
+  {
+   "id": "pu_fixed",
+   "label": "Columbus pop-up annualised fixed cost",
+   "value": 650000,
+   "unit": "$",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "the temporary site's annualised fixed cost was $650,000.",
+   "locator": "Briefing pack, section 7",
+   "slide_id": "b1"
+  },
+  {
+   "id": "sv_n",
+   "label": "Survey sample, Columbus residents aged 25–39",
+   "value": 1500,
+   "unit": "respondents",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "Survey of 1,500 Columbus residents aged 25–39: 44% said they would use 15-minute delivery \"at least weekly\".",
+   "locator": "Briefing pack, section 8",
+   "slide_id": "L1"
+  },
+  {
+   "id": "sv_w",
+   "label": "Survey respondents who would use 15-minute delivery at least weekly",
+   "value": 0.44,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "Survey of 1,500 Columbus residents aged 25–39: 44% said they would use 15-minute delivery \"at least weekly\".",
+   "locator": "Briefing pack, section 8",
+   "definition": "Columbus residents aged 25–39; stated intent, not behavior",
+   "slide_id": "1b1"
+  },
+  {
+   "id": "cac",
+   "label": "Customer acquisition cost, pop-up",
+   "value": 38,
+   "unit": "$",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "customer acquisition cost $38 (paid social and first-order credits)",
+   "locator": "Briefing pack, section 8",
+   "slide_id": "L1"
+  },
+  {
+   "id": "ret3",
+   "label": "Pop-up customers still ordering in month three",
+   "value": 0.22,
+   "unit": "%",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "22% of customers still ordering in month three; those customers ordered 3.1 times a month.",
+   "locator": "Briefing pack, section 8",
+   "slide_id": "L1"
+  },
+  {
+   "id": "freq",
+   "label": "Orders a month by customers still ordering in month three",
+   "value": 3.1,
+   "unit": "orders",
+   "period": "autumn 2026",
+   "source_id": "s1",
+   "excerpt": "22% of customers still ordering in month three; those customers ordered 3.1 times a month.",
+   "locator": "Briefing pack, section 8",
+   "slide_id": "1b1"
+  },
+  {
+   "id": "stores",
+   "label": "Dark stores in the founders' plan",
+   "value": 9,
+   "unit": "stores",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "Founders' plan: 9 dark stores at $0.6M capex each ($5.4M)",
+   "locator": "Briefing pack, section 9",
+   "slide_id": "1c1"
+  },
+  {
+   "id": "capex1",
+   "label": "Capex per dark store",
+   "value": 0.6,
+   "unit": "$M",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "Founders' plan: 9 dark stores at $0.6M capex each ($5.4M)",
+   "locator": "Briefing pack, section 9",
+   "slide_id": "L5"
+  },
+  {
+   "id": "capex",
+   "label": "Capex for nine dark stores",
+   "value": 5.4,
+   "unit": "$M",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "Founders' plan: 9 dark stores at $0.6M capex each ($5.4M)",
+   "locator": "Briefing pack, section 9",
+   "slide_id": "L1"
+  },
+  {
+   "id": "plan",
+   "label": "Cash the founders' plan needs to month 18",
+   "value": 9.5,
+   "unit": "$M",
+   "period": "2027 plan",
+   "source_id": "s1",
+   "excerpt": "a total of $9.5M of cash needed to month 18 (capex, launch marketing, operating losses), against $12.0M in the bank.",
+   "locator": "Briefing pack, section 9",
+   "slide_id": "3a1"
+  },
+  {
+   "id": "pipe_n",
+   "label": "Grocers in the software sales pipeline",
+   "value": 37,
+   "unit": "grocers",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "37 grocers are in the sales pipeline for the software, 9 at the late stage; average contract value $96,000 a year.",
+   "locator": "Briefing pack, section 10",
+   "slide_id": "4b1"
+  },
+  {
+   "id": "late_n",
+   "label": "Pipeline grocers at the late stage",
+   "value": 9,
+   "unit": "grocers",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "37 grocers are in the sales pipeline for the software, 9 at the late stage; average contract value $96,000 a year.",
+   "locator": "Briefing pack, section 10",
+   "slide_id": "b6"
+  },
+  {
+   "id": "acv",
+   "label": "Average software contract value a year",
+   "value": 96000,
+   "unit": "$",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "37 grocers are in the sales pipeline for the software, 9 at the late stage; average contract value $96,000 a year.",
+   "locator": "Briefing pack, section 10",
+   "slide_id": "L4"
+  },
+  {
+   "id": "hire",
+   "label": "Yearly cost of two engineers and two sales hires",
+   "value": 0.8,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s1",
+   "excerpt": "Scaling the software business would need 2 more engineers and 2 sales hires (about $0.8M a year).",
+   "locator": "Briefing pack, section 10",
+   "slide_id": "L4"
+  },
+  {
+   "id": "g23",
+   "label": "US quick-commerce GMV growth, 2023",
+   "value": 0.444,
+   "unit": "%",
+   "period": "2023",
+   "source_id": "s0",
+   "derived_from": [
+    "gmv22",
+    "gmv23"
+   ],
+   "formula": "2023 GMV ÷ 2022 GMV − 1",
+   "calc": "gmv23 / gmv22 - 1",
+   "slide_id": "L1"
+  },
+  {
+   "id": "g24",
+   "label": "US quick-commerce GMV growth, 2024",
+   "value": 0.385,
+   "unit": "%",
+   "period": "2024",
+   "source_id": "s0",
+   "derived_from": [
+    "gmv23",
+    "gmv24"
+   ],
+   "formula": "2024 GMV ÷ 2023 GMV − 1",
+   "calc": "gmv24 / gmv23 - 1",
+   "slide_id": "L1"
+  },
+  {
+   "id": "g25",
+   "label": "US quick-commerce GMV growth, 2025",
+   "value": 0.417,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "gmv24",
+    "gmv25"
+   ],
+   "formula": "2025 GMV ÷ 2024 GMV − 1",
+   "calc": "gmv25 / gmv24 - 1",
+   "slide_id": "L1"
+  },
+  {
+   "id": "mult",
+   "label": "US quick-commerce GMV, 2025 as a multiple of 2022",
+   "value": 2.83,
+   "unit": "x",
+   "period": "2022–25",
+   "source_id": "s0",
+   "derived_from": [
+    "gmv22",
+    "gmv25"
+   ],
+   "formula": "2025 GMV ÷ 2022 GMV",
+   "calc": "gmv25 / gmv22",
+   "slide_id": "L1"
+  },
+  {
+   "id": "zm",
+   "label": "Zipcart EBITDA margin",
+   "value": -0.258,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "zebitda",
+    "zrev"
+   ],
+   "formula": "EBITDA ÷ revenue",
+   "calc": "zebitda / zrev",
+   "slide_id": "2d1"
+  },
+  {
+   "id": "qm",
+   "label": "QuickBasket EBITDA margin",
+   "value": -0.457,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "qebitda",
+    "qrev"
+   ],
+   "formula": "EBITDA ÷ revenue",
+   "calc": "qebitda / qrev",
+   "slide_id": "2d1"
+  },
+  {
+   "id": "qsh",
+   "label": "Share of QuickBasket cities closed",
+   "value": 0.364,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "qcities",
+    "qclosed"
+   ],
+   "formula": "cities closed ÷ cities",
+   "calc": "qclosed / qcities",
+   "slide_id": "L1"
+  },
+  {
+   "id": "gmo_m",
+   "label": "Goods margin per order, benchmark median",
+   "value": 9.18,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "gm"
+   ],
+   "formula": "AOV × 27% gross margin",
+   "calc": "aov_m * gm",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "cpr_m",
+   "label": "Promotions per order, benchmark median (cost)",
+   "value": -2.04,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "pr_m"
+   ],
+   "formula": "−(AOV × promotions share)",
+   "calc": "0 - aov_m * pr_m",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "crd_m",
+   "label": "Rider cost per order, benchmark median (cost)",
+   "value": -7.396,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "rph_m",
+    "rhr"
+   ],
+   "formula": "−(rider cost per hour ÷ orders per rider-hour)",
+   "calc": "0 - rhr / rph_m",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "var_m",
+   "label": "Variable contribution per order, benchmark median",
+   "value": -2.666,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_m",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "goods margin + delivery fee − promotions − picking − rider − payment and packaging",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_m - pay",
+   "slide_id": "5c"
+  },
+  {
+   "id": "cfx_m",
+   "label": "Site fixed cost per order, benchmark median (cost)",
+   "value": -3.501,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "fixed",
+    "opd_m"
+   ],
+   "formula": "−(fixed cost a year ÷ (orders a day × 365))",
+   "calc": "0 - fixed * 1000000 / (opd_m * 365)",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "site_m",
+   "label": "Site contribution per order, benchmark median",
+   "value": -6.167,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "var_m",
+    "cfx_m"
+   ],
+   "formula": "variable contribution − site fixed cost per order",
+   "calc": "var_m + cfx_m",
+   "slide_id": "L2"
+  },
+  {
+   "id": "gmo_b",
+   "label": "Goods margin per order, best observed site",
+   "value": 11.34,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_b",
+    "gm"
+   ],
+   "formula": "AOV × 27% gross margin",
+   "calc": "aov_b * gm",
+   "slide_id": "b1"
+  },
+  {
+   "id": "cpr_b",
+   "label": "Promotions per order, best observed site (cost)",
+   "value": -2.52,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_b",
+    "pr_b"
+   ],
+   "formula": "−(AOV × promotions share)",
+   "calc": "0 - aov_b * pr_b",
+   "slide_id": "b1"
+  },
+  {
+   "id": "crd_b",
+   "label": "Rider cost per order, best observed site (cost)",
+   "value": -5.917,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "rph_b",
+    "rhr"
+   ],
+   "formula": "−(rider cost per hour ÷ orders per rider-hour)",
+   "calc": "0 - rhr / rph_b",
+   "slide_id": "b1"
+  },
+  {
+   "id": "var_b",
+   "label": "Variable contribution per order, best observed site",
+   "value": 0.493,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_b",
+    "rph_b",
+    "pick",
+    "pr_b",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "goods margin + delivery fee − promotions − picking − rider − payment and packaging",
+   "calc": "aov_b * gm + fee - aov_b * pr_b - pick - rhr / rph_b - pay",
+   "slide_id": "2b3"
+  },
+  {
+   "id": "cfx_b",
+   "label": "Site fixed cost per order, best observed site (cost)",
+   "value": -2.25,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "fixed",
+    "opd_b"
+   ],
+   "formula": "−(fixed cost a year ÷ (orders a day × 365))",
+   "calc": "0 - fixed * 1000000 / (opd_b * 365)",
+   "slide_id": "b1"
+  },
+  {
+   "id": "site_b",
+   "label": "Site contribution per order, best observed site",
+   "value": -1.757,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "var_b",
+    "cfx_b"
+   ],
+   "formula": "variable contribution − site fixed cost per order",
+   "calc": "var_b + cfx_b",
+   "slide_id": "2c1"
+  },
+  {
+   "id": "gmo_p",
+   "label": "Goods margin per order, founders' plan",
+   "value": 12.15,
+   "unit": "$",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_p",
+    "gm"
+   ],
+   "formula": "AOV × 27% gross margin",
+   "calc": "aov_p * gm",
+   "slide_id": "b1"
+  },
+  {
+   "id": "cpr_p",
+   "label": "Promotions per order, founders' plan (cost)",
+   "value": -0.9,
+   "unit": "$",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_p",
+    "pr_p"
+   ],
+   "formula": "−(AOV × promotions share)",
+   "calc": "0 - aov_p * pr_p",
+   "slide_id": "b1"
+  },
+  {
+   "id": "crd_p",
+   "label": "Rider cost per order, founders' plan (cost)",
+   "value": -5.071,
+   "unit": "$",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "rph_p",
+    "rhr"
+   ],
+   "formula": "−(rider cost per hour ÷ orders per rider-hour)",
+   "calc": "0 - rhr / rph_p",
+   "slide_id": "b1"
+  },
+  {
+   "id": "var_p",
+   "label": "Variable contribution per order, founders' plan",
+   "value": 3.769,
+   "unit": "$",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_p",
+    "rph_p",
+    "pick",
+    "pr_p",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "goods margin + delivery fee − promotions − picking − rider − payment and packaging",
+   "calc": "aov_p * gm + fee - aov_p * pr_p - pick - rhr / rph_p - pay",
+   "slide_id": "b2"
+  },
+  {
+   "id": "cfx_p",
+   "label": "Site fixed cost per order, founders' plan (cost)",
+   "value": -1.75,
+   "unit": "$",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "fixed",
+    "opd_p"
+   ],
+   "formula": "−(fixed cost a year ÷ (orders a day × 365))",
+   "calc": "0 - fixed * 1000000 / (opd_p * 365)",
+   "slide_id": "b1"
+  },
+  {
+   "id": "site_p",
+   "label": "Site contribution per order, founders' plan",
+   "value": 2.019,
+   "unit": "$",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "var_p",
+    "cfx_p"
+   ],
+   "formula": "variable contribution − site fixed cost per order",
+   "calc": "var_p + cfx_p",
+   "slide_id": "2b2"
+  },
+  {
+   "id": "gmo_u",
+   "label": "Goods margin per order, Columbus pop-up",
+   "value": 8.37,
+   "unit": "$",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pu_aov",
+    "gm"
+   ],
+   "formula": "AOV × 27% gross margin",
+   "calc": "pu_aov * gm",
+   "slide_id": "b1"
+  },
+  {
+   "id": "cpr_u",
+   "label": "Promotions per order, Columbus pop-up (cost)",
+   "value": -3.72,
+   "unit": "$",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pu_aov",
+    "pu_pr"
+   ],
+   "formula": "−(AOV × promotions share)",
+   "calc": "0 - pu_aov * pu_pr",
+   "slide_id": "b1"
+  },
+  {
+   "id": "crd_u",
+   "label": "Rider cost per order, Columbus pop-up (cost)",
+   "value": -8.452,
+   "unit": "$",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pu_rph",
+    "rhr"
+   ],
+   "formula": "−(rider cost per hour ÷ orders per rider-hour)",
+   "calc": "0 - rhr / pu_rph",
+   "slide_id": "b1"
+  },
+  {
+   "id": "var_u",
+   "label": "Variable contribution per order, Columbus pop-up",
+   "value": -6.212,
+   "unit": "$",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pu_aov",
+    "pu_rph",
+    "pu_pr",
+    "pick",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "goods margin + delivery fee − promotions − picking − rider − payment and packaging",
+   "calc": "pu_aov * gm + fee - pu_aov * pu_pr - pick - rhr / pu_rph - pay",
+   "slide_id": "b1"
+  },
+  {
+   "id": "cfx_u",
+   "label": "Site fixed cost per order, Columbus pop-up (cost)",
+   "value": -6.36,
+   "unit": "$",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pu_fixed",
+    "pu_opd"
+   ],
+   "formula": "−(fixed cost a year ÷ (orders a day × 365))",
+   "calc": "0 - pu_fixed / (pu_opd * 365)",
+   "slide_id": "b1"
+  },
+  {
+   "id": "site_u",
+   "label": "Site contribution per order, Columbus pop-up",
+   "value": -12.572,
+   "unit": "$",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "var_u",
+    "cfx_u"
+   ],
+   "formula": "variable contribution − site fixed cost per order",
+   "calc": "var_u + cfx_u",
+   "slide_id": "L2"
+  },
+  {
+   "id": "c_fee",
+   "label": "Delivery fee per order (revenue)",
+   "value": 1.99,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "fee"
+   ],
+   "formula": "delivery fee, net",
+   "calc": "fee",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "c_pick",
+   "label": "Picking and packing per order (cost)",
+   "value": -3.1,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "pick"
+   ],
+   "formula": "−picking and packing",
+   "calc": "0 - pick",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "c_pay",
+   "label": "Payment processing and packaging per order (cost)",
+   "value": -1.3,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "pay"
+   ],
+   "formula": "−payment and packaging",
+   "calc": "0 - pay",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "rsh",
+   "label": "Rider cost as a share of variable cost per order, benchmark median",
+   "value": 0.627,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "c_pick",
+    "crd_m",
+    "c_pay"
+   ],
+   "formula": "rider cost ÷ (picking + rider + payment and packaging)",
+   "calc": "crd_m / (crd_m + c_pick + c_pay)",
+   "slide_id": "2a1"
+  },
+  {
+   "id": "st_aov",
+   "label": "Step: AOV falls from plan to benchmark median",
+   "value": -2.75,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "aov_p",
+    "pr_p",
+    "gm"
+   ],
+   "formula": "(benchmark AOV − plan AOV) × (27% margin − plan promotions)",
+   "calc": "(aov_m - aov_p) * (gm - pr_p)",
+   "slide_id": "2b2"
+  },
+  {
+   "id": "st_pr",
+   "label": "Step: promotions rise from plan to benchmark median",
+   "value": -1.36,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "pr_m",
+    "pr_p"
+   ],
+   "formula": "−(benchmark − plan promotions share) × benchmark AOV",
+   "calc": "0 - (pr_m - pr_p) * aov_m",
+   "slide_id": "2b2"
+  },
+  {
+   "id": "st_rd",
+   "label": "Step: rider speed falls from plan to benchmark median",
+   "value": -2.324,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "rph_m",
+    "rph_p",
+    "rhr"
+   ],
+   "formula": "plan rider cost per order − benchmark rider cost per order",
+   "calc": "rhr / rph_p - rhr / rph_m",
+   "slide_id": "2b2"
+  },
+  {
+   "id": "st_dn",
+   "label": "Step: density falls from plan to benchmark median",
+   "value": -1.751,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "cfx_m",
+    "cfx_p"
+   ],
+   "formula": "benchmark − plan site fixed cost per order",
+   "calc": "cfx_m - cfx_p",
+   "slide_id": "2b2"
+  },
+  {
+   "id": "aovsh",
+   "label": "Share of the plan-to-benchmark swing that comes from AOV",
+   "value": 0.336,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "site_m",
+    "site_p",
+    "st_aov"
+   ],
+   "formula": "AOV step ÷ total swing",
+   "calc": "st_aov / (site_m - site_p)",
+   "slide_id": "2b2"
+  },
+  {
+   "id": "fxd",
+   "label": "Site fixed cost a day",
+   "value": 3151,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "fixed"
+   ],
+   "formula": "$1.15M ÷ 365",
+   "calc": "fixed * 1000000 / 365",
+   "slide_id": "2b3"
+  },
+  {
+   "id": "be_b",
+   "label": "Orders a day a site needs to break even at the best observed AOV and rider speed",
+   "value": 6391,
+   "unit": "orders",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "var_b",
+    "fxd"
+   ],
+   "formula": "fixed cost a day ÷ variable contribution per order (best observed)",
+   "calc": "fxd / var_b",
+   "slide_id": "2b3"
+  },
+  {
+   "id": "be_x",
+   "label": "Break-even orders a day as a multiple of the best observed site",
+   "value": 4.6,
+   "unit": "x",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "opd_b",
+    "be_b"
+   ],
+   "formula": "break-even orders ÷ best observed orders a day",
+   "calc": "be_b / opd_b",
+   "slide_id": "2b3"
+  },
+  {
+   "id": "be_p",
+   "label": "Orders a day a site needs to break even with the founders' plan inputs",
+   "value": 836,
+   "unit": "orders",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "var_p",
+    "fxd"
+   ],
+   "formula": "fixed cost a day ÷ variable contribution per order (plan)",
+   "calc": "fxd / var_p",
+   "slide_id": "L1"
+  },
+  {
+   "id": "pux",
+   "label": "Pop-up loss per order as a multiple of the benchmark median loss",
+   "value": 2.04,
+   "unit": "x",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "site_m",
+    "site_u"
+   ],
+   "formula": "pop-up ÷ benchmark site contribution per order",
+   "calc": "site_u / site_m",
+   "slide_id": "2c1"
+  },
+  {
+   "id": "pud",
+   "label": "Pop-up density as a share of the benchmark median",
+   "value": 0.311,
+   "unit": "%",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pu_opd",
+    "opd_m"
+   ],
+   "formula": "280 ÷ 900",
+   "calc": "pu_opd / opd_m",
+   "slide_id": "L1"
+  },
+  {
+   "id": "cost_net",
+   "label": "Per-order costs net of the delivery fee at benchmark operations",
+   "value": 13.31,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "rph_m",
+    "cfx_m",
+    "pick",
+    "fee",
+    "rhr",
+    "pay"
+   ],
+   "formula": "picking + rider + payment + site fixed cost − delivery fee",
+   "calc": "pick + rhr / rph_m + pay - cfx_m - fee",
+   "slide_id": "b4"
+  },
+  {
+   "id": "mrate",
+   "label": "Goods margin less promotions, share of AOV, benchmark",
+   "value": 0.21,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "pr_m",
+    "gm"
+   ],
+   "formula": "27% − 6%",
+   "calc": "gm - pr_m",
+   "slide_id": "b4"
+  },
+  {
+   "id": "be_aov",
+   "label": "AOV a store needs to break even at benchmark operations",
+   "value": 63.4,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "cost_net",
+    "mrate"
+   ],
+   "formula": "net per-order cost ÷ (margin − promotions share)",
+   "calc": "cost_net / mrate",
+   "slide_id": "b4"
+  },
+  {
+   "id": "be_aovx",
+   "label": "Break-even AOV as a multiple of the benchmark median AOV",
+   "value": 1.86,
+   "unit": "x",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "be_aov",
+    "aov_m"
+   ],
+   "formula": "break-even AOV ÷ $34",
+   "calc": "be_aov / aov_m",
+   "slide_id": "b4"
+  },
+  {
+   "id": "sg00",
+   "label": "Site contribution per order at $34 AOV, 1.9 orders per rider-hour, 400 orders a day",
+   "value": -12.49,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "rph_lo",
+    "opd_lo",
+    "aov_m",
+    "fixed",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_lo - pay - fixed * 1000000 / (opd_lo * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg01",
+   "label": "Site contribution per order at $34 AOV, 1.9 orders per rider-hour, 900 orders a day",
+   "value": -8.11,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "rph_lo",
+    "aov_m",
+    "fixed",
+    "opd_m",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_lo - pay - fixed * 1000000 / (opd_m * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg02",
+   "label": "Site contribution per order at $34 AOV, 1.9 orders per rider-hour, 1,400 orders a day",
+   "value": -6.86,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "rph_lo",
+    "aov_m",
+    "fixed",
+    "opd_b",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_lo - pay - fixed * 1000000 / (opd_b * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg03",
+   "label": "Site contribution per order at $34 AOV, 1.9 orders per rider-hour, 1,800 orders a day",
+   "value": -6.36,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "rph_lo",
+    "aov_m",
+    "fixed",
+    "opd_p",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_lo - pay - fixed * 1000000 / (opd_p * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg10",
+   "label": "Site contribution per order at $34 AOV, 2.4 orders per rider-hour, 400 orders a day",
+   "value": -10.54,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "opd_lo",
+    "aov_m",
+    "rph_m",
+    "fixed",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_m - pay - fixed * 1000000 / (opd_lo * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg11",
+   "label": "Site contribution per order at $34 AOV, 2.4 orders per rider-hour, 900 orders a day",
+   "value": -6.17,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_m",
+    "fixed",
+    "opd_m",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_m - pay - fixed * 1000000 / (opd_m * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg12",
+   "label": "Site contribution per order at $34 AOV, 2.4 orders per rider-hour, 1,400 orders a day",
+   "value": -4.92,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_m",
+    "fixed",
+    "opd_b",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_m - pay - fixed * 1000000 / (opd_b * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg13",
+   "label": "Site contribution per order at $34 AOV, 2.4 orders per rider-hour, 1,800 orders a day",
+   "value": -4.42,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_m",
+    "fixed",
+    "opd_p",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_m - pay - fixed * 1000000 / (opd_p * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg20",
+   "label": "Site contribution per order at $34 AOV, 3.0 orders per rider-hour, 400 orders a day",
+   "value": -9.06,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "opd_lo",
+    "aov_m",
+    "rph_b",
+    "fixed",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_b - pay - fixed * 1000000 / (opd_lo * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg21",
+   "label": "Site contribution per order at $34 AOV, 3.0 orders per rider-hour, 900 orders a day",
+   "value": -4.69,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_b",
+    "fixed",
+    "opd_m",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_b - pay - fixed * 1000000 / (opd_m * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg22",
+   "label": "Site contribution per order at $34 AOV, 3.0 orders per rider-hour, 1,400 orders a day",
+   "value": -3.44,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_b",
+    "fixed",
+    "opd_b",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_b - pay - fixed * 1000000 / (opd_b * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg23",
+   "label": "Site contribution per order at $34 AOV, 3.0 orders per rider-hour, 1,800 orders a day",
+   "value": -2.94,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_b",
+    "fixed",
+    "opd_p",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_b - pay - fixed * 1000000 / (opd_p * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg30",
+   "label": "Site contribution per order at $34 AOV, 3.5 orders per rider-hour, 400 orders a day",
+   "value": -8.22,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "opd_lo",
+    "aov_m",
+    "rph_p",
+    "fixed",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_p - pay - fixed * 1000000 / (opd_lo * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg31",
+   "label": "Site contribution per order at $34 AOV, 3.5 orders per rider-hour, 900 orders a day",
+   "value": -3.84,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_p",
+    "fixed",
+    "opd_m",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_p - pay - fixed * 1000000 / (opd_m * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg32",
+   "label": "Site contribution per order at $34 AOV, 3.5 orders per rider-hour, 1,400 orders a day",
+   "value": -2.59,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_p",
+    "fixed",
+    "opd_b",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_p - pay - fixed * 1000000 / (opd_b * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "sg33",
+   "label": "Site contribution per order at $34 AOV, 3.5 orders per rider-hour, 1,800 orders a day",
+   "value": -2.09,
+   "unit": "$",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "aov_m",
+    "rph_p",
+    "fixed",
+    "opd_p",
+    "pick",
+    "pr_m",
+    "fee",
+    "rhr",
+    "pay",
+    "gm"
+   ],
+   "formula": "benchmark goods margin + fee − promotions − picking − rider − payment − fixed cost per order",
+   "calc": "aov_m * gm + fee - aov_m * pr_m - pick - rhr / rph_p - pay - fixed * 1000000 / (opd_p * 365)",
+   "slide_id": "b3"
+  },
+  {
+   "id": "retc",
+   "label": "Retained customers a store needs to reach plan density",
+   "value": 17661,
+   "unit": "customers",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "opd_p",
+    "freq"
+   ],
+   "formula": "1,800 orders a day × 365 ÷ 12 ÷ 3.1 orders a month",
+   "calc": "opd_p * 365 / 12 / freq",
+   "estimate": true,
+   "assumptions": [
+    "Customers still ordering in month three keep ordering 3.1 times a month, with no further churn",
+    "Every order comes from a paid-acquired customer; the pop-up data shows no organic acquisition",
+    "Acquisition cost stays at the pop-up's $38 a customer"
+   ],
+   "slide_id": "1c1"
+  },
+  {
+   "id": "acq_t",
+   "label": "Paid acquisition to bring nine stores to plan density",
+   "value": 27.5,
+   "unit": "$M",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "stores",
+    "ret3",
+    "retc",
+    "cac"
+   ],
+   "formula": "retained customers ÷ 22% retention × $38 × 9 stores",
+   "calc": "retc / ret3 * cac * stores / 1000000",
+   "estimate": true,
+   "assumptions": [
+    "Customers still ordering in month three keep ordering 3.1 times a month, with no further churn",
+    "Every order comes from a paid-acquired customer; the pop-up data shows no organic acquisition",
+    "Acquisition cost stays at the pop-up's $38 a customer"
+   ],
+   "slide_id": "1c1"
+  },
+  {
+   "id": "acq_tm",
+   "label": "Paid acquisition to bring nine stores to benchmark median density",
+   "value": 13.7,
+   "unit": "$M",
+   "period": "2025",
+   "source_id": "s0",
+   "derived_from": [
+    "stores",
+    "opd_m",
+    "ret3",
+    "freq",
+    "cac"
+   ],
+   "formula": "900 orders a day × 365 ÷ 12 ÷ 3.1 ÷ 22% × $38 × 9",
+   "calc": "opd_m * 365 / 12 / freq / ret3 * cac * stores / 1000000",
+   "estimate": true,
+   "assumptions": [
+    "Customers still ordering in month three keep ordering 3.1 times a month, with no further churn",
+    "Every order comes from a paid-acquired customer; the pop-up data shows no organic acquisition",
+    "Acquisition cost stays at the pop-up's $38 a customer"
+   ],
+   "slide_id": "L1"
+  },
+  {
+   "id": "acqx",
+   "label": "Paid acquisition to plan density as a multiple of cash",
+   "value": 2.3,
+   "unit": "x",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "acq_t",
+    "cash"
+   ],
+   "formula": "acquisition ÷ cash",
+   "calc": "acq_t / cash",
+   "estimate": true,
+   "assumptions": [
+    "Customers still ordering in month three keep ordering 3.1 times a month, with no further churn",
+    "Every order comes from a paid-acquired customer; the pop-up data shows no organic acquisition",
+    "Acquisition cost stays at the pop-up's $38 a customer"
+   ],
+   "slide_id": "L1"
+  },
+  {
+   "id": "opm",
+   "label": "Orders a month per acquired customer, from month three",
+   "value": 0.682,
+   "unit": "orders",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "ret3",
+    "freq"
+   ],
+   "formula": "22% × 3.1",
+   "calc": "ret3 * freq",
+   "slide_id": "b2"
+  },
+  {
+   "id": "pb_p",
+   "label": "Months for an acquired customer to repay $38 at the plan's variable contribution",
+   "value": 14.8,
+   "unit": "months",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "var_p",
+    "cac",
+    "opm"
+   ],
+   "formula": "$38 ÷ (orders a month per acquired customer × plan variable contribution)",
+   "calc": "cac / (opm * var_p)",
+   "estimate": true,
+   "assumptions": [
+    "From month three, an acquired customer brings 22% × 3.1 orders a month",
+    "Orders in months one and two are left out, as is any further churn; the two roughly offset",
+    "Variable contribution per order is the founders' plan figure, before site fixed costs"
+   ],
+   "slide_id": "b2"
+  },
+  {
+   "id": "ord12",
+   "label": "Orders a year from each customer still ordering in month three",
+   "value": 37.2,
+   "unit": "orders",
+   "period": "autumn 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "freq"
+   ],
+   "formula": "3.1 × 12",
+   "calc": "freq * 12",
+   "slide_id": "L1"
+  },
+  {
+   "id": "zero",
+   "label": "Extra cash to keep the software business as it is, no new hires",
+   "value": 0,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "hire"
+   ],
+   "formula": "no new spend beyond today's burn",
+   "calc": "hire * 0",
+   "slide_id": "L5"
+  },
+  {
+   "id": "flr",
+   "label": "Cash the 12-month runway floor requires at today's burn",
+   "value": 4.8,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "floor_m",
+    "burn"
+   ],
+   "formula": "12 months × $0.4M",
+   "calc": "floor_m * burn",
+   "slide_id": "3a1"
+  },
+  {
+   "id": "hr",
+   "label": "Cash available above the runway floor",
+   "value": 7.2,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "cash",
+    "flr"
+   ],
+   "formula": "$12.0M − $4.8M",
+   "calc": "cash - flr",
+   "slide_id": "3a1"
+  },
+  {
+   "id": "gap",
+   "label": "Shortfall against the runway floor if the plan runs to budget",
+   "value": -2.3,
+   "unit": "$M",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "cash",
+    "plan",
+    "flr"
+   ],
+   "formula": "$12.0M − $4.8M − $9.5M",
+   "calc": "cash - flr - plan",
+   "slide_id": "L3"
+  },
+  {
+   "id": "phr",
+   "label": "Plan cash need as a multiple of the cash above the runway floor",
+   "value": 1.32,
+   "unit": "x",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "plan",
+    "hr"
+   ],
+   "formula": "$9.5M ÷ $7.2M",
+   "calc": "plan / hr",
+   "slide_id": "3a1"
+  },
+  {
+   "id": "c18",
+   "label": "Cash left at month 18 if the $9.5M covers all spending",
+   "value": 2.5,
+   "unit": "$M",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "cash",
+    "plan"
+   ],
+   "formula": "$12.0M − $9.5M",
+   "calc": "cash - plan",
+   "slide_id": "3a2"
+  },
+  {
+   "id": "rw18",
+   "label": "Runway at month 18 at today's burn",
+   "value": 6.2,
+   "unit": "months",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "cash",
+    "burn",
+    "plan"
+   ],
+   "formula": "$2.5M ÷ $0.4M a month",
+   "calc": "(cash - plan) / burn",
+   "slide_id": "3a2"
+  },
+  {
+   "id": "c18s",
+   "label": "Cash at month 18 if the $9.5M comes on top of today's burn",
+   "value": -4.7,
+   "unit": "$M",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "cash",
+    "burn",
+    "plan"
+   ],
+   "formula": "$12.0M − $9.5M − 18 × $0.4M",
+   "calc": "cash - plan - burn * 18",
+   "slide_id": "3a2"
+  },
+  {
+   "id": "sl_m",
+   "label": "Loss a year per store at benchmark medians",
+   "value": -2.03,
+   "unit": "$M",
+   "period": "2025 inputs",
+   "source_id": "s0",
+   "derived_from": [
+    "site_m",
+    "opd_m"
+   ],
+   "formula": "site contribution per order × 900 × 365",
+   "calc": "site_m * opd_m * 365 / 1000000",
+   "estimate": true,
+   "assumptions": [
+    "Stores run at benchmark medians from the first day, with no ramp-up losses",
+    "Head-office costs and customer acquisition come on top of the store loss",
+    "Rider pay standards under discussion in two of the three cities would deepen the loss"
+   ],
+   "slide_id": "3b1"
+  },
+  {
+   "id": "loss9",
+   "label": "Loss a year across nine stores at benchmark medians",
+   "value": -18.3,
+   "unit": "$M",
+   "period": "2025 inputs",
+   "source_id": "s0",
+   "derived_from": [
+    "stores",
+    "sl_m"
+   ],
+   "formula": "loss per store × 9",
+   "calc": "sl_m * stores",
+   "estimate": true,
+   "assumptions": [
+    "Stores run at benchmark medians from the first day, with no ramp-up losses",
+    "Head-office costs and customer acquisition come on top of the store loss",
+    "Rider pay standards under discussion in two of the three cities would deepen the loss"
+   ],
+   "slide_id": "3b1"
+  },
+  {
+   "id": "lossx",
+   "label": "Yearly nine-store loss at benchmark as a multiple of cash",
+   "value": 1.53,
+   "unit": "x",
+   "period": "2025 inputs",
+   "source_id": "s0",
+   "derived_from": [
+    "loss9",
+    "cash"
+   ],
+   "formula": "loss ÷ cash",
+   "calc": "0 - loss9 / cash",
+   "estimate": true,
+   "assumptions": [
+    "Stores run at benchmark medians from the first day, with no ramp-up losses",
+    "Head-office costs and customer acquisition come on top of the store loss",
+    "Rider pay standards under discussion in two of the three cities would deepen the loss"
+   ],
+   "slide_id": "3b1"
+  },
+  {
+   "id": "pipe",
+   "label": "Annual contract value of the whole software pipeline",
+   "value": 3.55,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pipe_n",
+    "acv"
+   ],
+   "formula": "37 × $96,000",
+   "calc": "pipe_n * acv / 1000000",
+   "slide_id": "L4"
+  },
+  {
+   "id": "late",
+   "label": "Annual contract value of the nine late-stage grocers",
+   "value": 0.864,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "late_n",
+    "acv"
+   ],
+   "formula": "9 × $96,000",
+   "calc": "late_n * acv / 1000000",
+   "slide_id": "4a1"
+  },
+  {
+   "id": "early_n",
+   "label": "Pipeline grocers at earlier stages",
+   "value": 28,
+   "unit": "grocers",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pipe_n",
+    "late_n"
+   ],
+   "formula": "37 − 9",
+   "calc": "pipe_n - late_n",
+   "slide_id": "b6"
+  },
+  {
+   "id": "early",
+   "label": "Annual contract value of earlier-stage grocers",
+   "value": 2.688,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "early_n",
+    "acv"
+   ],
+   "formula": "28 × $96,000",
+   "calc": "early_n * acv / 1000000",
+   "slide_id": "4a1"
+  },
+  {
+   "id": "arr_all",
+   "label": "ARR if every pipeline grocer signs",
+   "value": 7.65,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pipe",
+    "arr"
+   ],
+   "formula": "$4.1M + pipeline",
+   "calc": "arr + pipe",
+   "slide_id": "4a1"
+  },
+  {
+   "id": "pipesh",
+   "label": "Pipeline value as a share of today's ARR",
+   "value": 0.866,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pipe",
+    "arr"
+   ],
+   "formula": "pipeline ÷ ARR",
+   "calc": "pipe / arr",
+   "slide_id": "4a1"
+  },
+  {
+   "id": "latesh",
+   "label": "Late-stage value as a share of today's ARR",
+   "value": 0.211,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "late",
+    "arr"
+   ],
+   "formula": "late stage ÷ ARR",
+   "calc": "late / arr",
+   "slide_id": "b6"
+  },
+  {
+   "id": "late_gp",
+   "label": "Gross profit a year from the nine late-stage grocers",
+   "value": 0.7,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s0",
+   "derived_from": [
+    "sw_gm",
+    "late"
+   ],
+   "formula": "late-stage ACV × 81%",
+   "calc": "late * sw_gm",
+   "slide_id": "4a2"
+  },
+  {
+   "id": "cover",
+   "label": "Share of the four hires' cost covered by late-stage gross profit",
+   "value": 0.875,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "late_gp",
+    "hire"
+   ],
+   "formula": "late-stage gross profit ÷ $0.8M",
+   "calc": "late_gp / hire",
+   "slide_id": "4a2"
+  },
+  {
+   "id": "swb",
+   "label": "Monthly burn with the four software hires",
+   "value": 0.467,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "burn",
+    "hire"
+   ],
+   "formula": "$0.4M + $0.8M ÷ 12",
+   "calc": "burn + hire / 12",
+   "estimate": true,
+   "assumptions": [
+    "Today's burn of $0.4M a month continues, plus the four hires",
+    "No gross profit from new contracts is counted, so runway is a floor"
+   ],
+   "slide_id": "4a2"
+  },
+  {
+   "id": "swr",
+   "label": "Runway with the four software hires",
+   "value": 25.7,
+   "unit": "months",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cash",
+    "swb"
+   ],
+   "formula": "$12.0M ÷ monthly burn with hires",
+   "calc": "cash / swb",
+   "estimate": true,
+   "assumptions": [
+    "Today's burn of $0.4M a month continues, plus the four hires",
+    "No gross profit from new contracts is counted, so runway is a floor"
+   ],
+   "slide_id": "4a2"
+  },
+  {
+   "id": "swc",
+   "label": "Cash for the four software hires over 18 months",
+   "value": 1.2,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "hire"
+   ],
+   "formula": "$0.8M a year × 1.5 years",
+   "calc": "hire * 18 / 12",
+   "slide_id": "L5"
+  },
+  {
+   "id": "pil_l",
+   "label": "Store loss over 18 months for a one-store pilot at benchmark",
+   "value": 3.04,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "sl_m"
+   ],
+   "formula": "loss a year per store × 1.5",
+   "calc": "0 - sl_m * 18 / 12",
+   "estimate": true,
+   "assumptions": [
+    "A one-store pilot runs at benchmark medians for 18 months",
+    "Capex is the plan's $0.6M per store; acquisition costs come on top"
+   ],
+   "slide_id": "L5"
+  },
+  {
+   "id": "pil",
+   "label": "Cash need to month 18 for a one-store pilot",
+   "value": 3.64,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "capex1",
+    "pil_l"
+   ],
+   "formula": "$0.6M capex + 18 months of store loss",
+   "calc": "capex1 + pil_l",
+   "estimate": true,
+   "assumptions": [
+    "A one-store pilot runs at benchmark medians for 18 months",
+    "Capex is the plan's $0.6M per store; acquisition costs come on top"
+   ],
+   "slide_id": "L5"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "user_provided",
+   "name": "Parcelbird board briefing pack (synthetic data)",
+   "input_id": "in-1"
+  },
+  {
+   "id": "s0",
+   "kind": "derived",
+   "name": "Team analysis of the briefing pack"
+  }
+ ]
+}

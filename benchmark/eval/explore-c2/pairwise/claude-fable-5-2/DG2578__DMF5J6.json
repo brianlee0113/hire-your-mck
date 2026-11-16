@@ -1,0 +1,38 @@
+{
+ "x": "DG2578",
+ "y": "DMF5J6",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean chain from governing thought to executive summary to slide claims. X's numbers thread through consistently: $10.3M to $7.6M to $6.3M/$4.5M, the $98.9M bridge, and the $1.6M gap against the CFO plan, with each summary claim backed by a slide. X's one blemish is the line \"price is not what is driving churn in any segment\", which sits awkwardly beside its own 52% exit-survey evidence, though it explains that as the discount ending. Y's four sections map neatly to its summary, but it has two internal tensions. Slide 6 says the gap lies \"in setup, not in the product or its price\" while slide 8 says price drives promotion-cohort exits. Its break-even slide also rests the SMB risk on the promotion cohort leaving because of the rise, while elsewhere it treats that cohort as an activation problem. Y also uses $2.5M and the 10.7% break-even ($2.25M) interchangeably.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the answer key's preferred recommendation: raise mid-market 10%, raise enterprise within caps, hold and test SMB, fund activation. X weighs it better. It compares three options (CFO plan, hold everything, segmented) in base and downside cases on exit ARR, NRR and new-customer ARR needed. It quantifies the trade-off against the CFO plan net of churn (about $1.6M) and shows the January SMB rise nets about zero in the downside. It adds guardrails with thresholds and actions for each move, and a spare lever (mid-market to 12% in the second half). Its SMB test includes a sample of renewals, which addresses the actual open question. Y rejects the CFO plan and defers SMB, but never evaluates a no-increase option. It states the trade-off as $3.4M forgone from the gross $7.6M, which overstates the cost because no churn response is netted. Its SMB test covers new sign-ups only yet is used to decide for existing customers. It caps all renewing enterprise at 7%, leaving the uncapped 40% under-priced without explanation. Its SMB gate (promotion churn near 2.1%) is loosely specified.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both correctly derive the 4.9% cohort churn and the $7.57M repriceable figure, and both use the segment table, exit-survey split, Inkwell data and caps. X goes further and stays accurate. It gives the explicit mix/rate decomposition (1.0 pp and 0.1 pp). It builds a churn response from the 2023 precedent (3.6% extra loss scaled to 5.4%), flags that this predates Inkwell and doubles it in the downside. It splits the cohort's excess churn into activation (0.8 pp) and discount ending (2.0 pp), which tests the onboarding claim rather than just setting it aside. It tests three definitions against the dashboard figure and matches the key's 1.7%→2.6% and 0.8%→1.2%. Assumptions are flagged throughout. Y's 94% and 56% loss shares and its 10.7% break-even are correct. But converting the break-even into \"51% of the promotion cohort leaving because of the rise\" and calling that plausible is a weak inference: it would be incremental to roughly 45% baseline annual loss. Its $1M activation value assumes cohort churn drops to 2.1% from January, which is called a realistic target without support. X treats that same figure as upside and plans on $0.3M. Y also does not net any churn response from the CFO plan's revenue.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than adopting or rejecting it wholesale. Both accept that the churn rise is a cohort and onboarding effect, reject 12% across the board, correct the $10.3M, and locate the price risk in SMB via Inkwell. Y states the reconciliation a little more cleanly on one point: price does drive promotion-cohort exits and \"is a real risk only in SMB\". X's \"price is not driving churn in any segment\" leans further toward the CFO, though it qualifies this as the discount ending and identifies price as decisive in new SMB deals. X is more thorough on the rest. It has an explicit \"where the CFO is right\" section. It takes the $10.3M correction past timing and caps to the likely churn response. It tests the Customer Success claim analytically (activation explains under a third of excess churn; halving needs a rate SMB has never recorded). Y discards the halving claim but replaces it with a still-optimistic assumption that the cohort returns to the SMB norm.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both land on the same defensible segmented recommendation and meet all four defensibility criteria. X would serve the CEO better. It gives a quantified comparison of three options with downside cases, and a churn-adjusted view of what the CFO plan is really worth. It gives an honest read that the plan hits the 15% target with no margin, and treats the onboarding promise more sceptically. It supplies concrete guardrails and decision gates, and an SMB test that covers renewals. Y is tighter and has some sharp framings (94% of lost customers are SMB; the 10.7% break-even). But it leans on a weak 51%-of-cohort inference, an optimistic $1M activation figure, an overstated $3.4M trade-off, and a new-sign-up-only test for a renewal decision.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8322202,
+ "wall_s": 47.67825508117676
+}

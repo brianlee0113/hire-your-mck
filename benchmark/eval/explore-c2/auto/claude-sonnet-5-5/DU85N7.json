@@ -1,0 +1,190 @@
+{
+ "blind_id": "DU85N7",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed: whether to launch in Q2, and how to package and price it. It uses the NRR 101→105 target, the 75% gross-margin floor and the 14-engineer mobile delay as explicit criteria. Packaging options (add-on, Pro, free) and sequencing (Copilot first vs mobile first) are compared on those criteria. The opening names the issues the answer turns on: survey vs paywall, inference cost, and the mobile trade-off.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the 13-point summary and the five sections (value, add-on, Pro, mobile, launch) line up, and most slide titles are claims. Reading the titles gives the argument. Weaknesses: the section-divider slides add little. The mobile slide says Copilot first wins 'unless' the rewrite removes over half of mobile churn, yet the first condition asks for that very estimate before sign-off. That leaves the headline answer partly open.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I rechecked the key numbers. Add-on ARR is $2.48M vs $8.06M. Inference per month is $17.1, $32.4, $61.2 and $130.5. Wins lost are about 109 and the ARR is $642K. Pro ARR is $2.89M, mobile churn is $2.18M, and the break-even is 51.7%. All are correct. The document catches the pack's inconsistency (top 10% = 58% of requests vs 40% implied by Table 2). It also flags survey non-response and size bias, beta selection bias, the Routewise discount confound, and the VP Sales over-claim. Minor issues: 'matched by three who only said yes' is loose, since 3.2x implies about 2.2 extra. 'Top-tenth seats (about 1,790)' appears to be requests per seat. Pro margin of 66.7% uses the beta per-seat average and ignores that Pro adopters may skew heavier. The key's figure is about 56%. The 33% Pro uptake is taken from the 2023 analog, though the document does caveat it.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Launching in Pro with a usage allowance and overage, sized off the paywall test, matches the key's plausible recommendation R1. It avoids the $149 add-on trap. It compares three packaging options and two sequences, and it quantifies the mobile trade-off with a break-even. It gives gates: a randomised test, a gross-margin allowance, 26% Pro uptake, and a mobile-churn estimate. It gives owners and dates, and a check on whether the engineers can come from other work. Weaknesses: the Pro uptake and Pro margin rest on thin analogs. The mobile-first/Copilot-first model is stylised (it counts upper bounds on both sides). The 1,000-request allowance is the team's own design and is not tested against heavy-user adoption.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the first content slide and is stated plainly. Calculations are shown transparently. At 20 slides, five of them section dividers, and with a repeated summary, it is somewhat longer than the decision needs. The slides are dense but readable.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Each paying account was matched by three who only said yes",
+    "why": "46%/14.2% is 3.2x, so about 2.2 extra 'yes' respondents per payer. Also, the survey and the paywall test are different populations."
+   },
+   {
+    "quote": "For the base: expect less than the paywall's 14%, not more",
+    "why": "Reasonable directional inference from the volunteer bias, but stated as an expectation without quantification."
+   },
+   {
+    "quote": "Pro plan ... Accounts expected to pay 33%",
+    "why": "Taken from the 2023 tier launch, which the document admits differed in content. It is presented as the expected uptake in the comparison table rather than as a scenario."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Top-tenth seats (about 1,790) pay overage",
+    "correct": "1,790 is requests per seat per month (14,500 ÷ 8.1). The number of top-tenth seats would be about 7,900."
+   },
+   {
+    "quote": "repays the $1.47M launch cost in about 13 months, against 20 months for the add-on",
+    "correct": "Add-on profit is about $0.83M a year after $1.0M inference and $0.6M platform, which gives about 21 months. This is a minor discrepancy."
+   }
+  ],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "partial"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 inside a Pro plan at +$12/seat with a 1,000-request-per-seat allowance and overage. Plan on about $2.9M ARR, not $8M. Run a randomised test first and restart the mobile rewrite as soon as the Copilot team frees up. Four conditions apply: a tested gain, the usage allowance, 26% Pro uptake, and a mobile-churn-removal check against the 51.7% break-even.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It uses the revealed paywall conversion rather than the survey. It accounts for variable inference cost through the allowance and overage. It weighs the mobile delay against the competitive threat with an explicit break-even and gates. It accepts the delay explicitly and checks whether the engineers can come from other work."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "It keeps 'launch' but rejects the $149 add-on and the $8M. The paywall test gives about $2.5M, buyers are heavy users, and the survey has response and size bias. It also cuts the VP Sales claim down, because Routewise discounted 20% in the same quarter. This matches the expected handling of 'revise'."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. It covers all four critical evidence items and all four required calculations. The Pro margin is estimated at about 67% against the key's 56%, because it uses a per-seat beta average. It avoids all six reasoning traps and spots the pack's 58% vs 40% inconsistency. The recommendation is defensible, gated and actionable. Weak points are a thin 33% Pro-uptake assumption, a stylised mobile/Copilot sequencing model, a few minor labelling slips, and some length from section dividers.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.15915040000000003,
+ "wall_s": 48.73546504974365,
+ "is_error": false,
+ "error_text": null
+}

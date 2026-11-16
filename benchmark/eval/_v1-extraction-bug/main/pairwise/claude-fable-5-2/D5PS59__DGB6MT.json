@@ -1,0 +1,39 @@
+{
+ "x": "D5PS59",
+ "y": "DGB6MT",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean chain from governing thought to slides. X uses three pillars (launch, package as Pro, guardrails), three explicit tests on slide 3, and an options table scored against those tests. Its weak spot is the first pillar: 'launch' is headed by a competitive threat X itself caps at $0.6M, while the real support (Pro expansion toward the NRR gap) sits under the second pillar. Y's chain is equally tight: customers value Copilot but few pay $149, so Pro beats the add-on; the AI threat is small and mobile churn is larger, so mobile goes first and Pro launches in Q4. Its recommendation follows directly from the evidence it presents. Y's own tension is that it says Pro alone closes the NRR gap, then delays that lever. Neither has a material break in logic.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reject the $149 add-on and free-in-Core and choose a Pro tier at +$12 per seat with an allowance; they differ on timing. X launches in Q2 and accepts the mobile delay explicitly. It quantifies both sides, states when the order flips (low adoption, rewrite ends most mobile churn), adds a March go/no-go on a random non-beta sample, and asks whether the 14 engineers can come from elsewhere. Its guardrail is concrete: a 600-request cap holds worst-case inference to 45% of the uplift, with $20 per 1,000 overage. Y defers to Q4, which the key treats as conditionally defensible. Y meets the conditions reasonably: it sizes the win-rate risk at $0.32M and sets a cheap trigger (the Q4 2026 win rate after the discount), though its 'limited AI response' is only a paid test with beta accounts. Y's trade-off treats deferred Pro revenue as costless and assumes the rewrite removes all mobile churn; with X's halving assumption its 1.9x advantage disappears. Y's allowance is anchored at break-even (1,333 per seat, zero margin at the cap), and its price test reuses the volunteer sample it criticises. X's own trade-off compares permanently lost churn ARR with half a year of deferred revenue, which flatters Copilot-first, but X shows the sensitivity. X weighs the alternatives more fully.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M against $2.45M; inference of $17/$32/$61/$131 per account; about 109 deals and $0.64M; Pro at $2.89M with 33% migration. Both discount the survey for response rate and size skew, treat 14% as a ceiling, note the Routewise discount, and reject the Sales memo's $1.9M. X adds low/base/high ranges throughout, uses a 25% base rather than the 33% precedent, and leaves the renewal gap out of the case. It also catches a real inconsistency in the pack: a 14,500 top-decile mean implies a 40% share, not 58%. X's weaknesses are that it scales usage per seat (444 × 6.2), which lowers Pro inference cost below the key's figure, and that its $0.5M against $1.1M mobile comparison mixes lost ARR with deferred half-year revenue. Y's Pro economics match the key ($1.26M inference, $1.03M gross profit after platform cost) and its trade-off units are consistent. But Y headlines the optimistic 33% case, its 1.9x ratio depends on the rewrite ending all mobile churn, and it sets the Pro deferral cost to zero. X is somewhat more careful and transparent.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CPO's hypothesis as the key expects. They keep the idea of launching Copilot, reject the $8M survey sizing in favour of the 14% paywall result, show the heavy-user inference cost problem with a flat $149 price, and move to a per-seat Pro tier with an allowance. Each has an explicit table correcting the CPO and VP Sales claims. X keeps the Q2 timing and accepts the mobile delay explicitly. Y changes the timing as well and argues the delay through the mobile trade-off, which the key also accepts, and it confirms the Head of Customer Success's concern. Both updates are proportionate to the evidence.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents are strong, avoid every trap, and reach defensible conclusions. X gives the executive team a more decision-ready package: a concrete Pro design with a margin-protecting cap and overage, conservative sizing with ranges, a random-sample test with a March go/no-go, explicit conditions that would flip the sequence, and triggers for each uncertainty. Y's mobile-first case is well argued and consistent in its units, and its Q4 2026 win-rate check is a smart, cheap gate. It is weaker where it relies on the 33% precedent as base case, sets the allowance at break-even, tests price only on beta volunteers, and treats the two-quarter Pro delay as costless. X's flaw is the unit mismatch in its mobile comparison, which it partly offsets by showing the sensitivity. On balance X serves the decision somewhat better.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.2316281999999998,
+ "wall_s": 85.25296473503113,
+ "error_text": null
+}

@@ -1,0 +1,204 @@
+{
+ "blind_id": "DE2HMT",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as the board posed it. It tests the founders' hypothesis in four tests (market, unit economics, funding, alternatives). The two board constraints, profitability within current cash and 12 months of runway, are used as explicit criteria in the options table. It identifies early what the answer turns on: unit economics and the runway. Minor oddity: 'Test 4 Alternatives: Not met' is awkwardly worded.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "Governing thought, the four summary points, the slide titles and the evidence line up. Titles are claims and mostly read as an argument. Weaknesses: the Zipcart slide sits between the customer and funding slides and is somewhat disconnected. 'Page 16' cross-references and the 'Test 4 not met' label are clumsy. Appendix A2 and slide 10 disagree on the reading-B cash figure. There is some redundancy between slides 3, 13 and 15.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The core numbers check out: -$6.17 median, -$1.76 best combined, -$12.57 pop-up, a 41.5% CAGR, and $2.5M left, which is about 6 months of runway. The Zipcart adjustment of -$1.05 matches the key. The bridge, break-even orders per day, the week-6 run-rate and the rider-pay sensitivity are all right. Critical evidence is all used, including the evidence that cuts the other way (Zipcart). Flaws: (1) best-density-only contribution (-$3.44) is not shown. (2) The Zipcart slide never notes that the 1,211 orders/day break-even is inside the observed 400–1,400 range, nor tests best density with the fee. (3) The software model shows 'Cash $7.5M start', which doesn't tie to the $12.0M in the pack, and the low point of $5.4M only fits a $12M start. (4) Reading-B cash is -$4.7M on slide 10 but -$2.5M in A2. (5) The $27M acquisition sizing is rough. (6) 'Competitors serve the grocers' is unsupported. Mostly accurate, with a few material wobbles.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Clear 'no' that follows from the analysis, and it matches the key's preferred R1. Four options are compared on both board criteria. Trade-offs are explicit: reversibility, capital, focus and learning vs runway. The pilot is rejected with a costed rationale. A capital-light alternative (a store-based offer for grocers, validated before building) is proposed. Reopening triggers, a quarterly runway check, tranche-gated hiring and software-growth stress tests (34% threshold) say what would change the answer. It avoids all the traps, including the Zipcart one. Next steps are concrete and carry measures of success. Small weakness: the software plan rests on a self-built model with an unclear start-cash label.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the decision page is clear. At 19 slides including 3 appendix slides and about 5,000 words, it is longer than a board decision on this case needs. Several slides overlap (3, 13, 15, 19). Some dense tables and jargon labels. Overall still readable.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Competitors serve the grocers who want fast delivery",
+    "why": "The pack says nothing about competitors serving these grocers' fast-delivery needs. It is an invented fact used to downgrade the status quo."
+   },
+   {
+    "quote": "Cash $7.5M start; low point $5.4M (M25)",
+    "why": "The pack gives $12.0M of cash. The $7.5M start is unexplained and inconsistent with the stated low point."
+   },
+   {
+    "quote": "Likely, but more slowly: growth would drop without the hires (not quantified)",
+    "why": "The status-quo growth effect is asserted without any basis in the pack (flagged as unquantified)."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Month 18 if it does not cover everything: −$4.7M (slide 10) vs Parcelbird Now reading B: −$2.5M (appendix A2)",
+    "correct": "The two figures for the same scenario disagree. $12.0M − $9.5M − $7.2M = −$4.7M if there is no offset from software gross profit, and the A2 table's −$2.5M is unexplained."
+   },
+   {
+    "quote": "Cash $7.5M start",
+    "correct": "The pack states $12.0M of cash. The model's low point of $5.4M only fits a $12.0M start."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Slide 10: Month 18 if it does not cover everything: −$4.7M",
+    "quote_b": "Appendix A2: Parcelbird Now, reading B: −$2.5M",
+    "why": "The same scenario is given two different month-18 cash positions. The conclusion is unaffected."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "partial"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027, and don't run the one-store pilot either. Fund $0.8M a year of software hires in two tranches tied to bookings. Build a store-based fast-delivery offer for pipeline grocers, validated first with the 9 late-stage deals. Reopen the operator decision only if all the stated triggers are met.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It computes per-order contribution on benchmark, best-observed and pop-up inputs. It separates market growth from profitability. It checks the runway ($2.5M left, about 6 months, against the 12 required). It offers the software and grocer-enabler alternative with explicit reopening triggers. This matches R1 and meets all the defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It rejects the founders' 'launch now, positive by month 18' view. The reasons are that every plan input beats the best observed site, the pop-up was below median on all four inputs, growth coexists with incumbent losses, and the runway fails. It engages with the Zipcart evidence (fee, 1% promotions, 14% volume loss) and shows a median site still loses $1.05 per order. It also flags the survey vs retention gap and offers a reopening path. Slight gap: it does not test the fee at best-observed density, and it doesn't note that the fee-case break-even density is within the observed range."
+  },
+  "overall_comment": "This is a strong, well-calibrated document with a clear 'no' and an alternative path. The key unit-economics, pop-up and runway numbers are correct. The Zipcart evidence is handled honestly, and the reopening triggers and stress tests are useful. Flaws: the software model's start cash is mislabelled ($7.5M vs $12.0M). Two figures disagree for the reading-B cash scenario. There is one unsupported competitor claim. It never shows best-density-only contribution (-$3.44). The Zipcart analysis stops short of the best-density case. It is also longer than the decision needs.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.2075884,
+ "wall_s": 52.059096813201904,
+ "is_error": false,
+ "error_text": null
+}

@@ -1,0 +1,181 @@
+{
+ "blind_id": "DKBBMD",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the question as posed (whether to raise prices and how) and uses the 15% ARR goal, the NRR above 100% floor, and the renewal and cap constraints as explicit criteria on slide 3. It spots early that the answer turns on segment differences and on the SMB promo mix. One small gap is that the chosen plan misses the 15% goal, and the framing treats that as a residual for new logos.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the five summary points and the slide titles line up. The titles are claims, and reading them alone gives the argument: churn is in SMB, the promo cohort explains it, price matters unevenly, $10.3M is overstated, so segment the increase. The options slide and the bridge follow from the analysis. There is a little redundancy between the decisions slide, the next steps and the risks slide. The plan's +14.2% falls short of the stated 15% goal, which is handled openly but leaves a loose end.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The numbers I rechecked are right: capturable $7.57M (SMB 2.52, MM 4.18, Ent 0.86), promo churn of about 4.9%, the mix effect of about 1.0 of 1.1 pp, customer-weighted 1.7→2.6% and ARR-weighted 0.8→1.2%, and break-even 10.7% (9.1% at +10%). The decomposition of exit-survey reasons by cohort is used correctly. The caveat on the 2024 new-signup test is included. The dashboard metric is flagged as undefined. Weaknesses: a few mild unsupported statements (\"worst is probably behind us\", \"many likely to Inkwell\"), the 2023 net result is not stated explicitly as about 4.1%, and the bridge applies trailing NRR plus price effects, which risks some double counting that is only partly caveated.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A differentiated recommendation: MM +10%, enterprise to contract terms, SMB held with a randomised +8% test, and an activation programme. Three options are compared on the decision criteria. The trade-off of giving up about $2M of paper ARR to avoid an unmeasured SMB bet is explicit. There are gates and kill thresholds with numbers (April and July checkpoints, 1.2% pause trigger), a risk table and clear next steps. It avoids every trap and rejects the CS \"halve churn\" claim with arithmetic. It acknowledges the plan lands at 14.2%, below the goal. It might have gone to 12% in mid-market sooner, but the step-up gate covers that.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the language is plain. At 18 slides with two appendices it is somewhat long for the decision, and there is some repetition across the options, decisions and next-steps slides.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "The worst is probably behind us",
+    "why": "Inferred only from the timing of discount expiry. The pack gives no evidence on remaining churn from the promo cohort, and the pack lists whether the cohort can be activated as an open uncertainty."
+   },
+   {
+    "quote": "SMB losses: ~320–640 customers, many likely to Inkwell.",
+    "why": "The destination of lost customers is not in the pack. The customer counts also rest on a linear extrapolation of the 2023 pattern."
+   },
+   {
+    "quote": "Why we expect far less mid-market loss",
+    "why": "This leans on a new-signup test and on a low-churn inference. It is partly caveated elsewhere but stated with more confidence than the evidence supports."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "partial"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Segmented increase. Mid-market +10% at renewal from January, with a step to 12% on H2 renewals if churn stays ≤1.0%/mo. Enterprise to contract terms (7% where capped, 10% otherwise). Hold SMB list prices in H1, exclude the promo cohort, run a randomised +8% renewal test and fund an activation programme. Checkpoints in April and July. Total +$4.3M, up to $5.1M.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It separates the mix effect from the rate effect and reconciles the CFO and CEO views. It corrects the $10.3M to $7.6M and then to $5.0–6.3M with churn response. It differentiates by segment and has gates. It is honest that ARR lands at +14.2%, below the 15% goal, without new logos."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It rejects a uniform 12% and a blanket \"no rise\". It shows that the CFO is partly right (the promo cohort drives about 90% of the SMB churn rise, and core SMB is flat) and that the CEO is partly right (promo churners cite price at 52%, and Inkwell has cut the contested win rate). It reaches a segment-differentiated plan, which is the expected revision."
+  },
+  "overall_comment": "This is a strong, well-calibrated document. The arithmetic is verified: $7.57M capturable, promo churn about 4.9%, break-even 10.7%. It splits the exit-survey data by cohort and caveats the new-signup test. It also corrects the CS onboarding claim and the board metric. The recommendation is differentiated, with explicit gates and a stress case. Minor weaknesses are a few soft inferences, a bridge that adds trailing NRR and price effects with possible double counting, and some length. It also openly lands under the 15% goal.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.1663324,
+ "wall_s": 31.67318296432495,
+ "is_error": false,
+ "error_text": null
+}

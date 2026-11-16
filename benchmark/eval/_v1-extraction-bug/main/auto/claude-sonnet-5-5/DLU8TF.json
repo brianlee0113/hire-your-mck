@@ -1,0 +1,189 @@
+{
+ "blind_id": "DLU8TF",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "The document poses the decision as the pack does: whether to raise prices at the 2027 renewals while churn rises, and where and by how much. It uses the 15% ARR growth target, the NRR floor of 100% and the renewal and cap constraints as explicit success criteria, and it breaks the question into five sub-questions. It correctly sees that the answer turns on why churn is rising and on segment differences. Two minor flaws: it adds 'out of scope: new plans or packaging', which the brief does not say, and it later attributes that to 'the brief's scope'. That removes the lower-tier-vs-Inkwell option from the main analysis.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought (raise mid-market and enterprise, hold SMB pending a test) matches the five summary points, and the sections follow the same order: why churn rises, larger customers, SMB risk, the segmented plan and its targets, then the roll-out. Most slide titles are claims that their evidence supports. Flaws: every divider slide carries the same wrong title, 'Churn comes from the promotion cohort'. There is repetition between the section 1 overview slide and the detailed slides. Option A is scored down as 'resting on SMB', yet the deck's own numbers show A nets more ARR ($6.3M vs $4.3M gross for B). That comparison is not made explicit.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The calculations are almost all correct and transparent. Blended logo churn is 1.7%→2.6% and revenue-weighted churn is 0.8%→1.2%. Promotion-cohort churn is 4.9%, and 90% of the rise in lost customers comes from that cohort. The $10.3M waterfall to $7.57M after timing and caps is right: 0.738 + 1.728 + 0.288 are deducted, and 26.7% of the CFO's figure sits in ARR that doesn't renew or is capped. The 2023 response scaled to 12% gives a 1.98x breakeven. NRR of 109.3% and the $0.6M new-ARR gap are also right. It uses the exit-survey split by cohort, the 2024 test with a new-signup caveat, the Inkwell win rate and the undefined dashboard metric. Weaknesses: it never states the key's 10.7% break-even or the roughly 4.1% net for 2023 in those terms, though the 1.98x is equivalent. The $4.3M and the NRR of 114% assume zero churn response in mid-market, which is flagged but still sits in the headline. The 2025 promotion-cohort baseline of 2.0% is a simplification. Some claims are unsupported: mid-market 'sold by account teams', and the $9 plan 'targets self-serve buyers'.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is a differentiated, staged plan and is defensible. It raises mid-market and enterprise by 10%, honouring the 7% caps. It holds SMB and runs a randomised +8% test with a numeric gate (0.5 pp above control) and a July decision. It re-activates the promotion cohort rather than discounting again, with a stop rule in Q3. A mid-market control group and five early-warning triggers with owners cover what would change the answer. It challenges the CFO's 12% and the 'halve churn' claim, and reconciles the CFO and CEO views. Weaknesses: it gives up about $2M of the CFO's net uplift without comparing options in dollars. It uses 10% rather than 12% on mid-market without much justification beyond the 2024 test level. It sets aside a lower-priced SMB tier as out of scope. The SMB test readout leaves only H2 for a rollout.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer sits in the opening slides, and the action titles are readable. But the deck runs to 40 slides and about 5,700 words for a decision that turns on four or five facts. The same evidence recurs across the overview, the detail and the backup slides. The identical wrong title on all the divider slides adds confusion. It is clear but longer than needed.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Three branches were left out on purpose: two by the brief's scope",
+    "why": "The pack never puts packaging or usage-based pricing out of scope. The deck made that exclusion itself."
+   },
+   {
+    "quote": "Mid-market contracts are annual and sold by account teams",
+    "why": "The pack says mid-market contracts are annual but nothing about how they are sold."
+   },
+   {
+    "quote": "Its $9 Starter plan targets self-serve buyers",
+    "why": "This is inferred. The pack gives the price and the fact that Inkwell hasn't appeared in larger deals, but not its target buyers."
+   },
+   {
+    "quote": "Annual contracts make churn slow to show",
+    "why": "This is an assumption used to explain mid-market churn. The pack gives no evidence for it."
+   },
+   {
+    "quote": "Leaving means rebuilding integrations and audit history",
+    "why": "This is a plausible inference about switching costs, stated as fact. The pack says only that customers rate these features as reasons to stay."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "partial"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "partial"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise mid-market and enterprise renewals by 10% (7% where capped) from January 2027. Hold SMB list prices and run a randomised +8% renewal test on non-promotion SMB, with a July decision and a 0.5 pp gate. Re-activate the promotion cohort without new discounts, run a mid-market control group, and define churn properly for the board.",
+   "closest_plausible_id": "R2",
+   "defensible": "yes",
+   "rationale": "The plan differs by segment and separates the promotion mix effect from the rate effect. It corrects the $10.3M figure and puts explicit gates on the SMB decision. It matches R1/R2: raise where customers are price-inelastic, and hold and test SMB."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "The document does not adopt the CFO's uniform 12% or the CEO's fear wholesale. It confirms the CFO's cohort and onboarding point: 90% of the rise in lost customers comes from the promotion cohort, and the non-promotion SMB rate moved only from 2.0% to 2.1%. It also shows that price matters, since the promotion cohort leaves at discount expiry, with 52% citing price, and Inkwell has pressured SMB win rates. It then differentiates by segment. It cuts the $10.3M to $6.3M and rejects the claim that onboarding will halve churn. The treatment is appropriate."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. It decomposes churn by cohort, corrects the CFO's $10.3M for renewal timing and caps, and scales the 2023 precedent to a 1.98x breakeven. It recommends a segmented plan with a controlled SMB test, kill triggers and owners. It also calls out the undefined dashboard metric. Weaknesses: it is long and repetitive, and the section dividers all carry the same wrong title. Its headline $4.3M and 114% NRR assume no mid-market churn response, and it doesn't compare options in dollars: A nets $6.3M vs B's $4.3M gross. Its scope exclusion of packaging is self-imposed and attributed to the brief.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.22131640000000002,
+ "wall_s": 54.49489784240723,
+ "is_error": false,
+ "error_text": null
+}

@@ -1,0 +1,39 @@
+{
+ "x": "DG2578",
+ "y": "DB9CX7",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same sound chain: churn is a cohort effect, headroom differs by segment, the $10.3M is overstated, so raise by segment with an SMB test. X's summary carries the full argument, including the trade-off against the CFO plan and the decisions required, and every slide title supports the governing thought. Y's question tree is also clean, but its governing thought makes the SMB hold conditional on the promotion cohort being 'fixed', while its SMB test runs on non-promotion customers and does not depend on that. Y's summary also leaves the trade-off less explicit. X has one tension of its own: it calls SMB the weakest evidence yet counts the conditional SMB gain in the base case that lands 'exactly' on target, though it discloses this and gives a downside.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's preferred differentiated recommendation and exclude the promotion cohort. X weighs three options on base and downside against the 15% target and NRR, and breaks the $1.6M given up into its sources. It shows the January SMB rise nets about zero in the downside, sets concrete go/no-go thresholds and pause triggers, and keeps a spare lever (mid-market to 12% in the second half). Y weighs the same options but on a single value figure, and its guardrails are vaguer ('at or below today's level', 'well below 7.4% for the year' for a test read out in Q2). Y holds uncapped enterprise to 7% 'for one message' without weighing the revenue left behind. In Y's favour, it names mid-market renewals as the largest risk and keeps the untested SMB gain out of its target bridge, which is more conservative than X.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core numbers right: implied cohort churn of 4.9%, a mix effect of about 1.0 of the 1.1 points, repriceable ARR of about $7.57M, blended and ARR-weighted churn, and the dashboard mismatch. X scales the 2023 response to a 12% rise and adds a downside (base $6.3M, downside $4.5M); its bridges reconcile and it models capped and uncapped enterprise separately. Y applies the unscaled 2023 response (3.6%) to a 12% rise, flagging it as a floor, so its $6.7M is somewhat optimistic for the CFO plan. Y does compute the 3.6% extra loss and an explicit break-even (7.4% for an 8% rise) with a sensitivity table, which is closer to the key's break-even calculation than anything in X. Y is also more careful on caveats: no 2025 non-promotion survey figure, survivor bias in the cohort estimate, and timing not being cause. X compares 18% with 19% without that caveat. Both caveat the 2024 new-sign-up test. X's activation value estimates (+$0.3M) rest on stacked assumptions, though disclosed.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than adopting or rejecting it: they accept that churn is mostly a cohort and onboarding problem, reject the uniform 12% and the $10.3M, and recognise the CEO's price concern in SMB through Inkwell. X is more explicit in reconciling the two views. It states 'where the CFO is right', separates price as a churn driver from price as what decides new SMB deals, and shows that activation explains under a third of the cohort's excess churn, so 'onboarding, not price' is only partly true. Y makes the same points ('the price shock was the discount ending, not our list price'; activation explains about 30%) but with less direct engagement with the two held positions.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong, defensible answers that avoid the main traps: blended churn, taking the $10.3M at face value, unsplit exit surveys, and the claim that onboarding will halve churn. X would serve the CEO better. It compares options on base and downside against the 15% target and NRR, decomposes the trade-off with the CFO plan, and gives specific guardrail thresholds and a June gate. It ends with a clear approve/reject/fund list and flags the missing new-customer ARR and notice periods. Y is careful and somewhat more conservative in what it counts, with good assumption hygiene and a useful SMB break-even sensitivity. But its modelling of the CFO plan is cruder, its guardrails are vaguer, and its treatment of the trade-off is thinner.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0178842,
+ "wall_s": 41.98886799812317,
+ "error_text": null
+}

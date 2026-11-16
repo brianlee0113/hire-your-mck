@@ -1,0 +1,329 @@
+{
+ "run_id": "pilot-c5-B-r1",
+ "case": "c5-negative-entry",
+ "condition": "B",
+ "rep": 1,
+ "order": 4,
+ "phase": "pilot",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 711.0,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.325",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 49,
+      "duration_ms": 710098,
+      "duration_api_ms": 702854,
+      "total_cost_usd": 2.9317673999999996,
+      "usage": {
+       "input_tokens": 46,
+       "cache_creation_input_tokens": 138287,
+       "cache_read_input_tokens": 1713437,
+       "output_tokens": 74130,
+       "output_tokens_details": {
+        "thinking_tokens": 26069
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 138287,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1190,
+         "cache_read_input_tokens": 142914,
+         "cache_creation_input_tokens": 2687,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2687
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 46,
+        "outputTokens": 74130,
+        "cacheReadInputTokens": 1713437,
+        "cacheCreationInputTokens": 138287,
+        "webSearchRequests": 0,
+        "costUSD": 2.9317673999999996,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 26069,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 138287,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": "so breaks the runway rule (about 10 months at the lowest point). In a simple model I built from the pack's figures, the software business breaks even on cash around month 26 at today's 60% growth, with cash never below $5.4M. At 40% growth it breaks even around month 36. At 30% growth runway drops below 12 months around month 23 unless costs are cut. The deck also covers decisions to request, a 90-day plan, triggers for reconsidering quick commerce, and risks and assumptions.\n\n**Choices I made where the pack was unclear** (listed on slide 17 and in the README):\n- **The $9.5M:** it's unclear whether this includes today's $0.4M/month burn, so I show both readings. Both break the runway rule.\n- **\"Contribution\":** I took it to mean per-order profit before site fixed costs.\n- **\"Best observed\" values:** I treated them as a ceiling, since the best order size and best volume came from different sites.\n- **Rider minimum pay:** the pack gives no figure, so the +10% and +20% cost scenarios are illustrative.\n- **Software model:** costs are worked out from current recurring revenue and burn, and held flat apart from the $0.8M for four hires.\n\n**Not checked in PowerPoint:** the sandbox blocked Quick Look and there is no PowerPoint renderer here. I checked the layout with my own rough image previews and an automatic check that text fits its boxes, so it's worth a quick look in PowerPoint before the board meeting.\n\nFiles are in `./deliverable/`:\n- Parcelbird_Now_board_deck.pptx\n- README.md"
+    }
+   ],
+   "started": "2026-11-15T23:48:20+00:00",
+   "ended": "2026-11-16T00:00:11+00:00",
+   "session_id": "f9d62184-026d-4b46-970c-418ba121319c",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 2.9317673999999996,
+  "duration_s": 711.0,
+  "api_s": 702.854,
+  "turns": 49,
+  "input_tokens": 46,
+  "output_tokens": 74130,
+  "cache_read_tokens": 1713437,
+  "cache_creation_tokens": 138287
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 2.9317673999999996,
+   "input": 46,
+   "output": 74130,
+   "cache_read": 1713437,
+   "cache_creation": 138287
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "Create a deck for Parcelbird's board: Should Parcelbird launch its own quick-commerce grocery delivery service in 2027?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.\n\nHow to approach it:\n- Work hypothesis-driven. State an initial answer early, write down what would have to be true for it to hold, test each of those against the evidence, and change the answer if the evidence does not support it.\n- Build the storyline with the pyramid principle: one governing thought that answers the question, an executive summary up front whose points become the sections, and the supporting arguments and evidence beneath each point.\n- Keep every grouping MECE (mutually exclusive, collectively exhaustive).\n- Give every slide an action title: a full-sentence takeaway that the slide's content proves.\n- Base the recommendation on evidence. Quantify where the data allows and show the calculations, weigh the alternatives and their trade-offs, and state the key assumptions, risks and uncertainties.",
+ "prompt_sha256": "196116758d84f77dde75085471c378b80b35ebedb46fe3e4095b303a9653e242",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.325 (Claude Code)",
+ "plugin_snapshot_sha256": null,
+ "repo_head": "e1e6b315d9ab3ed0bb51f8544553ec89d804fcc1",
+ "packet_sha256": "4fc9ae69881f7afe2f36c430baa40f8a21662f6231179ef24cbe92978bff7ade",
+ "files": [
+  {
+   "path": "workspace/deliverable/Parcelbird_Now_board_deck.pptx",
+   "bytes": 79082,
+   "sha256": "234ada02e6f17a3fba26a54866f01959a015cac63fe3b86d3a8bdc7b5d02a103"
+  },
+  {
+   "path": "workspace/deliverable/README.md",
+   "bytes": 1896,
+   "sha256": "f7b264201f32a73021c4ff43cac1626ee74de14e4324685ab22d2d1e057db2cc"
+  },
+  {
+   "path": "workspace/work/build_deck.py",
+   "bytes": 56755,
+   "sha256": "d6bdd6079d4e861e7de3fc04f098d1c69fb852c94d764aeb986408f4dce6bfbf"
+  },
+  {
+   "path": "workspace/work/model.py",
+   "bytes": 6355,
+   "sha256": "114aae7d9f93824a4ca1eba7098553befb96d0921d551eef3ec96aa0f70c40df"
+  },
+  {
+   "path": "workspace/work/model_out.json",
+   "bytes": 6992,
+   "sha256": "c589c49a4ea18212efdf4769d1a57f7fddf4bb1eb0fb9f4311f76c79b15c3e2d"
+  },
+  {
+   "path": "workspace/work/preview/slide01.png",
+   "bytes": 45272,
+   "sha256": "89d3521f110654b7b9c23408139643f51450252c680fe294cd987e8c6b9e7d64"
+  },
+  {
+   "path": "workspace/work/preview/slide02.png",
+   "bytes": 128902,
+   "sha256": "f26804fc9c76d66e42f81460c5cd12d1cfdc6360d3a784998d4795f5b730cd2d"
+  },
+  {
+   "path": "workspace/work/preview/slide03.png",
+   "bytes": 119812,
+   "sha256": "eef7370eb23af8c78c7a79dfd19ad448f217780819df97742a1cda0ee9e99a6c"
+  },
+  {
+   "path": "workspace/work/preview/slide04.png",
+   "bytes": 103312,
+   "sha256": "5671f48952fdf52ae707789eb0715a7ad8b944b805d8a6f3e624d46ca841fd46"
+  },
+  {
+   "path": "workspace/work/preview/slide05.png",
+   "bytes": 107132,
+   "sha256": "586b7e3e17b32d4a70dfa4d748014aa336ae2eabe795194ca7d1d18d34dd89bd"
+  },
+  {
+   "path": "workspace/work/preview/slide06.png",
+   "bytes": 131502,
+   "sha256": "62d60223ee2bc088947209d828c172bdb78d6a76f1265c1f22a35ca8322da4a4"
+  },
+  {
+   "path": "workspace/work/preview/slide07.png",
+   "bytes": 110771,
+   "sha256": "856a65198827f31493d185819b79fef99b26d6be70e78025983ef92d4241b09f"
+  },
+  {
+   "path": "workspace/work/preview/slide08.png",
+   "bytes": 117782,
+   "sha256": "6a70fecd0e5e6180b591b2e69a2f3d3a41242da6a0aaeb3457ca129c3fa3be63"
+  },
+  {
+   "path": "workspace/work/preview/slide09.png",
+   "bytes": 112092,
+   "sha256": "04e109b663841debb51d9f3bf3c5b334817276019e6ffed608e42a261070fd7b"
+  },
+  {
+   "path": "workspace/work/preview/slide10.png",
+   "bytes": 115219,
+   "sha256": "5a5015678c2b9eccae8a7136b6115ef243e8688af42230bc16dffe692b1f44ac"
+  },
+  {
+   "path": "workspace/work/preview/slide11.png",
+   "bytes": 128525,
+   "sha256": "8af467db91adbfe69eca81b08f7423215fbe8bfa2d24cf46da541a94f56a5300"
+  },
+  {
+   "path": "workspace/work/preview/slide12.png",
+   "bytes": 103064,
+   "sha256": "7d8cbdb3aa4dec51f743e4d0d100f55e1c3ec1b5d68958bbe8da3e5d69c26887"
+  },
+  {
+   "path": "workspace/work/preview/slide13.png",
+   "bytes": 108124,
+   "sha256": "3345a2c2b225769ffa531a68d44c5c245e094fb91e304fe2807a17f6b8ced3e9"
+  },
+  {
+   "path": "workspace/work/preview/slide14.png",
+   "bytes": 112946,
+   "sha256": "9efab97a3c9a40d4232975551bfd7e70eced47961731a434517436298854a66d"
+  },
+  {
+   "path": "workspace/work/preview/slide15.png",
+   "bytes": 92970,
+   "sha256": "7fa066b3c67eb8cb7143e63f246a6c4d20f2a0368a2086639d03a6dc93607994"
+  },
+  {
+   "path": "workspace/work/preview/slide16.png",
+   "bytes": 86267,
+   "sha256": "afa6f2066f7c91ac5b42f9824aa1a43447763a9e9ec983909dac23b473358886"
+  },
+  {
+   "path": "workspace/work/preview/slide17.png",
+   "bytes": 89007,
+   "sha256": "133c17633e13ffe2217552833c4ff0c74ee34f4e1de9dadaa656120a3f69338a"
+  },
+  {
+   "path": "workspace/work/render.py",
+   "bytes": 6378,
+   "sha256": "d881e55d76938a546653105f6d98a5d914b01d64b396d5a2ee3a86235801657f"
+  }
+ ]
+}

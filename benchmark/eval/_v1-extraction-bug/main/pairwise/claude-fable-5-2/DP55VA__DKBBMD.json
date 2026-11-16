@@ -1,0 +1,39 @@
+{
+ "x": "DP55VA",
+ "y": "DKBBMD",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both lead with a segmented answer and support it in a sensible order. X's four summary claims (why churn rose, where headroom is, what each option is worth, how to roll out) map one-to-one onto its sections, and the same net range ($2.2–3.6M) carries through to the decisions page. Its one tension is the headline \"a promotion problem, not a price problem\" set against its own finding that the promotion cohort is the most price-sensitive group, which slide 5 does reconcile. Y is also orderly but has two small internal strains. It says \"SMB pricing is not needed to reach the goal\" while the plan reaches 15% only with new logos or a checkpoint upside that includes the SMB rise. It also compares the CFO plan net of SMB churn against its own plan shown gross.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the same defensible recommendation: raise mid-market 10%, enterprise to caps, hold SMB with a randomised +8% test, exclude the promotion cohort, run activation, and gate the rollout. X weighs four options, including a faster-SMB variant, on a symmetric base and stress basis, and states the trade-off precisely: the test costs about $0.3M of upside to cap the SMB downside. It is also candid that no pricing option reaches 15% alone. Y weighs three options and honestly admits it gives up about $2M of paper ARR and that the CFO plan clears 15% on its numbers. That comparison is weakened because Y applies no churn response to mid-market or enterprise. Y adds useful touches: a three-band mid-market checkpoint, a seat-band response if Inkwell moves upmarket, and not banking onboarding savings. Its step-up to 12% on three months of data goes beyond the tested level.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the critical numbers: implied promotion-cohort churn of about 4.9%, the mix effect of roughly 1.0 of 1.1 points, the $7.6M corrected uplift, the dashboard that does not reconcile, the exit survey split by cohort, and the limit on the activation claim. X goes further: it nets a churn response in every segment, computes the 2023 net of +4.1%, models a realistic activation result (about 2.8%) and an upper bound (2.0%), and checks the test's statistical power. Some of its parameters are speculative, notably cohort elasticity taken from the 2.9× price-citation ratio and mid-market elasticity taken from a non-significant conversion gap, but they are flagged and err on the cautious side. Y gives the exact 10.7% and 9.1% break-evens and is clean overall. Its weaknesses are that it nets only SMB churn, so its $4.3M and $98.3M are effectively gross; it shows the SMB stress net as +0.02 when its own numbers give −0.02; and \"coin-flip\" asserts a probability without support.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Y deals directly with the views in the pack. It says both sides are partly right: the CFO because the core base is not leaving over price, the CEO because price drives exits where customers face a jump, and Customer Success because activation explains only about 0.8 of the 2.8-point gap. It then corrects the $10.3M. That is the reconciliation the answer key expects. X reaches the same substance: it rejects the $10.3M and the halving claim, and says the CFO is right on list price and the CEO right on the cohort's fragility. But it frames the exercise around a \"week 1\" hypothesis of its own that is not in the pack, and its headline \"not a price problem\" leans closer to the CFO's framing than the evidence warrants.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents are close: same recommendation, same core analyses, same traps avoided. X serves the CEO somewhat better because its value figures are net of a churn response in every segment and its option comparison is like-for-like across base and stress cases. It also has the more rigorous bound on the activation claim and a more fully specified test and gate design. Y is crisper and reconciles the CFO and CEO views more cleanly, but its headline uplift is gross for mid-market and enterprise, and that makes both its own plan and the CFO plan look better than they probably are.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1187322,
+ "wall_s": 67.3297119140625,
+ "error_text": null
+}

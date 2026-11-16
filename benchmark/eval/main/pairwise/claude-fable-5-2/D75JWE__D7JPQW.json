@@ -1,0 +1,39 @@
+{
+ "x": "D75JWE",
+ "y": "D7JPQW",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents answer first and support the answer with sections that map to the summary. X's hierarchy is tighter: the governing thought carries its reasons, the summary is a three-leg argument (economics fail, cannot afford to find out, software is the better route), and each leg is backed by slides whose titles restate the summary lines. Its slide 3 lists five conditions that must hold for the founders' case, and every later section tests one of them. Y's five sub-questions also map cleanly to sections, but it has small slips: slide 10 claims a loss 'even before the dark store' and cites the after-site-cost figure, and the slide 12 grid is before site costs, so its title is less decisive than the after-site-cost argument it sits in.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred recommendation (do not launch, scale the software, sell store-based fast delivery to grocers) and both set gates for reopening the question. X weighs more alternatives against the board's two constraints: launch as planned, a one-store pilot, scaling software, status quo, a second pop-up and a hybrid, each scored on path to profit, runway, downside and reversibility. X also stress-tests its own recommendation at 45% and 30% growth and with rising costs, names the growth level that would force cost cuts, and flags founder focus as a risk. Y compares three options with a qualitative table and assumes 60% growth continues, disclosed only in backup. Y's handling of the one-store test is sound (runway falls to about 10 months) and its funding gate is sensible. X's 'no extra fee' reopening trigger is restrictive given the Zipcart evidence, but it is defensible.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: −$6.17 at the median, −$1.76 at the best composite, about −$12.57 for the pop-up, +$2.02 for the plan, $2.5M left under the plan, and −$1.05 with Zipcart's levers. X uses the critical evidence more decisively. Its site-level grid at 1,400 orders a day shows every observed combination is negative, including −$3.44, which directly answers 'density will fix it'. It gives break-even baskets for three cases ($63, $50, $44), states the 41.5% CAGR, tests both readings of the $9.5M, and sizes the acquisition spend to fill stores. Y's grid is before site costs, it never isolates the best-density case, and it gives year-on-year growth rather than the CAGR. Y also says best basket and best rider productivity came from different sites, where the pack says basket and density. X has weak spots too: the inference that its median 'sits between the incumbents, which supports using the benchmarks', and the aggressive $37M first-year extrapolation, though the latter is labelled with its assumptions. Y is somewhat more careful about flagging estimates, such as the unknown size of the channel-conflict risk. Neither computes that Zipcart's levers at best observed density would turn positive.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both reject the founders' hypothesis on the right grounds while granting that market growth is real. X does it explicitly: it states the founders' view as the starting hypothesis, derives five conditions that must hold, marks growth as partly met and the other four as not met, and then states a revised answer. It also tests the claim 'we run them better than anyone' against the pop-up and takes on the Zipcart proof point directly, including the implied −$3.59 without the fee. Y also concedes the growth claim, treats Zipcart fairly ('pricing can close most of the gap') and marks the 'nobody owns the Midwest' claim as untested, but it never frames the analysis as a test of the founders' hypothesis. Neither notes that Zipcart's levers at best observed density would be positive, so both slightly understate the partial support for the founders.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents give the board the right answer with correct core numbers and a sensible software alternative with reopening gates. X would serve the board better. It shows that every observed combination loses money at the best density, tests both readings of the cash plan, quantifies smaller operator bets, and stress-tests the software path with a pre-agreed cost trigger. It also walks the founders' hypothesis through explicit conditions, which suits a board that includes the founders. Y is sound and carefully caveated, and its headline runway figure (about 6 months even if all goes to plan) is the more robust framing. But it does less to close off the 'density fixes it' and pilot arguments, and it does not test the robustness of its own recommendation.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.1806522,
+ "wall_s": 51.917604207992554,
+ "error_text": null
+}

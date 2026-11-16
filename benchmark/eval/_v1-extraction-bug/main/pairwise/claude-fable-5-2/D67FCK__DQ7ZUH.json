@@ -1,0 +1,39 @@
+{
+ "x": "D67FCK",
+ "y": "DQ7ZUH",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both are answer-first and internally consistent, with the same chain: churn sits in the promotion cohort, pricing power sits in mid-market and enterprise, the CFO's figure is overstated, so price by segment. X's three numbered pillars map cleanly onto its sections. Y's summary runs diagnosis, CFO test, sizing, recommendation, trade-off, decisions. Each has one small internal tension. X values the SMB upside on repricing the existing base but tests only new sign-ups. Y titles onboarding as worth 'up to a third' of SMB churn and targets the cohort at 2.1%, although its own analysis says activation explains only about 30% of the cohort's excess churn. These roughly cancel.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are almost identical: mid-market +10%, enterprise 7% where capped and 10% elsewhere, SMB held with a +8% test, promotion cohort exempt, onboarding funded, churn metric fixed. Both weigh the CFO plan and a no-increase option with quantified trade-offs. X adds an option D (segmented at 12%) and a 5% concession for accounts evaluating a competitor. Y's design is better where it matters most. Its SMB test runs on established customers' renewals, which is the pack's main open uncertainty, whereas X tests new sign-ups and would then reprice the existing base, a quiet repeat of the sign-up-to-renewal generalisation. Y also pre-agrees pause triggers for mid-market, the SMB test and the cohort, measures onboarding against a holdout because the cohort shrinks on its own, weighs reversibility, and raises notice-period and cap questions for Legal.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the key calculations correctly: cohort churn of about 4.9%, the 1.0pp mix effect, $7.57M gross, 10.7% break-even, blended and ARR-weighted churn against the undefined dashboard figure, and the NRR bridge to the 15% target. Both caveat the 2024 new-sign-up test and both refute the 'halve churn' claim arithmetically. X goes a little further and stays more consistent with its own numbers: it sizes onboarding at about $0.4M from the activation model, computes blended churn excluding the cohort (1.6% to 1.7%), solves the survey cross-check for churner share, and gives a per-point NRR sensitivity. Y's onboarding headline and 2.1% cohort target overreach its own decomposition. X's 'mid-market ~flat' is a loose description of 0.6% to 0.8%, though it flags the rise elsewhere; Y's note that 2023 churn settled 0.1 point higher is a useful extra.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's position rather than adopting or dismissing it: churn is mostly a cohort mix effect (CFO right), but the cohort left over price and Inkwell makes SMB price-competitive (CEO right), and the $10.3M is cut to $7.6M gross and less net. X says explicitly that the CFO and CEO are each half right and lays out a test table with verdicts (holds, holds at 10%, not shown, fails), which also covers the Customer Success claim. Its framing 'initial hypothesis' is its own invention rather than the CFO's stated one, but the CFO claim is still tested directly. Y says the CFO is half right and has a dedicated section testing the proposal, but addresses the CEO's concern only implicitly.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents are very close: same diagnosis, same numbers, essentially the same segmented recommendation, and both meet every defensibility criterion. X is slightly richer analytically, with a quantified onboarding value, an option D, an explicit hypothesis-test table and a risk-sensitivity table. Y is slightly more useful for making and managing the decision: its SMB test is on renewals and so answers the right question, its triggers come with pre-agreed actions, it uses a holdout for onboarding, it considers reversibility, and it lists legal and notice checks. Because the open risk is SMB renewal sensitivity and whether the rise can be stopped in time, Y's execution design gives it a narrow edge.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0692202,
+ "wall_s": 62.92848825454712,
+ "error_text": null
+}

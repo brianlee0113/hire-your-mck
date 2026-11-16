@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+# Binary deliverables are kept locally (sha256 in each meta.json); publish them as a release asset if needed.
+runs/**/workspace/**/*.pptx
+runs/**/workspace/**/*.xlsx
+runs/**/workspace/**/*.pdf
+runs/**/workspace/**/*.png
+runs/**/workspace/**/*.jpg
+runs/**/extract/images/
+runs/**/attempt*-workspace-raw/
+# Full transcripts include base64 slide previews (large); slim copies (*.slim.jsonl.gz) are committed instead.
+runs/**/transcript-attempt*.jsonl.gz
+!runs/**/transcript-attempt*.slim.jsonl.gz

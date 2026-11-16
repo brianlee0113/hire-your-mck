@@ -1,0 +1,39 @@
+{
+ "x": "DKBBMD",
+ "y": "DP55VA",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean hierarchy from a segmented governing thought through diagnosis, headroom, option value and rollout, and the numbers tie across slides in each. X's chain is slightly tighter (where churn is, where price matters, what the $10.3M is really worth, recommendation, what it delivers). But on X's own figures the CFO plan out-earns the recommended plan even in the stress case ($5.0M vs $4.3M), so the case for B rests on non-ARR arguments. Y has small frictions: the headline \"a promotion problem, not a price problem\" sits awkwardly with its own point that promo churners leave over a doubled bill; \"test on half of Q1–Q2 renewals\" does not match arms of ~1,900 each; and totals appear as both 2.2–3.6 and 2.4–3.8 (explained). These roughly cancel out.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the same defensible answer (R1/R2): mid-market +10%, enterprise to caps, SMB held with a +8% randomised test, promo cohort excluded, activation programme, gated rollout. Y weighs the alternatives better. It adds a realistic intermediate option (SMB +8% from January) and values every option net of churn by segment in base and stress cases. That shows a real trade-off: A wins by about $1M in the base case and loses in the stress case, and the gate costs about $0.3M. Y also explicitly holds the new-customer SMB price at $15, recommends ending activation-blind discounts, and checks that the test can detect the threshold. X's comparison stresses only SMB and applies no churn response to mid-market or enterprise, so its option A beats B on ARR in every case and reaches the 15% goal while B does not. X admits this candidly, but it leaves the recommendation resting on customer losses and \"unmeasured risk\". X's step-up gate to 12% and its break-even thresholds are good touches.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the critical calculations right: promo-cohort churn of about 4.9%, the mix effect of about 1.0 of 1.1 points, $7.6M capturable, the dashboard metric that cannot be reproduced, and the same activation decomposition. X gives the 10.7% and 9.1% break-evens; Y gives the 2023 net of +4.1% and a 2× break-even multiple. Y uses some evidence more sharply, notably that non-promo churn and price citations stayed flat even after Inkwell's October 2025 launch, and revenue per lead of +7.7% in the 2024 test. But Y's headline net figures depend on two weak inferences. It sets promo-cohort elasticity at 2.9× from the ratio of exit-survey price citations (52% vs 18%), which is not an elasticity measure, and then states as fact that an increase on the cohort \"loses money even at the 2023 response\". It also turns a non-significant conversion difference among new sign-ups into a renewal churn coefficient for mid-market and enterprise. These are disclosed in the appendix but drive the $1.5–4.6M and $2.2–3.6M headlines. X's numbers rest on fewer invented parameters, are labelled as illustrative, and keep the 2024 test as qualitative support with a caveat. X's weaknesses are that it applies no churn response to mid-market in its net figures and has a trivial sign slip (+0.02 vs −0.02).",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO hypothesis rather than adopting or rejecting it wholesale. Each accepts that the churn rise is mostly a promo-cohort mix effect, rejects the $10.3M and the uniform 12%, and rejects the \"halve churn\" claim with a calculation. X reconciles the views more squarely with the pack: \"both sides are partly right\", with price as a real driver for promo customers at discount expiry and at the point of sale against Inkwell, and the core base not leaving over price \"yet\". Y reaches a similar reconciliation on slide 5 and has an explicit verdict table. But its lead message, \"a promotion problem, not a price problem\", leans toward the CFO's framing. It also frames the revision around an invented \"week 1\" team hypothesis (freeze SMB) rather than the hypotheses actually in the pack, though it does test the CFO and Customer Success claims as separate rows.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents reach nearly the same recommendation and meet all four defensibility criteria: mix vs rate separated, both views reconciled, $10.3M corrected, pricing differentiated by segment. X is cleaner and more conservative in its inferences, and reconciles the CFO and CEO views more evenly. Y gives the CEO a more decision-useful comparison: options valued net of churn by segment in base and stress cases, an extra intermediate option, an explicit price for the test gate, a new-customer price hold, a lesson for future promotions, and a more conservative view of the gap to 15%. Y's weakness is that some of this precision rests on assumed elasticities that the evidence does not really support. X's weakness is that its own figures show the CFO plan earning more than the recommended plan in every case, which makes its recommendation harder to defend in the room. On balance Y serves the decision slightly better, but the margin is small.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.2117722,
+ "wall_s": 89.25076603889465,
+ "error_text": null
+}

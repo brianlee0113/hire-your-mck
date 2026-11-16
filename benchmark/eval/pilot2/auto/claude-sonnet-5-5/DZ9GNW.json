@@ -1,0 +1,181 @@
+{
+ "blind_id": "DZ9GNW",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as 'raise or not, and how' and answers by segment. It uses the 15% ARR growth and NRR above 100% objectives and the renewal and cap constraints as explicit criteria. It identifies early that the answer turns on where churn is rising, the promotion mix effect, and what really reprices in 2027. It also flags that the plan reaches 14.2% from existing customers and needs about $0.6M of new business to reach 15%.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the 11-point summary, the slide titles and the evidence line up. Titles are claims: churn is concentrated in the promo cohort, price complaints come from discount expiry, SMB is exposed to price, mid-market has pricing power, the $10.3M is really $7.6M. The plan, objectives check, tripwires and decisions follow from these. There is some redundancy between the summary, plan, comparison and decisions slides, and the 'Hold SMB' versus 'maybe +8% in H2' framing is slightly layered, but there are no contradictions.",
+    "score": 5
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The key numbers are correct. Segment churn, weighted churn (1.7→2.6 and 0.8→1.2), the implied promo churn of 4.9% and the 1.0 of 1.1 pt mix effect all check. The $7.57M build (SMB 2.52, mid-market 4.18, enterprise 0.86) is correct. The break-even is 10.7% and equals twice the 2023 response. The 2023 precedent is scaled and caveated as pre-Inkwell. The 2024 new-signup test is explicitly caveated for renewals. The dashboard metric is shown not to reconcile. Weaknesses are small. The linear scaling of the 2023 response and the roughly $1.0M onboarding value are assumptions, though they are labelled as such. The NRR bridge applies trailing NRR and then adds price on top, which may double count somewhat. 'The CFO is right that this is mostly an onboarding problem' slightly overstates what the evidence shows.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A differentiated plan: mid-market +10%, enterprise up to the cap, SMB held with a staged +8% test and guardrails, and no increase for the promo cohort. This matches the key's defensible R1/R2. Alternatives are compared on ARR, NRR and risk (CFO plan, 12% SMB, 12% mid-market, onboarding claim). The trade-off of $0.8–2.0M of paper ARR against measurability is explicit. It gives tripwires with numbers, a 'what would change the recommendation' list, a dated timeline and a rebuttal of the 'halve churn' claim. It avoids all the traps.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the structure is easy to follow. At 14 slides and about 3,000 words, with two appendices, it is somewhat longer than the decision needs. The plan, the comparison and the decisions slides repeat each other, and the test-size statistics are detailed. Language is plain.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Up to ~$1.0M retained (upside)",
+    "why": "Assumes onboarding can bring the cohort to 2.1% churn. The pack has no evidence on that, though the document caveats it and labels it as upside."
+   },
+   {
+    "quote": "the CFO is right that this is mostly an onboarding problem",
+    "why": "The evidence shows a cohort mix effect, but 52% of the cohort's leavers cite price at discount expiry. Calling it 'onboarding' is partly an inference."
+   },
+   {
+    "quote": "Price would accelerate it.",
+    "why": "Asserted without direct evidence for the promo cohort, though it is plausible given the exit survey."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise mid-market +10% and enterprise up to caps (+10% where uncapped) at renewal. Hold SMB at $15 in H1 and split-test +8%. Give the promo cohort no increase and run an onboarding programme. Use tripwires. Total $4.3M from price, plus up to $0.7M if the SMB test passes.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It differentiates by segment, separates the mix effect from the rate effect, corrects the $10.3M to $7.6M, and keeps SMB as a staged test with guardrails. It matches the key's R1/R2 and meets all four defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It treats both views as partly right. The CFO is right that the rise is mostly a cohort or onboarding effect. The CEO is right that SMB is price-exposed because of Inkwell and the discount cliff. It replaces the uniform 12% with a segmented plan, corrects the $10.3M, and uses a staged test with tripwires for the unresolved SMB question."
+  },
+  "overall_comment": "This is a strong, accurate and well-structured document. It does the mix decomposition, corrects the CFO's $10.3M to $7.57M, and separates exit-survey reasons by cohort. It caveats the 2024 new-signup test and the 2023 precedent, and it debunks the 'halve churn' claim with numbers. The recommendation has quantified tripwires and a timeline. Its weaknesses are some length and redundancy, a few assumption-based figures (the onboarding value and the NRR bridge), and a light treatment of the brand/trust trade-off.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.1555964,
+ "wall_s": 32.86131811141968,
+ "is_error": false,
+ "error_text": null
+}

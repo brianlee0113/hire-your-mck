@@ -1,0 +1,192 @@
+{
+ "blind_id": "DV6BBT",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed: launch in Q2 2027, and how to package and price it. It uses the NRR 101→105% target and the 75% margin floor as explicit tests, and Routewise and the mobile delay as further criteria. The sub-questions identify what the answer turns on: paywall vs survey, inference cost, win-rate attribution, mobile trade-off. Minor addition: it states 'mobile delayed by no more than two quarters' as a success criterion, which is not in the pack.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the five summary points, the sections and the claim-style titles line up. The Pro-over-add-on argument builds in order: demand, Routewise, package economics, mobile trade-off, plan. Weak points: slide 3 says Pro 'lifts NRR past 105%' while slide 17 shows it misses at half the migration rate. 'Revenue gain is near-certain' sits against that same uncertainty. The repeated Contents slides add redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The key calculations are correct: $8.06M vs $2.45M, $32.4/$130.5/$61.2 per month, 109 deals ≈ $0.64M, Pro $2.89M, engineering $1.47M, and add-on gross profit. Selection bias, the 6% survey response, the Routewise discount confound and the sales memo are all handled well. Pro margin is modelled per seat from the beta mean, which differs from the key's per-account method but is transparent and defensible. Weaknesses: 'near-certain' revenue gain is overstated, since it rests on 33% migration from a different tier. The mobile ARR-at-risk figure is a rough upper bound.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Recommends Pro with a usage allowance and paid overage, sized off the paywall test, with a margin guardrail. It rejects the $149 add-on and free-in-Core, and compares them on the decision criteria. The mobile trade-off is explicit: a 29% break-even threshold, a restart date and a six-month review. Risks have owners and triggers. This avoids the traps. It under-weights how thin the migration assumption is, and it chooses launch-first with confidence despite admitting the deciding factor is unknown.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the first pages and the language is plain. At 40 slides, five repeated Contents slides and many backups, it is much longer than this decision needs. Several slides repeat the same numbers.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Launch first: the revenue gain is near-certain, while the churn loss is a ceiling",
+    "why": "The Pro revenue rests on a 33% migration from a different tier, which the document itself says is doubtful. At half that rate NRR misses the target."
+   },
+   {
+    "quote": "Pro ... lifts NRR past 105% in its migration year",
+    "why": "Stated as a headline fact, but it holds only at the 2023 migration rate; at half that rate it falls short."
+   },
+   {
+    "quote": "Up to $1.1M of ARR at risk, lost for good",
+    "why": "Assumes the rewrite would eliminate all mobile churn on shipping. It is labelled an upper bound but rests on that assumption."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "A Pro plan at $12 more per seat lifts NRR past 105% in its migration year",
+    "quote_b": "Half that rate: Pro would still add ARR, but NRR would stop short of the 105% target",
+    "why": "The headline presents the NRR outcome as assured, but the body shows it depends on matching the 2023 migration rate. This is a mild tension, not a full contradiction."
+   },
+   {
+    "quote_a": "the revenue gain is near-certain",
+    "quote_b": "The 33% comes from another tier at another price, so Pro's fifth of headroom is the margin for that doubt",
+    "why": "'Near-certain' conflicts with the document's own doubt about the migration rate."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 as part of a Pro plan at $12 more per seat, with a usage allowance of about 444 requests per seat per month and paid overage. Do not sell the $149 add-on. Restart mobile in Q3 and review at six months.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It sizes demand from the paywall test rather than the survey and accounts for variable inference cost through the allowance and overage. It weighs the mobile delay against the Routewise threat explicitly and states what would flip the answer (the 29% threshold). The migration-rate dependence is acknowledged but somewhat overconfident."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It keeps 'launch' but rejects the $149 add-on and the $8M figure. The survey 46% is replaced by the paywall 14% ($2.5M), with the survey's bias and the buyers' heavy usage noted. It repackages as a Pro plan with an allowance. This is the expected revision. The one overreach is calling the Pro revenue 'near-certain'."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. It reaches every key insight and all four required calculations, avoids all six traps, and gives a defensible Pro-tier recommendation with margin guardrails and an explicit mobile trade-off. The main flaws are the overconfident 'near-certain' claim about Pro revenue and the headline NRR claim. It is also far longer than the decision needs, at 40 slides with repeated Contents slides.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1918004,
+ "wall_s": 33.244367837905884,
+ "is_error": false,
+ "error_text": null
+}

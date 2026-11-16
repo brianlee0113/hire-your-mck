@@ -1,0 +1,39 @@
+{
+ "x": "DV6BBT",
+ "y": "DFJGRQ",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run from a clear governing thought through demand, competition, packaging, sequencing and launch. X's hierarchy is mostly sound but strains in the sequencing section. Its summary line reads \"launching first is worth the delay, narrowly: mobile is the bigger churn problem\", and the supporting evidence (4.5x churn, up to $1.1M at risk) argues against the claim it sits under. X also says the NRR lift is one-off and that holding 105% needs lower churn, yet postpones the churn fix. It calls the Pro revenue \"near-certain\" after warning that the 33% comes from another tier at another price. Y's points each support the recommendation directly: value is unproven beyond volunteers, so pilot; the prize is small, so no urgency; margin risk, so per-seat with a pool; mobile is the compounding lever, so protect it first. The \"105% needs both levers\" step ties the sequencing back to the stated objective. Y's weak link is that it never shows where the 14 engineers come from in H2 without delaying mobile then; it flags this for the CTO.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reject the $149 add-on and free-in-Core and choose a +$12 Pro tier with a usage allowance and overage, which meets the key's criteria on revealed demand and inference cost. They differ on timing. X launches in Q2 and accepts the mobile delay explicitly (R1), with a useful break-even: mobile-first wins if the rewrite prevents more than 29% of mobile churn. But its main comparison sets $1.1M of permanently lost ARR against $1.44M of deferred revenue, not contribution, and calls that revenue near-certain although it rests on the 2023 precedent. Y delays to Q4 (R3) and meets the key's conditions: it quantifies the win-rate risk (at most about $0.56M) and plans a limited AI response through a paid pilot on random accounts. Y compares like with like, recurring ARR lost for good against contribution deferred. It adds value-of-information reasoning (the pilot tests volunteer bias; Q4 2026 win rate separates AI from the discount) and sets explicit triggers to revert to Q2. It admits the call is close. Y's weaknesses are a generous assumption that the rewrite removes 50–100% of mobile churn, and unconfirmed staffing feasibility; both are flagged.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the required numbers right: $8.06M vs $2.45M, inference at $17/$32/$61/$131, 109 deals and $0.64M, Pro at $2.89M, and the sales memo's implied 328 deals and $1.9M. Both treat the paywall 14% and beta gains as ceilings and note the survey's 6% response and size skew. X adds careful caveats: loss notes cover all lost deals, renewal was measured while Copilot was free, and usage is rescaled per seat for the larger beta accounts. That rescaling is defensible but gives a Pro margin of about 67% on the premium, above the key's 56%. X's lapses are the revenue-versus-ARR mismatch in the sequencing table, the \"near-certain\" claim, and a headline of $2.9M as the planning figure. Y states per-account margins that match the key (59%, 12%) and a Pro contribution consistent with it. It also gives a sampling interval on 17 of 120 (9–22%), observes that Routewise's AI launched only in the last month of Q3, which weakens AI as the cause, and uses low-to-high ranges throughout. Y's lapses are the 50–100% mobile-fix range, which has no support in the pack, and the loose phrase \"adds points every year\".",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects. They keep \"launch\", reject the $149 add-on, and replace the $8M survey figure with the paywall-based figure of about $2.5M or less, explaining the gap through stated versus revealed preference and survey bias. Both also show that the add-on's buyers are the heavy users. X adds a waterfall from $8M to under $1M of gross profit and keeps the CPO's Q2 timing. Y changes the timing too, arguing the mobile trade-off explicitly and endorsing the Head of Customer Success's concern, which the key allows. Both correct the VP Sales claim in the same way. Neither over- nor under-revises.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong, avoid every trap, and reach defensible conclusions on packaging and sizing. X is the more exhaustive and gives a ready launch plan, scorecard and risk owners for the key's preferred option. Its timing call, though, rests on an apples-to-oranges comparison and an overstated certainty about Pro migration, and it sits awkwardly with its own finding that holding 105% NRR needs lower churn. Y gives the CEO a tighter decision. It uses ranges instead of a point estimate, compares the two delays on a like-for-like basis, and links sequencing to the NRR objective by separating the one-off Pro step from the recurring mobile effect. It proposes a pilot that resolves the main uncertainties before the engineering spend, and names triggers that would bring the launch back to Q2. Its unconfirmed staffing assumption and optimistic mobile-fix range are real gaps, but they are flagged and do not outweigh the better trade-off reasoning.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.2254442,
+ "wall_s": 87.2575569152832,
+ "error_text": null
+}

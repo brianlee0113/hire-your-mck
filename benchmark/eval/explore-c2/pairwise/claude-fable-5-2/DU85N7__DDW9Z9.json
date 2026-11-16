@@ -1,0 +1,38 @@
+{
+ "x": "DU85N7",
+ "y": "DDW9Z9",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same clean argument: launch, reject the $149 add-on, choose Pro with an allowance, weigh mobile, set guardrails. X has the more explicit pyramid, but its headline is at odds with its own evidence. It tells the reader to plan on $2.9M (33% uptake) after arguing that even the 14% paywall rate is an upper bound for the base, and its own condition is only 26%. Its title that a usage allowance 'keeps gross margin at 76.5%' is really a mean-usage result, not an effect of the allowance. Y's summary, range (14–33%), NRR bridge and review thresholds all tie back to the same numbers, and its claim that the 105% NRR target needs both levers follows from its own low case.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the answer key's preferred recommendation (Pro tier, allowance, sized off the paywall test, mobile restart) and both weigh the mobile delay explicitly. X adds useful touches: a break-even of 51.7% rewrite efficacy, a randomised go/no-go test before launch, a 'free in Core' alternative, and a check on whether the engineers can come from elsewhere. But X plans on the optimistic 33% precedent and asserts that Pro alone closes the NRR gap. Y is better calibrated: it sizes a 14–33% range, admits the low case is thin (6.8-year payback), and says Copilot alone is unlikely to reach 105% so the mobile rewrite must not slip again. It puts 'Hold, mobile first' in the option table, calls the sequencing 'a close call', and attaches an if-missed action to each review check, including one that separates the AI effect from Routewise's discount. Y's 600-request allowance also holds the 75% floor in the worst case, which X's 1,000-request allowance does not.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M vs $2.45M, inference of $32/$61/$131 per month, about $0.64M from the win-rate drop, Pro at $2.89M, and the sales memo debunked. X has two sharp catches: the pack's '58% of requests' conflicts with Table 2 (which implies about 40%), and the matching traits of the comparison group are unknown. Its 74.7% and 71.9% margin scenarios also check out. But X's allowance fails its own stated purpose. At full use, 1,000 requests cost $9 of the $12 uplift, and at 33% uptake that puts company margin at roughly 74.5%, below the floor; the 76.5% it quotes is a mean-usage figure. X also relies on the 33% tier precedent as its base case without reconciling it with its claim that demand will be below 14%. Y stress-tests the margin properly (75.9% at full allowance, 74.1% uncapped), flags the 50% mobile-efficacy assumption as illustrative, and states how much weight each piece of evidence bears. Y's one soft spot is that its NRR bridge leans on that assumed 50%.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects: keep 'launch', reject the $149 add-on, and replace the $8M survey figure with paywall-based sizing, citing the 6% response rate and the size skew. Both also show the adverse selection of heavy users. X swaps the $8M point estimate for another optimistic one ($2.9M at 33%). Y resets the target to a range of $1.2M–$2.9M (mid $2.0M) and uses the paywall rate as its low case, which is a more evidence-proportionate update.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents make the same recommendation with largely correct analysis. X is tighter and has some sharp points: the break-even on rewrite efficacy, the pre-launch randomised test, and the data inconsistency it caught. Y serves the decision maker better because it is honest about the range of outcomes and the thin low case. Its guardrail design actually protects the 75% floor in the worst case, it frames the mobile rewrite as necessary for the NRR target, and it ends with a concrete decision list plus review thresholds with fallback actions. X's headline of $2.9M and 'Pro alone closes the NRR gap' risks repeating the CPO's over-optimism in milder form.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8479802000000001,
+ "wall_s": 49.275699853897095
+}

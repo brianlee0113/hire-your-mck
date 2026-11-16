@@ -1,0 +1,199 @@
+{
+ "blind_id": "D75JWE",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed (launch own quick-commerce in 2027?) and uses the two board constraints (path to profit within cash, 12-month runway floor) as explicit criteria in the options table. It converts the founders' view into five testable conditions and shows early that the answer turns on per-order economics and runway. It also adds the software-alternative comparison.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the A/B/C summary, the slide titles and the options table line up. Titles are claims and are supported by the slide evidence. There are small inconsistencies. Slide 15's title says only a fall to ~30% needs cost action, but its body says to cut opex if growth is below ~45%. Slide 17 puts the cost-action point at month 20, while the table shows a breach at month 23. There is some redundancy across the many slides and appendices.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-computed the core numbers and they are correct: median −$6.17, best composite −$1.76, best density with median AOV −$3.44, pop-up −$12.57, plan +$2.02, break-even AOV about $50, CAGR 41.5%, and Zipcart levers applied to the median giving −$1.05. Critical evidence is used, including the Zipcart evidence that cuts against the answer (with the 14% volume loss), the promotion-fuelled pop-up growth, the incumbent losses and the runway. Weaknesses: the software 'funded path' depends on invented modelling assumptions (flat opex, hires sustaining 60% growth, a full pipeline reading of '1.4×'). The Zipcart levers were not tested at best observed density, where the result would be about +$2.25. The 'launch on top' runway reading is an assumption not in the pack, though it is labelled and the all-in reading is also tested.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Clear 'do not launch' recommendation, which matches the key's R1. It compares four options plus the second pop-up, the hybrid and the Zipcart levers against the board criteria. It makes the trade-offs explicit, including why a pilot or second pop-up teaches little, and it sets quantified reopening triggers and 90-day steps. It avoids the traps. The main weaknesses are that the software alternative is supported by a model with unvalidated assumptions, and that the document does not show the case where Zipcart-style levers at best observed density turn positive, so the 'what would change the answer' reasoning is a little incomplete.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 1–2. Language is plain and each slide is quantified. But 21 slides and about 5,000 words is long for this decision. There is overlap across slides 5–8, the appendices and the assumptions slides, and some dense slides.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "The software business has a funded path to profit",
+    "why": "Rests on a self-built model with assumed flat opex and the assumption that $0.8M of hires sustains 60% growth; the pack does not support this. The 1.4× pipeline ratio also treats the full pipeline as convertible."
+   },
+   {
+    "quote": "Operating would compete with grocers who are customers or prospects, which puts the $96k-a-year contracts at risk",
+    "why": "Speculative; the pack gives no evidence of channel conflict."
+   },
+   {
+    "quote": "Zipcart's one profitable city",
+    "why": "The pack says only the densest city turned positive; 'one' is an inference, though a minor one."
+   },
+   {
+    "quote": "Store-based delivery uses stores the grocer already pays for, avoiding the $3.50/order dark-store cost",
+    "why": "The document itself says this is not quantified in the pack; the comparison is asserted, not shown."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Only a fall to about 30% would need cost action",
+    "quote_b": "if ARR growth runs below about 45% by mid-2027, cut opex to hold the floor",
+    "why": "The thresholds for cost action differ (30% vs 45%) within the same slide. Slide 17 also says action is needed 'by about month 20', while the table shows a breach at month 23."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Fund $0.8M a year of software hires, build a store-based fast-delivery module with 2–3 late-stage grocer design partners, and reopen the operator question only if explicit triggers are met.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It computes per-order contribution at benchmark and best-observed inputs, separates market growth from profitability, checks the runway constraint, and offers the software alternative. The design-partner module also acts as a capital-light test. It sets quantified reopening triggers."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It tests the founders' hypothesis as five conditions and rejects it. It shows the +$2.02 needs every driver to beat the best observed site. It separates market growth from profit. It handles the Zipcart fee evidence with the volume loss and shows the outcome is still negative at median density (−$1.05). It contrasts the survey with retention and flags the pop-up as promotion-led. It does not test the Zipcart levers at best observed density. The causal claim that promotions 'bought much of' the pop-up growth is plausible but not proven."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. It rejects the founders' plan on per-order economics, incumbent losses, the pop-up and the runway constraint. It handles the Zipcart counter-evidence honestly and offers a software alternative with reopening triggers. The weaknesses are that the software 'funded path' relies on invented modelling assumptions and an optimistic pipeline reading, a few small internal inconsistencies on the cost-action threshold, and a length (21 slides) that is more than the decision needs. Zipcart's levers at best observed density were also not evaluated.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.2057864,
+ "wall_s": 41.347792863845825,
+ "is_error": false,
+ "error_text": null
+}

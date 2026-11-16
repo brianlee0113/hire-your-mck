@@ -1,0 +1,192 @@
+{
+ "blind_id": "D67FCK",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as a segmented 'whether and how' question and uses the +15% ARR and NRR>100% objectives as explicit criteria. It computes the new-customer ARR needed under each option. It treats the renewal-timing and cap constraints as binding. The slide 3 'initial hypothesis' is the author's own, not the CFO's or CEO's, and the 'CFO and CEO each half right' reconciliation is brief. Otherwise it identifies early that the answer turns on cohort mix, segment sensitivity and the real size of the uplift.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the three executive-summary blocks (diagnosis, where pricing power sits, sizing) and the slide titles chain well and read as claims. The recommendation follows from the options table. Small gaps: 'MM and Ent ~flat' sits awkwardly beside the MM rise of 0.6% to 0.8%, which the document later flags as unexplained. Slide 3's hypothesis table is partly redundant with later slides. Slide 6 says not to count onboarding toward churn targets, while slide 13 sets a cohort churn target of 4.1%.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Numbers check out against the pack and the key. Promo cohort churn is 4.9% and the mix effect is about 1.0pp. Revenue-weighted churn is 0.8% to 1.2%. Repriceable ARR is $7.57M, split by segment exactly as in the key. Break-even is 10.7%, and the 2023 precedent is quantified at 3.6% extra loss. The dashboard metric is reconciled. It cross-checks the exit survey against the churner mix and adds a 3x activation model. Weaknesses: the 'core base is not churning on price' claim is a little strong given Inkwell and the win-rate fall. 'Existing customers have switching costs' is unsupported. The mid-market response proxy comes from a new-signup test, though this is caveated. These are minor.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A differentiated recommendation: raise mid-market and enterprise by 10% (7% where capped), hold SMB and run a gated +8% test with breakeven rules, and fund onboarding at a realistic value. It compares options A to D on ARR, NRR and new-customer need. It names the trade-off between upside and risk, gives go/no-go gates and pre-meeting data checks, and lists risks with mitigations. It avoids the $10.3M, blended-churn, 'onboarding halves churn' and new-signup-test traps. Gaps: brand and trust at renewal is not discussed, and the SMB test on new sign-ups does not directly measure the renewal response it would then be applied to.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slides 1 to 2 and the titles are plain. At 17 slides with dense tables and a heavy appendix, it is longer than the decision needs. The hypothesis-test slide and the churn-measurement slide partly repeat other material.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Existing customers have switching costs, so they are probably less sensitive",
+    "why": "Not in the pack. It is hedged as 'probably' and 'unproven', but it is still an assertion."
+   },
+   {
+    "quote": "The core base is not churning on price.",
+    "why": "Overstated. 18% of non-promo churners still cite price, and Inkwell's entry and the win-rate fall suggest rising SMB price sensitivity."
+   },
+   {
+    "quote": "Account teams may go to +5% for accounts actively evaluating a competitor",
+    "why": "A tactical suggestion with no evidence behind it. It is framed as a recommendation, so only mildly problematic."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Mid-market and enterprise are ~flat.",
+    "quote_b": "Mid-market rose 0.6% → 0.8%: small in absolute terms but unexplained.",
+    "why": "Calling mid-market 'flat' conflicts with a 33% relative rise that the document itself flags as needing diagnosis. This is minor."
+   },
+   {
+    "quote_a": "Do not count it toward 2027 churn targets until H1 results are in",
+    "quote_b": "cohort churn 4.9% → ~4.1%/mo (≈ $0.4M ARR)",
+    "why": "The plan sets a specific churn improvement target for onboarding while elsewhere telling leaders not to count on it. This is minor."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise mid-market and enterprise by 10% at renewal (7% where capped) from January 2027. Hold SMB list prices and run a +8% new-signup test with a July go/no-go. Fund onboarding at about $0.4M of value. Reject the uniform 12%. Adopt a defined churn metric.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches R1. It separates the cohort effect from the rate effect and reconciles the CFO and CEO views. It corrects the $10.3M to about $7.6M gross and $5.3M net. It differentiates by segment, with gates and guardrails."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document keeps the idea of raising prices but revises it by segment. It splits the cohort mix effect from the rate effect and says the CFO and CEO are each half right. It cuts the 12% to a tested 10%, holds SMB and corrects the $10.3M. The stated hypothesis is its own version, not the CFO's verbatim, but the handling matches the key's 'revise'."
+  },
+  "overall_comment": "A strong, numerically accurate document. It reaches all the key insights, does every required calculation correctly and recommends a defensible segmented plan with gates, alternatives and risks. Weaknesses are length (17 slides), a slightly overstated 'core base not price-driven' claim, and thin treatment of renewal trust and brand effects.",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1703624,
+ "wall_s": 28.739618062973022,
+ "is_error": false,
+ "error_text": null
+}

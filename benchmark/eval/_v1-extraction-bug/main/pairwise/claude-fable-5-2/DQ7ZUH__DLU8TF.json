@@ -1,0 +1,39 @@
+{
+ "x": "DQ7ZUH",
+ "y": "DLU8TF",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both build the same segmented argument in a clean order: churn diagnosis, pricing power by segment, test of the CFO number, options, plan, guardrails. X's executive summary reads as a complete argument, and each slide title states a claim that the slide's evidence supports. Its numbers also carry through consistently: $7.6M gross, $4.3M gross, $2.4–3.5M net, $1.5–2.6M of new ARR. Y's question-led structure (five questions, five sections) is also logical. But its headline that the plan 'meets both targets' with only $0.6M of new ARR rests on a gross, zero-churn figure, while its own slide 15 says mid-market churn is up for unknown reasons. Y's option table also compares A net of SMB churn against B gross. Y's repeated section-divider title and one mis-titled appendix slide add minor noise.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are essentially identical and both meet the key's preferred answer: +10% mid-market, enterprise at 7% capped and 10% uncapped, SMB held with an +8% randomised test, promotion cohort re-activated. X weighs the trade-off more honestly. It states that its plan yields $0.3–1.8M less than the CFO plan on paper, nets a churn response in mid-market, and explains why 10% rather than 12%. It also freezes promotion-cohort prices explicitly and flags that the 15% target still depends on unverified new-customer ARR. Y has one real design advantage: a mid-market renewal control group that directly addresses the gap between new sign-ups and renewals. It also adds an Inkwell-sighting trigger. But Y's headline economics assume no churn response in the larger segments, which makes the plan look safer than the evidence allows. Y also rules packaging out of scope, whereas X keeps it as a fallback.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: implied promotion churn of 4.9%, the mix effect of about 1.0 of 1.1 points, $7.6M gross, the dashboard reconciliation (1.7→2.6 and 0.8→1.2), and the 2023 response scaled to 5.4%. X goes further in four places. It gives the break-even loss thresholds (10.7% at 12%, 9.1% at 10%). It decomposes the cohort's excess churn into activation (about 30%) and discount expiry, which directly tests the 'onboarding, not price' claim. It cross-checks the exit-survey mix (about 37% against 34% reported). And it gives net ranges with a stress case in every segment. X's mid-market planning case, which uses the relative conversion gap as renewal loss, is a stretch, but it is labelled as an assumption and stress-tested. Y adds the 2023 extra loss of 3.6%, a break-even of 1.98x the 2023 response with a sensitivity table, and the 90% share of the rise in lost customers. But Y's $0.6M of new ARR and 114% NRR rest on zero churn in the larger segments, and its $1.5M 'ARR kept' figure is a crude upper bound. Both caveat the 2024 test and reject the halving claim with the same 2.1% against 1.55% logic.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than adopt or reject it wholesale: both correct the $10.3M and differentiate by segment. X is more explicit that 'the CFO is half right' and reconciles the CFO's and CEO's views: churn is a mix effect, yet the cohort leaves over price and Inkwell makes SMB price-competitive. X also quantifies how much of the cohort's churn onboarding can explain (about 30%), which tests the 'onboarding, not price' claim directly. Y reaches the same reconciliation: no broad price reaction, but SMB does react to price and Inkwell raises the risk. However, Y frames it more one-sidedly ('not from a reaction to list prices') and does not quantify the split between onboarding and price.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents reach the same defensible segmented recommendation, avoid all the major traps, and meet every defensibility criterion. X serves the CEO better because its numbers are net of plausible churn responses, with planning and stress cases. It states the trade-off against the CFO plan openly and admits that $1.5–2.6M of new-customer ARR is still needed and unverified. It also offers the sharper diagnostics: break-evens, the split between activation and price, and the exit-survey cross-check. Y's mid-market control group and SMB sensitivity table are real strengths. But its headline that the plan nearly reaches 15% on its own rests on a zero-churn assumption in the larger segments and could mislead the decision maker on how much risk remains.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0389481999999999,
+ "wall_s": 37.70087504386902,
+ "error_text": null
+}

@@ -1,0 +1,38 @@
+{
+ "x": "DRT5H8",
+ "y": "DMF5J6",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same chain: the churn rise is a promotion-cohort effect, pricing power sits in mid-market and enterprise, the CFO's number is overstated, so target the increase. X carries one set of numbers through every level: $10.3M to $7.6M to $5.0M to the plan's $4.1M, then into the ARR bridge, the guardrails and the December decisions. Its summary line 'not because customers are reacting to price' sits awkwardly beside 'customers who are already leaving over price', but slide 5 reconciles the two explicitly (CFO right on core SMB, wrong that it is only onboarding). Y is tidy but has unresolved tensions. Slide 6 concludes 'the gap lies in setup, not in the product or its price', while slide 8 is titled 'Price drives the exits of promotion customers'. Slide 12 builds enterprise at 7–12%, but the plan prices all enterprise at 7% without explanation. The governing thought also rests on onboarding 'fixing' the cohort, which the body supports only with an assumed target.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the defensible differentiated answer (R1/R2). X weighs the alternatives explicitly: no increase, uniform 12%, targeted, and a +10% mid-market variant, each with base and downside net ARR, SMB exposure and the new-customer ARR needed. It states the trade-off plainly: about $1.0M of base-case value given up for a higher downside floor. Its +12% in mid-market goes beyond the tested level, but X says so and attaches a Q1 churn trigger with a fallback to +10%. Its SMB test is randomised on renewing core customers, with a break-even-derived decision rule. Y's choices are more conservative but less reasoned. Mid-market at +10% and enterprise at 7% across the board leave uncapped enterprise headroom unused without saying why. No churn response is modelled for its own plan. Its SMB test runs on new sign-ups and is then used to decide for existing customers, which repeats the new-signup-versus-renewal problem it flags elsewhere. It never evaluates 'no increase' and has no guardrail on the mid-market rise.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "X hits all the required calculations. It gives the mix decomposition (4.9% cohort churn; 1.0pp of the 1.1pp rise) with a survey cross-check. It gets $7.6M repriceable and then a churn-adjusted $5.0M. It derives break-even for the +8% test and uses the 2023 precedent quantitatively. It reconciles the dashboard against customer-weighted (1.7% to 2.6%) and ARR-weighted (0.8% to 1.2%) churn. It tests the 'halve churn' claim arithmetically (theoretical floor 1.35%, activation cannot be applied retroactively). Its weak spots are assumption-heavy elasticities: the 2023 SMB relative reaction is transplanted to mid-market and enterprise, and the '70% discount cliff' is a residual. These are labelled as judgement and stress-tested with a 2x downside. Y gets the 4.9%, the $7.6M and the 10.7% break-even right and notes the dashboard mismatch, but it has weaker inferences. Converting break-even into '51% of the promotion cohort leaving' and calling that 'plausible' confuses baseline churn with incremental churn. The $1M activation upside assumes cohort churn falls to 2.1% from January with no evidence. 'Conversion unchanged' is stated flatly in the summary. The size of the mix effect is never stated, and the plan value ignores any churn response.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than adopting or rejecting it wholesale, and both reconcile it with the CEO's concern. X does this most explicitly. Slide 3 breaks the hypothesis into four 'what would have to be true' tests with a verdict on each: the churn claim holds with a caveat, absorbability fails for SMB, the $10.3M fails, and the constraints hold. Slide 5 then says the CFO is right about core SMB but wrong that churn is only onboarding, because the cohort left over price when the discount ended. Y also separates the cohort from the core and corrects the $10.3M, but its handling is less clean. Slide 6 asserts the gap is 'setup, not price' in support of the CFO, then slide 8 says price drives the cohort's exits. It replaces the Customer Success claim with its own optimistic activation assumption rather than testing whether the cohort can be activated at all.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both land on a defensible segment-differentiated increase and correct the CFO's headline. X serves the CEO better because it gives a churn-adjusted budget number ($4.1M base, $3.1M downside) and a like-for-like comparison of options. It also gives triggers and decision rules for the two real uncertainties (mid-market renewal reaction, core SMB sensitivity after Inkwell), a properly designed renewal test, a realistic view of onboarding, and a traceable replacement for the undefined dashboard metric. Y is shorter and clear, and its conservative +10% is reasonable. But it leaves the plan's value unadjusted for churn, relies on an unsupported activation upside, uses a strained break-even argument, and proposes an SMB test that does not answer the renewal question.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8977562,
+ "wall_s": 38.95408797264099
+}

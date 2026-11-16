@@ -1,0 +1,188 @@
+{
+ "blind_id": "D5PS59",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision exactly as posed (launch, package, price). It turns the three stated objectives and constraints into explicit pass/fail tests: NRR 101%→105%, a gross margin floor of 75%, and the 14-of-60 engineering trade-off. It identifies early that the answer turns on stated vs revealed demand, inference cost and the mobile delay. It also notes that win-backs show up in new ARR, not NRR.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, summary, titles and evidence line up. The titles read as an argument: survey vs paywall, size of the Routewise threat, beta bias, flat price vs per-seat price, option comparison, package, financials, mobile trade-off, uncertainties, plan. The options table uses the same three tests introduced on slide 3. The summary is a little cluttered, and the 25% base adoption is asserted rather than derived, but there are no real contradictions.",
+    "score": 5
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Nearly all numbers check out: $8.06M vs $2.45M; $61/$131/$32 inference cost per account; 109 deals and $0.64M; Pro $2.89M at the high case; the 38–39% breach threshold for free-in-Core; the 40% implied share vs the stated 58%. The document catches the 58% vs 14,500-mean inconsistency, the survey bias, the volunteer bias and the Routewise discount confound. Weaknesses: the base Pro adoption of 25% is assumed (it is flagged). Pro adopters are costed at the beta mean of 444 requests per seat, although paying buyers used 6,800 requests, which is about 1,100 per seat. The 55% 'Copilot margin' trigger is ambiguous: with the $0.6M platform cost included, base Copilot margin is about 39%. The 'ARR … less platform cost' label in the appendix is muddled.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Clear recommendation (Pro tier with an allowance and overage, reject the $149 add-on and free-in-Core) that follows from the analysis. Four options are compared on the stated criteria. The mobile trade-off is quantified explicitly (about $0.5M vs $1.1M) and the delay is accepted openly, with a fixed re-baselined date. The document gives a kill gate (below 15% adoption in March), conditions that would flip the answer, a $15 price arm, margin guardrails, a contract renegotiation and next steps. It avoids all the traps. The cost of the mobile delay rests on assumed churn effects and is lightly supported.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 with decisions requested. Titles are plain and carry the message. At 15 slides and about 3,650 words it is somewhat long, and the decisions are repeated on slides 2 and 13. The appendices are useful, but there is some density and redundancy.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Pro adoption of 25% in the base case",
+    "why": "The base adoption rate is a judgement call that sits between 14% and 33%. It is flagged as an assumption, but the headline +3.8 NRR points depends on it."
+   },
+   {
+    "quote": "$25 (444 per seat, the beta mean)",
+    "why": "It assumes Pro adopters use the beta mean per seat, although the only observed paying buyers averaged about 1,100 per seat. This is a possible underestimate of inference cost, partly covered by the full-allowance sensitivity."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Company gross margin 76.6% (base case)",
+    "correct": "About 76.5% ((44.9+0.86)/(57.6+2.19)). This is within rounding and not material."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Mean above 600 per seat, or Copilot margin below 55%: tighten the allowance or raise the overage price.",
+    "quote_b": "Copilot gross profit $0.86M on $2.19M expansion ARR (base case)",
+    "why": "If platform cost is included, as the deck's own definition of Copilot gross profit says, the base-case Copilot margin is about 39%. That is already below the 55% trigger. The margin definition for the gate is ambiguous."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot in Q2 2027 in a new Pro tier at +$12 per seat, with a pooled allowance of 600 requests per seat and overage billing. Reject the $149 add-on and free-in-Core. Take 14 engineers for two quarters and re-baseline the mobile rewrite. Run a Q1 price test and a March go/no-go gate at 15% adoption.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It uses revealed demand (the 14% paywall rate) rather than the survey. It prices inference cost through an allowance and overage. It weighs the mobile delay explicitly against the competitive threat and states conditions that would flip the answer."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "It keeps 'launch' but revises the sizing, from $8M to at most $2.5M, and the packaging, from a $149 add-on to a Pro tier. It explains the survey vs paywall gap (6% response, larger respondents, stated intent, volunteers). It shows that flat-price heavy users carry 41–88% inference cost. This matches the expected 'revise' handling."
+  },
+  "overall_comment": "This is a strong, well-calibrated document. The numbers are accurate and the key traps are avoided: survey sizing, zero-marginal-cost AI, attributing the whole win-rate drop to AI, volunteer bias, and ignoring the mobile trade-off. It also spots a real data inconsistency (the 58% share vs the 14,500 mean). The recommendation is gated and actionable. Minor weaknesses are the assumed 25% base adoption, Pro usage costed at the beta mean, an ambiguous Copilot margin trigger, and some length and repetition.",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1852064,
+ "wall_s": 44.90567588806152,
+ "is_error": false,
+ "error_text": null
+}

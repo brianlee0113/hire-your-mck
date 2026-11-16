@@ -1,0 +1,198 @@
+{
+ "blind_id": "DJEKEZ",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed (launch own operator in 2027?). Uses both board conditions (path to profit within cash, 12-month runway) explicitly as criteria in the options table. Separates the founders' three claims early. Identifies what the answer turns on: per-order contribution against best observed inputs, and runway.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought leads the deck. The five summary points map to the sections: market vs profit, own data, plan vs best site, runway, software alternative. Titles are mostly claims. Slides 5–8 and appendix 15 overlap somewhat, and slide 3 repeats slide 2. Slide 7 has a garbled step label in the extraction, but the chain is consistent with no contradictions.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Core numbers check out: median −6.17, best composite −1.76, plan +2.02, pop-up −12.57, CAGR 41.5%, $2.5M vs $4.8M floor, Zipcart-playbook −1.05, 6,400 orders/day. All critical evidence is used, including the Zipcart counter-evidence. Flaws: the 'pilot breaches floor around month 8' claim looks wrong, since the pack's numbers give about month 12. The pop-up growth path (180→410) doesn't quite sum to 11,800, though it is labelled an estimate. 'Worse on every input' ignores the pop-up's lower fixed cost. The payback method (CAC divided by 22% retention) is debatable but disclosed. The deck doesn't show the best-density-plus-fee case (+$2.25), nor the median-site-plus-fee case (−0.48).",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Clear 'do not launch' recommendation, which the key rates defensible (R1). Compares three options against the board's criteria. Concedes the market-growth claim and treats the Zipcart evidence honestly, noting its assumptions favour the plan. Explicit reopen triggers (positive contribution for two quarters, rider rules settled, funding or 24+ months of runway). Gives next steps and a review date. Notes that the core burn must come down regardless. The pilot is dismissed a bit quickly, with a shaky runway number, but the reasoning stands. No traps.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the titles carry the argument. 16 slides is long for this decision, and the unit-economics story is spread over slides 5–8 plus appendix 15. The language is plain and the appendix of judgement calls is useful.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Our own pop-up did worse than that median on every input",
+    "why": "The pop-up's annualised fixed cost ($650k) was lower than the benchmark's $1.15M, so 'every input' is slightly overstated."
+   },
+   {
+    "quote": "Growth claim holds ... nobody owns the Midwest",
+    "why": "The deck marks the claim as holding based on market growth alone. The 'nobody owns the Midwest' part is not tested."
+   },
+   {
+    "quote": "Option C keeps Parcelbird in the fastest-growing part of grocery",
+    "why": "The pack doesn't show that selling software to grocers captures quick-commerce growth. Software conversion is assumed."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Breached around month 8 (at today's $0.4M burn)",
+    "correct": "With $0.6M capex and about $2.0M/yr (≈$0.17M/month) of losses on top of $0.4M burn, cash drops from $11.4M to the $4.8M floor in roughly 11–12 months, not 8."
+   },
+   {
+    "quote": "about 180 to about 410 a day, our estimate",
+    "correct": "An 18% weekly growth path averaging 280/day (11,800 over 42 days) starts near 200 and ends near 450. The stated path sums to roughly 10,700 orders. Minor, and labelled as an estimate."
+   }
+  ],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Decline the nine-store Parcelbird Now launch. Approve about $0.8M a year for 2 engineers and 2 sales hires to grow the software business and sell store-based fast delivery to grocers. Adopt reopen triggers and review in H1 2028.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It computes per-order contribution on benchmark and best-observed inputs. It separates market growth from profitability. It checks the runway constraint, finding $2.5M left against a $4.8M floor even on plan. It offers the software alternative with explicit reopen triggers."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "It rejects the founders' 'enter now, density fixes it' hypothesis. It concedes that market growth is real, then shows that even the best composite site loses $1.76 and the plan beats every best-observed input. It shows density explains only about a fifth of the plan-to-median gap. It tests the Zipcart evidence (−$1.05 at median with fee, promo cut and volume loss) and notes the caveats. It treats the pop-up's 18% weekly growth as bought by promotions. It does not show the best-density-plus-fee case."
+  },
+  "overall_comment": "This is a strong, numerically careful board paper. Its per-order build-ups reproduce the answer key's figures (−6.17, −1.76, +2.02, −12.57, −1.05). It handles the runway constraint and the Zipcart counter-evidence well, and it recommends a defensible 'software focus' path with reopen triggers. Weaknesses: the one-store pilot's 'month 8' breach looks wrong, the payback method is debatable, and the deck is longer than necessary, with some repeated unit-economics slides. It does not compute the best-density-plus-fee case.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.18462640000000002,
+ "wall_s": 55.871716022491455,
+ "is_error": false,
+ "error_text": null
+}

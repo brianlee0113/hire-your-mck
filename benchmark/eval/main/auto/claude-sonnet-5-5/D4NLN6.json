@@ -1,0 +1,187 @@
+{
+ "blind_id": "D4NLN6",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed (raise prices in 2027, where and by how much) and uses the 15% ARR growth and NRR>100% targets as explicit tests. Sub-questions identify what the answer turns on: where churn rises, who accepts a price rise, and what each option adds to ARR. Excluding a low-cost SMB tier as out of scope narrows the 'how' somewhat, since the key lists a lower-priced tier as a legitimate SMB option.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, five-point summary, section titles and slides line up closely. Titles are claims and the sections follow the summary. Minor issues: 'only holding SMB until a test meets the target whatever SMB customers do' sits uneasily with the document's own finding that a mid-market reaction like 2023 would miss the target. Four repeated Contents slides add redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Numbers check out. Customer-weighted churn is 1.71%→2.62% and ARR-weighted is 0.83%→1.19%. Implied promo churn is 4.9% and the promotion explains 91% of the SMB rise. The reachable uplift is $7.57M, break-even is 10.7%, the 2023 reaction is 3.6% and the net gain is about $1.67M. The 94% SMB share of customers lost and the 47% versus 56% cross-check are also right. Every critical evidence item is used, including the caveats on the 2024 test and the pre-Inkwell 2023 precedent. Weaknesses: the $99.03M floor holds NRR at 109.3%. That NRR already embeds past expansion and price effects, so adding the price rise on top risks double counting. The floor is also called robust 'whatever SMB customers do' despite the mid-market risk. The dashboard metric is handled well.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Differentiated recommendation: 12% for mid-market, 7% or 12% for enterprise, an SMB test with a gate, and the promotion cohort held. It compares options against the targets, rejects the CFO's blanket 12% and the Customer Success 'halve churn' claim, and states fallbacks, guardrails, owners and kill criteria. It reconciles the CFO and CEO views. Gaps: it does not consider a lower SMB tier or grandfathering as live options. The mid-market reliance is flagged as the largest risk, but there is no staged mid-market test beyond Q1 monitoring.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 3 and the language is plain. But 43 slides and about 6,400 words is long for this decision. There are four identical Contents slides and heavy backup. Several slides repeat the same numbers (the $99.03M floor and the 91% figure appear many times).",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Mid-market has shown it will pay more",
+    "why": "The 2024 test covered new sign-ups at 10% for three months, with no significant difference. It does not show renewing customers will accept 12%. The document caveats this elsewhere, but the headline overstates."
+   },
+   {
+    "quote": "only holding SMB until a test meets the growth target whatever SMB customers do",
+    "why": "The $99.03M floor depends on the 109.3% NRR holding and on no extra mid-market churn. The document's own sensitivity shows ARR of $97.96M if mid-market reacts like SMB in 2023, which is below target."
+   },
+   {
+    "quote": "Timing: the cohort's heaviest exits came right after the discount ended, and those customers have gone",
+    "why": "The pack says only that most promo leavers left within two months of the discount ending. It does not show the remaining cohort is less at risk."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Of the three options, only holding SMB until a test meets the growth target whatever SMB customers do",
+    "quote_b": "Mid-market renewals react as SMB did in 2023 $97.96M; mid-market loses $1.41M; below target",
+    "why": "The recommended plan's target-meeting claim is robust only to SMB behaviour. The document's own backup shows it misses the target if mid-market reacts adversely."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise mid-market 12% and enterprise 7% where capped, 12% where uncapped, from January. Run a Q1 +8% test on non-promotion SMB renewals and decide in July. Hold the promotion cohort's price and run onboarding on it. Use churn and NRR guardrails.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It is differentiated by segment. It separates the mix effect from the rate effect and corrects the $10.3M to $7.6M. It protects SMB from a pre-Inkwell precedent through a gated test. Alternatives are compared against the targets, and fallbacks and guardrails are explicit."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document keeps the CFO's price increase where customers stay but rejects 12% on every plan. It also rejects the claim that churn is only an onboarding issue, and it accepts the CEO's concern for SMB. It shows the promotion mix effect explains about 91% of the SMB rise, shows price is cited mainly by promotion leavers, and flags Inkwell. This is the segment-differentiated revision the key expects."
+  },
+  "overall_comment": "A strong, numerically accurate document that reaches every key insight and calculation, avoids all five traps, and gives a defensible segment-differentiated plan with gates and guardrails. Weaknesses: the NRR-based ARR bridge may double count price effects. The 'floor regardless of SMB' claim over-reaches given mid-market dependence. The low-cost SMB tier is excluded. At 43 slides with repeated Contents slides it is long.",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1949724,
+ "wall_s": 33.30061411857605,
+ "is_error": false,
+ "error_text": null
+}

@@ -1,0 +1,189 @@
+{
+ "blind_id": "DXJMFT",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed (launch in 2027), uses the investors' profitability-within-cash objective and the 12-month runway rule as explicit criteria, and tests the founders' hypothesis through six conditions. It names the few issues the answer turns on: per-order economics, the pop-up, runway and the alternative use of cash. It also builds a pilot option the pack doesn't contain.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the four-part executive summary and the section order (market, economics, funding, alternative) match. Most slide titles carry a claim that the slide's evidence supports. Slides 2 and 3 partly repeat each other, and the appendix and cash-model slides add some bulk. Overall the logic holds with no contradictions.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "All the key calculations are correct and transparent: $-6.17 median, $-1.76 best-observed, $-12.57 pop-up, break-even AOV about $50, CAGR 41.5%, $2.5M left (about 6 months), and Zipcart's moves applied to the median at $-1.05. It uses the evidence that cuts against its answer (Zipcart) and separates stated intent from retention. The software cash model rests on invented assumptions, though they are labelled. A few remarks are unsupported, such as 'top-quartile density' and 'competes with the grocers we sell to'. It never shows the best-density-only $-3.44 case on its own, and it doesn't compute the Zipcart-style $2.25 result at best density.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Do not launch, and grow the software business. Alternatives A, B and C are compared on explicit criteria. The pilot is considered and rejected, with a reason. The trade-offs are explicit: runway against learning, and operator against supplier. It sets re-entry triggers, a 90-day checkpoint, tranche-gated hires and a 34% growth floor as the kill criterion for the software path. It avoids all the traps, including the Zipcart one, and the next steps have owners and dates.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on page 2 and the language is plain. At 19 slides and about 4,500 words, with a full cash-model slide, a risk table and appendices, it is longer than a go/no-go decision needs. Several slides repeat the key numbers.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "A profitable route may exist, but only at top-quartile density with premium pricing.",
+    "why": "The pack gives no quartile data. The 1,042 orders/day threshold is only 16% above the median."
+   },
+   {
+    "quote": "Competes with the grocers we sell to; distracts the team",
+    "why": "This is inference. The pack only says that several grocers want their own fast delivery."
+   },
+   {
+    "quote": "Break-even in month 26 (60%) or 36 (40%) ... Never below 24 months at 60% growth",
+    "why": "This comes from a constructed model (opex = 81% × ARR + burn, held flat). The pack has no cost base or churn data, though the document labels the assumptions."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027 and do not extend the pop-up. Approve the $0.8M a year of software hires in tranches tied to signed contracts. Build a store-based fast-delivery offer for pipeline grocers. Adopt re-entry triggers and a 90-day checkpoint.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches R1. It computes per-order contribution under benchmark and best-observed inputs, separates market growth from profitability, checks the runway constraint, and offers the software alternative with explicit triggers."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "It tests the founders' launch hypothesis against six conditions and rejects it. The plan beats the best observed site on all four drivers. The economics are negative in every observed case. The pop-up was below the median. Zipcart's fee case is examined and does not rescue the plan. The runway rule is breached on both readings of the $9.5M. Re-entry triggers keep the door open without contrarianism."
+  },
+  "overall_comment": "This is a strong, accurate deck that reaches every key insight and avoids every trap. Its weaknesses are length and redundancy, a constructed software cash model that is labelled but rests on invented assumptions, and a couple of small unsupported remarks.",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.17609239999999998,
+ "wall_s": 30.827486991882324,
+ "is_error": false,
+ "error_text": null
+}

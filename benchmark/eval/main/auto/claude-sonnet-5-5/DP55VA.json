@@ -1,0 +1,196 @@
+{
+ "blind_id": "DP55VA",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as whether and how to raise prices in 2027 by segment. It uses the 15% ARR and NRR>100% objectives and the renewal and cap constraints as explicit criteria. It shows early that the 15% target needs new-logo ARR on top of pricing. The invented 'week 1 hypothesis' framing on slide 3 is a little artificial.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the executive summary and the sections line up: why churn rises, where price can go, what each option is worth, and how to execute. Most titles are claims backed by the slide. A few small inconsistencies: net ARR is 2.2–3.6 on slide 10 and 15 but 2.4–3.8 on slide 12 (activation included). The 18 slides carry some redundancy, such as slide 3 repeating later slides.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Key numbers check out. Promo churn is 4.9%. The mix is +1.04 of 1.10 pp, about 94%. Gross uplift is $7.57M against the CFO's $10.32M. The segment-weighted churn figures (1.7→2.6 and 0.8→1.2) are right. The 2023 precedent net of 4.1% is right, and the dashboard mismatch is noted. The weaknesses are that the 10.7% revenue-neutral break-even is not stated in that form, and the churn-response parameters (k, 2.9× sensitivity from survey citation ratios, the 2× stress) are assumptions that are only partly justified. Some small claims are unsupported, such as the survey under-weighting the cohort and the 95% detectability. The $7.57M is not split by segment.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The differentiated recommendation is defensible and decision-useful. Mid-market goes up 10% and enterprise goes up to the caps. SMB is tested with a randomised gate. The promo cohort is held, and activation is funded. It compares four options on net ARR and worst case, with explicit triggers, gates, kill criteria and next steps. It rejects both the CFO's 12% and the claim that onboarding halves churn. It avoids all the traps. Gaps: the Inkwell response (a lower SMB tier) is declared out of scope, the brand and trust cost at renewal is not discussed, and the 'ask for the new-logo plan before December' step is only a placeholder.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the slide titles are clear. At 18 slides with a heavy model and three appendices, it is somewhat longer than the decision needs, with some repetition between slides 3, 9, 10 and 12.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "A blended 34% implies ~47% of respondents were promo churners, below their ~56% share of churners, so the survey slightly under-weights the cohort.",
+    "why": "This rests on the assumption that survey response rates are equal across the two groups, and it is not needed for the conclusion. The inference is speculative."
+   },
+   {
+    "quote": "its 2.9× higher price sensitivity turns +12% on $4.4M into -0.24M",
+    "why": "This treats the ratio of exit-survey price citations (52% vs 18%) as a ratio of price elasticities. The pack does not support that."
+   },
+   {
+    "quote": "a 0.5-pt monthly churn difference (≈240 vs ≈300 churners) is detectable at roughly 95% confidence",
+    "why": "This is a power calculation with no stated basis, and it assumes the 2023 effect size."
+   },
+   {
+    "quote": "Inkwell may reach smaller mid-market deals (≤200 seats).",
+    "why": "The pack says only that Inkwell has not been seen above 200 seats. This is a labelled speculation, but it is presented as a risk with no evidence."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Rising churn is a promotion problem, not a price problem",
+    "quote_b": "the promotion cohort ... already cites price 2.9× as often; To them the 'price' reason is a doubling of their bill",
+    "why": "Price (the discount ending) is the stated churn reason for the cohort driving the rise. The document reconciles this by separating list price from discount expiry, but the headline overstates the 'not price' framing."
+   },
+   {
+    "quote_a": "Net ARR 2.2 – 3.6 (slides 10 and 15)",
+    "quote_b": "Total 2.4 – 3.8 (slide 12)",
+    "why": "The same recommended plan carries two different net ranges. The gap is the +0.2 for activation, which the headline range leaves out."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "partial"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "partial"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Targeted increase: +10% mid-market at renewal from January, enterprise up to the 7% cap (+10% on uncapped contracts), and a gated randomised +8% test on non-promo SMB renewals with a July go/no-go. The promo cohort is held at current price with an activation programme. Pricing nets $2.2–3.6M, and new-logo ARR of $1.1–2.5M is still needed to reach 15%.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It separates the cohort mix effect from the rate effect. It corrects the $10.3M to $7.6M gross. It differentiates by segment and sets gates and triggers. It reconciles the CFO's and the CEO's views."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The document rejects the CFO's blanket 12% and the $10.3M. It credits both the CFO (the rise is not about list price) and the CEO (the cohort is fragile). It turns both into a segment-differentiated plan. It also revises its own freeze-SMB starting point into 'test, then decide', which matches the expected 'revise' handling. The one overreach is equating citation ratios with elasticity."
+  },
+  "overall_comment": "This is a strong, quantitatively careful document. It decomposes the churn rise, corrects the CFO's $10.3M, builds an option comparison with base and stress cases, and sets gates. The weaknesses are a model that leans on assumed parameters, the 10.7% break-even given only implicitly (as 2× the 2023 response), thin treatment of the Inkwell response and of brand trust, and more slides than the decision needs.",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.2270706,
+ "wall_s": 43.275099992752075,
+ "is_error": false,
+ "error_text": null
+}

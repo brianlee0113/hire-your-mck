@@ -1,0 +1,39 @@
+{
+ "x": "DGB6MT",
+ "y": "D5PS59",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both have a clean pyramid. X runs governing thought to five claims (demand, package, threat, sequencing, plan), and each is backed by slides whose numbers reconcile. Y sets three tests up front (NRR, margin floor, mobile delay), scores four options against them and ends in four explicit decisions, so every slide maps to a test. X has one internal tension: it argues true add-on take-up is below 14% because the samples are biased, then headlines Pro at 33% take-up and proposes to price-test Pro on the same beta volunteers. Y has a smaller one: it labels deferral 'fails on value' while conceding the order flips under plausible conditions. Y's hierarchy is slightly tighter and less repetitive.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both meet all three defensibility criteria: revealed demand, inference cost in the package, and mobile delay weighed against the AI threat. Y lands on the key's R1: launch in Q2 in a Pro tier with a 600-request pooled allowance, overage pricing and a 55% Copilot margin trigger, accepting the mobile delay explicitly with a fixed re-baselined date. It also asks whether the 14 engineers can come from non-mobile teams, tests price on a random non-beta sample, and states what would flip the order. X lands on the conditional R3: mobile first, Pro in Q4 2027. It satisfies most of the condition by quantifying the win-rate risk (at most $0.64M a year, $0.32M for two quarters) and using the Q4 2026 win rate as a cheap trigger to pull the launch forward. Its interim AI response is thin, its allowance is set at break-even (to be lowered later), and its price test uses the biased beta sample. Each skews the sequencing comparison its own way: X drops deferred Pro revenue from the 1.9x ratio, and Y assumes the rewrite removes only half of mobile churn and counts deferred revenue as ARR. Y is more open about the sensitivity and has better-designed guardrails and tests. X's weighting of the customer evidence is arguably closer to the economics, since churn is permanent and deferral is not. Net, a slight edge to Y.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the required numbers right: $8.06M against $2.45M; $32, $61 and $131 a month in inference; about 109 deals and $0.64M; and $2.89M of Pro ARR at 33%. Both dismantle the Sales memo (mentions are not causes, the discount overlaps, the memo implies $1.9M), treat the beta as biased, and note the survey's 6% response and size skew. X's arithmetic checks out throughout, and its Pro inference of $1.26M matches the key. Y goes further in four places. It catches that a 14,500-request top-decile mean implies a 40% share, not the 58% the pack states. It notes that win-backs are new ARR and do not move NRR. It notes the upgrade lifts NRR only once. It flags the 1,190 against 1,372 churn base. It also gives a 7–14% planning range instead of treating 14% as the point estimate. Both have a flaw in the pivotal sequencing comparison. X leaves deferred Pro revenue out of the 'ARR at risk' ratio and leans on 33% as the Pro base. Y calls half a year of deferred revenue '$1.1M of ARR' and sets it against permanent churn under an unsupported, though flagged, 50% efficacy assumption. Y's extra catches tip it slightly.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the Chief Product Officer's hypothesis as the key expects. They keep the launch, reject the $149 add-on, replace the $8M survey figure with about $2.5M from the paywall test (treated as a ceiling), show that heavy-user inference cost erodes the flat price, and move to a per-seat Pro tier with an allowance. X adds add-on gross profit ($0.85M, 34% margin) and an explicit from-to slide. Y adds a 7–14% planning range and an appendix of corrected claims. X's delay to Q4 is argued through an explicit mobile trade-off, which the key also accepts. Neither is materially better on this question.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong, defensible documents that avoid every trap in the key. Y would serve the executive team slightly better. It gives a decision-ready package (price, 600-request allowance, overage, margin trigger), four explicit decisions and a March go/no-go on a random-sample test. Its sensitivities say when mobile-first would win, and it spots the usage-share inconsistency and the NRR mechanics that X misses. X's mobile-first case is well argued and arguably truer to the customer evidence, with a smart win-rate gate. But its headline rests on 33% Pro take-up, its sequencing ratio excludes deferred Pro revenue, its price test reuses the biased beta sample, and it is much longer for the same decision. Y's weakness is the loose '$1.1M ARR deferred' comparison and committing engineers before the test reads out.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.2671082,
+ "wall_s": 92.70798993110657,
+ "error_text": null
+}

@@ -1,0 +1,195 @@
+{
+ "blind_id": "DRS3DV",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as posed: launch or not, when, and how to package and price. It uses the NRR 101→105% and 75% margin objectives and the 14-engineer mobile trade-off as explicit criteria. Slide 3 tests the CPO's hypothesis against five conditions, and the deck identifies early what the answer turns on: demand sizing, inference cost and mobile sequencing. The one gap is that the 'straight swap' reading of the engineering constraint is an assumption (flagged, to be confirmed).",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the four summary points and the slide sections line up. The titles are claims, and the 'is it worth it / how to price / when / making it work' tracker holds the story together. The slides carry the argument from the revised hypothesis through sizing, packaging, sequencing, sensitivity, risks and decisions. Minor flaws: slide 4 calls 14% 'a ceiling' while the Pro base case assumes 25% adoption. The appendices and the risk and plan slides add some redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The calculations are largely correct and transparent: $8.06M vs $2.45M; inference $32.4/$61.2/$130.5; 109 wins ≈ $0.64M; Pro ARR $1.23/2.19/2.89M; company margin 76.6% and 70.3% for free inclusion; ARR lost to mobile $2.18M and to AI $0.48M. The sales-memo claim is rebutted with a derived 58% implied win rate. It also catches that the pack's 58% top-decile share is inconsistent with Table 2 (~40%). Weaknesses: the 25% Pro adoption base and the 444 requests per seat (below the 3,600 mean per 6.2-seat account) are optimistic. The claim that the Pro base case 'already discounts' beta results is unsupported. The rewrite's 50% effectiveness is an assumption with no basis in the pack, though sensitivity is shown. The Pro tier margin is shown per seat and at company level, not as the add-on-style ~56% from mean usage.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "It keeps 'launch', revises packaging to a Pro tier with an allowance and metered packs, and rejects the $149 add-on, free inclusion and no launch. It compares four packaging options on adoption, ARR, gross profit, company margin, NRR and Routewise parity. It weighs mobile against Copilot explicitly with a quantified delay cost and a break-even sensitivity grid. It gives a trigger to launch sooner, gates (conversion ≥10%, margin ≥75%), a pilot design and next steps. It avoids all six traps. A reasonable critic could still push on delaying while Routewise bundles AI, and on the speculative rewrite-effect assumption, but both are flagged and tested.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title and the executive summary on slide 2, and the language is plain. At 18 slides and about 4,400 words, with appendices, a risk table and a plan, it is somewhat longer than the decision strictly needs, and a few slides repeat earlier figures.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Our Pro base case already discounts the beta results.",
+    "why": "The 25% Pro base adoption is a midpoint between the paywall rate and the 2023 precedent, and usage is taken from the beta mean. Nothing in the base case discounts for volunteer bias."
+   },
+   {
+    "quote": "Rewrite removes 50% of mobile-driven churn (25–75%); the pack has no estimate.",
+    "why": "This is a labelled assumption, but the mobile-first conclusion depends on it. The pack gives no basis for 50%, though sensitivity is shown."
+   },
+   {
+    "quote": "A Q4 2027 launch puts ~75% of a 12-month Pro migration inside 2028, against ~25% for a Q2 launch",
+    "why": "The migration timing is an invented assumption and is not in the pack."
+   },
+   {
+    "quote": "People who reply to an AI survey tend to be the ones interested in AI.",
+    "why": "Plausible non-response reasoning, but the pack gives no evidence about the survey's content or the respondents' interest."
+   },
+   {
+    "quote": "Payback of $1.47M engineering: ~21 months after launch",
+    "why": "The retained-and-won ARR inputs ($0.56M a year) rest on the deck's own stacked assumptions and are not transparently derived."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Even 14% is a ceiling. The typical account is likely to buy at a lower rate.",
+    "quote_b": "Adoption 25% (14–33%)",
+    "why": "The deck says 14% is a ceiling for typical $149 add-on uptake, yet the recommended Pro base case assumes 25%, well above it. The cheaper per-seat price may justify a higher rate, but the deck does not argue this explicitly."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot only inside a new Pro tier at +$12 per seat, with 500 pooled requests per seat and paid packs above that. Do not launch the $149 add-on and do not include Copilot free. Keep the mobile rewrite on schedule and take GA in late Q4 2027. Run a randomised non-volunteer pilot and a mid-February trigger check that could pull the launch forward to Q2.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "The recommendation uses revealed (paywall) demand rather than the survey. It prices inference cost through the allowance and metering. It weighs the mobile delay against the competitive threat with a quantified sensitivity grid. It keeps 'launch' while revising the packaging, and it states conditions and gates that would change the answer. It combines R1's Pro packaging with R3's sequencing, which the key accepts as defensible when the win-rate risk is quantified."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "Slide 3 tests the CPO hypothesis against five conditions. It keeps 'launch' (strategic need), rejects the $8M sizing (3–6× overstated; $1.2–2.5M for the add-on), rejects the flat per-account pricing because of heavy-user inference cost, and revises to a Pro tier sequenced after mobile. It notes the Routewise 20% promotion confound and the volunteer bias. This matches the key's expected 'revise'."
+  },
+  "overall_comment": "This is a strong, well-calibrated deck. It gets the stated-vs-revealed demand gap, the variable inference cost, the confounded win-rate evidence and the mobile trade-off right, with correct arithmetic throughout. Its main weaknesses are some optimistic or assumption-driven inputs (25% Pro adoption, 444 requests per seat, a 50% rewrite effect). The claim that the base case 'discounts' beta results is unsupported, and the deck is somewhat long for the decision. The recommendation is actionable, with gates, a trigger and sensitivities.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1890444,
+ "wall_s": 38.81928610801697,
+ "is_error": false,
+ "error_text": null
+}

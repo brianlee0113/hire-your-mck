@@ -1,0 +1,544 @@
+## Part 1 · Normalised storyline
+
+**Governing thought:** Raise prices in 2027 for mid-market and enterprise only, and hold SMB prices while onboarding fixes the 2025 promotion cohort behind rising churn
+
+**Executive summary:**
+1. Rising churn comes from the 2025 SMB promotion cohort, not from the customer base as a whole – SMB makes up 94% of the customers lost each month – Other SMB customers churn 2.1% a month, against 2.0% a year ago – 41% of promotion customers were active in month one, against 72% (p. 4–6)
+2. Price is a real risk only in SMB, where Inkwell undercuts us; mid-market and enterprise can carry a rise – 52% of promotion churners cite price, against 18% of other churners – Our SMB win rate against Inkwell's $9 plan fell from 51% to 38% – A 10% mid-market price test left conversion unchanged (p. 8–10)
+3. The CFO's 12% plan delivers less than it promises and puts its SMB gain at risk – Only $7.6M of the $10.3M can reach 2027 ARR – Its SMB gain is lost if half the promotion cohort leaves (p. 12, 13)
+4. A targeted plan raises mid-market and enterprise prices, holds SMB and funds activation – With $4.2M from price, new customers must add only $0.8M – Activation could keep about $1M of promotion-cohort ARR in 2027 (p. 15–18)
+
+**Slides (title → claims → evidence):**
+
+- Slide 1: Pricing in 2027 while churn is rising
+- Slide 2: Executive summary
+  - Claim: Raise prices in 2027 for mid-market and enterprise only, and hold SMB prices while onboarding fixes the 2025 promotion cohort behind rising churn
+  - Claim: Rising churn comes from the 2025 SMB promotion cohort, not from the customer base as a whole
+    - Evidence: SMB makes up 94% of the customers lost each month
+    - Evidence: Other SMB customers churn 2.1% a month, against 2.0% a year ago
+    - Evidence: 41% of promotion customers were active in month one, against 72%
+  - Claim: Price is a real risk only in SMB, where Inkwell undercuts us; mid-market and enterprise can carry a rise
+    - Evidence: 52% of promotion churners cite price, against 18% of other churners
+    - Evidence: Our SMB win rate against Inkwell's $9 plan fell from 51% to 38%
+    - Evidence: A 10% mid-market price test left conversion unchanged
+  - Claim: The CFO's 12% plan delivers less than it promises and puts its SMB gain at risk
+    - Evidence: Only $7.6M of the $10.3M can reach 2027 ARR
+    - Evidence: Its SMB gain is lost if half the promotion cohort leaves
+  - Claim: A targeted plan raises mid-market and enterprise prices, holds SMB and funds activation
+    - Evidence: With $4.2M from price, new customers must add only $0.8M
+    - Evidence: Activation could keep about $1M of promotion-cohort ARR in 2027
+- Slide 3: Why churn is rising
+- Slide 4: Churn is rising in SMB alone, which now accounts for 94% of the customers Palisade loses each month
+  - Claim: Churn is rising in SMB alone, which now accounts for 94% of the customers Palisade loses each month
+    - Evidence: Monthly logo churn H1 2025 → H1 2026: SMB 2.0% → 3.1%; Mid-market 0.6% → 0.8%; Enterprise 0.2% → 0.2%
+    - Evidence: 94% of customers lost each month in H1 2026 were SMB customers (churn rate × customers)
+  - Claim: SMB: the only segment where churn moved materially
+  - Claim: Mid-market: a small rise on annual contracts that still grow in value
+  - Claim: Enterprise: unchanged, held in place by multi-year contracts
+  - Claim: Board dashboard: one undefined, blended rate hides this mix; report churn by segment
+    - Evidence: The board dashboard's "1.4% → 2.3%" is not defined and does not match these segment rates
+- Slide 5: The 2025 promotion cohort, not the core SMB base, is behind the rise in churn
+  - Claim: The 2025 promotion cohort, not the core SMB base, is behind the rise in churn
+    - Evidence: SMB monthly churn: Promotion cohort H1 2026 4.9%; All SMB H1 2026 3.1%; Other SMB H1 2026 2.1%; Other SMB H1 2025 2.0%
+  - Claim: A third of SMB customers cause over half of its losses
+    - Evidence: 56% of SMB customers lost each month are from the promotion cohort, 36% of SMB customers
+  - Claim: Promotion cohort: churns more than twice as fast as other SMB customers
+    - Evidence: Promotion-cohort churn is implied: (5,900 SMB customers × 3.1% − 3,800 other SMB customers × 2.1%) ÷ 2,100, using mid-2026 counts
+  - Claim: Other SMB: almost unchanged in a year, despite Inkwell's October 2025 launch
+    - Evidence: 2.1% vs 2.0%
+  - Claim: A cohort problem to fix, not proof that SMB rejects our prices
+- Slide 6: Promotion customers never made the product part of their work, with 41% active in month one against 72% of others
+  - Claim: The weakest start of any cohort
+    - Evidence: 41% of promotion customers sent five or more documents in their first month
+  - Claim: The level onboarding should aim for
+    - Evidence: 72% of customers from other cohorts reached the same mark
+  - Claim: Activation predicts who stays
+    - Evidence: 3x the churn rate of SMB customers below five documents in month one, against those above
+  - Claim: They joined for half price, not to replace a workflow
+  - Claim: Most of those who left did so within two months of the discount ending
+  - Claim: So the gap lies in setup, not in the product or its price
+    - Evidence: Customer Success: they "never set the product up"
+    - Evidence: Same product, and the same price once the discount ended
+  - Claim: Activation is set in month one, so the fix starts at sign-up
+  - Claim: Holds for all SMB customers, not only the promotion cohort; makes first-month activation the early warning to track
+  - Claim: Supports the CFO's view that churn starts with onboarding
+- Slide 7: Where pricing power is
+- Slide 8: Price drives the exits of promotion customers, not of the core: 52% of them cite it, against 18% of other churners
+  - Claim: Price sensitivity sits with customers who joined on a discount
+    - Evidence: Share citing price: Promotion churners H1 2026 52%; All SMB churners H1 2026 34%; All SMB churners H1 2025 19%; Other SMB churners H1 2026 18%
+    - Evidence: Promotion churners citing price, as a multiple of other SMB churners: 2.9x (52% ÷ 18%)
+  - Claim: Promotion churners: joined at half price and judge us against it
+  - Claim: All SMB, 2026: the jump since 2025 is a mix effect of the cohort's exits
+  - Claim: Other SMB churners: no more price-driven than a year earlier, despite Inkwell
+- Slide 9: Inkwell has made SMB price-sensitive — its Starter plan is 40% cheaper than ours, and our win rate fell to 38%
+  - Claim: Inkwell's Starter plan undercuts our SMB plan by 40%
+    - Evidence: List price $/user/month 2026: Palisade Business 29; Inkwell Pro 24; Palisade SMB 15; Inkwell Starter 9
+    - Evidence: −40%
+  - Claim: Where buyers consider Inkwell, we now win fewer than four SMB deals in ten
+    - Evidence: Win rate: H1 2025 51%; H1 2026 38%
+    - Evidence: −13 pp
+  - Claim: A 12% rise would put our SMB plan at $16.80 a user, 87% above Inkwell's Starter plan
+  - Claim: Inkwell launched Starter in October 2025; it has not been seen in mid-market or enterprise deals with more than 200 seats
+- Slide 10: Pricing power sits in mid-market and enterprise, where customers stay for integrations and Inkwell does not compete
+  - Claim: SMB: hold list price
+    - Evidence: Churn change 1.1 pp; NRR 94%
+    - Evidence: 2023: +8% lifted churn from 1.8% to 2.3% for six months
+    - Evidence: $9 Starter plan; our win rate against it is 38%
+  - Claim: Mid-market: most room to price
+    - Evidence: Churn change 0.2 pp; NRR 112%
+    - Evidence: 2024 test: +10% for new sign-ups; conversion 23.1% against 23.6%, not significant
+    - Evidence: Not seen in deals above 200 seats
+    - Evidence: Tested at +10%, and 85% of its ARR renews in 2027
+  - Claim: Enterprise: raise up to the 7% cap at renewal
+    - Evidence: Churn change 0 pp; NRR 118%
+    - Evidence: 60% of ARR capped at 7% a year; integrations and audit trail keep customers
+    - Evidence: Not seen in deals above 200 seats
+- Slide 11: The CFO's 12% plan
+- Slide 12: Only $7.6M of the CFO's $10.3M can reach 2027 ARR once renewal dates and enterprise caps are applied
+  - Claim: Only $7.6M of the CFO's $10.3M can reach 2027 ARR once renewal dates and enterprise caps are applied
+    - Evidence: CFO plan: 12% on all ARR $10.32M; Mid-market renewing after 2027 −$0.738M; Enterprise renewing after 2027 −$1.728M; Enterprise price caps −$0.288M; Reaches 2027 ARR $7.566M
+    - Evidence: $2.5M (SMB: $21.0M × 12%) + $4.2M (Mid-market: $41.0M × 85% × 12%) + $0.9M (Enterprise: $24.0M × 40% × 7–12%) = $7.6M
+    - Evidence: 73% share of the CFO's figure that can reach 2027 ARR, before extra churn ($7.6M ÷ $10.3M)
+    - Evidence: CFO's figure: $86.0M ARR × 12%
+  - Claim: Contract timing takes a quarter off before any churn
+  - Claim: Enterprise renewing after 2027: the largest cut, as most enterprise ARR sits in multi-year contracts
+  - Claim: Price caps: contracts covering 60% of enterprise ARR limit increases to 7% a year
+  - Claim: Mid-market: a small cut, since 85% of its ARR renews in 2027
+- Slide 13: The CFO plan's SMB gain is wiped out if about half of the promotion cohort leaves because of the rise
+  - Claim: The CFO plan's SMB gain is wiped out if about half of the promotion cohort leaves because of the rise
+    - Evidence: 10.7% of SMB ARR can leave before a 12% rise loses money (12% ÷ 112%)
+    - Evidence: × $21M SMB ARR today, all of it renewing in 2027
+    - Evidence: ÷ $4.4M ARR of the 2,100 promotion customers at full price (briefing pack)
+    - Evidence: = 51% of the promotion cohort leaving would erase the SMB gain of $2.5M
+  - Claim: A loss of that size is plausible for this cohort
+    - Evidence: Before any rise, the cohort already loses about 4.9% of its customers a month
+    - Evidence: 52% of promotion churners already name price as their main reason for leaving
+    - Evidence: In 2023 an 8% rise lifted SMB churn from 1.8% to 2.3% for six months, before a $9 rival existed
+  - Claim: The break-even ignores other SMB customers; any reaction from them makes the margin smaller
+- Slide 14: A targeted 2027 plan
+- Slide 15: Four moves turn the CFO's increase into a targeted plan that protects SMB while it recovers
+  - Claim: Raise mid-market list prices 10% at renewal
+    - Evidence: 10% rise tested on new sign-ups in 2024, conversion unchanged
+  - Claim: Raise enterprise prices up to the cap at 2027 renewals
+    - Evidence: 7% cap on yearly rises for 60% of enterprise ARR
+  - Claim: Hold SMB list prices and activate the 2,100 promotion customers
+    - Evidence: 41% of promotion customers active in month one, against 72%
+  - Claim: Test an SMB rise on new sign-ups before a Q3 decision
+    - Evidence: 38% SMB win rate against Inkwell, which the test must protect
+  - Claim: Decision for December: raise prices for mid-market and enterprise only, worth about $4.2M of 2027 ARR
+    - Evidence: The targeted plan forgoes about $3.4M of the CFO plan's realistic $7.6M, most of it the SMB rise at risk
+- Slide 16: With today's retention, the targeted plan leaves new customers only $0.8M of ARR to add to reach the 2027 goal
+  - Claim: With today's retention, the targeted plan leaves new customers only $0.8M of ARR to add to reach the 2027 goal
+    - Evidence: ARR bridge: ARR mid-2026 $86M; Existing base at today's NRR +$7.98M; Mid-market +10% +$3.485M; Enterprise up to 7% +$0.672M; New customers needed +$0.763M; 2027 goal (+15%) $98.9M
+    - Evidence: $12.9M growth goal (15% × $86.0M) − $7.98M base at today's NRR − $3.5M mid-market +10% − $0.7M enterprise +7% = $0.8M left for new customers
+  - Claim: 32% of the growth the goal needs comes from the two targeted price moves
+  - Claim: Existing base: mid-market and enterprise growth outweighs SMB losses
+  - Claim: New customers: a remainder activation could cover
+  - Claim: Check that the 2027 new-customer plan clears $0.8M of ARR
+- Slide 17: Activation could keep about $1M of promotion-cohort ARR in 2027, on a realistic target rather than halved churn
+  - Claim: Activation could keep about $1M of promotion-cohort ARR in 2027
+    - Evidence: $3.4M left after 12 months if the cohort churns 2.1% a month, like other SMB customers
+    - Evidence: − $2.4M left after 12 months at its implied 4.9% a month today
+    - Evidence: = $1M of ARR kept by bringing the cohort to the SMB norm
+    - Evidence: Starting point: $4.4M of ARR at full price; 12-month survival = (1 − monthly churn)^12
+  - Claim: We plan on the SMB norm, not on the promise to halve churn
+    - Evidence: Customer Success expects to halve SMB churn to 1.55%, below the 2.0% SMB had before the promotion
+    - Evidence: Target instead: promotion churn falls to 2.1% from January 2027 and stays flat for the year
+  - Claim: The cohort's churn may already be easing, as most leavers went soon after the discount ended
+  - Claim: The cohort's $4.4M of ARR is at full price and gets no increase; the gain is upside to the bridge
+- Slide 18: Mid-market renewals carry the plan from January, and the SMB price decision waits for evidence in the third quarter
+  - Claim: 2027 pricing plan, by quarter
+    - Evidence: Dec 2026: Leadership decision; Q3 2027: SMB price gate
+    - Evidence: Mid-market +10%: New prices at each renewal
+    - Evidence: Enterprise up to 7%: Notices per contract terms
+    - Evidence: SMB activation: Onboarding for the promotion cohort; Extend to all new SMB sign-ups
+    - Evidence: SMB price test: New sign-ups only; Decide for existing SMB
+    - Evidence: Churn reporting: Segment churn on the board dashboard
+  - Claim: Gate for an SMB rise: promotion churn near 2.1%, and no further fall in the 38% win rate against Inkwell
+- Slide 19: Next steps
+
+**Recommendation:** Raise prices in 2027 for mid-market and enterprise only, and hold SMB prices while onboarding fixes the 2025 promotion cohort behind rising churn. Four moves: raise mid-market list prices 10% at renewal; raise enterprise prices up to the cap at 2027 renewals; hold SMB list prices and activate the 2,100 promotion customers; test an SMB rise on new sign-ups before a Q3 decision. Decision for December: raise prices for mid-market and enterprise only, worth about $4.2M of 2027 ARR.
+
+**Alternatives considered:**
+- CFO's 12% list-price rise on every plan: Rejected: "delivers less than it promises and puts its SMB gain at risk" — only $7.6M of the $10.3M can reach 2027 ARR once renewal dates and enterprise caps are applied; its SMB gain ($2.5M) is wiped out if about half (51%) of the promotion cohort leaves because of the rise. The targeted plan forgoes about $3.4M of the CFO plan's realistic $7.6M, most of it the SMB rise at risk.
+- Raise SMB prices in 2027: Deferred: hold SMB list price; test an SMB rise on new sign-ups before a Q3 decision, gated on promotion churn near 2.1% and no further fall in the 38% win rate against Inkwell. A 12% rise would put the SMB plan at $16.80, 87% above Inkwell's Starter plan.
+- Customer Success target to halve SMB churn to 1.55%: Not used for planning: "We plan on the SMB norm, not on the promise to halve churn"; target instead is promotion churn falling to 2.1% from January 2027.
+
+**Assumptions and uncertainties:**
+- Customer counts are mid-2026. The board dashboard's "1.4% → 2.3%" is not defined and does not match these segment rates
+- Promotion-cohort churn is implied: (5,900 SMB customers × 3.1% − 3,800 other SMB customers × 2.1%) ÷ 2,100, using mid-2026 counts
+- Exit-survey response rates are not in the briefing pack
+- The 2024 test covered new sign-ups only; existing customers may react more at renewal
+- Caps assumed to cover 60% of renewing enterprise ARR, as of all enterprise ARR
+- Break-even: customers who leave would otherwise have paid today's price; all SMB ARR renews in 2027
+- The break-even ignores other SMB customers; any reaction from them makes the margin smaller
+- ARR bridge assumes each segment keeps its trailing 12-month retention; 2027 new-customer bookings are not in the briefing pack
+- Activation target: promotion churn falls to 2.1% from January 2027 and stays flat for the year; the cohort's churn may already be easing
+- Fictional company; synthetic data from the briefing pack
+
+**Next steps:**
+- Approve the targeted plan: mid-market +10%, enterprise up to caps, SMB held — CEO and leadership team — Dec 2026
+- Issue mid-market and enterprise renewal notices at the new prices — Sales and Customer Success — From Jan 2027
+- Launch the activation programme for the 2,100 promotion customers — Head of Customer Success — Q1 2027
+- Run the SMB price test on new sign-ups and set the Q3 gate — CFO and Product — Q2 2027
+- Define churn by segment on the board dashboard — CFO — Jan 2027
+- Check that the 2027 new-customer plan clears $0.8M of ARR
+
+## Part 2 · Full slide text (mechanical extraction)
+
+=== Slide 1 ===
+[Title] Pricing in 2027 while churn is rising
+- Discussion document for the CEO and leadership team
+- Palisade Docs
+- CEO and leadership team
+- 2026-11-16
+- Fictional company; synthetic data from the briefing pack
+
+=== Slide 2 ===
+[Title] Executive summary
+- Raise prices in 2027 for mid-market and enterprise only, and hold SMB prices while onboarding fixes the 2025 promotion cohort behind rising churn
+
+- Rising churn comes from the 2025 SMB promotion cohort, not from the customer base as a whole
+- –	SMB makes up 94% of the customers lost each month
+- –	Other SMB customers churn 2.1% a month, against 2.0% a year ago
+- –	41% of promotion customers were active in month one, against 72%
+
+- Price is a real risk only in SMB, where Inkwell undercuts us; mid-market and enterprise can carry a rise
+- –	52% of promotion churners cite price, against 18% of other churners
+- –	Our SMB win rate against Inkwell's $9 plan fell from 51% to 38%
+- –	A 10% mid-market price test left conversion unchanged
+
+- The CFO's 12% plan delivers less than it promises and puts its SMB gain at risk
+- –	Only $7.6M of the $10.3M can reach 2027 ARR
+- –	Its SMB gain is lost if half the promotion cohort leaves
+
+- A targeted plan raises mid-market and enterprise prices, holds SMB and funds activation
+- –	With $4.2M from price, new customers must add only $0.8M
+- –	Activation could keep about $1M of promotion-cohort ARR in 2027
+
+=== Slide 3 ===
+[Title] Why churn is rising
+- SECTION
+
+- Rising churn comes from the 2025 SMB promotion cohort, not from the customer base as a whole
+- 1   Churn
+- 2   Pricing power
+- 3   CFO plan
+- 4   Plan
+
+=== Slide 4 ===
+[Title] Churn is rising in SMB alone, which now accounts for 94% of the customers Palisade loses each month
+
+- Monthly logo churn by segment, % of customers a month, H1 2025 and H1 2026
+[Chart: COLUMN_CLUSTERED]
+  categories: SMB; Mid-market; Enterprise
+  series 'H1 2025': 0.02; 0.006; 0.002
+  series 'H1 2026': 0.031; 0.008; 0.002
+- One segment explains the company-wide rise
+- 94%
+- of customers lost each month in H1 2026 were SMB customers (churn rate × customers)
+- ▪	SMB: the only segment where churn moved materially; the next two pages trace the rise
+- ▪	Mid-market: a small rise on annual contracts that still grow in value
+- ▪	Enterprise: unchanged, held in place by multi-year contracts
+- ▪	Board dashboard: one undefined, blended rate hides this mix; report churn by segment
+- 1  Customer counts are mid-2026. The board dashboard's "1.4% → 2.3%" is not defined and does not match these segment rates
+- Sources: Palisade Docs briefing pack (synthetic data); team analysis
+
+=== Slide 5 ===
+[Title] The 2025 promotion cohort, not the core SMB base, is behind the rise in churn
+
+- SMB monthly logo churn by group, % of customers a month, H1 2025 and H1 2026
+[Chart: BAR_CLUSTERED]
+  categories: Promotion cohort, H1 2026; All SMB, H1 2026; Other SMB, H1 2026; Other SMB, H1 2025
+  series 'Monthly churn': 0.049095; 0.031; 0.021; 0.02
+- A third of SMB customers cause over half of its losses
+- 56%
+- of SMB customers lost each month are from the promotion cohort, 36% of SMB customers
+- ▪	Promotion cohort: churns more than twice as fast as other SMB customers
+- ▪	Other SMB: almost unchanged in a year, despite Inkwell's October 2025 launch
+- A cohort problem to fix, not proof that SMB rejects our prices
+- 1  Promotion-cohort churn is implied: (5,900 SMB customers × 3.1% − 3,800 other SMB customers × 2.1%) ÷ 2,100, using mid-2026 counts
+- Sources: Palisade Docs briefing pack (synthetic data); team analysis
+
+=== Slide 6 ===
+[Title] Promotion customers never made the product part of their work, with 41% active in month one against 72% of others
+
+- First-month activation and churn, share of new customers sending five or more documents in month one
+- 41%
+- 72%
+
+- of promotion customers sent five or more documents in their first month
+- of customers from other cohorts reached the same mark
+- the churn rate of SMB customers below five documents in month one, against those above
+- The weakest start of any cohort
+- The level onboarding should aim for
+- Activation predicts who stays
+- ▪	They joined for half price, not to replace a workflow
+- ▪	Most of those who left did so within two months of the discount ending
+- ▪	Customer Success: they "never set the product up"
+- ▪	Same product, and the same price once the discount ended
+- ▪	So the gap lies in setup, not in the product or its price
+- ▪	Activation is set in month one, so the fix starts at sign-up
+- ▪	Holds for all SMB customers, not only the promotion cohort
+- ▪	Makes first-month activation the early warning to track
+- ▪	Supports the CFO's view that churn starts with onboarding
+- Source: Palisade Docs briefing pack (synthetic data)
+
+=== Slide 7 ===
+[Title] Where pricing power is
+- SECTION
+
+- Price is a real risk only in SMB, where Inkwell undercuts us; mid-market and enterprise can carry a rise
+- 1   Churn
+- 2   Pricing power
+- 3   CFO plan
+- 4   Plan
+
+=== Slide 8 ===
+[Title] Price drives the exits of promotion customers, not of the core: 52% of them cite it, against 18% of other churners
+
+- Churned SMB customers naming price as their main reason, % of exit-survey respondents
+[Chart: BAR_CLUSTERED]
+  categories: Promotion churners, H1 2026; All SMB churners, H1 2026; All SMB churners, H1 2025; Other SMB churners, H1 2026
+  series 'Share citing price': 0.52; 0.34; 0.19; 0.18
+- Price sensitivity sits with customers who joined on a discount
+- ▪	Promotion churners: joined at half price and judge us against it
+- ▪	All SMB, 2026: the jump since 2025 is a mix effect of the cohort's exits
+- ▪	Other SMB churners: no more price-driven than a year earlier, despite Inkwell
+- Promotion churners citing price, as a multiple of other SMB churners
+- 2.9x
+- 52% ÷ 18%
+- 1  Main reason "price / found a cheaper option" among churned customers who answered the exit survey; response rates are not in the briefing pack
+- Sources: Palisade Docs briefing pack (synthetic data); team analysis
+
+=== Slide 9 ===
+[Title] Inkwell has made SMB price-sensitive — its Starter plan is 40% cheaper than ours, and our win rate fell to 38%
+
+- Inkwell's Starter plan undercuts our SMB plan by 40%
+- −40%
+- Where buyers consider Inkwell, we now win fewer than four SMB deals in ten
+- −13 pp
+- List price, $ per user per month, 2026
+- Win rate in SMB deals where Inkwell was considered, %
+[Chart: BAR_CLUSTERED]
+  categories: Palisade Business; Inkwell Pro; Palisade SMB; Inkwell Starter
+  series 'List price': 29; 24; 15; 9
+[Chart: COLUMN_CLUSTERED]
+  categories: H1 2025; H1 2026
+  series 'Win rate': 0.51; 0.38
+- A 12% rise would put our SMB plan at $16.80 a user, 87% above Inkwell's Starter plan
+- 1  Inkwell launched Starter in October 2025; it has not been seen in mid-market or enterprise deals with more than 200 seats
+- Sources: Palisade Docs briefing pack (synthetic data); team analysis
+
+=== Slide 10 ===
+[Title] Pricing power sits in mid-market and enterprise, where customers stay for integrations and Inkwell does not compete
+
+- Pricing power by segment, churn change in pp of monthly logo churn, retention in % of ARR, mid-2026
+[Table]
+  |  | Churn change, H1 2025 to H1 2026 | Net revenue retention | Price evidence | Exposure to Inkwell | 2027 price move |
+  | SMB | 1.1 pp | 94% | 2023: +8% lifted churn from 1.8% to 2.3% for six months | $9 Starter plan; our win rate against it is 38% | Hold list price |
+  | Mid-market | 0.2 pp | 112% | 2024 test: +10% for new sign-ups; conversion 23.1% against 23.6%, not significant | Not seen in deals above 200 seats | Most room to price / Tested at +10%, and 85% of its ARR renews in 2027 |
+  | Enterprise | 0 pp | 118% | 60% of ARR capped at 7% a year; integrations and audit trail keep customers | Not seen in deals above 200 seats | Raise up to the 7% cap at renewal |
+- 1  Reasons to stay: customer advisory board, 2026. The 2024 test covered new sign-ups only; existing customers may react more at renewal
+- Sources: Palisade Docs briefing pack (synthetic data); team analysis
+
+=== Slide 11 ===
+[Title] The CFO's 12% plan
+- SECTION
+
+- The CFO's 12% plan delivers less than it promises and puts its SMB gain at risk
+- 1   Churn
+- 2   Pricing power
+- 3   CFO plan
+- 4   Plan
+
+=== Slide 12 ===
+[Title] Only $7.6M of the CFO's $10.3M can reach 2027 ARR once renewal dates and enterprise caps are applied
+
+- ARR added by a 12% list-price rise on every plan, $ millions, end of 2027
+[Chart: COLUMN_STACKED]
+  categories: CFO plan: 12% on all ARR; Mid-market renewing after 2027; Enterprise renewing after 2027; Enterprise price caps; Reaches 2027 ARR
+  series 'base': 0; 9.582; 7.854; 7.566; 0
+  series 'ARR added': 10.32; 0.738; 1.728; 0.288; 7.566
+- Contract timing takes a quarter off before any churn
+- ▪	Enterprise renewing after 2027: the largest cut, as most enterprise ARR sits in multi-year contracts
+- ▪	Price caps: contracts covering 60% of enterprise ARR limit increases to 7% a year
+- ▪	Mid-market: a small cut, since 85% of its ARR renews in 2027
+- How we built the $7.6M
+- +
+- +
+- =
+- Share of the CFO's figure that can reach 2027 ARR, before extra churn
+- 73%
+- $2.5M
+- $4.2M
+- $0.9M
+- $7.6M
+- SMB: $21.0M × 12%
+- Mid-market: $41.0M × 85% × 12%
+- Enterprise: $24.0M × 40% × 7–12%
+- reaches 2027 ARR
+- $7.6M ÷ $10.3M
+- 1  CFO's figure: $86.0M ARR × 12%; caps assumed to cover 60% of renewing enterprise ARR, as of all enterprise ARR
+- Sources: Palisade Docs briefing pack (synthetic data); team analysis
+
+=== Slide 13 ===
+[Title] The CFO plan's SMB gain is wiped out if about half of the promotion cohort leaves because of the rise
+
+- Break-even of a 12% SMB list-price rise, $ millions of ARR, 2027
+- ×
+- ÷
+- =
+- 10.7%
+- $21M
+- $4.4M
+- 51%
+- of SMB ARR can leave before a 12% rise loses money (12% ÷ 112%)
+- SMB ARR today, all of it renewing in 2027
+- ARR of the 2,100 promotion customers at full price (briefing pack)
+- of the promotion cohort leaving would erase the SMB gain of $2.5M
+- A loss of that size is plausible for this cohort
+- ▪	Before any rise, the cohort already loses about 4.9% of its customers a month
+- ▪	52% of promotion churners already name price as their main reason for leaving
+- ▪	In 2023 an 8% rise lifted SMB churn from 1.8% to 2.3% for six months, before a $9 rival existed
+- ▪	The break-even ignores other SMB customers; any reaction from them makes the margin smaller
+- 1  Customers who leave would otherwise have paid today's price; all SMB ARR renews in 2027
+- Sources: Palisade Docs briefing pack (synthetic data); team analysis
+
+=== Slide 14 ===
+[Title] A targeted 2027 plan
+- SECTION
+
+- A targeted plan raises mid-market and enterprise prices, holds SMB and funds activation
+- 1   Churn
+- 2   Pricing power
+- 3   CFO plan
+- 4   Plan
+
+=== Slide 15 ===
+[Title] Four moves turn the CFO's increase into a targeted plan that protects SMB while it recovers
+
+- 2027 pricing plan, moves and the evidence behind each
+- Move
+- Evidence
+- Raise mid-market list prices 10% at renewal
+- 10%
+
+- rise tested on new sign-ups in 2024, conversion unchanged
+- Raise enterprise prices up to the cap at 2027 renewals
+- 7%
+
+- cap on yearly rises for 60% of enterprise ARR
+- Hold SMB list prices and activate the 2,100 promotion customers
+
+- 41%
+- of promotion customers active in month one, against 72%
+- Test an SMB rise on new sign-ups before a Q3 decision
+- 38%
+
+- SMB win rate against Inkwell, which the test must protect
+- Decision for December: raise prices for mid-market and enterprise only, worth about $4.2M of 2027 ARR
+- 1  The targeted plan forgoes about $3.4M of the CFO plan's realistic $7.6M, most of it the SMB rise at risk
+- Source: Palisade Docs briefing pack (synthetic data)
+
+=== Slide 16 ===
+[Title] With today's retention, the targeted plan leaves new customers only $0.8M of ARR to add to reach the 2027 goal
+
+- ARR bridge to the 2027 goal, $ millions, mid-2026 to end of 2027
+[Chart: COLUMN_STACKED]
+  categories: ARR, mid-2026; Existing base at today's NRR; Mid-market +10%; Enterprise up to 7%; New customers needed; 2027 goal (+15%)
+  series 'base': 0; 86; 93.98; 97.465; 98.137; 0
+  series 'ARR': 86; 7.98; 3.485; 0.672; 0.763; 98.9
+- 32%
+- of the growth the goal needs comes from the two targeted price moves
+- ▪	Existing base: mid-market and enterprise growth outweighs SMB losses
+- ▪	New customers: a remainder activation could cover
+- How we projected it
+- −
+- −
+- −
+- =
+- $12.9M
+- $7.98M
+- $3.5M
+- $0.7M
+- $0.8M
+- Check that the 2027 new-customer plan clears $0.8M of ARR
+- growth goal: 15% × $86.0M
+- base at today's NRR
+- mid-market +10%
+- enterprise +7%
+- left for new customers
+- 1  Assumes each segment keeps its trailing 12-month retention; 2027 new-customer bookings are not in the briefing pack
+- Sources: Palisade Docs briefing pack (synthetic data); team analysis
+
+=== Slide 17 ===
+[Title] Activation could keep about $1M of promotion-cohort ARR in 2027, on a realistic target rather than halved churn
+
+- Promotion-cohort ARR kept over 12 months, $ millions, 2027
+- −
+- =
+- $3.4M
+- $2.4M
+- $1M
+- left after 12 months if the cohort churns 2.1% a month, like other SMB customers
+- left after 12 months at its implied 4.9% a month today
+- of ARR kept by bringing the cohort to the SMB norm
+- We plan on the SMB norm, not on the promise to halve churn
+- ▪	Customer Success expects to halve SMB churn to 1.55%, below the 2.0% SMB had before the promotion
+- ▪	Target instead: promotion churn falls to 2.1% from January 2027 and stays flat for the year
+- ▪	The cohort's churn may already be easing, as most leavers went soon after the discount ended
+- ▪	The cohort's $4.4M of ARR is at full price and gets no increase; the gain is upside to the bridge
+- 1  Starting point: $4.4M of ARR at full price; 12-month survival = (1 − monthly churn)^12; live formula in the source workbook
+- Sources: Palisade Docs briefing pack (synthetic data); team analysis
+
+=== Slide 18 ===
+[Title] Mid-market renewals carry the plan from January, and the SMB price decision waits for evidence in the third quarter
+
+- 2027 pricing plan, by quarter
+- Dec 2026
+- Q1 2027
+- Q2 2027
+- Q3 2027
+- Q4 2027
+- Leadership decision
+- SMB price gate
+- Mid-market +10%
+- New prices at each renewal
+- Enterprise up to 7%
+- Notices per contract terms
+- SMB activation
+- Onboarding for the promotion cohort
+- Extend to all new SMB sign-ups
+- SMB price test
+- New sign-ups only
+- Decide for existing SMB
+- Churn reporting
+- Segment churn on the board dashboard
+- Gate for an SMB rise: promotion churn near 2.1%, and no further fall in the 38% win rate against Inkwell
+
+=== Slide 19 ===
+[Title] Next steps
+- Action
+- Owner
+- Timing
+- Approve the targeted plan: mid-market +10%, enterprise up to caps, SMB held
+- CEO and leadership team
+- Dec 2026
+
+- Issue mid-market and enterprise renewal notices at the new prices
+- Sales and Customer Success
+- From Jan 2027
+
+- Launch the activation programme for the 2,100 promotion customers
+- Head of Customer Success
+- Q1 2027
+
+- Run the SMB price test on new sign-ups and set the Q3 gate
+- CFO and Product
+- Q2 2027
+
+- Define churn by segment on the board dashboard
+- CFO
+- Jan 2027
+

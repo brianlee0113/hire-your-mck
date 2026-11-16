@@ -1,0 +1,38 @@
+{
+ "x": "DQ7ZUH",
+ "y": "DJVE2U",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents follow the same sound chain: churn is a promotion-cohort effect, pricing power sits in mid-market and enterprise, the CFO's figure is overstated, so raise by segment and test SMB. Y's four-pillar structure is tidy and each section maps to a summary line. X's summary, slide titles and appendix calculations tie together just as well, and its figures stay consistent across pages: $7.6M gross, $2.4–3.5M net, and a $1.5–2.6M new-customer gap. Y has two small internal tensions. Its headline that only $0.6M of new ARR is needed rests on zero churn response, while the next page discusses break-even losses. Its slide 14 title also benchmarks the enterprise 7% break-even against the 2023 SMB response, which mixes segments. X's hierarchy is slightly tighter and reaches explicit decisions.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the same defensible recommendation (the key's R1/R2): +10% mid-market, 7–10% enterprise within caps, SMB held pending a Q1 +8% test, promotion cohort frozen with an activation push. X weighs the alternatives more fully. It compares three options, including holding all prices, on gross uplift, net uplift, customers lost, NRR, new-customer ARR needed and reversibility. It states the trade-off against the CFO plan directly: $0.3–1.8M less ARR in exchange for avoiding 320–640 lost SMB customers. X also sets concrete guardrails in advance: pause mid-market if churn exceeds 1.0% for a quarter, an SMB go/no-go at 0.5 pt of extra churn, and a stop rule for cohort investment. It flags the unexplained mid-market churn uptick and exposure in accounts of up to 200 seats. Y rejects the CFO plan and the onboarding-as-plan idea with good reasons. But it never weighs a no-increase option, its stop rule is vague (\"approach break-even\"), and it presents the growth gap optimistically by assuming no churn response.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: promotion-cohort churn of about 4.9%, the $7.6M correction, the break-even formula, the dashboard reconciliation (1.7→2.6 and 0.8→1.2), and the one-third ceiling on the onboarding claim. Y's 2023 extra-loss estimate of 3.6% matches the key exactly, and it caveats the 2024 test properly. X goes further in several places. It nets the uplift for churn response in planning and stress cases. It estimates that the activation gap explains only about 30% of the cohort's excess churn. It cross-checks the exit-survey mix (37% against the reported 34%) and works out the cohort's 56% share of SMB churners. It also separates the in-year SMB upside ($0.7M) from the run-rate ($1.3M). X's weak points are assumption-driven: it scales the 2023 response linearly and uses the new-sign-up conversion gap as a proxy for renewal loss. Both are labelled as assumptions and paired with stress cases. Y's weak points are the headline $0.6M gap and 114% NRR, which assume zero churn response, and the cross-segment comparison of the 7% enterprise break-even with the SMB 2023 loss. Y also offers no explanation of the mid-market churn rise and does not flag it. X uses the critical evidence more completely with no material errors.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis as the key expects. They keep the insight that the churn rise is a cohort and mix effect, reject the uniform 12% and the $10.3M, and acknowledge the CEO's price concern for the promotion cohort and for SMB under Inkwell. Y says outright that \"both views hold for this cohort\". X says the CFO is \"half right\" and then quantifies it: activation explains only about 0.8 of the 2.8-point excess churn, with the rest coinciding with the discount ending. That directly tests the \"onboarding, not price\" claim rather than just placing the two views side by side. Both deflate the Customer Success \"halve churn\" claim to about a third. X's reconciliation of the two views is somewhat more evidence-based.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The recommendations are essentially identical and both meet all the defensibility criteria: mix and rate effects separated, both views reconciled, the $10.3M corrected, pricing differentiated by segment. X would serve the CEO better for four reasons. It gives net-of-churn ranges rather than gross-only figures. It compares the options explicitly, including holding all prices. It gives a more realistic picture of the remaining gap to the +15% target ($1.5–2.6M against Y's optimistic $0.6M). It sets specific triggers and checkpoints agreed in advance and lists the open questions on mid-market churn, notice periods and the new-business pipeline. Y is more concise and analytically sound, but it leaves the churn response out of its headline economics and offers weaker guardrails.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8176441999999999,
+ "wall_s": 37.63024306297302
+}

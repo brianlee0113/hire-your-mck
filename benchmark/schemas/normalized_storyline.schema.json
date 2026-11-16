@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Normalized storyline (common representation for all conditions)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["governing_thought", "executive_summary", "slides", "recommendation", "alternatives_considered",
+               "assumptions_and_uncertainties", "next_steps", "extraction_notes"],
+  "properties": {
+    "governing_thought": {
+      "type": ["string", "null"],
+      "description": "The single sentence the deck states as its overall answer, copied verbatim. null if the deck never states one."
+    },
+    "executive_summary": {
+      "type": "array", "items": {"type": "string"},
+      "description": "The executive-summary points as written (verbatim), in order. Empty if the deck has no executive summary."
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["n", "title", "claims"],
+        "properties": {
+          "n": {"type": "integer"},
+          "title": {"type": "string", "description": "The slide title verbatim"},
+          "claims": {
+            "type": "array",
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["claim", "evidence"],
+              "properties": {
+                "claim": {"type": "string", "description": "A claim the slide makes, verbatim or near-verbatim"},
+                "evidence": {"type": "array", "items": {"type": "string"}, "description": "The numbers, data or facts the slide gives for that claim, verbatim"}
+              }
+            }
+          }
+        }
+      }
+    },
+    "recommendation": {"type": ["string", "null"], "description": "The strategic recommendation as stated, verbatim or closely paraphrased with the deck's own words. null if none."},
+    "alternatives_considered": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["option", "treatment"],
+        "properties": {
+          "option": {"type": "string"},
+          "treatment": {"type": "string", "description": "What the deck says about this alternative (verbatim/closely paraphrased): chosen, rejected and why, etc."}
+        }
+      }
+    },
+    "assumptions_and_uncertainties": {"type": "array", "items": {"type": "string"}, "description": "Assumptions, risks and uncertainties the deck states explicitly"},
+    "next_steps": {"type": "array", "items": {"type": "string"}},
+    "extraction_notes": {"type": "string", "description": "Anything that could not be extracted cleanly (e.g. unreadable pictures). No judgement of quality."}
+  }
+}

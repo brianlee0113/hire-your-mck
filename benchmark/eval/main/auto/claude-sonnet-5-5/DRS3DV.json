@@ -1,0 +1,185 @@
+{
+ "blind_id": "DRS3DV",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as launch or not, packaging, price and timing. It tests the CPO plan against five explicit conditions. It uses the NRR, margin and engineering constraints as criteria and spots early that the mobile trade-off and survey vs paywall gap drive the answer. It adds an NRR lens that the pack's objectives justify.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, four summary points and sections line up, and the titles are claims that the slides support. Small gaps: the Pro adoption base of 25% is an assumption sitting between the paywall rate and the 2023 precedent, and it is not strongly tied to the revealed-preference message. The deck is also somewhat redundant (an extra decision slide and an appendix).",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "The calculations are correct and transparent: $8.06M vs $2.45M, inference $17.1/$32.4/$61.2/$130.5, 109 deals and $0.64M, Pro ARR $1.23–2.89M, and $1.47M of engineering cost. It also catches that Table 2 implies the top 10% generate about 40% of requests, not 58%. The weak spots are the Pro base adoption of 25%, the assumed 50% rewrite effectiveness, the 50% AI attribution and the straight-swap engineering assumption. All of these are labelled as assumptions. Pro margin is modelled per seat at 444 requests, not at the mean 3,600 per account, so the roughly 56% margin figure is not reproduced directly.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Launch, but in Pro with an allowance and metering, sized off the paywall test, with margin guardrails. It compares four packaging options plus a sequencing alternative, and makes the mobile trade-off explicit with a sensitivity grid and break-even. It gives a trigger to launch sooner, a pilot with go/no-go gates, and risks with warning signs. It avoids all the traps. The cost of delaying Copilot to Q4 while Routewise bundles AI is quantified and mitigated.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slides 1–2 and the language is plain. At 18 slides it is a bit long for the decision, with some repetition across the summary, slide 3 and slide 16, and an appendix with a format note that does not belong.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "People who reply to an AI survey tend to be the ones interested in AI.",
+    "why": "Plausible non-response bias, but the pack gives no evidence about who replied."
+   },
+   {
+    "quote": "Short window. 12 weeks, with novelty effects",
+    "why": "Novelty effects are asserted without any evidence in the pack."
+   },
+   {
+    "quote": "Adoption 25% (14–33%)",
+    "why": "The base Pro adoption is a midpoint assumption. It is labelled, but it drives the headline $2.2M."
+   },
+   {
+    "quote": "Payback of $1.47M engineering: ~21 months after launch",
+    "why": "It rests on assumed retained and won ARR (50% attribution and 50% rewrite effectiveness), not on pack data."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "partial"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Copilot only inside a new Pro tier at +$12 per seat, with a pooled 500-requests-per-seat allowance and paid packs. Keep the mobile rewrite on schedule. Take Copilot GA to late Q4 2027, with a randomised non-volunteer pilot, a mid-February trigger to launch sooner, and renegotiation of inference.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It sizes demand off the paywall test, not the survey. It protects margin with an allowance and metering. It weighs the mobile delay explicitly against the competitive threat, including the Routewise discount confound. It sets quantified triggers and gates. It is close to R1 and also sits within R3, with a limited AI response (early access in contested deals)."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It keeps 'launch' but rejects the $8M sizing and the flat $149 add-on. It re-sizes to $1.2–2.5M for the add-on and about $2.2M for Pro, flags the heavy-user adverse selection, and notes the 20% Routewise promotion confound. This is the expected 'revise' handling."
+  },
+  "overall_comment": "This is a strong, well-quantified deck. It fixes the survey vs paywall gap, models variable inference cost and the allowance, bounds the competitive effect at $0.64M with the confound noted, and weighs the mobile trade-off with a sensitivity grid and triggers. The weaknesses are the assumption-driven Pro adoption base and several stacked 50% assumptions behind the sequencing result. The deck is also a little long, and the Pro margin is modelled per seat rather than at the mean per account. It is decision-ready overall.",
+  "source_guess": {
+   "guess": "methodology_prompt",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1780784,
+ "wall_s": 34.06130123138428,
+ "is_error": false,
+ "error_text": null
+}

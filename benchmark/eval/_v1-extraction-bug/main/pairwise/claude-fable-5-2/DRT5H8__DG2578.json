@@ -1,0 +1,39 @@
+{
+ "x": "DRT5H8",
+ "y": "DG2578",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both lead with the same segmented answer and support it with the same chain: cohort decomposition, pricing power by segment, the corrected $10.3M, then plan and guardrails. X's hierarchy is tighter. Its slide 3 breaks the CFO proposal into four premises with a verdict each, and every later slide supports one of them. Its option table, ARR bridge and plan table use the same numbers ($4.1M net, $3.1M downside, $0.9M new-customer ARR needed). X has one loose phrase: the summary says churn is 'not because customers are reacting to price', while slide 5 says the promotion cohort is very price-sensitive. Slides 3 and 5 reconcile this explicitly. Y is also well structured, but has more internal tension. Its governing thought says hold SMB 'until the evidence is in', yet its base case and headline ('exactly the +15% target before any new-customer ARR') count the SMB test passing (+$0.4M) and an activation gain (+$0.3M). Slide 6 says price is not driving churn in any segment, while slide 11 attributes most of the cohort's excess churn to the discount ending. Slide 10 credits the CFO with an 'onboarding' diagnosis, although Y's own analysis shows activation explains under a third.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's preferred recommendation (R1): raise mid-market and enterprise, hold and test SMB, exempt the promotion cohort, with guardrails. Y has real merits. It stays at the tested +10% in mid-market with a step-up to 12% if renewals hold, which respects the uncertainty about new sign-ups versus renewals. It flags renewal notice periods, adds a win-rate guardrail against Inkwell, and points to a 2028 packaging response. However, on Y's own numbers the CFO plan beats its recommendation in both base and downside (6.3/4.5 against 4.7/3.8). Its case therefore rests on unquantified factors, and its target is met only by counting contingent gains. X weighs the trade-off more convincingly. It gives up about $1.0M of base case for a higher downside floor ($3.1M against $2.5M) and shows the SMB part of the CFO plan is roughly break-even or negative in the downside. It prices a +10% mid-market variant as the fallback, keeps onboarding and the SMB option out of the committed plan, and states plainly that $0.9M of new-customer ARR is still needed. X's choice of +12% in mid-market goes beyond the tested level, which is riskier, but it is explicitly justified and guarded. X's SMB test is also better designed: randomised, with a power calculation and a decision rule derived from break-even, where Y uses a 10% renewal sample with a 0.3-point threshold and no power check.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the critical calculations correctly: promotion-cohort churn of about 4.9%, a mix effect of about 1.0pp against a 0.1pp rate effect, $7.57M repriceable, and customer- and ARR-weighted churn that do not match the dashboard. Both split exit surveys by cohort, caveat the new-sign-up test and challenge the 'halve churn' claim with an activation decomposition. X goes further on the critical evidence. It computes break-even explicitly (7.4% for +8%, about 1.2pp a month) and compares it with the 2023 reaction. It cross-checks the cohort's share of churners against the survey mix (47% against 56%). It applies a churn response to every segment and notes that first-month activation cannot be applied retroactively to existing customers. X's weak spots are the mid-market and enterprise loss rates. They port the 2023 SMB relative reaction and treat a non-significant conversion difference as a point estimate. The power calculation also assumes all core SMB customers renew in Q1. Each of these is labelled as an assumption and is conservative in direction. Y's arithmetic is clean, but its base case assumes zero mid-market churn response, leaning on the new-sign-up test. It also books a $0.3M activation gain that assumes the cohort reaches core activation levels, and counts the untested SMB uplift, which produces a conveniently exact hit on the target.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "The key expects a revision that recognises both the CFO and the CEO as partly right. X does this explicitly and precisely. Slide 3 breaks the CFO hypothesis into four premises: churn not price-driven across the base (holds with a caveat), every segment can absorb 12% (fails for SMB), worth $10.3M (fails), and constraints met (holds). Slide 5 concludes the CFO is right that core churn is not about price but wrong that it is only an onboarding problem, because the cohort left when its bill doubled. That also validates the CEO's concern for SMB. Y also revises correctly: it rejects the uniform 12%, corrects the $10.3M, and says where the CFO is right. Its reconciliation is thinner and slightly muddled. It says the CFO is right that churn is 'mostly an onboarding and cohort problem' even though its own slide 11 shows activation explains under a third of the cohort's excess churn. It also never engages the CEO's view as directly.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both documents meet all four defensibility criteria and recommend essentially the same segmented plan, so the gap is modest. X would serve the CEO somewhat better. It tests the CFO's hypothesis premise by premise and gives an honest budget figure ($4.1M committed, $0.9M of new-customer ARR still needed). Its risk-adjusted comparison actually supports the recommendation, and its SMB test has thresholds derived from break-even. It keeps contingent gains out of the plan. Y is more concise and adds useful practical points: staying at the tested +10%, notice periods, a win-rate trigger and a packaging response to Inkwell. But its headline that the plan hits the 15% target exactly, before new customers, depends on contingent items and on zero mid-market reaction. Its own numbers also show the CFO plan ahead in both cases, which leaves the recommendation less well supported.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1485322,
+ "wall_s": 70.71580600738525,
+ "error_text": null
+}

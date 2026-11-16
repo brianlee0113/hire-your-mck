@@ -1,0 +1,39 @@
+{
+ "x": "DXFQCQ",
+ "y": "DZ9GNW",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same logical chain: diagnosis, pricing power by segment, value of the CFO's plan, then plan and guardrails. X's summary figures ($3.0M net, $4.2M for the CFO, $2.0M downside for both, $1.9M gap) carry through the option table, bridge and appendix without contradiction, and the explicit hypothesis table ties each verdict to the recommendation. Its one loose title is 'every signal points the same way' when the core SMB signals are mixed. Y is tight and readable, but its governing thought ('fix the promotion cohort with onboarding, not price') sits uneasily with its own evidence that leavers went when the discount ended and that the onboarding gain 'could be smaller'. Y's headline $4.3M is gross of any mid-market or enterprise churn response, yet it is compared with a CFO figure that is net of the SMB response, so the hierarchy of numbers is less consistent.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach essentially the same defensible recommendation (the key's R1): +10% for mid-market, enterprise within caps, hold SMB and test +8%, no rise for the promo cohort, with guardrails. X weighs the alternatives better. It models four options with base and downside cases and shows the CFO's plan and its own converge at about $2.0M in the downside, so the SMB rise only buys upside if Inkwell has not changed behaviour. Y's own numbers show the CFO's plan beating its plan in every modelled scenario ($5.0–6.3M against $4.3M) and exceeding the 15% target. Its rejection therefore rests on the 'unmeasured risk' argument and on keeping churn readable, which is valid but less well supported. Y adds a useful check on whether the SMB test can detect a reaction, and a clear 'what would change the recommendation' list. X also separates Inkwell's effect on acquisition from retention and ties that to the new-customer gap.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: 4.9% promo churn, about 1.0 of the 1.1-point rise from mix, $7.57M, break-even 10.7%, 2023 loss of about 3.6% (5.4% scaled to 12%), and blended churn 1.7% → 2.6% and 0.8% → 1.2%. X goes further in three ways. It decomposes the promo cohort's excess churn into activation (about 30%) and discount expiry, using the 3× activation fact. It nets out customers who churn before repricing. It applies a churn response to every segment, giving a more conservative $3.0M and a 12.8% exit. Some of X's calibrations are stretched: a mid-market elasticity taken from a non-significant conversion gap, and a promo multiplier from survey ratios. They are labelled and stress-tested. Y's $4.3M and 14.2% assume zero mid-market and enterprise reaction and no attrition before renewal, which overstates the plan and understates the new-customer gap ($0.6M), though it flags this as not modelled. Y's 'onboarding problem' reading under-uses the 52% price citation and the discount-expiry timing. Y's test-power calculation is a real plus. Both caveat the new-sign-up test and the dashboard metric.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "The key expects a revision that finds both the CFO and the CEO partly right. X does this explicitly. It calls the CFO 'half right': core customers are not leaving over price, but the promo cohort left when its price doubled. It quantifies that onboarding explains only about 30% of the excess churn, cuts the $10.3M to $7.6M and then $4.2M, and rejects the 'halve churn' claim with numbers. It also shows its own working hypothesis (+8% SMB in January) being downgraded to 'test first' because of Inkwell. Y corrects the $10.3M and rejects 12% across the board and the 'halve churn' claim, but it largely adopts the CFO's framing ('the CFO is right that this is mostly an onboarding problem'; 'fix with onboarding, not price'). It sets a target of returning the cohort to 2.1% through onboarding, with only a caveat that the discount cliff may be the real cause. That reconciles the two views less well against the evidence.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The recommendations are nearly identical and both are defensible, so the difference lies in the reasoning that supports them. X gives the CEO a more reliable picture: net-of-churn value by segment, a downside case showing the segmented plan loses nothing to the CFO's when sensitivity is higher, a realistic 12.8% exit with a $1.9M new-customer gap, and a quantified reconciliation of the onboarding and price explanations. Y is shorter and adds a sound test-power check and clear tripwires. However, its headline economics are gross, its own comparison leaves the CFO's plan looking better in every scenario, and it leans too far towards the onboarding explanation. X would serve the decision better.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9989402000000001,
+ "wall_s": 47.798343896865845,
+ "error_text": null
+}
