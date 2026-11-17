@@ -260,3 +260,47 @@ config's `plugin` flag instead of the letter C (main outputs re-checked: identic
 summary takes the comparisons as a parameter (default unchanged). `scripts/explore_c2.py` (new) blinds, judges,
 pairs and analyses the C2 arm. Mode check rule: a run counts as `deck_deep` if it read the skill's
 `references/deep-deck.md`; this rule classifies all 15 main C runs as `deck_deep`.
+
+## 13. Development arm E1: the skill with a decision audit (added after the main, C2 and slide-review results)
+
+**Why.** In the main and C2 results, and in the author's slide review (`eval/human-slides/results.md`), the skill
+reached the same answers as the baselines but lost on decision completeness: known costs left out of headline
+numbers, an obvious smaller alternative never tested, no threshold at which the recommendation fails. The strong
+baseline's six lines ask for alternatives, assumptions and risks; the skill's main workflow had no such step.
+E1 adds one change to the skill, a decision audit (SKILL.md Step 2b), and nothing else.
+
+**Status.** Development, not a confirmatory test. The five cases are the same as in the main benchmark, their
+results were known while the change was designed, and the change was written after reading B, C and C2 decks for
+c2 and c5. Any claim of improvement must come from new held-out cases, designed and frozen before they are run.
+This section and `FREEZE-dev-e1.json` were written before the first `dev-e1` run; one smoke run (`dev-e1-smoke`,
+c2 replicate 1) checked the harness and is excluded from every result.
+
+**Leakage check.** The skill text names no case-specific item (no wage rise, no store pilot, no growth threshold
+from the cases); its examples use the skill's own fictional Cobalt Ledger. The audit's generic prompts ("a
+smaller, staged or pilot version of what you reject") are standard practice but were chosen with c5 in view.
+
+**Design.** Identical to C2 (request names `deck_detailed`; same model, effort, tools, sandbox, packets, auto-reply,
+limits) except the skill snapshot, which adds the decision audit (commit `f5b01a4`). Claude Code is 2.1.326
+(C2: 2.1.325). Phase `dev-e1`: 5 cases × 2 replicates = 10 runs, order seeded (2029), parallel 3.
+
+**Evaluation.**
+- Same pipeline: audit, extraction, normalisation, scrubbing, both absolute judges; fresh blind ids.
+- Pairwise (Fable 5.2, both orders), replicate-matched on replicates 1–2: **E1 vs C2** (the audit's effect, same
+  mode) and **E1 vs B** (the remaining gap). B and C2 documents and judgments are reused.
+- Decision completeness (secondary measure). Per case, Fable 5.2 wrote a checklist of binding constraints,
+  alternatives to test and key sensitivities from the pack and answer key alone, before any E1 document was
+  scored (`eval/dev-e1/decision_reference/`, frozen with this section). Sonnet 5.5 then applies it to every E1,
+  B and C2 document of replicates 1–2: share of constraints reflected, alternatives tested, sensitivities
+  quantified; overclaim; omissions; unsupported assumptions.
+
+**Reading rules, fixed now.**
+- The audit "worked" on the development cases only if E1 beats C2 pairwise (overall preference > 0.5, E1 ahead
+  in at least 4 of 5 cases) **and** decision completeness improves. If completeness improves but pairwise does
+  not, or the reverse, no improvement is claimed.
+- E1 vs B is reported as the remaining gap. The held-out target, to be frozen with the held-out cases, is
+  non-inferiority to B (overall preference ≥ 0.45), not superiority.
+- If E1 is not better than C2 here, the held-out test is not run for E1, and the published write-up reports the
+  development result as a failed fix.
+
+**Smoke run (excluded).** `dev-e1-smoke-c2-E1-r1`: complete, `check.py` 0 fail, a full `decision_audit`, 23
+slides, $9.10 and 56 minutes (C2 averaged about $5 and 18 minutes): the audit roughly doubles the cost of a run.

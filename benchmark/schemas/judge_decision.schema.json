@@ -1,0 +1,13 @@
+{"type": "object", "additionalProperties": false,
+ "required": ["constraints", "alternatives", "sensitivities", "overclaim", "omissions", "unsupported_assumptions"],
+ "properties": {
+  "constraints": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "status", "evidence"],
+    "properties": {"id": {"type": "string"}, "status": {"enum": ["reflected", "mentioned", "absent"]}, "evidence": {"type": "string"}}}},
+  "alternatives": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "status", "evidence"],
+    "properties": {"id": {"type": "string"}, "status": {"enum": ["tested", "mentioned", "absent"]}, "evidence": {"type": "string"}}}},
+  "sensitivities": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "status", "evidence"],
+    "properties": {"id": {"type": "string"}, "status": {"enum": ["quantified", "mentioned", "absent"]}, "evidence": {"type": "string"}}}},
+  "overclaim": {"type": "object", "additionalProperties": false, "required": ["present", "quote"],
+    "properties": {"present": {"type": "boolean"}, "quote": {"type": "string"}}},
+  "omissions": {"type": "array", "items": {"type": "string"}},
+  "unsupported_assumptions": {"type": "array", "items": {"type": "string"}}}}

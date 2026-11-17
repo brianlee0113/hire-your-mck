@@ -1,0 +1,116 @@
+{
+ "case": "c1-market-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "item": "Investment cap: peak negative cumulative US cash of no more than $18M through 2030.",
+    "why_binding": "Hard board limit. Option B peaks at about $20.8M on the planning team's own 4.5 units/door/week, and about $25.5M at the 2.6 median for Onsoo's awareness band; it is still cash-negative in 2030. Option A peaks at about $2.4M at 28% ACoS (about $3.9M in a combined ACoS-plus-tariff downside), so the cap screens out B, not A."
+   },
+   {
+    "id": "C2",
+    "item": "Payback: cumulative US cash flow back to zero by end-2030 (four years from a 2027 launch).",
+    "why_binding": "This is the constraint Option A is closest to breaking. Cumulative cash by 2030 is about +$2.4M at 25% ACoS, +$0.4M at the pilot's 28%, and -$2.3M at the 32% scaling benchmark. Option B never pays back by 2030; Option J pays back in 2029 (about +$1.8M cumulative by 2030)."
+   },
+   {
+    "id": "C3",
+    "item": "Group operating margin at or above 8% in every year, against an ex-US base of $140M revenue at 11.0% in 2027 (about $15.4M operating profit).",
+    "why_binding": "The floor leaves only about $3-4M of first-year US operating loss. Option B loses about $8.7M in 2027 and takes group margin to about 4.5%. Option A stays above 9%. The check has to be made year by year, and 2027 is the tight year."
+   },
+   {
+    "id": "C4",
+    "item": "Bandwidth: only one major new-market launch in 2027, either the US or the Japan scale-up.",
+    "why_binding": "The US and Japan are mutually exclusive in 2027, so any US recommendation must be compared with Option J forgone (about $7M incremental revenue by 2030, payback 2029, lower risk), not with doing nothing."
+   },
+   {
+    "id": "C5",
+    "item": "Ambition: a US business 'on the way to $40M revenue by 2030'.",
+    "why_binding": "No option meets it within the constraints. Option A reaches about $26.4M in 2030 (1.1M units at $24). Option B reaches about $37.6M but breaks the cap, the payback and the margin floor. The board must be told the ambition has to be reset or dated later, or a constraint relaxed."
+   },
+   {
+    "id": "C6",
+    "item": "Retailer delisting rule: the leading specialty retailer removes newcomer brands selling below 4.0 units per door per week after 12 months.",
+    "why_binding": "It binds any retail route, including the CEO's 2029 step. Onsoo's aided awareness is 4% (9% among K-beauty buyers), where the median is 2.6 (IQR 1.9-3.4). The CEO's own 15% awareness trigger sits in the 10-20% band, whose median of 3.5 is still below 4.0; only the above-20% band (median 4.6) clears it."
+   },
+   {
+    "id": "C7",
+    "item": "Full per-unit channel costs from Table 4. Amazon: 15% referral fee, $5.10 FBA, $3.50 product, $0.55 freight, duty at 15% of ex-factory cost, and advertising at ACoS x price. Retail: wholesale at 50% of shelf price, $0.75 freight, duty, 8% co-op and 4% returns.",
+    "why_binding": "Headline revenue overstates what Onsoo keeps. Amazon contribution is about $10.72 per unit before ads (44.7% of price) and about $4.00 after ads at 28% ACoS. Retail contribution is about $7.54 per unit before the fixed retail costs. Payback must be built on these figures, not on revenue or gross margin."
+   },
+   {
+    "id": "C8",
+    "item": "Fixed and one-time US costs from Table 6. Option A: $2.1M a year (compliance and insurance 0.5, team 0.9, brand marketing 0.7) plus $0.8M setup. Option B adds $6.0M a year of retail marketing, $1.5M a year of field team, a $0.5M launch fee and $1,100 of fixtures per new door.",
+    "why_binding": "Option A carries about $9.2M of fixed and setup cost over 2027-30 against about $11-13M of contribution, which is why payback is marginal. Option B's $9.6M a year of fixed cost exceeds its total contribution in every year to 2030."
+   },
+   {
+    "id": "C9",
+    "item": "Working capital: four months of landed product cost (ex-factory + freight + duty, about $4.58 per Amazon unit) held as inventory.",
+    "why_binding": "It is a cash outflow that counts toward both the cap and the payback: about $1.7M is tied up by 2030 in Option A. Leaving it out turns the marginal 28% ACoS case into a comfortable-looking one."
+   },
+   {
+    "id": "C10",
+    "item": "Advertising cost at scale: the pilot ran at 28% ACoS on a small budget; the agency benchmark for brands scaling from $5M to $20M on Amazon US is a median of 32% (range 26-38%); the plan assumes 25%.",
+    "why_binding": "The plan's 25% is below both the pilot and the bottom of the benchmark range, and its stated reason (ACoS falls as the brand matures) runs against the benchmark evidence that costs per click rise. Option A enters the $5-20M range from 2027 ($7.2M revenue), so the 32% benchmark applies for most of the plan."
+   },
+   {
+    "id": "C11",
+    "item": "Tariff: US duty on Korean cosmetics may rise from 15% to 25%, with a decision expected in mid-2027, after the March 2027 board meeting.",
+    "why_binding": "It adds about $0.35 per unit to landed cost. On its own it turns the 28% ACoS case negative by 2030 (about -$0.7M). The board must commit before it is resolved, so the recommendation needs a stated response if it lands."
+   },
+   {
+    "id": "C12",
+    "item": "US compliance and labelling: MoCRA registration, safety substantiation and US-compliant labels; 6% of pilot reviews complained of Korean-only label text.",
+    "why_binding": "The cross-border test is not a compliant base to scale from. The label fix is a precondition for scaling and its cost ($0.8M setup, $0.5M a year) must be in the numbers."
+   },
+   {
+    "id": "C13",
+    "item": "Repeat purchase: 29% 90-day repeat in the US pilot, against a 31% first-year Amazon benchmark and 48% for Onsoo in Korea.",
+    "why_binding": "The volume ramp cannot be built on Korean repeat rates or on the pilot's month-on-month growth continuing. The pack says it is unknown whether repeat rises with more SKUs."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "option": "Option B as proposed by the independent board member: a national specialty-retail launch in 600 doors in 2027, with Amazon alongside.",
+    "why_serious": "It is the only modelled route that gets near the $40M ambition (about $37.6M in 2030) and a board member is advocating it. It must be tested on the board's constraints, not dismissed: peak investment is about $20.8M against the $18M cap even at 4.5 units/door/week, there is no payback by 2030, and 2027 group margin is about 4.5%. Its 4.5 units/door assumption is the above-20%-awareness benchmark, and its 1.3x Amazon halo rests on a cross-brand correlation (0.71) that does not show retail causes Amazon sales. Mooncrest (450 doors, removed, about $21M loss) is the closest precedent."
+   },
+   {
+    "id": "A2",
+    "option": "A staged retail test: Amazon-led entry in 2027 plus a limited-door or regional specialty-retail pilot, instead of either 600 doors now or no retail until 2029.",
+    "why_serious": "It is the natural compromise between the CEO and the board member. It would measure Onsoo's actual units per door against the 4.0 delisting threshold before national fixed costs are committed. The pack only prices the variable part ($1,100 fixtures per door, about $7.54 contribution per unit); it gives no scaled-down marketing or field-team cost, so a deck must state what it assumes and show the pilot does not erase Option A's thin payback margin. It must also address that at 4-9% awareness the expected result is about 2.6 units per door, which risks an early delisting."
+   },
+   {
+    "id": "A3",
+    "option": "Option J: use the 2027 slot for the Japan scale-up, keep the cross-border Amazon US listing as a low-cost test, and set an explicit trigger for a later US launch.",
+    "why_serious": "It is the only option that meets every constraint with margin: peak outflow about $1.05M, payback in 2029, about $1.8M cumulative by 2030, in a market Onsoo knows. It also defers the US commitment past the mid-2027 tariff decision and allows more evidence on ACoS and repeat. Against it: only about $7M of incremental revenue by 2030, in a market growing 1.5% a year where Onsoo already holds 3.1%, and it does nothing for the US ambition, while US K-beauty skincare grew about 17% a year over 2021-25."
+   },
+   {
+    "id": "A4",
+    "option": "A leaner Amazon-led entry: Option A with a lower fixed-cost base (smaller US team, slower off-Amazon brand spend) and expansion gated on ACoS and repeat.",
+    "why_serious": "Option A's payback fails on about $2.3M at 32% ACoS, and fixed cost is $2.1M a year, so this is a cheap way to buy margin. Each $0.1M a year cut adds about $0.4M to 2030 cumulative cash; cutting roughly $0.5-0.6M a year moves the break-even ACoS from about 28.6% to about 31.5-32%. The trade-off a deck must face: compliance cost is not discretionary, and cutting brand marketing may slow the volume ramp and the awareness needed for any later retail step."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "driver": "Amazon ACoS at scale (plan 25%, pilot 28%, scaling benchmark median 32%, range 26-38%), together with the tariff outcome.",
+    "what_to_show": "Option A's 2030 cumulative cash at each ACoS: about +$2.4M at 25%, +$0.4M at 28%, -$2.3M at 32%. The break-even ACoS for payback by end-2030 is about 28.6%, barely above the pilot and below the benchmark median. A duty of 25% lowers that break-even to about 27% and turns the 28% case to about -$0.7M. The deck should show that the investment cap and margin floor still hold in the downside (peak about $3.9M, group margin above 9%), so the exposure is the payback rule, not the cap. It should then state the ACoS gate and what happens if it is missed."
+   },
+   {
+    "id": "S2",
+    "driver": "Specialty-retail sell-through (units per door per week), which depends on aided awareness (4% overall, 9% among K-beauty buyers).",
+    "what_to_show": "The plan's 4.5 comes from the retailer's deck on successful newcomers and matches the above-20%-awareness band (median 4.6). At Onsoo's awareness the median is 2.6 (IQR 1.9-3.4), below the 4.0 delisting threshold. Option B's peak investment is about $20.8M at 4.5 and about $25.5M at 2.6, so it breaks the $18M cap across the whole plausible range and no units-per-door value in the evidence rescues it; removing the unproven 1.3x halo makes it worse. For any later retail step, the deck should show the awareness level needed to clear 4.0, which is above 20%, not the CEO's 15% trigger (median 3.5 in the 10-20% band)."
+   },
+   {
+    "id": "S3",
+    "driver": "Option A's Amazon volume ramp (300,000 units in 2027 rising to 1.1M in 2030), which depends on repeat purchase and the four added SKUs.",
+    "what_to_show": "The 2027 plan is about 1.8x the pilot's June run-rate (14,000 a month, about 168,000 a year on three SKUs), and repeat is 29% against a 31% benchmark. Payback has almost no volume cushion at pilot ad costs: at 28% ACoS a shortfall of roughly 4% against plan volumes across 2027-30 takes 2030 cumulative cash to zero; at 25% ACoS the cushion is about 20%. Volume should be built from the pilot and channel economics, not from a share of the $3.6B K-beauty skincare market or the $5.2B trade-press figure, which includes makeup and hair care. Saebom (about $30M) must be set against Gaon Lab and Yeoreum (both below $5M) as the range of Amazon-first outcomes. The deck should give the volume and repeat levels that would trigger scaling up, holding or stopping."
+   }
+  ]
+ },
+ "cost_usd": 0.5904640000000001
+}

@@ -1,0 +1,101 @@
+{
+ "case": "c2-profitability",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "item": "Margin target: operating margin of at least 3.0% by FY2028. At FY2025 sales of $1,503M that is about $45.1M of operating income, roughly $29.8M more than FY2025's $15.3M.",
+    "why_binding": "It is the stated objective. The sized actions, net of their offsets, must add up to roughly $30M a year by FY2028, not just point in the right direction."
+   },
+   {
+    "id": "C2",
+    "item": "Lender covenant: operating income of at least $20M in FY2026, which is about $4.7M above FY2025, earned inside the first plan year.",
+    "why_binding": "Only savings that land within FY2026 count, so part-year phasing matters. Late levers such as closures at lease expiry do not help, and the downside case must still clear $20M."
+   },
+   {
+    "id": "C3",
+    "item": "Capital cap: at most $25M of one-time cost or capital over FY2026–FY2028. The pack names one such cost, the $7.5M lease exit for three stores; any other one-time costs of the plan draw on the same cap.",
+    "why_binding": "It is a hard limit on the whole plan. Early lease exits alone would use 30% of it, leaving $17.5M for everything else."
+   },
+   {
+    "id": "C4",
+    "item": "Store-closure commitment: no closure of a store whose lease runs beyond 2027 without a board vote. This applies to 3 of the 9 loss-making stores; the other 6 have leases expiring by end of 2027.",
+    "why_binding": "Closing the three long-lease stores needs an explicit board decision plus the $7.5M exit cost. The six can close at expiry without either, but not early."
+   },
+   {
+    "id": "C5",
+    "item": "Owner commitment: the family owners want delivery kept \"in some form\".",
+    "why_binding": "A full e-commerce shutdown is off the table. Exiting home delivery while keeping click-and-collect must be argued with the owners explicitly, not assumed."
+   },
+   {
+    "id": "C6",
+    "item": "Wage headwind: the state minimum wage rises 4% in 2027, after a 9.4% rise in the hourly rate over two years. On the $181.9M store labor base this is up to about $7.3M a year if it passes through to the whole wage bill.",
+    "why_binding": "It lands before the FY2028 target date, so the plan must close the $29.8M gap plus this headwind. A plan sized only on FY2025 costs falls short."
+   },
+   {
+    "id": "C7",
+    "item": "True e-commerce cost: net fulfillment was $18.1M in FY2025 ($13.61 per order), including about $8.3M of third-party delivery net of fees. With 70% of online sales cannibalised, only about $7.7M of contribution is incremental, a net drag of about $10.4M. The provider has proposed a 3% rate rise at the 2026 renewal (about $0.3M), and the home-delivery share is rising (45% to 58%) while the fee collected is falling.",
+    "why_binding": "Any e-commerce number must include delivery cost and cannibalisation, which the e-commerce team's 6.1% contribution claim leaves out. Freezing the service locks in the drag rather than removing it."
+   },
+   {
+    "id": "C8",
+    "item": "Shrink offset to labor cuts: each 0.1 pp of shrink costs about $1.5M. The lowest-labor quartile of stores runs shrink of 3.1% against 2.3% in the highest, and labor hours per $1,000 of sales have already fallen from 7.02 to 6.60. Customer response (checkout waits, stock-outs) is a named uncertainty.",
+    "why_binding": "The $14.5M headline saving from an 8% hours cut must be shown net of a shrink rise and any sales loss. That net figure also decides whether the cut reliably delivers the covenant."
+   },
+   {
+    "id": "C9",
+    "item": "Traffic cost of cutting promotions: stores within three miles of a new ValuMart had comparable sales of −4.2%, and 41% of customers call Harlow more expensive (33% in FY2023). Vendor funding of markdowns has fallen from 55% to 46%.",
+    "why_binding": "Promotion growth cost about $10.5M of margin, but some of it defends traffic. A promotions saving must be net of lost sales and cannot assume vendor funding recovers."
+   },
+   {
+    "id": "C10",
+    "item": "Net economics of store closures: the nine stores have $118M of sales and −$3.1M of four-wall EBITDA. Only 25% of their sales transfer to nearby stores, at 12% contribution, so closing all nine gains about $6.6M a year, and about $88M of sales is lost.",
+    "why_binding": "The headline must be the $6.6M net figure, with its timing (lease expiries by end of 2027) and the $7.5M exit cost for three stores. The benefit arrives too late for the FY2026 covenant."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "option": "Management's plan as written (8% cut in store labor hours plus an e-commerce freeze), tested against a smaller, targeted version: cuts confined to high-labor stores or to scheduling, protecting produce rotation and receiving checks, and piloted with shrink tracked before rollout.",
+    "why_serious": "It is the CFO and COO's proposal and the largest fast, zero-capital lever: $14.5M would lift FY2026 operating income to about $29.8M, well clear of the covenant. But labor explains only about $4.5M of the $32.6M decline, the plan alone reaches only about 2.0% margin, and the shrink gradient could erase much of the saving. The live question is how much labor reduction survives once shrink is netted off."
+   },
+   {
+    "id": "A2",
+    "option": "Exit home delivery and keep click-and-collect, tested against the cheaper half-measure of rolling the fee test out chain-wide ($7.99 fee, $100 free-delivery threshold) and renegotiating the delivery contract at the 2026 renewal.",
+    "why_serious": "E-commerce fulfillment is the largest single driver of the decline ($12.6M). Exit is worth roughly $8–9.5M a year, whether delivered orders move to click-and-collect or revert 70% to stores, but it collides with the owners' wish to keep delivery. The fee rollout keeps delivery but recovers only about $2.5–3M at test response rates, leaving most of the $10.4M drag. The board needs both sized side by side."
+   },
+   {
+    "id": "A3",
+    "option": "Roll promotions back toward the FY2023 share of sales (24%), tested against pruning only the 38% of events that lose money, and against holding current depth to defend traffic from ValuMart.",
+    "why_serious": "Promotions are the second-largest driver ($10.5M; each 1 pp of sales moved back to regular price is worth about $2.1M) and need no capital. A full rollback risks traffic near ValuMart, while the category team argues promotions work (deep-promotion stores comped +1.8% against +0.2%), a comparison that does not control for store mix. Pruning the losing events is the option the post-event review directly supports."
+   },
+   {
+    "id": "A4",
+    "option": "Close weak stores: only the six at lease expiry (no exit cost, no board vote), against all nine including the three long-lease stores ($7.5M exit cost and a board vote), against closing none.",
+    "why_serious": "Closing all nine is worth about $6.6M a year, a material share of the $30M gap. The three long-lease stores would add roughly $2.2M a year if the gain is spread evenly (the pack gives no per-store split), for 30% of the capital cap, a payback of over three years. The six-store version captures most of the gain with neither the exit cost nor the vote, but arrives after the FY2026 covenant test."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "driver": "How much shrink (and sales) rises when store labor hours are cut.",
+    "what_to_show": "The labor saving net of shrink at $1.5M per 0.1 pp. The full $14.5M from an 8% cut is wiped out at about +1.0 pp of shrink, and the gap between the lowest- and highest-labor quartiles is already 0.8 pp (about $12M). Show the shrink rise at which the plan's FY2026 operating income drops below the $20M covenant; for management's plan alone that is about +0.65 pp."
+   },
+   {
+    "id": "S2",
+    "driver": "E-commerce cannibalisation rate (70% in the survey) and how delivery customers respond to higher fees (from a test of 4 stores over 10 weeks).",
+    "what_to_show": "The net e-commerce result as cannibalisation varies. At 70% the drag is about $10.4M, at 50% still about $5M, and break-even needs cannibalisation of about 29% or less, so the loss-making conclusion is robust. Then the value of each delivery option (fee rollout about $2.5–3M, exit delivery about $8–9.5M) and how it changes if order loss or the shift to click-and-collect at scale differs from the test."
+   },
+   {
+    "id": "S3",
+    "driver": "Sales lost to ValuMart when promotions are pruned.",
+    "what_to_show": "The margin gain per point of promotional share removed (about $2.1M per 1 pp of sales) against the contribution lost on any sales that leave (about 20 cents per dollar). A full rollback to 24% ($10.5M) is erased if it costs about 3.5% of sales (about $52M), which is comparable to the −4.2% comps already seen near new ValuMart stores. Show how much of the saving comes from the 38% of events that lose money even after their extra volume."
+   }
+  ]
+ },
+ "cost_usd": 0.5489360000000001
+}

@@ -1,0 +1,96 @@
+{
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "item": "Runway floor: at least 12 months of runway at all times. At the current $0.4M/month burn that is about $4.8M of cash, so at most about $7.2M of the $12.0M can be spent on anything new today, and that headroom shrinks by $0.4M each month.",
+    "why_binding": "The founders' plan needs $9.5M to month 18, leaving about $2.5M, roughly 6 months of runway against 12 required. The constraint is broken even if the plan hits its targets. The pack does not say whether the $9.5M includes the core $0.4M/month burn; if it does not, 18 months adds $7.2M and the total ($16.7M) exceeds the cash on hand."
+   },
+   {
+    "id": "C2",
+    "item": "No follow-on funding: the investors want a path to profitability within current cash, and the lead investor calls a new round for a delivery operator \"unlikely in this market\". Investors hold two of the four board seats.",
+    "why_binding": "Any option must be self-funding from $12.0M. The founders' target, positive contribution per order by month 18, is not company profitability: it comes before customer acquisition, overhead and the core burn, and by then the cash would be mostly spent with no round to bridge the gap."
+   },
+   {
+    "id": "C3",
+    "item": "Full per-order cost stack at observed inputs (Table 3): goods margin 27% of AOV plus $1.99 fee, less picking $3.10, rider $17.75/hour divided by orders per rider-hour, store fixed cost $1.15M/year divided by annual orders, payment and packaging $1.30, and promotions as a share of AOV.",
+    "why_binding": "Contribution per order is about -$6.17 at benchmark median (rider about $7.40, store about $3.50), -$3.44 at best observed density, and -$1.76 combining best density with best AOV, a combination no site achieved. The founders' +$2.02 needs AOV $45, 3.5 orders/rider-hour, 1,800 orders/day and 2% promotions, each beyond the best observed site. At AOV $34 and 6% promotions the order loses money before any store cost (about -$2.67 at 2.4 orders/rider-hour, -$1.19 at 3.0, -$0.34 even at 3.5), so order volume per site alone cannot fix it."
+   },
+   {
+    "id": "C4",
+    "item": "Parcelbird's own pop-up results: AOV $31, promotions 12% of AOV, 2.1 orders/rider-hour, 280 orders/day on average, on a temporary site costing $650,000/year.",
+    "why_binding": "These imply about -$12.57 per order, worse than the benchmark median on every operating input. The 18% weekly order growth was bought with promotions at twice the benchmark rate, so it does not validate the plan. Even the implied final-week rate (about 410 orders/day) is under half the benchmark median of 900 and under a quarter of the planned 1,800."
+   },
+   {
+    "id": "C5",
+    "item": "Customer acquisition and retention: CAC $38, 22% of customers still ordering in month three, and those customers order 3.1 times a month. This sits on top of contribution per order.",
+    "why_binding": "With negative contribution no customer pays back. Even at the founders' +$2.02, CAC per retained customer is about $173, roughly 85 orders or over two years at 3.1 orders a month. As a rough steady-state check, filling one site to 1,800 orders/day at these rates means acquiring on the order of 79,000 customers (about $3M per site), which strains the $9.5M budget across nine sites. The 44% survey intent is stated interest, not demand at a price; observed retention is 22%."
+   },
+   {
+    "id": "C6",
+    "item": "Rider pay rules: two of the three launch cities are considering minimum pay standards for delivery workers.",
+    "why_binding": "Rider cost is the largest per-order cost. Each extra $1/hour adds about $0.42 per order at 2.4 orders/rider-hour, $0.33 at 3.0 and $0.29 at 3.5. Any case that only just clears zero must show the headroom left after a pay increase; the pack does not give the proposed level."
+   },
+   {
+    "id": "C7",
+    "item": "Incumbent evidence at scale: Zipcart ($1,200M revenue) makes -$1.90 per order and -$310M EBITDA; QuickBasket ($210M) makes -$3.40 per order and -$96M EBITDA and closed 4 of its 11 cities in 2025. The market grew about 41.5% a year from 2022 to 2025 ($1.8B to $5.1B).",
+    "why_binding": "Fast market growth coexists with losses at operators hundreds of times larger than Parcelbird would be, including a regional operator that is retreating. Growth and scale therefore cannot be used as evidence that the economics turn positive."
+   },
+   {
+    "id": "C8",
+    "item": "The only positive data point carries its own costs: Zipcart reached +$0.40 per order in its densest city only after adding a $3.99 service fee on every order and cutting promotions to 1%, and order volume there fell 14% afterwards.",
+    "why_binding": "Any case built on a fee must include the volume loss and the density it requires. With a $3.99 fee and 1% promotions, a best-density site would make about +$2.25 per order, but a benchmark-median site still loses about $0.48 (about $1.05 after a 14% volume drop), before CAC. The pop-up ran far below median density."
+   },
+   {
+    "id": "C9",
+    "item": "Cost and cash effect of the software path: scaling it needs 2 engineers and 2 sales hires, about $0.8M a year. The existing business has $4.1M ARR, 60% growth and 81% gross margin.",
+    "why_binding": "The hires lift burn to roughly $0.47M/month, raising the 12-month floor to about $5.6M. The pipeline is 37 grocers (9 late stage) at $96,000 ACV, so about 10 to 11 new contracts cover the $0.8M at 81% gross margin; the 9 late-stage deals alone (about $0.86M ARR) fall just short. The software path also has to show it reaches profitability within current cash, and launching delivery spends the cash and management attention it would use."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "option": "Do not launch. Put about $0.8M a year into the software business (2 engineers, 2 sales hires) and sell to the grocers who want to run their own fast delivery from existing stores.",
+    "why_serious": "It is the only option that clearly fits both investor constraints: about 25 months of runway remain after the hires, and the product earns 81% gross margin. Demand is in hand (37 in pipeline, 9 late stage, $96,000 ACV, several wanting fast delivery), and it captures quick-commerce growth without carrying the per-order losses. It must still be tested: it needs about 10 to 11 new contracts to cover its cost, and it should show break-even within current cash."
+   },
+   {
+    "id": "A2",
+    "option": "A small, capped, capital-light test run from a grocer partner's existing store (no own dark stores), priced with a service fee and low promotions, with a fixed cash cap and kill criteria tied to contribution per order.",
+    "why_serious": "The Zipcart evidence shows the economics are not impossible with a fee at high density, and the pop-up never tested a fee or low promotions. Using a partner store avoids the $0.6M capex and most of the $1.15M/year fixed cost, and doubles as a product showcase for the software. It is defensible only if the cap keeps runway above 12 months, the kill thresholds are stated in advance (for example the orders per day and orders per rider-hour needed for non-negative contribution), and it shows why it cannot grow into the founders' plan by default."
+   },
+   {
+    "id": "A3",
+    "option": "A staged version of the founders' plan: one city (Columbus), one or a few own dark stores, to \"prove density\" before committing to Indianapolis and Kansas City.",
+    "why_serious": "This is the natural fallback the founders will propose and it may fit inside the roughly $7.2M headroom. It has to be tested rather than accepted. Without a fee, even the best observed density loses $3.44 per order and no amount of volume closes the gap at benchmark AOV and promotions, so the stage gates must test price and AOV, not only volume. It also carries a fixed store cost of $1.15M a year per site against a pop-up that averaged 280 orders a day."
+   },
+   {
+    "id": "A4",
+    "option": "The founders' full plan as proposed: 9 dark stores across three cities, $5.4M capex and $9.5M of cash to month 18.",
+    "why_serious": "It is the proposal on the table, backed by half the board, and it has real support: a market growing about 41.5% a year, no Midwest incumbent, operating know-how from the software, and Zipcart's contribution-positive city. A complete analysis must show specifically why it fails: every plan input exceeds the best observed site, the fee route still needs density no Parcelbird site has shown, and it leaves about 6 months of runway with no new round available."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "driver": "Operating performance per site: orders per site per day, orders per rider-hour and AOV (with rider cost per hour as the downside lever).",
+    "what_to_show": "Contribution per order at pop-up actuals (about -$12.57), benchmark median (-$6.17), best observed density (-$3.44), best density plus best AOV (-$1.76) and the founders' plan (+$2.02), with the value that flips the sign. At current pricing and best observed density, break-even AOV is about $50.37, against a best observed $42, a pop-up $31 and a plan of $45. At AOV $34 and 6% promotions no order volume breaks even, because the order is negative before store cost. Show how much a rider pay increase moves each case (about $0.29 to $0.42 per order per $1/hour)."
+   },
+   {
+    "id": "S2",
+    "driver": "Pricing: the service fee and promotion rate, and the volume lost when they change.",
+    "what_to_show": "The effect of a Zipcart-style $3.99 fee and 1% promotions: about +$2.25 per order at best observed density, about -$0.48 at median, about -$1.05 at median after a 14% volume drop, all before CAC. The break-even density under that pricing is roughly 700 orders/day at 3.0 orders/rider-hour and roughly 1,040 at 2.4, against a pop-up average of 280 and a benchmark range of 400 to 1,400. Show how much volume loss the fee case can absorb (a best-density site falls to zero at about half its volume), and note the pack has no Parcelbird evidence on demand at that price."
+   },
+   {
+    "id": "S3",
+    "driver": "Cash committed to delivery against the 12-month runway floor, with no follow-on round.",
+    "what_to_show": "Cash and months of runway after each option, not only the plan's $2.5M and about 6 months. State the maximum spend that keeps 12 months: about $7.2M at $0.4M/month burn, about $6.4M if the $0.8M/year software hires are added, and less each month the decision is delayed or while delivery losses raise the burn. Size any test or staged launch against that ceiling, state whether the $9.5M includes the core burn, and show what happens to runway if targets are missed and the venture has to be wound down."
+   }
+  ]
+ },
+ "cost_usd": 0.47076819999999997
+}

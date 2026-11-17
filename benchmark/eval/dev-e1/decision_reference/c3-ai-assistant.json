@@ -1,0 +1,96 @@
+{
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "item": "Company gross margin must stay at or above 75% (currently 78% on $57.6M ARR). Headroom is about $1.73M a year of added cost at flat revenue, plus 25 cents for every dollar of new Copilot revenue.",
+    "why_binding": "It is a stated objective, and Copilot is the only option on the table with a large variable cost. Any packaging must be shown against the company-level floor, not just product-level margin."
+   },
+   {
+    "id": "C2",
+    "item": "Net revenue retention must rise from 101% to 105% by 2028. That is about 4 points, or roughly $2.3M a year of net expansion on the existing base, after churn and downgrades.",
+    "why_binding": "It is the stated growth objective. Copilot revenue counts toward it only if existing accounts pay more, and any churn caused by the mobile delay counts against it."
+   },
+   {
+    "id": "C3",
+    "item": "Variable inference cost is $0.009 per request and is heavily skewed by usage: about $17 a month at the median account (1,900 requests), $32 at the mean (3,600), $61 for paywall buyers (6,800) and $130 for the top decile (14,500). The top 10% of accounts generate 58% of requests.",
+    "why_binding": "Headline revenue must be net of this. Paying adopters are heavy users, so the $149 add-on earns about 59% gross margin on adopters and about 12% on the top decile, both below the 75% floor at product level."
+   },
+   {
+    "id": "C4",
+    "item": "Fixed run cost is about $0.6M a year for platform, evaluation and support, incurred at any adoption level.",
+    "why_binding": "At test-based add-on revenue of about $2.45M and inference of about $1.0M, this leaves a contribution of roughly $0.85M a year. It also uses about a third of the $1.73M margin headroom before any inference is spent."
+   },
+   {
+    "id": "C5",
+    "item": "One-off engineering cost is 14 engineers for two quarters at $210,000 per engineer-year, about $1.47M.",
+    "why_binding": "It must be in the investment case. Against a test-based contribution of about $0.85M a year, payback is roughly 1.7 years, not the first-year win the $8M claim implies."
+   },
+   {
+    "id": "C6",
+    "item": "Engineering capacity: Copilot takes 14 of 60 engineers for two quarters and delays the technician mobile app rewrite by two quarters. Mobile reliability is the top churn reason (27% of 1,190 churned accounts, about 320 accounts or $1.9M ARR a year) and the top feature request (38% rank it first, against 19% for AI scheduling). AI is the churn reason for 6% (about 70 accounts, $0.4M).",
+    "why_binding": "This is the real cost of launching in Q2 2027. A launch recommendation must either accept the delay with its retention cost stated, or say how mobile is protected. The pack does not offer extra hiring as an option."
+   },
+   {
+    "id": "C7",
+    "item": "Revealed demand is 14% (17 of 120 beta accounts bought at $149), not the 46% survey figure. The survey had a 6% response rate from larger accounts (9.4 against 6.2 seats). The paywall sample itself is volunteer beta accounts that are larger (8.1 seats) and more active than the base.",
+    "why_binding": "Revenue must be sized from the test: about 1,372 accounts and $2.45M ARR, against $8.06M from the survey. Because of beta selection, 14% is more likely a ceiling than a midpoint for the full base."
+   },
+   {
+    "id": "C8",
+    "item": "The inference price is fixed only through December 2027. Later prices are unknown, although list prices fell 35% in the past 12 months.",
+    "why_binding": "A Q2 2027 launch has about three quarters of cost certainty. Margin beyond that cannot rest on an assumed price fall; it must hold at $0.009 or the price assumption must be explicit."
+   },
+   {
+    "id": "C9",
+    "item": "The competitive gap is already open. Routewise has bundled AI scheduling in its Pro plan since September 2026, and Brightwork's win rate against it fell from 44% to 37%. On 1,560 contested opportunities a year that is about 109 fewer wins, or $0.64M of new ARR a year. Routewise also ran a 20% first-year discount in Q3.",
+    "why_binding": "This is the cost of delay or no launch, and it bounds the defensive benefit. $0.64M a year is the most Copilot can recover if AI caused the whole drop, and the discount means the true figure is lower."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "option": "Launch in Q2 2027 inside a new Pro tier at +$12 per seat per month, with a usage cap or metered overage.",
+    "why_serious": "It matches Routewise's packaging, so it answers the win-rate problem directly. The 2023 tier precedent (33% migration) gives about 3,234 accounts and $2.89M ARR, about 5 points of NRR. But an average account pays only about $74 a month, half the add-on price. Tier margin is about 56% at mean usage and about 18% if Pro adopters use as much as paywall buyers, so it only works with a cap."
+   },
+   {
+    "id": "A2",
+    "option": "Launch in Q2 2027 as an add-on, but sized on the paywall test and repriced: $149 or a lower entry price, plus usage-based charges above an included allowance.",
+    "why_serious": "It is the CPO's proposal corrected to the evidence: about $2.45M ARR at 14%, about 59% margin on adopters and about $0.85M contribution after run cost. Usage pricing fixes the top-decile problem ($130 cost against $149 price). Its weakness is that an add-on does less against a competitor who bundles AI, and 14% is barely enough for the NRR target."
+   },
+   {
+    "id": "A3",
+    "option": "Delay Copilot by two quarters and ship the mobile app rewrite first, keeping a limited AI response in the meantime. For example, keep the beta running and extend the paywall test to non-volunteer accounts.",
+    "why_serious": "Mobile reliability accounts for about 4.5 times as much churn as AI (27% against 6%) and twice the first-rank feature demand. The quantified cost of waiting is at most about $0.3M of new ARR over two quarters (half of $0.64M a year), and less if Routewise's discount explains part of the drop. The delay also buys a demand read on representative accounts before committing to packaging."
+   },
+   {
+    "id": "A4",
+    "option": "Include Copilot in Core for all accounts at no charge, as a purely defensive bundle with a hard usage cap.",
+    "why_serious": "A board member will ask why Brightwork should charge when Routewise bundles AI and adoption is the goal. It must be tested because uncapped it breaks the margin floor: inference for 9,800 accounts is about $2.0M a year at median beta usage and $3.8M at mean, plus $0.6M run cost, against $1.73M headroom. That takes gross margin to about 73% or 70%. It only fits with a cap near 1,070 requests per account per month, below the beta median, and it adds nothing directly to NRR."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "driver": "Paid adoption rate across the full base: 14% from the volunteer paywall test, 46% from the survey, 33% from the 2023 tier precedent.",
+    "what_to_show": "Revenue at test-based against survey-based adoption ($2.45M against $8.06M for the add-on; $2.89M for Pro at 33%), and the thresholds. The add-on needs about 13% of all accounts (about 1,290) to deliver 4 points of NRR, so 14% leaves almost no margin for the beta's selection bias. Pro needs about 26% migration (about 2,580 accounts). The add-on covers the $0.6M run cost at about 6% adoption and needs about 20% to also repay the $1.47M engineering cost in year one."
+   },
+   {
+    "id": "S2",
+    "driver": "Requests per paying account (who adopts and how heavily), together with the per-request price after December 2027.",
+    "what_to_show": "Margin by usage level and where it breaks. For the $149 add-on, product margin falls below 75% above about 4,100 requests a month and is zero at about 16,500; it is 59% at the 6,800 adopter average and 12% in the top decile. For Pro at 6.2 seats ($74 a month), break-even is about 8,300 requests. At 33% migration the company falls below 75% if Pro accounts average more than about 5,300 requests a month with run cost included: adopter-level usage of 6,800 gives about 74%. The add-on at 14% adoption stays above the floor up to about 11,700 requests. State the cap or overage that holds the floor, and whether it holds at $0.009 without assuming a price fall."
+   },
+   {
+    "id": "S3",
+    "driver": "How much of the win-rate drop is caused by AI rather than Routewise's 20% discount, set against how much churn the two-quarter mobile delay causes.",
+    "what_to_show": "The defensive benefit as a range from zero to $0.64M of new ARR a year (109 wins) by share attributed to AI. The VP Sales claim fails this check: 31% of about 983 losses is about 305 deals, which would lift the win rate to about 56%, above the 44% it held before Routewise launched. On the other side, mobile-attributed churn is about $1.9M ARR a year, so up to about $0.9M is exposed over the two-quarter delay, against about $0.4M a year of AI-attributed churn. The pack does not say how much churn the rewrite removes, so the deck must state its assumption and the share at which launching first stops being the better choice. The beta's 97% against 93% renewal comes from volunteers and cannot be used as proof."
+   }
+  ]
+ },
+ "cost_usd": 0.476104
+}

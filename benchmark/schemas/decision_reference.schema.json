@@ -1,0 +1,8 @@
+{"type": "object", "additionalProperties": false, "required": ["constraints", "alternatives", "sensitivities"],
+ "properties": {
+  "constraints": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "item", "why_binding"],
+    "properties": {"id": {"type": "string"}, "item": {"type": "string"}, "why_binding": {"type": "string"}}}},
+  "alternatives": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "option", "why_serious"],
+    "properties": {"id": {"type": "string"}, "option": {"type": "string"}, "why_serious": {"type": "string"}}}},
+  "sensitivities": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "driver", "what_to_show"],
+    "properties": {"id": {"type": "string"}, "driver": {"type": "string"}, "what_to_show": {"type": "string"}}}}}}

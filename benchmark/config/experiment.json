@@ -1,156 +1,190 @@
 {
-  "experiment_id": "hym-reasoning-v1",
-  "description": "Hire Your McK vs vanilla Claude vs strong-baseline Claude on five synthetic strategy cases",
-  "generator": {
-    "model": "claude-opus-5-5",
-    "effort": "high",
-    "subagent_model": "claude-opus-5-5",
-    "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ "experiment_id": "hym-reasoning-v1",
+ "description": "Hire Your McK vs vanilla Claude vs strong-baseline Claude on five synthetic strategy cases",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "conditions": {
+  "A": {
+   "name": "Vanilla Claude",
+   "prompt": "prompts/conditions/A_vanilla.md",
+   "plugin": false
   },
-  "conditions": {
-    "A": {
-      "name": "Vanilla Claude",
-      "prompt": "prompts/conditions/A_vanilla.md",
-      "plugin": false
-    },
-    "B": {
-      "name": "Strong-baseline Claude",
-      "prompt": "prompts/conditions/B_strong_baseline.md",
-      "plugin": false
-    },
-    "C": {
-      "name": "Hire Your McK",
-      "prompt": "prompts/conditions/C_hire_your_mck.md",
-      "plugin": true
-    },
-    "C2": {
-      "name": "Hire Your McK (full-deck mode)",
-      "prompt": "prompts/conditions/C2_hire_your_mck_full_deck.md",
-      "plugin": true,
-      "note": "Exploratory arm added after the main results (METHODOLOGY.md \u00a712). Same skill snapshot; the mode is named in the request."
-    }
+  "B": {
+   "name": "Strong-baseline Claude",
+   "prompt": "prompts/conditions/B_strong_baseline.md",
+   "plugin": false
   },
-  "task_template": "prompts/conditions/task.md",
-  "autoreply": "prompts/conditions/autoreply.md",
-  "tools": [
-    "Bash",
-    "Read",
-    "Write",
-    "Edit",
-    "Skill",
-    "Agent"
-  ],
-  "limits": {
-    "max_budget_usd_per_run": 60,
-    "turn_timeout_s": 7200,
-    "max_autoreplies": 4,
-    "max_infra_retries": 3,
-    "infra_retry_wait_s": 600
+  "C": {
+   "name": "Hire Your McK",
+   "prompt": "prompts/conditions/C_hire_your_mck.md",
+   "plugin": true
   },
-  "parallel": 3,
-  "seeds": {
-    "pilot_order": 11,
-    "main_order": 2027,
-    "blinding": 4242,
-    "pairwise": 7,
-    "human_order": 99,
-    "pilot2_order": 12,
-    "explore-c2_order": 2028
+  "C2": {
+   "name": "Hire Your McK (full-deck mode)",
+   "prompt": "prompts/conditions/C2_hire_your_mck_full_deck.md",
+   "plugin": true,
+   "note": "Exploratory arm added after the main results (METHODOLOGY.md §12). Same skill snapshot; the mode is named in the request."
   },
-  "cases": {
-    "c1-market-entry": {
-      "decision_maker": "Onsoo Botanicals' CEO and board",
-      "decision_question": "Should Onsoo enter the US market in 2027, and if so, by which route?"
-    },
-    "c2-profitability": {
-      "decision_maker": "Harlow Fresh Markets' CEO, for the February 2027 board meeting",
-      "decision_question": "How should Harlow reverse its declining operating margin, and which actions should it take first?"
-    },
-    "c3-ai-assistant": {
-      "decision_maker": "Brightwork's CEO and executive team",
-      "decision_question": "Should Brightwork launch Dispatch Copilot in Q2 2027, and if so, how should it be packaged and priced?"
-    },
-    "c4-pricing-churn": {
-      "decision_maker": "Palisade Docs' CEO and leadership team",
-      "decision_question": "Should Palisade raise prices in 2027 while customer churn is rising, and if so, how?"
-    },
-    "c5-negative-entry": {
-      "decision_maker": "Parcelbird's board",
-      "decision_question": "Should Parcelbird launch its own quick-commerce grocery delivery service in 2027?"
-    }
-  },
-  "phases": {
-    "pilot": {
-      "cases": [
-        "c2-profitability",
-        "c5-negative-entry"
-      ],
-      "reps": 1,
-      "conditions": [
-        "A",
-        "B",
-        "C"
-      ]
-    },
-    "pilot2": {
-      "cases": [
-        "c1-market-entry",
-        "c4-pricing-churn"
-      ],
-      "reps": 1,
-      "conditions": [
-        "A",
-        "B",
-        "C"
-      ]
-    },
-    "main": {
-      "cases": [
-        "c1-market-entry",
-        "c2-profitability",
-        "c3-ai-assistant",
-        "c4-pricing-churn",
-        "c5-negative-entry"
-      ],
-      "reps": 3,
-      "conditions": [
-        "A",
-        "B",
-        "C"
-      ]
-    },
-    "explore-c2": {
-      "cases": [
-        "c1-market-entry",
-        "c2-profitability",
-        "c3-ai-assistant",
-        "c4-pricing-churn",
-        "c5-negative-entry"
-      ],
-      "reps": 3,
-      "conditions": [
-        "C2"
-      ],
-      "exploratory": true,
-      "compare_with": "main"
-    }
-  },
-  "normalizer": {
-    "model": "claude-opus-5-5",
-    "effort": "medium"
-  },
-  "judges": {
-    "primary": {
-      "model": "claude-fable-5-2",
-      "effort": "high"
-    },
-    "secondary": {
-      "model": "claude-sonnet-5-5",
-      "effort": "high"
-    },
-    "pairwise": {
-      "model": "claude-fable-5-2",
-      "effort": "high"
-    }
+  "E1": {
+   "name": "Hire Your McK v1.3 E1 (decision audit, full-deck mode)",
+   "prompt": "prompts/conditions/E1_hire_your_mck_audit.md",
+   "plugin": true,
+   "note": "Development arm (METHODOLOGY.md §13). Same request as C2; the skill snapshot adds the decision audit (Step 2b) and nothing else."
   }
+ },
+ "task_template": "prompts/conditions/task.md",
+ "autoreply": "prompts/conditions/autoreply.md",
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "limits": {
+  "max_budget_usd_per_run": 60,
+  "turn_timeout_s": 7200,
+  "max_autoreplies": 4,
+  "max_infra_retries": 3,
+  "infra_retry_wait_s": 600
+ },
+ "parallel": 3,
+ "seeds": {
+  "pilot_order": 11,
+  "main_order": 2027,
+  "blinding": 4242,
+  "pairwise": 7,
+  "human_order": 99,
+  "pilot2_order": 12,
+  "explore-c2_order": 2028,
+  "dev-e1-smoke_order": 30,
+  "dev-e1_order": 2029
+ },
+ "cases": {
+  "c1-market-entry": {
+   "decision_maker": "Onsoo Botanicals' CEO and board",
+   "decision_question": "Should Onsoo enter the US market in 2027, and if so, by which route?"
+  },
+  "c2-profitability": {
+   "decision_maker": "Harlow Fresh Markets' CEO, for the February 2027 board meeting",
+   "decision_question": "How should Harlow reverse its declining operating margin, and which actions should it take first?"
+  },
+  "c3-ai-assistant": {
+   "decision_maker": "Brightwork's CEO and executive team",
+   "decision_question": "Should Brightwork launch Dispatch Copilot in Q2 2027, and if so, how should it be packaged and priced?"
+  },
+  "c4-pricing-churn": {
+   "decision_maker": "Palisade Docs' CEO and leadership team",
+   "decision_question": "Should Palisade raise prices in 2027 while customer churn is rising, and if so, how?"
+  },
+  "c5-negative-entry": {
+   "decision_maker": "Parcelbird's board",
+   "decision_question": "Should Parcelbird launch its own quick-commerce grocery delivery service in 2027?"
+  }
+ },
+ "phases": {
+  "pilot": {
+   "cases": [
+    "c2-profitability",
+    "c5-negative-entry"
+   ],
+   "reps": 1,
+   "conditions": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "pilot2": {
+   "cases": [
+    "c1-market-entry",
+    "c4-pricing-churn"
+   ],
+   "reps": 1,
+   "conditions": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "main": {
+   "cases": [
+    "c1-market-entry",
+    "c2-profitability",
+    "c3-ai-assistant",
+    "c4-pricing-churn",
+    "c5-negative-entry"
+   ],
+   "reps": 3,
+   "conditions": [
+    "A",
+    "B",
+    "C"
+   ]
+  },
+  "explore-c2": {
+   "cases": [
+    "c1-market-entry",
+    "c2-profitability",
+    "c3-ai-assistant",
+    "c4-pricing-churn",
+    "c5-negative-entry"
+   ],
+   "reps": 3,
+   "conditions": [
+    "C2"
+   ],
+   "exploratory": true,
+   "compare_with": "main"
+  },
+  "dev-e1-smoke": {
+   "cases": [
+    "c2-profitability"
+   ],
+   "reps": 1,
+   "conditions": [
+    "E1"
+   ],
+   "exploratory": true,
+   "note": "one smoke run to catch harness or skill breakage; excluded from every result"
+  },
+  "dev-e1": {
+   "cases": [
+    "c1-market-entry",
+    "c2-profitability",
+    "c3-ai-assistant",
+    "c4-pricing-churn",
+    "c5-negative-entry"
+   ],
+   "reps": 2,
+   "conditions": [
+    "E1"
+   ],
+   "exploratory": true,
+   "compare_with": "main, explore-c2 (replicates 1-2)"
+  }
+ },
+ "normalizer": {
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ "judges": {
+  "primary": {
+   "model": "claude-fable-5-2",
+   "effort": "high"
+  },
+  "secondary": {
+   "model": "claude-sonnet-5-5",
+   "effort": "high"
+  },
+  "pairwise": {
+   "model": "claude-fable-5-2",
+   "effort": "high"
+  }
+ }
 }
