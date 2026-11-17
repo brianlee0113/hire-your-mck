@@ -826,22 +826,35 @@ def waterfall(c, spec, body, box):
         known = [abs(v) for v in vals if v is not None]
         avg = sum(known) / len(known)
         synth = [avg] + [avg * 0.25] * (n - 2) + [avg * 1.2]
-    base, height, running = [], [], 0.0
+    spans, running = [], 0.0  # each bar covers lo..hi on the value axis
     for i, v0 in enumerate(vals):
         v = synth[i] if v0 is None else v0
         if i == 0 or i == n - 1:
             total = v if (i == 0 or v0 is not None) else running
-            base.append(0)
-            height.append(total)
+            spans.append((min(0, total), max(0, total)))
             running = total
         else:
-            base.append(running if v >= 0 else running + v)
-            height.append(abs(v))
+            spans.append((min(running, running + v), max(running, running + v)))
             running += v
+    # PowerPoint stacks positive and negative values on their own sides of zero, so an invisible base only
+    # works above zero. A bar below zero gets a negative base and a negative visible part; a bar that
+    # crosses zero is drawn as an up part and a down part with no base.
+    base, up, down = [], [], []
+    for lo, hi in spans:
+        if lo >= 0:
+            base.append(lo); up.append(hi - lo); down.append(0)
+        elif hi <= 0:
+            base.append(hi); up.append(0); down.append(lo - hi)
+        else:
+            base.append(0); up.append(hi); down.append(lo)
+    below = any(lo < 0 for lo, _ in spans)
+    name = body["series"][0]["name"]
     cd = CategoryChartData(number_format=nf)
     cd.categories = cats
     cd.add_series("base", base)
-    cd.add_series(body["series"][0]["name"], height)
+    cd.add_series(name, up)
+    if below:
+        cd.add_series(f"{name} (below zero)", down)
     gf = c.slide.shapes.add_chart(XL_CHART_TYPE.COLUMN_STACKED, Inches(x), Inches(y), Inches(w), Inches(h), cd)
     ch = gf.chart
     ch.has_title = False
@@ -852,22 +865,31 @@ def waterfall(c, spec, body, box):
     plot = ch.plots[0]
     plot.gap_width = 40
     plot.overlap = 100
-    b, s = plot.series
+    b, *parts = plot.series
     _fill(b.format, None)
-    _fill(s.format, t["other_bars"])
+    for s in [b, *parts]:
+        s.invert_if_negative = False
+    for s in parts:
+        _fill(s.format, t["other_bars"])
+    if below:
+        from pptx.enum.chart import XL_TICK_LABEL_POSITION
+        ch.category_axis.tick_label_position = XL_TICK_LABEL_POSITION.LOW  # names stay under bars below zero
     highlight = set(body.get("highlight", []))
     for i, p in enumerate(pts):
-        pt = s.points[i]
         total = i in (0, n - 1)
         hl = cats[i] in highlight
-        if p.get("placeholder"):
-            _fill(pt.format, t["gray_light"] if total else (None if hl else None),
-                  dash_line=t["highlight"] if hl else t["placeholder"])
-        elif total:
-            _fill(pt.format, t["primary"])
-        elif hl:
-            _fill(pt.format, t["highlight"])
-        dl = pt.data_label
+        for s in parts:
+            pt = s.points[i]
+            if p.get("placeholder"):
+                _fill(pt.format, t["gray_light"] if total else (None if hl else None),
+                      dash_line=t["highlight"] if hl else t["placeholder"])
+            elif total:
+                _fill(pt.format, t["primary"])
+            elif hl:
+                _fill(pt.format, t["highlight"])
+        # one label per bar, on its larger part (a bar that crosses zero has two)
+        s = parts[1] if below and abs(down[i]) > up[i] else parts[0]
+        dl = s.points[i].data_label
         dl.has_text_frame = True
         v = vals[i]
         unit_ph = "$?M" if (unit or "$M").startswith("$") else "?"
