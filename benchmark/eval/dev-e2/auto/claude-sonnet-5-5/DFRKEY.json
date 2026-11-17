@@ -1,0 +1,181 @@
+{
+ "blind_id": "DFRKEY",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as launch, package and price. Uses the NRR 101→105 target, the 75% margin floor and the 14-engineer/mobile delay as explicit criteria. Identifies early that the answer turns on Pro uptake and a usage allowance.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the four-part executive summary and the section dividers form one hierarchy. Most titles are claims backed by their slides. Minor redundancy (the executive summary has 14 bullets, and gates repeat earlier numbers), and the Q4 2026 win-rate gate sits oddly with the document date.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Checked and correct: $8.06M vs $2.45M, $32.4/$130.5/$61.2 inference per month, 59% add-on margin, 109 wins ≈ $0.6M, Pro $2.89M, the 5,300-request margin threshold, and the 24.9% break-even. Uses the paywall test, inference concentration, the Routewise discount confound, volunteer bias and the survey response bias. Weaknesses: Pro-tier gross margin is expressed as company margin and an allowance cap rather than the key's ~56% at mean usage. The 33% Pro uptake comes from a non-AI 2023 tier. 'Only plan with AI inside' is slightly overstated.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Launches, but revises the CPO plan to a Pro tier with a usage allowance and paid top-ups. Compares add-on, Pro, unlimited Pro and the two sequencing options. States the mobile-delay trade-off explicitly and quantifies it, with a break-even uptake. Gives four gates with thresholds, dates and fallbacks, a stress case, and owners for next steps. Avoids all traps.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and titles are plain claims. The deck is somewhat long (19 slides including dividers), dense with numbers, and has 14 summary bullets. Some detail (four gates, many alternatives) exceeds what the decision strictly needs.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "leaves Routewise two more quarters as the only plan with AI inside",
+    "why": "The pack names Routewise as the closest competitor, not the only one with AI. The claim also assumes the Pro bundle would win back deals."
+   },
+   {
+    "quote": "Closes a price gap in new deals",
+    "why": "The pack does not show that a price gap, rather than the 20% promotion or other factors, drives the lost deals."
+   },
+   {
+    "quote": "The strongest sign that the gain is real, not just felt",
+    "why": "The comparison is of volunteers with matched accounts. The document itself calls the results a ceiling, so this is a mild overstatement."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "partial"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "partial"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch in Q2 2027 inside a Pro plan (+$12/seat) with a 333-request/seat allowance and paid top-ups, then restart mobile in Q3. A Q1 two-offer test and four gates decide the package, with the $149 add-on as the fallback.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "Matches R1: it sizes demand off the paywall test, caps variable inference cost, and explicitly accepts and quantifies the mobile delay. It also conditions on uptake and win-rate gates."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "Keeps 'launch' but shows the $8M survey case shrinks to $2.5M ARR and about $0.8M gross profit. Moves from an add-on to Pro with a usage allowance, and keeps the add-on as a fallback. Flags the survey and paywall biases and the Routewise discount confound."
+  },
+  "overall_comment": "A strong, well-calibrated document. The numbers check out, the stated-vs-revealed preference gap, inference cost and mobile trade-off are all handled, and the gates and break-even are decision-useful. Minor issues: the 33% Pro uptake rests on a non-AI 2023 tier (stress-tested and gated), Pro margin is not shown at mean usage, and the deck is longer than strictly needed.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.1501064,
+ "wall_s": 41.3761420249939,
+ "is_error": false,
+ "error_text": null
+}

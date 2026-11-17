@@ -1,0 +1,38 @@
+{
+ "x": "DFRKEY",
+ "y": "D8KGUX",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X contains no deliverable, so it has no governing thought, summary or evidence to assess. Y has a clear governing thought (mobile rewrite first, then Copilot in Pro at +$12 per seat with a usage allowance in Q4 2027). Its four summary points map one-to-one onto the four sections (demand, timing, pricing, plan), and the slide titles state claims that the evidence beneath them supports. The gates on slide 18 reuse the thresholds derived earlier (26% migration, 5,296 requests, 52% of mobile churn).",
+   "winner": "Y",
+   "strength": "strong"
+  },
+  "judgment": {
+   "reasons": "X offers no recommendation. Y's recommendation is the answer key's conditionally defensible R3 (delay Copilot to ship mobile first), and it meets the conditions: it quantifies the win-rate risk (about $0.6M a year as an upper bound) and plans a limited AI response (Pro price test during the rewrite, Q4 launch, Q2 fallback if gate 3 fails). It weighs all three key trade-offs: monetise versus defend (add-on versus Pro matching Routewise's packaging), Copilot versus mobile ($544K versus $281K of ARR at risk per quarter, with a 52% break-even), and adoption versus margin (usage allowance and overage). One weakness is that the timing case rests on the assumption that the rewrite needs the same 14 engineers for the same two quarters, though Y flags this for confirmation in January.",
+   "winner": "Y",
+   "strength": "strong"
+  },
+  "evidence": {
+   "reasons": "X uses no evidence. Y reproduces all four required calculations within tolerance: $8.06M versus $2.45M add-on ARR; $32.40 / $130.50 / $61.20 inference cost per account with 58.9% and 12.4% margins; about $0.64M a year from the win-rate drop; and $2.89M Pro ARR with about $1.26M inference. It uses every critical evidence item and treats the paywall rate as a ceiling because of volunteer and size bias. It notes the 6% survey response and seat skew, flags Routewise's 20% discount as a confound, and rebuts the VP Sales claim by showing it implies three times the value of the whole drop. Minor weaknesses: the mobile churn-at-risk figure assumes the rewrite ends all mobile-cited churn (flagged as an upper bound), and the 33% Pro migration precedent is applied with limited scrutiny (sensitivity at 14% and 26% is shown).",
+   "winner": "Y",
+   "strength": "strong"
+  },
+  "revision": {
+   "reasons": "X does not address the CPO's hypothesis at all. Y revises it as the evidence requires. It rejects the $8M survey-based sizing in favour of at most $2.5M from revealed paywall demand, and rejects the flat $149 add-on on margin and competitive-packaging grounds. It keeps the launch itself, but in Pro and resequenced after the mobile rewrite, with the delay trade-off made explicit and a Q2 fallback. This matches the answer key's expected handling: revise the packaging and sizing, or argue a delay with the mobile trade-off explicit.",
+   "winner": "Y",
+   "strength": "strong"
+  },
+  "overall": {
+   "reasons": "X produced no readable deliverable and gives the decision maker nothing. Y gives a complete, quantified and defensible answer: correct sizing, margin guardrails, an explicit mobile-versus-AI trade-off with a break-even threshold, alternatives considered, gates, and next steps with owners. Its main dependency, the engineering assumption behind the sequencing, is flagged for confirmation.",
+   "winner": "Y",
+   "strength": "strong"
+  }
+ },
+ "cost_usd": 0.3948042,
+ "wall_s": 16.77312731742859
+}

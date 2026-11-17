@@ -1,0 +1,38 @@
+{
+ "x": "DRQ3ST",
+ "y": "DEBKPK",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both follow the same four-part structure (churn cause, CFO sizing, where to price, plan) with titles that carry the argument. X has two internal tensions. It rejects the CFO plan because it \"hits SMB where Inkwell already wins\", then raises established SMB 8% without reconciling Inkwell's win-rate evidence with retention. Its verdict \"prices only customers whose reaction we know\" contradicts its own caveats that 12% exceeds the tested 10% and that renewals were never tested. Y resolves the same tension explicitly: win rates measure acquisition, not retention, and non-promo churn has not moved. Its organising line, that every step rests on a test, a precedent or a cap, matches the steps it actually chooses (10%, 8%, 7%). Y's third summary block mixes sizing with target reach, a minor flaw.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's R1: a segmented rise with the promotion cohort held, onboarding, and guardrails. X goes to 12% in mid-market, above the tested step, and captures more ARR ($6.4M against $5.5M). It adds a base and stress case and five quantified gates, including the useful point that the 15% target is lost at about 1.0% mid-market churn, well before the 1.7% break-even. Y keeps each step at its evidenced level, runs the SMB rise against a random control group with a stop rule, includes \"hold all prices\" as an alternative (the CEO's implicit position), and flags new-customer SMB list pricing against Inkwell as a separate decision. Y's control group is a sounder guardrail than X's absolute churn threshold, which cannot separate the price effect from the Inkwell trend. X's stress case and target headroom are stronger. Y's trade-off weighing is slightly better matched to the uncertainty.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: cohort churn 4.9%, the 56% share of leavers, $7.57M realistic uplift, blended and ARR-weighted churn, the dashboard mismatch, the 2023 reaction of about 3.6%, and break-evens. Both caveat the 2024 test as new sign-ups only. Y adds several valid inferences X lacks. Promotion accounts are about half the size of others, so the cohort is only 38% of SMB ARR lost. Win rates measure acquisition, not retention. The 2023 precedent is flagged as pre-Inkwell in the decision table itself. Activation predicts only 2.9% churn against the observed 4.9%, so onboarding's realistic value is nearer $0.5M than $1.0M. X asserts more than the evidence supports: \"the promotion cohort cites price because it never adopted the product\" and \"activation, not price, is this cohort's lever\" are causal claims the pack does not establish, and \"prices only customers whose reaction we know\" overstates the 12% mid-market step. X's stress case, the 0.56% halving check and the NRR step-up caveat are good, but Y also flags the NRR double-count risk.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's view appropriately. They accept that the churn rise is a promotion-cohort mix effect, correct the $10.3M to $7.6M, reject a uniform 12%, and hold the promotion cohort because of its price sensitivity. Both also debunk the \"halve SMB churn\" claim. X leans further toward the CFO's framing: \"not because SMB customers have turned against our price\" and \"activation, not price\" treat the cohort's price complaints as a symptom of non-adoption. Y reconciles the two views more faithfully. It shows activation explains only part of the cohort's excess churn and that the rest may be a lasting reaction to the discount ending. It keeps Inkwell as a live SMB price risk through the control group and the separate list-price review. It also addresses the CEO's \"no rise\" position directly as an option.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong, defensible answers that meet all four defensibility criteria with near-identical core numbers. X gives the decision maker a richer target picture: base, stress and high cases, and more gates. Y gives a plan whose every step is tied to its evidence, a cleaner experimental guardrail in the SMB control group, a more honest account of what onboarding can deliver, and sharper inference discipline on acquisition versus retention and ARR versus logo weighting. X's more aggressive 12% mid-market step and its causal overclaims about price and activation are the main differences against it. Y serves the decision slightly better.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 0.7846842,
+ "wall_s": 52.43839693069458
+}

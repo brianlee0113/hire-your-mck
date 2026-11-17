@@ -1,0 +1,670 @@
+## Part 1 · Normalised storyline
+
+**Governing thought:** Enter the US in 2027 through Amazon, not 600 retail doors, and cap ad cost below about 29% of sales, the line for payback by 2030
+
+**Executive summary:**
+1. The US is worth entering: K-beauty leads skincare growth, and the pilot shows demand
+2. K-beauty brands delivered 39% of US facial-skincare growth in 2021–25
+3. Pilot units rose 89% in six months; repeat purchase trails the benchmark
+4. A 600-door retail launch fails the board's tests on its own plan and could not hold the shelf
+5. Its cumulative outflow reaches $20.8M by 2030, above the $18M cap
+6. Below 10% awareness newcomers sell 2.6 units per door a week, not 4.0
+7. Amazon-led entry stays inside the cash cap and margin floor, but reaches $26M, not $40M, by 2030
+8. Peak outflow is $2.4M against the $18M cap; group margin stays above 9%
+9. By 2030 it earns 1.8 times the operating profit of a Japan scale-up
+10. Payback hinges on holding ad cost below about 29%: launch with that ceiling and five gates
+11. At the 32% paid by brands at Onsoo's planned scale, cash is −$2.3M at end-2030
+12. Retail waits for 20% awareness; if gates fail at end-2027, switch to Japan in 2028
+
+**Slides (title → claims → evidence):**
+
+- Slide 1: Entering the US market in 2027
+- Slide 2: Executive summary
+  - Claim: Enter the US in 2027 through Amazon, not 600 retail doors, and cap ad cost below about 29% of sales, the line for payback by 2030
+  - Claim: The US is worth entering: K-beauty leads skincare growth, and the pilot shows demand
+    - Evidence: K-beauty brands delivered 39% of US facial-skincare growth in 2021–25
+    - Evidence: Pilot units rose 89% in six months; repeat purchase trails the benchmark
+  - Claim: A 600-door retail launch fails the board's tests on its own plan and could not hold the shelf
+    - Evidence: Its cumulative outflow reaches $20.8M by 2030, above the $18M cap
+    - Evidence: Below 10% awareness newcomers sell 2.6 units per door a week, not 4.0
+  - Claim: Amazon-led entry stays inside the cash cap and margin floor, but reaches $26M, not $40M, by 2030
+    - Evidence: Peak outflow is $2.4M against the $18M cap; group margin stays above 9%
+    - Evidence: By 2030 it earns 1.8 times the operating profit of a Japan scale-up
+  - Claim: Payback hinges on holding ad cost below about 29%: launch with that ceiling and five gates
+    - Evidence: At the 32% paid by brands at Onsoo's planned scale, cash is −$2.3M at end-2030
+    - Evidence: Retail waits for 20% awareness; if gates fail at end-2027, switch to Japan in 2028
+- Slide 3: Why the US, why now
+- Slide 4: K-beauty is where US facial skincare is growing: Korean brands delivered 39% of the category's growth since 2021
+  - Claim: K-beauty is taking a growing share of a growing category
+    - Evidence: US facial skincare sales, $B, 2021–25: K-beauty brands 1.9; 2.3; 2.7; 3.1; 3.6
+    - Evidence: Other brands 18.2; 19; 19.9; 20.4; 20.9
+    - Evidence: 38.6% of the category's 2021–25 sales growth came from K-beauty brands
+  - Claim: K-beauty brands: sales up 89% in four years, against 22% for the category, lifting their share from 9% to 15%
+  - Claim: Other brands: up 15% over the same four years, so most of the category's momentum is Korean
+  - Claim: For Onsoo: a fast-growing segment where buyers already accept Korean brands
+  - Claim: The trade-press figure of a $5.2B US K-beauty market also counts makeup and hair care, so it is not used; this deck sizes facial skincare only
+- Slide 5: Amazon is where US K-beauty sells, and social media, not the store shelf, is where buyers find new brands
+  - Claim: Amazon is the largest K-beauty channel, ahead of specialty beauty retail
+    - Evidence: US K-beauty skincare sales by channel, 2025: Amazon 41%; Specialty beauty retail 27%; Mass retail 14%; Brand websites 12%; Other 6%
+    - Evidence: 61% of K-beauty buyers buy it most often on Amazon, compared with 22% at specialty retail
+  - Claim: TikTok beats stores more than two to one as the place buyers discover a brand
+    - Evidence: Where K-beauty buyers discovered their last new brand, Sep 2026: TikTok 38%; In a store 17%
+    - Evidence: Survey of 1,200 US women aged 18–44 who bought facial skincare in the last six months, September 2026
+- Slide 6: The Amazon pilot shows real demand, with June units 89% above January, but repeat purchase still trails the benchmark
+  - Claim: Monthly units rose every month of the pilot
+    - Evidence: +89.2%
+    - Evidence: Amazon pilot units sold per month, three SKUs, Jan–Jun 2026: 7,400; 8,600; 10,100; 11,800; 12,900; 14,000
+  - Claim: Repeat is just below new US brands and far below Onsoo in Korea
+    - Evidence: 90-day repeat purchase rate: Onsoo, US pilot 29%; First-year skincare brands, Amazon US 31%; Onsoo, Korea 48%
+  - Claim: Ratings average 4.5 stars from 2,140 reviews; the top complaint, Korean-only labels in 6% of reviews, is fixed by the US labels in setup
+    - Evidence: 4.5 stars
+    - Evidence: 2,140 reviews
+    - Evidence: 6% of reviews
+- Slide 7: Why not a national retail launch
+- Slide 8: Even on the planning team's own inputs, the retail-led route breaks the $18M cash cap in 2029 and never pays back
+  - Claim: Fixed retail costs, not the sales plan, sink Option B
+    - Evidence: Cumulative US cash, $M, 2027–30 (25% ad cost): B · Retail-led -9.4761; -15.0925; -18.9284; -20.7962
+    - Evidence: Board cap -18
+    - Evidence: 115.5% of the board's cash cap used by end-2030, and still falling
+    - Evidence: $8.5M 2030 contribution, Amazon and retail − $9.8M 2030 fixed costs and fixtures = −$1.3M 2030 operating loss, the best year
+  - Claim: Fixed cost: national marketing and field sales add $7.5M a year; at $7.55 a unit, retail would need about 32 units per door a week to cover it
+  - Claim: Margin floor: the 2027 US loss would cut group operating margin to 4.5%, below the 8% floor
+  - Claim: Amazon-led: on the same inputs it stays shallow and is back above zero in 2030
+    - Evidence: A · Amazon-led: -1.94; -1.7905; -0.3165; 2.3997
+- Slide 9: At Onsoo's awareness, a newcomer sells about 2.6 units per door a week, well short of the 4.0 the retailer requires
+  - Claim: The plan assumes survivors' sell-through
+    - Evidence: Median units per door per week by aided awareness, 2025: Below 10% 2.6; 10–20% 3.5; Above 20% 4.6; Option B plan 4.5
+    - Evidence: Removal line 4.0
+    - Evidence: 1.7x planned sell-through over the median at Onsoo's awareness
+    - Evidence: The plan's 4.5 units comes from the retailer's deck on successful newcomers, which leaves out brands that were removed
+  - Claim: Below 10%: Onsoo has 4% aided awareness; this band's top quartile sells only 3.4
+  - Claim: Above 20%: the only band whose median clears the line
+  - Claim: Specialty retail waits until aided awareness passes 20%
+    - Evidence: Retail analytics firm, 46 newcomer brands, 2025; the leading specialty retailer removes newcomers below 4.0 units per door per week after 12 months
+- Slide 10: Precedents favor Amazon first, though it is no guarantee: the one retail-first entrant was removed from shelves
+  - Claim: A door launch before awareness: the path Option B would repeat
+    - Evidence: Mooncrest | Retail-first, 2023, 450 doors | Removed from shelves in 2025; estimated cumulative US loss of $21M
+  - Claim: Doors followed Amazon scale; the memo's 0.71 correlation between doors and Amazon sales fits this order too, so it cannot prove Option B's 1.3 times halo
+    - Evidence: Saebom | Amazon-first, 2022 | About $30M US revenue in 2025; added 300 retail doors in 2025
+    - Evidence: Board memo: correlation of 0.71 between specialty-retail doors and Amazon sales across 30 K-beauty brands in the US; a correlation does not show which one drives the other
+  - Claim: Amazon alone does not ensure scale, which is why the launch needs gates
+    - Evidence: Gaon Lab | Amazon-first, 2022 | Below $5M US revenue in 2025
+  - Claim: Same lesson: watch ad cost and repeat before scaling
+    - Evidence: Yeoreum | Amazon-first, 2023 | Below $5M US revenue in 2025
+- Slide 11: Why Amazon-led entry
+- Slide 12: Advertising, the one cost Onsoo controls, is the largest in each $24 Amazon sale and leaves about $4 of contribution
+  - Claim: Ad cost is the swing line in the unit economics
+    - Evidence: $ per unit at 28% ad cost and 15% duty: Price 24; Referral fee 3.6; FBA fee 5.1; Product cost 3.5; Freight and duty 1.075; Advertising 6.72; Contribution 4.005
+    - Evidence: 16.7% of the price left as contribution after ads
+  - Claim: Advertising: at 28% of the price, more than the FBA fee and the one line Onsoo controls
+  - Claim: Each point of ad cost: takes $0.24 off every unit
+  - Claim: Contribution per unit at the 32% ad cost of scaling brands
+    - Evidence: $3.04
+    - Evidence: $10.73 before ads − 32% × $24
+  - Claim: Price is held at $24: 52% of US buyers who tried K-beauty cite its price compared with US brands as a reason
+- Slide 13: Only Amazon-led entry can pass all three board tests and build a US business, and only near the pilot's ad cost
+  - Claim: A · Amazon-led, 28% ad cost: Recommended, with an ad-cost ceiling; passes all three tests if ad cost is held near the pilot's rate
+    - Evidence: 2030 revenue $26.4M; peak cumulative cash −$2.4M; cumulative cash end-2030 $0.4M; lowest group margin 9.3%
+  - Claim: A · Amazon-led, 32% ad cost: Misses payback by 2030, though far inside the cap and the floor
+    - Evidence: $26.4M; −$3.2M; −$2.3M; 9.1%
+  - Claim: B · Retail-led: Fails all three tests, even on its own inputs
+    - Evidence: $37.6M; −$20.8M; −$20.8M; 4.5%
+  - Claim: J · Japan scale-up: Passes, but adds only incremental Japan revenue and no US business
+    - Evidence: $7M; −$1.1M; $1.8M; 10.1%
+    - Evidence: Japan: no working-capital input is given, so operating profit stands in for cash
+- Slide 14: Japan earns more until 2029, when Amazon-led entry overtakes it; by 2030 the US earns 1.8 times as much
+  - Claim: The US is the bigger prize; Japan is the safer fallback
+    - Evidence: Operating profit added, $M, 2027–30: A · Amazon-led -1.6985; 0.1428; 1.3043; 2.3055
+    - Evidence: J · Japan scale-up -1.05; 0.55; 1; 1.3
+    - Evidence: 1.8x Amazon-led 2030 operating profit as a multiple of Japan's
+  - Claim: 2027–28: the US carries its $0.8M setup and ramp-up
+  - Claim: 2027–30 total: $2.1M from the US against $1.8M from Japan; at 32% ad cost the US adds −$0.6M
+  - Claim: How the 2030 US profit is built
+    - Evidence: $4.4M contribution: 1,100k Amazon units × $4.01 after ads − $2.1M compliance, US team and off-Amazon marketing a year = $2.3M US operating profit in 2030
+  - Claim: Japan's ceiling: a market growing 1.5% a year, where Onsoo already holds 3.1%
+  - Claim: Waiting a year: US revenue in 2030 would sit near $20.4M
+- Slide 15: Amazon-led entry reaches $26M by 2030, not $40M; even at its 2030 growth rate, $40M takes two more years
+  - Claim: Read the ambition as a path: no modeled route hits $40M in 2030
+    - Evidence: Option A US revenue, $M: 2027 7.2; 2028 13.44; 2029 20.4; 2030 26.4; 2031E 34.16; 2032E 44.21
+    - Evidence: Board ambition $40.0M
+    - Evidence: Board ambition: a US business "on the way to $40M revenue by 2030"
+  - Claim: 2030: the plan's 1,100k units at $24 reach about two-thirds of the ambition
+  - Claim: Retail-led plan: even its $37.6M in 2030 misses $40M, at a cash cost above the cap
+  - Claim: $40M in 2030: would need 1,667k Amazon units at $24, 52% more than the plan
+  - Claim: How we projected 2031–32
+    - Evidence: $26.4M × 1.3x × 1.3x = $44.2M projected 2032 revenue, Amazon only
+  - Claim: Slowing growth: unit growth falls from 87% in 2028 to 52% and then 29%; if it keeps slowing, $40M comes after 2032
+- Slide 16: What could break it, and how to launch
+- Slide 17: Payback by 2030 holds only while Amazon ad cost stays below about 29% of sales
+  - Claim: Ad cost decides payback; the downside stays bounded
+    - Evidence: Option A cumulative US cash end-2030, $M: Planning 25% 2.3997; Pilot rate 28% 0.3766; 28% and 25% duty -0.7352; Scale benchmark 32% -2.3211; Stress 32% and 25% duty -3.4328
+  - Claim: 32%: the median for brands growing from $5M to $20M a year, as Onsoo would in 2027–29
+    - Evidence: 32% is the agency median ad cost for skincare brands scaling from $5M to $20M a year (range 26%–38%)
+  - Claim: Tariff: a 25% duty alone turns the 28% case negative
+  - Claim: Stress: outflow peaks at $3.9M, 22% of the cap
+  - Claim: Break-even ad cost for payback by end-2030
+    - Evidence: 28.6%
+    - Evidence: $19.3M cash left for ads ÷ $67.4M Amazon sales
+  - Claim: How the 28% case is built
+    - Evidence: $11.3M contribution after ads: 2,810k units × $4.01 − $9.2M fixed costs and setup, 2027–30 − $1.7M inventory held at end-2030 = $0.4M cumulative cash, end-2030
+- Slide 18: The 29% line leaves little room: the pilot already runs at 28%, and brands at Onsoo's planned scale pay 32%
+  - Claim: Break-even ad cost for payback by end-2030
+    - Evidence: $19.3M cash left for advertising over 2027–30 if cumulative cash ends at zero ÷ $67.4M Amazon sales over 2027–30: 2,810k units at $24 = 28.6%
+  - Claim: The line rests on the planning team's volumes and today's duty
+    - Evidence: Contribution before ads of $10.73 a unit × 2,810k units gives $30.1M over the four years
+    - Evidence: Fixed and one-time costs of $9.2M and $1.68M of year-end inventory come off first
+    - Evidence: Volumes follow the plan, from 300k units in 2027 to 1,100k in 2030; 4% fewer units miss payback at 28%
+    - Evidence: Duty stays at 15%; at 25% the line falls to 26.9%, below the pilot's rate
+    - Evidence: No Amazon returns cost is in the planning inputs; a 4% allowance like retail's would lower the line to 24.6%
+  - Claim: Scaling brands pay 3.4 percentage points above the line: ad cost must be held as SKUs and volume grow
+- Slide 19: Five gates keep the launch inside the board's limits and decide when retail is added
+  - Claim: Gate 1 · Amazon ad cost, trailing quarter
+    - Evidence: Above 28.6% of sales (26.9% if duty rises) | Quarterly from Q3 2027 | Cap bids to hold the ceiling even if volume slows; above 32% for two quarters, cut back and move the 2028 slot to Japan
+  - Claim: Gate 2 · US duty on Korean cosmetics
+    - Evidence: Rises from 15% to 25% | Mid-2027 decision | Tighten gate 1 to 26.9% and re-run the plan
+  - Claim: Gate 3 · Amazon units against plan
+    - Evidence: Below 96% of plan (288k units in 2027) | End-2027 review | Hold the 2028 spend step-up until volume recovers
+  - Claim: Gate 4 · 90-day repeat purchase
+    - Evidence: Below the 31% first-year benchmark | End-2027 review | Fix labels and listings before adding SKUs
+  - Claim: Gate 5 · Retail entry trigger
+    - Evidence: Aided awareness above 20% and Amazon sales above $10M | Yearly survey from 2028 | Raise the CEO's 15% trigger to 20%
+    - Evidence: At 10–20% awareness the median newcomer sells 3.5 units per door a week, below the 4.0 removal line; 20% is needed, not sufficient
+- Slide 20: The launch runs on Amazon from mid-2027, with a gate review at year-end and retail no earlier than 2029
+  - Claim: Launch plan by workstream
+    - Evidence: Board decision, Tariff decision, Gate review milestones across Q1 2027–2030
+    - Evidence: Setup: US entity, MoCRA registration, US labels
+    - Evidence: Amazon: Own listings; add four SKUs; Scale if gates hold
+    - Evidence: Brand building: Social and influencer marketing; yearly awareness survey
+    - Evidence: Specialty retail: Test doors only if gate 5 is met
+    - Evidence: Japan: Fallback slot
+  - Claim: The end-2027 review is the real go or no-go: ad cost, volume, repeat and the tariff are known by then, and stopping costs about $2.2M–2.4M
+  - Claim: The Japan slot is used only if gates 1 or 3 fail, since management can run one major launch at a time
+- Slide 21: Appendix
+- Slide 22: Backup: The Amazon-led base case bottoms out in 2028 and is back above zero by the end of 2030
+  - Claim: The Amazon-led base case bottoms out in 2028 and is back above zero by the end of 2030
+    - Evidence: Amazon units, thousands: 300; 560; 850; 1,100
+    - Evidence: US revenue: $7.2M; $13.4M; $20.4M; $26.4M
+    - Evidence: Contribution after ads: $1.2M; $2.2M; $3.4M; $4.4M
+    - Evidence: Fixed and one-time costs: $2.9M; $2.1M; $2.1M; $2.1M
+    - Evidence: US operating profit: −$1.7M; $0.1M; $1.3M; $2.3M
+    - Evidence: Inventory build: $0.5M; $0.4M; $0.4M; $0.4M
+    - Evidence: Cumulative US cash: −$2.2M; −$2.4M; −$1.5M; $0.4M
+    - Evidence: Group operating margin: 9.3%; 10.2%; 10.4%; 10.7%
+- Slide 23: Backup: The retail-led plan loses money in every year to 2030 and keeps group margin under the board's floor until 2030
+  - Claim: The retail-led plan loses money in every year to 2030 and keeps group margin under the board's floor until 2030
+    - Evidence: Specialty-retail units, thousands: 140.4; 140.4; 187.2; 234
+    - Evidence: Amazon units, thousands: 390; 728; 1,105; 1,430
+    - Evidence: US revenue: $11.3M; $19.4M; $29.1M; $37.6M
+    - Evidence: Contribution: $2.9M; $4.5M; $6.6M; $8.5M
+    - Evidence: Fixed and one-time costs: $11.6M; $9.6M; $9.8M; $9.8M
+    - Evidence: US operating profit: −$8.7M; −$5.1M; −$3.2M; −$1.3M
+    - Evidence: Cumulative US cash: −$9.5M; −$15.1M; −$18.9M; −$20.8M
+    - Evidence: Group operating margin: 4.5%; 6.6%; 7.5%; 8.2%
+    - Evidence: Fixed costs: $9.6M a year, plus $1.3M setup and launch fee and $1,100 of fixtures per new door; retail revenue at the $14 wholesale price
+- Slide 24: Next steps
+
+**Recommendation:** Approve Amazon-led US entry with a 28.6% ad-cost ceiling and five gates, accepting up to $3.9M of outflow if payback slips (Enter the US in 2027 through Amazon, not 600 retail doors, and cap ad cost below about 29% of sales; retail waits for 20% awareness; if gates fail at end-2027, switch to Japan in 2028)
+
+**Alternatives considered:**
+- A · Amazon-led entry: Recommended, with an ad-cost ceiling; passes all three tests if ad cost is held near the pilot's rate. At 32% ad cost it misses payback by 2030, though far inside the cap and the floor.
+- B · Retail-led (600-door national retail launch): Rejected: fails all three tests, even on its own inputs; cumulative outflow reaches $20.8M by 2030, above the $18M cap; group margin 4.5% in 2027 below 8% floor; at Onsoo's awareness newcomers sell 2.6 units per door a week, short of the 4.0 removal line.
+- J · Japan scale-up: Passes, but adds only incremental Japan revenue and no US business; by 2030 the US earns 1.8 times as much. Kept as the safer fallback: switch to Japan in 2028 if gates 1 or 3 fail.
+- Waiting a year to enter the US: US revenue in 2030 would sit near $20.4M.
+
+**Assumptions and uncertainties:**
+- Synthetic benchmark data; every number from the briefing pack
+- Team model from the briefing pack: hero-product unit economics on every SKU, four months of landed cost held as inventory
+- The break-even line rests on the planning team's volumes and today's duty; 4% fewer units miss payback at 28%
+- Duty stays at 15%; at 25% the break-even line falls to 26.9%, below the pilot's rate; a 25% duty alone turns the 28% case negative
+- No Amazon returns cost is in the planning inputs; a 4% allowance like retail's would lower the line to 24.6%
+- Brands at Onsoo's planned scale pay 32% ad cost (agency median, range 26%–38%); at 32% cash is −$2.3M at end-2030
+- Japan: no working-capital input is given, so operating profit stands in for cash
+- Holding the 2030 growth rate is optimistic, since growth slows every year of the plan; the projection shows the earliest date, not the expected one
+- Board ambition of $40M read as a path, since no option the planning team modeled reaches $40M in 2030
+- The memo's 0.71 correlation between doors and Amazon sales cannot prove Option B's 1.3 times halo; a correlation does not show which one drives the other
+- The plan's 4.5 units per door comes from the retailer's deck on successful newcomers, which leaves out brands that were removed
+- Amazon alone does not ensure scale (Gaon Lab, Yeoreum below $5M)
+- 20% awareness is needed, not sufficient, for retail
+- Management can run one major launch at a time
+
+**Next steps:**
+- Approve Amazon-led US entry with a 28.6% ad-cost ceiling and five gates, accepting up to $3.9M of outflow if payback slips — CEO and board — March 2027 board
+- Set up the US entity, MoCRA registration and English labels — US launch lead — Q1–Q2 2027
+- Move the pilot SKUs from the cross-border seller to Onsoo's own listings and add four SKUs — Amazon team — Q2–Q3 2027
+- Report ad cost, units and repeat against the gate thresholds; re-run the plan on the tariff decision — CFO — Quarterly from Q3 2027
+- Repeat the US awareness survey to track the 20% retail trigger — Marketing — September each year
+
+## Part 2 · Full slide text (mechanical extraction)
+
+=== Slide 1 ===
+[Title] Entering the US market in 2027
+- Whether to enter, and by which route — discussion document for the March 2027 board
+- Onsoo Botanicals
+- CEO and board
+- 2026-11-17
+- Synthetic benchmark data; every number from the briefing pack
+
+=== Slide 2 ===
+[Title] Executive summary
+- Enter the US in 2027 through Amazon, not 600 retail doors, and cap ad cost below about 29% of sales, the line for payback by 2030
+
+- The US is worth entering: K-beauty leads skincare growth, and the pilot shows demand
+- –	K-beauty brands delivered 39% of US facial-skincare growth in 2021–25
+- –	Pilot units rose 89% in six months; repeat purchase trails the benchmark
+
+- A 600-door retail launch fails the board's tests on its own plan and could not hold the shelf
+- –	Its cumulative outflow reaches $20.8M by 2030, above the $18M cap
+- –	Below 10% awareness newcomers sell 2.6 units per door a week, not 4.0
+
+- Amazon-led entry stays inside the cash cap and margin floor, but reaches $26M, not $40M, by 2030
+- –	Peak outflow is $2.4M against the $18M cap; group margin stays above 9%
+- –	By 2030 it earns 1.8 times the operating profit of a Japan scale-up
+
+- Payback hinges on holding ad cost below about 29%: launch with that ceiling and five gates
+- –	At the 32% paid by brands at Onsoo's planned scale, cash is −$2.3M at end-2030
+- –	Retail waits for 20% awareness; if gates fail at end-2027, switch to Japan in 2028
+
+=== Slide 3 ===
+[Title] Why the US, why now
+- SECTION
+
+- The US is worth entering: K-beauty leads skincare growth, and the pilot shows demand
+- 1   Market
+- 2   Retail-led
+- 3   Amazon-led
+- 4   Risk and plan
+
+=== Slide 4 ===
+[Title] K-beauty is where US facial skincare is growing: Korean brands delivered 39% of the category's growth since 2021
+
+- US facial skincare sales, $ billions, 2021–25
+[Chart: COLUMN_STACKED]
+  categories: 2021; 2022; 2023; 2024; 2025
+  series 'K-beauty brands': 1.9; 2.3; 2.7; 3.1; 3.6
+  series 'Other brands': 18.2; 19; 19.9; 20.4; 20.9
+- K-beauty is taking a growing share of a growing category
+- 38.6%
+- of the category's 2021–25 sales growth came from K-beauty brands
+- ▪	K-beauty brands: sales up 89% in four years, against 22% for the category, lifting their share from 9% to 15%
+- ▪	Other brands: up 15% over the same four years, so most of the category's momentum is Korean
+- ▪	For Onsoo: a fast-growing segment where buyers already accept Korean brands
+- 1  The trade-press figure of a $5.2B US K-beauty market also counts makeup and hair care, so it is not used; this deck sizes facial skincare only
+- Sources: Briefing pack: US market data (Tables 1–2); team analysis
+
+=== Slide 5 ===
+[Title] Amazon is where US K-beauty sells, and social media, not the store shelf, is where buyers find new brands
+
+- Amazon is the largest K-beauty channel, ahead of specialty beauty retail
+- TikTok beats stores more than two to one as the place buyers discover a brand
+- US K-beauty skincare sales by channel, % of sales, 2025
+- Where K-beauty buyers discovered their last new brand, % of K-beauty buyers, Sep 2026
+[Chart: BAR_CLUSTERED]
+  categories: Amazon; Specialty beauty retail; Mass retail; Brand websites; Other
+  series 'Share of sales': 0.41; 0.27; 0.14; 0.12; 0.06
+[Chart: BAR_CLUSTERED]
+  categories: TikTok; In a store
+  series 'Share of K-beauty buyers': 0.38; 0.17
+- 61% of K-beauty buyers buy it most often on Amazon, compared with 22% at specialty retail
+- 1  Survey of 1,200 US women aged 18–44 who bought facial skincare in the last six months, September 2026; channel shares from the briefing pack, Table 2
+- Sources: Briefing pack: US market data (Tables 1–2); Briefing pack: US consumer survey, Sep 2026, n = 1,200
+
+=== Slide 6 ===
+[Title] The Amazon pilot shows real demand, with June units 89% above January, but repeat purchase still trails the benchmark
+
+- Monthly units rose every month of the pilot
+- +89.2%
+- Repeat is just below new US brands and far below Onsoo in Korea
+- Amazon pilot units sold, units per month, three SKUs, Jan–Jun 2026
+- 90-day repeat purchase rate, % of first-time buyers
+[Chart: COLUMN_CLUSTERED]
+  categories: Jan; Feb; Mar; Apr; May; Jun
+  series 'Units sold': 7400; 8600; 10100; 11800; 12900; 14000
+[Chart: BAR_CLUSTERED]
+  categories: Onsoo, US pilot; First-year skincare brands, Amazon US; Onsoo, Korea
+  series 'Repeat rate': 0.29; 0.31; 0.48
+- Ratings average 4.5 stars from 2,140 reviews; the top complaint, Korean-only labels in 6% of reviews, is fixed by the US labels in setup
+- 1  Pilot run by a cross-border seller, January–June 2026; repeat benchmark is agency data for skincare brands in their first year on Amazon US
+- Sources: Briefing pack: Amazon pilot results, Jan–Jun 2026; team analysis
+
+=== Slide 7 ===
+[Title] Why not a national retail launch
+- SECTION
+
+- A 600-door retail launch fails the board's tests on its own plan and could not hold the shelf
+- 1   Market
+- 2   Retail-led
+- 3   Amazon-led
+- 4   Risk and plan
+
+=== Slide 8 ===
+[Title] Even on the planning team's own inputs, the retail-led route breaks the $18M cash cap in 2029 and never pays back
+
+- Cumulative US cash, $ millions, end of year, 2027–30, planning-team inputs for both routes (25% ad cost)
+[Chart: LINE]
+  categories: 2027; 2028; 2029; 2030
+  series 'B · Retail-led': -9.4761; -15.0925; -18.9284; -20.7962
+  series 'A · Amazon-led': -1.94; -1.7905; -0.3165; 2.3997
+  series 'Board cap': -18; -18; -18; -18
+- Fixed retail costs, not the sales plan, sink Option B
+- 115.5%
+- of the board's cash cap used by end-2030, and still falling
+- ▪	Fixed cost: national marketing and field sales add $7.5M a year; at $7.55 a unit, retail would need about 32 units per door a week to cover it
+- ▪	Margin floor: the 2027 US loss would cut group operating margin to 4.5%, below the 8% floor
+- How Option B's 2030 cash position is built
+- $8.5M
+- −
+- $9.8M
+- =
+- −$1.3M
+- 2030 contribution, Amazon and retail
+- 2030 fixed costs and fixtures
+- 2030 operating loss, the best year
+- ▪	Amazon-led: on the same inputs it stays shallow and is back above zero in 2030
+- 1  Team model from the briefing pack: hero-product unit economics on every SKU, four months of landed cost held as inventory
+- 2  Option B: 600 doors in 2027–28, 800 in 2029, 1,000 in 2030 at 4.5 units per door a week; Amazon volume 1.3 times Option A
+- Sources: Briefing pack: board objectives, memos and uncertainties (§3, §4, §12, §13); team analysis
+
+=== Slide 9 ===
+[Title] At Onsoo's awareness, a newcomer sells about 2.6 units per door a week, well short of the 4.0 the retailer requires
+
+- First-year sell-through of newcomer skincare brands in US specialty retail, median units per door per week, by aided awareness, 2025
+[Chart: COLUMN_CLUSTERED]
+  categories: Below 10% awareness; 10–20%; Above 20%; Option B plan
+  series 'Units per door per week': 2.6; 3.5; 4.6; 4.5
+- The plan assumes survivors' sell-through
+- Removal line  4.0
+- 1.7x
+- planned sell-through over the median at Onsoo's awareness
+- ▪	Below 10%: Onsoo has 4% aided awareness; this band's top quartile sells only 3.4
+- ▪	Above 20%: the only band whose median clears the line
+- Specialty retail waits until aided awareness passes 20%
+- 1  Retail analytics firm, 46 newcomer brands, 2025; the leading specialty retailer removes newcomers below 4.0 units per door per week after 12 months
+- 2  The plan's 4.5 units comes from the retailer's deck on successful newcomers, which leaves out brands that were removed
+- 3  Awareness from the September 2026 survey of 1,200 US women aged 18–44 who bought facial skincare
+- Sources: Briefing pack: retail analytics firm, 46 newcomer brands, 2025 (Table 8); Briefing pack: planning-team inputs and forecasts (Tables 4–7); team analysis
+
+=== Slide 10 ===
+[Title] Precedents favor Amazon first, though it is no guarantee: the one retail-first entrant was removed from shelves
+
+- K-beauty brands that entered the US recently, entry route and outcome by 2025, public reporting and interviews
+[Table]
+  |  | Entry route | Outcome by 2025 | Lesson for Onsoo |
+  | Mooncrest | Retail-first, 2023, 450 doors | Removed from shelves in 2025; estimated cumulative US loss of $21M | A door launch before awareness: the path Option B would repeat |
+  | Saebom | Amazon-first, 2022 | About $30M US revenue in 2025; added 300 retail doors in 2025 | Doors followed Amazon scale / The memo's 0.71 correlation between doors and Amazon sales fits this order too, so it cannot prove Option B's 1.3 times halo |
+  | Gaon Lab | Amazon-first, 2022 | Below $5M US revenue in 2025 | Amazon alone does not ensure scale, which is why the launch needs gates |
+  | Yeoreum | Amazon-first, 2023 | Below $5M US revenue in 2025 | Same lesson: watch ad cost and repeat before scaling |
+- 1  Board memo: correlation of 0.71 between specialty-retail doors and Amazon sales across 30 K-beauty brands in the US; a correlation does not show which one drives the other
+
+=== Slide 11 ===
+[Title] Why Amazon-led entry
+- SECTION
+
+- Amazon-led entry stays inside the cash cap and margin floor, but reaches $26M, not $40M, by 2030
+- 1   Market
+- 2   Retail-led
+- 3   Amazon-led
+- 4   Risk and plan
+
+=== Slide 12 ===
+[Title] Advertising, the one cost Onsoo controls, is the largest in each $24 Amazon sale and leaves about $4 of contribution
+
+- Amazon economics per unit, Rice Ferment Barrier Cream 50 ml, $ per unit, at the pilot's 28% ad cost and 15% duty
+[Chart: COLUMN_STACKED]
+  categories: Price; Referral fee; FBA fee; Product cost; Freight and duty; Advertising; Contribution
+  series 'base': 0; 20.4; 15.3; 11.8; 10.725; 4.005; 0
+  series '$ per unit': 24; 3.6; 5.1; 3.5; 1.075; 6.72; 4.005
+- Ad cost is the swing line in the unit economics
+- 16.7%
+- of the price left as contribution after ads
+- ▪	Advertising: at 28% of the price, more than the FBA fee and the one line Onsoo controls
+- ▪	Each point of ad cost: takes $0.24 off every unit
+- Contribution per unit at the 32% ad cost of scaling brands
+- $3.04
+- $10.73 before ads − 32% × $24
+- 1  Per-unit inputs from the briefing pack, Table 4; the planning team applies the hero product's economics to every SKU
+- 2  Price is held at $24: 52% of US buyers who tried K-beauty cite its price compared with US brands as a reason
+- Sources: Briefing pack: planning-team inputs and forecasts (Tables 4–7); Briefing pack: Amazon pilot results, Jan–Jun 2026; Briefing pack: competitor evidence and agency benchmarks (§11); team analysis
+
+=== Slide 13 ===
+[Title] Only Amazon-led entry can pass all three board tests and build a US business, and only near the pilot's ad cost
+
+- Options against the board's tests, $ millions unless stated, 2027–30; A at the pilot's 28% and the 32% scale benchmark, B on planning-team inputs
+[Table]
+  |  | 2030 revenue | Peak cumulative cash (cap −$18M) | Cumulative cash, end-2030 (payback) | Lowest group margin (floor 8%) | Verdict |
+  | A · Amazon-led, 28% ad cost | $26.4M | −$2.4M | $0.4M | 9.3% | Recommended, with an ad-cost ceiling / Passes all three tests if ad cost is held near the pilot's rate (section 4) |
+  | A · Amazon-led, 32% ad cost | $26.4M | −$3.2M | −$2.3M | 9.1% | Misses payback by 2030, though far inside the cap and the floor |
+  | B · Retail-led | $37.6M | −$20.8M | −$20.8M | 4.5% | Fails all three tests, even on its own inputs |
+  | J · Japan scale-up | $7M | −$1.1M | $1.8M | 10.1% | Passes, but adds only incremental Japan revenue and no US business |
+- 1  Team model from the briefing pack: hero-product unit economics on every SKU, four months of landed cost held as inventory
+- 2  Japan: incremental revenue and operating profit from Table 7; no working-capital input is given, so operating profit stands in for cash
+- 3  Group margin adds each option's US or Japan result to the plan of $140M revenue at 11.0% margin in 2027; the lowest year is 2027 for all three
+- Sources: Briefing pack: planning-team inputs and forecasts (Tables 4–7); Briefing pack: board objectives, memos and uncertainties (§3, §4, §12, §13); team analysis
+
+=== Slide 14 ===
+[Title] Japan earns more until 2029, when Amazon-led entry overtakes it; by 2030 the US earns 1.8 times as much
+
+- Operating profit added by each option, $ millions, 2027–30; A at the pilot's 28% ad cost
+[Chart: COLUMN_CLUSTERED]
+  categories: 2027; 2028; 2029; 2030
+  series 'A · Amazon-led': -1.6985; 0.1428; 1.3043; 2.3055
+  series 'J · Japan scale-up': -1.05; 0.55; 1; 1.3
+- The US is the bigger prize; Japan is the safer fallback
+- 1.8x
+- Amazon-led 2030 operating profit as a multiple of Japan's
+- ▪	2027–28: the US carries its $0.8M setup and ramp-up
+- ▪	2027–30 total: $2.1M from the US against $1.8M from Japan; at 32% ad cost the US adds −$0.6M
+- How the 2030 US profit is built
+- $4.4M
+- −
+- $2.1M
+- =
+- $2.3M
+- ▪	Japan's ceiling: a market growing 1.5% a year, where Onsoo already holds 3.1%
+- contribution: 1,100k Amazon units × $4.01 after ads
+- compliance, US team and off-Amazon marketing a year
+- US operating profit in 2030
+- ▪	Waiting a year: US revenue in 2030 would sit near $20.4M
+- 1  Team model from the briefing pack: hero-product unit economics on every SKU, four months of landed cost held as inventory
+- 2  Japan from Table 7: 30% contribution on incremental revenue, $0.8M a year of added fixed cost and $1.0M one-time cost in 2027
+- Sources: Briefing pack: planning-team inputs and forecasts (Tables 4–7); team analysis
+
+=== Slide 15 ===
+[Title] Amazon-led entry reaches $26M by 2030, not $40M; even at its 2030 growth rate, $40M takes two more years
+
+- Option A US revenue, $ millions, 2027–30 plan, 2031–32 projected at the 2030 growth rate (an upper bound)
+[Chart: COLUMN_CLUSTERED]
+  categories: 2027; 2028; 2029; 2030; 2031E; 2032E
+  series 'US revenue': 7.2; 13.44; 20.4; 26.4; 34.16; 44.21
+- Read the ambition as a path: no modeled route hits $40M in 2030
+- Board ambition  $40.0M
+- ▪	2030: the plan's 1,100k units at $24 reach about two-thirds of the ambition
+- ▪	Retail-led plan: even its $37.6M in 2030 misses $40M, at a cash cost above the cap
+- ▪	$40M in 2030: would need 1,667k Amazon units at $24, 52% more than the plan
+- How we projected 2031–32
+- $26.4M
+- ×
+- 1.3x
+- ×
+- 1.3x
+- =
+- $44.2M
+- ▪	Slowing growth: unit growth falls from 87% in 2028 to 52% and then 29%; if it keeps slowing, $40M comes after 2032
+- 2030 revenue in the plan
+- 2030 growth, held in 2031
+- and again in 2032
+- projected 2032 revenue, Amazon only
+- 1  Board ambition: a US business "on the way to $40M revenue by 2030"; we read it as a path, since no option the planning team modeled reaches $40M in 2030
+- 2  Holding the 2030 growth rate is optimistic, since growth slows every year of the plan; the projection shows the earliest date, not the expected one
+- Sources: Briefing pack: planning-team inputs and forecasts (Tables 4–7); Briefing pack: board objectives, memos and uncertainties (§3, §4, §12, §13); team analysis
+
+=== Slide 16 ===
+[Title] What could break it, and how to launch
+- SECTION
+
+- Payback hinges on holding ad cost below about 29%: launch with that ceiling and five gates
+- 1   Market
+- 2   Retail-led
+- 3   Amazon-led
+- 4   Risk and plan
+
+=== Slide 17 ===
+[Title] Payback by 2030 holds only while Amazon ad cost stays below about 29% of sales
+
+- Option A cumulative US cash at end-2030, $ millions, by ad cost (share of Amazon sales) and US duty
+[Chart: BAR_CLUSTERED]
+  categories: Planning: 25%; Pilot rate: 28%; 28% and 25% duty; Scale benchmark: 32%; Stress: 32% and 25% duty
+  series 'Cumulative cash, end-2030': 2.3997; 0.3766; -0.7352; -2.3211; -3.4328
+- Ad cost decides payback; the downside stays bounded
+- ▪	32%: the median for brands growing from $5M to $20M a year, as Onsoo would in 2027–29
+- ▪	Tariff: a 25% duty alone turns the 28% case negative
+- ▪	Stress: outflow peaks at $3.9M, 22% of the cap
+- 28.6%
+- How the 28% case is built
+- $11.3M
+- −
+- $9.2M
+- −
+- $1.7M
+- =
+- $0.4M
+- Break-even ad cost for payback by end-2030
+- $19.3M cash left for ads ÷ $67.4M Amazon sales (next page)
+- contribution after ads: 2,810k units × $4.01
+- fixed costs and setup, 2027–30
+- inventory held at end-2030
+- cumulative cash, end-2030
+- 1  Team model from the briefing pack: hero-product unit economics on every SKU, four months of landed cost held as inventory
+- 2  Planning-team volumes in every case; 32% is the agency median ad cost for skincare brands scaling from $5M to $20M a year (range 26%–38%)
+- Source: team analysis
+
+=== Slide 18 ===
+[Title] The 29% line leaves little room: the pilot already runs at 28%, and brands at Onsoo's planned scale pay 32%
+
+- Break-even ad cost for payback by end-2030, % of Amazon sales, 2027–30, team estimate
+- ÷
+- =
+- $19.3M
+- $67.4M
+- 28.6%
+- cash left for advertising over 2027–30 if cumulative cash ends at zero
+- Amazon sales over 2027–30: 2,810k units at $24
+- highest ad cost, as a share of sales, that still pays back by 2030
+- The line rests on the planning team's volumes and today's duty
+- ▪	Contribution before ads of $10.73 a unit × 2,810k units gives $30.1M over the four years
+- ▪	Fixed and one-time costs of $9.2M and $1.68M of year-end inventory come off first
+- ▪	Volumes follow the plan, from 300k units in 2027 to 1,100k in 2030; 4% fewer units miss payback at 28%
+- ▪	Duty stays at 15%; at 25% the line falls to 26.9%, below the pilot's rate
+- ▪	No Amazon returns cost is in the planning inputs; a 4% allowance like retail's would lower the line to 24.6%
+- Scaling brands pay 3.4 percentage points above the line: ad cost must be held as SKUs and volume grow
+- 1  Estimate by the team from the briefing pack; the live formula is in the Calculations sheet of the source workbook
+- Sources: Briefing pack: planning-team inputs and forecasts (Tables 4–7); team analysis
+
+=== Slide 19 ===
+[Title] Five gates keep the launch inside the board's limits and decide when retail is added
+
+- Decision gates for the Amazon-led launch, thresholds from the team model and the briefing pack
+[Table]
+  |  | Threshold | When checked | If crossed |
+  | 1 · Amazon ad cost, trailing quarter | Above 28.6% of sales (26.9% if duty rises) | Quarterly from Q3 2027 | Cap bids to hold the ceiling even if volume slows; above 32% for two quarters, cut back and move the 2028 slot to Japan |
+  | 2 · US duty on Korean cosmetics | Rises from 15% to 25% | Mid-2027 decision | Tighten gate 1 to 26.9% and re-run the plan |
+  | 3 · Amazon units against plan | Below 96% of plan (288k units in 2027) | End-2027 review | Hold the 2028 spend step-up until volume recovers |
+  | 4 · 90-day repeat purchase | Below the 31% first-year benchmark | End-2027 review | Fix labels and listings before adding SKUs |
+  | 5 · Retail entry trigger | Aided awareness above 20% and Amazon sales above $10M | Yearly survey from 2028 | Raise the CEO's 15% trigger to 20% / At 10–20% awareness the median newcomer sells 3.5 units per door a week, below the 4.0 removal line; 20% is needed, not sufficient |
+- 1  Gates 1 and 3 from the team model; gate 4 benchmark is agency data; gate 5 uses the retail analytics data and the CEO's $10M Amazon trigger
+
+=== Slide 20 ===
+[Title] The launch runs on Amazon from mid-2027, with a gate review at year-end and retail no earlier than 2029
+
+- US launch plan, by quarter in 2027 and by year after, from the March 2027 board decision
+- Q1 2027
+- Q2 2027
+- Q3 2027
+- Q4 2027
+- 2028
+- 2029
+- 2030
+- Board decision
+- Tariff decision
+- Gate review
+- Setup
+- US entity, MoCRA registration, US labels
+- Amazon
+- Own listings; add four SKUs
+- Scale if gates hold
+- Brand building
+- Social and influencer marketing; yearly awareness survey
+- Specialty retail
+- Test doors only if gate 5 is met
+- Japan
+- Fallback slot
+- The end-2027 review is the real go or no-go: ad cost, volume, repeat and the tariff are known by then, and stopping costs about $2.2M–2.4M
+- 1  Setup and brand-building costs as in Table 6; the Japan slot is used only if gates 1 or 3 fail, since management can run one major launch at a time
+
+=== Slide 21 ===
+[Title] Appendix
+- Contents
+- The Amazon-led base case bottoms out in 2028 and is back above zero by the end of 2030
+
+- The retail-led plan loses money in every year to 2030 and keeps group margin under the board's floor until 2030
+
+=== Slide 22 ===
+[Title] Backup: The Amazon-led base case bottoms out in 2028 and is back above zero by the end of 2030
+
+- Option A, base case, $ millions unless stated, 2027–30, at the pilot's 28% ad cost and 15% duty
+[Table]
+  |  | 2027 | 2028 | 2029 | 2030 |
+  | Amazon units, thousands | 300 | 560 | 850 | 1,100 |
+  | US revenue | $7.2M | $13.4M | $20.4M | $26.4M |
+  | Contribution after ads | $1.2M | $2.2M | $3.4M | $4.4M |
+  | Fixed and one-time costs | $2.9M | $2.1M | $2.1M | $2.1M |
+  | US operating profit | −$1.7M | $0.1M | $1.3M | $2.3M |
+  | Inventory build | $0.5M | $0.4M | $0.4M | $0.4M |
+  | Cumulative US cash | −$2.2M | −$2.4M | −$1.5M | $0.4M |
+  | Group operating margin | 9.3% | 10.2% | 10.4% | 10.7% |
+- 1  Team model from the briefing pack: hero-product unit economics on every SKU, four months of landed cost held as inventory
+- 2  Group margin adds the US result to the group plan excluding the US: $140M–158M revenue at 11.0%
+- Sources: Briefing pack: planning-team inputs and forecasts (Tables 4–7); Briefing pack: board objectives, memos and uncertainties (§3, §4, §12, §13); team analysis
+
+=== Slide 23 ===
+[Title] Backup: The retail-led plan loses money in every year to 2030 and keeps group margin under the board's floor until 2030
+
+- Option B, planning-team inputs, $ millions unless stated, 2027–30, 4.5 units per door a week, 25% ad cost
+[Table]
+  |  | 2027 | 2028 | 2029 | 2030 |
+  | Specialty-retail units, thousands | 140.4 | 140.4 | 187.2 | 234 |
+  | Amazon units, thousands | 390 | 728 | 1,105 | 1,430 |
+  | US revenue | $11.3M | $19.4M | $29.1M | $37.6M |
+  | Contribution | $2.9M | $4.5M | $6.6M | $8.5M |
+  | Fixed and one-time costs | $11.6M | $9.6M | $9.8M | $9.8M |
+  | US operating profit | −$8.7M | −$5.1M | −$3.2M | −$1.3M |
+  | Cumulative US cash | −$9.5M | −$15.1M | −$18.9M | −$20.8M |
+  | Group operating margin | 4.5% | 6.6% | 7.5% | 8.2% |
+- 1  Team model from the briefing pack: hero-product unit economics on every SKU, four months of landed cost held as inventory
+- 2  Fixed costs: $9.6M a year, plus $1.3M setup and launch fee and $1,100 of fixtures per new door; retail revenue at the $14 wholesale price
+- Sources: Briefing pack: planning-team inputs and forecasts (Tables 4–7); Briefing pack: board objectives, memos and uncertainties (§3, §4, §12, §13); team analysis
+
+=== Slide 24 ===
+[Title] Next steps
+- Action
+- Owner
+- Timing
+- Approve Amazon-led US entry with a 28.6% ad-cost ceiling and five gates, accepting up to $3.9M of outflow if payback slips
+- CEO and board
+- March 2027 board
+
+- Set up the US entity, MoCRA registration and English labels
+- US launch lead
+- Q1–Q2 2027
+
+- Move the pilot SKUs from the cross-border seller to Onsoo's own listings and add four SKUs
+- Amazon team
+- Q2–Q3 2027
+
+- Report ad cost, units and repeat against the gate thresholds; re-run the plan on the tariff decision
+- CFO
+- Quarterly from Q3 2027
+
+- Repeat the US awareness survey to track the 20% retail trigger
+- Marketing
+- September each year
+

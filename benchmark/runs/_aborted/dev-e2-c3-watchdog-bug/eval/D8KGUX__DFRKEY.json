@@ -1,0 +1,38 @@
+{
+ "x": "D8KGUX",
+ "y": "DFRKEY",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X has a clear governing thought (mobile rewrite first, then Copilot in a Pro plan in Q4 2027 with a usage allowance) supported by four summary points that map one-to-one onto its sections: demand, timing, pricing and plan. Slide titles state conclusions and the evidence beneath them supports those titles. Y contains no readable deliverable, so there is no logical structure to assess.",
+   "winner": "X",
+   "strength": "strong"
+  },
+  "judgment": {
+   "reasons": "X recommends delaying Copilot behind the mobile rewrite, which the key treats as conditionally defensible (R3). It meets the conditions: it quantifies the win-rate risk (about $0.6M a year as an upper bound), compares ARR at risk per quarter on both sides ($544K vs $281K), and gives a break-even (the rewrite must remove at least 52% of mobile churn) with a Q2 fallback if that fails. It also weighs add-on against Pro tier explicitly, adds a usage allowance for margin, and keeps a limited AI response going (Pro price test, paying beta accounts kept served). Weaknesses: the mobile side assumes the rewrite ends mobile churn, and it assumes the same 14 engineers are the binding constraint; both are flagged. Y offers no recommendation.",
+   "winner": "X",
+   "strength": "strong"
+  },
+  "evidence": {
+   "reasons": "X reproduces all four required calculations within tolerance: $8.06M vs $2.45M add-on ARR; inference cost of $32.40, $61.20 and $130.50 per account a month with 58.9% and 12.4% margins; about $0.6M a year from the win-rate drop; and $2.89M Pro ARR with $1.3M inference. It uses the critical evidence well: paywall test over survey, survey response and size bias, beta selection bias, Routewise's 20% discount as a confound, and a rebuttal of the VP Sales claim (a mention is not a cause; $1.9M is three times the whole drop). Minor stretches: the NRR arithmetic is simplistic and the 5,296-request cap rests on its own cost-accounting assumptions, though these are stated. Y presents no evidence.",
+   "winner": "X",
+   "strength": "strong"
+  },
+  "revision": {
+   "reasons": "X revises the CPO's hypothesis as the evidence warrants. It rejects the $8M survey-based sizing in favour of at most $2.5M from the paywall test, rejects the flat $149 add-on because adopters are heavy users, and keeps the intent to launch Copilot, repackaged in Pro and resequenced after mobile. It also sides with the Head of Customer Success on the churn evidence. Y does not engage with the hypothesis at all.",
+   "winner": "X",
+   "strength": "strong"
+  },
+  "overall": {
+   "reasons": "X is a complete, numerically sound and decision-ready document: it avoids all the listed reasoning traps, addresses the three key trade-offs, and gives gates, a fallback and owned next steps. Y produced no readable deliverable and gives the decision maker nothing to act on.",
+   "winner": "X",
+   "strength": "strong"
+  }
+ },
+ "cost_usd": 0.3872442,
+ "wall_s": 15.556817054748535
+}

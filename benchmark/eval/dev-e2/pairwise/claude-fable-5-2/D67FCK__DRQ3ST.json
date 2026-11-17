@@ -1,0 +1,38 @@
+{
+ "x": "D67FCK",
+ "y": "DRQ3ST",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X's governing thought (raise mid-market/enterprise, hold SMB pending a test, treat churn as a cohort problem) maps onto three numbered pillars: churn diagnosis, where pricing power sits, and sizing the options. Each slide title carries a claim that the evidence below supports, and the option table, bridge, moves and decisions all restate the same numbers ($3.5M / $2.4M, $1.5M / $2.6M). One small tension: it says the core base is 'not more price-sensitive' yet holds SMB, but it resolves this explicitly ('not shown', so test). Y's four sections also mirror its executive summary and the chain is easy to follow. But Y has an internal contradiction: section 2 argues that an SMB rise 'would widen a price gap that is already costing us deals against Inkwell', and section 3 then recommends an 8% SMB rise for the 3,800 non-promotion customers, called 'customers whose reaction we know', without reconciling that with the Inkwell evidence. Y's governing thought also ends in a dangling 'instead', and its claim that existing customers 'just clear' the target depends on a base case with no mid-market churn response.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "judgment": {
+   "reasons": "Both reject the uniform 12% and differentiate by segment, so both meet the key's defensibility criteria. X's recommendation (+10% mid-market/enterprise, 7% where capped, hold SMB and run a test with a breakeven go/no-go rule) sits squarely in the key's R1/R2. It compares four options (none, CFO, segmented at 10%, segmented at 12%) on base and stress ARR, NRR and new-customer need, and states the trade-off openly: it gives up about $1.8M of base-case ARR to avoid the SMB downside and stay at the tested price. It also offers the 12% variant for accounts above 200 seats. Y's plan (mid-market 12%, SMB +8% outside the promotion) is more aggressive on both counts: 12% is above the tested 10%, and the SMB rise relies on the 2023 precedent from before Inkwell. Y's five quantified gates and its stress case are real strengths, and its 'mid-market and enterprise only' alternative is considered. But that alternative is dismissed mainly because it 'clears 15% by only $0.1M', which lets the target drive the risk taken rather than the evidence. The gates are also after-the-fact, once SMB customers have already been repriced into a market where the win rate has fallen from 51% to 38%. X weighs ARR against churn risk by segment and Inkwell exposure more carefully.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core calculations right: cohort churn of about 4.9%, the 1.0pp / 0.1pp mix split, $7.57M repriceable, and the dashboard reconciliation (1.7% → 2.6% logo, 0.8% → 1.2% ARR-weighted). X goes further. It carries the $7.57M through a churn response to $5.3M base and $2.7M stress, computes the 10.7% breakeven and the 2023 response (3.6%, 0.45pp per 1% of price), cross-checks the cohort share against the exit survey, and builds an activation model showing activation explains only about 0.8pp of the cohort's 2.8pp excess churn. It applies a churn response in mid-market even in the base case and stays at the tested 10%. Its weakest inference is using the 2024 conversion drop as a proxy for renewal loss, but it flags this and stress-tests it. Y's arithmetic is also sound (1.7% mid-market breakeven, $0.7M SMB net, gate thresholds), and its point that the 94% SMB NRR may include the promotion step-up is a sharp observation X lacks. But Y's base case assumes zero mid-market churn response at an untested 12%, so its $99.7M is optimistic. It calls non-promotion SMB 'customers whose reaction we know' on a pre-Inkwell precedent. And its 'up to $1.0M' onboarding figure assumes the cohort fully normalises, with less analysis of whether activation can deliver that. X uses the Inkwell and test evidence more faithfully.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "The key expects the CFO's hypothesis to be revised, with both the CFO's and the CEO's views recognised as partly right. X does this explicitly: 'the CFO and CEO are each half right'. The core base is not churning on price, but the cohort shows a sharp price step drives churn, and Inkwell makes SMB unproven. It cuts the $10.3M to $7.6M and then to $5.3M / $2.7M, rejects the uniform 12%, and rejects the 'halve churn' claim with numbers. It also shows a hypothesis table with verdicts (holds, holds at 10%, not shown, fails) that lowers its own starting position from 12% to 10% and from an SMB rise to hold-and-test. Y also revises the CFO's number, exempts the promotion cohort and downgrades the onboarding claim. But it largely adopts the CFO's framing ('not because SMB customers have turned against our price'), keeps 12% in mid-market despite noting it is untested, and keeps an SMB rise. The CEO's concern is addressed only through gates, not reconciled in the diagnosis. X's updating is more proportionate to the evidence.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both documents diagnose the mix effect correctly, correct the $10.3M and recommend a segment-differentiated plan. X serves the CEO better. It answers the CEO's stated worry directly by showing where the churn is and is not, and it sizes every option after a churn response in base and stress cases. It recommends the price level actually tested, keeps SMB out of harm's way until a test with explicit breakeven rules reports, and lists pre-meeting data checks (cohort churn since July, mid-market churn drivers, new-business plan) and specific decisions. Y is tighter, and its gates and NRR-definition caveat are valuable. But its base case is optimistic (no mid-market response at an untested 12%), and its SMB rise sits uneasily with its own Inkwell evidence. Its conclusion that existing customers alone clear the target could give the leadership team false comfort.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9125162,
+ "wall_s": 48.21376991271973
+}

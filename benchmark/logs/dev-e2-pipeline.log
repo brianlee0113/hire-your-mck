@@ -1,0 +1,223 @@
+
+=== guard-before-generation  09:22:45
+seven_day utilization: 0.71
+
+=== generation  09:22:46
+[09:22:47] dev-e2: 5 jobs, parallel 3, work root /Users/brianlee0113/hym-bench-work
+[09:22:47] dev-e2-c5-E2-r1: attempt 1 start (order 0)
+[09:22:49] dev-e2-c1-E2-r1: attempt 1 start (order 1)
+[09:22:51] dev-e2-c2-E2-r1: attempt 1 start (order 2)
+[09:42:11] dev-e2-c5-E2-r1: complete · $4.36 · 19.4 min · 5 files
+[09:42:11] dev-e2-c4-E2-r1: attempt 1 start (order 3)
+[09:49:26] dev-e2-c1-E2-r1: complete · $6.42 · 26.6 min · 6 files
+[09:49:26] dev-e2-c3-E2-r1: attempt 1 start (order 4)
+[09:57:18] dev-e2-c2-E2-r1: complete · $8.00 · 34.5 min · 4 files
+[09:59:46] dev-e2-c4-E2-r1: complete · $4.84 · 17.6 min · 5 files
+[10:43:33] dev-e2-c3-E2-r1: infrastructure failure, waiting 600s before retry
+[10:53:34] dev-e2-c3-E2-r1: attempt 2 start (order 4)
+[11:01:48] dev-e2-c3-E2-r1: infrastructure failure, waiting 600s before retry
+[11:11:48] dev-e2-c3-E2-r1: attempt 3 start (order 4)
+[11:11:48] dev-e2-c3-E2-r1: infrastructure failure, waiting 600s before retry
+[11:21:48] dev-e2-c3-E2-r1: attempt 4 start (order 4)
+[11:21:50] dev-e2-c3-E2-r1: infra_failure · $0.00 · 0.0 min · 0 files
+
+=== audit_runs  11:21:50
+dev-e2-c1-E2-r1: complete         clean=True skill=True/True subagents=1 net=0 repo=0 sandbox=0 models=['claude-opus-5-5']
+dev-e2-c2-E2-r1: complete         clean=True skill=True/True subagents=1 net=0 repo=0 sandbox=0 models=['claude-opus-5-5']
+dev-e2-c3-E2-r1: infra_failure    clean=True skill=True/True subagents=1 net=0 repo=0 sandbox=0 models=[]
+dev-e2-c4-E2-r1: complete         clean=True skill=True/True subagents=1 net=0 repo=0 sandbox=1 models=['claude-opus-5-5']
+dev-e2-c5-E2-r1: complete         clean=True skill=True/True subagents=0 net=0 repo=0 sandbox=0 models=['claude-opus-5-5']
+
+=== extract_deck  11:21:50
+dev-e2-c1-E2-r1: pptx 24 slides · 3,933 words · 11 charts · 0 pictures · 
+dev-e2-c2-E2-r1: pptx 22 slides · 3,435 words · 7 charts · 0 pictures · 
+dev-e2-c3-E2-r1: None 0 slides · 0 words · 0 charts · 0 pictures · no deliverable
+dev-e2-c4-E2-r1: pptx 21 slides · 2,949 words · 8 charts · 0 pictures · 
+dev-e2-c5-E2-r1: pptx 21 slides · 2,954 words · 4 charts · 0 pictures · 
+
+=== e2e_metrics  11:21:51
+dev-e2-c1-E2-r1 {'slides': 24, 'native_charts': 11, 'pictures': 0, 'source_workbook': True, 'share_numbers_in_pack': 0.6589147286821705, 'check_py': {'exit': 0, 'summary': '14 content slides (0 ghost) · 350 data points · 8 sources · 0 fail · 2 warn', 'fail': 0, 'warn': 2}}
+dev-e2-c2-E2-r1 {'slides': 22, 'native_charts': 7, 'pictures': 0, 'source_workbook': True, 'share_numbers_in_pack': 0.7055555555555556, 'check_py': {'exit': 0, 'summary': '15 content slides (0 ghost) · 165 data points · 2 sources · 0 fail · 0 warn', 'fail': 0, 'warn': 0}}
+dev-e2-c3-E2-r1 {'slides': 0, 'native_charts': 0, 'pictures': 0, 'source_workbook': False, 'share_numbers_in_pack': None, 'check_py': None}
+dev-e2-c4-E2-r1 {'slides': 21, 'native_charts': 8, 'pictures': 0, 'source_workbook': True, 'share_numbers_in_pack': 0.6098360655737705, 'check_py': {'exit': 0, 'summary': '12 content slides (0 ghost) · 137 data points · 2 sources · 0 fail · 1 warn', 'fail': 0, 'warn': 1}}
+dev-e2-c5-E2-r1 {'slides': 21, 'native_charts': 4, 'pictures': 0, 'source_workbook': True, 'share_numbers_in_pack': 0.6868686868686869, 'check_py': {'exit': 0, 'summary': '12 content slides (0 ghost) · 139 data points · 2 sources · 0 fail · 0 warn', 'fail': 0, 'warn': 0}}
+
+=== guard-before-evaluation  11:21:51
+seven_day utilization: 0.73
+
+=== normalize  11:21:53
+== normalize
+dev-e2-c3-E2-r1: nothing to normalise (no deliverable)
+dev-e2-c5-E2-r1: normalised · fidelity {'n_strings': 188, 'mean_overlap': 0.9320782459941662, 'share_ge_0_8': 0.9095744680851063, 'share_lt_0_5': 0.0425531914893617}
+dev-e2-c4-E2-r1: normalised · fidelity {'n_strings': 157, 'mean_overlap': 0.9278336642032711, 'share_ge_0_8': 0.8853503184713376, 'share_lt_0_5': 0.03821656050955414}
+dev-e2-c1-E2-r1: normalised · fidelity {'n_strings': 198, 'mean_overlap': 0.9072363463034544, 'share_ge_0_8': 0.8484848484848485, 'share_lt_0_5': 0.07575757575757576}
+dev-e2-c2-E2-r1: normalised · fidelity {'n_strings': 187, 'mean_overlap': 0.8737106729817508, 'share_ge_0_8': 0.7379679144385026, 'share_lt_0_5': 0.08021390374331551}
+
+=== blind  11:23:01
+== blind
+blinded 5 E2 documents
+
+=== judge  11:23:01
+== judge
+judge claude-fable-5-2 DFRKEY: ok
+judge claude-fable-5-2 DL864K: ok
+judge claude-fable-5-2 DRQ3ST: ok
+judge claude-fable-5-2 DJVFPK: ok
+judge claude-fable-5-2 D3HWWX: ok
+judge claude-sonnet-5-5 DFRKEY: ok
+judge claude-sonnet-5-5 DJVFPK: ok
+judge claude-sonnet-5-5 DRQ3ST: ok
+judge claude-sonnet-5-5 DL864K: ok
+judge claude-sonnet-5-5 D3HWWX: ok
+
+=== guard-before-pairwise  11:42:18
+seven_day utilization: 0.73
+
+=== pairwise  11:42:20
+== pairwise
+pairwise DJVFPK vs DFAPTA: ok
+pairwise DFAPTA vs DJVFPK: ok
+pairwise D5QQY9 vs DJVFPK: ok
+pairwise DJVFPK vs D5QQY9: ok
+pairwise DP5YRL vs D3HWWX: ok
+pairwise D3HWWX vs DP5YRL: ok
+pairwise DVDM6F vs DFRKEY: ok
+pairwise DFRKEY vs DVDM6F: ok
+pairwise D8KGUX vs DFRKEY: ok
+pairwise DFRKEY vs D8KGUX: ok
+pairwise D52MWJ vs D3HWWX: ok
+pairwise D3HWWX vs D52MWJ: ok
+
+=== guard-before-generation  11:45:15
+seven_day utilization: 0.75
+
+=== generation  11:45:20
+[11:45:21] dev-e2: 5 jobs, parallel 3, work root /Users/brianlee0113/hym-bench-work
+[11:45:21] dev-e2-c5-E2-r1: already done, skipping
+[11:45:23] dev-e2-c1-E2-r1: already done, skipping
+[11:45:25] dev-e2-c2-E2-r1: already done, skipping
+[11:45:27] dev-e2-c4-E2-r1: already done, skipping
+[11:45:29] dev-e2-c3-E2-r1: attempt 1 start (order 4)
+[12:04:24] dev-e2-c3-E2-r1: complete · $5.05 · 18.9 min · 4 files
+
+=== audit_runs  12:04:24
+dev-e2-c1-E2-r1: complete         clean=True skill=True/True subagents=1 net=0 repo=0 sandbox=0 models=['claude-opus-5-5']
+dev-e2-c2-E2-r1: complete         clean=True skill=True/True subagents=1 net=0 repo=0 sandbox=0 models=['claude-opus-5-5']
+dev-e2-c3-E2-r1: complete         clean=True skill=True/True subagents=1 net=0 repo=0 sandbox=0 models=['claude-opus-5-5']
+dev-e2-c4-E2-r1: complete         clean=True skill=True/True subagents=1 net=0 repo=0 sandbox=1 models=['claude-opus-5-5']
+dev-e2-c5-E2-r1: complete         clean=True skill=True/True subagents=0 net=0 repo=0 sandbox=0 models=['claude-opus-5-5']
+
+=== extract_deck  12:04:24
+dev-e2-c1-E2-r1: pptx 24 slides · 3,933 words · 11 charts · 0 pictures · 
+dev-e2-c2-E2-r1: pptx 22 slides · 3,435 words · 7 charts · 0 pictures · 
+dev-e2-c3-E2-r1: pptx 19 slides · 2,919 words · 7 charts · 0 pictures · 
+dev-e2-c4-E2-r1: pptx 21 slides · 2,949 words · 8 charts · 0 pictures · 
+dev-e2-c5-E2-r1: pptx 21 slides · 2,954 words · 4 charts · 0 pictures · 
+
+=== e2e_metrics  12:04:24
+dev-e2-c1-E2-r1 {'slides': 24, 'native_charts': 11, 'pictures': 0, 'source_workbook': True, 'share_numbers_in_pack': 0.6589147286821705, 'check_py': {'exit': 0, 'summary': '14 content slides (0 ghost) · 350 data points · 8 sources · 0 fail · 2 warn', 'fail': 0, 'warn': 2}}
+dev-e2-c2-E2-r1 {'slides': 22, 'native_charts': 7, 'pictures': 0, 'source_workbook': True, 'share_numbers_in_pack': 0.7055555555555556, 'check_py': {'exit': 0, 'summary': '15 content slides (0 ghost) · 165 data points · 2 sources · 0 fail · 0 warn', 'fail': 0, 'warn': 0}}
+dev-e2-c3-E2-r1 {'slides': 19, 'native_charts': 7, 'pictures': 0, 'source_workbook': True, 'share_numbers_in_pack': 0.5510204081632653, 'check_py': {'exit': 0, 'summary': '12 content slides (0 ghost) · 122 data points · 2 sources · 0 fail · 0 warn', 'fail': 0, 'warn': 0}}
+dev-e2-c4-E2-r1 {'slides': 21, 'native_charts': 8, 'pictures': 0, 'source_workbook': True, 'share_numbers_in_pack': 0.6098360655737705, 'check_py': {'exit': 0, 'summary': '12 content slides (0 ghost) · 137 data points · 2 sources · 0 fail · 1 warn', 'fail': 0, 'warn': 1}}
+dev-e2-c5-E2-r1 {'slides': 21, 'native_charts': 4, 'pictures': 0, 'source_workbook': True, 'share_numbers_in_pack': 0.6868686868686869, 'check_py': {'exit': 0, 'summary': '12 content slides (0 ghost) · 139 data points · 2 sources · 0 fail · 0 warn', 'fail': 0, 'warn': 0}}
+
+=== guard-before-evaluation  12:04:25
+seven_day utilization: 0.75
+
+=== normalize  12:04:27
+== normalize
+dev-e2-c3-E2-r1: normalised · fidelity {'n_strings': 169, 'mean_overlap': 0.8814634042133906, 'share_ge_0_8': 0.7751479289940828, 'share_lt_0_5': 0.08284023668639054}
+
+=== blind  12:05:30
+== blind
+blinded 5 E2 documents
+
+=== judge  12:05:30
+== judge
+judge claude-fable-5-2 DFRKEY: ok
+judge claude-sonnet-5-5 DFRKEY: ok
+
+=== guard-before-pairwise  12:08:05
+seven_day utilization: 0.75
+
+=== pairwise  12:08:08
+== pairwise
+pairwise DFRKEY vs DVDM6F: ok
+pairwise DFRKEY vs D8KGUX: ok
+pairwise DVDM6F vs DFRKEY: ok
+pairwise D8KGUX vs DFRKEY: ok
+pairwise D67FCK vs DRQ3ST: ok
+pairwise DRQ3ST vs D67FCK: ok
+pairwise DRQ3ST vs DEBKPK: ok
+pairwise DL864K vs DE2HMT: ok
+pairwise DEBKPK vs DRQ3ST: ok
+pairwise DE2HMT vs DL864K: ok
+pairwise DU33NB vs DL864K: ok
+pairwise DL864K vs DU33NB: ok
+
+=== decision  12:11:44
+== decision
+decision DRQ3ST: ok
+decision DJVFPK: ok
+decision DFRKEY: ok
+decision D3HWWX: ok
+decision DL864K: ok
+
+=== analyse  12:13:13
+== analyse
+# Development arm E2 (dev-e2)
+
+Exploratory, on the development cases, replicates [1]. Documents of B (main), E1 (dev-e1) and their judgments are reused; E2 documents are judged later by the same models and prompts.
+
+## Pairwise (Fable 5.2, both orders, replicate-matched)
+
+| Comparison | Overall | 95% CI | Wins–losses (ties, splits) | Coherence | Judgment | Evidence | Revision |
+|---|---:|---|---|---:|---:|---:|---:|
+| E2-B | 0.00 | bootstrap degenerate; exact ref. pairs 0.00–0.52, cases 0.00–0.52 | 0–5 (0, 0) | 0.25 | 0.00 | 0.00 | 0.00 |
+| E2-E1 | 0.50 | [0.10, 0.90] | 2–2 (0, 1) | 0.45 | 0.45 | 0.60 | 0.35 |
+
+Position bias (first-shown wins, non-tied): 0.55
+
+## Absolute (weighted 1–5)
+
+| Judge | B | E1 | E2 | E2 − B | E2 − E1 |
+|---|---:|---:|---:|---:|---:|
+| claude-fable-5-2 | 4.50 | 4.30 | 4.22 | -0.28 [-0.34, -0.25], 0/5 cases | -0.08 [-0.18, +0.00], 0/5 cases |
+| claude-sonnet-5-5 | 4.18 | 3.96 | 4.22 | +0.04 [-0.13, +0.21], 2/5 cases | +0.26 [+0.01, +0.53], 3/5 cases |
+
+Dimensions (claude-fable-5-2):
+
+| Dimension | B | E1 | E2 |
+|---|---:|---:|---:|
+| problem_framing | 5.00 | 5.00 | 4.80 |
+| storyline_coherence | 4.20 | 4.20 | 4.00 |
+| evidence_and_reasoning | 4.20 | 4.00 | 4.20 |
+| strategic_judgment | 5.00 | 4.40 | 4.20 |
+| clarity_and_concision | 4.00 | 4.00 | 4.00 |
+
+## Decision completeness (claude-sonnet-5-5, against a checklist written from the pack alone)
+
+| | B | E1 | E2 |
+|---|---:|---:|---:|
+| n | 5 | 5 | 5 |
+| constraints_reflected | 0.98 | 0.96 | 0.94 |
+| alternatives_tested | 0.80 | 0.70 | 0.70 |
+| sensitivities_quantified | 0.93 | 0.87 | 0.87 |
+| overclaim_share | 1.00 | 0.80 | 1.00 |
+| omissions_per_doc | 4.20 | 4.80 | 4.60 |
+| unsupported_assumptions_per_doc | 5.60 | 5.40 | 5.40 |
+
+## End-to-end (mean per run)
+
+| | B | E1 | E2 |
+|---|---:|---:|---:|
+| slides | 19.0 | 21.4 | 21.4 |
+| words | 4561.6 | 3025.0 | 3238.0 |
+| cost_usd | 3.1 | 5.7 | 5.7 |
+| duration_min | 13.2 | 40.4 | 23.4 |
+| native_charts | 1.2 | 10.0 | 7.4 |
+
+=== guard-after  12:13:14
+seven_day utilization: 0.76
+
+=== done  12:13:16

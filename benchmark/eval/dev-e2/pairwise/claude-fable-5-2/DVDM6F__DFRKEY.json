@@ -1,0 +1,38 @@
+{
+ "x": "DVDM6F",
+ "y": "DFRKEY",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both build a clean pyramid to the same answer. X groups its summary into why launch, packaging and trade-offs, and each slide title carries a claim that the slide then supports. Its hypothesis-test slide (conditions A to E) links evidence to the revised answer well. But X's governing thought says Pro is the 'only option' meeting both the NRR and margin objectives, while its own slide 9 shows the add-on at 2.1-4.3 NRR points and 76.2-76.6% margin, and its Pro low case (3.0 points) also misses the target. Y's four-part storyline (demand, packaging, margin, timing) carries its conditions consistently from summary to slides to gates: Pro wins 'if it wins twice the accounts', Copilot first wins 'while uptake stays above 25%'. Y's weak spot is the headline '$8M add-on case earns about $0.8M', which compares ARR with gross profit. Y's governing thought is also a bare recommendation with no reason attached. On balance Y is slightly more internally consistent.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred recommendation (R1): Pro tier with a usage allowance, sized from revealed demand, mobile delay accepted explicitly. X weighs a wider set of alternatives: don't launch, free in Core, add-on, Pro, and Pro without an allowance. That covers the monetise-versus-defend trade-off, which Y does not test because it never considers a free bundle. X plans on a 20-33% range rather than a single 33% base. It admits that on permanent ARR mobile first 'may lose slightly less' and that timing decides. It adds concrete mitigations for the mobile delay and notes the add-on's regressive price effect on small accounts. Y's strengths are sharp break-evens (2x accounts, 25% uptake, 5,300 requests) and four gates with pre-agreed actions, including the useful check of the Q4 win rate after Routewise's promotion ended. But Y's fallback to the uncapped $149 add-on ignores the heavy-user adverse selection it had itself identified. Its sequencing comparison also treats deferred Pro revenue as equal to permanently lost churn. X's weighing is somewhat more complete.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get every required calculation right: $8.06M vs $2.45M, inference of $32/$61/$130 per account, 109 deals and $0.64M, Pro at $2.89M, and correct company margins. Both discount the beta and the survey, and both refute the Sales memo. X goes further. It reconciles the pack's data and finds two inconsistencies: the top-decile share works out at 40%, not the stated 58%, and 1,190 churned accounts against an implied 1,372. It uses the 22% price-churn figure against the flat fee. It notes Brightwork was already losing 56% of Routewise deals before the AI launch. It separates permanent churn loss from deferred Pro revenue. X's weaknesses are the 10.7% seat-ratio scaling, which is arbitrary though flagged, the 'only option' overclaim, and an asserted date for when NRR reaches 105%. Y's numbers are accurate and its margin-threshold analysis is strong. But its sequencing inference equates deferred revenue with lost churn, its headline mixes ARR with gross profit, and its base case rests on a 33% uptake from a tier that had no AI, though it flags and stress-tests this.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both keep 'launch' and revise the packaging and sizing, as the key expects. X does it explicitly and rigorously. It states the CPO's hypothesis, breaks it into five conditions that would have to hold, and tests each against evidence. Demand and flat-fee economics fail, value and NRR need hold, and the mobile delay holds with conditions. It then states what was kept and what changed, and resets the plan from $8M to $1.7-2.9M. Y also rejects the $8M figure using the paywall test and moves to Pro, but the revision is implicit in its demand section rather than tested as a hypothesis. Y keeps the $149 add-on as the fallback without revisiting why its flat-fee economics failed.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The two documents reach the same defensible recommendation with accurate numbers, so the difference is in depth and reliability of reasoning. X gives the decision maker a fuller picture: an explicit test of the CPO's plan, a wider option set including the free bundle, conservative planning ranges, an honest account of the close call on mobile, mitigations, and data-quality flags. Y is tighter and offers very usable break-evens and decision gates, notably the two-offer test and the check of the Q4 win rate. But it has a few weaker inferences: deferred revenue treated as equal to churn, an uncapped add-on as fallback, and a 33% headline base. X's 'only option' overstatement is a blemish but does not change the decision. X serves the decision slightly better.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0511081999999998,
+ "wall_s": 70.02672719955444
+}

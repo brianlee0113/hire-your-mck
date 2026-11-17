@@ -1,0 +1,115 @@
+{
+ "blind_id": "DFRKEY",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 13 gives company margin by usage against the 75% floor, with the formula \"1 − (today's $12.67M cost + $0.6M platform + inference) ÷ ($57.6M + $2.89M Pro ARR)\". Slide 9 gives company margin of 76.2% for the add-on and 76.9% for Pro."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "The target is stated as 4 pp, or $2.3M. Add-on NRR added is 4.3 pp and Pro is 5 pp, with a 26% uptake threshold for Pro (slide 10). Mobile-delay churn is counted as NRR forgone on slide 16, but it is not netted against the 5 pp headline."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 12 shows inference cost per account of $17.1 / $32.4 / $61.2 / $130.5 at $0.009 per request, with the top 10% sending 58% of requests. Slide 6 states \"the add-on keeps only about 59 cents of each dollar after inference\"."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "The $0.6M platform cost is a step in the slide 6 waterfall: $2.45M ARR less $1.01M inference less $0.6M platform gives $0.845M gross profit. All Pro cases also include $0.6M."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "\"Payback of the $1.47M build, years: 1.7 vs 0.9\" (slide 9). Slide 6 notes the build cost is \"Not yet counted\" in gross profit, and slide 18 gives the sunk cost if the first gate fails (about $0.74M)."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slide 15 states 14 of 60 engineers, a two-quarter delay, and mobile reliability at 27% of churn against 6% for AI (4.5x). It also gives 38% against 19% first-rank demand and mobile churn of up to $2.2M ARR (3.8 pp of NRR). Slide 16 sets the NRR forgone by mobile waiting (1.89 pp) against Pro waiting (2.51 pp), with a 24.9% uptake flip."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slides 5 and 6 contrast 14% (17 of 120 bought) with 46% (survey). The 6% response rate and the 9.4 against 6.2 seats are stated. The paywall rate is called \"a ceiling\" because buyers were larger and more active volunteers. Add-on ARR is resized to $2.5M against $8M."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "All margin figures use $0.009 per request, with no price fall assumed. \"Contract: fixed through December 2027; list prices fell 35%, so revisit at renewal\"; the CTO and Finance next step is to open contract renewal."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 8: win rate fell from 44% to 37%, and \"1,560 Routewise deals × 7 pp × $5,878 per new account\" gives at most $0.6M a year. It notes the 20% first-year discount in the same quarter and rebuts the VP Sales claim ($1.93M, three times what the fall is worth)."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "This is the recommended option. Pro at +$12 per seat at 33% uptake gives $2.9M ARR and 5 pp of NRR (slide 10). Half the add-on's price per account is shown ($74.4 against $149). The margin break at about 5,300 requests per month is shown, and a 333-per-seat allowance with $0.036 top-ups is the cap (slide 13). It is compared against the add-on on slide 9 and stress-tested on slide 17."
+   },
+   {
+    "id": "A2",
+    "status": "tested",
+    "evidence": "The $149 add-on is sized on the paywall rate ($2.5M ARR, 59% margin on adopters, $0.8M gross profit, 1.7-year payback) and kept as the fallback if Pro wins fewer than twice the accounts. The repriced variant (lower entry price, usage charges above an included allowance) is not evaluated, and neither is how usage pricing would fix the top-decile problem for the add-on."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "\"Mobile first: Pro waits two quarters\" is evaluated on slide 16 (2.51 pp forgone at 33% uptake, 1.06 pp at 14%). It is rejected in the base case and flips below about 25% uptake. A randomized non-beta Core test (Q1 2027) reads demand on representative accounts. The document does not model keeping the beta running as an interim AI response."
+   },
+   {
+    "id": "A4",
+    "status": "absent",
+    "evidence": "No option of bundling capped Copilot into Core at no charge. The only no-allowance case considered is unlimited Copilot inside Pro."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Pro uptake runs from 14% (stress, $1.2M, 2.1 pp, misses target) to 33% (base, $2.9M, 5 pp). Thresholds: 26% for 4 pp of NRR, 24.9% where launch order flips, a 2.0x Pro-to-add-on conversion gate, and a 13% gate at six months. The 46% survey figure is replaced by the 14% test figure. Not shown: the add-on's own break-even adoption (about 13% for NRR, about 6% to cover run cost)."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 13 shows company margin at median (76.96%), mean (75.98%), paywall-buyer (74.13%) and top-decile (69.69%) usage. The break-even is about 5,300 requests per Pro account, and the allowance holds margin near 77% at full use. Slide 17 gives the loss of about $0.09M without the allowance. A post-December 2027 price change is only named, not varied; the figures hold at $0.009."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "The win-back is bounded at $0.6M a year, and the VP Sales figure is rebutted as three times too high. Gate 2 (Q4 win rate back to 44% or more) tests the discount explanation. Mobile cost is a stated ceiling (3.8 pp a year, 1.89 pp over the delay) that assumes the rewrite stops all mobile churn on day one. The break-even is expressed as Pro uptake (24.9%), not as a share of mobile churn the rewrite removes."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "At the 2023 tier's 33% uptake, Pro adds about $2.9M of ARR, above the $2.3M the target needs (slide 9: \"NRR added … Both clear the 4 needed at these rates\")"
+  },
+  "omissions": [
+   "The 5 pp (Pro) and 4.3 pp (add-on) NRR headlines are not netted against the up to 1.9 pp of NRR the document says the two-quarter mobile delay forgoes. Netted, the recommended path is about 3.1 pp at base against the 4 pp target, and it is lower still at the 14% stress case. The document never states whether the plan as a whole reaches 105% by 2028.",
+   "The Pro stress case has no payback figure. At $0.3M gross profit against a $1.47M build, payback is about 5 years, yet the slide 9 'pays back in under a year' headline rests only on the 33% case.",
+   "No risk that a $12 per seat uplift (about 15%) raises price-driven churn (22% of churn reasons) or lets accounts that would have bought the add-on take the cheaper route. Gate 1 does not capture this.",
+   "The two-quarter delay is only compared at the two uptake extremes. The share of mobile churn the rewrite removes, the lever that decides the order, is never varied.",
+   "Willingness to pay for top-ups at $0.036 per request (four times cost) is asserted, not evidenced. No top-up revenue is counted, but the margin case at full use depends on the allowance being accepted."
+  ],
+  "unsupported_assumptions": [
+   "\"33% of accounts move to Pro within a year, as they did to the 2023 higher tier, which had no AI\" carries $2.9M ARR, 5 pp of NRR, $1.6M gross profit and 0.9-year payback. It rests on one precedent for a non-AI tier, and the document's own paywall rate (14%) is far lower.",
+   "\"Accounts that move have the average 6.2 seats\" sizes Pro ARR at $893 per account. Selection toward larger accounts (beta 8.1 seats, survey 9.4) is acknowledged but not quantified.",
+   "\"Pro assumes every account uses its full allowance (worst case)\" and \"top-ups above it at $0.036 a request earn 75%\" underpin the 76.9% company margin, but the average usage of adopting Pro accounts is unknown. Willingness to pay the top-up rate has no evidence.",
+   "\"Mobile-driven churn estimate assumes churners carry average ARR\" ($2.2M), and the cost to NRR is a ceiling that assumes the rewrite eliminates all mobile churn. The size of the mobile-first alternative rests on this.",
+   "\"Confirm that allowance metering and top-up billing fit inside the 14-engineer build\" is an unverified assumption behind the $1.47M cost and the Q2 date."
+  ]
+ },
+ "cost_usd": 0.18076
+}

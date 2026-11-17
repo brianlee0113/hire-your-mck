@@ -1,0 +1,114 @@
+{
+ "blind_id": "DL864K",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 16 sets the $7.2M ceiling ($12.0M − 12 × $0.4M). Slide 13: the plan leaves 6.2 months against the 12-month floor. The document flags that the $9.5M may exclude core burn, which would add $7.2M. Slide 17: with the hires and no deals the floor is reached about month 15. Missing: no wind-down runway, and the hires' effect on the floor is not stated in dollars (about $5.6M)."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 13: 'No backstop: a new round is \"unlikely\"'. Every option is sized against the $12.0M and the $7.2M headroom. Next steps ask for 'a path to profitability within current cash'. The document never shows that the software path reaches that profitability, and never distinguishes contribution per order from company profitability."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slides 7, 8 and 20 build the full stack. Median −$6.17 (riders −7.40, store −3.50). Before store costs −$2.67. Best on every driver −$1.80. Plan +$2.02. Slide 7 gives the $63 break-even basket. Slide 9 resets drivers one at a time."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slides 8 and 20: pop-up −$12.6 per order (AOV $31, promotions 12%, 2.1 orders/hour, 280 orders a day, $0.65M fixed cost). Slide 11: 'Promotions ran at 12%, twice the median; Orders grew 18% a week on credits'. The final-week run-rate is not mentioned."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 11: $38 CAC ÷ (22% × 3.1 × $3.77) = 14.8 months to pay back even at plan margin. At the median margin a customer 'never pays back'. Survey intent (44%) is contrasted with behaviour. The payback uses the margin before store costs, which flatters it, and the CAC load on the $9.5M budget is not sized."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slide 14: 'rider minimum pay rules in two of the three cities would raise them'. Slide 18, gate 4: 'each $1 an hour adds $0.42 an order'. Re-run the break-even before reopening. Headroom against a pay rise is not shown for any positive case."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 5: Zipcart EBITDA −25.8% and −$1.90 per order. QuickBasket −45.7%, −$3.40 per order, and 4 of 11 cities closed. Slide 4: growth of 38–44% a year. Slide 2: 'growing fast, but no operator has yet made it profitable'."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 10: median site with the $3.99 fee, promotions cut to 1% and 14% volume loss gives −$1.05 per order. Break-even is about 1,042 orders a day, 3.7 times the pop-up. At 1,400 orders a day the result is +$0.41, close to Zipcart's $0.40. CAC is excluded."
+   },
+   {
+    "id": "C9",
+    "status": "mentioned",
+    "evidence": "Slide 17 gives the $0.8M hires, 9 late-stage deals, $96K ACV, 81% gross margin, gross profit covering 87% of the hires' cost, and a floor reached about month 15 if no deal closes. But the headline and slide 16 verdict say late-stage deals 'alone cover the hires' cost' by comparing ARR with cost. No break-even or profitability path is shown, and the floor rise to about $5.6M is not stated."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Adopted as the recommendation (slides 16–17). It is compared with the other options on cash ($0.8M, 11.1% of headroom), pipeline (9 late-stage, 37 total, $96K ACV) and the month-15 floor if no deals close. Its profitability within current cash is not demonstrated."
+   },
+   {
+    "id": "A2",
+    "status": "absent",
+    "evidence": "No capped, capital-light test from a grocer partner's existing store with a fee, low promotions and kill criteria. Slide 17 offers a store-based delivery feature for grocers, not an operated test. The only reopening test is the one-store own-store test under gate 1."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Slide 16: 'Run one Columbus dark store for a year'. It is sized at $2.6M ($0.6M capex + $2.03M losses), 36.5% of headroom, and rejected as a 'costly test of a known answer'. It is sized at median economics without a fee. Gate 1 then sets the 1,042 orders/day threshold for a later one-store test."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Slides 7–14 and 16: the plan needs every driver beyond the best site. Resetting basket size or rider speed to the median turns profit negative (slide 9). Spending $9.5M leaves 6.2 months of runway (slide 13). It needs 131.9% of headroom, and a new round is unlikely."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 8 and slide 20 give −$12.6, −$6.2, −$1.8 and +$2.02 per order. Slide 9 resets each plan driver to the median one at a time (basket −$0.73, rider speed −$0.31). Slide 7 gives a break-even basket of about $63 at the median. Slide 7 shows −$2.67 before store costs. Rider pay is $0.42 per $1/hour. The break-even AOV at best density (about $50) and the pay effect at other density levels are not shown."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 10: the fee and promotion cut give −$1.05 at the median after a 14% volume loss. Break-even is 1,042 orders a day, and +$0.41 at 1,400. Gate 1 uses 1,042. There is no Parcelbird evidence on demand at that price, and how much volume loss a best-density site can absorb is not shown."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 16: $7.2M above the floor, with each option as a share (131.9%, 36.5%, 11.1%). Slide 13: 6.2 months left under the plan, and the $7.2M extra if the $9.5M excludes core burn. Slide 17: floor at month 18 at today's burn, about month 15 with the hires and no deals. Gate 2 sets $4.8M. No wind-down runway if a venture fails."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Nine late-stage deals would add about $0.9M of ARR, above the $0.8M hires' cost (also slide 16: \"Late-stage deals alone cover the hires' cost\")"
+  },
+  "omissions": [
+   "The software path is never shown to reach break-even or profitability within current cash, which is the investors' stated test. Compare this with slide 17's own figure that the 9 late-stage deals' gross profit covers only 87% of the hires' cost, and with the 'about month 15' floor if no deal closes.",
+   "No capped, capital-light test run from a grocer partner's store. The document offers only the full launch, a one-store own-site test, or software only.",
+   "No wind-down or downside cash case. There is no view of runway left if a test fails and has to be closed.",
+   "The recommended path rests on all 9 late-stage deals closing, with no closure rate, sales cycle or timing. Gate 3 tests ARR rather than gross profit."
+  ],
+  "unsupported_assumptions": [
+   "\"Late-stage deals alone cover the hires' cost\": this treats ARR as covering cost and assumes all nine deals close in 2027. Gross profit is 87% of cost by the document's own figure.",
+   "\"Several of these grocers want fast delivery from their own stores; that is a software feature Parcelbird can sell\": no evidence of willingness to pay or of a built feature.",
+   "\"Competes with the grocers Parcelbird sells to\" / \"no customer conflict\": asserted as a reason to reject the launch, with no pack evidence on customer reaction.",
+   "\"Generous reading: the founders' $9.5M ... is taken to cover all of Parcelbird's spending to month 18\": the pack does not say this. The document flags the opposite case but keeps the generous reading for its headline.",
+   "\"Nine stores would lose about $18M a year\": assumes every store reaches the median 900 orders a day, which is more than the pop-up's 280. It is labelled conservative, but the basis for 900 is the benchmark median."
+  ]
+ },
+ "cost_usd": 0.1509831
+}

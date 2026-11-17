@@ -1,0 +1,195 @@
+{
+ "blind_id": "DFRKEY",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Answers the question exactly as posed (launch or not, package, price, timing) and turns each stated objective and constraint into a criterion. The NRR target becomes $2.3M of expansion, or 26% Pro uptake. The 75% margin floor becomes a break-even of about 5,300 requests per Pro account. The engineering constraint becomes an explicit Copilot-first versus mobile-first comparison. The issues the answer turns on (paying demand, heavy-user cost, Pro uptake, mobile delay) are identified in the executive summary.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the four summary points are the four sections, and almost every title is a quantified claim its slide supports. Two gaps keep it from a 5. First, the section claim 'AI must sit inside a plan' rests on a slide showing the win-back is small and the cause uncertain, so the 'must' is a jump. Second, the timing section says the order flips to mobile first below 25% Pro uptake and that the Q1 test protects against this, but no gate switches the order; Gate 1 only switches the package to the add-on, and the engineers are committed before the test reads out. The summary line comparing the $8M ARR case with $0.8M gross profit also mixes two measures.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-did every figure and found no numerical errors: $2.45M add-on ARR, $1.01M inference, $0.845M gross profit, 59% add-on margin, $0.64M win-back, $2.89M Pro ARR, company margins under each usage level, the 5,300-request break-even, $2.2M mobile churn and the 24.9% flip point all check. All four critical evidence items are used, including evidence against the recommendation (mobile 27% vs AI 6%, the Routewise discount, volunteer bias, survey non-response). Claims are mostly calibrated ('at most', 'ceiling', 'coincided'). The material flaw is the sequencing model. It treats two quarters of deferred Pro uptake as NRR lost on the same footing as permanently churned accounts, against a target dated 2028, so the 'Copilot first wins narrowly' result is fragile. The 33% base uptake comes from a non-AI tier (flagged and stress-tested). A few small facts are asserted without basis (promotion 'ended', 2023 tier 'had no AI', 'closes a price gap').",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Clear, defensible recommendation matching R1: Pro tier with a metered allowance, sized on revealed demand, with the mobile delay weighed and accepted explicitly. Alternatives (add-on, unlimited Pro, mobile first) are compared on NRR, margin and payback. A base and stress case, a flip point, four gates and owned next steps are given, and none of the six traps is fallen into. Three material weaknesses remain. The gates do not implement the document's own finding that mobile first wins below 25% uptake. The test reads out after a quarter of engineers has already been diverted. It does not discuss whether an allowance set just above the beta median (below mean usage) weakens parity with Routewise's included AI or suppresses uptake. It also does not explore staffing options that avoid the mobile delay.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the first line of the executive summary and the reasons follow in four short groups; the language is plain and quantified. Length is roughly proportionate, but four section dividers repeat the summary, and the same figures recur across slides 9, 10 and 17. The 14-line summary is dense, and a few phrases are awkward ('Most the fall is worth').",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Win rate against Routewise in Q4 2026, after its promotion ended",
+    "why": "The pack says Routewise offered 20% off in Q3 2026; it does not say the promotion ended or that Q4 is promotion-free."
+   },
+   {
+    "quote": "as they did to the 2023 higher tier, which had no AI",
+    "why": "The pack gives only the 33% migration figure for the 2023 tier; it says nothing about what the tier contained."
+   },
+   {
+    "quote": "AI is now expected in the plan",
+    "why": "Generalised from one competitor bundling AI and a 31% loss-note mention; the same slide concedes the notes show interest, not cause. The section claim 'AI must sit inside a plan' overstates this."
+   },
+   {
+    "quote": "Closes a price gap in new deals",
+    "why": "The pack gives no Routewise Pro price, so a price gap and its closure cannot be derived."
+   },
+   {
+    "quote": "The only outcome measured in the product",
+    "why": "The pack does not say how each beta measure was collected; renewal rate is also a system-recorded outcome."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [
+   {
+    "quote_a": "Mobile first at 14% uptake: cheaper than Copilot first, which is why the Q1 offer test comes before the launch commitment",
+    "quote_b": "Pro conversion compared with add-on conversion in a randomized two-offer test | Pro wins fewer than twice as many accounts | End of March 2027, after one build quarter | Launch the $149 add-on in Q2 instead of Pro",
+    "why": "The document says low Pro uptake flips the better order to mobile first and that the test guards against this. But the test reads out after 14 engineers are already committed for a quarter, and a failed gate switches only the package, not the order. No gate ever moves to mobile first, although the gates slide promises a switch of 'package or order'."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch Dispatch Copilot in Q2 2027 inside a Pro plan at $12 more per seat, with an allowance of 333 requests per seat a month and paid top-ups. Restart the mobile rewrite in Q3. Four gates apply, starting with a Q1 randomised two-offer test in which Pro must win twice the add-on's accounts; the $149 add-on is the fallback.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "Meets all three defensibility criteria. Demand is sized on the 14% paywall test and the survey gap is explained. Variable inference cost drives the allowance and top-up design and is tested against the 75% floor. The mobile delay is quantified (up to 3.8 pp of NRR a year) and weighed against Pro's NRR contribution and the Routewise threat, with the delay accepted explicitly and a flip point stated."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "Keeps 'launch' but replaces the CPO's $149 add-on and $8M forecast. It shows the 46% survey figure against the 14% paywall rate ($2.5M ARR, about $0.8M gross profit after inference and platform cost) and notes the survey's 6% response rate and size skew. It moves the packaging to a metered Pro tier and keeps the add-on as a fallback. It also rejects the VP Sales 'a third of lost deals' claim and flags the Routewise discount as a confound. This is the revision the evidence supports, not contrarianism. The one causal overreach is the slide 4 title stating that Copilot 'made' dispatchers more productive from a volunteer beta, although it is hedged in the same sentence."
+  },
+  "overall_comment": "Strong, quantitatively clean document. Every calculation I re-did matches the pack and the key, all critical evidence is used including the evidence against launching, and no trap is fallen into. The recommendation (metered Pro tier, sized on revealed demand, mobile delay accepted explicitly, with gates) is defensible and actionable. The main weaknesses are in the timing logic. The Copilot-first versus mobile-first comparison treats deferred Pro expansion as equivalent to permanent churn. The gates also do not implement the document's own finding that the order flips below 25% uptake: the test reads out after engineers are committed, and a failed gate only swaps the package. Smaller issues: 'AI must sit inside a plan' is asserted more strongly than the evidence allows, a few minor facts are not in the pack, and the effect of a near-median allowance on uptake and parity with Routewise is not discussed.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.8506076,
+ "wall_s": 113.60116791725159,
+ "is_error": false,
+ "error_text": null
+}

@@ -1,0 +1,38 @@
+{
+ "x": "DU33NB",
+ "y": "DL864K",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both use the same four-part structure (market, unit economics, cash, software) and both governing thoughts follow from their sections. Y's hierarchy is tighter: its claim that every order loses money and pricing does not close the gap is backed by fully loaded figures (median -$6.17, best-on-every-driver -$1.80, Zipcart fix -$1.05), and the gates on slide 18 flow from the same break-even (1,042 orders a day). X's unit-economics section is less consistent. Its headline is 'would lose money per order', but its comparison table uses contribution before store costs, which shows the best-observed case at +$0.5 and the pop-up at -$6.2. The executive summary also says the plan beats the best site on density, yet density never enters X's contribution metric or its gap decomposition. X's software section is internally coherent and well tied to its fourth summary claim.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred recommendation (do not launch; fund the software), both reject the nine-store plan on runway, both weigh a one-store pilot and reject it, both note the channel conflict with grocer customers, and both set a reopen condition tied to customer-site economics under higher fees. Y is stronger on the delivery side: it rejects the pilot as a 'costly test of a known answer' because even best-on-every-driver loses money, and it gives four explicit gates with thresholds and actions, including a hold on the second pair of hires if the pipeline underdelivers. X is stronger on the software side: it tests the investors' actual objective (profitability within current cash) with a break-even of $11.0M ARR in 2029 using about $6.6M, a 40% growth sensitivity, and the admission that this needs about 72 contracts, twice today's pipeline. Y only flags that the software business itself reaches the runway floor by month 18 (month 15 with hires) and defers to a 'burn plan'. These strengths roughly offset.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Y reproduces the critical calculations: median -$6.17, best observed (best AOV plus best density) -$1.76, pop-up -$12.6, founders' plan +$2.02, and the Zipcart fix at a median site -$1.05 with the 14% volume loss, which matches the key exactly. It adds break-even at 1,042 orders a day and +$0.41 at best density, and its one-driver-reset sensitivity is correct on all four bars. X's arithmetic is also right, but it frames the key comparisons before store costs. As a result it never shows that the best observed case still loses money (its table shows +$0.5) and never computes the pop-up's true -$12.57 (it shows -$6.2). It gives -$6.17 only as a sub-bullet. X's Zipcart analysis ($3.02 per order, 1,043 a day to cover fixed cost) is valid but less complete. X adds sound extras: $173 per retained customer, $27.5M of acquisition to fill nine stores, and the software break-even model, though that model assumes flat costs under 60% growth. Y's payback of 14.8 months is reasonable; its 'demand still accelerating' is a mild overreach. Both handle runway correctly ($2.5M, 6.2 months) and neither states the CAGR explicitly. Y uses the critical evidence more fully and more accurately.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both reject the founders' hypothesis while conceding the part the evidence supports (market growth of 38–44% a year), and both engage with the Zipcart evidence instead of ignoring it. Y tests the 'density will fix it' claim directly. It shows that best-on-every-driver still loses about $1.80, that resetting basket size or rider speed alone to the median turns the plan's profit into a loss, and that the pop-up ran at -$12.6, so its 18% weekly growth was bought with credits. It also shows Zipcart's fix works only at top-of-range density, and flags 'nobody owns the Midwest' as untested. X shows the plan's inputs exceed the best site and decomposes the gap, and correctly reads Zipcart as pricing, not operations. But its before-store-cost framing leaves the best-observed case looking marginally positive, which weakens the refutation of the density argument, and it understates how badly the pop-up contradicts the hypothesis.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both give the board a defensible 'do not launch, fund software' answer with correct runway arithmetic and a considered pilot alternative. Y serves the decision better on the central question because it proves the unit economics are negative in every observed case after store costs, including best-on-every-driver and the company's own pop-up. It also quantifies exactly how far the Zipcart fix goes (-$1.05 at median, break-even at 1,042 orders a day) and turns that into concrete reopen gates. That is the argument needed to move the founders off their hypothesis. X's distinct contribution is a quantified software path to break-even within current cash, which answers the investors' objective better than Y's deferred 'burn plan'. But X's reliance on before-store-cost contribution leaves its core case weaker and at one point shows the best site as positive.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.7726042,
+ "wall_s": 58.750202894210815
+}

@@ -1,0 +1,136 @@
+{
+ "blind_id": "DJVFPK",
+ "case": "c1-market-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 13/8: A peak -$2.4M (stress $3.9M, 22% of cap) vs $18M cap; B reaches -$20.8M, 115.5% of cap. B at the 2.6 median ($25.5M) is not computed, but the cap test is built into the headline."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 17: A cumulative cash end-2030 is +$2.40M at 25%, +$0.38M at 28%, -$2.32M at 32%. Break-even ad cost 28.6%. B never pays back; J +$1.8M."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slides 13/22/23: A lowest group margin 9.3% (9.1% at 32%), B 4.5% in 2027, J 10.1%. Checked year by year; 2027 identified as the lowest year."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slides 13, 14, 20: Option J is costed and compared (1.8x operating profit by 2030). Document states 'management can run one major launch at a time' and uses Japan as the fallback slot."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 15: A reaches $26.4M, not $40M. Even B's $37.6M misses. The ambition is read as a path, with 2031-32 projected at $34.2M and $44.2M as an upper bound. Both the dating and the 1,667k-unit gap are given."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slide 9: 4.0 removal line against a 2.6 median at 4% awareness. Slide 19 gate 5: raises the CEO's 15% trigger to 20% because the 10-20% band median is 3.5, below 4.0; 20% is 'needed, not sufficient'."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 12: $24 price, 3.6 referral, 5.1 FBA, 3.5 product, 1.075 freight and duty, 6.72 ads, $4.005 contribution; $10.73 before ads. Retail at $7.55 a unit on slide 8. Payback built on contribution, not revenue."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 17/22: $9.2M fixed and setup cost over 2027-30 against $11.3M contribution. B fixed cost $9.6M a year plus $1.3M setup and launch fee and $1,100 per door fixtures (slide 23)."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 17/18: $1.68M year-end inventory is deducted. Slide 22 shows the inventory build by year; four months of landed cost is a stated team-model assumption."
+   },
+   {
+    "id": "C10",
+    "status": "reflected",
+    "evidence": "Slides 13/17/18: 28% pilot as base, 32% benchmark median (range 26-38%) shown as a separate case (-$2.3M), break-even 28.6%. The 25% plan figure is shown only as a reference case. The headline still treats 28% as the recommended case."
+   },
+   {
+    "id": "C11",
+    "status": "reflected",
+    "evidence": "Slide 17: 25% duty alone gives -$0.74M at 28%; stress case -$3.4M. Slide 19 gate 2: on a mid-2027 rise, tighten the ad ceiling to 26.9% and re-run the plan."
+   },
+   {
+    "id": "C12",
+    "status": "reflected",
+    "evidence": "Slide 6: Korean-only label complaint (6%) is 'fixed by the US labels in setup'. Slides 20 and 24: MoCRA registration, entity and English labels in Q1-Q2 2027. Setup $0.8M and $0.5M a year are in the fixed costs."
+   },
+   {
+    "id": "C13",
+    "status": "mentioned",
+    "evidence": "Slide 6 gives 29% vs 31% vs 48%. Gate 4 sets a repeat trigger at 31%. But the headline volumes remain the planning team's 300k to 1,100k ramp, and the document does not show how the ramp depends on repeat or the added SKUs."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Slides 8, 9, 10, 23: Option B is run on the board's tests, fails the cap, payback and margin floor on its own 4.5 units/door. Its 4.5 is shown to match survivors, the 1.3x halo is rejected because the 0.71 correlation cannot show causation, and Mooncrest is cited."
+   },
+   {
+    "id": "A2",
+    "status": "mentioned",
+    "evidence": "Slide 20 has 'Specialty retail: Test doors only if gate 5 is met' (retail no earlier than 2029). No limited-door pilot in 2027 is costed, no scaled marketing or field cost is stated, and no comparison is made against Option A's thin payback."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Slides 13 and 14: Option J is costed (peak -$1.1M, +$1.8M by 2030, margin 10.1%) and compared year by year with A. The document says why A is preferred (1.8x by 2030, bigger prize) and keeps J as the fallback slot. No explicit trigger for a deferred US launch."
+   },
+   {
+    "id": "A4",
+    "status": "absent",
+    "evidence": "No variant with a smaller US team or lower off-Amazon brand spend. Fixed cost of $2.1M a year is taken as given, and no fixed-cost cut is tied to the break-even ad cost."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 17-19: cumulative cash at 25% +2.40, 28% +0.38, 28% with 25% duty -0.74, 32% -2.32, 32% with duty -3.43. Break-even ad cost 28.6%, falling to 26.9% on a duty rise. Stress peak $3.9M. Gate 1 states the response."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 9: 2.6 / 3.5 / 4.6 medians by awareness band against the 4.0 line, and a 20% awareness requirement. Slide 8: B needs about 32 units/door/week to cover fixed cost. The B peak at 2.6 units/door ($25.5M) and the effect of removing the 1.3x halo are not computed."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 18: 4% fewer units miss payback at 28%. Gate 3 triggers below 96% of plan (288k units in 2027). Slides 10 and 19 name Saebom against Gaon Lab and Yeoreum and set a repeat gate. Not shown: the 20% cushion at 25% ACoS, or the 1.8x step up from the pilot run-rate."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Passes all three tests if ad cost is held near the pilot's rate (slide 13) / Enter the US in 2027 through Amazon … and cap ad cost below about 29% of sales, the line for payback by 2030"
+  },
+  "omissions": [
+   "The 28.6% ad-cost ceiling is treated as controllable ('cap bids'), but the document does not show what capping bids does to volume. Gates 1 and 3 can pull against each other, and the plan's volumes already have only a 4% cushion at 28%. The agency benchmark says click costs rise with scale.",
+   "The slide 18 caveat that a 4% Amazon returns allowance cuts the break-even line to 24.6%, below the pilot's 28%, is not carried into the headline numbers or the 'passes all three tests' claim. If any return cost applies, the recommended base case misses payback.",
+   "The 2027 volume of 300k units is about 1.8x the pilot's June run-rate (168k a year on three SKUs). The document does not say how much of the step depends on the four added SKUs or on repeat.",
+   "No leaner fixed-cost variant of Option A, and no costed limited-door retail pilot, is offered as a cheaper way to protect the thin payback margin or to test the 4.0 units/door line before 2029.",
+   "The document does not recommend a response if the tariff rises beyond 'tighten gate 1 to 26.9% and re-run'. At 28% ACoS with 25% duty the case already fails payback, and the document does not say whether the launch should be reduced or stopped, or by when."
+  ],
+  "unsupported_assumptions": [
+   "\"if gates fail at end-2027, switch to Japan in 2028\": assumes the Japan scale-up delivers Table 7 economics when started a year late. The pack models it only for 2027.",
+   "\"Waiting a year: US revenue in 2030 would sit near $20.4M\": assumes a delayed launch simply follows year 3 of the current ramp. No basis is given.",
+   "\"Cap bids to hold the ceiling even if volume slows\": assumes Amazon ad cost can be held at or below 28.6% at scale, against the 32% agency median for brands growing from $5M to $20M.",
+   "Planning-team Amazon volumes (300k to 1,100k, with four added SKUs at hero-product economics) are adopted as the base case with no build from pilot and repeat data.",
+   "\"Doors followed Amazon scale\" (slide 10): inferred from Saebom alone to counter the board memo's 0.71 correlation.",
+   "Japan comparison (1.8x, $1.8M cumulative): operating profit stands in for cash, so it is not a like-for-like payback comparison."
+  ]
+ },
+ "cost_usd": 0.193494
+}
