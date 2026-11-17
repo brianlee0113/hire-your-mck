@@ -46,9 +46,13 @@ In Claude.ai, there is no slash command: write the same brief without `/hire-you
 
 ---
 
-## Pretty slides are easy. The logic is the hard part.
+## Claude can already think it through. This makes it a deck you can hand over.
 
 Most AI deck tools start from layouts. This one starts where a consulting team starts: with the answer.
+
+> **Does it make Claude reason better?** We tested that, and on our benchmark it did not: plain Claude, and Claude
+> with a six-line method prompt, were preferred over the skill's decks. What the skill adds is the deliverable
+> below. [Read the benchmark](benchmark/report/REPORT.md).
 
 | | |
 |---|---|

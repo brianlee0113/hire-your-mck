@@ -199,10 +199,33 @@ def win_rate_absolute(rows, col, x, y):
     return {"wins": w, "losses": l, "ties": t, "n": n, "win_rate": (w + 0.5 * t) / n if n else None}
 
 
+def exact_extreme_ci(x, n, alpha=0.05):
+    """Clopper-Pearson interval when every trial went the same way (x = 0 or x = n), where it has a closed form.
+    Used only as a reference when the bootstrap collapses: it assumes independent trials, which pairs within a case
+    are not, so the per-case version is the conservative one."""
+    if not n or x not in (0, n):
+        return None
+    edge = 1 - (alpha / 2) ** (1 / n)
+    return [0.0, edge] if x == 0 else [1 - edge, 1.0]
+
+
+def fmt_pref_ci(d, digits=2):
+    """Format a pairwise preference CI. A bootstrap over unanimous results is a single point, not a population
+    interval, so it is reported as degenerate together with the exact reference intervals."""
+    if not d.get("ci95_degenerate"):
+        return f"[{fmt(d['ci95'][0], digits)}, {fmt(d['ci95'][1], digits)}]"
+    ref = d.get("exact_ref") or {}
+    parts = [f"{k} {fmt(v[0], digits)}–{fmt(v[1], digits)}" for k, v in (("pairs", ref.get("pairs")), ("cases", ref.get("cases"))) if v]
+    return "bootstrap degenerate" + (f"; exact ref. {', '.join(parts)}" if parts else "")
+
+
 def pairwise_summary(pairs, bkey, rows, B=10000, seed=RNG_SEED, comps=(("C", "A"), ("C", "B"), ("B", "A"))):
     """Order-balanced preference. For a comparison 'C vs A' each presentation order gives C 1 (win), 0.5 (tie) or 0
     (loss); a pair's score is the mean of its two orders. A 'consistent win' needs both orders to pick the same doc.
-    95% CI: hierarchical bootstrap over cases, then pairs within case."""
+    95% CI: hierarchical bootstrap over cases, then pairs within case. When every pair has the same result the
+    bootstrap can only return that point, so the CI is flagged degenerate and exact Clopper-Pearson references are
+    added (pairs treated as independent, and cases treated as independent). Neither is a valid interval for this
+    clustered design; they bracket it."""
     cond_of = {r["blind_id"]: r["condition"] for r in rows}
     case_of = {r["blind_id"]: r["case"] for r in rows}
     Q = ("coherence", "judgment", "evidence", "revision", "overall")
@@ -242,7 +265,17 @@ def pairwise_summary(pairs, bkey, rows, B=10000, seed=RNG_SEED, comps=(("C", "A"
                 rng = random.Random(seed)
                 cases = list(by_case)
                 bs = sorted(mean([mean([rng.choice(by_case[c]) for _ in by_case[c]]) for c in [rng.choice(cases) for _ in cases]]) for _ in range(B))
-                per_q[q] = {"score": est, "ci95": [bs[int(0.025 * B)], bs[int(0.975 * B) - 1]], "n_pairs": sum(len(v) for v in by_case.values()),
+                ci_lo, ci_hi = bs[int(0.025 * B)], bs[int(0.975 * B) - 1]
+                pair_scores = [s for v in by_case.values() for s in v]
+                case_scores = [mean(v) for v in by_case.values()]
+                degenerate = ci_hi - ci_lo < 1e-12
+                exact_ref = None
+                if degenerate and est in (0.0, 1.0):
+                    exact_ref = {"pairs": exact_extreme_ci(sum(s == 1.0 for s in pair_scores), len(pair_scores)),
+                                 "cases": exact_extreme_ci(sum(s == 1.0 for s in case_scores), len(case_scores))}
+                per_q[q] = {"score": est, "ci95": [ci_lo, ci_hi], "ci95_degenerate": degenerate, "exact_ref": exact_ref,
+                            "n_pairs": len(pair_scores), "n_cases": len(case_scores),
+                            "cases_won": sum(s > 0.5 for s in case_scores), "cases_lost": sum(s < 0.5 for s in case_scores),
                             "consistent": cons, "by_case": {c: mean(v) for c, v in by_case.items()}}
             res[f"{hi}-{lo}"] = per_q
         out[jm] = {"by_comparison": res, "position_bias_first_wins_overall": (sum(first) / len(first)) if first else None}
@@ -482,7 +515,7 @@ def tables(S, rows, out):
             cells = []
             for q in ("overall", "coherence", "judgment", "evidence", "revision"):
                 d = qs.get(q)
-                cells.append("—" if not d else f"{fmt(d['score'])} [{fmt(d['ci95'][0])}, {fmt(d['ci95'][1])}] · {d['consistent']['win']}-{d['consistent']['loss']}-{d['consistent']['tie']}-{d['consistent']['split']}")
+                cells.append("—" if not d else f"{fmt(d['score'])} {fmt_pref_ci(d)} · {d['consistent']['win']}-{d['consistent']['loss']}-{d['consistent']['tie']}-{d['consistent']['split']}")
             L.append(f"| {cmp_} | " + " | ".join(cells) + " |")
         L.append("")
     L += ["## Cost and effort per run (mean ± SD)", "", "| | " + " | ".join(NAMES[c] for c in CONDS) + " |", "|---|" + "---|" * len(CONDS)]

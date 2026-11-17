@@ -229,7 +229,7 @@ def analyse():
                 continue
             o = per_q["overall"]
             c = o["consistent"]
-            L.append(f"| {jm} | {comp} | {o['score']:.2f} | [{o['ci95'][0]:.2f}, {o['ci95'][1]:.2f}] | {c['win']}–{c['loss']} ({c['tie']}, {c['split']}) | "
+            L.append(f"| {jm} | {comp} | {o['score']:.2f} | {AN.fmt_pref_ci(o)} | {c['win']}–{c['loss']} ({c['tie']}, {c['split']}) | "
                      f"{per_q['coherence']['score']:.2f} | {per_q['judgment']['score']:.2f} | {per_q['evidence']['score']:.2f} |")
         L.append(f"\nPosition bias (first-shown document wins, non-tied): {fmt(pj['position_bias_first_wins_overall'])}")
     L += ["", "## End-to-end (means per run)", "", "| | " + " | ".join(conds) + " |", "|---|" + "---:|" * len(conds)]

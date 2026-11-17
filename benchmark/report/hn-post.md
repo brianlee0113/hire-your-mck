@@ -29,8 +29,9 @@ Setup:
 
 Results:
 
-- **The skill did not improve reasoning. It scored slightly lower.** In pairwise judging, plain Claude beat it in
-  13 of 15 matched pairs, and the methodology prompt beat it in 15 of 15.
+- **The skill did not improve the reasoning visible in its decks. It scored slightly lower.** In pairwise judging,
+  plain Claude beat it in 13 of 15 matched pairs, and the methodology prompt beat it in 15 of 15. (What was graded
+  is the reasoning that reached the deck, not the model's internal reasoning.)
 - **All 45 decks reached the same, defensible answers.** They revised (or rejected) the initial hypothesis exactly
   where the evidence said to, and fell for none of the traps. On these cases the model does not need help with the
   reasoning.
@@ -49,7 +50,9 @@ Results:
 
 Caveats:
 
-- n = 5 cases, so no case-level test can reach p < 0.05.
+- n = 5 cases, so no case-level test can reach p < 0.05. The results are consistent in direction, not
+  statistically significant. A 0-of-15 record does not mean a 0% true win rate: the exact 95% upper bound is
+  somewhere between 22% (pairs independent) and 52% (cases independent).
 - The cases and answer keys are synthetic and written by me.
 - Claude judged Claude, and there is no human review yet (the package is in the repo).
 - The skill ran unattended. Left to itself it always chose its longest mode; the short mode was tested only in the

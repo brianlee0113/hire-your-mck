@@ -6,8 +6,10 @@ experts. Human review has not been done yet.*
 ## TL;DR
 
 - We ran five synthetic strategy cases × three conditions × three replicates (45 runs), all with the same model
-  (Claude Opus 5.5, effort high). **The Hire Your McK skill did not improve strategic reasoning; it scored slightly
-  lower than both baselines.**
+  (Claude Opus 5.5, effort high). **The Hire Your McK skill did not improve the strategic reasoning visible in its
+  decks; it scored slightly lower than both baselines.** We graded the reasoning that reached the deliverable, as
+  read by Claude judges, not the model's internal reasoning: an analysis that never made it onto a slide could not
+  count.
   - Plain Claude beat the skill in 13 of 15 matched pairs; the skill won 2.
   - Claude with a six-line methodology prompt beat the skill in 15 of 15.
   - Every one of these verdicts held when the presentation order was reversed.
@@ -33,8 +35,12 @@ experts. Human review has not been done yet.*
 - **The cheap methodology prompt was the strongest condition** in pairwise judging (13–1 against plain Claude).
 - **The skill adds things the baselines did not produce:** a source workbook, editable native charts and its own QA
   pass, on 15 of 15 decks.
-- **These findings are preliminary.** With 5 cases, no case-level test can reach p < 0.05. The directions agree
-  across two judge models, and the 95% intervals for the skill's overall deficit exclude zero.
+- **These findings are preliminary and directional, not statistically significant.** With 5 cases, no exact
+  case-level test can reach p < 0.05 (the smallest attainable sign-flip p is 0.0625). The directions agree across two
+  judge models, and the skill was behind in 5 of 5 cases in every comparison except one (4 of 5, secondary judge
+  against the strong baseline). The hierarchical bootstrap intervals for the skill's deficit exclude zero,
+  but with five cases they are optimistic and are not a significance test. Where the skill lost every pair, the
+  bootstrap collapses to a single point; we report the observed count instead (§4.1).
 - **A measurement bug we caught ourselves.** It had made the skill look worse. We fixed it and re-ran the whole
   evaluation for every condition. The conclusions held, with a smaller gap (§4.6).
 
@@ -129,7 +135,7 @@ the freeze.
 | Comparison (15 rep-matched pairs each) | Overall preference for the first-named | 95% CI | Wins–losses (both orders agree) |
 |---|---:|---|---|
 | Hire Your McK vs Vanilla | 0.13 | 0.00–0.40 | 2–13 |
-| Hire Your McK vs Strong baseline | 0.00 | 0.00–0.00 | 0–15 |
+| Hire Your McK vs Strong baseline | 0.00 | not estimable (see note) | 0–15 |
 | Strong baseline vs Vanilla | 0.90 | 0.70–1.00 | 13–1 (1 split) |
 
 | Preference by hypothesis | Coherence (H1) | Judgment (H2) | Evidence (H3) | Revision (H4) |
@@ -140,6 +146,14 @@ the freeze.
 
 Position bias was negligible: the first-shown document won 49% of non-tied verdicts. The skill lost to the strong
 baseline in every case; the sign-flip p is 0.0625, the smallest attainable with five cases.
+
+*Note on the 0–15 result.* When every pair goes the same way, a bootstrap can only resample that result, so it
+returns 0.00–0.00. That is not evidence that the true preference is zero. For reference, exact (Clopper-Pearson) 95%
+upper bounds for 0 wins are 22% if the 15 pairs were independent and 52% if only the 5 cases were. The truth lies
+between, because pairs within a case are correlated. The same applies to the full-deck mode's 0–15 results in §4.7.
+
+The bootstrap intervals elsewhere in this report resample five cases, so read them as a description of these cases
+rather than as population intervals.
 
 ### 4.2 Absolute scores (co-primary)
 
@@ -361,9 +375,10 @@ rationales are in [`results/main/examples.md`](../results/main/examples.md).
 
 ## 6. Interpretation (not proven by this design)
 
-1. **The model already reasons this way.** Given a clean evidence pack, Opus 5.5 at high effort found the crux, did
-   the arithmetic, caught the planted traps and revised management's hypothesis in every condition. A workflow
-   cannot improve reasoning that is already at the ceiling of what this benchmark measures.
+1. **The model's visible reasoning was already at this benchmark's ceiling.** Given a clean evidence pack, Opus 5.5
+   at high effort found the crux, did the arithmetic, caught the planted traps and revised management's hypothesis
+   in every condition. A workflow cannot raise what is already at the top of what this benchmark measures. The
+   differences were in how much of the decision analysis reached the deliverable and how well it was told.
 2. **The deep-deck format costs clarity, and to a lesser extent judgment.** Its long-deck grammar (a contents page
    before each section, a lead slide that indexes the evidence, a 15–30% appendix) was measured on public decks that
    are read section by section. A judge reading the whole argument experiences it as repetition. The skill's absolute evidence & reasoning score was level

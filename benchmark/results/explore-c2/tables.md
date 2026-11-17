@@ -36,9 +36,9 @@ Per dimension (claude-fable-5-2):
 
 | Judge | Comparison | Overall score | 95% CI | Consistent C2 wins–losses (ties, splits) | Coherence | Judgment | Evidence |
 |---|---|---:|---|---|---:|---:|---:|
-| claude-fable-5-2 | C2-A | 0.00 | [0.00, 0.00] | 0–15 (0, 0) | 0.17 | 0.00 | 0.00 |
-| claude-fable-5-2 | C2-B | 0.00 | [0.00, 0.00] | 0–15 (0, 0) | 0.15 | 0.00 | 0.00 |
-| claude-fable-5-2 | C2-C | 0.00 | [0.00, 0.00] | 0–15 (0, 0) | 0.30 | 0.02 | 0.00 |
+| claude-fable-5-2 | C2-A | 0.00 | bootstrap degenerate; exact ref. pairs 0.00–0.22, cases 0.00–0.52 | 0–15 (0, 0) | 0.17 | 0.00 | 0.00 |
+| claude-fable-5-2 | C2-B | 0.00 | bootstrap degenerate; exact ref. pairs 0.00–0.22, cases 0.00–0.52 | 0–15 (0, 0) | 0.15 | 0.00 | 0.00 |
+| claude-fable-5-2 | C2-C | 0.00 | bootstrap degenerate; exact ref. pairs 0.00–0.22, cases 0.00–0.52 | 0–15 (0, 0) | 0.30 | 0.02 | 0.00 |
 
 Position bias (first-shown document wins, non-tied): 0.50
 
