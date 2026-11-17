@@ -77,6 +77,9 @@
     },
     "qa": {
       "$ref": "#/$defs/qa"
+    },
+    "decision_audit": {
+      "$ref": "#/$defs/decision_audit"
     }
   },
   "$defs": {
@@ -3193,6 +3196,141 @@
           "maxItems": 5,
           "items": {
             "type": "string"
+          }
+        }
+      }
+    },
+    "decision_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Step 2b of SKILL.md: the recommendation tested against constraints, the strongest alternative and its failure threshold. Not rendered.",
+      "required": [
+        "constraints",
+        "alternatives",
+        "failure_threshold",
+        "consistency"
+      ],
+      "properties": {
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "item",
+              "reflected"
+            ],
+            "properties": {
+              "item": {
+                "type": "string"
+              },
+              "reflected": {
+                "type": "boolean"
+              },
+              "effect": {
+                "type": "string"
+              },
+              "slide_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "option",
+              "verdict",
+              "why",
+              "triage"
+            ],
+            "properties": {
+              "option": {
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "rejected",
+                  "adopted",
+                  "combined"
+                ]
+              },
+              "why": {
+                "type": "string"
+              },
+              "triage": {
+                "enum": [
+                  "body",
+                  "backup",
+                  "drop"
+                ]
+              },
+              "slide_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "failure_threshold": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "driver",
+            "threshold",
+            "range",
+            "triage"
+          ],
+          "properties": {
+            "driver": {
+              "type": "string"
+            },
+            "threshold": {
+              "type": "string"
+            },
+            "range": {
+              "type": "string"
+            },
+            "triage": {
+              "enum": [
+                "body",
+                "backup",
+                "drop"
+              ]
+            },
+            "slide_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "consistency": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "headline",
+            "holds"
+          ],
+          "properties": {
+            "headline": {
+              "type": "string"
+            },
+            "holds": {
+              "type": "boolean"
+            },
+            "fix": {
+              "type": "string"
+            }
           }
         }
       }

@@ -1007,6 +1007,49 @@ if spec["mode"] == "deck_deep":
             out("L-04", "warn", f"section {sc['id']} ('{sc['title'][:30]}') is about implementation but is not the last section")
     if dt == "client_diagnostic" and top_secs and not act.search(top_secs[-1]["title"] + " " + top_secs[-1].get("tracker_label", "")):
         out("L-04", "warn", "a client diagnostic ends on how to make it happen (plan, owners, next steps); the last section is not that")
+# DA: decision audit (Step 2b of SKILL.md) for full and deep decks
+if spec["mode"] in ("deck_detailed", "deck_deep"):
+    au = spec.get("decision_audit")
+    if not au:
+        out("DA-01", "fail", "no decision_audit: test the recommendation against constraints, the strongest alternative and its failure threshold (SKILL.md Step 2b)")
+    else:
+        def _txt(x):
+            return str(x or "").strip()
+        def _ids(item, rule, what):
+            tri = item.get("triage")
+            sids = item.get("slide_ids") or []
+            if tri in ("body", "backup") and not sids:
+                out(rule, "fail", f"{what} is triaged '{tri}' but lists no slide_ids; name the slides that carry it")
+            for sid_ in sids:
+                if sid_ != "es" and sid_ not in slides:
+                    out(rule, "fail", f"{what} points to unknown slide {sid_}")
+                elif tri == "backup" and sid_ in slides and slides[sid_]["role"] != "backup":
+                    out(rule, "warn", f"{what} is triaged 'backup' but slide {sid_} is not a backup slide")
+        if not au.get("constraints"):
+            out("DA-01", "fail", "decision_audit.constraints is empty; list every binding constraint and known cost")
+        for k, cn in enumerate(au.get("constraints") or []):
+            if cn.get("reflected") is False and not _txt(cn.get("effect")):
+                out("DA-01", "fail", f"constraint '{_txt(cn.get('item'))[:50]}' is left out of the headline; say its effect and where the deck says so")
+            for sid_ in cn.get("slide_ids") or []:
+                if sid_ != "es" and sid_ not in slides:
+                    out("DA-01", "fail", f"constraint '{_txt(cn.get('item'))[:40]}' points to unknown slide {sid_}")
+        alts = au.get("alternatives") or []
+        if not alts:
+            out("DA-02", "fail", "decision_audit.alternatives is empty; test the strongest option a sceptic would propose")
+        for al in alts:
+            if not _txt(al.get("why")):
+                out("DA-02", "fail", f"alternative '{_txt(al.get('option'))[:50]}' has no reason")
+            _ids(al, "DA-02", f"alternative '{_txt(al.get('option'))[:40]}'")
+        ft = au.get("failure_threshold") or {}
+        if not (_txt(ft.get("driver")) and _txt(ft.get("threshold"))):
+            out("DA-03", "fail", "decision_audit.failure_threshold needs the driver and the value where the answer flips")
+        else:
+            _ids(ft, "DA-03", "failure threshold")
+        cs = au.get("consistency") or {}
+        if cs.get("holds") is False and not _txt(cs.get("fix")):
+            out("DA-04", "fail", "the governing thought does not hold with every constraint in; say how the wording changed (consistency.fix)")
+        if not [s for s in au.get("alternatives") or [] if s.get("triage") == "body"] and ft.get("triage") != "body":
+            out("DA-04", "warn", "no audit finding reaches the main deck; check that the strongest alternative or the failure threshold really does not bear on the decision")
 fails = [r for r in results if r[1] == "fail"]; warns = [r for r in results if r[1] == "warn"]
 for rule, st, sid, det in results:
     if st != "pass" or rule == "schema":
