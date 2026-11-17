@@ -3208,7 +3208,9 @@
         "constraints",
         "alternatives",
         "failure_threshold",
-        "consistency"
+        "consistency",
+        "cases",
+        "gates"
       ],
       "properties": {
         "constraints": {
@@ -3330,6 +3332,110 @@
             },
             "fix": {
               "type": "string"
+            }
+          }
+        },
+        "gap": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "target",
+            "base_case",
+            "closers"
+          ],
+          "properties": {
+            "target": {
+              "type": "string"
+            },
+            "base_case": {
+              "type": "string"
+            },
+            "closers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "option",
+                  "size"
+                ],
+                "properties": {
+                  "option": {
+                    "type": "string"
+                  },
+                  "size": {
+                    "type": "string"
+                  },
+                  "recommended": {
+                    "type": "boolean"
+                  },
+                  "slide_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "cases": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "base",
+            "stress",
+            "holds_in_stress"
+          ],
+          "properties": {
+            "base": {
+              "type": "string"
+            },
+            "stress": {
+              "type": "string"
+            },
+            "holds_in_stress": {
+              "type": "boolean"
+            },
+            "slide_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "gates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "metric",
+              "threshold",
+              "when",
+              "response"
+            ],
+            "properties": {
+              "metric": {
+                "type": "string"
+              },
+              "threshold": {
+                "type": "string"
+              },
+              "when": {
+                "type": "string"
+              },
+              "response": {
+                "type": "string"
+              },
+              "slide_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
             }
           }
         }

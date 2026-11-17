@@ -1048,6 +1048,34 @@ if spec["mode"] in ("deck_detailed", "deck_deep"):
         cs = au.get("consistency") or {}
         if cs.get("holds") is False and not _txt(cs.get("fix")):
             out("DA-04", "fail", "the governing thought does not hold with every constraint in; say how the wording changed (consistency.fix)")
+        def _main_ids(sids):
+            return [x for x in sids if x == "es" or (x in slides and slides[x]["role"] not in ("backup",))]
+        cases = au.get("cases") or {}
+        if not (_txt(cases.get("base")) and _txt(cases.get("stress"))):
+            out("DA-05", "fail", "decision_audit.cases needs the headline number in a base and a stress case")
+        elif not _main_ids(cases.get("slide_ids") or []):
+            out("DA-05", "fail", "the base and stress case are not on any main-deck slide (cases.slide_ids)")
+        gates = au.get("gates") or []
+        if not 2 <= len(gates) <= 5:
+            out("DA-06", "fail", f"{len(gates)} decision gates; want 2–5 (metric, threshold, when, response) from the failure threshold and key risks")
+        for g in gates:
+            miss = [k for k in ("metric", "threshold", "when", "response") if not _txt(g.get(k))]
+            if miss:
+                out("DA-06", "fail", f"gate '{_txt(g.get('metric'))[:40]}' lacks {', '.join(miss)}")
+            if not _main_ids(g.get("slide_ids") or []):
+                out("DA-06", "fail", f"gate '{_txt(g.get('metric'))[:40]}' is on no main-deck slide; gates go on the plan or next-steps slides")
+            elif not re.search(r"\d", _txt(g.get("threshold"))):
+                out("DA-06", "warn", f"gate '{_txt(g.get('metric'))[:40]}' has no number in its threshold")
+        gap = au.get("gap")
+        if gap is not None:
+            cl = gap.get("closers") or []
+            if not cl:
+                out("DA-07", "fail", "the base case misses a target (gap) but no sized option closes it; size the options or say what target the evidence supports")
+            elif not any(x.get("recommended") for x in cl):
+                out("DA-07", "warn", "gap.closers: mark the option you recommend")
+            for x in cl:
+                if not _main_ids(x.get("slide_ids") or []):
+                    out("DA-07", "fail", f"gap closer '{_txt(x.get('option'))[:40]}' is on no main-deck slide")
         if not [s for s in au.get("alternatives") or [] if s.get("triage") == "body"] and ft.get("triage") != "body":
             out("DA-04", "warn", "no audit finding reaches the main deck; check that the strongest alternative or the failure threshold really does not bear on the decision")
 fails = [r for r in results if r[1] == "fail"]; warns = [r for r in results if r[1] == "warn"]

@@ -188,7 +188,37 @@
       "headline": "Build AI into every paid plan in 2027 ... it pays back in about 9 months",
       "holds": true,
       "fix": ""
-    }
+    },
+    "cases": {
+      "base": "payback in about 9 months on the price uplift alone",
+      "stress": "payback reaches the 24-month limit at an uplift of about $2.50 a month",
+      "holds_in_stress": true,
+      "slide_ids": [
+        "L4",
+        "5d"
+      ]
+    },
+    "gates": [
+      {
+        "metric": "monthly price uplift customers accept after the pilot",
+        "threshold": "below about $2.50 a month",
+        "when": "price change after the pilot",
+        "response": "keep AI in the plans at today's price and cut the running cost per customer",
+        "slide_ids": [
+          "5d"
+        ]
+      },
+      {
+        "metric": "time saved on the books by pilot customers",
+        "threshold": "the close is less than 1 day faster than before the pilot",
+        "when": "end of the pilot",
+        "response": "do not change prices; rework the package before the wider launch",
+        "slide_ids": [
+          "5b",
+          "5d"
+        ]
+      }
+    ]
   },
   "problem": {
     "statement": "Should Cobalt Ledger launch an AI package for its small-business customers in H1 2027, in what form and at what price, so that it pays back within 24 months?",
