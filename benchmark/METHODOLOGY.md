@@ -327,3 +327,13 @@ checklists (`eval/dev-e1/decision_reference`, unchanged).
 - E2 is the candidate for the held-out test if it beats E1 pairwise (overall preference > 0.5) without losing
   decision completeness. Otherwise E1 is.
 - E2 vs B is reported as the remaining gap; the held-out target stays non-inferiority to B (≥ 0.45).
+
+**Deviation during E2 generation (infrastructure, recorded as it happened).** The machine slept twice during the
+run. `dev-e2-c3-E2-r1` attempt 1 hung after the first sleep (no transcript output for 40 minutes) and was stopped
+by hand, which the harness records as an infrastructure failure and retries. A stall watchdog added before the
+second sleep had a bug: it read the hung attempt's old transcript and stopped attempts 2–4 as they started, so the
+run ran out of retries; an empty document then went through blinding, both absolute judges and four pairwise
+calls. Those outputs and the run were moved to `runs/_aborted/dev-e2-c3-watchdog-bug/` (one of the two absolute
+judgments was overwritten in the move; both scored an empty document), the blind id was withdrawn, and c3 was run
+again from scratch with the same skill snapshot and prompt. No model output was rerun or selected: none of the
+four aborted attempts produced a deliverable. The watchdog now reads only each run's newest attempt.
