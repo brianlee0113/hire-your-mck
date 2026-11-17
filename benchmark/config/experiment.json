@@ -34,6 +34,12 @@
    "prompt": "prompts/conditions/E1_hire_your_mck_audit.md",
    "plugin": true,
    "note": "Development arm (METHODOLOGY.md §13). Same request as C2; the skill snapshot adds the decision audit (Step 2b) and nothing else."
+  },
+  "E2": {
+   "name": "Hire Your McK v1.3 E2 (audit turned into a plan, full-deck mode)",
+   "prompt": "prompts/conditions/E2_hire_your_mck_plan.md",
+   "plugin": true,
+   "note": "Development arm (METHODOLOGY.md §14). Same request as C2 and E1; the skill adds gap closing, base and stress case and decision gates to the E1 audit."
   }
  },
  "task_template": "prompts/conditions/task.md",
@@ -63,7 +69,8 @@
   "pilot2_order": 12,
   "explore-c2_order": 2028,
   "dev-e1-smoke_order": 30,
-  "dev-e1_order": 2029
+  "dev-e1_order": 2029,
+  "dev-e2_order": 2030
  },
  "cases": {
   "c1-market-entry": {
@@ -167,6 +174,21 @@
    ],
    "exploratory": true,
    "compare_with": "main, explore-c2 (replicates 1-2)"
+  },
+  "dev-e2": {
+   "cases": [
+    "c1-market-entry",
+    "c2-profitability",
+    "c3-ai-assistant",
+    "c4-pricing-churn",
+    "c5-negative-entry"
+   ],
+   "reps": 1,
+   "conditions": [
+    "E2"
+   ],
+   "exploratory": true,
+   "compare_with": "main B, dev-e1 E1 (replicate 1)"
   }
  },
  "normalizer": {

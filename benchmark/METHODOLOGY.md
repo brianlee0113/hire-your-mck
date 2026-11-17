@@ -304,3 +304,26 @@ limits) except the skill snapshot, which adds the decision audit (commit `f5b01a
 
 **Smoke run (excluded).** `dev-e1-smoke-c2-E1-r1`: complete, `check.py` 0 fail, a full `decision_audit`, 23
 slides, $9.10 and 56 minutes (C2 averaged about $5 and 18 minutes): the audit roughly doubles the cost of a run.
+
+## 14. Development arm E2: the audit turned into a plan (added after the E1 results)
+
+**Why.** E1 beat C2 9–0 and raised decision completeness, meeting both §13 rules, but lost to B 0–10. In 18 of
+20 verdicts the judge called E1 the leaner document; it preferred B for decision gates and triggers (17 of 20)
+and stress or downside cases (13 of 20), and in 9 of 20 it noted that E1 was candid about a shortfall but did not
+close it. E2 keeps the E1 audit and adds three steps (SKILL.md Step 2b, items 5–7; commit `acde5ce`): size the
+options that close a missed target, show the headline in a base and a stress case, and turn the failure
+threshold and key risks into 2–5 decision gates on main-deck slides. `check.py` DA-05..07 enforce them.
+
+**Status and design.** Development, same caveats as §13; the change was written after reading the E1-vs-B
+verdicts, so it is tuned to this judge's stated reasons, and only held-out cases can show whether it generalises.
+Identical to E1 except the skill snapshot. Phase `dev-e2`: 5 cases × 1 replicate (replicate 1 only, to stay
+within the account's weekly usage), order seeded (2030), parallel 3. No smoke run.
+
+**Evaluation.** As §13 (`scripts/explore_dev.py`, a generalised copy of `explore_e1.py`): pairwise **E2 vs B** and
+**E2 vs E1**, replicate 1, both orders; both absolute judges; the decision-completeness check with the §13
+checklists (`eval/dev-e1/decision_reference`, unchanged).
+
+**Reading rules, fixed now.** With five pairs per comparison these are directional only.
+- E2 is the candidate for the held-out test if it beats E1 pairwise (overall preference > 0.5) without losing
+  decision completeness. Otherwise E1 is.
+- E2 vs B is reported as the remaining gap; the held-out target stays non-inferiority to B (≥ 0.45).
