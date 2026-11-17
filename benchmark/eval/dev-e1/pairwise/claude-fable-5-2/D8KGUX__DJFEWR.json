@@ -1,0 +1,38 @@
+{
+ "x": "D8KGUX",
+ "y": "DJFEWR",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X runs demand → timing → pricing → plan, and each section's claim feeds the governing thought. The timing claim (1.9x ARR at risk) yields a break-even of 52%, which reappears as gate 3 and as the Q2 fallback. The pricing analysis yields the 26.3% and 5,296-request thresholds that become gates 1 and 2. One weak spot: gate 3 is a 'January check' on churn 'removed after launch', which cannot be observed in January. Y runs why launch → prize → packaging → conditions and is also consistent, but less tight. Its governing thought says plan on $2.9M while the summary headlines $2.5M of add-on ARR and $2.4M net, so three headline figures compete. Its 'why launch' section leans on the win-rate fall and beta gains, which later slides call 'not the main reason to launch' and 'a ceiling'. Its final net-ARR slide supports 'launch versus nothing' rather than the Q2 timing the governing thought asserts.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both recommendations meet the key's defensibility criteria: both size on revealed demand, account for inference cost with an allowance, and weigh the mobile delay. Y takes R1 (launch Q2 in Pro, accept the delay explicitly, lock the rewrite date). X takes R3 (mobile first, Pro in Q4) and meets its conditions: it quantifies the win-rate risk ($0.6M a year, $160K a quarter) and keeps a limited AI response (paying beta accounts stay served, a Pro price test on random non-beta accounts, a Q2 fallback). The difference is how the timing trade-off is weighed. X compares the two sequencings head to head per quarter of delay, states both sides are upper bounds, gives a break-even (rewrite must remove at least 52% of mobile churn) and names the trigger to switch to Q2. Y never lists 'mobile first, Copilot later' as an alternative. Its justification for accepting the delay is a net of Pro ARR plus win-back minus mobile churn, which compares launching with not launching at all; under a delay the Pro ARR is shifted, not lost. X's weakness is that it leaves the $257K a quarter of deferred Pro contribution out of the 1.9x ratio; including it brings the two sides close to parity. It discloses this, and discloses the assumption that the rewrite needs the same 14 engineers. X also tests Pro at 14% uptake ($0.09M after costs) and notes Pro lifts NRR only once.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: $8.06M vs $2.45M; $32.4 / $61.2 / $130.5 a month; 1,560 × 7 pp × $5,878 ≈ $0.6M; Pro $2.89M; 74.1% company margin at buyer usage. Both debunk the sales memo (328 deals vs 109) and flag the Routewise discount, the survey's 6% response and size skew, and beta selection. X goes further on the critical evidence: add-on margins of 58.9% and 12.4%, contribution after inference and platform cost for both packages ($1.03M vs $0.84M), 17-month payback, the 14% sensitivity for Pro, the observation that heavy users will move to Pro first, and the point that a 90-day renewal window says little about annual churn. Its figures checked out (5,296 requests, $544K, $281K, $472K). Y has one good original touch: the 444 requests per seat uses the beta's 8.1 seats, and the 667 allowance is tested against margin (75.7%). But Y's net-ARR slide has an invalid step: it adds win-back at its ceiling and Pro at the full 33% while describing 'both risks counted at their ceiling', so the $2.4M is not conservative. Its executive summary states that Copilot 'improved' productivity and renewals, more causal than its own caveats allow. Its $32.4 Pro cost per account assumes mean usage despite adverse selection. Y also leaks a process note ('user unavailable at checkpoint').",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CPO's hypothesis as the evidence requires. Each rejects the $8M survey sizing in favour of about $2.5M from the paywall test, treats even that as a ceiling, and replaces the flat $149 add-on with a Pro tier plus allowance because buyers are heavy users. Y keeps the Q2 launch, which is the part of the hypothesis the key says is supported, and accepts the mobile delay explicitly with a quantified ceiling. X keeps the launch but moves it two quarters, arguing the mobile trade-off explicitly with a quantified comparison and a Q2 fallback, which the key names as an equally acceptable handling. Neither anchors on the hypothesis and neither over-corrects into abandoning Copilot.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents are strong and numerically sound, and both reach conclusions the key treats as defensible. X serves the decision maker somewhat better because it answers the hardest question in the pack, Copilot now versus mobile first, with a direct comparison of the two sequencings, a break-even, and a concrete January check that flips the plan back to Q2. It also gives after-cost economics and sensitivities for the packaging choice. Y gives a clear go with sensible conditions and a well-tested allowance, but it justifies accepting the mobile delay with a net-ARR sum that does not compare against delaying and counts upside at its ceiling. Y never weighs the mobile-first alternative. X's timing ratio is less robust than its headline suggests once deferred Pro contribution is included, and it rests on an unconfirmed engineering assumption, so the margin is modest.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 0.8274922,
+ "wall_s": 93.87504625320435
+}

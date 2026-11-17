@@ -1,0 +1,116 @@
+{
+ "blind_id": "DTEJJT",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 17: plan leaves $2.5M at month 18, 6.2 months against the 12-month floor; floor needs $4.8M. Also states that if the $9.5M excludes core burn, $7.2M more goes and cash runs out first. Slide 22: $14.3M needed vs $12.0M in the bank."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Condition 3 (slide 22) requires funding 'without a new round'. Slide 21 compares software ($0.8M a year, 'no new funding round') with $9.5M for launch. Slide 18 notes losses are 'before launch marketing and head-office costs'. It never says that contribution-positive is not company profitability."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slides 8-11: full stack built from Table 3. Contribution per order is +$2.02 plan, -$1.76 best inputs, -$6.17 median, -$12.57 pop-up. Median rider cost $7.40 and store $3.50. The best-inputs case is flagged as a combination no site achieved. The break-even order value is about $47 before store costs and about $63 with them."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slides 9, 13: pop-up at $31 AOV, 2.1 orders/rider-hour, 280 orders/day, 12% promotions, -$12.57 per order. Promotions 'bought the 18% weekly growth'. The document does not give the implied final-week rate (~410/day)."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 15: $38 / 22% = $172.7 per retained customer; payback 14.8 months at the plan's pre-store $3.77, about 28 months after store costs, never at benchmark or pop-up economics. Slide 14 separates the 44% stated intent from observed behaviour (0.7 orders a week). It does not size the customers needed to fill a store."
+   },
+   {
+    "id": "C6",
+    "status": "mentioned",
+    "evidence": "Slide 11 and condition 2 (slide 22): 2 of 3 cities are considering minimum pay, which 'can only push this line up'. Rider cost is shown as the largest cost line. The document does not quantify the effect of a $1/hour rise on any case or show any headroom after a pay increase."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slides 4-5: GMV grew 2.8x with yearly growth of 44%, 38% and 42%. Zipcart is at -$1.90 per order and -25.8% EBITDA margin; QuickBasket at -$3.40 and -45.7%, closing 4 of 11 cities. 'Demand is not the question' states that growth is not evidence of profit."
+   },
+   {
+    "id": "C8",
+    "status": "mentioned",
+    "evidence": "Slide 6 gives the $3.99 fee, promotions cut to 1%, -14% volume and +$0.40 in the densest city, and calls it the most favourable case. The document never applies this pricing to Parcelbird's inputs (no +$2.25 at best density, no -$0.48 at median, no break-even density). It says only that 'our plan charges only the $1.99 delivery fee, so it cannot copy the route'."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 21: $0.8M / ($96k x 81%) = 10.3 contracts; the 9 late-stage deals give about $0.9M ARR and cover 87% of the hiring cost; runway goes from 30 to 26 months with no new contract. The $5.6M floor is not stated, and the document does not show software break-even within current cash."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Adopted as the recommendation. Slide 21 and slide 20 give the 10.3-contract break-even, late-stage pipeline of $0.9M ARR, runway 30 to 26 months, and grocer demand for fast delivery from existing stores. It is compared against the other two options on the board's criteria. There is no conversion-rate evidence and no demonstrated break-even within current cash."
+   },
+   {
+    "id": "A2",
+    "status": "absent",
+    "evidence": "No capped, capital-light, fee-priced test run from a grocer partner's store, with cash cap and kill criteria, is evaluated. 'Package fast delivery from existing stores as a software offer' is a product offer to grocers, not a Parcelbird-run test."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Slide 20 and the Alternatives section: 'Test one permanent dark store first: Not now'. One store at median economics loses about $2.0M a year (328,500 x -$6.17), taking runway below 12 months within about 8 months. It assumes 900 orders/day from day one, not the pop-up's 280, and does not test a fee or AOV-based stage gate."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Slides 8-10, 17-18: every plan input exceeds the best observed site, the plan leaves 6.2 months of runway, and nine median stores lose about $18M a year. The upside is acknowledged: about +$12M a year at plan inputs. The fee route is only partly addressed (slide 6)."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slides 8-10: contribution per order at four input sets (+$2.02, -$1.76, -$6.17, -$12.57). Break-even order value is $46.7 before store costs and about $63 with store costs at 900/day. The median order loses $2.67 before store cost, so volume alone cannot fix it. Slide 11 shows rider cost falling from $7.40 to $5.92 at 3.0 orders/hour. The effect of a rider-pay increase per $1/hour is not quantified, and the break-even AOV at best density (~$50) is not given."
+   },
+   {
+    "id": "S2",
+    "status": "mentioned",
+    "evidence": "Zipcart's fee, promotions cut and -14% volume are named on slide 6, and slide 13 shows promotions at 12% vs 6%. There is no calculation of Parcelbird's contribution at a $3.99 fee and 1% promotions, no break-even density under that pricing, and no volume-loss tolerance. Slide 14 notes retention may fall once promotions are cut."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 17: $2.5M and 6.2 months left vs 12 required, plus the $7.2M extra if the burn is excluded. Slide 22: $14.3M needed, $2.3M short. Slide 20: one store breaches 12 months in about 8 months. Slide 21: software costs $0.8M a year, runway 30 to 26 months. Slide 18: nine median stores lose $18M a year, 1.5x cash. The maximum spend that keeps 12 months (~$7.2M, ~$6.4M after hires) is not stated as a sizing ceiling."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Promotions explain almost half of the pop-up's extra loss per order"
+  },
+  "omissions": [
+   "The 'almost half' (47.4%) holds only for loss before store costs. Including the temporary store ($6.36 vs $3.50 at median), the extra loss is about $6.40 per order and promotions are $1.68, about 26%. The summary line drops that scope; the governing thought itself (do not launch) is not overclaimed.",
+   "No fee-priced scenario at Parcelbird's own inputs. The document says the plan 'cannot copy' Zipcart's route, yet a $3.99 fee is a choice the company could make. The board lacks the +$2.25 (best density) / -$0.48 (median) result and the break-even density of roughly 700-1,040 orders/day, which is the founders' strongest rebuttal.",
+   "No capped, partner-store test with kill criteria (A2). The only alternatives to the full plan are a permanent own-store test and the software path.",
+   "The software recommendation is not shown to reach profitability within current cash. It uses no conversion rates, and the 12-month floor after the hires (~$5.6M) is not stated.",
+   "Rider-pay headroom is not quantified (about $0.29-0.42 per order per $1/hour), so the board cannot see how sensitive any future revisit case is.",
+   "The document states no maximum new-spend ceiling (~$7.2M, falling with burn) against which a staged test could be sized, and no wind-down cash scenario if a test fails."
+  ],
+  "unsupported_assumptions": [
+   "\"About 10 new contracts pay for the $0.8M a year of hires\" assumes every contract is incremental to the hires, at the $96k average and 81% gross margin. The document admits 'the pack gives no conversion rates'.",
+   "\"Positive margin from the first contract\" assumes no onboarding or support cost beyond the 81% gross margin.",
+   "\"Our plan charges only the $1.99 delivery fee, so it cannot copy the route to profit that Zipcart took\" assumes pricing is fixed. Nothing in the pack says so.",
+   "\"As an operator we would become their competitor\" and \"competes with our customers\" rest on no evidence of how pipeline grocers would react.",
+   "The one-store test (\"loses about $2.0M a year\", below 12 months within about 8 months) assumes median density of 900 orders/day from day one. The pop-up averaged 280, so this is generous to the test."
+  ]
+ },
+ "cost_usd": 0.24555459999999998
+}

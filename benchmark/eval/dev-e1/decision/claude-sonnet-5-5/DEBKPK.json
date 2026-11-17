@@ -1,0 +1,119 @@
+{
+ "blind_id": "DEBKPK",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 15 bridges from $86M to the $98.9M target. Pricing adds $4.2M + $0.7M, existing customers at trailing NRR add $7.98M, and new customers needed come to $0.1M. It states that new-customer bookings are not in the pack. The bridge relies on trailing NRR holding, which is a weak basis (see omissions)."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 8 charts NRR by segment against a 2027 floor of 1.0. Slide 15 computes 109.3% blended and says 'The plan lifts NRR to about 115%, above the 100% floor.' It does not show how far SMB NRR could fall before the floor breaks."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "'Only $65.5M of ARR renews in 2027'; slide 12 deducts mid-market not renewing (-$0.738M) and enterprise not renewing (-$1.728M); each recommended step is sized on repriced ARR ($34.9M, $9.6M, $16.6M, $4.4M)."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slide 12 deducts a $0.288M cap effect ('60% of enterprise renewals capped at 7%'). Enterprise is set at 7% on all renewals, for $0.7M. The even-proportion assumption is not flagged as unverified."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "'The CFO's 12% is worth $7.6M, not $10.3M'; waterfall 10.32 → 7.566; '33.3% of the $7.6M would come from SMB'; labelled 'before churn'."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slide 13 uses the 2023 reaction (+0.5pp for six months, then +0.1, about 3.6% of customers in a year) and the 7.4% break-even for 8%. Slide 15 nets other SMB to $0.68M ('about half survives a 2023-like reaction'). It notes the precedent predates Inkwell."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 10 gives $9 vs $15, the 51% → 38% win-rate fall, and that win rates measure acquisition. The plan keeps new SMB list prices out of scope ('review them separately'). It does not quantify the $6.00 → $7.80 gap, and the 51–200-seat mid-market exposure appears only in a footnote ('Inkwell can still reach mid-market deals under 200 seats') while mid-market gets the full 10%."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 5 derives 4.9% promotion-cohort churn against 2.1% for other SMB. Slide 6 gives 52% vs 18% citing price and 41% vs 72% activated. The plan separates the cohort ($4.4M) from other SMB ($16.6M) and holds the cohort's price."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 4 uses the segment table. It gives 1.2% ARR-weighted (0.8% before) and 2.6% (1.7%) by count, and says the dashboard's '1.4% → 2.3% ... matches neither weighting'. Next steps replace the dashboard figure."
+   },
+   {
+    "id": "C10",
+    "status": "reflected",
+    "evidence": "Slide 18: 'cannot halve SMB churn'; 1.55% is below the 2.1% of non-promotion SMB; the ceiling is $1.0M ARR and the likelier case about $0.5M; 'no programme cost'. Onboarding is not counted in the bridge."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "'Mid-market and enterprise only: $4.2M. Safest, but leaves untouched other SMB customers, whose churn is flat.' The recommendation is this option plus a controlled SMB step. The SMB step is justified by the 2.1% vs 2.0% churn and the 7.4% break-even."
+   },
+   {
+    "id": "A2",
+    "status": "tested",
+    "evidence": "The CFO's plan is costed at $7.6M, not $10.3M. Slide 14 says $2.1M of it is 'steps beyond any test, precedent or cap, incl. 12% on the promotion cohort'. It is not recommended."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "The recommendation adopts the staged SMB version: 8% on other SMB only, a random control group, a March read-out with a stop rule, and the promotion cohort held. The uniform 5–7% variant is not evaluated."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "'Hold all prices in 2027: $0M; gives up the rise where churn is low.' Slide 18 sizes the onboarding benefit ($1.0M ceiling, about $0.5M likelier). A lower-priced entry tier against Inkwell is not mentioned."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 13 gives break-even loss for each step: 7.4% for other SMB at +8%, against about 3.6% in 2023. It splits promotion from non-promotion customers (52% vs 18% citing price) and shows $1.3M gross falling to about half after a 2023-like reaction. It does not show a dollars-per-point figure or test a higher post-Inkwell loss."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 9: break-even 9.1% of repriced ARR at +10%, equivalent to churn rising from 0.8% to 1.6% a month. Slide 15: $1.5M of new customers needed if mid-market reacts like SMB in 2023. Caveats: the test covered new sign-ups, and Inkwell can reach mid-market under 200 seats. There is no seat-count split."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 18 gives a full-activation ceiling of $1.01M (churn falls to 2.1%) and a 'lasting reaction' case of $0.5M (churn 3.3%). It shows halving means 1.55%, below the 2.1% non-promotion rate. The cohort is exempted from the price rise. It does not show the resulting SMB 2027 baseline or NRR."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Each step rests on a test, a precedent or a cap; the promotion cohort is held"
+  },
+  "omissions": [
+   "The slide 15 bridge adds the +$7.98M 'existing customers at trailing NRR' to the price uplift. Trailing 109% NRR already contains past price increases, escalators and the promotion cohort's step-up from 50% off, so treating it as a price-free baseline overstates the result. The document flags the double count only for enterprise escalators and still concludes only $0.1M of new customers is needed.",
+   "The bridge runs from mid-2026 to end-2027 (about 18 months) but applies a single 12-month trailing NRR. The timing basis for the 2027 target is not reconciled.",
+   "The growth gap is not sized as a new-business requirement. The plan has no estimate of new-customer or expansion ARR, and no view of how the fall in SMB win rates (51% → 38%) affects it.",
+   "A cheaper SMB entry tier or a uniform 5–7% step was not evaluated. The plan also does not say what the stop rules cost: how much SMB ARR is at risk before the March read-out, and how a pause changes the headline $5.5M."
+  ],
+  "unsupported_assumptions": [
+   "\"Existing customers at trailing NRR\" +$7.98M, carried into 2027 and described as 'if existing customers keep today's 109% retention'. No basis is given for why trailing NRR repeats once the promotion step-up has passed and prices change.",
+   "\"about half survives a 2023-like reaction\" and 3.6% loss for other SMB. The 2023 rise predates Inkwell, and the document admits this but still bases the SMB number on it.",
+   "\"60% of enterprise renewals capped at 7%\" and 'apply it to all renewals'. This assumes the capped share is the same in the ARR renewing in 2027, and it is not flagged.",
+   "\"Mid-market, +10% ... the step tested on new sign-ups in 2024\". A conversion test on new sign-ups (-0.5pp, not significant) is used to support a 10% rise on existing renewals, with a 9.1% break-even that treats logo churn as ARR churn.",
+   "\"Churn is rising because of customers the 2025 SMB promotion brought in\". The cohort explains most of the SMB rise, but 'customers outside the promotion can take a rise' rests on 2.1% vs 2.0% churn at the old price, before any increase."
+  ]
+ },
+ "cost_usd": 0.1593511
+}

@@ -1,0 +1,186 @@
+{
+ "blind_id": "D8UQ87",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as launch, package and price, and uses the stated constraints as criteria: the NRR 105% target, the 75% margin floor and the mobile delay. It identifies early that the answer turns on stated versus revealed demand, inference cost and the mobile trade-off. A small weakness: the headline treats 'just enough for 105% NRR' as achieved, which relies on a 33% uptake assumption.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, the four sections (Demand, Threats, Package, Timing) and the slide titles form one hierarchy. Most titles are claims that their slides support. The answer follows from the analysis, and the alternatives and the waiting threshold are tied back to it. Weaknesses: the executive summary has 12 points. The 'just enough for 105% NRR' headline sits uneasily with the paywall-based 1.8 pp range. The 15% checkpoint is not tied to the 31% uptake needed.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Most numbers check out: $8.1M versus $2.1M, inference at $32.4, $61.2 and $130.5 a month, 109 wins and about $0.6M, the 74.5% margin and the 4.3 pp NRR gain. Critical evidence is used, including evidence against the recommendation. Caveats on bias, the Routewise discount and the 2023 precedent are well calibrated. Flaws: the payback periods (2.7 and 3.3 years) do not follow from the stated $1.47M build cost and the $0.8M and $0.6M gross profit, which imply about 1.8 and 2.3 years. The 33% Pro uptake comes from a non-AI tier and carries much of the NRR claim. The churn-adjusted base moves the add-on and Pro ARR figures away from the key's.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Keeps 'launch' but revises the packaging to a Pro tier with a usage allowance and metered overage, sized off the paywall test. It compares five alternatives on ARR, gross profit, margin and NRR. It quantifies the mobile-delay trade-off with an explicit break-even (51.7%, or 37% if the promotion explains half of Routewise's gain). It gives a checkpoint and concrete next steps, and avoids all the traps. Weaknesses: the recommendation leans on the optimistic 33% uptake. The 15% checkpoint is a weak kill criterion against the 31% needed. The effect of metered overage on adoption is not examined.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the opening slide and the language is plain. Eighteen slides with section dividers and a 12-point executive summary are longer than the decision needs, and some points repeat across slides. The payback figures are not explained.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Pro can close the NRR gap on its own ... just enough for 105% NRR",
+    "why": "This depends on 33% uptake from a 2023 non-AI tier. The only revealed AI demand (14%) gives 1.8 pp. The document flags this but still headlines it as sufficient. It also omits the NRR cost of the mobile delay from the Pro case."
+   },
+   {
+    "quote": "repays the $1.47M build in about 2.7 years, against 3.3 for the add-on",
+    "why": "Not derivable from the stated figures: $1.47M ÷ $0.8M is about 1.8 years, and $1.47M ÷ $0.6M is about 2.4 years. The basis is not shown."
+   },
+   {
+    "quote": "renewal is more likely to cut cost than raise it",
+    "why": "This is an inference from the 35% list-price fall. The pack lists future price movement as an uncertainty."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "repays the $1.47M build in about 2.7 years, against 3.3 for the add-on",
+    "correct": "About 1.8 years for Pro and about 2.3–2.4 years for the add-on, using the document's own gross profit figures"
+   }
+  ],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "partly_correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Launch in Q2 2027 in a Pro plan at +$12 per seat, with 667 requests per seat included and heavier use billed. Re-plan the mobile rewrite to start two quarters later, with a year-end checkpoint on Pro uptake.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It sizes demand off the paywall test and explains the gap to the survey. It builds variable inference cost into the packaging through an allowance and a margin check. It weighs the mobile delay explicitly against the competitive threat and accepts the delay with a quantified break-even. The 33% Pro uptake is optimistic but flagged."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "It rejects the $8M survey-based revenue case (stated vs revealed intent, 6% response, size skew) and the $149 add-on. It keeps 'launch' but changes the packaging to Pro with an allowance. It notes that the 14% is a ceiling and that the Routewise discount is a confounder. This matches the expected 'revise' handling."
+  },
+  "overall_comment": "This is a strong, well-calibrated document. It reaches all four critical insights, gets the key calculations right (the add-on and Pro ARR use a churn-adjusted base, so they differ from the key's by more than tolerance), and avoids every trap. Its recommendation is defensible and comes with a quantified timing trade-off. The main flaws are the unexplained payback figures, a headline that over-relies on the 33% Pro uptake, a weak 15% checkpoint, and more length than the decision needs.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.16892200000000002,
+ "wall_s": 76.26872396469116,
+ "is_error": false,
+ "error_text": null
+}

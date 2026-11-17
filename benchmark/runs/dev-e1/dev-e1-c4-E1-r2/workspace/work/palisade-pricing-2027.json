@@ -1,0 +1,3414 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Raising prices in 2027 while churn is rising",
+  "subtitle": "Discussion document for the CEO and leadership team, 2027 pricing decision",
+  "company_name": "Palisade Docs",
+  "audience": "CEO and leadership team",
+  "purpose": "Decide whether and how to raise prices in 2027",
+  "date": "2026-11-17",
+  "language": "en-US",
+  "confidentiality": "Synthetic benchmark data; every number from the briefing pack",
+  "theme": "navy"
+ },
+ "inputs": [
+  {
+   "id": "in-1",
+   "kind": "file",
+   "label": "Palisade Docs briefing pack",
+   "content": "evidence/briefing-pack.md"
+  },
+  {
+   "id": "in-2",
+   "kind": "qa_answer",
+   "label": "Checkpoint choices made on the user's behalf (user unavailable)",
+   "content": "Mode deck_detailed; audience CEO and leadership team deciding the 2027 plan; theme navy; storyline built as drafted; no placeholders left"
+  }
+ ],
+ "storyline": {
+  "governing_thought": "Raise 2027 prices in mid-market and enterprise, stage SMB behind a stop rule, spare promotion customers",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "Churn is rising because of the 2025 promotion, not core price resistance",
+    "supports": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "sub_points": [
+     {
+      "text": "The promotion cohort drives about 94% of the SMB rise",
+      "slide_id": "2"
+     },
+     {
+      "text": "Onboarding alone removes about a tenth of SMB churn",
+      "slide_id": "4"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "Pricing power sits in mid-market and enterprise, not yet in SMB",
+    "supports": [
+     "5",
+     "6",
+     "7"
+    ],
+    "sub_points": [
+     {
+      "text": "Retention: 112% mid-market, 118% enterprise, 94% SMB",
+      "slide_id": "5"
+     },
+     {
+      "text": "Inkwell's $9 plan undercuts our $15; win rate fell to 38%",
+      "slide_id": "6"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "The CFO's 12% plan is worth about $7.6M in 2027, not $10.3M",
+    "supports": [
+     "8",
+     "9"
+    ],
+    "sub_points": [
+     {
+      "text": "Renewal dates and 7% enterprise caps cut the gain",
+      "slide_id": "8"
+     },
+     {
+      "text": "A segmented plan keeps most of it, with less risk",
+      "slide_id": "9"
+     }
+    ]
+   },
+   {
+    "id": "4",
+    "text": "A segmented plan adds about $5.6M and meets the 15% goal, with no cushion",
+    "supports": [
+     "10",
+     "11",
+     "12",
+     "13",
+     "14"
+    ],
+    "sub_points": [
+     {
+      "text": "The 8% SMB step nets only about $0.7M",
+      "slide_id": "11"
+     },
+     {
+      "text": "Mid-market and enterprise move in January; SMB waits for a test",
+      "slide_id": "13"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Approve the segmented 2027 price plan and its stop rules",
+    "owner": "CEO and leadership team",
+    "timing": "Dec 2026"
+   },
+   {
+    "action": "Pull H2 2026 SMB churn by cohort to confirm the discount cliff has passed",
+    "owner": "Finance and Customer Success",
+    "timing": "Dec 2026"
+   },
+   {
+    "action": "Set up the randomized SMB renewal test and the promotion-cohort activation drive",
+    "owner": "Growth and Customer Success",
+    "timing": "Jan 2027"
+   },
+   {
+    "action": "Check which multi-year enterprise contracts allow a 2027 escalator before renewal",
+    "owner": "Legal and Finance",
+    "timing": "Q1 2027"
+   },
+   {
+    "action": "Define the board dashboard's churn measure and restate it by segment",
+    "owner": "CFO",
+    "timing": "Jan 2027"
+   }
+  ]
+ },
+ "decision_audit": {
+  "constraints": [
+   {
+    "item": "Grow ARR at least 15% in 2027",
+    "reflected": true,
+    "effect": "existing customers plus the plan reach about 15.0%, level with the objective and with no cushion; titles and exec item 4 say 'no cushion'",
+    "slide_ids": [
+     "12",
+     "es"
+    ]
+   },
+   {
+    "item": "Keep overall net revenue retention above 100%",
+    "reflected": true,
+    "effect": "about 115% with the plan; not the binding constraint",
+    "slide_ids": [
+     "12",
+     "14"
+    ]
+   },
+   {
+    "item": "Price changes only at renewal: 85% of mid-market and 40% of enterprise ARR renews in 2027",
+    "reflected": true,
+    "effect": "cuts the CFO's $10.3M to $7.6M and sizes our plan on renewing ARR only",
+    "slide_ids": [
+     "8",
+     "10"
+    ]
+   },
+   {
+    "item": "60% of enterprise ARR capped at 7% a year",
+    "reflected": true,
+    "effect": "enterprise step 7% where capped",
+    "slide_ids": [
+     "8",
+     "10"
+    ]
+   },
+   {
+    "item": "Churn response to the rise",
+    "reflected": true,
+    "effect": "SMB step shown net of a 2023-like response ($0.7M, not $1.3M); mid-market response not modelled because the only test was on new sign-ups, so the ARR title says 'no cushion' and a mid-market stop level is set",
+    "slide_ids": [
+     "11",
+     "12",
+     "14"
+    ]
+   },
+   {
+    "item": "Possible enterprise escalators before renewal ('enterprise contracts follow their own terms')",
+    "reflected": false,
+    "effect": "upside of up to about $1.0M left out; a next step checks the contracts",
+    "slide_ids": [
+     "10"
+    ]
+   },
+   {
+    "item": "Inkwell's $9 plan and the falling SMB win rate",
+    "reflected": true,
+    "effect": "new SMB sign-ups stay at $15; win rate is a guardrail",
+    "slide_ids": [
+     "6",
+     "13",
+     "14"
+    ]
+   }
+  ],
+  "alternatives": [
+   {
+    "option": "Mid-market and enterprise only; hold all SMB prices in 2027",
+    "verdict": "combined",
+    "why": "safest, but about $0.7M short of the 15% objective before new customers; it becomes the fallback if the SMB stop rule triggers",
+    "triage": "body",
+    "slide_ids": [
+     "9",
+     "12",
+     "14"
+    ]
+   },
+   {
+    "option": "Hold all prices, as the CEO's caution implies",
+    "verdict": "rejected",
+    "why": "the churn rise sits in the promotion cohort; holding mid-market and enterprise gives up about $4.3M where retention is strongest",
+    "triage": "body",
+    "slide_ids": [
+     "9"
+    ]
+   },
+   {
+    "option": "CFO: 12% on every plan from January",
+    "verdict": "rejected",
+    "why": "worth $7.6M, not $10.3M, with a third resting on SMB and the promotion cohort",
+    "triage": "body",
+    "slide_ids": [
+     "8",
+     "9"
+    ]
+   },
+   {
+    "option": "Mid-market and uncapped enterprise at 12% instead of 10%",
+    "verdict": "rejected",
+    "why": "adds about $0.7M gross but goes beyond the only tested level, and mid-market churn has edged up",
+    "triage": "body",
+    "slide_ids": [
+     "10"
+    ]
+   }
+  ],
+  "failure_threshold": {
+   "driver": "mid-market churn response at renewal to the 10% step",
+   "threshold": "the step stops paying if mid-market monthly churn rises above about 1.6% (0.8% + 0.76 percentage points); the 15% objective slips with any material mid-market loss because the plan only matches it",
+   "range": "end-2027 ARR before new customers: low $98.25M (SMB step stopped) / base $98.9M / high $99.6M (no SMB churn response)",
+   "triage": "body",
+   "slide_ids": [
+    "12",
+    "14"
+   ]
+  },
+  "consistency": {
+   "headline": "Palisade should raise 2027 prices in mid-market and enterprise, stage SMB behind a stop rule and spare the 2025 promotion customers",
+   "holds": true,
+   "fix": "after the audit the ARR claim reads 'level with the objective, with no cushion' rather than 'above it', and the SMB step is shown net of churn"
+  }
+ },
+ "sections": [
+  {
+   "id": "1",
+   "title": "Why churn is rising",
+   "exec_item_id": "1",
+   "tracker_label": "Churn"
+  },
+  {
+   "id": "2",
+   "title": "Where Palisade has pricing power",
+   "exec_item_id": "2",
+   "tracker_label": "Pricing power"
+  },
+  {
+   "id": "3",
+   "title": "The CFO's proposal",
+   "exec_item_id": "3",
+   "tracker_label": "CFO plan"
+  },
+  {
+   "id": "4",
+   "title": "The segmented plan and its rollout",
+   "exec_item_id": "4",
+   "tracker_label": "Plan"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "d1",
+   "role": "section_divider",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "The churn rise is an SMB problem: mid-market rose slightly and enterprise did not move",
+    "highlights": [
+     "SMB"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "column-time-series",
+   "rationale": "Two periods across three segments -> clustered columns",
+   "unit_line": "**Monthly logo churn by segment**, % of customers, H1 2025 and H1 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "The rise is concentrated in the self-serve segment",
+     "big_number": {
+      "data_ref": "smb_rel"
+     },
+     "caption": "relative rise in SMB monthly logo churn in a year",
+     "bullets": [
+      "**SMB:** holds most of the customers but less than a quarter of ARR, and carries almost all of the rise",
+      "**Mid-market:** a small rise from a low base, with no exit reasons in the pack; worth watching at renewal",
+      "**Enterprise:** unchanged, held in place by multi-year contracts"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "SMB",
+     "Mid-market",
+     "Enterprise"
+    ],
+    "series": [
+     {
+      "name": "H1 2025",
+      "points": [
+       {
+        "data_ref": "smb25"
+       },
+       {
+        "data_ref": "mm25"
+       },
+       {
+        "data_ref": "en25"
+       }
+      ]
+     },
+     {
+      "name": "H1 2026",
+      "points": [
+       {
+        "data_ref": "smb26"
+       },
+       {
+        "data_ref": "mm26"
+       },
+       {
+        "data_ref": "en26"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "SMB"
+    ],
+    "value_format": "0.0%"
+   },
+   "footnotes": [
+    "The board dashboard's \"monthly churn 1.4% → 2.3%\" has no definition and matches neither a customer- nor an ARR-weighted average of these segments (see backup)"
+   ]
+  },
+  {
+   "id": "2",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "The 2025 promotion cohort drives about 94% of the SMB churn rise; other SMB customers barely moved",
+    "numbers": [
+     {
+      "text": "94%",
+      "data_ref": "sh_pr"
+     }
+    ],
+    "highlights": [
+     "2025 promotion cohort"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "waterfall-bridge",
+   "rationale": "What adds up to the rise -> waterfall",
+   "unit_line": "**SMB monthly logo churn**, % of customers, H1 2025 to H1 2026; steps are each group's contribution",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "One cohort, not the whole segment, moved",
+     "big_number": {
+      "data_ref": "sh_pr"
+     },
+     "caption": "of the rise in SMB monthly churn comes from the promotion cohort",
+     "bullets": [
+      "**Promotion cohort:** 2,100 customers churning at an implied 4.9% a month",
+      "**Other SMB:** up a tenth of a percentage point, despite Inkwell"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "waterfall",
+    "categories": [
+     "SMB churn, H1 2025",
+     "Customers not from the promotion",
+     "2025 promotion cohort",
+     "SMB churn, H1 2026"
+    ],
+    "series": [
+     {
+      "name": "SMB monthly churn",
+      "points": [
+       {
+        "data_ref": "smb25"
+       },
+       {
+        "data_ref": "c_np"
+       },
+       {
+        "data_ref": "c_pr"
+       },
+       {
+        "data_ref": "smb26"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "2025 promotion cohort"
+    ],
+    "value_format": "0.0%"
+   },
+   "footnotes": [
+    "Each group is weighted by its mid-2026 customer count (3,800 not from the promotion, 2,100 from it); the cohort's rate is implied from Table 1, not reported",
+    "The cohort is compared with the 2.0% monthly churn of similar SMB customers in H1 2025"
+   ]
+  },
+  {
+   "id": "3",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Promotion customers never got started and left when the discount ended, while other customers' price complaints held steady",
+    "clauses": 2
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Two clauses, one claim about the cohort -> two panels, no arrow",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "Only 41% of promotion customers got started, compared with 72% of other new customers",
+      "unit_line": "**Sent five or more documents in month one**, %",
+      "body": {
+       "kind": "chart",
+       "chart_type": "column",
+       "categories": [
+        "Promotion cohort",
+        "Other cohorts"
+       ],
+       "series": [
+        {
+         "name": "Got started",
+         "points": [
+          {
+           "data_ref": "act_pr"
+          },
+          {
+           "data_ref": "act_oth"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Promotion cohort"
+       ],
+       "value_format": "0%"
+      }
+     },
+     {
+      "header": "Price complaints rose only among promotion leavers; other SMB leavers cite price as often as in 2025",
+      "unit_line": "**SMB churners citing price**, % of exit answers",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Promotion cohort, H1 2026",
+        "All SMB, H1 2026",
+        "All SMB, H1 2025",
+        "Not from the promotion, H1 2026"
+       ],
+       "series": [
+        {
+         "name": "Cite price",
+         "points": [
+          {
+           "data_ref": "pcpr"
+          },
+          {
+           "data_ref": "pc26"
+          },
+          {
+           "data_ref": "pc25"
+          },
+          {
+           "data_ref": "pcnp"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Promotion cohort, H1 2026"
+       ],
+       "value_format": "0%"
+      }
+     }
+    ]
+   },
+   "so_what": "The cohort reacted to its price doubling; a list-price rise on top would hit the group likeliest to leave",
+   "so_what_style": "bar",
+   "footnotes": [
+    "Most promotion-cohort customers who left did so within two months of the discount ending; the promotion gave 50% off for the first six months, February to August 2025",
+    "SMB customers who send fewer than five documents in their first month churn at about three times the rate of those who send more"
+   ]
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Onboarding alone can remove about a tenth of SMB churn; most of the promotion's damage was a one-off discount cliff",
+    "highlights": [
+     "If the cohort also gets started"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "column-time-series",
+   "rationale": "Churn level under each fix against the target -> columns with a benchmark line",
+   "unit_line": "**SMB monthly logo churn**, % of customers, H1 2026 and after each fix",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The halving Customer Success expects is out of reach",
+     "bullets": [
+      "**Discount cliff:** most promotion leavers went within two months of the discount ending; this part should fade on its own",
+      "**Onboarding:** a 72% start rate, as in other cohorts, removes the rest of the cohort's excess",
+      "**Floor:** SMB churn then sits at the rate of customers not from the promotion"
+     ],
+     "rows": [
+      {
+       "label": "Share of SMB churn onboarding alone can remove",
+       "basis": "0.3 pp ÷ 3.1%",
+       "point": {
+        "data_ref": "act_sh"
+       },
+       "highlight": true
+      }
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "SMB churn, H1 2026",
+     "Once the discount cliff has passed",
+     "If the cohort also gets started"
+    ],
+    "series": [
+     {
+      "name": "SMB monthly churn",
+      "points": [
+       {
+        "data_ref": "smb26"
+       },
+       {
+        "data_ref": "smb_cliff"
+       },
+       {
+        "data_ref": "smb_floor"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "If the cohort also gets started"
+    ],
+    "value_format": "0.0%",
+    "benchmark": {
+     "label": "Customer Success target: halve it",
+     "point": {
+      "data_ref": "cs_t"
+     }
+    }
+   },
+   "basis": {
+    "header": "How we split the promotion cohort's excess churn",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "pr26"
+      },
+      "caption": "promotion cohort churn, H1 2026"
+     },
+     {
+      "op": "−",
+      "point": {
+       "data_ref": "pr_act"
+      },
+      "caption": "explained by its low start rate"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "cliff_c"
+      },
+      "caption": "one-off discount cliff"
+     }
+    ]
+   },
+   "footnotes": [
+    "Estimate; assumes non-starters churn about three times as often as starters in both groups; H2 2026 cohort data would confirm that the cliff has passed"
+   ]
+  },
+  {
+   "id": "d2",
+   "role": "section_divider",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Pricing power sits in mid-market and enterprise, where customers expand, stay and rarely meet Inkwell",
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Three segments on the same pricing-power criteria -> comparison table",
+   "unit_line": "**Pricing-power evidence by segment**, mid-2026",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Net revenue retention, trailing 12 months",
+     "Monthly logo churn, H1 2026",
+     "Share of ARR renewing in 2027",
+     "What holds customers or pulls them away"
+    ],
+    "rows": [
+     {
+      "label": "Mid-market",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "mmN"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "mm26"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "mmren"
+        }
+       },
+       {
+        "text": "Integrations and audit trail; Inkwell not seen in deals above 200 seats"
+       }
+      ],
+      "note": "Strong: raise at renewal"
+     },
+     {
+      "label": "Enterprise",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "enN"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "en26"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "entren"
+        }
+       },
+       {
+        "text": "Integrations and audit trail; 60% of ARR capped at 7% a year"
+       }
+      ],
+      "note": "Strong, but capped and mostly not renewing"
+     },
+     {
+      "label": "SMB",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "smbN"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "smb26"
+        }
+       },
+       {
+        "text": "All"
+       },
+       {
+        "text": "Inkwell Starter at $9 against our $15; win rate against it down to 38%"
+       }
+      ],
+      "note": "Unproven: test before raising"
+     }
+    ],
+    "verdict_header": "Pricing power"
+   },
+   "callout": {
+    "target": "Mid-market",
+    "header": "Largest prize",
+    "detail": "Almost half of all ARR, and most of it renews in 2027"
+   },
+   "footnotes": [
+    "Retention and loyalty reasons from Table 1 and the 2026 customer advisory board; mid-market churn did rise from 0.6% to 0.8% a month, and the pack has no mid-market exit reasons"
+   ]
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Inkwell's $9 plan undercuts our SMB price by 40%, and we now lose most SMB deals where it competes",
+    "numbers": [
+     {
+      "text": "$9",
+      "data_ref": "ink9"
+     },
+     {
+      "text": "40%",
+      "data_ref": "ink_gap"
+     }
+    ],
+    "clauses": 2
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Two clauses: price gap and its effect -> two panels",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "Inkwell's Starter plan costs 40% less than the Palisade SMB plan",
+      "delta": {
+       "data_ref": "ink_gap"
+      },
+      "unit_line": "**List price**, $ per user per month, from October 2025",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Inkwell Starter",
+        "Palisade SMB",
+        "Inkwell Pro",
+        "Palisade Business"
+       ],
+       "series": [
+        {
+         "name": "List price",
+         "points": [
+          {
+           "data_ref": "ink9"
+          },
+          {
+           "data_ref": "pal15"
+          },
+          {
+           "data_ref": "ink24"
+          },
+          {
+           "data_ref": "pal29"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Inkwell Starter",
+        "Palisade SMB"
+       ],
+       "value_format": "\"$\"0"
+      }
+     },
+     {
+      "header": "Our SMB win rate where Inkwell competes fell to 38% within a year of its launch",
+      "delta": {
+       "data_ref": "win_chg"
+      },
+      "unit_line": "**SMB win rate in deals where Inkwell was considered**, % of deals",
+      "body": {
+       "kind": "chart",
+       "chart_type": "column",
+       "categories": [
+        "H1 2025",
+        "H1 2026"
+       ],
+       "series": [
+        {
+         "name": "Win rate",
+         "points": [
+          {
+           "data_ref": "win25"
+          },
+          {
+           "data_ref": "win26"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "H1 2026"
+       ],
+       "value_format": "0%"
+      }
+     }
+    ]
+   },
+   "so_what": "Inkwell has not appeared in mid-market or enterprise deals above 200 seats; the threat is confined to SMB for now",
+   "so_what_style": "line",
+   "footnotes": [
+    "Smaller mid-market deals of up to 200 seats may still meet Inkwell; the pack does not split mid-market renewals by seat count"
+   ]
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Our own price history says mid-market barely reacts to a rise and SMB churn recovers within six months",
+    "clauses": 2
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Two past price moves, one claim about price response -> two panels",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "After the 8% SMB rise in 2023, churn jumped for six months, then settled near its old level",
+      "delta": {
+       "data_ref": "h23jump"
+      },
+      "unit_line": "**SMB monthly logo churn** around the 2023 rise, % of customers",
+      "body": {
+       "kind": "chart",
+       "chart_type": "column",
+       "categories": [
+        "Before the rise",
+        "First six months",
+        "After it settled"
+       ],
+       "series": [
+        {
+         "name": "SMB churn",
+         "points": [
+          {
+           "data_ref": "h23pre"
+          },
+          {
+           "data_ref": "h23pk"
+          },
+          {
+           "data_ref": "h23set"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "First six months"
+       ],
+       "value_format": "0.0%"
+      }
+     },
+     {
+      "header": "A 10% higher list price did not measurably change mid-market conversion in 2024",
+      "unit_line": "**Conversion of new mid-market sign-ups**, %, three-month test, 2024",
+      "body": {
+       "kind": "chart",
+       "chart_type": "column",
+       "categories": [
+        "Control price",
+        "10% higher list price"
+       ],
+       "series": [
+        {
+         "name": "Conversion",
+         "points": [
+          {
+           "data_ref": "convC"
+          },
+          {
+           "data_ref": "convT"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "10% higher list price"
+       ],
+       "value_format": "0.0%"
+      }
+     }
+    ]
+   },
+   "footnotes": [
+    "Both are imperfect guides: the 2023 rise came before Inkwell's $9 plan, and the 2024 test covered new sign-ups for three months, not renewals; the conversion gap was not statistically significant"
+   ]
+  },
+  {
+   "id": "d3",
+   "role": "section_divider",
+   "section_id": "3",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "8",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "The CFO's plan is worth about $7.6M in 2027, not $10.3M, once renewal dates and price caps apply",
+    "numbers": [
+     {
+      "text": "$7.6M",
+      "data_ref": "reach"
+     },
+     {
+      "text": "$10.3M",
+      "data_ref": "cfo103"
+     }
+    ],
+    "highlights": [
+     "ARR not renewing in 2027",
+     "Enterprise price caps"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "waterfall-bridge",
+   "rationale": "Bridge from the headline to what can be reached -> waterfall",
+   "unit_line": "**ARR gain from 12% on every plan at renewal**, $ millions, 2027, before any churn response",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "A third of what is left rests on the riskiest segment",
+     "big_number": {
+      "data_ref": "sh_smb_cfo"
+     },
+     "caption": "of the reachable gain would come from SMB, where churn is rising",
+     "bullets": [
+      "**Not renewing:** 60% of enterprise and 15% of mid-market ARR keeps today's terms",
+      "**Price caps:** capped contracts rise 7% at most"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "waterfall",
+    "categories": [
+     "CFO headline: 12% on all ARR",
+     "ARR not renewing in 2027",
+     "Enterprise price caps",
+     "Reachable in 2027"
+    ],
+    "series": [
+     {
+      "name": "ARR gain",
+      "points": [
+       {
+        "data_ref": "cfo103"
+       },
+       {
+        "data_ref": "cfo_nr"
+       },
+       {
+        "data_ref": "cfo_cap"
+       },
+       {
+        "data_ref": "reach"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "ARR not renewing in 2027",
+     "Enterprise price caps"
+    ],
+    "value_format": "\"$\"#,##0.0\"M\""
+   },
+   "footnotes": [
+    "Assumes capped and uncapped enterprise contracts renew in proportion; the headline of $10.3M is 12% of all $86.0M ARR"
+   ]
+  },
+  {
+   "id": "9",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "A segmented plan keeps most of the CFO's reachable gain while sparing the customers most likely to leave",
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Four options on the same criteria -> comparison table",
+   "unit_line": "**Options for 2027 pricing**, ARR gain at renewal in $ millions, before churn response",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "ARR gain at renewal in 2027",
+     "Who carries the price risk",
+     "Fit with the 15% ARR objective"
+    ],
+    "rows": [
+     {
+      "label": "Hold all prices",
+      "cells": [
+       {
+        "text": "None"
+       },
+       {
+        "text": "No one, but the strongest segments are left unpriced"
+       },
+       {
+        "text": "Relies entirely on retention and new customers"
+       }
+      ],
+      "note": "Rejected: churn rise is not a core price problem"
+     },
+     {
+      "label": "CFO: 12% on every plan",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "reach"
+        }
+       },
+       {
+        "text": "Promotion cohort and SMB customers facing Inkwell"
+       },
+       {
+        "text": "Largest on paper; SMB churn response untested at 12%"
+       }
+      ],
+      "note": "Rejected: a third of the gain rests on SMB"
+     },
+     {
+      "label": "Segmented, SMB step staged",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "rec"
+        }
+       },
+       {
+        "text": "Mostly mid-market and enterprise; SMB behind a stop rule"
+       },
+       {
+        "text": "About level with it before new customers"
+       }
+      ],
+      "note": "Recommended"
+     },
+     {
+      "label": "Mid-market and enterprise only",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "rec_mmen"
+        }
+       },
+       {
+        "text": "Only the segments with proven retention"
+       },
+       {
+        "text": "Slightly short before new customers"
+       }
+      ],
+      "note": "Fallback if the SMB stop rule triggers"
+     }
+    ],
+    "verdict_header": "Verdict"
+   },
+   "callout": {
+    "target": "Segmented, SMB step staged",
+    "header": "Recommended",
+    "detail": "Most of the CFO's gain, with SMB tested before it scales"
+   },
+   "footnotes": [
+    "Gains are ARR at renewal before any churn response; the SMB step net of churn and the fit with the 15% objective are shown on the following pages"
+   ]
+  },
+  {
+   "id": "d4",
+   "role": "section_divider",
+   "section_id": "4",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "10",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "The segmented plan still adds about $5.6M; most of what it gives up is SMB revenue at risk of churning",
+    "numbers": [
+     {
+      "text": "$5.6M",
+      "data_ref": "rec"
+     }
+    ],
+    "highlights": [
+     "Promotion cohort: price held",
+     "Other SMB: 8%, not 12%"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "waterfall-bridge",
+   "rationale": "From the CFO's reachable gain to ours -> waterfall of give-ups",
+   "unit_line": "**ARR gain at renewal**, $ millions, 2027, before churn response",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "We give up gain where churn risk is highest",
+     "big_number": {
+      "data_ref": "sh_smb_d"
+     },
+     "caption": "of the gain given up against the CFO plan is SMB revenue",
+     "bullets": [
+      "**Promotion cohort:** price held while it gets started",
+      "**Other SMB:** repeats the 2023 step of 8%, whose effect we know",
+      "**Mid-market:** the 10% tested in 2024"
+     ],
+     "implication": "Mid-market and enterprise carry most of the gain"
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "waterfall",
+    "categories": [
+     "Reachable under the CFO plan",
+     "Promotion cohort: price held",
+     "Other SMB: 8%, not 12%",
+     "Mid-market: 10%, not 12%",
+     "Enterprise uncapped: 10%, not 12%",
+     "Segmented plan"
+    ],
+    "series": [
+     {
+      "name": "ARR gain",
+      "points": [
+       {
+        "data_ref": "reach"
+       },
+       {
+        "data_ref": "d_pr"
+       },
+       {
+        "data_ref": "d_np"
+       },
+       {
+        "data_ref": "d_mm"
+       },
+       {
+        "data_ref": "d_en"
+       },
+       {
+        "data_ref": "rec"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Promotion cohort: price held",
+     "Other SMB: 8%, not 12%"
+    ],
+    "value_format": "\"$\"#,##0.0\"M\""
+   },
+   "footnotes": [
+    "Plan gain = mid-market $41.0M × 85% renewing × 10% + enterprise $24.0M × 40% × (60% × 7% + 40% × 10%) + other SMB $16.6M × 8%",
+    "Not included: if multi-year enterprise contracts allow a 7% escalator before renewal, up to about $1.0M more; the pack does not say"
+   ]
+  },
+  {
+   "id": "11",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Even if churn reacts only as it did in 2023, the 8% SMB step nets just about $0.7M",
+    "numbers": [
+     {
+      "text": "8%",
+      "data_ref": "h23"
+     },
+     {
+      "text": "$0.7M",
+      "data_ref": "net_smb"
+     }
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "calculation-bridge",
+   "rationale": "Our own estimate and how it is built -> equation",
+   "unit_line": "**Net ARR gain from the SMB step**, $ millions, 2027, customers not from the promotion",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "npA"
+      },
+      "caption": "ARR of SMB customers not from the promotion, all renewing in 2027"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "h23"
+      },
+      "caption": "price step, the same as the 2023 SMB rise"
+     },
+     {
+      "op": "−",
+      "point": {
+       "data_ref": "resp"
+      },
+      "caption": "ARR lost if churn reacts as in 2023: +0.5 pp for six months, then +0.1 pp"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "net_smb"
+      },
+      "caption": "net gain in 2027, about half the gross gain"
+     }
+    ],
+    "assumptions_header": "The step is small and close to break-even, so it needs a stop rule",
+    "assumptions": [
+     "Break-even: the step stops paying if it lifts monthly SMB churn by more than about 0.6 percentage points through 2027 (8% ÷ 108% ÷ 12 months)",
+     "Customers not from the promotion react as all SMB did in 2023; Inkwell's $9 plan did not exist then, so the response could be larger",
+     "Lost customers are valued at the new price; any effect on new-customer win rates is not included",
+     "The promotion cohort is left out of the step"
+    ]
+   },
+   "footnotes": [
+    "Estimate by the team from the briefing pack; the live formula is in the Calculations sheet of the source workbook"
+   ]
+  },
+  {
+   "id": "12",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "On today's retention, the plan grows ARR about 15% before any new customers: level with the objective, with no cushion",
+    "numbers": [
+     {
+      "text": "15%",
+      "data_ref": "g27"
+     }
+    ],
+    "highlights": [
+     "Price plan, net of SMB churn"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "waterfall-bridge",
+   "rationale": "Bridge from today's ARR to 2027 -> waterfall with its basis",
+   "unit_line": "**ARR from existing customers**, $ millions, mid-2026 to end-2027",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Both objectives are met only if mid-market renewals hold",
+     "bullets": [
+      "**Retention:** the biggest step, if each segment holds",
+      "**Risk:** a mid-market churn response puts 15% out of reach"
+     ],
+     "rows": [
+      {
+       "label": "ARR growth from existing customers",
+       "point": {
+        "data_ref": "g27"
+       },
+       "basis": "$98.9M ÷ $86.0M − 1",
+       "highlight": true
+      },
+      {
+       "label": "Net revenue retention with the plan",
+       "point": {
+        "data_ref": "nrr27"
+       },
+       "basis": "$98.9M ÷ $86.0M"
+      }
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "waterfall",
+    "categories": [
+     "ARR, mid-2026",
+     "Existing customers at today's retention",
+     "Price plan, net of SMB churn",
+     "ARR, end-2027"
+    ],
+    "series": [
+     {
+      "name": "ARR",
+      "points": [
+       {
+        "data_ref": "arr"
+       },
+       {
+        "data_ref": "nrr_gain"
+       },
+       {
+        "data_ref": "plan_net"
+       },
+       {
+        "data_ref": "arr27"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Price plan, net of SMB churn"
+    ],
+    "value_format": "\"$\"#,##0.0\"M\""
+   },
+   "basis": {
+    "header": "How we projected it",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "arr"
+      },
+      "caption": "ARR today"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "nrr_all"
+      },
+      "caption": "net revenue retention"
+     },
+     {
+      "op": "+",
+      "point": {
+       "data_ref": "plan_net"
+      },
+      "caption": "price plan, net"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "arr27"
+      },
+      "caption": "ARR, end-2027"
+     }
+    ]
+   },
+   "footnotes": [
+    "Range before new customers: $98.25M (14.2%) if the SMB step is stopped, $99.6M if it causes no churn response; new-customer ARR, not in the pack, is the only cushion"
+   ]
+  },
+  {
+   "id": "13",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Mid-market and enterprise move from January, while the SMB step waits for a one-quarter test",
+    "clauses": 1
+   },
+   "message_type": "structure",
+   "archetype": "timeline-roadmap",
+   "rationale": "Steps with dates -> timeline",
+   "unit_line": "**2027 pricing rollout**, by quarter",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "timeline",
+    "periods": [
+     "Dec 2026",
+     "Q1 2027",
+     "Q2 2027",
+     "Q3 2027",
+     "Q4 2027"
+    ],
+    "rows": [
+     {
+      "label": "Leadership",
+      "bars": [
+       {
+        "start": "Dec 2026",
+        "end": "Dec 2026",
+        "label": "Approve plan and stop rules",
+        "emphasis": true
+       }
+      ]
+     },
+     {
+      "label": "Mid-market: 10% at renewal",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q4 2027",
+        "label": "New price on every 2027 renewal"
+       }
+      ]
+     },
+     {
+      "label": "Enterprise: up to cap",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q4 2027",
+        "label": "7% capped, 10% uncapped, at renewal"
+       }
+      ]
+     },
+     {
+      "label": "Other SMB: 8% step",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q1 2027",
+        "label": "Test on half"
+       },
+       {
+        "start": "Q2 2027",
+        "end": "Q4 2027",
+        "label": "Roll out if the stop rule holds",
+        "emphasis": true
+       }
+      ]
+     },
+     {
+      "label": "Promotion cohort",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q2 2027",
+        "label": "Activation drive, price held"
+       },
+       {
+        "start": "Q3 2027",
+        "end": "Q4 2027",
+        "label": "Review price with activation data"
+       }
+      ]
+     },
+     {
+      "label": "New SMB sign-ups",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q4 2027",
+        "label": "List price stays at $15 while Inkwell undercuts"
+       }
+      ]
+     }
+    ],
+    "milestones": [
+     {
+      "at": "Q2 2027",
+      "label": "SMB go / no-go"
+     },
+     {
+      "at": "Q3 2027",
+      "label": "Six-month SMB check"
+     }
+    ]
+   },
+   "so_what": "Decision for December: approve the segmented plan with its stop rules, not a single 12% rise",
+   "so_what_style": "line",
+   "footnotes": [
+    "The test randomly assigns half of the renewing SMB customers not from the promotion to the 8% step and keeps the other half as control"
+   ]
+  },
+  {
+   "id": "14",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Five measures, each with a stop level, tell leadership within a quarter whether to pause a step",
+    "count_word": 5,
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Measures on the same three attributes -> comparison table",
+   "unit_line": "**Guardrails for the 2027 plan**, reviewed monthly from January",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Today",
+     "Stop level",
+     "Action if reached"
+    ],
+    "rows": [
+     {
+      "label": "SMB test group: extra monthly churn over control",
+      "cells": [
+       {
+        "text": "Test starts in January"
+       },
+       {
+        "point": {
+         "data_ref": "h23jump"
+        }
+       },
+       {
+        "text": "Stop the step; hold SMB prices for 2027"
+       }
+      ],
+      "note": "Above 2023's jump means worse than 2023"
+     },
+     {
+      "label": "Mid-market monthly logo churn",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "mm26"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "mm_stop"
+        }
+       },
+       {
+        "text": "Pause further rises; review 51–200-seat accounts first"
+       }
+      ],
+      "note": "Break-even of the 10% step"
+     },
+     {
+      "label": "Overall net revenue retention",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "nrr_all"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "nrrfl"
+        }
+       },
+       {
+        "text": "Revisit every step"
+       }
+      ],
+      "note": "Company objective"
+     },
+     {
+      "label": "Promotion cohort: share getting started",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "act_pr"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "act_oth"
+        }
+       },
+       {
+        "text": "Below it by Q3: accept the churn, no new discount"
+       }
+      ],
+      "note": "Target, not a stop level"
+     },
+     {
+      "label": "SMB win rate where Inkwell competes",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "win26"
+        }
+       },
+       {
+        "text": "Any further fall"
+       },
+       {
+        "text": "Review the SMB entry offer against Inkwell"
+       }
+      ],
+      "note": "Guards new-customer growth"
+     }
+    ],
+    "verdict_header": "Why this level"
+   },
+   "so_what": "One owner per measure, reviewed monthly; the SMB decision is made in April on the first quarter of test data",
+   "so_what_style": "bar",
+   "footnotes": [
+    "With about 1,900 customers in each SMB test group, a quarter shows a jump the size of 2023's; the six-month check shows whether it settles",
+    "Mid-market stop level: 0.8% today plus 0.76 percentage points, the extra churn at which 10% ÷ 110% of renewing ARR is lost over 12 months"
+   ]
+  },
+  {
+   "id": "app",
+   "role": "appendix_divider",
+   "status": "filled"
+  },
+  {
+   "id": "b1",
+   "role": "backup",
+   "backup_of": "1",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "The board dashboard's churn figure matches neither a customer- nor an ARR-weighted view of the segments",
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "data-table",
+   "rationale": "Three readings of one measure -> data table",
+   "unit_line": "**Monthly churn, three ways**, % of customers or of ARR, earlier and latest reading",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "Earlier (H1 2025)",
+     "Latest (H1 2026)"
+    ],
+    "rows": [
+     {
+      "label": "Board dashboard, measure not defined",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "db1"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "db2"
+        }
+       }
+      ],
+      "note": "Periods and weighting not stated"
+     },
+     {
+      "label": "Segments weighted by customers",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "cw25"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "cw26"
+        }
+       }
+      ],
+      "note": "Same size of rise, from a higher base"
+     },
+     {
+      "label": "Segments weighted by ARR",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "aw25"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "aw26"
+        }
+       }
+      ],
+      "note": "Lower: large accounts churn least"
+     }
+    ],
+    "verdict_header": "Read-across"
+   },
+   "footnotes": [
+    "Weighted with mid-2026 customer counts and ARR from Table 1; the dashboard's periods are assumed to match H1 2025 and H1 2026"
+   ]
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "arr",
+   "slide_id": "1",
+   "label": "Palisade ARR, mid-2026",
+   "value": 86.0,
+   "unit": "$M",
+   "period": "mid-2026",
+   "source_id": "s1",
+   "excerpt": "ARR is $86.0M from 7,400 customers in three segments.",
+   "locator": "§1 Context"
+  },
+  {
+   "id": "custs",
+   "slide_id": "1",
+   "label": "Palisade customers, mid-2026",
+   "value": 7400,
+   "unit": "customers",
+   "period": "mid-2026",
+   "source_id": "s1",
+   "excerpt": "ARR is $86.0M from 7,400 customers in three segments.",
+   "locator": "§1 Context"
+  },
+  {
+   "id": "tgt",
+   "slide_id": "12",
+   "label": "ARR growth objective for 2027",
+   "value": 0.15,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s1",
+   "excerpt": "Grow ARR at least 15% in 2027 (from $86.0M).",
+   "locator": "§3 Objectives and constraints"
+  },
+  {
+   "id": "nrrfl",
+   "slide_id": "12",
+   "label": "Net revenue retention floor, overall",
+   "value": 1.0,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s1",
+   "excerpt": "Keep net revenue retention above 100% overall.",
+   "locator": "§3 Objectives and constraints"
+  },
+  {
+   "id": "cfo12",
+   "slide_id": "8",
+   "label": "CFO proposal: list price rise on every plan at renewal",
+   "value": 0.12,
+   "unit": "%",
+   "period": "from January 2027",
+   "source_id": "s1",
+   "excerpt": "CFO: \"Raise list prices 12% on every plan at renewal from January 2027. That is $10.3M of ARR.",
+   "locator": "§4 Current views"
+  },
+  {
+   "id": "cfo103",
+   "slide_id": "8",
+   "label": "CFO's stated ARR gain from the 12% rise",
+   "value": 10.3,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s1",
+   "excerpt": "CFO: \"Raise list prices 12% on every plan at renewal from January 2027. That is $10.3M of ARR.",
+   "locator": "§4 Current views"
+  },
+  {
+   "id": "smbC",
+   "slide_id": "2",
+   "label": "SMB customers, mid-2026",
+   "value": 5900,
+   "unit": "customers",
+   "period": "mid-2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"SMB\", column \"Customers\" = \"5,900\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "smbA",
+   "slide_id": "5",
+   "label": "SMB ARR, mid-2026",
+   "value": 21.0,
+   "unit": "$M",
+   "period": "mid-2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"SMB\", column \"ARR, $M\" = \"21.0\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "smb25",
+   "slide_id": "1",
+   "label": "SMB monthly logo churn, H1 2025",
+   "value": 0.02,
+   "unit": "%",
+   "period": "H1 2025",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"SMB\", column \"Monthly logo churn H1 2025\" = \"2.0%\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "smb26",
+   "slide_id": "1",
+   "label": "SMB monthly logo churn, H1 2026",
+   "value": 0.031,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"SMB\", column \"Monthly logo churn H1 2026\" = \"3.1%\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "smbN",
+   "slide_id": "5",
+   "label": "SMB net revenue retention, trailing 12 months",
+   "value": 0.94,
+   "unit": "%",
+   "period": "trailing 12 months to mid-2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"SMB\", column \"Net revenue retention (trailing 12 months)\" = \"94%\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "mmC",
+   "slide_id": "2",
+   "label": "Mid-market customers, mid-2026",
+   "value": 1350,
+   "unit": "customers",
+   "period": "mid-2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Mid-market\", column \"Customers\" = \"1,350\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "mmA",
+   "slide_id": "5",
+   "label": "Mid-market ARR, mid-2026",
+   "value": 41.0,
+   "unit": "$M",
+   "period": "mid-2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Mid-market\", column \"ARR, $M\" = \"41.0\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "mm25",
+   "slide_id": "1",
+   "label": "Mid-market monthly logo churn, H1 2025",
+   "value": 0.006,
+   "unit": "%",
+   "period": "H1 2025",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Mid-market\", column \"Monthly logo churn H1 2025\" = \"0.6%\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "mm26",
+   "slide_id": "1",
+   "label": "Mid-market monthly logo churn, H1 2026",
+   "value": 0.008,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Mid-market\", column \"Monthly logo churn H1 2026\" = \"0.8%\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "mmN",
+   "slide_id": "5",
+   "label": "Mid-market net revenue retention, trailing 12 months",
+   "value": 1.12,
+   "unit": "%",
+   "period": "trailing 12 months to mid-2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Mid-market\", column \"Net revenue retention (trailing 12 months)\" = \"112%\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "enC",
+   "slide_id": "2",
+   "label": "Enterprise customers, mid-2026",
+   "value": 150,
+   "unit": "customers",
+   "period": "mid-2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Enterprise\", column \"Customers\" = \"150\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "enA",
+   "slide_id": "5",
+   "label": "Enterprise ARR, mid-2026",
+   "value": 24.0,
+   "unit": "$M",
+   "period": "mid-2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Enterprise\", column \"ARR, $M\" = \"24.0\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "en25",
+   "slide_id": "1",
+   "label": "Enterprise monthly logo churn, H1 2025",
+   "value": 0.002,
+   "unit": "%",
+   "period": "H1 2025",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Enterprise\", column \"Monthly logo churn H1 2025\" = \"0.2%\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "en26",
+   "slide_id": "1",
+   "label": "Enterprise monthly logo churn, H1 2026",
+   "value": 0.002,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Enterprise\", column \"Monthly logo churn H1 2026\" = \"0.2%\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "enN",
+   "slide_id": "5",
+   "label": "Enterprise net revenue retention, trailing 12 months",
+   "value": 1.18,
+   "unit": "%",
+   "period": "trailing 12 months to mid-2026",
+   "source_id": "s1",
+   "excerpt": "Table 1 \"Enterprise\", column \"Net revenue retention (trailing 12 months)\" = \"118%\"",
+   "locator": "§5 Table 1"
+  },
+  {
+   "id": "prC",
+   "slide_id": "2",
+   "label": "SMB customers from the 2025 promotion still in the base",
+   "value": 2100,
+   "unit": "customers",
+   "period": "2025 cohort, still in the base mid-2026",
+   "source_id": "s1",
+   "excerpt": "The promotion brought in 2,100 SMB customers who are still counted in the base above (about $4.4M of ARR at full price).",
+   "locator": "§6 The 2025 SMB promotion"
+  },
+  {
+   "id": "prA",
+   "slide_id": "9",
+   "label": "ARR of the 2025 promotion cohort at full price",
+   "value": 4.4,
+   "unit": "$M",
+   "period": "2025 cohort, at full price mid-2026",
+   "source_id": "s1",
+   "excerpt": "The promotion brought in 2,100 SMB customers who are still counted in the base above (about $4.4M of ARR at full price).",
+   "locator": "§6 The 2025 SMB promotion"
+  },
+  {
+   "id": "act_pr",
+   "slide_id": "3",
+   "label": "Promotion-cohort customers sending at least five documents in month one",
+   "value": 0.41,
+   "unit": "%",
+   "period": "2025 cohorts",
+   "source_id": "s1",
+   "excerpt": "Share of new customers who sent at least five documents in their first month: 41% for the promotion cohort, 72% for other cohorts.",
+   "locator": "§6 The 2025 SMB promotion"
+  },
+  {
+   "id": "act_oth",
+   "slide_id": "3",
+   "label": "Other new customers sending at least five documents in month one",
+   "value": 0.72,
+   "unit": "%",
+   "period": "other cohorts",
+   "source_id": "s1",
+   "excerpt": "Share of new customers who sent at least five documents in their first month: 41% for the promotion cohort, 72% for other cohorts.",
+   "locator": "§6 The 2025 SMB promotion"
+  },
+  {
+   "id": "np26",
+   "slide_id": "2",
+   "label": "Monthly churn, SMB customers not from the promotion, H1 2026",
+   "value": 0.021,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s1",
+   "excerpt": "Monthly churn in H1 2026 for SMB customers who did not come through the promotion: 2.1% (H1 2025 for the same kind of customers: 2.0%).",
+   "locator": "§6 The 2025 SMB promotion"
+  },
+  {
+   "id": "np25",
+   "slide_id": "2",
+   "label": "Monthly churn, same kind of SMB customers, H1 2025",
+   "value": 0.02,
+   "unit": "%",
+   "period": "H1 2025",
+   "source_id": "s1",
+   "excerpt": "Monthly churn in H1 2026 for SMB customers who did not come through the promotion: 2.1% (H1 2025 for the same kind of customers: 2.0%).",
+   "locator": "§6 The 2025 SMB promotion"
+  },
+  {
+   "id": "pc25",
+   "slide_id": "3",
+   "label": "Churned customers citing price as main reason: all SMB churners H1 2025",
+   "value": 0.19,
+   "unit": "%",
+   "period": "H1 2025",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"all SMB churners H1 2025\", column \"Share citing price\" = \"19%\"",
+   "locator": "§6 Table 2"
+  },
+  {
+   "id": "pc26",
+   "slide_id": "3",
+   "label": "Churned customers citing price as main reason: all SMB churners H1 2026",
+   "value": 0.34,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"all SMB churners H1 2026\", column \"Share citing price\" = \"34%\"",
+   "locator": "§6 Table 2"
+  },
+  {
+   "id": "pcpr",
+   "slide_id": "3",
+   "label": "Churned customers citing price as main reason: promo-cohort churners H1 2026",
+   "value": 0.52,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"promo-cohort churners H1 2026\", column \"Share citing price\" = \"52%\"",
+   "locator": "§6 Table 2"
+  },
+  {
+   "id": "pcnp",
+   "slide_id": "3",
+   "label": "Churned customers citing price as main reason: non-promo SMB churners H1 2026",
+   "value": 0.18,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s1",
+   "excerpt": "Table 2 \"non-promo SMB churners H1 2026\", column \"Share citing price\" = \"18%\"",
+   "locator": "§6 Table 2"
+  },
+  {
+   "id": "low3",
+   "slide_id": "4",
+   "label": "Churn multiple of SMB customers sending fewer than five documents in month one",
+   "value": 3,
+   "unit": "x",
+   "period": "current",
+   "source_id": "s1",
+   "locator": "§9: \"churn at about three times the rate of those who send more\""
+  },
+  {
+   "id": "ink9",
+   "slide_id": "6",
+   "label": "Inkwell Starter list price",
+   "value": 9,
+   "unit": "$",
+   "period": "from October 2025",
+   "source_id": "s1",
+   "excerpt": "Inkwell launched a Starter plan at $9 per user per month in October 2025. Palisade's SMB plan is $15 per user per month; Business plan $29; Inkwell Pro $24.",
+   "locator": "§7 Competitor"
+  },
+  {
+   "id": "pal15",
+   "slide_id": "6",
+   "label": "Palisade SMB plan list price",
+   "value": 15,
+   "unit": "$",
+   "period": "2025–26",
+   "source_id": "s1",
+   "excerpt": "Inkwell launched a Starter plan at $9 per user per month in October 2025. Palisade's SMB plan is $15 per user per month; Business plan $29; Inkwell Pro $24.",
+   "locator": "§7 Competitor"
+  },
+  {
+   "id": "pal29",
+   "slide_id": "6",
+   "label": "Palisade Business plan list price",
+   "value": 29,
+   "unit": "$",
+   "period": "2025–26",
+   "source_id": "s1",
+   "excerpt": "Inkwell launched a Starter plan at $9 per user per month in October 2025. Palisade's SMB plan is $15 per user per month; Business plan $29; Inkwell Pro $24.",
+   "locator": "§7 Competitor"
+  },
+  {
+   "id": "ink24",
+   "slide_id": "6",
+   "label": "Inkwell Pro list price",
+   "value": 24,
+   "unit": "$",
+   "period": "2025–26",
+   "source_id": "s1",
+   "excerpt": "Inkwell launched a Starter plan at $9 per user per month in October 2025. Palisade's SMB plan is $15 per user per month; Business plan $29; Inkwell Pro $24.",
+   "locator": "§7 Competitor"
+  },
+  {
+   "id": "win25",
+   "slide_id": "6",
+   "label": "SMB win rate where Inkwell was considered, H1 2025",
+   "value": 0.51,
+   "unit": "%",
+   "period": "H1 2025",
+   "source_id": "s1",
+   "excerpt": "Palisade's win rate in SMB deals where Inkwell was considered fell from 51% (H1 2025) to 38% (H1 2026).",
+   "locator": "§7 Competitor"
+  },
+  {
+   "id": "win26",
+   "slide_id": "6",
+   "label": "SMB win rate where Inkwell was considered, H1 2026",
+   "value": 0.38,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s1",
+   "excerpt": "Palisade's win rate in SMB deals where Inkwell was considered fell from 51% (H1 2025) to 38% (H1 2026).",
+   "locator": "§7 Competitor"
+  },
+  {
+   "id": "seats200",
+   "slide_id": "6",
+   "label": "Deal size above which Inkwell has not been seen",
+   "value": 200,
+   "unit": "seats",
+   "period": "to mid-2026",
+   "source_id": "s1",
+   "excerpt": "Inkwell has not been seen in mid-market or enterprise deals with more than 200 seats.",
+   "locator": "§7 Competitor"
+  },
+  {
+   "id": "h23",
+   "slide_id": "7",
+   "label": "2023 SMB price increase at renewal",
+   "value": 0.08,
+   "unit": "%",
+   "period": "2023",
+   "source_id": "s1",
+   "excerpt": "2023 SMB price increase: +8% at renewal. SMB monthly churn rose from 1.8% to 2.3% for six months, then settled at 1.9%.",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "h23pre",
+   "slide_id": "7",
+   "label": "SMB monthly churn before the 2023 increase",
+   "value": 0.018,
+   "unit": "%",
+   "period": "2023",
+   "source_id": "s1",
+   "excerpt": "2023 SMB price increase: +8% at renewal. SMB monthly churn rose from 1.8% to 2.3% for six months, then settled at 1.9%.",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "h23pk",
+   "slide_id": "7",
+   "label": "SMB monthly churn in the six months after the 2023 increase",
+   "value": 0.023,
+   "unit": "%",
+   "period": "2023",
+   "source_id": "s1",
+   "excerpt": "2023 SMB price increase: +8% at renewal. SMB monthly churn rose from 1.8% to 2.3% for six months, then settled at 1.9%.",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "h23set",
+   "slide_id": "7",
+   "label": "SMB monthly churn after it settled, 2023 increase",
+   "value": 0.019,
+   "unit": "%",
+   "period": "2023",
+   "source_id": "s1",
+   "excerpt": "2023 SMB price increase: +8% at renewal. SMB monthly churn rose from 1.8% to 2.3% for six months, then settled at 1.9%.",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "mmt",
+   "slide_id": "7",
+   "label": "2024 mid-market test: list price increase for new sign-ups",
+   "value": 0.1,
+   "unit": "%",
+   "period": "2024",
+   "source_id": "s1",
+   "excerpt": "2024 mid-market test: +10% list price for new mid-market sign-ups for three months: conversion 23.1% against 23.6% for the control group (difference not statistically significant).",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "convT",
+   "slide_id": "7",
+   "label": "Conversion of new mid-market sign-ups at +10% list price",
+   "value": 0.231,
+   "unit": "%",
+   "period": "2024",
+   "source_id": "s1",
+   "excerpt": "2024 mid-market test: +10% list price for new mid-market sign-ups for three months: conversion 23.1% against 23.6% for the control group (difference not statistically significant).",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "convC",
+   "slide_id": "7",
+   "label": "Conversion of new mid-market sign-ups, control group",
+   "value": 0.236,
+   "unit": "%",
+   "period": "2024",
+   "source_id": "s1",
+   "excerpt": "2024 mid-market test: +10% list price for new mid-market sign-ups for three months: conversion 23.1% against 23.6% for the control group (difference not statistically significant).",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "capsh",
+   "slide_id": "5",
+   "label": "Share of enterprise ARR under contracts capping annual increases",
+   "value": 0.6,
+   "unit": "%",
+   "period": "current contracts",
+   "source_id": "s1",
+   "excerpt": "Enterprise: 60% of enterprise ARR is under contracts that cap annual price increases at 7%.",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "cap",
+   "slide_id": "5",
+   "label": "Cap on annual price increases in capped enterprise contracts",
+   "value": 0.07,
+   "unit": "%",
+   "period": "current contracts",
+   "source_id": "s1",
+   "excerpt": "Enterprise: 60% of enterprise ARR is under contracts that cap annual price increases at 7%.",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "entren",
+   "slide_id": "5",
+   "label": "Share of enterprise ARR renewing in 2027",
+   "value": 0.4,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s1",
+   "excerpt": "40% of enterprise ARR renews in 2027, as does 85% of mid-market ARR and all SMB ARR.",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "mmren",
+   "slide_id": "5",
+   "label": "Share of mid-market ARR renewing in 2027",
+   "value": 0.85,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s1",
+   "excerpt": "40% of enterprise ARR renews in 2027, as does 85% of mid-market ARR and all SMB ARR.",
+   "locator": "§8 Pricing history and tests"
+  },
+  {
+   "id": "db1",
+   "slide_id": "b1",
+   "label": "Board dashboard monthly churn, earlier reading",
+   "value": 0.014,
+   "unit": "%",
+   "period": "Q2 2026 dashboard",
+   "source_id": "s1",
+   "excerpt": "Board dashboard (Q2 2026): \"Monthly churn: 1.4% → 2.3%.\" The dashboard does not define the measure.",
+   "locator": "§10 Other material"
+  },
+  {
+   "id": "db2",
+   "slide_id": "b1",
+   "label": "Board dashboard monthly churn, latest reading",
+   "value": 0.023,
+   "unit": "%",
+   "period": "Q2 2026 dashboard",
+   "source_id": "s1",
+   "excerpt": "Board dashboard (Q2 2026): \"Monthly churn: 1.4% → 2.3%.\" The dashboard does not define the measure.",
+   "locator": "§10 Other material"
+  },
+  {
+   "id": "nrr_all",
+   "slide_id": "5",
+   "label": "Overall net revenue retention, ARR-weighted across segments",
+   "value": 1.0927906976744184,
+   "unit": "%",
+   "period": "trailing 12 months to mid-2026",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "enA",
+    "enN",
+    "mmA",
+    "mmN",
+    "smbA",
+    "smbN"
+   ],
+   "formula": "Σ segment ARR × segment NRR ÷ total ARR",
+   "calc": "(smbA * smbN + mmA * mmN + enA * enN) / arr"
+  },
+  {
+   "id": "smb_rel",
+   "slide_id": "1",
+   "label": "Relative rise in SMB monthly logo churn, H1 2025 to H1 2026",
+   "value": 0.55,
+   "unit": "%",
+   "period": "H1 2025 to H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "smb25",
+    "smb26"
+   ],
+   "formula": "3.1% ÷ 2.0% − 1",
+   "calc": "smb26 / smb25 - 1"
+  },
+  {
+   "id": "smb_rise",
+   "slide_id": "1",
+   "label": "Rise in SMB monthly logo churn",
+   "value": 1.0999999999999999,
+   "unit": "pp",
+   "period": "H1 2025 to H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "smb25",
+    "smb26"
+   ],
+   "formula": "(3.1% − 2.0%) in percentage points",
+   "calc": "(smb26 - smb25) * 100"
+  },
+  {
+   "id": "npC",
+   "slide_id": "2",
+   "label": "SMB customers not from the promotion",
+   "value": 3800,
+   "unit": "customers",
+   "period": "mid-2026",
+   "source_id": "s0",
+   "derived_from": [
+    "prC",
+    "smbC"
+   ],
+   "formula": "5,900 − 2,100",
+   "calc": "smbC - prC"
+  },
+  {
+   "id": "npA",
+   "slide_id": "9",
+   "label": "ARR of SMB customers not from the promotion",
+   "value": 16.6,
+   "unit": "$M",
+   "period": "mid-2026",
+   "source_id": "s0",
+   "derived_from": [
+    "prA",
+    "smbA"
+   ],
+   "formula": "$21.0M − $4.4M",
+   "calc": "smbA - prA"
+  },
+  {
+   "id": "pr26",
+   "slide_id": "2",
+   "label": "Implied monthly churn of the 2025 promotion cohort, H1 2026",
+   "value": 0.049095238095238095,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "np26",
+    "npC",
+    "prC",
+    "smb26",
+    "smbC"
+   ],
+   "formula": "(3.1% × 5,900 − 2.1% × 3,800) ÷ 2,100",
+   "calc": "(smb26 * smbC - np26 * npC) / prC"
+  },
+  {
+   "id": "c_np",
+   "slide_id": "2",
+   "label": "Contribution of SMB customers not from the promotion to the SMB churn rise",
+   "value": 0.00064406779661017,
+   "unit": "%",
+   "period": "H1 2025 to H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "np25",
+    "np26",
+    "npC",
+    "smbC"
+   ],
+   "formula": "3,800 ÷ 5,900 × (2.1% − 2.0%)",
+   "calc": "npC / smbC * (np26 - np25)"
+  },
+  {
+   "id": "c_pr",
+   "slide_id": "2",
+   "label": "Contribution of the promotion cohort to the SMB churn rise",
+   "value": 0.01035593220338983,
+   "unit": "%",
+   "period": "H1 2025 to H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "np25",
+    "pr26",
+    "prC",
+    "smbC"
+   ],
+   "formula": "2,100 ÷ 5,900 × (4.9% − 2.0%), against the 2.0% that customers like them churned at in H1 2025",
+   "calc": "prC / smbC * (pr26 - np25)"
+  },
+  {
+   "id": "sh_pr",
+   "slide_id": "2",
+   "label": "Share of the SMB churn rise from the promotion cohort",
+   "value": 0.9414483821263482,
+   "unit": "%",
+   "period": "H1 2025 to H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "c_pr",
+    "smb25",
+    "smb26"
+   ],
+   "formula": "1.04 pp ÷ 1.1 pp",
+   "calc": "c_pr / (smb26 - smb25)"
+  },
+  {
+   "id": "cw25",
+   "slide_id": "b1",
+   "label": "Customer-weighted monthly logo churn across segments, H1 2025",
+   "value": 0.01708108108108108,
+   "unit": "%",
+   "period": "H1 2025",
+   "source_id": "s0",
+   "derived_from": [
+    "custs",
+    "en25",
+    "enC",
+    "mm25",
+    "mmC",
+    "smb25",
+    "smbC"
+   ],
+   "formula": "Σ segment churn × segment customers (mid-2026) ÷ total",
+   "calc": "(smb25 * smbC + mm25 * mmC + en25 * enC) / custs"
+  },
+  {
+   "id": "cw26",
+   "slide_id": "b1",
+   "label": "Customer-weighted monthly logo churn across segments, H1 2026",
+   "value": 0.02621621621621622,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "custs",
+    "en26",
+    "enC",
+    "mm26",
+    "mmC",
+    "smb26",
+    "smbC"
+   ],
+   "formula": "Σ segment churn × segment customers (mid-2026) ÷ total",
+   "calc": "(smb26 * smbC + mm26 * mmC + en26 * enC) / custs"
+  },
+  {
+   "id": "aw25",
+   "slide_id": "b1",
+   "label": "ARR-weighted monthly logo churn across segments, H1 2025",
+   "value": 0.008302325581395348,
+   "unit": "%",
+   "period": "H1 2025",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "en25",
+    "enA",
+    "mm25",
+    "mmA",
+    "smb25",
+    "smbA"
+   ],
+   "formula": "Σ segment churn × segment ARR (mid-2026) ÷ total",
+   "calc": "(smb25 * smbA + mm25 * mmA + en25 * enA) / arr"
+  },
+  {
+   "id": "aw26",
+   "slide_id": "b1",
+   "label": "ARR-weighted monthly logo churn across segments, H1 2026",
+   "value": 0.011941860465116281,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "en26",
+    "enA",
+    "mm26",
+    "mmA",
+    "smb26",
+    "smbA"
+   ],
+   "formula": "Σ segment churn × segment ARR (mid-2026) ÷ total",
+   "calc": "(smb26 * smbA + mm26 * mmA + en26 * enA) / arr"
+  },
+  {
+   "id": "base_act",
+   "slide_id": "4",
+   "label": "Monthly churn of SMB starters, from the activation mix of other customers",
+   "value": 0.013461538461538462,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "act_oth",
+    "low3",
+    "np26"
+   ],
+   "formula": "2.1% ÷ (72% + 28% × 3)",
+   "calc": "np26 / (act_oth + (1 - act_oth) * low3)",
+   "estimate": true,
+   "assumptions": [
+    "Non-starters (fewer than five documents in month one) churn about three times as often as starters, in both groups (§9)",
+    "Starters in the promotion cohort churn like starters elsewhere; the only difference left is the discount ending",
+    "Rates use mid-2026 customer counts as weights"
+   ]
+  },
+  {
+   "id": "pr_act",
+   "slide_id": "4",
+   "label": "Promotion-cohort churn explained by its low activation (estimate)",
+   "value": 0.02934615384615385,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "act_pr",
+    "base_act",
+    "low3"
+   ],
+   "formula": "starter churn × (41% + 59% × 3)",
+   "calc": "base_act * (act_pr + (1 - act_pr) * low3)",
+   "estimate": true,
+   "assumptions": [
+    "Non-starters (fewer than five documents in month one) churn about three times as often as starters, in both groups (§9)",
+    "Starters in the promotion cohort churn like starters elsewhere; the only difference left is the discount ending",
+    "Rates use mid-2026 customer counts as weights"
+   ]
+  },
+  {
+   "id": "cliff_c",
+   "slide_id": "4",
+   "label": "Promotion-cohort churn left after activation: the discount cliff (estimate)",
+   "value": 0.019749084249084243,
+   "unit": "%",
+   "period": "H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "pr26",
+    "pr_act"
+   ],
+   "formula": "4.9% − 2.9%",
+   "calc": "pr26 - pr_act",
+   "estimate": true,
+   "assumptions": [
+    "Non-starters (fewer than five documents in month one) churn about three times as often as starters, in both groups (§9)",
+    "Starters in the promotion cohort churn like starters elsewhere; the only difference left is the discount ending",
+    "Rates use mid-2026 customer counts as weights"
+   ]
+  },
+  {
+   "id": "smb_cliff",
+   "slide_id": "4",
+   "label": "SMB churn once the discount cliff has passed (estimate)",
+   "value": 0.02397066492829205,
+   "unit": "%",
+   "period": "after H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "cliff_c",
+    "prC",
+    "smb26",
+    "smbC"
+   ],
+   "formula": "3.1% − 2,100 ÷ 5,900 × 2.0 pp",
+   "calc": "smb26 - prC / smbC * cliff_c",
+   "estimate": true,
+   "assumptions": [
+    "Non-starters (fewer than five documents in month one) churn about three times as often as starters, in both groups (§9)",
+    "Starters in the promotion cohort churn like starters elsewhere; the only difference left is the discount ending",
+    "Rates use mid-2026 customer counts as weights"
+   ]
+  },
+  {
+   "id": "smb_floor",
+   "slide_id": "4",
+   "label": "SMB churn if the promotion cohort churned like other SMB customers",
+   "value": 0.021,
+   "unit": "%",
+   "period": "after H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "np26",
+    "prC",
+    "pr_act",
+    "smbC",
+    "smb_cliff"
+   ],
+   "formula": "2.4% − 2,100 ÷ 5,900 × (2.9% − 2.1%)",
+   "calc": "smb_cliff - prC / smbC * (pr_act - np26)"
+  },
+  {
+   "id": "act_sh",
+   "slide_id": "4",
+   "label": "Share of SMB churn that onboarding alone can remove (estimate)",
+   "value": 0.09582790091264673,
+   "unit": "%",
+   "period": "after H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "smb26",
+    "smb_cliff",
+    "smb_floor"
+   ],
+   "formula": "0.3 pp ÷ 3.1%",
+   "calc": "(smb_cliff - smb_floor) / smb26",
+   "estimate": true,
+   "assumptions": [
+    "Non-starters (fewer than five documents in month one) churn about three times as often as starters, in both groups (§9)",
+    "Starters in the promotion cohort churn like starters elsewhere; the only difference left is the discount ending",
+    "Rates use mid-2026 customer counts as weights"
+   ]
+  },
+  {
+   "id": "cs_t",
+   "slide_id": "4",
+   "label": "SMB churn if halved, as the Head of Customer Success expects",
+   "value": 0.0155,
+   "unit": "%",
+   "period": "within two quarters",
+   "source_id": "s0",
+   "derived_from": [
+    "smb26"
+   ],
+   "formula": "3.1% ÷ 2 (\"An onboarding programme will halve SMB churn within two quarters\", §10)",
+   "calc": "smb26 * 0.5"
+  },
+  {
+   "id": "ink_gap",
+   "slide_id": "6",
+   "label": "Inkwell Starter price compared with Palisade SMB plan",
+   "value": -0.4,
+   "unit": "%",
+   "period": "from October 2025",
+   "source_id": "s0",
+   "derived_from": [
+    "ink9",
+    "pal15"
+   ],
+   "formula": "$9 ÷ $15 − 1",
+   "calc": "ink9 / pal15 - 1"
+  },
+  {
+   "id": "win_chg",
+   "slide_id": "6",
+   "label": "Change in SMB win rate where Inkwell was considered",
+   "value": -13.0,
+   "unit": "pp",
+   "period": "H1 2025 to H1 2026",
+   "source_id": "s0",
+   "derived_from": [
+    "win25",
+    "win26"
+   ],
+   "formula": "38% − 51%",
+   "calc": "(win26 - win25) * 100"
+  },
+  {
+   "id": "cfo_nr",
+   "slide_id": "8",
+   "label": "CFO plan: ARR gain lost because the ARR does not renew in 2027",
+   "value": -2.466,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cfo12",
+    "enA",
+    "entren",
+    "mmA",
+    "mmren"
+   ],
+   "formula": "−($41.0M × 15% + $24.0M × 60%) × 12%",
+   "calc": "0 - (mmA * (1 - mmren) + enA * (1 - entren)) * cfo12"
+  },
+  {
+   "id": "cfo_cap",
+   "slide_id": "8",
+   "label": "CFO plan: ARR gain lost to enterprise price caps",
+   "value": -0.288,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cap",
+    "capsh",
+    "cfo12",
+    "enA",
+    "entren"
+   ],
+   "formula": "−$24.0M × 40% renewing × 60% capped × (12% − 7%)",
+   "calc": "0 - enA * entren * capsh * (cfo12 - cap)"
+  },
+  {
+   "id": "r_smb",
+   "slide_id": "8",
+   "label": "CFO plan: ARR gain from SMB at renewal",
+   "value": 2.52,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cfo12",
+    "smbA"
+   ],
+   "formula": "$21.0M × 12%",
+   "calc": "smbA * cfo12"
+  },
+  {
+   "id": "r_mm",
+   "slide_id": "8",
+   "label": "CFO plan: ARR gain from mid-market at renewal",
+   "value": 4.182,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cfo12",
+    "mmA",
+    "mmren"
+   ],
+   "formula": "$41.0M × 85% × 12%",
+   "calc": "mmA * mmren * cfo12"
+  },
+  {
+   "id": "r_en",
+   "slide_id": "8",
+   "label": "CFO plan: ARR gain from enterprise at renewal",
+   "value": 0.8640000000000001,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cap",
+    "capsh",
+    "cfo12",
+    "enA",
+    "entren"
+   ],
+   "formula": "$24.0M × 40% × (60% × 7% + 40% × 12%)",
+   "calc": "enA * entren * (capsh * cap + (1 - capsh) * cfo12)"
+  },
+  {
+   "id": "reach",
+   "slide_id": "8",
+   "label": "CFO plan: ARR gain reachable at renewal in 2027, before churn response",
+   "value": 7.566,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "r_en",
+    "r_mm",
+    "r_smb"
+   ],
+   "formula": "SMB + mid-market + enterprise",
+   "calc": "r_smb + r_mm + r_en"
+  },
+  {
+   "id": "sh_smb_cfo",
+   "slide_id": "8",
+   "label": "Share of the CFO plan's reachable gain from SMB",
+   "value": 0.3330689928628073,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "r_smb",
+    "reach"
+   ],
+   "formula": "$2.5M ÷ $7.6M",
+   "calc": "r_smb / reach"
+  },
+  {
+   "id": "g_mm",
+   "slide_id": "9",
+   "label": "Segmented plan: ARR gain from mid-market at 10%",
+   "value": 3.4850000000000003,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "mmA",
+    "mmren",
+    "mmt"
+   ],
+   "formula": "$41.0M × 85% × 10%",
+   "calc": "mmA * mmren * mmt"
+  },
+  {
+   "id": "g_en",
+   "slide_id": "9",
+   "label": "Segmented plan: ARR gain from enterprise at 7% capped, 10% uncapped",
+   "value": 0.7872000000000002,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cap",
+    "capsh",
+    "enA",
+    "entren",
+    "mmt"
+   ],
+   "formula": "$24.0M × 40% × (60% × 7% + 40% × 10%)",
+   "calc": "enA * entren * (capsh * cap + (1 - capsh) * mmt)"
+  },
+  {
+   "id": "g_smb",
+   "slide_id": "9",
+   "label": "Segmented plan: gross ARR gain from 8% on SMB customers not from the promotion",
+   "value": 1.328,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "h23",
+    "npA"
+   ],
+   "formula": "$16.6M × 8%",
+   "calc": "npA * h23"
+  },
+  {
+   "id": "rec_mmen",
+   "slide_id": "9",
+   "label": "Segmented plan: ARR gain from mid-market and enterprise",
+   "value": 4.272200000000001,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "g_en",
+    "g_mm"
+   ],
+   "formula": "$3.5M + $0.8M",
+   "calc": "g_mm + g_en"
+  },
+  {
+   "id": "d_pr",
+   "slide_id": "10",
+   "label": "Gain given up by holding the promotion cohort's price",
+   "value": -0.528,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cfo12",
+    "prA"
+   ],
+   "formula": "−$4.4M × 12%",
+   "calc": "0 - prA * cfo12"
+  },
+  {
+   "id": "d_np",
+   "slide_id": "10",
+   "label": "Gain given up by 8% instead of 12% on other SMB customers",
+   "value": -0.6639999999999999,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cfo12",
+    "h23",
+    "npA"
+   ],
+   "formula": "−$16.6M × (12% − 8%)",
+   "calc": "0 - npA * (cfo12 - h23)"
+  },
+  {
+   "id": "d_mm",
+   "slide_id": "10",
+   "label": "Gain given up by 10% instead of 12% in mid-market",
+   "value": -0.6969999999999997,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cfo12",
+    "mmA",
+    "mmren",
+    "mmt"
+   ],
+   "formula": "−$41.0M × 85% × (12% − 10%)",
+   "calc": "0 - mmA * mmren * (cfo12 - mmt)"
+  },
+  {
+   "id": "d_en",
+   "slide_id": "10",
+   "label": "Gain given up by 10% instead of 12% on uncapped enterprise",
+   "value": -0.07679999999999998,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "capsh",
+    "cfo12",
+    "enA",
+    "entren",
+    "mmt"
+   ],
+   "formula": "−$24.0M × 40% × 40% × (12% − 10%)",
+   "calc": "0 - enA * entren * (1 - capsh) * (cfo12 - mmt)"
+  },
+  {
+   "id": "rec",
+   "slide_id": "9",
+   "label": "Segmented plan: ARR gain at renewal in 2027, before churn response",
+   "value": 5.600200000000001,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "d_en",
+    "d_mm",
+    "d_np",
+    "d_pr",
+    "reach"
+   ],
+   "formula": "CFO reachable gain less the four give-ups (= $3.5M + $0.8M + $1.3M)",
+   "calc": "reach + d_pr + d_np + d_mm + d_en"
+  },
+  {
+   "id": "sh_smb_d",
+   "slide_id": "10",
+   "label": "Share of the gain given up that is SMB revenue",
+   "value": 0.6063689083324858,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "d_np",
+    "d_pr",
+    "reach",
+    "rec"
+   ],
+   "formula": "($0.53M + $0.66M) ÷ $1.97M",
+   "calc": "(d_pr + d_np) / (rec - reach)"
+  },
+  {
+   "id": "ent_esc",
+   "slide_id": "10",
+   "label": "Enterprise ARR not renewing in 2027 times the 7% cap (escalator upside, if contracts allow)",
+   "value": 1.008,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "cap",
+    "enA",
+    "entren"
+   ],
+   "formula": "$24.0M × 60% × 7%",
+   "calc": "enA * (1 - entren) * cap"
+  },
+  {
+   "id": "h23jump",
+   "slide_id": "7",
+   "label": "Rise in SMB monthly churn in the six months after the 2023 increase",
+   "value": 0.5000000000000001,
+   "unit": "pp",
+   "period": "2023",
+   "source_id": "s0",
+   "derived_from": [
+    "h23pk",
+    "h23pre"
+   ],
+   "formula": "2.3% − 1.8%",
+   "calc": "(h23pk - h23pre) * 100"
+  },
+  {
+   "id": "h23perm",
+   "slide_id": "11",
+   "label": "Lasting rise in SMB monthly churn after the 2023 increase settled",
+   "value": 0.10000000000000009,
+   "unit": "pp",
+   "period": "2023",
+   "source_id": "s0",
+   "derived_from": [
+    "h23pre",
+    "h23set"
+   ],
+   "formula": "1.9% − 1.8%",
+   "calc": "(h23set - h23pre) * 100"
+  },
+  {
+   "id": "resp",
+   "slide_id": "11",
+   "label": "ARR lost if churn reacts to the 8% step as in 2023 (estimate)",
+   "value": 0.6454080000000004,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "h23",
+    "h23jump",
+    "h23perm",
+    "npA"
+   ],
+   "formula": "$16.6M × 108% × (0.5 pp × 6 + 0.1 pp × 6 months)",
+   "calc": "npA * (1 + h23) * (h23jump * 6 + h23perm * 6) / 100",
+   "estimate": true,
+   "assumptions": [
+    "Customers not from the promotion react to 8% as all SMB customers did in 2023: +0.5 percentage points of monthly churn for six months, then +0.1",
+    "Lost customers are valued at the new price; effects on new-customer win rates are not included",
+    "Inkwell's $9 plan did not exist in 2023, so the response could be larger"
+   ]
+  },
+  {
+   "id": "net_smb",
+   "slide_id": "11",
+   "label": "Net ARR gain from the 8% SMB step after a 2023-like churn response (estimate)",
+   "value": 0.6825919999999996,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "h23",
+    "npA",
+    "resp"
+   ],
+   "formula": "$16.6M × 8% − $0.65M",
+   "calc": "npA * h23 - resp",
+   "estimate": true,
+   "assumptions": [
+    "Customers not from the promotion react to 8% as all SMB customers did in 2023: +0.5 percentage points of monthly churn for six months, then +0.1",
+    "Lost customers are valued at the new price; effects on new-customer win rates are not included",
+    "Inkwell's $9 plan did not exist in 2023, so the response could be larger"
+   ]
+  },
+  {
+   "id": "be_smb",
+   "slide_id": "11",
+   "label": "Extra monthly SMB churn at which the 8% step breaks even",
+   "value": 0.6172839506172839,
+   "unit": "pp",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "h23"
+   ],
+   "formula": "8% ÷ 108% ÷ 12 months",
+   "calc": "h23 / (1 + h23) / 12 * 100",
+   "used_in": "assumption text, guardrails"
+  },
+  {
+   "id": "arm",
+   "slide_id": "14",
+   "label": "SMB customers not from the promotion in each test group",
+   "value": 1900.0,
+   "unit": "customers",
+   "period": "Q1 2027",
+   "source_id": "s0",
+   "derived_from": [
+    "npC"
+   ],
+   "formula": "3,800 ÷ 2",
+   "calc": "npC / 2"
+  },
+  {
+   "id": "base27",
+   "slide_id": "12",
+   "label": "Existing customers' ARR at end-2027 at today's retention, before price (estimate)",
+   "value": 93.97999999999998,
+   "unit": "$M",
+   "period": "end-2027",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "nrr_all"
+   ],
+   "formula": "$86.0M × 109%",
+   "calc": "arr * nrr_all",
+   "estimate": true,
+   "assumptions": [
+    "Each segment keeps its trailing-12-month net revenue retention through 2027 (SMB 94%, mid-market 112%, enterprise 118%)",
+    "Mid-market and enterprise renewals show no churn response to the 10% step; the SMB step reacts as in 2023",
+    "No new-customer ARR is included; the briefing pack has no new-bookings figure"
+   ]
+  },
+  {
+   "id": "nrr_gain",
+   "slide_id": "12",
+   "label": "ARR added by existing customers at today's retention (estimate)",
+   "value": 7.979999999999981,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "nrr_all"
+   ],
+   "formula": "$86.0M × (109% − 100%)",
+   "calc": "arr * (nrr_all - 1)",
+   "estimate": true,
+   "assumptions": [
+    "Each segment keeps its trailing-12-month net revenue retention through 2027 (SMB 94%, mid-market 112%, enterprise 118%)",
+    "Mid-market and enterprise renewals show no churn response to the 10% step; the SMB step reacts as in 2023",
+    "No new-customer ARR is included; the briefing pack has no new-bookings figure"
+   ]
+  },
+  {
+   "id": "plan_net",
+   "slide_id": "12",
+   "label": "Price plan ARR gain net of the SMB churn response (estimate)",
+   "value": 4.954792,
+   "unit": "$M",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "h23",
+    "npA",
+    "rec_mmen",
+    "resp"
+   ],
+   "formula": "$4.3M + $1.33M − $0.65M",
+   "calc": "rec_mmen + npA * h23 - resp",
+   "estimate": true,
+   "assumptions": [
+    "Each segment keeps its trailing-12-month net revenue retention through 2027 (SMB 94%, mid-market 112%, enterprise 118%)",
+    "Mid-market and enterprise renewals show no churn response to the 10% step; the SMB step reacts as in 2023",
+    "No new-customer ARR is included; the briefing pack has no new-bookings figure"
+   ]
+  },
+  {
+   "id": "arr27",
+   "slide_id": "12",
+   "label": "ARR at end-2027 from existing customers with the plan (estimate)",
+   "value": 98.93479199999997,
+   "unit": "$M",
+   "period": "end-2027",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "nrr_all",
+    "plan_net"
+   ],
+   "formula": "$86.0M × 109% + $5.0M",
+   "calc": "arr * nrr_all + plan_net",
+   "estimate": true,
+   "assumptions": [
+    "Each segment keeps its trailing-12-month net revenue retention through 2027 (SMB 94%, mid-market 112%, enterprise 118%)",
+    "Mid-market and enterprise renewals show no churn response to the 10% step; the SMB step reacts as in 2023",
+    "No new-customer ARR is included; the briefing pack has no new-bookings figure"
+   ]
+  },
+  {
+   "id": "g27",
+   "slide_id": "12",
+   "label": "ARR growth in 2027 from existing customers with the plan (estimate)",
+   "value": 0.15040455813953457,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "arr27"
+   ],
+   "formula": "$98.9M ÷ $86.0M − 1",
+   "calc": "arr27 / arr - 1",
+   "estimate": true,
+   "assumptions": [
+    "Each segment keeps its trailing-12-month net revenue retention through 2027 (SMB 94%, mid-market 112%, enterprise 118%)",
+    "Mid-market and enterprise renewals show no churn response to the 10% step; the SMB step reacts as in 2023",
+    "No new-customer ARR is included; the briefing pack has no new-bookings figure"
+   ]
+  },
+  {
+   "id": "nrr27",
+   "slide_id": "12",
+   "label": "Overall net revenue retention in 2027 with the plan (estimate)",
+   "value": 1.1504045581395346,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "arr27"
+   ],
+   "formula": "$98.9M ÷ $86.0M",
+   "calc": "arr27 / arr",
+   "estimate": true,
+   "assumptions": [
+    "Each segment keeps its trailing-12-month net revenue retention through 2027 (SMB 94%, mid-market 112%, enterprise 118%)",
+    "Mid-market and enterprise renewals show no churn response to the 10% step; the SMB step reacts as in 2023",
+    "No new-customer ARR is included; the briefing pack has no new-bookings figure"
+   ]
+  },
+  {
+   "id": "tgt_arr",
+   "slide_id": "12",
+   "label": "2027 ARR objective",
+   "value": 98.89999999999999,
+   "unit": "$M",
+   "period": "end-2027",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "tgt"
+   ],
+   "formula": "$86.0M × 115%",
+   "calc": "arr * (1 + tgt)",
+   "used_in": "footnote / caption, p. 12"
+  },
+  {
+   "id": "arr27_lo",
+   "slide_id": "12",
+   "label": "ARR at end-2027 if the SMB step is stopped (estimate)",
+   "value": 98.25219999999997,
+   "unit": "$M",
+   "period": "end-2027",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "nrr_all",
+    "rec_mmen"
+   ],
+   "formula": "$94.0M + $4.3M",
+   "calc": "arr * nrr_all + rec_mmen",
+   "estimate": true,
+   "assumptions": [
+    "Each segment keeps its trailing-12-month net revenue retention through 2027 (SMB 94%, mid-market 112%, enterprise 118%)",
+    "Mid-market and enterprise renewals show no churn response to the 10% step; the SMB step reacts as in 2023",
+    "No new-customer ARR is included; the briefing pack has no new-bookings figure"
+   ],
+   "used_in": "footnote / caption, p. 12"
+  },
+  {
+   "id": "arr27_hi",
+   "slide_id": "12",
+   "label": "ARR at end-2027 if the SMB step causes no churn response (estimate)",
+   "value": 99.58019999999998,
+   "unit": "$M",
+   "period": "end-2027",
+   "source_id": "s0",
+   "derived_from": [
+    "arr",
+    "nrr_all",
+    "rec"
+   ],
+   "formula": "$94.0M + $5.6M",
+   "calc": "arr * nrr_all + rec",
+   "estimate": true,
+   "assumptions": [
+    "Each segment keeps its trailing-12-month net revenue retention through 2027 (SMB 94%, mid-market 112%, enterprise 118%)",
+    "Mid-market and enterprise renewals show no churn response to the 10% step; the SMB step reacts as in 2023",
+    "No new-customer ARR is included; the briefing pack has no new-bookings figure"
+   ],
+   "used_in": "footnote / caption, p. 12"
+  },
+  {
+   "id": "mm_be",
+   "slide_id": "14",
+   "label": "Extra monthly mid-market churn at which the 10% step breaks even",
+   "value": 0.7575757575757576,
+   "unit": "pp",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "mmt"
+   ],
+   "formula": "10% ÷ 110% ÷ 12 months",
+   "calc": "mmt / (1 + mmt) / 12 * 100"
+  },
+  {
+   "id": "mm_stop",
+   "slide_id": "14",
+   "label": "Mid-market monthly churn at which the 10% step stops paying",
+   "value": 0.015575757575757576,
+   "unit": "%",
+   "period": "2027",
+   "source_id": "s0",
+   "derived_from": [
+    "mm26",
+    "mm_be"
+   ],
+   "formula": "0.8% + 0.76 pp",
+   "calc": "mm26 + mm_be / 100"
+  },
+  {
+   "id": "promo50",
+   "slide_id": "3",
+   "label": "2025 SMB promotion discount for the first six months",
+   "value": 0.5,
+   "unit": "%",
+   "period": "Feb–Aug 2025",
+   "source_id": "s1",
+   "excerpt": "From February to August 2025, new self-serve SMB customers got 50% off for their first six months.",
+   "locator": "§6 The 2025 SMB promotion",
+   "used_in": "footnote"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "user_provided",
+   "name": "Palisade Docs briefing pack (synthetic benchmark data)",
+   "input_id": "in-1"
+  },
+  {
+   "id": "s0",
+   "kind": "derived",
+   "name": "Team analysis of the briefing pack"
+  }
+ ]
+}

@@ -1,0 +1,135 @@
+{
+ "blind_id": "DMSC9L",
+ "case": "c1-market-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 9 tests the $18M cap for each option: A deepest -$1.9M (about a tenth of the cap), B -$20.8M. Slide 15 shows the cap still holds at 32% ACoS (peak $3.2M)."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slides 15 and 22 show cumulative cash by 2030 of +$2.4M at 25% ACoS and -$2.3M at 32%, with a 28.6% break-even ACoS. B never pays back (-$20.8M). J is +$1.8M."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slides 22, 23 and 9 give year-by-year group margin: A 9.5% to 11.1%, B 4.5% in 2027 (also below 8% in 2028 and 2029). The footnote states the ex-US base at 11.0%."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slide 7 and the executive summary frame the choice as one launch slot, 'the US is the better use of 2027's one launch slot'. They compare A against Option J's revenue and cash (J -$1.05M peak, +$1.8M by 2030)."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 18: 'No route reaches the $40M ambition by 2030 within the limits'. A reaches $26.4M (66%), and B's $37.6M comes only by breaking the cap. The deck recommends restating $40M as a post-2030 goal."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slide 11 shows 2.6 units per door at Onsoo's awareness against the 4.0 removal threshold. It says the 10-20% band (3.5) also misses, so the CEO's 15% gate is too low, and sets a 20% awareness gate (slide 19)."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 14 builds the Amazon per-unit waterfall: referral fee, FBA, product, freight, duty and ACoS, giving $4.73 at 25%. Slide 23 uses retail contribution of $7.55 after co-op, returns and landed cost. Payback is built on these figures."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 22 footnote: fixed costs $2.1M a year plus $0.8M setup. Slide 10 itemises B's retail marketing ($24M), field sales ($6M), one-time costs and fixtures, and notes they exceed total contribution (1.3x)."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 22 includes 'Net cash flow (after inventory build)', with inventory equal to four months of landed cost ($4.58 a unit). The slide 10 waterfall includes inventory of $2.55M for B."
+   },
+   {
+    "id": "C10",
+    "status": "reflected",
+    "evidence": "Slide 15 says the plan 'assumes ad costs fall; agency data say they rise with scale'. It shows 25% against 32% ACoS, quotes the pilot's 28% and the benchmark range, and gives the break-even of 28.6%. The headline still uses 25%, but the document states clearly how 32% changes it."
+   },
+   {
+    "id": "C11",
+    "status": "mentioned",
+    "evidence": "Slide 14 says a 25% tariff adds $0.35 a unit (7% of contribution). A guardrail says to re-run the model and reprice at the mid-2027 decision. The document never shows the tariff's effect on cumulative cash or payback, and the headline ignores it."
+   },
+   {
+    "id": "C12",
+    "status": "reflected",
+    "evidence": "Setup of entity, MoCRA and English labels is on the roadmap (slide 19). The cost lines of $0.5M a year and $0.8M setup are in the model. The label complaint (6% of reviews) is a guardrail: ship only English-labeled units."
+   },
+   {
+    "id": "C13",
+    "status": "mentioned",
+    "evidence": "Slides 6 and 20 note repeat of 29% against 31% and 48%, with a guardrail to lift it. The volume ramp uses planning-team volumes unchanged, and the document does not say how repeat changes the numbers."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Option B is tested against every board limit (slides 9, 10, 23). It breaks the cap at -$20.8M and -$26.4M at 2.6 units with no halo, it never pays back, and its 2027 margin is 4.5%. The 4.5 units per door assumption is challenged against Table 8, the 1.3x halo is challenged as correlation (slide 12), and Mooncrest is cited."
+   },
+   {
+    "id": "A2",
+    "status": "mentioned",
+    "evidence": "Slide 19 has 'Retail: Test with one retailer, only if both gates are met' from 2029, but the test is not costed or evaluated. A limited-door pilot in 2027 against the 4.0 threshold is not compared with 600 doors now or retail only at the gates."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Slide 7 compares J with A on revenue (3.8x), peak cash (-$1.05M) and 2030 cash (+$1.8M), and rejects it as 'small' and doing 'nothing for the US ambition'. It does not discuss keeping the cross-border listing, a later-US trigger, or deferral past the tariff decision."
+   },
+   {
+    "id": "A4",
+    "status": "absent",
+    "evidence": "No leaner Amazon-led variant is considered, such as a smaller team, slower brand spend, or fixed-cost cuts to widen the ACoS margin."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 15: +$2.4M at 25%, -$2.3M at 32%, break-even ACoS 28.6%, each point costs $0.24 a unit, and the peak outflow at 32% is $3.2M (the cap holds). Slide 20 gives an ACoS guardrail. The tariff and the combined ACoS-plus-tariff case are not run through cumulative cash."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 11: sell-through of 2.6 (IQR 1.9-3.4) against the plan's 4.5 and the 4.0 cut. B's cash at end-2030 is -$26.4M at 2.6 units with no halo, against -$20.8M at plan. The awareness needed to clear 4.0 is above 20%, not 15%."
+   },
+   {
+    "id": "S3",
+    "status": "mentioned",
+    "evidence": "Slide 18 gives the units needed for $40M (1.67M, +52%). The deck notes repeat of 29% against 31% and the Saebom versus Gaon Lab and Yeoreum spread. It does not show how far payback tolerates a volume shortfall, or how the 300k units in 2027 compares with the pilot run-rate, and it sets no volume or repeat triggers."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Enter the US in 2027 via Amazon, the only US route within the board's limits, and defer retail"
+  },
+  "omissions": [
+   "Payback is the binding constraint, and the deck's own numbers show A failing it at the pilot-plus ACoS and at the 32% benchmark median. It still labels A 'the only US route that fits' and does not tell the board that payback is more likely missed than met. It also gives no response if the ACoS gate is missed beyond a 'board review'.",
+   "The tariff is not quantified against payback or the cap, and the combined 28% or 32% ACoS plus 25% duty downside is not shown. The decision lands after the March 2027 board vote.",
+   "No volume-shortfall sensitivity for A. The 2027 plan of 300k units is about 1.8x the pilot's June run-rate on three SKUs, and no scale-up, hold or stop triggers for volume or repeat are given.",
+   "The J comparison ('similar cash by 2030') uses only the 25% ACoS case. At the 28% pilot ACoS A's 2030 cash is about +$0.4M against J's +$1.8M, so J beats A on cash and risk, which weakens the claim.",
+   "No lean-Amazon or cost-trim option to buy ACoS headroom. No costed staged retail test in 2027-28 to measure units per door before the gates."
+  ],
+  "unsupported_assumptions": [
+   "\"Each $24 Amazon sale leaves $4.73 after the planned 25% ad cost\" (and the +$2.4M payback). 25% is below the pilot's 28% and the benchmark range floor of 26%. The only basis is the planning team's 'ACoS falls as the brand matures', which the deck itself says the agency data contradict.",
+   "Planning-team volumes of 300,000 rising to 1.1M units, with four more SKUs, and hero-product economics applied to all SKUs ('Scale to plan volumes'). No build from the pilot, repeat rate or channel data is given.",
+   "\"Same route, no scale: execution decided\" for Gaon Lab and Yeoreum. No evidence is given for the cause, and the deck itself says four brands make 'a pattern, not a rate'.",
+   "\"The arrow runs from Amazon to retail\" is asserted from Saebom alone, after the deck argues the 0.71 correlation shows no cause.",
+   "The retail gate of awareness above 20% by about 2028, funded by $0.7M a year of brand marketing. No evidence is given that awareness can rise from 4% (9% among K-beauty buyers) to above 20%, or what the retail test would cost."
+  ]
+ },
+ "cost_usd": 0.18544
+}

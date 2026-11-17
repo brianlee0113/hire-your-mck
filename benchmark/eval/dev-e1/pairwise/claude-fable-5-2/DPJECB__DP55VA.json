@@ -1,0 +1,38 @@
+{
+ "x": "DPJECB",
+ "y": "DP55VA",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same four-step logic (churn cause, pricing power, value of the CFO plan, targeted plan and rollout), and each executive summary maps onto its sections. X is tighter and has no detours. But X's headline value does not match its own plan: the $5.6M and the \"meets 15%\" claim assume the 8% SMB step applies to all non-promotion SMB ARR for 2027, while the rollout holds half of those customers as a control until an April decision. X's option table is also gross of churn, while the 15% slide nets only SMB churn. Y's numbers follow from its rollout: gated SMB coverage of 50% or 25%, base and stress cases carried through options, bridge and decisions. Its governing thought (\"no pricing option delivers 15% on its own\") matches its bridge. Y's \"week 1 hypothesis\" slide is a slight detour but does not break the hierarchy.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach essentially the same defensible recommendation (the key's R1): +10% mid-market, enterprise to cap, a randomised 8% test on non-promotion SMB, hold the promotion cohort, keep the $15 list price. The difference is how the trade-offs are weighed. Y compares four options net of churn in base and stress cases, including the close alternative of 8% on SMB from January, and puts a figure on the test (about $0.3M of upside given up to cap the downside). It also shows the promotion cohort loses money under an increase and tells the CEO that pricing alone leaves a $1.1–2.5M new-logo gap to the 15% target. X's alternatives are compared mainly on gross gain. Its claim that the plan meets 15% rests on no mid-market or enterprise churn response and full SMB coverage, though it does flag \"no cushion\". X's mid-market stop level of 1.6% is the break-even point, so it triggers only after the gain is wiped out. Y's 1.0% trigger with a fallback to +5% is a more useful guardrail. Y also adds the forward-looking policy of ending activation-blind discounts.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core numbers right: the 4.9% implied promotion-cohort churn, the roughly 94% mix effect, the $7.566M realistic uplift, the two blended churn measures against the undefined dashboard figure, and an activation model that cuts SMB churn only to about 2.8%. Both caveat the 2024 test (new sign-ups only) and the 2023 precedent (pre-Inkwell). Y uses the evidence further: it computes the 2023 net effect (+4.1%), expresses break-even as a multiple of the 2023 response, nets churn across all segments, notes the exit survey under-weights the promotion cohort (about 47% of respondents against 56% of churners), and checks test power over six months. Y's weaknesses are modelling assumptions: a 2.9× elasticity for the cohort taken from survey citation shares, and a mid-market churn coefficient taken from a non-significant new-sign-up conversion gap. Both are disclosed and stress-tested. X has fewer assumptions but more invalid inference. Its 15.04% growth figure ignores any mid-market or enterprise churn response and counts a full year of SMB uplift despite the staged test. Its claim that one quarter of test data detects a 2023-sized jump is statistically marginal (roughly z = 1.7). It treats the discount cliff as fading by itself, though it does flag the need for H2 data.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "The key expects the CFO's view to be revised, with both the CFO and the CEO recognised as partly right. Y does this explicitly: \"the CFO is right that the churn rise is not about the list price, and the CEO is right that the promotion cohort is fragile\". It then rejects the $10.3M ($7.6M gross, $1.5–4.6M net) and the blanket 12%, and tests the Customer Success halving claim and rejects it with numbers. It also separates retention sensitivity (stable) from acquisition sensitivity (win rate down), which is the nuance the key wants. Its \"week 1\" team hypothesis is an invented framing, but it shows a real update on SMB from freeze to test. X reaches the same substantive revisions: the promotion not core price resistance, $7.6M not $10.3M, onboarding cannot halve churn, and the cohort reacted to its price doubling. But it frames the cause more one-sidedly (\"not core price resistance\") and never explicitly reconciles the CFO's and CEO's views, though Inkwell and the cohort's price reaction are covered.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents meet all four defensibility criteria and recommend the same segmented plan, so the CEO would be pointed the right way by either. Y serves the decision better because it gives a net-of-churn, base-and-stress view of every option, shows what the SMB test costs and protects, and says plainly that the plan leaves a new-logo gap to the 15% objective. X's headline that the plan meets 15% depends on optimistic and internally inconsistent assumptions. Y's guardrails are tighter and its reconciliation of the CFO's and CEO's positions is explicit. X is more concise and its core analysis is sound, but its value and growth claims are less reliable.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9827242,
+ "wall_s": 91.20741105079651
+}

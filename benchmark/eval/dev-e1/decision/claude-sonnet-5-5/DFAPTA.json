@@ -1,0 +1,135 @@
+{
+ "blind_id": "DFAPTA",
+ "case": "c1-market-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 10 plots cumulative cash against the -$18M cap for B (-20.8M by 2030, crossing in 2029) and for A at 25% and 32% ACoS (worst -$3.2M). Slide 13 gives A peak -$2.4M versus B -$20.8M. Slide 16 says A stays inside the cap even at 38% ACoS."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "The headline carries it: 'payback by 2030 needs ad cost held at the pilot's 28%'. Slide 13 shows A cumulative +$0.4M at 28%. Slide 16 gives a 28.6% break-even and -$2.3M at 32%. B never pays back and J is +$1.8M."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 13 shows lowest group margin A 9.3%, B 4.5%, J 10.1%. Slide 23 gives year-by-year group margin and the ex-US 11.0% base in the footnote. B is shown below 8% in 2027-29."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slide 14 and slide 13 compare A against J, which is forgone: 'management can run only one launch in 2027'. The comparison covers revenue, cash, margin and cumulative profit."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 17: 'No route reaches $40M by 2030: Amazon-led gets two-thirds' (66%, $26.4M), and 'Read $40M as the goal for after 2030'. The ambition is explicitly reset and dated later."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slide 8 sets Onsoo's 4%/9% awareness (median 2.6) against the 4.0 removal line. Slide 20 moves the CEO's 15% trigger to above 20% because the 10-20% band (3.5) is still below 4.0."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 12 builds the full Amazon per-unit stack: $10.73 before ads, $4.01 at 28% and $3.05 at 32%. Slide 9 prices retail contribution per door. Slide 23 builds cash on contribution per unit."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 9 gives the $30M of retail-only fixed cost, launch fee and fixtures. Slide 16 uses $3.87 of fixed cost per unit. Slide 23's footnote includes fixed and one-time costs (setup, launch fee, fixtures) in cash flow."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 23 footnote 1: cash flow deducts 'change in inventory (four months of landed cost)'. Slide 9 shows extra inventory of $0.876M for B. Slide 14 openly shows US profit 'before inventory build'."
+   },
+   {
+    "id": "C10",
+    "status": "reflected",
+    "evidence": "Slides 13, 16 and 18 move the headline to the pilot's 28% (plan 25%). They show the 32% median (-$2.3M) and 38% (-$6.4M), and note that cost per click rises. The document does not say that 32% is the likely base case for most of the plan."
+   },
+   {
+    "id": "C11",
+    "status": "reflected",
+    "evidence": "Slide 16: 25% duty from 2028 gives -$0.63M at 28% ACoS and a 27.1% break-even, 'below the pilot'. The next step is to re-run payback when the duty decision lands. The headline table ignores it and the 28% gate is not tightened."
+   },
+   {
+    "id": "C12",
+    "status": "reflected",
+    "evidence": "Slide 18 ties the 6% label complaints to US labels and MoCRA registration in the '$0.8M setup budget'. Slide 20 requires US-compliant labels on every unit from launch. The $0.5M a year of compliance sits in the Table 6 fixed costs used in cash flow."
+   },
+   {
+    "id": "C13",
+    "status": "mentioned",
+    "evidence": "Slide 18 and the exec summary state 29% repeat against 31% and 48%, and that a rise from four more SKUs is 'unproven'. Volumes are still the planning team's, 2027 needs 1.8x June's pace, and no repeat-adjusted volume or cushion is modelled."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Slides 7-10, 17 and 24 test Option B on the board's constraints: $20.8M peak, no payback, 4.5% margin in 2027. They show 4.5 units/door is the top-awareness band against 2.6 at Onsoo's awareness. The 0.71 halo is challenged and the Mooncrest precedent is cited."
+   },
+   {
+    "id": "A2",
+    "status": "mentioned",
+    "evidence": "Slide 20 and the next steps adopt 'a small door test, kept only at 4.0+ units a week', timed H2 2028 and gated on awareness above 20%. Its cost is not priced ('Scope the cost and terms'), and there is no check of its effect on Option A's thin payback margin. It does not measure units per door at current awareness before commitment."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Slides 13-14 compare J on revenue ($7M vs $26.4M), peak cash (-$1.1M), end-2030 cash ($1.8M), margin (10.1%) and cumulative profit against US A at 25/28/32% ACoS. J is adopted as the 2028 fallback if the ad-cost gate fails. The document does not discuss deferring the US past the tariff decision."
+   },
+   {
+    "id": "A4",
+    "status": "absent",
+    "evidence": "There is no lean-Amazon variant with lower fixed cost (team or brand spend) and no analysis of how a fixed-cost cut would move the break-even ACoS. The $0.7M brand budget is carried unchanged on slide 21."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 16 gives end-2030 cash by ACoS: +$2.4M at 25%, +$0.376M at 28%, -$2.321M at 32%, -$6.368M at 38%. It gives a 28.6% break-even with the derivation, about $0.67M per point, and 27.1% with a 25% duty (-$0.63M at 28%). It states the cap and margin floor hold at 38%. The ACoS gate is stated, though it is not reconciled with the 27.1% tariff break-even."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 8 shows 2.6 / 3.5 / 4.6 median units per door by awareness against the 4.0 removal line. Slide 20 shows the flip point is above 20% awareness, not 15%, and that the lower quartile at that level is 3.9. B at 4.5 breaks the cap (-$20.8M), and the halo is shown as unproven ('without it, B loses even more cash'). B's peak at 2.6 is not computed."
+   },
+   {
+    "id": "S3",
+    "status": "mentioned",
+    "evidence": "The document notes 2027 needs 25,000 units a month, '1.8 times June's pace', and that repeat is 29% with a rise unproven. It cites Saebom against 'only one of three' Amazon-first entrants passing $5M. It gives no volume shortfall at which payback fails, no volume or repeat trigger levels for scaling, holding or stopping, and no downside volume case."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Enter the US in 2027 through Amazon, the only route within the board's limits; payback by 2030 needs ad cost held at the pilot's 28%"
+  },
+  "omissions": [
+   "The governing thought and slide 11 call Amazon 'the only route within the board's limits' and say it 'fits all three limits'. Slide 13 itself shows J meets the limits with more cash cushion (+$1.8M). A's payback margin is only $0.4M at 28%. It fails at the 32% agency median (-$2.3M) and under a 25% duty at 28% (-$0.63M). The document never says A's payback is more likely to miss than to meet under its own benchmark.",
+   "The ad-cost gate is set at 28%, but the document's own tariff case puts the break-even at 27.1%. The gate therefore passes cases that fail payback. The only tariff response is to 're-run the payback case' in mid-2027, with no pre-agreed action, and the board commits in March before the duty is known.",
+   "The 'small door test' and the path to above 20% awareness (from 4%, or 9% among K-beauty buyers) are not costed or sequenced. The test is deferred to H2 2028, with no check of whether it, or the TikTok and influencer spend, can lift awareness enough. The $40M 'after 2030' reframing has no supporting route.",
+   "There are no quantified volume or repeat gates (units per month, 90-day repeat) in the scale/hold/stop rules, even though the dashboard tracks repeat. Payback's volume cushion is not shown.",
+   "There is no lower-fixed-cost Amazon variant gated on ACoS and repeat, though fixed cost of $2.1M a year is the cheapest lever on payback."
+  ],
+  "unsupported_assumptions": [
+   "\"Scale with the plan's volumes\" / 2027 needs 25,000 units a month, carried by four more SKUs: the planning team's 300k to 1.1M units ramp is adopted with no basis. When the headline moves to the 28% ACoS case, volumes stay at the 25%-case plan.",
+   "\"The planning team applies the hero product's economics to all SKUs\": flagged in a footnote, but the new SKUs' margin and the $26.4M revenue and cash figures rest on it without testing.",
+   "\"TikTok discovery and repeat buyers bring sales Onsoo does not pay Amazon for\" / \"Four more SKUs give buyers more to come back for\": offered as mitigants for ACoS and repeat with no evidence in the pack.",
+   "\"Read $40M as the goal for after 2030, reached by adding retail once awareness supports it\": there is no evidence that awareness can rise from 4% to above 20%, or that retail then clears 4.0 and fits the cap.",
+   "\"Keep Japan as the 2028 fallback\": assumes Table 7's one-year-earlier ramp, margins and bandwidth still hold if the launch slips a year. This is not checked."
+  ]
+ },
+ "cost_usd": 0.3437462
+}

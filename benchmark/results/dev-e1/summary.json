@@ -1,0 +1,492 @@
+{
+ "phase": "dev-e1",
+ "exploratory": true,
+ "reps": [
+  1,
+  2
+ ],
+ "n": {
+  "B": 10,
+  "C2": 10,
+  "E1": 10
+ },
+ "pairwise": {
+  "claude-fable-5-2": {
+   "by_comparison": {
+    "E1-B": {
+     "coherence": {
+      "score": 0.1,
+      "ci95": [
+       0.0,
+       0.3
+      ],
+      "ci95_degenerate": false,
+      "exact_ref": null,
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 0,
+      "cases_lost": 5,
+      "consistent": {
+       "win": 0,
+       "loss": 8,
+       "tie": 0,
+       "split": 2
+      },
+      "by_case": {
+       "c5-negative-entry": 0.0,
+       "c3-ai-assistant": 0.0,
+       "c1-market-entry": 0.375,
+       "c2-profitability": 0.0,
+       "c4-pricing-churn": 0.125
+      }
+     },
+     "judgment": {
+      "score": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "ci95_degenerate": true,
+      "exact_ref": {
+       "pairs": [
+        0.0,
+        0.30849710781876083
+       ],
+       "cases": [
+        0.0,
+        0.5218237501049815
+       ]
+      },
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 0,
+      "cases_lost": 5,
+      "consistent": {
+       "win": 0,
+       "loss": 10,
+       "tie": 0,
+       "split": 0
+      },
+      "by_case": {
+       "c5-negative-entry": 0.0,
+       "c3-ai-assistant": 0.0,
+       "c1-market-entry": 0.0,
+       "c2-profitability": 0.0,
+       "c4-pricing-churn": 0.0
+      }
+     },
+     "evidence": {
+      "score": 0.05,
+      "ci95": [
+       0.0,
+       0.2
+      ],
+      "ci95_degenerate": false,
+      "exact_ref": null,
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 0,
+      "cases_lost": 5,
+      "consistent": {
+       "win": 0,
+       "loss": 9,
+       "tie": 0,
+       "split": 1
+      },
+      "by_case": {
+       "c5-negative-entry": 0.25,
+       "c3-ai-assistant": 0.0,
+       "c1-market-entry": 0.0,
+       "c2-profitability": 0.0,
+       "c4-pricing-churn": 0.0
+      }
+     },
+     "revision": {
+      "score": 0.025,
+      "ci95": [
+       0.0,
+       0.1
+      ],
+      "ci95_degenerate": false,
+      "exact_ref": null,
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 0,
+      "cases_lost": 5,
+      "consistent": {
+       "win": 0,
+       "loss": 9,
+       "tie": 0,
+       "split": 1
+      },
+      "by_case": {
+       "c5-negative-entry": 0.0,
+       "c3-ai-assistant": 0.0,
+       "c1-market-entry": 0.0,
+       "c2-profitability": 0.125,
+       "c4-pricing-churn": 0.0
+      }
+     },
+     "overall": {
+      "score": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "ci95_degenerate": true,
+      "exact_ref": {
+       "pairs": [
+        0.0,
+        0.30849710781876083
+       ],
+       "cases": [
+        0.0,
+        0.5218237501049815
+       ]
+      },
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 0,
+      "cases_lost": 5,
+      "consistent": {
+       "win": 0,
+       "loss": 10,
+       "tie": 0,
+       "split": 0
+      },
+      "by_case": {
+       "c5-negative-entry": 0.0,
+       "c3-ai-assistant": 0.0,
+       "c1-market-entry": 0.0,
+       "c2-profitability": 0.0,
+       "c4-pricing-churn": 0.0
+      }
+     }
+    },
+    "E1-C2": {
+     "coherence": {
+      "score": 0.675,
+      "ci95": [
+       0.4,
+       0.9
+      ],
+      "ci95_degenerate": false,
+      "exact_ref": null,
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 3,
+      "cases_lost": 1,
+      "consistent": {
+       "win": 3,
+       "loss": 1,
+       "tie": 1,
+       "split": 5
+      },
+      "by_case": {
+       "c3-ai-assistant": 0.875,
+       "c1-market-entry": 0.875,
+       "c4-pricing-churn": 0.5,
+       "c2-profitability": 0.875,
+       "c5-negative-entry": 0.25
+      }
+     },
+     "judgment": {
+      "score": 0.975,
+      "ci95": [
+       0.9,
+       1.0
+      ],
+      "ci95_degenerate": false,
+      "exact_ref": null,
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 5,
+      "cases_lost": 0,
+      "consistent": {
+       "win": 9,
+       "loss": 0,
+       "tie": 0,
+       "split": 1
+      },
+      "by_case": {
+       "c3-ai-assistant": 1.0,
+       "c1-market-entry": 1.0,
+       "c4-pricing-churn": 0.875,
+       "c2-profitability": 1.0,
+       "c5-negative-entry": 1.0
+      }
+     },
+     "evidence": {
+      "score": 0.9,
+      "ci95": [
+       0.6,
+       1.0
+      ],
+      "ci95_degenerate": false,
+      "exact_ref": null,
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 4,
+      "cases_lost": 0,
+      "consistent": {
+       "win": 9,
+       "loss": 1,
+       "tie": 0,
+       "split": 0
+      },
+      "by_case": {
+       "c3-ai-assistant": 1.0,
+       "c1-market-entry": 1.0,
+       "c4-pricing-churn": 1.0,
+       "c2-profitability": 1.0,
+       "c5-negative-entry": 0.5
+      }
+     },
+     "revision": {
+      "score": 0.75,
+      "ci95": [
+       0.5,
+       0.95
+      ],
+      "ci95_degenerate": false,
+      "exact_ref": null,
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 3,
+      "cases_lost": 0,
+      "consistent": {
+       "win": 5,
+       "loss": 1,
+       "tie": 2,
+       "split": 2
+      },
+      "by_case": {
+       "c3-ai-assistant": 0.5,
+       "c1-market-entry": 1.0,
+       "c4-pricing-churn": 0.5,
+       "c2-profitability": 1.0,
+       "c5-negative-entry": 0.75
+      }
+     },
+     "overall": {
+      "score": 0.95,
+      "ci95": [
+       0.8,
+       1.0
+      ],
+      "ci95_degenerate": false,
+      "exact_ref": null,
+      "n_pairs": 10,
+      "n_cases": 5,
+      "cases_won": 5,
+      "cases_lost": 0,
+      "consistent": {
+       "win": 9,
+       "loss": 0,
+       "tie": 0,
+       "split": 1
+      },
+      "by_case": {
+       "c3-ai-assistant": 1.0,
+       "c1-market-entry": 1.0,
+       "c4-pricing-churn": 1.0,
+       "c2-profitability": 1.0,
+       "c5-negative-entry": 0.75
+      }
+     }
+    }
+   },
+   "position_bias_first_wins_overall": 0.475
+  }
+ },
+ "absolute": {
+  "claude-fable-5-2": {
+   "weighted": {
+    "B": 4.475,
+    "C2": 4.225,
+    "E1": 4.3
+   },
+   "dims": {
+    "B": {
+     "problem_framing": 5.0,
+     "storyline_coherence": 4.1,
+     "evidence_and_reasoning": 4.2,
+     "strategic_judgment": 5.0,
+     "clarity_and_concision": 4.0
+    },
+    "C2": {
+     "problem_framing": 5.0,
+     "storyline_coherence": 4.1,
+     "evidence_and_reasoning": 4.1,
+     "strategic_judgment": 4.1,
+     "clarity_and_concision": 4.0
+    },
+    "E1": {
+     "problem_framing": 5.0,
+     "storyline_coherence": 4.3,
+     "evidence_and_reasoning": 4.1,
+     "strategic_judgment": 4.2,
+     "clarity_and_concision": 4.0
+    }
+   },
+   "paired": {
+    "E1-B": {
+     "diff": -0.175,
+     "ci95": [
+      -0.25,
+      -0.1
+     ],
+     "per_case": {
+      "c1-market-entry": -0.125,
+      "c2-profitability": -0.25,
+      "c3-ai-assistant": -0.25,
+      "c4-pricing-churn": -0.125,
+      "c5-negative-entry": -0.125
+     },
+     "cases_x_better": 0,
+     "cases": 5,
+     "p_signflip_cases": 0.0625,
+     "p_perm_runs": 0.0052
+    },
+    "E1-C2": {
+     "diff": 0.075,
+     "ci95": [
+      -0.025,
+      0.2
+     ],
+     "per_case": {
+      "c1-market-entry": 0.25,
+      "c2-profitability": 0.0,
+      "c3-ai-assistant": 0.0,
+      "c4-pricing-churn": 0.0,
+      "c5-negative-entry": 0.125
+     },
+     "cases_x_better": 2,
+     "cases": 5,
+     "p_signflip_cases": 0.5,
+     "p_perm_runs": 0.3724
+    }
+   }
+  },
+  "claude-sonnet-5-5": {
+   "weighted": {
+    "B": 4.1450000000000005,
+    "C2": 3.9799999999999995,
+    "E1": 3.965
+   },
+   "dims": {
+    "B": {
+     "problem_framing": 4.6,
+     "storyline_coherence": 4.0,
+     "evidence_and_reasoning": 4.1,
+     "strategic_judgment": 4.4,
+     "clarity_and_concision": 3.3
+    },
+    "C2": {
+     "problem_framing": 4.2,
+     "storyline_coherence": 4.0,
+     "evidence_and_reasoning": 3.9,
+     "strategic_judgment": 3.9,
+     "clarity_and_concision": 4.0
+    },
+    "E1": {
+     "problem_framing": 4.2,
+     "storyline_coherence": 4.0,
+     "evidence_and_reasoning": 3.9,
+     "strategic_judgment": 4.0,
+     "clarity_and_concision": 3.6
+    }
+   },
+   "paired": {
+    "E1-B": {
+     "diff": -0.1799999999999998,
+     "ci95": [
+      -0.4400000000000002,
+      0.0700000000000002
+     ],
+     "per_case": {
+      "c1-market-entry": -0.4500000000000002,
+      "c2-profitability": 0.050000000000000266,
+      "c3-ai-assistant": -0.09999999999999964,
+      "c4-pricing-churn": 0.17500000000000027,
+      "c5-negative-entry": -0.5749999999999997
+     },
+     "cases_x_better": 2,
+     "cases": 5,
+     "p_signflip_cases": 0.375,
+     "p_perm_runs": 0.0608
+    },
+    "E1-C2": {
+     "diff": -0.014999999999999947,
+     "ci95": [
+      -0.1750000000000001,
+      0.16000000000000014
+     ],
+     "per_case": {
+      "c1-market-entry": 0.07500000000000018,
+      "c2-profitability": 0.20000000000000018,
+      "c3-ai-assistant": -0.20000000000000018,
+      "c4-pricing-churn": 0.07500000000000018,
+      "c5-negative-entry": -0.2250000000000001
+     },
+     "cases_x_better": 3,
+     "cases": 5,
+     "p_signflip_cases": 0.9375,
+     "p_perm_runs": 0.867
+    }
+   }
+  }
+ },
+ "decision": {
+  "B": {
+   "n": 10,
+   "constraints_reflected": 0.9711965811965811,
+   "alternatives_tested": 0.825,
+   "sensitivities_quantified": 0.9333333333333333,
+   "overclaim_share": 0.9,
+   "omissions_per_doc": 3.9,
+   "unsupported_assumptions_per_doc": 5.5
+  },
+  "C2": {
+   "n": 10,
+   "constraints_reflected": 0.8713675213675213,
+   "alternatives_tested": 0.6,
+   "sensitivities_quantified": 0.5333333333333333,
+   "overclaim_share": 1.0,
+   "omissions_per_doc": 4.9,
+   "unsupported_assumptions_per_doc": 5.5
+  },
+  "E1": {
+   "n": 10,
+   "constraints_reflected": 0.9535042735042735,
+   "alternatives_tested": 0.725,
+   "sensitivities_quantified": 0.8,
+   "overclaim_share": 0.7,
+   "omissions_per_doc": 4.7,
+   "unsupported_assumptions_per_doc": 5.1
+  }
+ },
+ "e2e": {
+  "B": {
+   "slides": 19.6,
+   "words": 4730.5,
+   "cost_usd": 3.2953142200000003,
+   "duration_min": 13.456,
+   "native_charts": 2.9
+  },
+  "C2": {
+   "slides": 21.7,
+   "words": 3106.4,
+   "cost_usd": 5.1165753800000005,
+   "duration_min": 18.8895,
+   "native_charts": 8.6
+  },
+  "E1": {
+   "slides": 21.6,
+   "words": 3082.3,
+   "cost_usd": 5.72069353,
+   "duration_min": 37.9125,
+   "native_charts": 9.6
+  }
+ }
+}

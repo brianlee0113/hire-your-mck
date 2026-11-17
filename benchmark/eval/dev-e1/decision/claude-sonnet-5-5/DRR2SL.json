@@ -1,0 +1,118 @@
+{
+ "blind_id": "DRR2SL",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 15: plan leaves $2.5M, 'about 6 months of runway, half the floor'; floor 'needs $4.8M'; also flags that if the $9.5M excludes today's burn, 'another $7.2M over 18 months would leave the company $4.7M short'. The $7.2M headroom ceiling is not stated as such."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 15: 'No fallback: the lead investor calls a new round for a delivery operator unlikely'; 'the $9.5M assumes contribution profit by month 18; at benchmark economics losses keep running'. Slide 16 sizes the downside ($18.2M a year at median vs $12.0M cash). Recommendation is chosen to be self-funded."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slides 8-10: full stack at median (-$6.17, rider $7.40, store $3.50), best on every input (-$1.76), plan (+$2.02), pop-up (-$12.57). 'Before site costs: the order already loses $2.67, so more volume alone cannot close the gap'. Plan inputs each shown beyond the best site."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slides 9-10, 12: pop-up -$12.57, 'ran below the median on all four inputs'; 280 orders/day vs 900 median; 18% growth 'came with heavy promotions and credits' at twice the median rate. The final-week rate (about 410/day) is not computed."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 13: $38 ÷ 22% = ~$173 per retained customer; 27.6 months payback at the plan's $2.02; 'At the median's -$6.17 per order, acquisition is never repaid'. Slide 12 treats the 44% survey as stated intent, not behaviour. Per-site customer volume and CAC budget are not sized."
+   },
+   {
+    "id": "C6",
+    "status": "mentioned",
+    "evidence": "Slide 8: 'minimum pay standards under discussion in two of the three cities would raise it'; slide 16: 'rider pay standards would add more'; slide 21 makes settled rules a reopening condition. No per-$1/hour effect is given and no headline number is adjusted."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slides 4-5: GMV 2.8x, growth of 44%/38%/42%; Zipcart -$1.90 and -$310M, QuickBasket -$3.40 and -$96M, 'closed 4 of its 11 cities'; 'What growth does not show: whether anyone earns money serving it'. This is used directly in the governing argument."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 6 gives the $3.99 fee, 1% promotions and the 14% volume fall. Slide 9: '-$1.1 Median site with Zipcart's fee and promotion cut' (-$6.17 + $3.99 + $1.70 - $0.57 extra store cost), which matches the reference of about -$1.05. The best-density result (about +$2.25) and the break-even density are not given."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slides 18-19: $0.8M a year for hires; $1.2M over 18 months; breakeven at about $11M ARR; 'Cash burned over those two years would be about $6.6M, leaving about $5.4M'; 'runway stays well above 12 months'. It does not state the raised burn (~$0.47M/month) or the 10-11 contracts needed to cover the hires. It gives only '26 contracts' for 60% growth."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Adopted as the recommendation (slides 18-20). Evidence: 37 grocers in the pipeline, 9 late-stage worth $864K, 81% gross margin, breakeven at ~$11M ARR, $6.6M cash over two years. Missing: the number of contracts needed to cover the hires, and any win-rate or growth-miss test."
+   },
+   {
+    "id": "A2",
+    "status": "absent",
+    "evidence": "No capped, capital-light test from a grocer partner's existing store with a fee, low promotions and kill criteria. The nearest items are 'package a fast-delivery offer for pipeline grocers' and monitoring customer sites, which are not an own-run test."
+   },
+   {
+    "id": "A3",
+    "status": "absent",
+    "evidence": "No staged one-city or few-store Columbus version is evaluated. The only deferred option is 'Reopen an own-store launch later' once four conditions are met, which is not a staged test."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Slides 8-16 reject the full plan with evidence: every plan input is beyond the best site, payback is 28 months even at plan margin, runway is ~6 months with no round, and the Zipcart fee route still loses at the median (-$1.1)."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slides 8-10 give contribution per order at pop-up (-$12.57), median (-$6.17), best on every input (-$1.76) and plan (+$2.02). Break-even AOV at median is $63.4. Per-input plan gains are +$2.3 AOV, +$1.8 promotions, +$2.3 rider speed and +$1.8 density. 'Before site costs... loses $2.67'. The rider pay increase per $1/hour is not quantified."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 9 gives the median site with Zipcart's fee, 1% promotions and a 14% volume drop at -$1.1. Slide 10 gives the promotions effect (+$1.8). It omits the best-density fee result, the break-even density under fee pricing, and the volume loss a fee case can absorb."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 15 gives runway at month 18 (6.3 months) and the exclude-burn case ($4.7M short). Slide 16 gives nine stores at the median (-$18.2M a year) and best (-$8.1M a year). Not shown: the maximum spend that keeps 12 months ($7.2M, or ~$6.4M with the hires), runway after a test or staged launch, and a wind-down case."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Parcelbird should not launch Parcelbird Now in 2027; it should fund the software business, which can reach breakeven within today's cash"
+  },
+  "omissions": [
+   "No sensitivity for the recommended software path. Breakeven and runway depend on 60% ARR growth continuing, on pipeline conversion, and on costs staying flat. The document's own base case reaches only $10.5M ARR after two years, 'just short of breakeven'. It never shows the growth rate or win rate at which the 12-month floor would break.",
+   "The document is internally inconsistent on software cash need. Slides 2 and 19 say ~$6.6M of cash over two years. Slides 18 and 20 say $1.2M, or '13% of the cash'. The $1.2M excludes core burn while the $9.5M is read as including it, so the 13% comparison is not like-for-like.",
+   "The software-path runway test omits the higher burn (~$0.47M/month) and the 12-month floor of about $5.6M after the hires. 'Kept' is asserted without a month-by-month check.",
+   "No capped partner-store test or staged Columbus option is considered. The board is left with only 'all or nothing now' and 'reopen later', although the pop-up never tested a fee or low promotions.",
+   "Rider pay risk is named but not sized, at about $0.29-$0.42 per order per $1/hour. The conditions for reopening do not say what level of pay would break them.",
+   "No wind-down or downside runway case for the launch. Slide 16 sizes losses at steady state but not cash and runway if targets are missed.",
+   "No customer-acquisition budget at scale per site, for example how many customers one site needs to reach 1,800 orders/day."
+  ],
+  "unsupported_assumptions": [
+   "\"ARR would reach $6.56M after one year and $10.5M after two\" assumes 60% growth continues through the hires, with no basis beyond past growth.",
+   "\"Closing the software pipeline would nearly double ARR\" assumes all 37 grocers close at $96K. The pack gives no win rate, and only 9 are late-stage ($864K).",
+   "\"Costs other than cost of revenue stay flat apart from the $0.8M of hires\" and \"Burn falls every month as ARR grows\" have no support. Support, onboarding and sales costs would be expected to rise with growth.",
+   "\"Software needs 13% of the cash\" ($1.2M vs $9.5M) is not like-for-like. The $9.5M is read as including core burn, while the software figure excludes it.",
+   "\"Now would put the pipeline at risk\" and \"Competes with the grocers it sells to\" have no pack evidence that grocers would leave or cancel.",
+   "\"Only the software path keeps 12 months of runway... Kept\" is asserted without showing the floor after the hires."
+  ]
+ },
+ "cost_usd": 0.1565091
+}

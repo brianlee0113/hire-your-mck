@@ -1,0 +1,38 @@
+{
+ "x": "DTEJJT",
+ "y": "DU33NB",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same clean chain from governing thought through section claims to slide evidence: market grows but loses money, unit economics are negative, runway breaks, software is better. X is slightly tighter. Its headline unit-economics figure is after store costs (-$6.17) and it carries one four-case comparison (plan +2.02, best -1.76, median -6.17, pop-up -12.57) that directly supports 'no site has reached this'. Y's executive summary leads with the weaker before-store figure (-$2.67), and its comparison table shows the best site at +$0.5 before store costs, which sits awkwardly under 'the plan works only on inputs no site has reached'. Y also has a small internal inconsistency ($3.6M in the title against $3.5M in the body for the full pipeline). Y's 'no operator has made it pay without raising prices' is a sharper framing that slide 11 pays off well, but X's hierarchy has fewer loose ends.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred conclusion (do not launch, scale the software) and both weigh three options. Y weighs them better. It tests the pilot in its strongest form (one Columbus store, Zipcart-style fees, a stop date) and still rejects it with numbers: about $2.43M in year one, cash only just at the $4.8M floor, a loss of about $0.30M a year at median volume after the 14% drop, and conflict with customers. X rejects a one-store test only at median economics with the existing fee, which is a weaker version of the alternative, though its runway arithmetic (below 12 months within about 8 months) is sound. Y also answers the investors' stated objective of a path to profitability within current cash: breakeven ARR of $11.0M, reached in 2029 using about $6.6M, a 40% growth sensitivity, and the honest caveat that this needs about 72 contracts, twice today's pipeline. X shows only that about 10 contracts pay for the hires and never tests whether the software path reaches profitability. X's three revisit conditions are a useful addition, but Y also sets a reopen test.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "X reproduces every required per-order calculation exactly and after store costs: median -$6.17, best observed inputs -$1.76, pop-up -$12.57, plan +$2.02. It also gets the runway right ($2.5M, 6.2 months) and quantifies the reading where the $9.5M excludes today's burn ($7.2M more). Its pop-up loss decomposition and network losses ($18M at median, about $8M at best inputs) check out. Its weak spot is Zipcart: it describes the fee, promotion cut and volume loss but never tests them on Parcelbird's numbers, and 'cannot copy the route' is a loose inference since a fee could be added. Y's numbers are also accurate, and it is the only one to quantify the fee scenario: $3.02 per order, 1,043 orders a day to cover the store, 16% above median after a 14% volume loss, which matches the key's -$0.48 at median. But Y leaves the best-site and pop-up cases before store costs (+$0.5 and -$6.2), so it never shows that the best observed combination still loses money after store costs, which is the direct test of the density claim. Y also has minor unsupported points ('kept the same stores and riders', software costs held flat while ARR quadruples) and the $3.5M/$3.6M slip. X is a little cleaner and more complete on the core calculations; Y's Zipcart work nearly closes the gap.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both reject the founders' hypothesis while conceding the part the evidence supports: market growth is real, at 38–44% a year. Both separate growth from profitability and treat the pop-up's 18% weekly growth as bought with promotions. X rebuts the density claim most directly by showing that even the best observed inputs lose $1.76 after store costs. Y handles the evidence that partly supports the founders more rigorously. It takes the Zipcart case seriously, models the fee and promotion cut on Parcelbird's inputs, and concludes it works per order but is unproven per store, needing above-median volume when the pop-up ran at 280 a day. It then carries that into a fee-based pilot option and a fee-based reopen test. X acknowledges Zipcart but dismisses it qualitatively. Y's treatment is closer to the calibrated update the key asks for: reject the three-city plan while recognising the economics are not impossible.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents are strong, numerically sound and reach the defensible conclusion with the runway breach and software alternative clearly laid out. X is the more complete on the core unit economics, with all four cases after store costs matching the key exactly, and it gives the board clear revisit conditions. Y serves this board somewhat better. It pre-empts the founders' best counter-argument (Zipcart's fee) with numbers, evaluates the strongest version of a capped pilot and still shows why not in 2027, and shows the investors that the software path can reach breakeven within current cash, with the dependency on new sales stated openly. Y's gap is that it does not show the best-observed case after store costs. X's gaps are that it does not quantify the fee route and does not show a path to profitability for the software. On balance Y's gaps are less costly to the decision.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 0.9647395999999999,
+ "wall_s": 283.27903389930725
+}

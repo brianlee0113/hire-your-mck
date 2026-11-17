@@ -1,0 +1,38 @@
+{
+ "x": "D8KGUX",
+ "y": "DVDM6F",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X has a tight four-part hierarchy (demand, timing, pricing, plan) where each section title restates a summary line and the evidence beneath supports it. Its soft spots are in the plan: the build runs Q3-Q4 while launch is also Q4, and gate 3 is a 'January check' on a quantity (share of mobile churn the rewrite removes) that cannot be observed in January. Its headline '1.9x' timing claim also sits beside its own disclosure that waiting gives up $257K a quarter of Pro contribution, which would bring the two sides to near parity. Y is organised as an explicit hypothesis test (five conditions, two fail), then why launch, packaging, trade-offs; the revised answer follows directly from the verdicts. Its flaw is the governing thought's 'only option' claim, which its own table weakens: the add-on also stays above 75% margin and reaches 4.3 NRR points at the high end, and Y admits Pro and add-on 'overlap' on ARR. Y's timing slide concedes a close call and then names the deciding criterion, which is consistent with the summary. Both hold together; Y's chain from hypothesis to conditions to revised answer is slightly more consistent end to end.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on defensible answers under the key: Y is R1 (launch in Pro with allowance, accept the delay explicitly), X is R3 (mobile first), and X meets R3's conditions by quantifying the win-rate risk ($0.6M a year, $160K a quarter) and keeping a limited AI response (Pro price test, paying beta accounts kept served, a Q2 fallback). The difference is in how trade-offs are weighed. X's timing case rests on a 1.9x ratio that assumes the rewrite ends all mobile churn when it ships and leaves out the $257K a quarter of deferred Pro contribution as 'shifted, not lost'; the 52% break-even inherits that exclusion, so the decision rule is more fragile than presented. Y lays out both orders with ranges, states plainly that on permanent ARR it is a close call and mobile first may lose slightly less, then decides on NRR timing and attaches mitigations (Customer Success outreach, dated roadmap, engineers move to mobile in Q3, no follow-on AI ahead of mobile). Y also weighs more alternatives: free-in-Core is rejected on margin, the add-on on price impact by account size (+63% at 3 seats, with price already 22% of churn), and no-launch on the NRR target. It gives breakpoints (26%, 21%, 75% mobile fix) where the answer changes and a pre-launch go/no-go on non-volunteers. Y's deciding argument depends on a reading of 'by 2028' and is itself not airtight, but its trade-off treatment is more complete and candid.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get all four required calculations right: $8.06M vs $2.45M; $32.4 / $61.2 / $130.5; 109 deals and $0.64M; Pro $2.89M. Both independently compute 74.1% company margin at heavy use and debunk the Sales memo at $1.9M. Both avoid every listed trap. X adds sharp points: loss notes cover all losses, not only Routewise; a 90-day renewal window says little about 14% annual churn; a sensitivity on the 1,190 vs 1,372 churn count. X's inference cost uses the beta mean (matching the key's $1.26M) and its numbers check out, but the headline timing ratio stacks upper bounds and the 'Pro has the stronger precedent' comparison leans on a 2023 tier of unknown price. Y adds: the 58% concentration figure is inconsistent with Table 2 (computes 40%), new-customer ARR does not count toward NRR, Brightwork was already losing 56% of Routewise deals before AI, and survey and beta bias are handled as ceilings. Y introduces more assumptions (10.7% via seat scaling, 7% low case, 25-75% mobile fix), but flags each as its own. Y's unsupported spots are 'only option' and 'likely to slip'. Net, Y uses the critical evidence slightly more fully and catches a data inconsistency; X makes slightly fewer assumptions. Marginal edge to Y.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "The key expects 'revise': keep the launch, change sizing and packaging, or argue a delay with the mobile trade-off explicit. Both reject the $8M forecast on the paywall evidence and both drop the flat $149 add-on because of heavy-user self-selection. Y handles the hypothesis most explicitly: it decomposes the CPO's plan into five conditions, shows which fail (demand, flat-price economics) and which hold (value, need for a paid AI offer), and keeps exactly the part the evidence supports. It also treats the Head of Customer Success's concern as partly valid, with conditions. X revises sizing and packaging equally well and goes further by overturning Q2 timing, siding with the Head of Customer Success; that is permitted by the key, but the evidence for overturning the timing is the fragile 1.9x comparison, so the update goes a little beyond what its own numbers firmly support. Y's update is better calibrated to the evidence.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents are strong, numerically sound and reach defensible conclusions; X does so in far fewer words, and its mobile-first stance is a legitimate reading of the churn evidence. Y would serve the executive team better for three reasons. First, it ties every option to the two stated objectives (NRR points and the 75% margin floor) in one comparison, including the free-bundle option X does not consider. Second, it is candid that the sequencing call is close and names the criterion that decides it, whereas X presents a 1.9x advantage that its own footnoted Pro-contribution figure largely erases. Third, its plan is more operational: a pre-launch test on random non-volunteer accounts with go/no-go thresholds, a Q3 review, mitigations and owners for the mobile delay, and five explicit decisions. X's gates are less usable (the January gate cannot be measured in January; the allowance is set at the exact margin break-even with no buffer). Y's weaknesses are the 'only option' overclaim and several self-made assumptions, but they are flagged and do not change the answer.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0759802,
+ "wall_s": 92.53772211074829
+}

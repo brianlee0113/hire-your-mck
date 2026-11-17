@@ -1,0 +1,38 @@
+{
+ "x": "DFYRWG",
+ "y": "D8UQ87",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both use a four-part structure that leads to the same Pro-tier recommendation, and in both the executive summary lines map onto the slide titles and evidence. Y's governing thought carries the whole argument, including the price paid (the two-quarter mobile delay) and how thin the NRR case is ('just enough'). Its final section resolves the timing question with evidence that supports the claim: a breakeven for waiting. X's governing thought omits the mobile trade-off. Its fourth pillar ('worth paying only with a gate that can move engineers back') is weakly supported: the evidence beneath it sizes the risk but does not show the gate works, and the 14 engineers return to mobile in Q3 anyway, so the gate changes little. X also offers 'the threat is modest' as part of the case for launching, which sits oddly. Y has one minor tension: it headlines $2.5M while questioning the 2023 precedent behind it, though it flags this openly.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred recommendation (R1): a Pro tier with a usage allowance, sized from the paywall test, with the mobile delay accepted explicitly. Y weighs the alternatives more rigorously. It tests 'mobile first, Copilot later' as a real option and gives a breakeven: waiting wins only if the rewrite stops more than about 52% of mobile churn at once, or 37% if the promotion explains half the win-rate drop. It also notes that delaying Pro defers rather than loses revenue. It evaluates Pro without an allowance (74.5% margin), gives the Pro range at 14% and 46% uptake, and sets a numeric checkpoint (below 15% on Pro means revisit). X compares the $1.1M mobile risk with the $2.89M Pro adds, which is cruder because it ignores that delay only defers Pro. Its gate trigger is vague ('slow migration or rising mobile churn sends spare engineers'). X's allowance (854 per seat) is set where company margin sits exactly at 75%, leaving no headroom; Y's 667 per seat leaves 75.8%. X does add two useful steps: pulling Q4 win rates and testing Pro pricing outside the beta.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "X reproduces the key's figures exactly: $2.45M against $8M, inference of $32.4 / $61.2 / $130.5, 109 deals worth $0.64M, Pro at $2.89M, and free-in-Core at about 70% margin. Its arithmetic checks out. Y's arithmetic is also internally correct, but it shrinks the base to 8,428 accounts after churn. That gives $2.1M for the add-on and $2.5M for Pro, both slightly outside the key's tolerances. The adjustment is disclosed and arguably right for an NRR calculation, but it puts the CPO's $8.1M and the paywall figure on different bases. Y draws more valid inferences from the critical evidence. It notes that recovered Routewise deals do not count toward NRR. It challenges the 33% precedent on which both recommendations rest (the 2023 tier had no AI). It converts the add-on to gross profit ($0.6M) and flags the 4.1 hours saved as self-reported with no control. X accepts the 33% with only a listed assumption and states that Pro 'meets the NRR target' at 5.0 points with more confidence than the evidence allows. Y's timing comparison stacks ceilings on both sides, but it labels them as ceilings. On balance X is closer to the key's numbers and Y is more careful about what the evidence can support.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both handle the CPO's hypothesis as the key expects. They keep 'launch', reject the $149 add-on and the $8M figure, and ground the revision in the paywall test (14% against 46%). Both cite the survey's 6% response rate and size skew, and the adverse selection of heavy users (inference takes 41% of the price). Both also treat the 14% as a ceiling and discount the VP Sales claim. X's add-on figure matches the key exactly; Y adds a gross-profit view of the add-on ($0.6M). The difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents make the same recommendation and both avoid every major trap. Y would serve the CEO better for three reasons. It is honest that Pro only just closes the NRR gap and depends on an unproven 33% precedent, with sensitivities at 14% and 46% uptake. It evaluates the mobile-first alternative and states the condition under which it would win. And it gives concrete decision parameters: 667 requests per seat with overage billed, a 15% checkpoint, and 75.8% margin headroom. X is numerically closer to the key and clean, but it is more confident in the $2.9M and the NRR claim, sets an allowance with no margin headroom, and treats the mobile trade-off with a vaguer gate and a less apt comparison.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.7566282,
+ "wall_s": 91.37304782867432
+}

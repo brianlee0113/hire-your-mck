@@ -1,0 +1,196 @@
+{
+ "blind_id": "DPJECB",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as a segment-by-segment 'whether and how' question. Uses the 15% ARR goal and the 100% NRR floor as explicit criteria (slides 18 and 20). Uses the renewal-at-term and enterprise-cap constraints to size the prize. Identifies early that the answer turns on separating the promotion-cohort effect from price sensitivity, and on which segments can bear a rise. Does not treat the 15% goal as a net-new-customer question, though it flags that new-customer ARR is outside the pack.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "Governing thought, four summary points, section dividers and action titles line up cleanly. Titles read as an argument. Flaws: the 15.04% 'meets the goal' claim counts the full $5.6M, including the SMB step, although the SMB step is half-tested and rolled out only after April, so some of the gain is not reachable on the stated timeline. The slide 7 bridge labels are muddled ('4.9% − one-off discount cliff 2.9% = 1.97%'; the chart implies the cliff is about 2.0 pp). 'Never got started' overstates 41% activation.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Re-checked: promo cohort implied 4.9%; mix 1.036 of 1.1 pp (94%); revenue-weighted churn 0.83%→1.19%; blended logo churn 1.71%→2.62%; reachable gain $7.566M with SMB at 33.3%; segmented plan $5.60M; weighted NRR 109.3%. All correct. The $10.3M correction is derived transparently. Exit survey is split by cohort and the 2023 and 2024 precedents are caveated. Weaknesses: the onboarding split rests on an assumed 3x churn ratio and a labelled-but-muddled bridge. The projection stacks the price plan on trailing NRR, which may already include past price effects. The 12% break-even of about 10.7% is not computed; the doc uses an 8% step break-even instead. A few mild unsupported statements: 'held in place by multi-year contracts', 'a quarter shows a jump the size of 2023's'.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "Differentiated recommendation: mid-market 10%, enterprise within caps, other SMB 8% in a randomised test, promotion cohort price held with an activation drive, new-SMB list price held. Four options are compared on the criteria. Explicit stop rules, owners and dates. Honest that 15% has no cushion and that mid-market churn could break it. Avoids all five traps and reconciles the CFO and CEO views. Flaws: the headline plan gain counts the staged SMB step in full, and the 8% SMB step is thin (about $0.7M net) and exposed to Inkwell. Defensible and actionable.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and titles carry the message. At 23 slides and about 3,100 words it is somewhat long for this decision. Section dividers, an appendix and dense footnotes add bulk, though most slides earn their place.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Enterprise: unchanged, held in place by multi-year contracts",
+    "why": "The pack says enterprise is mostly multi-year but does not attribute flat churn to that."
+   },
+   {
+    "quote": "With about 1,900 customers in each SMB test group, a quarter shows a jump the size of 2023's",
+    "why": "No power calculation. Renewals are spread across the year, so a quarter may not give 1,900 renewing customers per arm."
+   },
+   {
+    "quote": "Promotion customers never got started",
+    "why": "41% of the cohort sent at least five documents in month one, so 'never' overstates."
+   },
+   {
+    "quote": "this part should fade on its own",
+    "why": "The discount cliff is assumed to be one-off. The doc itself says H2 2026 data is needed to confirm."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "promotion cohort churn H1 2026 4.9% − one-off discount cliff 2.9% = explained by its low start rate 1.97%",
+    "correct": "Arithmetic and labels are inconsistent. The chart implies the one-off cliff is about 1.97 pp, and the cohort's post-cliff rate is about 2.9%, so 4.9 − 1.97 = 2.9. The labels look swapped."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "A segmented plan adds about $5.6M and meets the 15% goal",
+    "quote_b": "Test on half; Roll out if the stop rule holds (SMB go/no-go in April)",
+    "why": "The $5.6M and 15.04% include the full 8% SMB step. The step is tested on only half of renewing SMB customers and rolled out after April, so the headline overstates the 2027 gain. The 14.2% fallback shows the goal depends on the SMB step."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "partial"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise mid-market 10% and enterprise (7% capped, 10% uncapped) at renewal from January. Test an 8% step on half of non-promo SMB renewals behind a stop rule. Hold promotion-cohort price while running an activation drive. Keep new-SMB list at $15. Reject both a flat 12% and a hold.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "Matches the key's differentiated-increase route. Separates the mix effect from the rate effect. Corrects $10.3M to about $7.6M. Differs by segment. Has a staged test with churn guardrails. Candid that the 15% goal has no cushion."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "Keeps the CFO's 'onboarding/cohort not price' for non-promo SMB, backed by the 94% mix effect. Shows the promotion cohort does leave over price at discount expiry (52%) and that Inkwell cuts SMB pricing power. Rejects the flat 12% and a full hold, and revises to a segmented plan. Flags that the 2023 precedent predates Inkwell and the 2024 test covered new sign-ups only. Challenges the Customer Success 'halve churn' claim. The governing line 'not core price resistance' is somewhat strong, since SMB win rates fell against Inkwell."
+  },
+  "overall_comment": "Strong, numerically careful document. All critical evidence is used, the mix decomposition and the $7.57M correction are right, and the segmented recommendation is defensible with stop rules and caveats. Weaknesses: the 15% claim counts a staged SMB step in full, the onboarding split rests on an assumed 3x ratio with muddled bridge labels, and the 12% break-even is not computed. It is a little long for the decision.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "low"
+  }
+ },
+ "cost_usd": 0.2432319,
+ "wall_s": 479.2454900741577,
+ "is_error": false,
+ "error_text": null
+}

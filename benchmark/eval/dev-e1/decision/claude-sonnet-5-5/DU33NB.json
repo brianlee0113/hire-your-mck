@@ -1,0 +1,116 @@
+{
+ "blind_id": "DU33NB",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 14: 12 months at today's burn needs $4.8M; the plan leaves $2.5M at month 18, or 6.2 months. The footnote flags that the $9.5M may exclude the core burn, but the $16.7M case is not quantified."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Every option is tested against current cash. The software path is framed as 'breakeven within current cash'. Slide 15 notes that the contribution figures exclude acquisition and head office. The document never states that a new round is unavailable or cites the lead investor."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 8 gives the full stack: -$2.67 before store cost and -$6.17 after $3.50 of store cost at 900 a day. Slide 9 compares the plan and best-site inputs with the best observed. Slide 9's -$6.2 / $0.5 / $3.8 figures exclude store fixed cost. The -$3.44 and -$1.76 cases are not shown after store cost."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slides 9, 10 and 12 use the pop-up inputs ($31 AOV, 12% promotions, 2.1 orders per rider-hour, 280 a day). They say the 18% weekly growth was bought with 12% promotions. The all-in -$12.57 with the $650k site cost and the implied final-week rate are not computed."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 12: $173 per retained customer ($38 ÷ 22%), 8,830 customers and $1.53M of acquisition per 900-a-day store, and -$8.28 per customer-month. Slide 14: $27.5M to fill nine stores, 2.9 times the $9.5M. It also contrasts the 44% survey figure with the 22% observed retention."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slides 8 and 15 and the assumptions list: each $1 an hour adds about $0.42 per order at median productivity, and two of the three cities are weighing pay rules. The $0.29–0.33 effect at higher productivity, and the headroom in the fee or pilot cases, are not shown."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slides 4 and 5: market growth of 38–44% a year ('sales are not profit'), Zipcart -$1.90 and -25.8% EBITDA margin, QuickBasket -$3.40 and -45.7%, and QuickBasket closing 4 of 11 cities. Used explicitly to reject growth as evidence."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slides 6 and 11: $3.99 fee, 1% promotions and -14% volume. Needs 1,043 orders a day versus a 900 median, with $3.02 per order. The one-store pilot loses about $0.30M a year at median volume after the 14% drop."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slides 17 and 18: $0.8M for 2 engineers and 2 sales hires, 9 late-stage deals worth $0.9M ARR and $0.70M gross profit at 81%, 37 in the pipeline, and a breakeven ARR of $11.0M that needs about 72 contracts. The hires' effect on the 12-month floor (burn about $0.47M a month, floor about $5.6M) is not stated."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Slides 17–19: hires and pipeline sized, breakeven ARR $11.0M, about 72 new contracts versus a 37-grocer pipeline, 2029 breakeven at 60% growth and about $6.6M of cash used. A 40% growth case gives 2030 breakeven and about $2.61M left. Recommended, with the dependence on sales beyond the pipeline stated."
+   },
+   {
+    "id": "A2",
+    "status": "mentioned",
+    "evidence": "Only appears as a next step: 'set the reopen test: a customer site covering its store costs with higher fees', and 'package fast delivery from existing stores' as a software feature. There is no cash cap, no kill criteria, no costing of a partner-store test, and no explanation of why it is deferred."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Slide 19: one Columbus store with Zipcart fees and a stop date. $2.43M in year one ($0.6M capex + $0.30M loss + $1.53M acquisition), about $4.77M left, a loss at median volume, and a conflict with grocer customers. Verdict: not in 2027."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Slides 9–15 and 19: every plan input exceeds the best site, $2.5M and 6.2 months of runway left, -$2.0M a year per store at median, $27.5M of acquisition. Rejected."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 9 gives the Columbus, median, best-site and plan columns. Slides 10–11 give the contribution added by each input and the break-even AOV ($46.7) and rider productivity (3.8). Slide 8 shows $0.42 per $1 an hour. All of these are on a pre-store-cost basis, so the break-even values are understated. Break-even density at median AOV is not shown, and the -$12.57 pop-up all-in figure is missing."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 11: with a $3.99 fee and 1% promotions, an order earns $3.02 and the store needs 1,043 orders a day. Volume falls 14% to about 774 a day, giving about -$0.30M a year per store (slide 19). The document does not vary the fee level, and the volume loss the fee case can absorb is not shown. It says 'unproven per store' but does not say outright that there is no Parcelbird evidence on demand at that price."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Cash after each option: $2.5M and 6.2 months (plan), about $4.77M (pilot), $6.62M used (software). The $4.8M floor, the 40% growth case ($2.61M) and the median-economics downside ($18.27M a year for nine stores) are also shown. The maximum affordable spend (about $7.2M, about $6.4M with hires) is only implicit. The $9.5M burn ambiguity is flagged but not quantified, and there is no wind-down case."
+   }
+  ],
+  "overclaim": {
+   "present": false,
+   "quote": ""
+  },
+  "omissions": [
+   "The software path's 12-month runway claim is asserted ('Yes: about $6.62M used') but not tested at the trough. The hires lift burn to about $0.47M a month and the floor to about $5.6M, while cash after 2028 is about $5.4M. Slide 19's title ('only the software-led plan keeps a year of runway and a credible route to profit') is stronger than this support. The pilot is called 'only just' at $4.77M against the $4.8M floor, so the two options are judged on different bases.",
+   "The unresolved $9.5M ambiguity is flagged but not sized. If it excludes the core burn, the total need is about $16.7M against $12.0M of cash. Slide 19's column header 'Extra cash beyond today's burn' contradicts slide 14, which treats $2.5M as the cash left.",
+   "No capital-light partner-store test with a fixed cash cap and pre-agreed kill thresholds. The 'reopen test' is a single line, so the board has no concrete way to revisit the delivery question.",
+   "Break-even thresholds (AOV $46.7, 3.8 orders per rider-hour), the plan's +$3.8 and the Columbus -$6.2 all exclude the store fixed cost. Slide 11's fee row includes it. The all-in plan (+$2.02), best-density (-$3.44) and pop-up (-$12.57) figures are not shown.",
+   "The document does not say that a new funding round is unavailable, which is why every option must be self-funding. There is no wind-down or exit cost if a launched venture fails."
+  ],
+  "unsupported_assumptions": [
+   "'At 60% growth the software breaks even in 2029': the pack's historical 60% is extrapolated for three years. Reaching the $16.8M of ARR needs about 72 new contracts against a 37-grocer pipeline, with no evidence on close rates or on what the hires will produce.",
+   "'costs held at today's level plus the hires': operating costs stay flat while ARR roughly quadruples, with no stated basis.",
+   "'Hiring can follow signed contracts' / 'pace them to contract wins': this assumes growth beyond the pipeline can be reached with hires released only after deals close.",
+   "'Kept the same stores and riders; density was already the highest in its network': the pack says only that the fee and the promotion cut preceded the result. Stating that nothing else changed is an inference.",
+   "Pilot cost of $2.43M: assumes the one store reaches median volume (900 a day) from the start with the full acquisition spend. The pop-up averaged 280 a day.",
+   "Slide 19 labels $9.5M as 'extra cash beyond today's burn', but slide 14 treats it as inclusive of burn. The pack is silent on which."
+  ]
+ },
+ "cost_usd": 0.2257251
+}

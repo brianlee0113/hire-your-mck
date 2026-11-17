@@ -1,0 +1,114 @@
+{
+ "blind_id": "DJFEWR",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 14 computes company gross margin against the 75% floor: 76% at beta-average use, 74.1% with Pro accounts at buyer-level use and no cap, 75.7% with the cap. The $0.6M platform cost is counted as cost of revenue (footnote)."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 13 sizes the NRR gap at $2.3M a year, i.e. 4 points on $57.6M. It derives 26% Pro migration from the $893 premium per account, states what is held constant, and nets mobile churn separately on slide 17."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slides 11 and 14 give inference cost at $0.009: $61.20 for buyers (41% of $149), $130.50 for the top decile, $32.40 for the mean. The 58% usage concentration is stated. The Pro margin headline is built from these costs. The document does not give the add-on's product margin against the 75% floor."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "The $0.6M platform cost is included in the slide 14 company gross margin (Copilot cost $1.86M = inference + $0.6M). It is not netted in the $2.4M 'net ARR' headline, and no contribution figure is shown."
+   },
+   {
+    "id": "C5",
+    "status": "mentioned",
+    "evidence": "Slide 17: 'Not netted: the one-time $1.47M of engineering (14 of our 60 engineers for two quarters at $210,000 a year)'. The $2.4M headline ignores it, and there is no payback calculation."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slides 16–17 net a $1.1M mobile-churn cost (57.6M × 14% × 27% × half a year, 'as if the rewrite would end all mobile churn') against the Pro launch. They cite 27% vs 6% churn and 38% vs 19% feature rank, and make locking the rewrite date and team a condition. No flip point is given for the share of churn the rewrite removes."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slides 7–8 size the add-on from the paywall test (14%, about 1,372 accounts, $2.45M) against the survey's 46% and $8M. They flag the survey's 6% response and 9.4-seat bias, and call the paywall rate a ceiling because it comes from larger volunteer accounts. The headline Pro figure, though, uses the 33% precedent instead."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slides 11 and 18 say inference is fixed at $0.009 only through December 2027 and that list prices fell 35%. All margin math uses $0.009 with no assumed price fall. The next steps include opening 2028 inference contract talks. The 'reprice before renewal' wording is vague."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 9: 1,560 contested opportunities × 7 pp × $5,878 = about $0.6M a year, a ceiling. It cites 109 fewer wins and the 20% discount as a partial cause, and shows the VP Sales claim (328 recovered deals) exceeds the whole fall. This enters the slide 17 net."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "This is the recommendation: Pro at +$12 per seat with a 667 requests/seat allowance and request packs. It is supported by the 2023 precedent (33%, $2.9M), the 26% NRR threshold, margin scenarios (76% / 74.1% / 75.7%) and the Routewise match."
+   },
+   {
+    "id": "A2",
+    "status": "mentioned",
+    "evidence": "The flat $149 add-on is sized on the paywall test ($2.45M, $61.20 cost) and rejected. Its fixes (a lower entry price, or usage charges above an allowance) are not evaluated as an add-on. Request packs appear only inside Pro."
+   },
+   {
+    "id": "A3",
+    "status": "absent",
+    "evidence": "The document never evaluates delaying Copilot for two quarters and shipping the mobile rewrite first. It treats the rewrite delay as a cost to accept and does not compare it with the alternative."
+   },
+   {
+    "id": "A4",
+    "status": "absent",
+    "evidence": "There is no evaluation of bundling Copilot into Core at no charge with a hard cap, and no margin-floor test of that option."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "The adoption drivers are shown: add-on 14% vs survey 46% ($2.45M vs $8M), Pro 33% ($2.9M), and the 26% Pro threshold for 4 NRR points. It does not show Pro results at lower uptake or the add-on's NRR threshold, nor does it apply the 14% selection-bias ceiling to Pro."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 14 shows margin moving with usage: 76% at mean use, 74.1% at buyer-level use uncapped (below the floor), and 75.7% with the cap. Per-account costs run from $32.40 to $130.50. It gives no break-even request level and no margin sensitivity to the post-2027 per-request price."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "The document gives dollar ceilings for both drivers: win-back at most $0.6M, with the discount named as part of the fall and the memo's 328 recovered deals refuted. Mobile-delay cost is at most $1.1M (38% of Pro ARR), stated as if the rewrite ended all mobile churn. It does not vary the AI-attributed share or give the mobile-churn share at which launching first becomes better."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "The real cost is the two-quarter mobile delay, yet launching still adds about $2.4M of net ARR under five conditions (also slide 17: 'Even charging the mobile delay in full, launching in Pro adds about $2.4M of net ARR in the first year')"
+  },
+  "omissions": [
+   "The $2.4M 'net ARR' mixes ARR with a churn estimate. It leaves out the $1.47M one-off engineering and the roughly $1.86M a year Copilot cost (inference + $0.6M run cost) against $2.89M Pro ARR. There is no contribution or payback view, so the headline overstates the first-year economics.",
+   "It pairs the maximum win-back ($0.6M) with the maximum mobile cost ($1.1M). It does not show the net range or the mobile-churn share at which launching first would be the better choice, and it does not compare delaying Copilot with launching (no delay alternative).",
+   "There is no downside case for Pro uptake. At the 14% seen in the paywall test (a ceiling), Pro would reach only about $1.2M, well below the $2.3M NRR need. The 'review Pro uptake after two quarters' condition names no threshold or trigger.",
+   "The cannibalisation risk that Core accounts who would not otherwise leave pay more, with price already the second churn reason (22%), is not examined."
+  ],
+  "unsupported_assumptions": [
+   "'Our 2023 higher tier drew 33% of accounts within a year; at that rate Pro adds about $2.9M of ARR': the headline $2.9M rests on a precedent that, as slide 13 admits, 'did not include AI', so Copilot's pull is untested.",
+   "'Pro inference cost assumes Pro accounts use Copilot like the mean beta account' (3,600 requests): the 76% margin depends on this. The mean comes from volunteer accounts, while the only paying evidence is 6,800 requests, where margin is 74.1% uncapped.",
+   "'Accounts that move have the average 6.2 seats': Pro ARR and cost both depend on this. Self-selecting movers are likely larger and heavier users.",
+   "'Allowance of 667 requests per seat a month': a working assumption chosen by the deck team, with no evidence on customer acceptance or on how it changes uptake or usage.",
+   "'Churn, contraction and other expansion stay at today's level, so Pro carries the whole gap': the NRR threshold of 26% depends on this."
+  ]
+ },
+ "cost_usd": 0.2052537
+}

@@ -1,0 +1,123 @@
+{
+ "blind_id": "DP5YRL",
+ "case": "c2-profitability",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 8 sizes the target at $41.9M on ~$1,398M of sales. The bridge reaches $40.7M (2.9%), with a 3.1% stretch. The shortfall against 3.0% is shown, not hidden."
+   },
+   {
+    "id": "C2",
+    "status": "mentioned",
+    "evidence": "Slides 15 and 17 compare a ~$26M Wave 1 run-rate, with phasing at 60% and one-third, against the $20M covenant. That is a run-rate, not FY2026 income. Slide 20 says FY2026 is closing now, FY2025 is used as the run-rate, and the covenant may already be fixed. FY2026 operating income is never estimated, and the downside case is not tested against $20M."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 16 itemises $20.1M against the $25M cap, leaving $4.9M of headroom. The $7.5M lease exit is flagged as the only figure from the pack, and Wave 1 spend is shown as $5.4M."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slide 12 and decision 5 separate the six leases expiring by 2027 (management decision) from the three that need a board vote, which is set for Q2 FY2027. Scenario C shows the plan without the three."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Delivery is kept as 'repriced home delivery plus free click-and-collect'. Option D (exit delivery) is shown as breaking the owners' commitment, and decision 6 confirms the position with the owners."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "A $7.3M wage step is deducted in the bridge (−3.6 base, half recovered; −7.3 low case). The recovery assumption is unsupported."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 7 gives −$10.4M after third-party delivery and 30% incrementality, and rebuts the team's 6.1% claim. It shows −$12.34 per delivered order and the rise in home-delivery share. The 3% proposal ($0.3M) is named but not folded into the base numbers. The frozen service still loses $7.6M."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 11 nets the $14.5M cut: shrink response up to −$10.0M (0.67 pt) and −$3.0M per 1% of sales lost. That gives +1.5 to +14.5, central ~+4.5. It uses $1.5M per 0.1 pt and the quartile gradient."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Promotions +5.1 is net of a 1% sales loss ($2.8M). ValuMart comps of −4.2% and the price-perception shift (33% to 41%) are cited, with a $2M everyday-price reinvestment as mitigation. However, the base case also assumes vendor funding recovers from 46% to 50% (+$3.6M), which the checklist says should not be assumed."
+   },
+   {
+    "id": "C10",
+    "status": "reflected",
+    "evidence": "The headline is the $6.6M net figure, built from 25% transfer at 12% contribution. Timing (six exits by end-2027) and the $7.5M exit cost are stated, and store exits are excluded from the Wave 1 covenant run-rate."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Slide 11 and option A compare the 8% blanket cut ($13–26M, 0.9–1.7%) with a targeted rebalance (+$3.6M). The targeted version is confined to Q3–Q4 stores, protects produce and receiving hours, and carries a reverse-if-shrink-rises-0.2pt rule, with shrink tracked at Gate 1."
+   },
+   {
+    "id": "A2",
+    "status": "tested",
+    "evidence": "Slide 10 sizes the fee rollout at +$2.5–2.8M and the contract re-tender at $0.5M per 5%. Exiting delivery (option D) is sized at ~$6.4M more and rejected as breaking the owners' commitment. Both are shown side by side."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "The plan adopts pruning the loss-making events, supported by the 38% post-event review, and rebuts the category team's comp claim on slide 6. The target is 25% rather than 24%, with the volume loss netted off. The saving is not split out by the share that comes from the losing events."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Slide 12 compares the six at expiry (+$4.4M, no exit cost, ~0.5 year payback) with all nine (+$6.6M) and the three alone (+$2.2M, 3.9 year payback). Option C is the plan without the three. 'Close none' is implicit."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Shrink at $1.5M per 0.1 pt. A 0.67 pt response gives −$10.0M, and each 1% of sales lost costs $3.0M. Net range +1.5 to +14.5, and A falls to $13.2M. The covenant-breaking shrink rise (~+0.65 pt) and the full-wipe-out point (~+1 pt) are not stated explicitly."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Click-and-collect breaks even at 38.5% incrementality (the document assumes 30%). The delivery-pricing range is 2.2–3.3, with a pause trigger at a 5% sales fall. The caveat on the 4-store test is stated. The total e-commerce loss is not recomputed across cannibalisation rates, and the document does not show that the loss-making conclusion holds up to ~29% incrementality."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 17 gives ±$2.0M per 1 pt of promotion share and −$2.8M per 1% of sales lost. The promotions low case is 3.5 against a base of 5.1. The document does not state the loss of sales that erases the saving (~1.8% more). It also does not size the share of the saving that comes from the 38% of events that lose money."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Taking shrink back to FY2023's 2.1% closes the gap to the 3.0% target (3.1%)."
+  },
+  "omissions": [
+   "There is no estimate of FY2026 operating income, which is the year the lender covenant tests. The plan substitutes a six-month run-rate. The slide 17 title says even the FY2028 low case is 'well above the $20M level the lender requires', which compares a FY2028 figure to a FY2026 test.",
+   "The base case is 2.9%, below the 3.0% target. The 3.1% stretch relies on the shrink-to-2.1% lever, which slide 18 also counts as contingency for covering a vendor-funding or wage-step miss. The contingency and the stretch cannot both be spent, and the document does not say so.",
+   "The plan holds FY2025 prices and has no baseline erosion. ValuMart has opened 11 stores and comps are −4.2% near them, but no drift in sales or margin is modelled, even though the base case is only 0.1 pt from the target.",
+   "The provider's proposed 3% delivery rate rise ($0.3M) is named but is not netted from the +$2.5M delivery-pricing figure."
+  ],
+  "unsupported_assumptions": [
+   "\"Cutting 4 pt of promotion share loses 1% of total sales at 20¢\" is the only basis for netting the promotions lever. It is not from the pack, and it is far smaller than the −4.2% comps seen near ValuMart.",
+   "\"Vendor funding (46%→50%)\" is worth +$3.6M. It rests on reading the 14-pt gap as net of funding, which the document admits the pack does not say. The document itself calls this the least certain number.",
+   "\"2027 wage step ... half recovered in prices\" turns −$7.3M into −$3.6M. There is no evidence of pricing power, and the plan is cutting promotions while 41% of customers already call Harlow more expensive.",
+   "\"Private label 18.5%→20.5%\" (+$3.4M) is justified only by extending the FY2023–25 trend of +0.75 pt a year. The $2.0M cost is a planning allowance.",
+   "\"Labor rebalance +3.6\" assumes shrink stays \"neutral to positive\" because Q3 and Q4 differ by 0.1 pt. The per-quartile hours split is not in the pack, and the quartile view is a correlation.",
+   "\"Shrink 2.6%→2.3%\" (+$4.2M) is credited to a $4.0M programme that is a planning assumption, on the basis that Q3–Q4 stores are already at 2.3–2.4%.",
+   "\"Totals split pro rata by store count\" gives the +$4.4M for six stores and +$2.2M for three. The split that drives the covenant-timing and board-vote decision is not in the pack, and the $0.4M per store closure cost is also assumed.",
+   "Only $7.5M of the $20.1M one-time cost comes from the pack. The other $12.6M is assumption, so the $4.9M headroom is uncertain.",
+   "\"Wave 1 run-rate ~$26M\" uses 60% of promotions and one-third of shrink phasing. No basis is given for the phasing, and the figure is a run-rate rather than FY2026 income."
+  ]
+ },
+ "cost_usd": 0.2912149
+}

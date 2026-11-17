@@ -21,7 +21,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from common import BENCH, CONFIG, REPO  # noqa: E402
 
 HOME = str(pathlib.Path.home())
-PAT_REPO = re.compile(re.escape(str(REPO)) + r"|answer_key|/\.claude/(?!shell-snapshots)|hym-bench-work/ws/|hymwork/ws/(?!{run})")
+PAT_REPO = re.compile(re.escape(str(REPO)) + r"|answer_key|/\.claude/(?!shell-snapshots)|hym-bench-work/ws/(?!{run})|hymwork/ws/(?!{run})")
 PAT_NET = re.compile(r"\bcurl\b|\bwget\b|pip3? install|uv pip install|npm install|allowed_domains|https?://", re.I)
 SKILL_MARK = re.compile(r"You turn research, notes or a single message into a consulting-grade deck|deck_deep|storyline spec", re.I)
 

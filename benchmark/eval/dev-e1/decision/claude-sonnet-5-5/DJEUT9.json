@@ -1,0 +1,113 @@
+{
+ "blind_id": "DJEUT9",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 16 sets the $4.8M floor (12 months of burn) and shows the plan leaving $2.5M, about 6 months, which is half the floor. It shows the plan needs 1.3x the cash available above the floor. It also covers the other reading of the $9.5M (cash of −$4.7M at month 18). The pack's ambiguity over whether the $9.5M includes core burn is flagged. Slide 19 re-bases the floor to $6.4M of cash above it once the software hires are added."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 16: \"No backstop: the lead investor calls a new round for a delivery operator 'unlikely in this market'.\" Slide 19 cites \"The test investors set: profit within today's cash\". The cash analysis is self-funded only. Slide 14 adds CAC payback on top of per-order contribution, so positive contribution is not treated as profitability."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 7 gives the full stack with fixed cost per order: pop-up −12.57, median −6.17, best of each input −1.76, plan +2.02. It also gives the pre-site values (median −2.67). Slides 8 and 9 show every plan input is above the best site. They also show the median site needs a $63.36 basket or 14.4 orders/rider-hour to break even, and that no volume breaks even because the order is negative before site cost."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slide 7 shows the pop-up at −$12.57 per order, worse than median. Slides 8 and 13 say it lost money on every input, and that the 18% weekly growth \"came with promotions at 12% of order value and first-order credits\" and \"was bought\". The final-week run rate (about 410 a day) is not given."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 14 combines $38 CAC, 22% retention and 3.1 orders a month into a 14.8-month payback per retained customer at the plan's margin, and says it is never repaid at median. Slide 13 contrasts 44% stated intent with 22% retained. It uses the $3.77 pre-site contribution, which flatters the payback (the doc says this is generous). It does not size customers or CAC needed per site against the budget."
+   },
+   {
+    "id": "C6",
+    "status": "mentioned",
+    "evidence": "Slides 9, 17 and 21 say two of three cities are weighing minimum pay, that it would raise rider cost and \"widen the loss\", and that settling it is a reopen condition. The headline numbers all use $17.75 an hour. There is no $ per order effect per $1/hour and no headroom analysis."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slides 4 and 5: GMV grew about 41.5% a year while Zipcart (−$1.90 per order, −26% EBITDA margin) and QuickBasket (−$3.40, −46%, closed 4 of 11 cities) lose money. The doc concludes that growth confirms demand but not profit."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slides 10 and 11 give the $3.99 fee, promotions cut to 1% and the 14% volume drop. They then apply them to a median site: −2.67 + 3.99 + 1.70 − 4.07 = −$1.05 per order after site costs. The doc lists the points where this is generous to the playbook. The best-density result (+$2.25) is not shown."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 19 prices the hires at $0.8M a year and burn at $466.7K a month. It sets $6.4M cash above the floor, which gives 13.7 months with no new contracts. It sizes the 9 late-stage grocers at $0.9M ARR (21% of ARR) and the pipeline at $3.55M, at 81% gross margin. It does not compute how many contracts cover the hires, and it does not show that the software path reaches profit within current cash."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "This is the recommendation. Slides 19 and 20 give the $0.8M cost, the pipeline (9 late-stage, 37 total, $96K ACV, 81% gross margin) and the runway arithmetic. They also give the condition \"if new contracts cut the burn during 2027\". The break-even number of contracts and the closing timeline are not tested."
+   },
+   {
+    "id": "A2",
+    "status": "absent",
+    "evidence": "No capped, capital-light test run from a grocer partner's store with a fee and low promotions, and no kill criteria. Slide 22 packages fast delivery for grocers to run themselves. Slide 21 says Parcelbird can \"watch them without owning a store\". Neither is a Parcelbird-run priced test. The pilot is rejected as \"little new learning\" although a fee and low promotions have never been run at a Parcelbird site."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Slide 20 sizes a one-store Columbus pilot at $2.6M ($0.6M capex + $2.03M first-year loss at median inputs). It shows the pilot fails the runway test within the first year. It rejects it because it re-tests what 14 sites and the pop-up already show. It notes the loss would be larger at the pop-up's 280 a day. Stage gates on price and AOV are not considered."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Slides 7–9 and 14–17 show every plan input is above the best observed site. Slide 16 shows the plan breaches the floor (2.5 vs 4.8) with no backstop round. Slide 17 shows nine stores lose about $18M a year at median. Slides 10–11 deal with the Zipcart-fee route."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 7 gives contribution per order at pop-up (−12.57), median (−6.17), best of each input (−1.76) and plan (+2.02). Slide 9 gives break-even AOV $63.36 and 14.4 orders/rider-hour at median. Slide 21 gives a $50.37 break-even AOV at best density and rider speed. Slide 9 also shows volume cannot fix a −$2.67 pre-site loss. Slide 8 breaks the plan's gain down by input. The effect of a rider pay increase per $1/hour is not quantified."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 11 quantifies a Zipcart-style $3.99 fee and 1% promotions at median: −$2.67 pre-site becomes −$1.05 per order after a 14% volume loss. The doc states its generous assumptions. It does not give break-even density under fee pricing, how much volume loss a best-density site can absorb, or a note that there is no Parcelbird evidence on demand at that price."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 16 shows cash of 12 → 2.5 → −4.7 against the $4.8M floor, and the 1.3x multiple. Slide 19 shows $6.4M above the floor and 13.7 months with the hires. Slide 20 shows the pilot's $2.6M breaching the floor within the first year. The wind-down cost and runway if targets are missed are not shown."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Late-stage grocers alone hold contracts worth 21% of today's ARR"
+  },
+  "omissions": [
+   "The software path is not shown to pay for itself. The doc never says how many new contracts cover the $0.8M hires (about 10–11 at 81% gross margin), and the 9 late-stage deals ($0.9M ARR, about $0.7M gross profit) are not compared with the cost. It gives no close timeline or conversion rate. Its own figure is 13.7 months to the floor with no new contracts, and slide 20 marks the path as keeping runway only \"if new contracts cut the burn\".",
+   "No capped, partner-store test with a fee and low promotions and kill criteria (A2). The pilot is rejected as \"little new learning\" although a fee and low promotions have never been tried at a Parcelbird site, so a cheap way to test the one route that worked for Zipcart is not evaluated.",
+   "Rider minimum pay is named as a risk but not sized. There is no per-$1/hour effect (about $0.29–0.42 per order) and no headroom for any case near zero.",
+   "No wind-down cost or runway if a launch is stopped part-way. Break-even density under fee pricing and the volume loss a best-density site could absorb are also missing."
+  ],
+  "unsupported_assumptions": [
+   "\"Late-stage grocers alone hold contracts worth 21% of today's ARR\": these are unsigned pipeline deals, and the doc assumes all 9 close without a conversion rate or timing.",
+   "\"Yes, if new contracts cut the burn during 2027\" (runway under the software path): no amount, timing or number of contracts is given to support it.",
+   "\"Keeps grocers as customers instead of turning us into their rival\": the channel-conflict benefit has no evidence in the pack.",
+   "\"Bigger baskets cut against the quick top-up order that 15-minute delivery serves\": asserted without evidence (the pack lists this only as an uncertainty)."
+  ]
+ },
+ "cost_usd": 0.16552709999999998
+}

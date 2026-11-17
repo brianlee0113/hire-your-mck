@@ -1,0 +1,119 @@
+{
+ "blind_id": "DJVE2U",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 13 sizes the target at $98.9M (+15% on $86.0M) and says price supplies \"about a third of the growth the target needs\". The rest is split between existing-customer NRR (+$8M) and $0.6M of new business. The document does not show that the NRR step depends on SMB retention, and it leaves out the churn response (see overclaim)."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 13 shows \"114% overall net revenue retention with the rise, against a floor of 100%\". Slide 4 notes SMB is the only segment below 100%. The 114% excludes any churn response, and the document does not show how far SMB NRR could fall before the floor binds."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 12 cuts the uplift for renewal timing (mid-market −$0.738M, enterprise −$1.728M). It reaches $7.6M \"reachable at 2027 renewals\", and the footnote says price changes apply only at renewal."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slide 12 applies the 7% cap (−$0.288M) to 60% of renewing enterprise ARR. Slide 13's footnote flags the assumption: \"60% of renewing enterprise ARR capped\". The recommendation uses \"7–10%\" at enterprise renewals."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 12 restates $10.3M to $7.566M, split as $2.5M SMB, $4.2M mid-market and $0.9M enterprise. It is labelled \"before any customer reacts\" and \"before churn response\"."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slides 10 and 14 estimate the 2023 extra loss at 3.6% (0.5pp × 6 plus 0.1pp × 6). They compare it with the break-even loss of 7.4% for an 8% SMB rise and note it predates Inkwell. The SMB rise is held and tested. The $1.3M is described as \"up to\", so it is gross, but the headline excludes SMB uplift."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 9 shows Inkwell Starter $9 against Palisade SMB $15, rising to $16.8 after 12% (1.9x), and the win rate falling from 51% to 38%. It also gives Business $29 against Pro $24. This is why SMB is held. The document does not discuss the effect of a list-price rise on new SMB sales. It treats Inkwell's absence above 200 seats as pricing-power evidence and does not address 51–200-seat mid-market accounts."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 5 estimates cohort churn at 4.9% against 2.1% (arithmetic shown) and the cohort is 36% of SMB. Slide 6 gives 41% vs 72% activation and 52% vs 18% citing price. Slide 12 counts $0.5M of gain from the cohort. Slide 17 holds the cohort's price and keeps the test to non-promotion SMB ($16.6M). The $4.4M ARR at risk is not stated."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 4 uses segment churn (SMB 2.0% to 3.1%, mid-market 0.6% to 0.8%, enterprise 0.2%). Slide 19 gives 1.7% to 2.6% customer-weighted and 0.8% to 1.2% ARR-weighted, says the dashboard's 1.4% to 2.3% cannot be rebuilt, and recommends one defined measure."
+   },
+   {
+    "id": "C10",
+    "status": "reflected",
+    "evidence": "Slide 16 says the pack gives no evidence for the size of the effect. It shows halving would give 1.55%, below non-promotion churn of 2.0–2.1%, and that fixing the cohort cuts SMB churn by about a third. It says to \"set 2027 prices on today's churn; count activation gains as upside\". The programme's cost and timing are not given."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "This is the recommended option: mid-market +10%, enterprise +7–10%, SMB held. Slides 8, 12 and 13 give the evidence (the 2024 test, NRR of 112% and 118%, Inkwell not seen above 200 seats) and the $4.3M uplift. Slide 12 also shows what is forgone in SMB (33% of the reachable uplift)."
+   },
+   {
+    "id": "A2",
+    "status": "tested",
+    "evidence": "The CFO's 12% is re-costed to $7.6M (slide 12). It is rejected because 33% of the uplift comes from SMB, where Inkwell has cut the win rate and the 2023 precedent predates Inkwell. 12% is also untested for mid-market (slides 8, 9, 10, 13)."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "The recommendation adopts a staged SMB pilot: an 8% renewal test on non-promotion SMB against a control group, with the cohort's price held and a stop rule (slides 10, 14, 17, 20). The uniform 5–7% version and its $4.6M uplift are not evaluated."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "The 'none in SMB plus activation' part is adopted (slides 6, 16, 17). Slide 16 compares onboarding's best case (a third) with the claimed half. The document does not cost a no-increase-anywhere option, and the lower-priced entry tier against Inkwell is not mentioned."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 14 gives the break-even loss for an 8% SMB rise (7.4%) and the formula p/(1+p), set against the estimated 2023 loss of 3.6%. Slide 9 says Inkwell may have changed this and nobody has measured it. Price-citing shares are split 52% vs 18%. It does not give the dollar cost per point of loss or the break-even for 12% (10.7%)."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 14 gives a 9.1% break-even for +10% and says it equals \"about a year of today's churn at 0.8% a month\". Slide 8 caveats that the test covered new sign-ups only. The 51–200-seat exposure to Inkwell Pro is not addressed, and the dollar cancellation (about $3.5M) is not stated."
+   },
+   {
+    "id": "S3",
+    "status": "mentioned",
+    "evidence": "Slide 16 shows SMB churn under three cases (3.1%, 2.1% if the cohort churned like other SMB, 1.55% halved). It does not carry these into 2027 ARR or NRR. Slide 13 uses today's NRR, and the footnote says SMB's 94% \"may include promotion discounts ending\". It does not say the H1 2026 cohort rate may overstate forward churn, or what happens to the cohort's $4.4M."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "With today's retention, that leaves only $0.6M of new ARR to find for 15% growth (slide 13: \"The target is in reach without touching SMB prices\")"
+  },
+  "omissions": [
+   "No sensitivity of the $0.6M new-ARR gap to NRR or churn. A 1-point fall in blended NRR is about $0.86M, which is larger than the whole gap. The $0.6M also excludes any churn response to the mid-market and enterprise rise, and that caveat appears only in a footnote, not in the executive summary.",
+   "The mid-market rise is not stress-tested against 51–200-seat accounts, where Inkwell Pro ($24 vs $29) is a possible threat. The pack has no seat split, and the document uses 'no Inkwell above 200 seats' as support for pricing power.",
+   "The SMB upside of 'up to $1.3M' assumes the 8% applies to all $16.6M of non-promotion SMB ARR with a full-year effect. Rollout only after the Q1 test and the April decision means only the later renewals are repriced in 2027. The cost of the test and of the activation programme is also missing.",
+   "The 'nearly twice the customers 2023's did' claim compares mid-market and enterprise break-evens with an SMB-only precedent, which predates Inkwell. It says nothing about how mid-market renewals will react."
+  ],
+  "unsupported_assumptions": [
+   "\"$94M (at today's NRR)\" and \"Existing customers at today's NRR +8\": assumes the trailing-12-month blended NRR (about 109%) repeats in 2027, although SMB's 94% is acknowledged to include the promotion cohort's discount expiry.",
+   "\"Price steps assume no extra churn\": the $4.3M segmented uplift and the $0.6M gap are gross of any customer loss from the rise.",
+   "\"A fixed promotion cohort would cut SMB churn by a third, from 3.1% to 2.1%\": assumes the cohort can be made to churn like other SMB customers, which the pack lists as an open uncertainty.",
+   "\"An 8% test on non-promotion SMB could add up to $1.3M\" (8% × $16.6M): assumes full repricing of all non-promotion SMB ARR with no loss.",
+   "\"Each rise pays unless it loses nearly twice the customers 2023's did\": uses the 2023 SMB loss as the yardstick for mid-market and enterprise."
+  ]
+ },
+ "cost_usd": 0.1744771
+}

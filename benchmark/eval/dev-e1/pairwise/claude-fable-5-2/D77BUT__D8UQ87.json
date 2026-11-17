@@ -1,0 +1,38 @@
+{
+ "x": "D77BUT",
+ "y": "D8UQ87",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X's governing thought (launch, but in Q4 2027, in a Pro tier with an allowance, sized at $1.2–2.9M) is carried through consistently. The summary's four claims map to sections (worth launching, packaging, timing, NRR needs both), and slide 3 tests the CPO's plan against five conditions that produce the revised answer. The triggers on slide 16 follow from the thresholds calculated on slides 9, 12 and 13. One mild tension: slide 13 says the sequence matters less than delivering both, while the recommendation is firm on sequence. Y's structure is clean (demand, threats, package, timing), but its sections pull against its conclusion. Section 2 argues that mobile reliability drives far more churn and that the delay 'has a cost Copilot does not offset', yet the answer accepts the delay. The governing thought's 'just enough for 105% NRR' rests on 33% uptake, which Y's own slide 12 says nothing in the pack ties to Copilot demand, and which falls to 1.8 points at the tested 14%. So Y's headline is weaker than its own evidence supports.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "judgment": {
+   "reasons": "Both land on defensible conclusions under the key: Pro tier with a usage allowance, sized off the paywall test, with the mobile trade-off addressed explicitly. Y accepts the mobile delay openly (R1). X delays Copilot two quarters, quantifies the win-rate risk (at most $0.6M a year) and plans a limited AI response through paid early access and 'AI included in Pro' positioning (R3 with its conditions met). X weighs the trade-off better. It runs the delay comparison with full and half credit on both sides, states the break-even (26–52% of mobile churn fixed), and sets triggers that would reverse the sequence: the Q4 2026 win rate, whether the 14 engineers can come from outside mobile, and the rewrite's expected effect. It also tests price and allowance on a random non-volunteer sample before general availability. Y uses the same delay arithmetic but resolves it with one untested judgment ('stopping half at once is unlikely') applied only to mobile, while Copilot's avoided losses are taken at their ceiling. Its case for launching now depends on Pro reaching about 31% uptake to hit the NRR target, which it concedes is unsupported. Its only checkpoint (15% uptake at year-end) comes after the mobile delay has already been incurred. Y's alternatives are properly considered; the timing call is the weak point.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "X reproduces all the key calculations: $8.06M vs $2.45M; inference of $32.4 / $61.2 / $130.5 per account with 59% and 12% margins; 109 deals and $0.64M; Pro at $2.89M. Its feature margin of 46% differs from the key's 56% because it includes the $0.6M platform cost, and it says so. It adds a valid check on the VP Sales claim (recovering a third of losses implies a 58% win rate, above the pre-AI level) and grades the beta measures by reliability. It uses the survey's 6% response rate and size skew, and it lists its assumptions (usage per seat, the 7% haircut, average-size churned accounts). Weak spots: it assumes Routewise's promotion ended after Q3, it cites 22% price churn as support for the promo explanation, and it treats hours saved as a per-account figure. Y's calculations are mostly internally correct and it handles the same traps (survey vs paywall, loss-note mentions vs causes, the promo, volunteer bias). But it sizes on 8,428 accounts 'after churn', ignoring new logos, while comparing against the CPO's figure on 9,800. That puts its add-on ($2.1M) and Pro ($2.5M) figures below the key's ranges, and it mixes bases by computing margin on today's $57.6M ARR. Its NRR headline uses the 33% precedent as a point estimate, and it cites the survey's 46% as an upside case for Pro despite having discredited it. Y also has no check on the VP claim beyond the count comparison.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CPO's hypothesis in the direction the evidence supports: keep the launch, drop the $149 add-on and the $8M forecast, move to a per-seat Pro tier with an allowance. X does this more explicitly. It states the hypothesis, lists what would have to be true, and gives a verdict on each condition (demand not supported, economics thin, competition partly, opportunity cost not supported, value unproven). It then replaces the $8M with a range of $1.2–2.9M and treats 14% as a ceiling. X also revises the timing, with conditions under which the original Q2 date would be restored. Y revises packaging and sizing correctly and keeps the Q2 timing with the delay acknowledged, which is acceptable. But it replaces one optimistic point estimate with another (33% uptake, 'just enough for 105%') and still shows the discredited 46% as an upside case.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "X would serve the CEO better. It gives a clear answer on launch, packaging, price and timing, sizes the prize as a range tied to revealed demand, and protects the margin floor with a tested allowance. It treats the mobile-versus-Copilot trade-off as the central decision, with a quantified break-even and triggers that tell the executive team what January data would change the plan. Y is tighter and reaches a defensible conclusion with largely sound arithmetic. But its recommendation to accept the mobile delay rests on an uptake assumption it admits is unsupported and on a one-sided judgment about how fast the rewrite would work. Its base adjustment understates the key figures, and it has no gate before the delay is committed. X's advantage comes from the reasoning, not the length.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.8318805999999999,
+ "wall_s": 482.59370279312134
+}

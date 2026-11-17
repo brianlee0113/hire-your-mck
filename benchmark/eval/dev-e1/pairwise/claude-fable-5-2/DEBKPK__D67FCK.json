@@ -1,0 +1,38 @@
+{
+ "x": "DEBKPK",
+ "y": "D67FCK",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents form a tight pyramid. X runs from the governing thought through four sections (why churn is rising, where prices can rise, which plan, how to run it), and each section claim reappears in the executive summary with its evidence. Y uses three pillars (churn diagnosis, pricing power, sizing) plus hypothesis, risk and decision slides, equally consistent. Each has one internal tension. X titles SMB 'the riskiest segment to reprice' yet raises other SMB 8%; it reconciles this with flat non-promotion churn, a control group and a stop rule. Y says the core base 'has not become more price-sensitive' yet holds SMB, and calls +10% the 'tested price level' while applying it to enterprise, where no test exists; it reconciles the first through the Inkwell exposure and a 'not shown' verdict. Neither tension breaks the hierarchy, and the difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach a defensible segmented conclusion and reject both the uniform 12% and no increase. Y's recommendation (mid-market and enterprise +10% with 7% where capped, hold SMB, test first) matches the key's preferred shape and weighs alternatives more rigorously: four options compared net of churn in base and stress cases, each with NRR and the new-customer ARR still needed, and an explicit statement of what is given up ($1.8M against the CFO plan, $0.6M against 12% segmented). It also flags the unexplained mid-market churn drift and sets data checks before the meeting. X's options table compares gross uplift with qualitative verdicts only, and its mid-market stop rule (pause above 1.6% a month) only triggers at roughly break-even. X does have the better SMB experiment: a control group among renewing non-promotion customers tests the actual decision. Y tests new sign-ups and then uses that to decide an existing-base rise, the same sign-up-to-renewal gap it criticises in the mid-market test. X's 8% rise on other SMB is defensible given flat non-promotion churn and guardrails, but exposes $16.6M of ARR to Inkwell for about $0.7M net. On balance Y weighs the trade-offs better.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both are numerically accurate on all required calculations: blended and ARR-weighted churn, promotion-cohort churn of 4.9%, the $7.6M repriceable uplift, break-even losses and the 3.6% 2023 response. Both note the undefined dashboard metric and show onboarding cannot halve SMB churn. Y goes further on the critical evidence. It states the mix decomposition explicitly (about 1.0 pp cohort, 0.1 pp core), cross-checks it against the exit-survey shares (47% against 56%), nets every option for churn in base and stress cases, notes that in-year revenue is about half the ARR figure, and treats the mid-market rise from 0.6% to 0.8% as unexplained where X says it 'stayed below 1%'. Y's weak spot is using a statistically insignificant sign-up conversion difference as a renewal-loss elasticity, but this is conservative, disclosed and stress-tested. X adds sharp caveats: win rates measure acquisition not retention, trailing SMB NRR includes the promotion step-up, and H1 2025 churners predate the cohort. But its target bridge adds mid-market and enterprise uplift gross of any churn to reach 'only $0.1M of new customers needed', which is optimistic even with the $1.5M alternative flagged.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "The key expects the CFO's hypothesis to be revised by reconciling both views. Y does this explicitly: 'the CFO and CEO are each half right', since the core base is not churning on price but the cohort shows a sharp price step drives churn among customers who were never activated. It cuts the $10.3M to $7.6M gross and $5.3M or $2.7M net, rejects the uniform 12%, retains the increase where evidence supports it, and tests the Customer Success claim as a separate hypothesis that fails. X makes the same substantive updates: the promotion cohort drives the rise, price complaints sit in that cohort, the $10.3M becomes $7.6M, the cohort is held, and onboarding cannot halve churn. But the reconciliation is implicit, and its headline ('churn is rising because of customers the promotion brought in') leans toward the CFO's reading without stating what the CEO's concern gets right beyond the cohort. X also keeps more of the CFO's SMB increase on the 2023 precedent, though it does flag that the precedent predates Inkwell.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both would serve the CEO well: correct diagnosis, corrected uplift, segmented plan, owners and guardrails. Y gives the decision maker more to decide with: a range of outcomes net of churn for every option, the effect on NRR and on the new-customer ARR still needed for the 15% target, explicit reconciliation of the CFO and CEO views, the mid-market churn drift flagged, and three data checks to run before December. X is leaner and has the better-designed SMB experiment (a renewal control group), but its option comparison is on gross figures, its target bridge is optimistic, and its mid-market stop rule is loose. Y's SMB test on new sign-ups is a real flaw, but it does not outweigh the fuller treatment of trade-offs and risk.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1425132,
+ "wall_s": 301.18090319633484
+}

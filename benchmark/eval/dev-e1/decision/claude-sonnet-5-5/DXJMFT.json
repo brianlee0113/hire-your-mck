@@ -1,0 +1,114 @@
+{
+ "blind_id": "DXJMFT",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 11 computes the $4.8M floor and $7.2M spendable against the $9.5M need (a $2.3M shortfall). It shows both readings of the $9.5M: all-in leaves $2.5M, about 6 months at month 18; on top of core burn, cash is below the floor in month 5 and below zero in month 13. It notes the floor rises once stores operate, so $7.2M is a ceiling. Appendix A2 flags the ambiguity."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 11, slide 16 and slide 3 cite the lead investor's \"unlikely\" on a new round and treat every option as self-funded from $12.0M (slide 13 cash model). The assumptions and appendix exclude HQ overhead, capex and marketing from contribution. The cash model shows the plan ends at −$2.5M with no bridge."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slides 5, 6 and 18 build the full stack at pop-up, median, best-observed and plan inputs: −$12.57, −$6.17, −$1.76 and +$2.02. Rider is $7.40 and store is $3.50 at median. −$2.67 is lost before site cost, so volume cannot fix it. The plan beats the best site on all drivers (slide 7). The best AOV and best density never occur at one site."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slide 8 shows the pop-up below median on every driver, at −$12.57 per order and $6.36 site cost per order. It says the 18% weekly growth came with 12% promotions and $38 CAC, and estimates about 408 orders a day by week 6. It concludes ramp-up alone does not close the gap, and that there is no evidence of a capability edge."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 9 shows CAC $38, 22% retention at 3.1 orders a month and 0.68 orders per acquired customer per month. It gives payback by scenario: never at pop-up or median, 113 months at best observed, 15 months at plan. It treats the 44% survey as stated intent from one age group. It does not size the customers needed to fill a site or the CAC against the $9.5M budget."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slides 5 and 15 and the assumptions give +20% rider cost = +$1.48 per order at median and +$1.01 on the plan. The plan's headroom after a pay rise (+$2.02 less $1.01) is implied but not stated."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 4 shows 41.5% CAGR, Zipcart at −$1.90 per order and −26% EBITDA margin, QuickBasket at −$3.40 and −46%, and QuickBasket's 4 of 11 city closures. It concludes growth does not justify entry on its own. The scale sanity check on slide 7 compares the plan's $266M of GMV with QuickBasket's $210M revenue."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 10 applies the $3.99 fee, promotions cut to 1% and the 14% volume loss to the median store: −$6.17 becomes −$1.05. It needs about 1,042 orders a day against a 280 pop-up average. It notes that the investor update omits the fee, the promotion cut and the volume loss."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slides 12–14 include the $0.8M hires in the cash model and break-even (opex = 81% × ARR + burn + hires). They say 10 contracts (28% of the pipeline) cover the hires. The 9 late-stage deals are $0.86M ARR; all 37 are $3.55M. The hires are phased against signed contracts. The model holds opex flat, which A2 labels optimistic."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Option C (software-first, $0.8M hires, fast-delivery offer for pipeline grocers) is the recommendation. Slides 13–14 model its cash (low point $5.4M at 60% growth) and break-even (month 26 at 60%, 36 at 40%). Runway stays above 12 months only at growth of 34% or more. Contracts needed are quantified (about 10 to cover the hires, about 15–26 a year for growth). The model is optimistic (flat opex) and has no churn or win-rate data."
+   },
+   {
+    "id": "A2",
+    "status": "mentioned",
+    "evidence": "Closest is decision 3: test a store-based fast-delivery offer with late-stage pipeline accounts, which are partner stores. It is framed as a software product, not a Parcelbird-run delivery test with a service fee and low promotions. It has no cash cap and no kill criteria. The Zipcart pricing route is tested only as arithmetic on the median store (slide 10), and the document admits \"a profitable route may exist\". The pop-up never tested a fee."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Option B (one permanent Columbus pilot store) is modelled on slides 12–13: $0.6M capex plus about $2.0M a year of loss, runway breached in month 10, cash near $0.2M. It is rejected for having no route to scale and little new learning. It is modelled at median economics with no fee, which is consistent with the pack's pricing evidence."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "The founders' plan is Option A. It is rejected on per-order economics (every input beyond the best site, slide 7), on cash (breach in month 5, out in month 13) and on investor constraints (slides 6, 7, 11, 13). Slide 12 sets out the plan's strategic case against the alternatives."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slides 6, 7 and 18 give contribution at pop-up, median, best-observed and plan inputs. Break-even AOV is $115, $63, $50 and $37. Slide 7 flips one plan driver at a time: AOV to $34 gives −$0.73 and density to 900 gives −$0.31. Slide 5 shows each extra order at median loses $2.67 before site cost. Rider pay is quantified at +20% = +$1.48 (median) and +$1.01 (plan)."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 10 steps through the fee, promotion cut and 14% volume loss: −$6.17 becomes −$1.05. Break-even is about 1,042 orders a day at 2.4 orders per rider-hour, against 280 at the pop-up and a 400–1,400 range. Trigger 2 allows up to 15% volume loss. It says nothing in the data shows demand at that price. It does not show the best-density case with the fee or how much volume loss that case can absorb."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 11 gives the $7.2M ceiling, $2.5M left (about 6 months) or cash out in month 13. Slide 13 shows cash by month for A, B and C, with runway below 12 months in month 5, month 10 and never. Slide 14 shows software cash at 60%, 40%, 34% and 25% growth. It does not show the ceiling after the hires or the wind-down cost if a launch fails."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "It breaks even in about month 26 at today's 60% growth (month 36 at 40%) and never drops below 12 months of runway, provided growth stays at 34% or more."
+  },
+  "omissions": [
+   "No capped, capital-light test of Parcelbird-run delivery from a partner store with a fee and low promotions, with a cash cap and kill criteria. The pop-up never tested pricing, so the document rejects the only positive route (Zipcart's) without trying it. Decision 3 is a software offer with no cap or kill criteria.",
+   "The software case has no evidence that the $0.8M of hires sustains 60% growth. It rests on flat opex while ARR grows about 2.7× to $11M, 15–26 net new contracts a year from two sales hires, and no churn or win-rate data. The cost and expected revenue of the new store-based fast-delivery offer are not given.",
+   "No wind-down or exit cost if a launch is started and fails. The ceiling after the $0.8M hires (about $6.4M) is not stated.",
+   "The breakeven condition 'growth ≥34%' has no probability or comparison with pipeline conversion, so the board cannot judge how likely the main risk is."
+  ],
+  "unsupported_assumptions": [
+   "\"The model holds opex flat apart from the $0.8M of hires\" (software break-even month 26 and the $5.4M cash low). Appendix A2 calls this optimistic, but the headline numbers still use it.",
+   "Software ARR growth of 60% (\"today's rate\") continues with the hires. The pack gives no churn or win-rate data, and the document says so.",
+   "\"A profitable route may exist, but only at top-quartile density\". The pack gives no quartile data. The 1,042 orders a day is only 16% above the 900 median.",
+   "Trigger 2 (AOV ≥ $42, ≥ 3.0 orders per rider-hour, ≥ 1,050 orders a day) is presented as the point where economics work. At those inputs, without the fee, contribution after site cost is still about −$2.5 per order. The 15% volume-loss limit has no stated basis.",
+   "Option B is modelled at median economics (−$2.0M a year), not pop-up actuals. The document notes the option is its own construct, not in the pack."
+  ]
+ },
+ "cost_usd": 0.2140591
+}

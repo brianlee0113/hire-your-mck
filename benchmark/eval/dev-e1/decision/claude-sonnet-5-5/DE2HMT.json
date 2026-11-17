@@ -1,0 +1,115 @@
+{
+ "blind_id": "DE2HMT",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 10: $12.0M − $9.5M = $2.5M, about 6 months against 12 required; floor $4.8M at today's burn. Both readings of the $9.5M are shown (reading B runs out about M15). The floor is also recomputed as 12 × the current month's burn. The $7.2M headroom figure is never stated directly."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 10 'No fallback funding' quotes the lead investor ('unlikely in this market'). Slides 13 and 19 test 'profit within current cash' for each option. The funding trigger needs 'software at break-even, or ring-fenced outside capital'. Contribution is shown both before and after site costs."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 5 and appendix A1 give the full line-by-line stack: pop-up −$12.57, median −$6.17, best observed −$1.76, plan +$2.02. They also give the −$2.67 per order before site cost at the median, with the note 'more volume makes that worse, not better'. Break-even is 836 orders/day for the plan and 6,387 for the best observed values."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slide 7: pop-up −$12.57 per order, worse than the median on every input. Week-6 run rate is about 410/day against 900 median and 1,800 plan. Slide 7 also says the 18% growth came with launch promotions, so it does not show Parcelbird runs stores better."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 8: 44% survey intent versus 22% retention at 3.1 orders a month (0.68 orders per customer per month). Payback is about 15 months even at plan contribution, and 'Never' at median and pop-up. The plan's volumes imply about $3.05M of CAC per store and $27.5M for nine stores, against the $9.5M budget."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slide 15 and trigger slide 16: each +$1/hr costs $0.42 per order at the median, and +$7.06/hr wipes out the plan's margin. Only the median productivity case is shown, not the 3.0 or 3.5 cases."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 4: Zipcart −$1.90 per order and −26% EBITDA margin; QuickBasket −$3.40, −46%, and 4 of 11 cities closed. Market CAGR 41.5%. The slide concludes 'growth in sales has not produced a pool of profit'."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 9: with the $3.99 fee, 1% promotions and a 14% volume drop (774/day), a median site loses $1.05 per order. Break-even needs 1,042 orders/day after the volume loss, or 1,211 before it. The doc notes that Zipcart's profit is in its densest city only."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slides 11–12: hires of $0.8M a year are in the software model (cost base $8.9M). About 10.3 contracts at $96k pay for them at 81% gross margin. The 9 late-stage deals give $0.86M ARR, only 35% of the roughly $2.5M of new ARR the base case needs. The runway floor is recomputed monthly with the higher burn."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Option C is the recommendation. Slide 11 models break-even at about M26 with a $5.4M low point, and stresses it: 50%, 40%, 35% and 30% growth, and costs +10% and +15%. It finds the floor breaks below about 34% growth. Slide 12 sizes the 37-grocer pipeline and the contracts needed (about 10) to cover the hires."
+   },
+   {
+    "id": "A2",
+    "status": "mentioned",
+    "evidence": "The nearest match is the grocer-store enabler model (slides 12 and 14: 'store-based fast-delivery offer', ≥3 grocers commit to a paid pilot). That is Parcelbird selling software, not Parcelbird running a capped test at a partner store. The doc has no fee-priced test, no cash cap and no kill criteria on contribution per order."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Option B, the one-store Columbus pilot (slides 13 and 18), has a build-up of about $3.35M (capex, site cost, variable loss, CAC). It is rejected because it breaches the floor by M6 and 'what we learn is mostly already visible from the 14 software sites'. The pilot is not tested with a fee or higher AOV, and its floor result rests on an unexplained $7.5M starting cash figure."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Option A, the full launch, is tested on unit economics (slides 5–7), CAC (slide 8), the Zipcart fee route (slide 9) and runway under both readings (slide 10). It fails because every plan input exceeds the best observed, density is unproven, and $2.5M is left with no new round."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Contribution per order is shown at pop-up, median, best observed and plan. Slide 6 bridges plan to median input by input (AOV −$0.73, riders −$0.31, promotions +$0.22, volume +$0.27). Break-even is 836 orders/day for the plan and 6,387 for best observed, and 'never' at the median. Rider pay is $0.42 per $1/hr, and +$7.06/hr breaks the plan. Break-even AOV is not shown."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 9 bridges the median site to −$1.05 per order with the $3.99 fee, 1% promotions and a 14% volume loss (+$3.99, +$1.70, −$0.57). Break-even is 1,042 orders/day after the volume loss and 1,211 before it. The doc does not show the best-density fee case or how much volume loss it could absorb. It says Parcelbird has no evidence on demand at that price only indirectly, by noting that higher fees work against impulse use."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 10 and appendix A2 give cash and runway for each option and each reading: $2.5M at M18 for reading A, −$2.5M for reading B, runout about M15. The software path with a pilot has a $2.0M low and breaches the floor at M6. The software path alone is stressed on growth and cost. A wind-down case is not shown, and the maximum spend that keeps 12 months of runway is derived from a $7.5M start (≈$1.5M pilot ceiling) rather than the pack's $12.0M."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Grow the software business, which can reach break-even on today’s cash"
+  },
+  "omissions": [
+   "Slide 11's software model starts from 'Cash $7.5M', but the pack says $12.0M, and the gap is never explained. The pilot ceiling of about $1.5M and the rejection of the pilot ('breaches the floor by month 6') both rest on that figure. At $12.0M the 12-month floor allows roughly $6.4M with the hires, which would fit the $3.4M pilot. The board cannot tell whether the pilot really fails the floor.",
+   "No test of the checklist's A2 option, a capped Parcelbird-run trial at a partner store with a service fee, low promotions and kill criteria. The pop-up never tested a fee or low promotions, and the doc only rejects the full-price, own-store versions.",
+   "The recommended software plan has no financial case for the fast-delivery product. It has no price, development cost or revenue, and it is excluded from the model. The $0.8M of hires is not tied to building it.",
+   "The software path's break-even needs about 26 new contracts in 2027 (60% growth) but only 9 are late-stage. The doc notes the 35% coverage but does not say how likely the other contracts are or give a bookings-based downside case.",
+   "The status quo option (no hires) is labelled 'viable, weaker' but not quantified, so the board cannot compare the $0.8M hires against doing nothing.",
+   "No wind-down or exit cost for a launch or pilot that fails, such as leases, capex write-off and rider obligations."
+  ],
+  "unsupported_assumptions": [
+   "\"Cash $7.5M start\" (slide 11 and appendix A2): the software path's $5.4M low point, the pilot's floor breach at M6 and the ≈$1.5M pilot ceiling all depend on it. The pack gives $12.0M and the doc does not reconcile the two.",
+   "\"60% ARR growth continues\" with a cost base 'held flat apart from $0.8M of hires' for over two years: this carries the claims of break-even at about 26 months and 'above the floor throughout'. The doc stress-tests growth and costs but gives no pack evidence that 60% holds.",
+   "\"Competitors serve the grocers who want fast delivery\" (slide 13, status quo): the pack does not say this.",
+   "\"Fast delivery adds to the product\" and grocers will pay for a store-based fast-delivery offer: the pack says only that several pipeline grocers want to launch their own fast delivery. The doc itself says the offer 'still needs product validation'."
+  ]
+ },
+ "cost_usd": 0.2013991
+}

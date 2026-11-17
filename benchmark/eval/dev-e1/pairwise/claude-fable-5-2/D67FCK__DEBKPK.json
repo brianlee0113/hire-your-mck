@@ -1,0 +1,38 @@
+{
+ "x": "D67FCK",
+ "y": "DEBKPK",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run a clean chain from churn diagnosis to pricing power to option sizing to plan. X's governing thought, three numbered pillars and slide titles line up closely, and the same base/stress model carries from the CFO-plan sizing through the option table to the ARR bridge and risks. Its tensions are minor: it says the core SMB base is not more price-sensitive yet holds SMB, and it uses a new-sign-up test to decide a renewal increase. Y is also well ordered, but it says \"SMB carries the most Inkwell risk\" and then raises other SMB 8%. Its option comparison and headline ($5.5M) are before churn, while its bridge nets churn for SMB only and leaves mid-market and enterprise gross, so the figures do not sit on one consistent basis.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reject the uniform 12% and the do-nothing option and land on segment-differentiated plans that meet the key's defensibility criteria. X (raise mid-market and enterprise, hold SMB, test first) matches R1/R2 and weighs four options on base and stress ARR, NRR and new-customer ARR needed, stating what it gives up ($1.8M against the CFO plan, $0.6M against a 12% segmented variant). Y's plan (mid-market 10%, enterprise 7%, non-promotion SMB 8% with a control group, promotion cohort held) is also defensible, and its renewal control group is a better experiment than X's new-sign-up test. But Y exposes the Inkwell-contested segment for about $0.7M net on a pre-Inkwell precedent, compares options only on gross uplift, and sets the mid-market stop rule at 1.6% a month, which is roughly break-even rather than a guardrail. It also forgoes the uncapped enterprise uplift without discussion. X's trade-offs are weighed more explicitly and quantitatively.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both derive the 4.9% promotion-cohort churn, correct $10.3M to $7.6M, compute both churn weightings, flag the undefined dashboard figure, caveat the 2024 new-sign-up test, and show that halving SMB churn would mean 1.55%, below the 2.1% non-promotion level. X goes further: an explicit mix/rate split (about 1.0pp of the 1.1pp rise), a survey cross-check (47% vs 56% of churners), the 10.7% break-even, the 2023 response turned into an elasticity, and the CFO plan netted for churn ($5.3M base, $2.7M stress) by segment. Its weak spots are flagged as assumptions: the non-significant conversion gap used as a renewal-loss proxy, and uncapped enterprise +10% described as \"tested\" when no enterprise test exists. Y's numbers are accurate and it adds sound observations (win rate measures acquisition, not retention; NRR may include escalators). But its headline and option figures are before churn, its bridge assumes no mid-market or enterprise reaction to reach \"$0.1M new customers needed\", and it has no explicit mix decomposition.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "The key expects the CFO view to be revised, with both the CFO and CEO partly right. X says so directly (\"the CFO and CEO are each half right\"): churn is a cohort effect, not a core-base price effect, but a sharp price step does drive churn among non-activated customers and Inkwell makes SMB exposed. It cuts $10.3M to $7.6M gross and $5.3M net, and tests its own working hypothesis condition by condition, changing size, SMB treatment and the onboarding claim. Y also revises properly: it accepts the cohort diagnosis, corrects the $10.3M, holds the promotion cohort, segments the increase and rejects the halving claim. It is less explicit in reconciling the CEO's concern and leans closer to the CFO by still repricing non-promotion SMB, though with a control group and stop rule.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both are strong, defensible, segment-based answers that avoid the main traps. X serves the CEO better: it nets churn reaction into every option, shows base and stress cases against both objectives (ARR growth and NRR), reconciles the CFO and CEO views explicitly, sizes onboarding realistically, and lists pre-meeting data checks and decision rules. Y is tighter and has a better SMB experiment design (control group at renewal), but its headline numbers are gross, its target bridge is optimistic, its mid-market stop rule is lax, and it takes SMB price risk against Inkwell for a small net gain.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0277931999999999,
+ "wall_s": 301.74182200431824
+}

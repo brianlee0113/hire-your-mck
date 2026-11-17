@@ -1,0 +1,189 @@
+{
+ "blind_id": "DJEUT9",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the yes/no launch decision against the board's two constraints, profit within current cash and 12 months of runway. It also separates market growth from profitability up front. It could be sharper on investors' 'path to profitability' as an explicit criterion, since that appears only in a bullet on slide 19.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, a five-point summary and five sections (Market, Economics, Customers, Cash, Path) line up. Most titles are claims backed by their slides. Weaknesses: section-divider slides add redundancy, slide 4's 'confirming that demand is real' sits uneasily with the later point that intent is not demand, and the Zipcart slides are slightly separate from the economics block.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Nearly all numbers check out: -6.17, -12.57, -1.76, break-even AOV $50.37 and $63.36, 14.4 orders per rider-hour, CAGR 41.5%, $2.5M vs the $4.8M floor, 1.3x, -$18.2M, the Zipcart-playbook -$1.05, the 14.8-month payback and 27.1% retention. All critical evidence items are used, including the Zipcart fee evidence. Flaws: it never shows the best-density-plus-fee case (about +$2.25), which is the part of the Zipcart evidence that cuts for the founders. It describes pipeline deals as 'contracts held', and it asserts 'did not rely on running stores more efficiently' without support.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A clear 'do not launch' with a software-first alternative. It compares three options plus the Zipcart playbook on cash, runway and what each tests. It sets four measurable reopen conditions and dated next steps. It avoids all the traps. It rejects the capped pilot as low-learning, which is defensible but less nuanced than a pilot with kill criteria. The software path is only partly quantified: it is not shown to be profitable, only runway of 13.7 months with no new contracts.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the language is plain. But 22 slides, five divider slides and some repeated points make it longer than a yes/no board decision needs.",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Late-stage grocers alone hold contracts worth 21% of today's ARR",
+    "why": "These are pipeline prospects, not signed contracts. The 21% is potential ACV (9 × $96K), not held contracts."
+   },
+   {
+    "quote": "Did not rely on running stores more efficiently",
+    "why": "The pack says only that the fee and promo cut preceded the profit. It gives no evidence on whether operating efficiency also changed."
+   },
+   {
+    "quote": "confirming that demand is real",
+    "why": "Market GMV growth shows sales, not durable or profitable demand. The document itself later argues intent and growth overstate use."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "partial"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Put $0.8M a year into scaling the software business and closing the 9 late-stage grocers. Reopen the operator question only if four measurable conditions are met.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "Matches R1. It computes contribution per order under benchmark and best-observed inputs, separates growth from profit, shows the runway breach, and offers the software alternative with reopen gates."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "It rejects the founders' view on evidence. The plan's four inputs are all above the best observed site. Market growth coexists with incumbent losses. The pop-up growth was promotion-bought. The Zipcart case is engaged directly and the playbook is tested on median inputs (-$1.05). It does not test the case that favours the founders most, best density with the fee, though it sets $50.37 AOV as a reopen condition. It states generous assumptions explicitly."
+  },
+  "overall_comment": "A strong, numerically accurate document that rejects the founders' hypothesis and recommends the software path. Its derivations are transparent and its reopen conditions are measurable. The main gaps are that it never shows the best-density-with-fee case and that it overstates the pipeline as held contracts. It is also longer than the decision needs, at 22 slides with section dividers.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.14726240000000002,
+ "wall_s": 40.36971187591553,
+ "is_error": false,
+ "error_text": null
+}

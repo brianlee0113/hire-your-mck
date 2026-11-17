@@ -1,0 +1,177 @@
+{
+ "blind_id": "DEBKPK",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as 'whether and how', by segment. It uses the 15% ARR target, the 100% NRR floor, the renewal-timing constraint and the enterprise caps as explicit criteria, and it tests them in a bridge. It identifies early that the answer turns on the promotion mix, the Inkwell risk and the overstated $10.3M. It does not say much about how the mid-market 0.6→0.8% rise fits the story.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, summary, section dividers and slide titles form a clear chain. Titles are claims that the evidence supports. Weaknesses: the summary line 'Churn is rising because of the promotion cohort' is stated more simply than the body supports, since the mid-market rise is not addressed. 'Each step rests on a test, a precedent or a cap' is loose for enterprise, where a cap is a limit and not evidence of tolerance. Slide 14 has empty rating cells in the extracted text. Section dividers add some redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-derived the key numbers and they are correct: renewing ARR $65.45M, $7.57M after caps, promotion-cohort churn 4.91%, the 56.4% share of leavers, break-evens of 9.1/6.5/7.4/10.7%, the 2023 reaction of 3.6%, NRR 109.3%, and the onboarding ceiling of $1.01M. The critical evidence is all used. The doc caveats that the 2024 test covered new sign-ups, that win rates measure acquisition, and that NRR may double-count escalators. It tests the onboarding claim and shows it cannot halve SMB churn. The mix decomposition is shown through the churn chart, but the '≈1.0 of 1.1 pp' is not stated outright. A few minor overstatements remain (H1 2025 churners 'almost entirely' outside the promotion).",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "The recommendation is differentiated: mid-market 10%, enterprise 7% at the cap, and other SMB 8% with a control group. The promotion cohort is held and onboarded, and the CFO's 12% is rejected with a quantified reason. It compares four options on ARR, evidence and churn safety. It sets stop rules (0.5 pp above control, mid-market above 1.6%), a March read-out, owners and dates, and checks the path to the target. This matches R1 and avoids the traps. Gaps: brand and trust at renewal is barely discussed, and an 8% SMB rise despite Inkwell is a real risk that only the control group mitigates.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the opening slide and the titles are readable. At 20 slides with 4 dividers and many footnotes, it is somewhat long for the decision. The detailed onboarding-ceiling slide is secondary to the pricing decision.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "H1 2025 churners came almost entirely from outside the promotion, which started in February 2025",
+    "why": "This is an inference. Promotion customers were onboarded from February 2025 and could have churned in H1 2025. The pack gives no breakdown."
+   },
+   {
+    "quote": "Each step rests on a test, a precedent or a cap",
+    "why": "The enterprise 7% rests only on the contractual cap, which limits the rise. It is not evidence that enterprise customers tolerate it. The flat 0.2% churn is the only support."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "yes"
+   },
+   {
+    "id": "E5",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "partial"
+   },
+   {
+    "id": "X3",
+    "identified": "partial"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Raise 2027 renewals by 10% in mid-market, 7% in enterprise and 8% in other SMB (with a control group). Hold the 2025 promotion cohort and onboard it. Run a March read-out with stop rules. The CFO's 12% is worth $7.6M, not $10.3M.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "The plan separates the promotion mix effect from the rate effect, reconciles the CFO and CEO views, and corrects the $10.3M to $7.6M. It differs by segment, grandfathers (holds) the promotion cohort, and adds a staged SMB test with churn guardrails. This meets all four defensibility criteria."
+  },
+  "hypothesis_handling": {
+   "observed": "revised",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The doc partly supports the CFO: churn is mostly a promotion mix and onboarding effect. It rejects the uniform 12% and the $10.3M. It also respects the CEO's concern by holding the promotion cohort, flagging Inkwell risk and setting stop rules. It differentiates by segment, which is the expected revise. It acknowledges the new-signup test limitation and that the 2023 precedent predates Inkwell."
+  },
+  "overall_comment": "This is a strong, numerically accurate document. It covers all critical evidence and calculations, sizes the real uplift at $7.6M and the recommended plan at $5.5M, and tests the onboarding claim. Its main flaws are a slightly over-simple 'churn is rising because of the promotion' headline, a thin treatment of brand and trust at renewal, and some length from section dividers and secondary analysis. The recommendation is defensible and actionable, with gates and owners.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.1453644,
+ "wall_s": 91.67323923110962,
+ "is_error": false,
+ "error_text": null
+}

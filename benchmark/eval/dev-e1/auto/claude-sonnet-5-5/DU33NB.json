@@ -1,0 +1,212 @@
+{
+ "blind_id": "DU33NB",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision as launch vs. software-led, with the board's runway rule and the investors' profitability-within-cash goal as explicit criteria. Compares three options and sees early that the answer turns on per-order economics and cash. It does not frame the unit economics fully, because its headline 'contribution' leaves out store costs.",
+    "score": 4
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought, executive summary, section dividers and slide titles line up, and the titles read as an argument: market is real but unprofitable, economics fail, cash rule breaks, software is the alternative. Weaknesses: the best-site column shows +$0.5 per order (before store costs) while the story says no site is profitable, and Zipcart fees are said to make a median order pay (before store costs) even though the store still loses. There are also four section-divider slides and some redundancy.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "Most numbers re-derive correctly: $2.5M and 6.2 months of runway, 41–44% market growth, $173 per retained customer, the per-store loss of $2.03M, $3.02 under Zipcart fees, 1,043 orders per day, and the software ARR and cash model. The main flaw is that the headline contribution and the break-even tables exclude store fixed costs. As a result, the best-site column shows a positive +$0.5, the plan shows +$3.8 (key +$2.02), the pop-up shows -$6.2 (key -$12.57), and break-even AOV is $46.7 (key about $50.37). The document never states -$3.44 or -$1.76 or the full pop-up loss. The Zipcart treatment is strong, and the retention-versus-survey and acquisition-cost analysis is good. A few claims are unsupported ('only profitable city', 'same stores and riders').",
+    "score": 3
+   },
+   "strategic_judgment": {
+    "rationale": "A clear 'do not launch' that follows from the analysis. It compares three options on cash, runway, route to profit and risk, and even tests a single Columbus store with Zipcart fees. It sets a reopen test, ties hiring to signed contracts, and gives owners and timing. It sees the opportunity cost and channel conflict with the grocers. It is honest that software breakeven needs about 72 contracts, roughly twice the pipeline. It avoids all the traps. Remaining gaps: no explicit kill criteria with thresholds, and the software path rests on sustained 60% growth.",
+    "score": 4
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is on slide 2 and the language is plain. But 20 slides including four dividers is long for a go/no-go decision. Several slides are dense with secondary calculations (acquisition cost scaling, the 40% scenario).",
+    "score": 3
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Zipcart's only profitable city got there by charging customers more",
+    "why": "The pack says only that Zipcart turned contribution-positive in its densest city. It does not say this was the only profitable city."
+   },
+   {
+    "quote": "Kept the same stores and riders; density was already the highest in its network",
+    "why": "The pack does not say that stores and riders were unchanged. The claim that 'the fix was pricing, not operations' is an inference."
+   },
+   {
+    "quote": "At 40% growth: breakeven slips to 2030 and cash falls to about $2.61M, still a year of runway at the lower burn",
+    "why": "The 'year of runway at the lower burn' is asserted with no shown calculation of the lower burn."
+   },
+   {
+    "quote": "Hiring can follow signed contracts, unlike $5.4M of store capex",
+    "why": "Assumes new hires can be paced to signings without hurting sales and delivery. Nothing in the pack supports this."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Contribution per order, $ (calculated) | −$6.2 | −$2.7 | $0.5 | $3.8",
+    "correct": "Including store fixed costs: pop-up about -$12.57, median -$6.17, best-density-plus-best-AOV about -$1.76, plan +$2.02. The table's basis leaves out store costs and makes the best site look positive."
+   },
+   {
+    "quote": "Needed to break even ... Bigger basket $46.7",
+    "correct": "This excludes store costs. At best observed density, break-even AOV is about $50.37. At median density it is much higher."
+   },
+   {
+    "quote": "$3.5M ARR if all 37 pipeline grocers sign (vs title 'up to $3.6M')",
+    "correct": "37 × $96K = $3.55M. The document uses both $3.5M and $3.6M for the same figure (minor rounding inconsistency)."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Contribution per order... Best observed site $0.5; 'Clearly positive only in the plan'",
+    "quote_b": "Both incumbents lose money per order... no operator has made it pay; plan works only on inputs no site has reached",
+    "why": "The table shows a positive best-site contribution before store costs, which sits uneasily with the story that no observed case is profitable. The store cost that makes it negative is shown on a different slide."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   },
+   {
+    "id": "E4",
+    "used": "partial"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "partial"
+   },
+   {
+    "id": "K2",
+    "reached": "partial"
+   },
+   {
+    "id": "K3",
+    "reached": "partial"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   },
+   {
+    "id": "K7",
+    "reached": "yes"
+   },
+   {
+    "id": "K8",
+    "reached": "yes"
+   },
+   {
+    "id": "K9",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "absent"
+   },
+   {
+    "id": "Q3",
+    "status": "partly_correct"
+   },
+   {
+    "id": "Q4",
+    "status": "correct"
+   },
+   {
+    "id": "Q5",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   },
+   {
+    "id": "T5",
+    "fell_in": "no"
+   },
+   {
+    "id": "T6",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Do not launch Parcelbird Now in 2027. Put cash into the software business: hire 2 engineers and 2 sales staff paced to contract wins, and package fast delivery from grocers' existing stores. Reopen only through a customer site that covers its store costs with higher fees.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "It matches R1 and meets all the key's defensibility criteria: per-order economics at benchmark inputs, growth separated from profit, the runway check, and the software alternative. It also tests a one-store Zipcart-fee pilot and rejects it for 2027 with numbers."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 2,
+   "rationale": "It concedes the founders are right about market growth, then rejects the profitability claim. It shows that every plan input is beyond the best observed site, that the pop-up ran on 12% promotions, and that the runway breaks even on the founders' own numbers. It engages the Zipcart fee evidence correctly: per order it works, per store it is unproven, and volume fell 14%. The weakness is that it does not show negative contribution at best observed density once store costs are counted."
+  },
+  "overall_comment": "A strong, defensible 'don't launch' that avoids all the traps. Its runway, acquisition-cost and Zipcart-fee analysis are good, and the software alternative is quantified honestly (72 contracts needed). The main weakness is that the headline per-order contribution leaves out store fixed costs. The best-site and plan columns therefore look positive, and the document never states that even best density and best AOV lose money after store costs (-$3.44 and -$1.76). The pop-up loss is shown as -$6.2 rather than about -$12.6. At 20 slides it is somewhat long for the decision.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.23954660000000003,
+ "wall_s": 123.21330118179321,
+ "is_error": false,
+ "error_text": null
+}

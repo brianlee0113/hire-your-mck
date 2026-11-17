@@ -1,0 +1,38 @@
+{
+ "x": "DEBKPK",
+ "y": "DJVE2U",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both run the same four-step logic (churn is a promotion-cohort effect, pricing power sits in mid-market and enterprise, the CFO's figure is overstated, then a plan) and both governing thoughts are fully supported by their sections. Y's chain is slightly tighter: 'SMB cannot yet carry a rise' leads directly to 'hold SMB until a test proves it', and its 2023-precedent and break-even slides feed that gate. X carries a mild internal tension: its section claim says customers outside the promotion can take a rise, a slide inside it calls SMB the riskiest segment to reprice, and the recommendation then raises other SMB 8% anyway. X resolves this with the control group, the stop rule and the point that win rates measure acquisition rather than retention, but the reader has to do that reconciliation. X's target-bridge slide ('only if 109% retention holds') is a useful qualifier that fits its hierarchy well. The difference is small.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on defensible, segment-differentiated answers that meet all four criteria in the key. Y's SMB stance (hold, then test 8% on part of the non-promotion base) is the more cautious response to the unmeasured Inkwell effect and sits closest to the key's preferred options. X raises 8% on all non-promotion SMB at once with a holdout group, which is more exposed for about $0.7M net. X defends that with specific evidence: non-promotion churn stayed flat for nine months after Inkwell launched, only 18% of those leavers cite price, and a break-even of 7.4% against a 2023 reaction of 3.6%. X weighs the alternatives better. It sizes four options side by side (hold $0M, CFO $7.6M, mid-market and enterprise only $4.2M, segmented $5.5M) and explains why it rejects the option Y effectively recommends. X's guardrails are also more operational: pause SMB at 0.5 pp above the control group, pause mid-market at 1.6% a month, with a March read-out. Y's stop rule ('losses approach break-even') is vaguer and triggers late. X also flags new-customer SMB list price against Inkwell as a separate decision and shows the 15% target depends on retention rather than price. Y's caution on SMB narrows the gap, but X's trade-off analysis is stronger.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the critical calculations right: cohort churn of 4.9%, the $7.6M corrected uplift with the same waterfall, break-evens of 6.5%/7.4%/9.1%/10.7%, the 2023 extra loss of 3.6%, and blended churn of 1.7%→2.6% by customer and 0.8%→1.2% by ARR, with the dashboard matching neither. I checked X's additional derivations and they hold. The cohort is 56% of SMB leavers but only about 38% of SMB ARR lost, because its accounts are half the size. Activation at 41% predicts only 2.9% churn against the observed 4.9%, so onboarding cannot explain the whole gap. The onboarding ceiling is about $1.0M, or about $0.5M if the rest is a lasting price reaction. The cohort loses about 45% of customers a year. The SMB rise nets about $0.68M after a 2023-like reaction. X also adds sharper inferential caveats: win rates measure acquisition, not retention; trailing NRR may already include escalators, so the enterprise rise may be partly double-counted; Inkwell can still reach mid-market deals under 200 seats; and logo churn is being treated as ARR churn. Y is accurate but thinner. Its test of the 'halve churn' claim stops at 'a third, not half', and its headline that 'even the smallest rise pays unless it loses twice what 2023 did' applies an SMB precedent to the enterprise break-even without comment. Y's claim that the target is 'in reach without touching SMB prices' rests on the same NRR assumption without X's double-counting caveat. Both caveat the 2024 new-sign-up test properly.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis rather than accept or reject it. Each cuts the $10.3M to $7.6M, replaces the flat 12% with segment steps tied to evidence, accepts that the churn rise is mostly a promotion-cohort mix effect, and holds the cohort's price. Y makes the reconciliation explicit: 'Both views hold for this cohort: it needs onboarding, and it is the one group that reacts to price', and it turns the CEO's concern into a gate on SMB. That matches the key's reading that Inkwell has made SMB more price-competitive. X reaches the same reconciliation by a more quantitative route, showing that activation explains only part of the cohort's excess churn, so the rest is a price reaction. X also scrutinises the Customer Success claim harder. However, X keeps more of the CFO's SMB position by rolling 8% out to all non-promotion SMB at once, which gives the unmeasured Inkwell effect a little less weight than the evidence suggests. The difference is marginal.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents share the same diagnosis and near-identical core numbers, and either would steer the CEO to a defensible segmented plan. Y is slightly cleaner in logic and more prudent on SMB. X gives the decision maker more to decide with: a sized comparison of four options, including the mid-market-and-enterprise-only path; concrete stop rules and a read-out date; an explicit statement that the 15% target depends on retention holding at 109%; a quantified ceiling on what onboarding can deliver; and more careful caveats on what the evidence does and does not show. All of X's extra calculations check out. X's immediate rollout to non-promotion SMB is the more aggressive call, but it is bounded by a control group and a tight stop rule, and X is candid that the 2023 precedent predates Inkwell. On balance X serves the decision better, by a modest margin.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 0.9932905999999999,
+ "wall_s": 299.50574493408203
+}

@@ -1,0 +1,139 @@
+{
+  "version": "0.1",
+  "description": "Deck themes. Every theme follows the same 2020+ grammar (D8); only colors and fonts change. Source of truth for the renderer; mirrors the Figma 'Theme' variable collection (file xve9JsL0BllnkfBzqztLYV, page 05 Decisions). 7 themes (Teal was dropped on 2026-11-05: too close to Forest). Names are neutral on purpose: no firm names in the product.",
+  "default_theme": "navy",
+  "default_font_pair": "georgia-arial",
+  "roles": {
+    "title": "Action title and dark text",
+    "primary": "Header fills, tracker, lines, start/end bars of a waterfall",
+    "highlight": "The one thing the title points at (A-02). Exactly one per slide",
+    "other_bars": "Non-highlighted data",
+    "sidebar": "Takeaway sidebar fill",
+    "sidebar_text": "Text on the sidebar",
+    "big_number": "Big number in the sidebar or KPI tiles"
+  },
+  "themes": {
+    "navy": {
+      "label": "Navy",
+      "font_pair": "georgia-arial",
+      "title": "#0B1F33",
+      "primary": "#0B1F33",
+      "highlight": "#2E5BFF",
+      "other_bars": "#B9C3CE",
+      "sidebar": "#EDF1F6",
+      "sidebar_text": "#0B1F33",
+      "big_number": "#2E5BFF"
+    },
+    "crimson": {
+      "label": "Crimson",
+      "font_pair": "arial",
+      "title": "#222222",
+      "primary": "#3A3A3A",
+      "highlight": "#C41E3A",
+      "other_bars": "#C8C8C8",
+      "sidebar": "#F3F0F0",
+      "sidebar_text": "#222222",
+      "big_number": "#C41E3A"
+    },
+    "forest": {
+      "label": "Forest",
+      "font_pair": "calibri",
+      "title": "#1B2A24",
+      "primary": "#1E5C45",
+      "highlight": "#29A06A",
+      "other_bars": "#BFCBC5",
+      "sidebar": "#EDF4F0",
+      "sidebar_text": "#1B2A24",
+      "big_number": "#29A06A"
+    },
+    "mono": {
+      "label": "Mono",
+      "font_pair": "georgia-arial",
+      "title": "#111111",
+      "primary": "#111111",
+      "highlight": "#111111",
+      "other_bars": "#D2D2D2",
+      "sidebar": "#F2F2F2",
+      "sidebar_text": "#111111",
+      "big_number": "#111111"
+    },
+    "vivid": {
+      "label": "Vivid",
+      "font_pair": "aptos",
+      "title": "#14112B",
+      "primary": "#5B3DF5",
+      "highlight": "#FF5A36",
+      "other_bars": "#D8D4F7",
+      "sidebar": "#5B3DF5",
+      "sidebar_text": "#FFFFFF",
+      "big_number": "#FFFFFF",
+      "bar_corner_radius_pt": 2
+    },
+    "slate": {
+      "label": "Slate",
+      "font_pair": "arial",
+      "title": "#1F2933",
+      "primary": "#334E68",
+      "highlight": "#E58A00",
+      "other_bars": "#C3CCD5",
+      "sidebar": "#EEF1F4",
+      "sidebar_text": "#1F2933",
+      "big_number": "#E58A00"
+    },
+    "terracotta": {
+      "label": "Terracotta",
+      "font_pair": "georgia-arial",
+      "title": "#2B211C",
+      "primary": "#5A3A2E",
+      "highlight": "#C4532D",
+      "other_bars": "#D8CEC6",
+      "sidebar": "#F6F1EC",
+      "sidebar_text": "#2B211C",
+      "big_number": "#C4532D"
+    }
+  },
+  "font_pairs": {
+    "georgia-arial": {
+      "label": "A · Georgia + Arial (default)",
+      "title": "Georgia",
+      "body": "Arial",
+      "note": "Installed on Windows, Mac, Google Slides and Keynote"
+    },
+    "aptos-serif-aptos": {
+      "label": "B · Aptos Serif + Aptos",
+      "title": "Aptos Serif",
+      "body": "Aptos",
+      "fallback": {
+        "title": "Georgia",
+        "body": "Arial"
+      },
+      "note": "Microsoft 365 only; older Office and Google Slides substitute it"
+    },
+    "arial": {
+      "label": "C · Arial only",
+      "title": "Arial",
+      "body": "Arial",
+      "note": "Safest, no serif title"
+    },
+    "calibri": {
+      "label": "Calibri",
+      "title": "Calibri",
+      "body": "Calibri",
+      "fallback": {
+        "title": "Arial",
+        "body": "Arial"
+      },
+      "note": "Installed with Office and in Google Slides; not on a Mac without Office"
+    },
+    "aptos": {
+      "label": "Aptos",
+      "title": "Aptos",
+      "body": "Aptos",
+      "fallback": {
+        "title": "Arial",
+        "body": "Arial"
+      },
+      "note": "Microsoft 365 only"
+    }
+  }
+}

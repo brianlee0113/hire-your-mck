@@ -1,0 +1,115 @@
+{
+ "blind_id": "D8UQ87",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 11 shows company gross margin for every option against the 75% floor: add-on 76.3%, Pro 76.1%, free in Core 71.3%. Slide 13 shows Pro slipping to 74.5% at paying-buyer usage and sizes a 667 requests/seat allowance to restore 75.8%. Caveat: the 76.1% headline uses mean usage, not adopter usage."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "The 105% NRR target is the headline test. Slide 15 shows Pro adds 4.3 pp against 4.0 needed, 30.6% uptake required, and the add-on adds 3.7 pp. The 4.3 pp is not netted against churn from the mobile delay, which slide 16 sizes separately at $0.54–1.09M."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 13 gives inference cost at $17.1 median, $32.4 mean, $61.2 paywall buyers and $130.5 top decile, and notes the top 10% send 58% of requests. Slide 6 nets $0.9M inference from add-on revenue, so inference absorbs 41% (about 59% margin)."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "The $0.6M platform, evaluation and support cost is deducted in the gross-profit arithmetic on slide 6 ($2.1M − $0.9M − $0.6M) and in slide 11's method note."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 11 and the alternatives list state the $1.47M build and payback of about 2.7 years for Pro and 3.3 for the add-on, not a first-year win. The payback arithmetic is not shown and does not follow from the stated $0.8M gross profit."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slide 9 gives mobile churn at 27% against 6% for AI (4.5x) and 38% against 19% in feature requests, with $2.2M vs $0.5M ARR. Slide 16 quantifies the delay trade-off, and the headline says 'at the cost of a two-quarter mobile delay'. The recommendation re-plans the mobile rewrite to start in Q3 2027."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 5 sizes revenue on the paywall's 14% ($2.1M) against the survey's 46% ($8.1M). It notes the 6% survey response, 9.4 vs 6.2 seats, and that volunteer buyers make 14% a ceiling. The headline 'not $8M' reflects this."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slides 6 and 17 state that inference is fixed at $0.009 through December 2027. All margins are computed at $0.009, and the contract renegotiation is a dated next step. The expectation that renewal will cut cost is stated only as a note, not used in the numbers."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 8 sizes the whole win-rate drop (44% to 37%) at 109.2 deals and about $0.6M of new ARR a year at most. It notes the 20% Q3 discount as an alternative cause and shows the sales memo's 327.6 deals is overstated."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "This is the recommended option. Slides 11–13 give ARR ($2.5M at 33%), gross profit, company margin (76.1%, 74.5% without an allowance, 75.8% with 667 requests per seat), the 30.6% NRR threshold and the allowance size. The overage price behind 'heavier use billed' is not given."
+   },
+   {
+    "id": "A2",
+    "status": "tested",
+    "evidence": "The add-on at $149 is sized on the paywall's 14% ($2.1M ARR, $0.6M gross profit, 3.7 pp NRR, 3.3-year payback) and rejected. A lower entry price or usage-based charges above an allowance are not tested for the add-on, although an allowance is applied to Pro."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "'Mobile first, Copilot two quarters later' is quantified on slide 16: $0.56M lost by waiting against $0.54–1.09M by launching. The break-even is a rewrite that stops 51.7% of mobile churn at once (37% if the promotion explains half the win-rate drop). The option of extending the paywall test to non-volunteers during the delay is not evaluated."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Slide 11 shows 'Free in Core' at −$3.9M gross profit and 71.3% margin, below the floor, with no NRR contribution. A capped version (for example about 1,070 requests per account) is not tested."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slides 12 and 15 show Pro at 14% uptake ($1.1M, 1.8 pp), 33% ($2.5M, 4.3 pp) and 46% ($3.5M, 6.0 pp), with a break-even of 30.6% for the NRR target. The add-on at 14% gives 3.7 pp. Slide 17 sets a 15% checkpoint. Break-even adoption for covering run cost or repaying the build is not shown."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 13 shows Pro margin of 76.1% at mean usage, 74.5% at 6,800 requests a month, and the most an average Pro account can cost at the 75% floor ($52.40 a month). It also shows 75.8% with a 667 requests/seat allowance. Sensitivity to the per-request price after December 2027 is not quantified, and no add-on usage break-point is given."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 8 sets the AI-attributable defensive benefit at up to $0.6M a year (109 deals) and shows the memo's claim of 327.6 deals exceeds the whole drop. Slide 16 gives the flip point against mobile delay churn: waiting wins if the rewrite stops more than 51.7% of mobile churn at once, or 37% if the promotion explains half the gain. The rewrite effect is stated as an assumption ('no evidence in the pack')."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Launch Copilot in Q2 2027 in a Pro plan at $12 more per seat: about $2.5M of ARR, not $8M, just enough for 105% NRR, at the cost of a two-quarter mobile delay"
+  },
+  "omissions": [
+   "The 4.3 pp NRR gain is not netted against the churn the document itself attributes to the mobile delay (up to $1.09M, about 1.9 pp of the $57.6M base). The 'just enough for 105%' claim has no cushion once that is counted.",
+   "Pro's $0.8M gross profit and 76.1% margin use mean-account usage (3,600 requests). Slide 13 concedes that at paying-buyer usage (6,800) margin is 74.5%, which implies roughly zero or negative gross profit. The recommended allowance restores 75.8% only if overage is billed, and the overage price and customer acceptance are not stated.",
+   "The 15% year-end checkpoint is far below the 30.6% uptake needed for 105% NRR, and it comes about two quarters after launch. It would not detect a missed NRR target, and no rule links it to a change of course.",
+   "No assessment of price-driven churn risk. Price is the second-largest churn reason (22%), and the plan raises seat price by about 15% for Pro, with no stated effect on Core churn or downgrades.",
+   "The recommendation commits before any non-volunteer demand read, and the value of that read from delaying is not assessed. The only demand evidence for Copilot (14%) points to 1.8 pp, while the plan rests on 33% from an unrelated earlier tier."
+  ],
+  "unsupported_assumptions": [
+   "\"33% of accounts upgrade\": taken from the 2023 tier launch, which the document admits had no AI and has 'nothing in the pack' tying it to Copilot demand. It carries the $2.5M ARR and the NRR claim.",
+   "Pro inference \"at the mean beta account's 3,600 requests a month\": adopters of a paid tier are likely heavier users (paywall buyers averaged 6,800), and the document's own slide 13 shows this lowers margin to 74.5%.",
+   "\"Including 667 requests per seat keeps margin above the 75% floor\" / \"heavier use billed\": no overage price or customer response is given, and the 75.8% depends on it.",
+   "\"repays the $1.47M build in about 2.7 years, against 3.3 for the add-on\": the basis is not shown, and $1.47M over the stated $0.8M and $0.6M gross profit gives about 1.8 and 2.5 years.",
+   "\"renewal is more likely to cut cost than raise it\" (inference price): supported only by the 35% fall in list prices, while the contract price is fixed and Pro margin is within 1 point of the floor."
+  ]
+ },
+ "cost_usd": 0.2017251
+}

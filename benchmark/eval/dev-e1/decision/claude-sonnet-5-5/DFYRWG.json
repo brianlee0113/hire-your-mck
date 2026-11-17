@@ -1,0 +1,115 @@
+{
+ "blind_id": "DFYRWG",
+ "case": "c3-ai-assistant",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 12 tests the recommended Pro tier against the company-level floor: $44.93M gross profit + $2.89M Pro ARR − $0.6M run cost against 75% of $60.5M revenue, leaving $1.85M for inference. Slide 13 shows free-in-Core at about 70%."
+   },
+   {
+    "id": "C2",
+    "status": "mentioned",
+    "evidence": "Slide 11 states the target correctly (about $2.3M on $57.6M) and says Pro gives 5.0 points. It does not net the $1.1M of mobile-delay churn against the NRR claim. It only notes that holding 105% 'also needs lower churn'. The headline 'above the $2.3M the NRR target needs' ignores this."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 9 gives inference cost by usage level: $17.1 median, $32.4 mean, $61.2 buyers, $130.5 top decile. It states 41% of the add-on price for the average buyer and 88% for the top decile, and notes the top 10% make 58% of requests. Slide 12 sets the Pro allowance from these figures."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "The $0.6M a year of run cost is deducted in the slide 12 breakeven and in the slide 13 free-in-Core test. Slide 16 includes it in the 'repaid by about 17 months of Pro gross profit' payback."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 16 and the exec summary state $1.47M (14 engineers × 2 quarters × $210k). It is placed in the investment case with a 17-month payback, not presented as a first-year win."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slides 15–17 state the 27% vs 6% churn shares (4.5x) and the 38% vs 19% feature ranking. They size the delay at up to $1.1M ARR at risk, with 'No hiring assumed' and a Q3 2027 gate. The exec summary calls the delay 'the real cost'. AI-attributed churn is not sized in dollars."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slides 7–8 use 14% (17 of 120) and not 46%. They size the add-on at 1,372 accounts and $2.45M against the CPO's $8M. They flag the survey's 6% response rate and 9.4 vs 6.2 seats, and say the paywall sample is volunteers, so 14% and $2.5M are 'a ceiling'."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slides 9 and 12 compute everything at $0.009, fixed to December 2027, with 'No relief before 2028'. Slide 17 marks the contract end and renewal, and next steps assign the renegotiation. The line 'a new contract lifts the line' is only a mention of a possible price fall, not something the numbers rely on."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 5: 1,560 deals × 7 pp × $5,878 = $0.6M a year, 'at most', if AI explains the whole fall. It notes Routewise's 20% first-year discount and corrects the VP Sales claim."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "This is the recommendation. Slides 11–12 size it (3,234 accounts, $2.89M, 5.0 NRR points) and test it against the 75% floor. They set a cap of about 854 requests per seat (5,297 per account). It is matched to Routewise's bundling on slide 13."
+   },
+   {
+    "id": "A2",
+    "status": "mentioned",
+    "evidence": "The flat $149 add-on is sized on the paywall test ($2.45M, 41% inference share) and rejected on slides 8, 9 and 13. The repriced variant is never tested: no lower entry price and no usage charges above an allowance. Only Pro gets a cap and overage ('Price overage above the cost per request'), so the comparison is uneven."
+   },
+   {
+    "id": "A3",
+    "status": "absent",
+    "evidence": "The document never considers delaying Copilot, shipping the mobile rewrite first, or extending the paywall test to non-volunteers before committing. The Q3 2027 gate only acts after launch. The only related step is testing Pro pricing with accounts outside the beta (slide 18)."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Slide 13: 9,800 accounts × 3,600 requests × $0.009 × 12 = $3.81M of inference plus $0.6M run cost against $44.93M gross profit, giving about 70% margin. It is ruled out. A capped free version is not explored."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "mentioned",
+    "evidence": "Add-on revenue is shown at 14% vs 46% ($2.45M vs $8M). The recommended Pro tier rests on one point, 33% migration. There is no flex and no threshold, such as the roughly 26% migration needed for the NRR target. The document gives no adoption level at which Pro misses $2.3M. It only says larger accounts moving first would raise ARR."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "Slide 12 gives the Pro breakeven at 5,297 requests per account, which matches the checklist's roughly 5,300. It gives the per-seat allowance of 854 and compares usage levels (median, mean, buyers 6,800, top decile) with the line. Slide 9 shows add-on cost share rising from 41% to 88%. The post-2027 price path is not quantified."
+   },
+   {
+    "id": "S3",
+    "status": "mentioned",
+    "evidence": "Slide 5 gives the AI-attributable defensive benefit only as an upper bound ($0.6M if AI explains the whole fall) and contrasts it with the Sales memo's $1.93M. Slide 16 gives the mobile risk only as an upper bound ($1.1M). There is no range by share attributed to AI, and no share at which launching first stops being better. The document does not give the Sales memo's implied win rate."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Launch Dispatch Copilot in Q2 2027 inside a Pro tier at $12 more per seat, not as a $149 add-on, and plan on about $2.9M of new ARR (supported by 'A third of accounts moving to Pro adds $2.9M, above the $2.3M the NRR target needs')"
+  },
+  "omissions": [
+   "The 33% migration is applied unadjusted, although the document discounts the beta paywall figure as a ceiling. There is no Pro adoption threshold and no downside case, so the governing thought of 'plan on $2.9M' has no range.",
+   "The $1.1M mobile-churn risk is never netted against the $2.9M or the $2.3M NRR requirement. A reader cannot see whether NRR still reaches 105% once the delay is paid for.",
+   "Pro is a 15% price rise on every migrating account. The document uses price as the second-largest churn reason (22%) against the add-on but does not assess price-driven churn or downgrade risk for Pro.",
+   "The cap is not tested for adoption. There is no overage price, no count of accounts that would exceed 854 requests per seat, and no check that migration holds with the cap in place.",
+   "The Q3 2027 gate has no thresholds. It names no migration or mobile-churn level that triggers moving engineers, so it cannot be used as a decision rule."
+  ],
+  "unsupported_assumptions": [
+   "\"A third of accounts move within a year, as 33% did when the last higher tier launched in 2023\": the 2023 tier's content, price step and customer mix are not in the pack. The figure carries the whole $2.9M headline and the claim that the NRR target is met.",
+   "\"Accounts that move have the 6.2-seat average; if larger accounts move first, ARR is higher\": larger accounts also use more requests, which the margin test does not allow for.",
+   "\"Pro... holds margin with a fair-use cap\": this assumes the cap is enforceable without lowering the 33% migration or causing churn. Nothing supports that.",
+   "\"The lift lands in the 12 months after launch\": a mid-2027 launch and a 105% NRR target by 2028 leave little time. No basis is given.",
+   "\"Assumes the 14 Copilot engineers return to the mobile rewrite once Copilot ships, so the rewrite slips by the two quarters\": this assumes Copilot ships on time and that the gate can recover engineers, with no evidence."
+  ]
+ },
+ "cost_usd": 0.1931721
+}

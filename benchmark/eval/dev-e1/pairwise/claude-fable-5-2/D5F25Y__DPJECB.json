@@ -1,0 +1,38 @@
+{
+ "x": "D5F25Y",
+ "y": "DPJECB",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both use the same four-part hierarchy (churn diagnosis, CFO plan sizing, where pricing power sits, plan) and each executive-summary claim maps to slides that support it. X's pyramid is slightly tidier, with two directly supporting facts per claim, but it has internal tension: slide 6 says customers 'left over price' while also asserting 'activation, not price, is the lever', and slide 10's title stresses the harm of the 2023 rise while its body says 'the core tolerated the rise'. Y's body is consistent with its governing thought, but two summary supports sit loosely under their claims ('onboarding removes a tenth' under the churn cause; 'segmented plan keeps most of it' under the CFO sizing), and its headline '$5.6M / meets the 15% goal' depends on an SMB step that the plan itself makes conditional on a test. These weaknesses roughly offset.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred recommendation (R1): raise mid-market 10% and enterprise within caps from January, test 8% on non-promotion SMB, hold the promotion cohort. Y weighs the trade-offs more fully. It nets the SMB step against a 2023-style churn response ($0.7M, about half the gross), computes break-even churn for both the SMB and mid-market steps, sets five numeric stop levels with actions, names a fallback (mid-market and enterprise only, $4.3M), keeps the new-customer SMB list price at $15 against Inkwell, and tests the plan against both the 15% ARR and NRR objectives. It also flags that mid-market accounts under 200 seats may still meet Inkwell. X's alternatives table is sound and it sensibly says pricing alone cannot meet the target, but its guardrail is vague ('pause if renewed accounts churn above H1 2026 levels'), it gives no break-even, and its SMB go/no-go criteria are deferred to later design.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get the core numbers right: the $7.57M reachable uplift, the dashboard mismatch (1.7%→2.6% and 0.8%→1.2%), and the $4.3M mid-market and enterprise gain. X's figures check out (96%, 74%, 91%, 76%, 33%, 59%) and it makes few speculative inferences; its one over-read is treating 1.9% vs 1.8% after 2023 as 'never back to the starting point'. X does not state the implied promotion-cohort rate and has no break-even. Y derives the implied 4.9% cohort churn with a properly weighted bridge (94%), reproduces the 2023 response (about 3.6% extra loss, $0.6M), and computes break-evens (0.6 pp and 0.76 pp a month), covering all four required calculations. Y also takes more inferential risk: the split of cohort churn into discount cliff versus onboarding rests on a 3x assumption applied to both groups (flagged), the 15.04% projection applies trailing blended NRR from mid-2026 to end-2027 and adds price on top (possible double counting and timing mismatch), and the claim that one quarter of test data will reveal a 2023-sized jump is optimistic. These are labelled as estimates but one reaches the headline. Y's fuller and more accurate use of the critical evidence outweighs this, narrowly.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both revise the CFO's hypothesis correctly: they reject the uniform 12%, correct $10.3M to $7.6M, and show the churn rise is a promotion-cohort mix effect rather than broad price resistance, while keeping SMB price sensitivity via Inkwell. Y reconciles the CFO and CEO views more precisely. It shows the cohort 'reacted to its price doubling', so most of the excess is a one-off price cliff and only about a tenth of SMB churn is addressable by onboarding. That qualifies the CFO's 'onboarding, not price' claim and partly validates the CEO's concern, and it leads to sparing the cohort from any rise. X leans closer to the CFO's diagnosis ('activation, not price, is the lever') and treats eliminating the whole cohort excess (a third of SMB churn) as the onboarding best case, without separating the price-cliff component. Both reject the unsupported 'halve churn' claim.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "The recommendations are near-identical and both meet every defensibility criterion: mix versus rate effect separated, both views reconciled, $10.3M corrected, pricing differentiated by segment. Y gives the CEO more to decide with: the net value of the SMB step, break-even thresholds, explicit stop rules with actions, a fallback option, a check against the 15% and NRR objectives with a range, and open caveats on sub-200-seat mid-market exposure and enterprise escalators. X is cleaner, and more conservative in its claims, with no material errors, but leaves the guardrails and SMB test criteria unspecified and omits the break-even economics. Y's 15% projection is shaky and should be read as indicative, but it is flagged as 'no cushion' and does not change the decision.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.8218441999999999,
+ "wall_s": 61.85048818588257
+}

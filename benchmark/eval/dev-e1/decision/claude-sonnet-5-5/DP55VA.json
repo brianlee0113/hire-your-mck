@@ -1,0 +1,119 @@
+{
+ "blind_id": "DP55VA",
+ "case": "c4-pricing-churn",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 11: 'pricing closes only ~28% of the $12.9M gap'. ARR before new logos is $96.4–97.8M. $98.9M needs $1.1–2.5M of new-logo ARR, shown as required rather than estimated."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 11: overall NRR 112–114%, 'NRR objective (>100%) is met under every option; SMB alone stays below 100% (~95–97%)'. Baseline is built from Table 1 NRRs ($93.98M existing base)."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slides 7, 9, 16: renewing ARR is SMB $21.0M, MM $34.9M, Ent $9.6M, total $65.5M. The ~$2.8M overstatement is attributed mostly to renewal timing."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "60% of renewing enterprise ARR is capped at +7%, which is a -$0.288M step in the slide 9 bridge. The even-spread assumption is flagged (±$0.1M, slide 18)."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "'$7.6M gross, not $10.3M' (7.566 on slide 9), then $1.5–4.6M net of churn. The step-by-step bridge is shown."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slide 8 uses the 2023 precedent (1.08 × (1−3.6%) = +4.1%) to derive k = 0.45% per pt. SMB value is shown net of churn at 1×, 1.5×, 2× and 3×, and the stress case adds Inkwell. The doc says the precedent pre-dates Inkwell."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "$9 vs $15; the gap widens from 67% to 87% under a 12% rise; win rate 51%→38%. The 2× stress case reflects Inkwell. New-customer SMB list is held at $15. MM ≤200 seats is flagged as a gate and trigger. The effect of Inkwell on new-logo volumes is explicitly left out of scope."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slides 4–6: 2,100 customers, $4.4M, implied 4.9% churn vs 2.1%, 41% vs 72% activation, 52% vs 18% citing price. 94% of the SMB rise comes from the cohort. The cohort is modelled separately (k = 1.30%) and frozen on price."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 17: customer-weighted 1.7%→2.6% and ARR-weighted 0.8%→1.2% do not match the dashboard's 1.4%→2.3%. Segment table figures are used throughout and a metric definition is recommended."
+   },
+   {
+    "id": "C10",
+    "status": "reflected",
+    "evidence": "Slide 6 rejects the halving (1.55% is below the 2.0% pre-promo level; ~2.8% realistic, ~2.0% upper bound). Only $0.2M is counted in 2027 ARR. No programme cost is given."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Essentially adopted as option B/C: MM +10%, enterprise up to caps, SMB held or tested. Values are compared on slide 10 (MM base +3.19/stress +2.07; Ent +0.66/+0.44). It differs from the checklist in using +10% rather than +12% for mid-market."
+   },
+   {
+    "id": "A2",
+    "status": "tested",
+    "evidence": "Option A is costed at $7.6M gross and $1.5–4.6M net. It is rejected because the stress case loses $1.0M on SMB and the promo cohort loses money even at 1×. The doc concedes A beats B by ~$1M if SMB behaves as in 2023."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "The randomised +8% SMB renewal test on non-promo customers with a promo-cohort freeze is the recommendation. Option B is compared with the faster option C, and the ~$0.3M cost of waiting is quantified. A uniform 5–7% rise is not evaluated."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Option D (no increase) has net 0, 9.5% growth and needs $4.7M of new-logo ARR. The 'freeze SMB' initial hypothesis is tested and judged too cautious. A cheaper entry tier is only a 'consider an SMB packaging response', which is out of scope."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 8 shows SMB net ARR at 1×/1.5×/2×/3× the 2023 response (0.68/0.36/0.04/−0.61). Break-even is at 2.1× for +8% and 2.0× for +12%. Promo and non-promo cohorts are split (k of 2.9×, with the cohort at −0.24). The assumed 2× stress and the gate trigger are stated."
+   },
+   {
+    "id": "S2",
+    "status": "quantified",
+    "evidence": "MM net is +3.19 in the base case (2024 test, k = 0.21%/pt) and +2.07 in the stress case (SMB 2023 response, k = 0.45%/pt). The trigger is MM churn above 1.0%/month, which caps the rise at +5%. The caveats (new sign-ups only, churn 0.6→0.8%, ≤200 seats) are stated. No explicit break-even churn at which the MM increase nets to zero is given, and 51–200-seat exposure is not sized."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 6 gives the activation model: SMB churn 3.1%→2.8% if the cohort reaches normal activation, 2.0% at the upper bound, and an ARR effect of $0.27M. Slide 14 treats the cohort churn assumption as 'Medium' evidence with an upside if churn falls, and the cohort is frozen on price. The 2027 SMB baseline and NRR are not rerun if the cohort washes out."
+   }
+  ],
+  "overclaim": {
+   "present": false,
+   "quote": ""
+  },
+  "omissions": [
+   "No cost is given for the activation programme or for the stopped acquisition discounts, yet +$0.2M of benefit is counted in the base-case bridge and in the 'Net ARR 2.4–3.8' total.",
+   "The headline $2.2–3.6M excludes activation, while the ARR bridge and slide 12 include it, so the figures are not reconciled.",
+   "There is no explicit break-even for mid-market (the renewal loss that would cancel the roughly $2.7M uplift, or the annual churn at which that happens). Mid-market is ~75% of the plan's value, and the stress case applies only the SMB 2023 response, not a harsher one.",
+   "The effect of continued Inkwell pressure on SMB new-logo volume is left 'out of scope', but the $1.1–2.5M new-logo requirement and the 15% target depend on it."
+  ],
+  "unsupported_assumptions": [
+   "\"Trailing NRR (109%) holds in 2027 without a price change\" supplies $8.0M of the $12.9M growth needed and underpins the 'ARR before new logos' and NRR headlines. The only basis is the trailing 12 months, and it ignores that the promo cohort is churning faster.",
+   "\"k, mid-market & enterprise 0.21% per pt\" extrapolates a new-sign-up conversion test to renewal churn, and applies it to enterprise, where the doc itself says there is no direct evidence.",
+   "\"+$0.2M\" for the activation programme is 'on the assumption the programme partly succeeds'. It rests on a 3× low-activator churn ratio assumed to hold across the base, with no cost or timing evidence.",
+   "\"SMB gated rollout coverage: 50% of non-promo ARR repriced by year end\" is an assumed share, as is the 2× stress multiple for SMB.",
+   "\"Enterprise caps assumed spread evenly across renewal years\", which the pack does not state (flagged, ±$0.1M)."
+  ]
+ },
+ "cost_usd": 0.1891331
+}

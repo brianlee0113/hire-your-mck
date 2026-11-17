@@ -1,0 +1,121 @@
+{
+ "blind_id": "D44QRZ",
+ "case": "c2-profitability",
+ "judge": {
+  "model": "claude-sonnet-5-5",
+  "effort": "high"
+ },
+ "output": {
+  "constraints": [
+   {
+    "id": "C1",
+    "status": "reflected",
+    "evidence": "Slide 11/12: full plan $42.3M on $1,401M post-closure sales (3.02%) vs 3.0% = $42.0M. Bridge sizes each lever and nets the 2027 wage step and delivery rate rise. Base plan of data-backed levers is stated as only 2.5%."
+   },
+   {
+    "id": "C2",
+    "status": "reflected",
+    "evidence": "Slide 18 builds an FY2026 bridge 15.3 → 24.0 with part-year capture (fees 80%, promotions 50%, shrink 35%, labor 50%, two closures mid-year, 1 month of wage step, ~$2M one-time expensed). Headroom is ~$4M over the $20M floor. Management's plan is run against the same covenant (slide 24)."
+   },
+   {
+    "id": "C3",
+    "status": "reflected",
+    "evidence": "Slide 19: $20.5M committed (7.5 lease exit, 4.5 closure costs, 3.5 shrink tools, 2.0 private label, 1.5 analytics, 1.5 scheduling) against the $25M cap, with $4.5M reserve. Costs are phased by wave on slide 17. Only the $7.5M comes from the pack; the rest are flagged as team estimates."
+   },
+   {
+    "id": "C4",
+    "status": "reflected",
+    "evidence": "Slide 16: six leases lapse at expiry as a CEO decision, with no exit fee and no vote. The three long-lease stores need a board vote, with a $7.5M exit cost, and are scheduled for the Q3 FY2026 meeting. Decision 3 on slide 21 asks for the vote."
+   },
+   {
+    "id": "C5",
+    "status": "reflected",
+    "evidence": "Slide 15 keeps home delivery and freezes growth ('keep the freeze for home delivery only'). Option D, exiting delivery, is held only as a fallback because it breaks the owner commitment (slide 10). The fallback of dense zones or a higher minimum basket keeps delivery 'in some form'."
+   },
+   {
+    "id": "C6",
+    "status": "reflected",
+    "evidence": "Slides 5, 11 and 12: the 2027 wage step is −$6.8M (+4% on the labor bill after the cut) plus −$0.3M for the delivery rate rise. It is deducted in the base plan (36.1) and the full plan (42.3). Slide 20 tests +6% (−$3.3M)."
+   },
+   {
+    "id": "C7",
+    "status": "reflected",
+    "evidence": "Slide 8 shows the incremental e-commerce result as −$10.4M (30% new sales at 20% = +7.7; picking −9.8; delivery −10.7; fees +2.4). It shows why the team's 6.1% is wrong (no delivery cost, all sales treated as new). It includes the $8.3M net delivery cost and the 3% rate rise (−$0.3M). It shows the delivered share rising 45% → 58% and the fee falling. Slide 23 reconciles the model to Table 1."
+   },
+   {
+    "id": "C8",
+    "status": "reflected",
+    "evidence": "Slide 9 and slide 24: the $14.6M saving is netted for shrink (+0.33 to +0.67 pt, −$5.0M to −$10.0M), giving +$4.6M to +$9.6M. The quartile gradient (3.1% vs 2.3%) is used, and the unquantified sales risk is flagged at ~$3M per 1% of sales. FY2026 for management's plan becomes $19.1–24.1M."
+   },
+   {
+    "id": "C9",
+    "status": "reflected",
+    "evidence": "Slide 11/13: the promotion lever is +$6.4M net of 15% lost volume at 20% contribution. It has a ValuMart guardrail, with cuts phased last in ValuMart stores and comps tracked weekly. It cites the −4.2% ValuMart comps and the 33% → 41% 'more expensive' score. Caveat: the full-plan 3.0% includes a +$3.5M recovery of vendor funding from 46% to 50%, which the checklist warns against assuming. It is shown as a negotiated lever and a sensitivity."
+   },
+   {
+    "id": "C10",
+    "status": "reflected",
+    "evidence": "Slide 16: nine-store gain is $6.64M (EBITDA removed 3.10 + 25% × 12% contribution kept 3.54). Chain sales lost are $88.5M. Timing is explicit (six at expiry, by end 2027). The $7.5M exit cost and board vote apply to the three. The six are +$4.4M and the three +$2.2M, so closures are not credited to FY2026 beyond two assumed mid-year closures."
+   }
+  ],
+  "alternatives": [
+   {
+    "id": "A1",
+    "status": "tested",
+    "evidence": "Slide 14 compares the 8% cut (net +4.6 to +9.6, high service risk) with a targeted rebalance: ring-fenced fresh and receiving hours, −3% hours in Q3–Q4 stores where shrink is flat, shrink tracked by quartile (net +11.0). Slides 9 and 24 size management's plan with shrink. Management's plan is rejected on those numbers. There is no explicit pilot before rollout."
+   },
+   {
+    "id": "A2",
+    "status": "tested",
+    "evidence": "Slide 15 sizes the chain-wide fee rollout (+$2.49M net, −$3.0M fulfillment) and the contract tender (−5% vs +3% = +$0.8M). Option D, exiting delivery, is sized as up to ~$6M (703k × $9.04) and is rejected as it breaks the owner commitment. Exit is valued after repricing, so it is below the checklist's $8–9.5M, and no click-and-collect shift scenario is run."
+   },
+   {
+    "id": "A3",
+    "status": "tested",
+    "evidence": "Slides 7 and 13: rollback to 24% sized at +$6.4M with a 0–41% volume-loss table. The category team's +1.8% vs +0.2% claim is rebutted (0.32 pt of sales pays for only 2.3 pts of promo share). Option B, deeper promotions, is rejected with $2.1M per point. Cancelling losing events (38%) is the lead tactic."
+   },
+   {
+    "id": "A4",
+    "status": "tested",
+    "evidence": "Slide 16 compares six / three / all nine with gain, one-time cost, payback and governance. 'Exit all nine now' is rejected (3.4–4.1-year payback for the three). The no-closure case is the initial hypothesis on slide 3, which reaches only 1.8% and so adds the six lapses."
+   }
+  ],
+  "sensitivities": [
+   {
+    "id": "S1",
+    "status": "quantified",
+    "evidence": "Slide 9 and slide 24 give $1.5M per 0.1 pt and run low and high shrink (+0.33 / +0.67 pt). Management's FY2026 is $24.1M at low shrink and $19.1M at high shrink, so the covenant flips between them. Slide 20 gives −$2.8M if the plan's shrink gain is halved. The explicit break-even shrink rise (~+0.65 pt) is not stated."
+   },
+   {
+    "id": "S2",
+    "status": "mentioned",
+    "evidence": "Slides 8, 15 and 22 give break-evens (delivery fee ~$15.40; click-and-collect breaks even at 39% new sales) and note that click-and-collect economics are 'sensitive to this share'. The net e-commerce drag is not re-run as the 70% cannibalisation varies, and there is no break-even for the whole service. The fee-test response (−9% delivered, +14% click-and-collect) is assumed to scale chain-wide, with no alternative response tested."
+   },
+   {
+    "id": "S3",
+    "status": "quantified",
+    "evidence": "Slide 13 table: promotion lever is +$10.1M at 0% volume lost, +$6.4M at 15%, +$2.7M at 30% and zero at 41% (0.14 ÷ (0.14 + 0.20)). Slide 20 gives −$3.6M and 2.78% margin at 30%. The ValuMart guardrail uses the −5.3 pt comps gap. The share of the saving coming from the 38% loss-making events is not isolated."
+   }
+  ],
+  "overclaim": {
+   "present": true,
+   "quote": "Fix gross margin and delivery economics rather than cutting labor: four quick moves protect the FY2026 covenant, and the full plan restores 3.0% by FY2028 (also: 'A margin-led plan restores ~3.0% for ~$20M of one-time cost')"
+  },
+  "omissions": [
+   "No FY2026 downside case against the covenant. The ~$4M headroom rests on part-year capture assumptions (promotions 50%, shrink 35%). Single risks on slide 20 each cost $2.8–3.6M. Slide 20 says 'Covenant still met' for a combined downside of $32M, but that is an FY2028 figure, not the FY2026 covenant test.",
+   "Cost drift is set to zero: occupancy and SG&A rose 0.2 pt in FY2023–25 (~$3M). Slide 20 names it as an uncertainty but does not size it. The full plan clears 3.0% by only $0.3M ($42.3M vs $42.0M), so it would break the target.",
+   "FY2028 is shown at FY2025 volumes and prices. Continuing ValuMart erosion (−4.2% comps near new stores, 11 openings) is not modelled in the base case, only as a promotion-volume sensitivity."
+  ],
+  "unsupported_assumptions": [
+   "'15% volume loss at 20%': the 15% loss of shifted promotional volume carries the +$6.4M largest lever and has no basis in the pack. The break-even is shown at 41%.",
+   "'46% → 50% of markdowns × ~$88M implied gross markdown pool': the +$3.5M vendor funding gain is an 'Estimate' that rests on reading the 14-pt gap as net of vendor funding. It is needed to reach 3.0%.",
+   "'Fiscal timing: FY2026 treated as the first plan year' and 'FY2026 bridge assumes the FY2023–25 drift stops once the actions start': the ~$24M FY2026 figure and the $4M covenant headroom depend on these. The document admits FY2026 may already be closed at a February 2027 board meeting.",
+   "'Two of six closures at mid-year' in FY2026: the pack says only that six leases expire by end of 2027, not when. In-year capture rates (fees 80%, promotions 50%, shrink 35%, labor 50%) are asserted without a stated basis.",
+   "'Q1–Q2 stores to Q3 level (−0.25 pt) + 13% less fresh waste (−0.15 pt)': the +$5.8M shrink lever reads a cross-sectional correlation as causal. Equal quartile sales are assumed, and the 13% fresh-waste cut has no source. The cost of the 'add task hours' in Q1–Q2 stores is not shown.",
+   "'Fee test scales chain-wide': a 4-store, 10-week test is extrapolated to all stores for the +$2.5M gain and the ≤$15M KPI.",
+   "'30% of online sales are new': a survey stated intent is used for all e-commerce economics, and is assumed the same for delivery and click-and-collect.",
+   "'Only the $7.5M lease-exit cost comes from the pack; all other one-time amounts are team estimates': this includes the ~$0.5M per store closure cost. The 'payback under one year' claim relies on these."
+  ]
+ },
+ "cost_usd": 0.6021415
+}

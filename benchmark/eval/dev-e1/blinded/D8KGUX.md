@@ -1,0 +1,541 @@
+## Part 1 · Normalised storyline
+
+**Governing thought:** Ship the mobile rewrite first, then launch Copilot in Q4 2027 in a Pro plan at $12 more per seat with a usage allowance
+
+**Executive summary:**
+1. Copilot demand is real but far below the internal case: at most $2.5M of add-on ARR, not $8M
+2. Copilot should wait for the mobile rewrite, whose delay puts nearly twice as much ARR at risk
+3. Package Copilot in Pro at $12 more per seat, not a $149 add-on, with a usage allowance
+4. Staff the rewrite in H1 2027, launch Pro in Q4 and track four gates toward 105% NRR
+
+**Slides (title → claims → evidence):**
+
+- Slide 1: Dispatch Copilot: launch timing, packaging and price
+- Slide 2: Executive summary
+  - Claim: Ship the mobile rewrite first, then launch Copilot in Q4 2027 in a Pro plan at $12 more per seat with a usage allowance
+  - Claim: Copilot demand is real but far below the internal case: at most $2.5M of add-on ARR, not $8M
+    - Evidence: 14% of beta accounts paid $149, against 46% of survey admins who said they would
+    - Evidence: At the paywall rate, the add-on reaches at most $2.5M of ARR across 9,800 accounts
+  - Claim: Copilot should wait for the mobile rewrite, whose delay puts nearly twice as much ARR at risk
+    - Evidence: Mobile reliability drives 27% of churn, against 6% for AI features
+    - Evidence: Mobile first holds while the rewrite fixes at least 52% of mobile churn
+  - Claim: Package Copilot in Pro at $12 more per seat, not a $149 add-on, with a usage allowance
+    - Evidence: If 33% move up as in 2023, Pro adds $2.9M of ARR, $1.0M after costs
+    - Evidence: Margin holds at 75% only below about 5,300 requests per Pro account a month
+  - Claim: Staff the rewrite in H1 2027, launch Pro in Q4 and track four gates toward 105% NRR
+    - Evidence: Copilot build-out follows in Q3 and Q4 2027, with a Pro price test meanwhile
+    - Evidence: If the rewrite cannot fix half of mobile churn, launch Pro in Q2 instead
+- Slide 3: How big Copilot really is
+- Slide 4: Stated intent overstates Copilot demand: three times as many admins said they would buy as beta accounts paid
+  - Claim: 46% of survey respondents said they were likely to buy at $149; 14% of beta accounts actually paid
+    - Evidence: 3.3x
+    - Evidence: Survey: likely or very likely 0.46; Paywall test: bought 0.14
+    - Evidence: Survey: October 2026, 610 of 9,800 admins replied (6%). Paywall test: 120 beta accounts offered Copilot at $149 after the free period; 17 bought
+  - Claim: Both samples are larger accounts than the typical customer, so even 14% flatters the base
+    - Evidence: Average office seats per account: Survey respondents 9.4; Beta accounts 8.1; All accounts 6.2
+  - Claim: Even the paywall rate is a ceiling: volunteers who chose to try Copilot are the likeliest buyers Brightwork has
+- Slide 5: Applied to every account, the paywall rate supports at most $2.5M of add-on ARR, under a third of the $8M case
+  - Claim: The $8M rests on what admins said, not on what they paid
+    - Evidence: New ARR, first year: Survey case (46% likely to buy) 8; Paywall rate (14% bought) 2.4531
+    - Evidence: Survey case: 46% × 9,800 accounts × $1,788 a year gives $8.1M, from a 6% response skewed to large accounts
+    - Evidence: $8M is the CPO's figure from the October 2026 survey; recomputed, 46% of 9,800 accounts at $1,788 a year is $8.06M
+  - Claim: Paywall rate: 1,372 buying accounts at most, because the beta converted its keenest volunteers
+    - Evidence: 9,800 customer accounts today × 14% bought at $149 in the beta paywall test × $1,788 a year per buyer ($149 × 12) = $2.5M new ARR, a ceiling for the base
+  - Claim: Before costs: buyers at 6,800 requests a month would cost about $1.0M a year in inference, plus $0.6M of platform cost
+- Slide 6: The beta's encouraging gains come from volunteers and a few heavy users, not yet from typical accounts
+  - Claim: 9 pp faster growth in jobs per dispatcher-hour than matched accounts
+    - Evidence: +11% for beta accounts compared with +2% for matched accounts
+    - Evidence: Dispatchers self-report saving 4.1 hours a week
+    - Evidence: Volunteers were already more active, so part of the gap is selection
+    - Evidence: Untested on typical 6.2-seat accounts
+    - Evidence: Dispatch Copilot beta results, 240 volunteer accounts, 12 weeks, 2026
+  - Claim: 4 pp higher 90-day renewal than matched accounts
+    - Evidence: 97% for beta accounts compared with 93% for matched accounts
+    - Evidence: Keen, engaged accounts renew more anyway
+    - Evidence: A 90-day window says little about annual churn of 14%
+    - Evidence: Needs a randomised test before it enters the plan
+  - Claim: Value and cost both sit with a few heavy users
+    - Evidence: 58% of all AI requests came from the top 10% of beta accounts
+    - Evidence: The median account sends 1,900 requests a month, the top tenth 14,500
+    - Evidence: Pricing has to charge for heavy use (section 3)
+- Slide 7: When to launch
+- Slide 8: Customers put mobile reliability well ahead of AI, both when they leave and when they ask for features
+  - Claim: Mobile reliability is the top reason accounts left in 2026; AI is the smallest named one
+    - Evidence: 4.5x
+    - Evidence: Main reason for churning, n = 1,190: Mobile app reliability 0.27; Price 0.22; Other 0.16; Missing integrations 0.15; Went out of business / sold 0.14; Switched for AI features 0.06
+  - Claim: Twice as many customers rank a reliable mobile app first as rank AI scheduling first
+    - Evidence: 2x
+    - Evidence: Top-ranked feature request: Reliable technician mobile app 0.38; AI scheduling 0.19
+  - Claim: The Head of Customer Success is right on the evidence: mobile reliability is cited 4.5 times as often as AI by accounts that left
+- Slide 9: Even if AI caused the whole fall in win rate against Routewise, it costs about $0.6M of ARR a year
+  - Claim: AI can explain at most part of the drop
+    - Evidence: Win rate in Routewise deals: Q1–Q2 2026 0.44; Q3 2026 0.37
+    - Evidence: Q3 2026: Routewise launched AI in its Pro plan and offered 20% off the first year in the same quarter
+    - Evidence: Loss notes: 31% mention AI, but a mention is not the cause, and the notes cover all losses, not only Routewise
+  - Claim: $0.6M new ARR a year at most, if Copilot won back the whole fall
+    - Evidence: 1,560 deals a year with Routewise (60% of 2,600) × 7 pp lower win rate since Q1–Q2 2026 × $5,877.6 ARR per new 6.2-seat Core account = $0.6M new ARR a year, an upper bound
+  - Claim: Sales memo: a third of deals lost to Routewise is about 328 deals, $1.9M a year, 3.0 times what the whole drop is worth
+- Slide 10: Each quarter the mobile rewrite slips puts nearly twice as much ARR at risk as a quarter's wait for Copilot
+  - Claim: 1.9x as much ARR at risk from delaying the rewrite as from waiting on Copilot
+    - Evidence: $544.3K ARR lost per quarter the rewrite slips: 27% of the 1,372 accounts that churn a year cite mobile, at $5,877.60 ARR each
+    - Evidence: $281.4K ARR lost per quarter Copilot waits: Routewise deals ($160K) plus accounts that switch for AI ($121K)
+    - Evidence: Churn reasons from 2026 churned accounts (n = 1,190); win rates from §7 of the briefing pack; live formulas in the Calculations sheet
+  - Claim: Both sides are upper bounds; mobile first holds while the rewrite removes at least 52% of mobile churn
+    - Evidence: Mobile side: the rewrite ends mobile-reliability churn when it ships; neither side is proven to be the cause
+    - Evidence: Copilot side: Copilot wins back the whole Q3 drop and every AI-driven switch, although Routewise also cut prices by 20%
+    - Evidence: Pro is shifted, not lost, but waiting gives up about $257K of Pro contribution per quarter, one-off
+    - Evidence: On the 1,190 churned accounts that gave a reason, mobile risk is $472K a quarter, still 1.8 times
+- Slide 11: How to package and price it
+- Slide 12: A flat $149 add-on draws heavy users: buyers cost $61.20 a month to serve and the top tenth $130.50
+  - Claim: A flat price loses margin exactly where demand is
+    - Evidence: Inference cost per account, $ a month at $0.009 per request: Beta median (1,900 requests) 17.1; Beta mean (3,600) 32.4; Paywall buyers (6,800) 61.2; Top 10% of beta (14,500) 130.5
+    - Evidence: Add-on price $149.00
+    - Evidence: Buyers: use almost twice the beta mean
+    - Evidence: Top 10%: send 58% of requests at a flat fee
+    - Evidence: Add-on margin after inference, paywall buyers 58.9% ($149 − $61.20) ÷ $149
+    - Evidence: Add-on margin after inference, top 10% 12.4% ($149 − $130.50) ÷ $149
+    - Evidence: Request volumes from the 12-week beta; inference price fixed under the current contract through December 2027
+- Slide 13: A Pro plan fits Brightwork's goals better than an add-on, with half the entry price and revenue that grows with seats
+  - Claim: Pro costs half the add-on
+    - Evidence: Price for an average 6.2-seat account, a month: $149 add-on $149; Pro plan $74.4
+  - Claim: Pro has the stronger precedent
+    - Evidence: Add-on: 14% of beta volunteers paid in the paywall test; Pro: 33% of accounts moved to the last new tier (2023) within a year
+  - Claim: Pro charges for cost
+    - Evidence: Add-on: Nobody: heavy and light users pay the same flat fee; Pro: Per-seat fee plus an allowance, with overage above it
+  - Claim: Pro removes a price gap in deals
+    - Evidence: Add-on: Priced on top of Core, against a rival that includes AI; Pro: Same packaging as Routewise's Pro plan since September 2026
+    - Evidence: Routewise launched AI scheduling included in its Pro plan in September 2026
+  - Claim: Per-seat pricing turns seat growth into expansion revenue, the lever 105% NRR needs
+    - Evidence: Add-on: Flat per account; no gain as seats grow; Pro: Rises with every seat an account adds
+- Slide 14: If a third of accounts move up as in 2023, Pro adds $2.9M of ARR, or $1.0M a year after costs
+  - Claim: Pro adds $2.9M of ARR, or $1.0M a year after costs
+    - Evidence: $2.9M new ARR: 3,234 accounts (33% of 9,800) at $892.80 a year ($12 × 6.2 seats × 12)
+    - Evidence: − $1.3M inference: 3,600 requests a month per account (beta mean) at $0.009
+    - Evidence: − $0.6M platform, evaluation and support a year
+    - Evidence: = $1.03M contribution a year, before the one-off build
+  - Claim: Pro beats the add-on and covers the NRR target, if at least 26% of accounts move
+    - Evidence: Add-on, same maths at the 14% paywall rate: $2.45M of ARR, $0.84M a year after costs
+    - Evidence: NRR: $2.89M is 5.0 percentage points of today's $57.6M ARR; the 4 percentage point gap needs $2.30M
+    - Evidence: At 14% (the rate measured at $149, twice Pro's price), Pro adds $1.22M and only $0.09M after costs; at 46%, $4.02M
+    - Evidence: Build: $1.47M (14 engineers for two quarters at $210K a year), repaid in about 17 months
+  - Claim: Pro lifts NRR once, in the year accounts move up; lower mobile churn is what holds 105% after that
+- Slide 15: Company margin stays above its floor only if Pro caps included usage near 5,300 requests per account a month
+  - Claim: Pro needs a usage allowance to stay above the 75% floor
+    - Evidence: Inference cost per account, $ a month: Beta median (1,900 requests) 17.1; Beta mean (3,600) 32.4; Paywall buyers (6,800) 61.2; Top 10% of beta (14,500) 130.5
+    - Evidence: Pro revenue per account $74.40
+    - Evidence: Company margin, Pro at paywall-buyer usage 74.1%, same, with $2.38M of inference
+    - Evidence: Requests per account a month at a 75% margin 5,296 = (25% × $60.49M − $12.67M − $0.6M) ÷ (3,234 × $0.009 × 12)
+    - Evidence: Base case: 33% of accounts on Pro; platform cost counted as cost of revenue; company margin 78% today
+  - Claim: Heavy users: move first; the top tenth costs more than Pro earns
+  - Claim: Allowance: 854 requests per seat a month, overage above it
+  - Claim: Inference at $0.009 per request is fixed through December 2027; the 35% fall in list prices over 12 months is upside from 2028 only
+- Slide 16: How to make it happen
+- Slide 17: Mobile first still puts Copilot on the market by late 2027, in time for Pro migration to count in 2028
+  - Claim: Recommended sequence, by quarter, January 2027 planning
+    - Evidence: Q1 2027 to H2 2028 timeline rows: Decision; Mobile churn check; NRR target
+    - Evidence: Mobile app rewrite: Rewrite keeps its engineers
+    - Evidence: Copilot build-out: 14 engineers: metering, allowance, Pro billing
+    - Evidence: Pricing evidence: Pro price test on random non-beta accounts
+    - Evidence: Pro plan with Copilot: Launch, then migration toward a third of accounts
+    - Evidence: Inference contract: Renegotiate for 2028
+  - Claim: The Pro price test runs during the rewrite, so Copilot launches with a tested price and allowance rather than a survey guess
+  - Claim: Assumes the rewrite needs these 14 engineers for the same two quarters Copilot would have taken; to be confirmed by Engineering in January
+- Slide 18: Four gates tell the executive team early whether the plan stays on course
+  - Claim: Gate 1: Pro migration keeps pace with the retention target
+    - Evidence: 26.3% of accounts on Pro within 12 months of launch
+  - Claim: Gate 2: Usage stays inside the allowance that protects margin
+    - Evidence: 5,296 requests per Pro account a month, on average
+  - Claim: Gate 3: January check: the rewrite targets enough mobile churn to go first; if not, launch Pro in Q2
+    - Evidence: 51.7% of mobile-reliability churn removed after launch
+  - Claim: Gate 4: Win rate against Routewise recovers once Pro includes AI
+    - Evidence: 44% win rate in Routewise deals, the Q1–Q2 2026 level
+  - Claim: Decision today: approve Pro at $12 more per seat, and hold the Q2 launch unless the January check fails gate 3
+- Slide 19: Next steps
+
+**Recommendation:** Ship the mobile rewrite first, then launch Copilot in Q4 2027 in a Pro plan at $12 more per seat with a usage allowance. Decision today: approve Pro at $12 more per seat, and hold the Q2 launch unless the January check fails gate 3.
+
+**Alternatives considered:**
+- $149 add-on (flat per account): Rejected: "Package Copilot in Pro at $12 more per seat, not a $149 add-on"; a flat price loses margin exactly where demand is (58.9% margin for paywall buyers, 12.4% for top 10%); nobody pays for heavy use; priced on top of Core against a rival that includes AI; no gain as seats grow; $2.45M of ARR, $0.84M a year after costs at the 14% paywall rate.
+- Pro plan at $12 more per seat with usage allowance: Chosen: half the add-on entry price, stronger precedent (33% moved to last new tier in 2023), charges for cost, matches Routewise packaging, rises with seats; $2.9M ARR, $1.0M a year after costs at 33% migration.
+- Launch Copilot first / before the mobile rewrite: Rejected: each quarter the rewrite slips puts $544.3K of ARR at risk vs $281.4K for a quarter's wait for Copilot (1.9x); mobile first holds while the rewrite removes at least 52% of mobile churn.
+- Launch Pro in Q2 2027: Fallback: if the January check finds the rewrite cannot fix half of mobile churn (gate 3, 51.7%), launch Pro in Q2 instead.
+
+**Assumptions and uncertainties:**
+- Synthetic benchmark data; all figures from the briefing pack
+- Even the paywall rate is a ceiling: volunteers who chose to try Copilot are the likeliest buyers Brightwork has; both samples are larger accounts than the typical customer
+- Survey case from a 6% response skewed to large accounts
+- Beta gains: volunteers were already more active, so part of the gap is selection; untested on typical 6.2-seat accounts; a 90-day window says little about annual churn of 14%; needs a randomised test before it enters the plan
+- Loss notes: 31% mention AI, but a mention is not the cause, and the notes cover all losses, not only Routewise; Routewise also cut prices by 20%
+- Both sides of the timing comparison are upper bounds; the rewrite is assumed to end mobile-reliability churn when it ships; neither side is proven to be the cause
+- Mobile first holds while the rewrite removes at least 52% of mobile churn
+- Pro is shifted, not lost, but waiting gives up about $257K of Pro contribution per quarter, one-off
+- Pro economics assume 33% migration as in 2023 and beta-mean usage of 3,600 requests a month; Pro beats the add-on and covers the NRR target only if at least 26% of accounts move; at 14% Pro adds only $0.09M after costs
+- Pro lifts NRR once, in the year accounts move up; lower mobile churn is what holds 105% after that
+- Margin holds at 75% only below about 5,296 requests per Pro account a month; at paywall-buyer usage company margin is 74.1%
+- Inference at $0.009 per request is fixed through December 2027; the 35% fall in list prices is upside from 2028 only
+- Assumes the rewrite needs these 14 engineers for the same two quarters Copilot would have taken; to be confirmed by Engineering in January
+
+**Next steps:**
+- Confirm the rewrite needs the 14 engineers only through Q2 2027 and fixes at least half of mobile churn; if not, launch Pro in Q2 — CTO with Head of Customer Success — January 2027
+- Design Pro: $12 more per seat, a per-seat usage allowance and an overage rate; build metering into billing — CPO and CFO — Q1 2027
+- Test Pro price and allowance on a random sample of non-beta accounts — CPO — Q2–Q3 2027
+- Renegotiate the inference contract for 2028 to capture falling list prices — CFO — Q3–Q4 2027
+- Brief Sales on the Pro launch date and keep current paying beta accounts served until then — VP Sales and Head of Customer Success — Q1 2027
+
+## Part 2 · Full slide text (mechanical extraction)
+
+=== Slide 1 ===
+[Title] Dispatch Copilot: launch timing, packaging and price
+- Discussion document for the CEO and executive team, January 2027 planning
+- Brightwork
+- CEO and executive team
+- 2026-11-17
+- Synthetic benchmark data; all figures from the briefing pack
+
+=== Slide 2 ===
+[Title] Executive summary
+- Ship the mobile rewrite first, then launch Copilot in Q4 2027 in a Pro plan at $12 more per seat with a usage allowance
+
+- Copilot demand is real but far below the internal case: at most $2.5M of add-on ARR, not $8M
+- –	14% of beta accounts paid $149, against 46% of survey admins who said they would
+- –	At the paywall rate, the add-on reaches at most $2.5M of ARR across 9,800 accounts
+
+- Copilot should wait for the mobile rewrite, whose delay puts nearly twice as much ARR at risk
+- –	Mobile reliability drives 27% of churn, against 6% for AI features
+- –	Mobile first holds while the rewrite fixes at least 52% of mobile churn
+
+- Package Copilot in Pro at $12 more per seat, not a $149 add-on, with a usage allowance
+- –	If 33% move up as in 2023, Pro adds $2.9M of ARR, $1.0M after costs
+- –	Margin holds at 75% only below about 5,300 requests per Pro account a month
+
+- Staff the rewrite in H1 2027, launch Pro in Q4 and track four gates toward 105% NRR
+- –	Copilot build-out follows in Q3 and Q4 2027, with a Pro price test meanwhile
+- –	If the rewrite cannot fix half of mobile churn, launch Pro in Q2 instead
+
+=== Slide 3 ===
+[Title] How big Copilot really is
+- SECTION
+
+- Copilot demand is real but far below the internal case: at most $2.5M of add-on ARR, not $8M
+- 1   Demand
+- 2   Timing
+- 3   Pricing
+- 4   Plan
+
+=== Slide 4 ===
+[Title] Stated intent overstates Copilot demand: three times as many admins said they would buy as beta accounts paid
+
+- 46% of survey respondents said they were likely to buy at $149; 14% of beta accounts actually paid
+- 3.3x
+- Both samples are larger accounts than the typical customer, so even 14% flatters the base
+- Share saying likely to buy, or buying, % at $149 per account a month, 2026
+- Average office seats per account, seats, 2026
+[Chart: COLUMN_CLUSTERED]
+  categories: Survey: likely or very likely; Paywall test: bought
+  series 'Share': 0.46; 0.14
+[Chart: COLUMN_CLUSTERED]
+  categories: Survey respondents; Beta accounts; All accounts
+  series 'Seats': 9.4; 8.1; 6.2
+- Even the paywall rate is a ceiling: volunteers who chose to try Copilot are the likeliest buyers Brightwork has
+- 1  Survey: October 2026, 610 of 9,800 admins replied (6%). Paywall test: 120 beta accounts offered Copilot at $149 after the free period; 17 bought
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 5 ===
+[Title] Applied to every account, the paywall rate supports at most $2.5M of add-on ARR, under a third of the $8M case
+
+- New ARR from a $149 add-on in the first year, $ millions, all 9,800 accounts
+[Chart: COLUMN_CLUSTERED]
+  categories: Survey case (46% likely to buy); Paywall rate (14% bought)
+  series 'New ARR, first year': 8; 2.4531
+- The $8M rests on what admins said, not on what they paid
+- ▪	Survey case: 46% × 9,800 accounts × $1,788 a year gives $8.1M, from a 6% response skewed to large accounts
+- ▪	Paywall rate: 1,372 buying accounts at most, because the beta converted its keenest volunteers
+- How we sized the paywall case
+- ×
+- ×
+- =
+- ▪	Before costs: buyers at 6,800 requests a month would cost about $1.0M a year in inference, plus $0.6M of platform cost
+- 9,800
+- 14%
+- $1,788
+- $2.5M
+- customer accounts today
+- bought at $149 in the beta paywall test
+- a year per buyer ($149 × 12)
+- new ARR, a ceiling for the base
+- 1  $8M is the CPO's figure from the October 2026 survey; recomputed, 46% of 9,800 accounts at $1,788 a year is $8.06M
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 6 ===
+[Title] The beta's encouraging gains come from volunteers and a few heavy users, not yet from typical accounts
+
+- Dispatch Copilot beta results, 240 volunteer accounts, 12 weeks, 2026
+- 9 pp
+- 4 pp
+- 58%
+- faster growth in jobs per dispatcher-hour than matched accounts
+- higher 90-day renewal than matched accounts
+- of all AI requests came from the top 10% of beta accounts
+- 97% for beta accounts compared with 93% for matched accounts
+- Value and cost both sit with a few heavy users
+- +11% for beta accounts compared with +2% for matched accounts
+- ▪	Dispatchers self-report saving 4.1 hours a week
+- ▪	Volunteers were already more active, so part of the gap is selection
+- ▪	Untested on typical 6.2-seat accounts
+- ▪	Keen, engaged accounts renew more anyway
+- ▪	A 90-day window says little about annual churn of 14%
+- ▪	Needs a randomised test before it enters the plan
+- ▪	The median account sends 1,900 requests a month, the top tenth 14,500
+- ▪	Pricing has to charge for heavy use (section 3)
+- 1  Matched non-beta accounts; productivity is the change in jobs scheduled per dispatcher-hour against the prior 12 weeks
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 7 ===
+[Title] When to launch
+- SECTION
+
+- Copilot should wait for the mobile rewrite, whose delay puts nearly twice as much ARR at risk
+- 1   Demand
+- 2   Timing
+- 3   Pricing
+- 4   Plan
+
+=== Slide 8 ===
+[Title] Customers put mobile reliability well ahead of AI, both when they leave and when they ask for features
+
+- Mobile reliability is the top reason accounts left in 2026; AI is the smallest named one
+- 4.5x
+- Twice as many customers rank a reliable mobile app first as rank AI scheduling first
+
+- Main reason for churning, % of churned accounts, 2026, n = 1,190
+- Top-ranked feature request, % of respondents, 2026 customer survey
+[Chart: BAR_CLUSTERED]
+  categories: Mobile app reliability; Price; Other; Missing integrations; Went out of business / sold; Switched for AI features
+  series 'Share': 0.27; 0.22; 0.16; 0.15; 0.14; 0.06
+[Chart: BAR_CLUSTERED]
+  categories: Reliable technician mobile app; AI scheduling
+  series 'Share': 0.38; 0.19
+- The Head of Customer Success is right on the evidence: mobile reliability is cited 4.5 times as often as AI by accounts that left
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 9 ===
+[Title] Even if AI caused the whole fall in win rate against Routewise, it costs about $0.6M of ARR a year
+
+- Brightwork win rate in deals where Routewise competed, % of deals, 2026
+[Chart: COLUMN_CLUSTERED]
+  categories: Q1–Q2 2026; Q3 2026
+  series 'Win rate': 0.44; 0.37
+- AI can explain at most part of the drop
+- $0.6M
+- new ARR a year at most, if Copilot won back the whole fall
+- ▪	Q3 2026: Routewise launched AI in its Pro plan and offered 20% off the first year in the same quarter
+- ▪	Sales memo: a third of deals lost to Routewise is about 328 deals, $1.9M a year, 3.0 times what the whole drop is worth
+- Most the drop can be worth
+- 1,560
+- ×
+- 7 pp
+- ×
+- $5,877.6
+- =
+- $0.6M
+- ▪	Loss notes: 31% mention AI, but a mention is not the cause, and the notes cover all losses, not only Routewise
+- deals a year with Routewise (60% of 2,600)
+- lower win rate since Q1–Q2 2026
+- ARR per new 6.2-seat Core account
+- new ARR a year, an upper bound
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 10 ===
+[Title] Each quarter the mobile rewrite slips puts nearly twice as much ARR at risk as a quarter's wait for Copilot
+
+- ARR at risk per quarter of delay, $ thousands, at 2026 churn and win rates
+- ÷
+- =
+- $544.3K
+- $281.4K
+- 1.9x
+- ARR lost per quarter the rewrite slips: 27% of the 1,372 accounts that churn a year cite mobile, at $5,877.60 ARR each
+- ARR lost per quarter Copilot waits: Routewise deals ($160K) plus accounts that switch for AI ($121K)
+- as much ARR at risk from delaying the rewrite as from waiting on Copilot
+- Both sides are upper bounds; mobile first holds while the rewrite removes at least 52% of mobile churn
+- ▪	Mobile side: the rewrite ends mobile-reliability churn when it ships; neither side is proven to be the cause
+- ▪	Copilot side: Copilot wins back the whole Q3 drop and every AI-driven switch, although Routewise also cut prices by 20%
+- ▪	Pro is shifted, not lost, but waiting gives up about $257K of Pro contribution per quarter, one-off
+- ▪	On the 1,190 churned accounts that gave a reason, mobile risk is $472K a quarter, still 1.8 times
+- 1  Churn reasons from 2026 churned accounts (n = 1,190); win rates from §7 of the briefing pack; live formulas in the Calculations sheet
+- Source: team analysis
+
+=== Slide 11 ===
+[Title] How to package and price it
+- SECTION
+
+- Package Copilot in Pro at $12 more per seat, not a $149 add-on, with a usage allowance
+- 1   Demand
+- 2   Timing
+- 3   Pricing
+- 4   Plan
+
+=== Slide 12 ===
+[Title] A flat $149 add-on draws heavy users: buyers cost $61.20 a month to serve and the top tenth $130.50
+
+- AI inference cost per account, $ a month at $0.009 per request, by beta usage level; dashed line = $149 add-on price
+[Chart: COLUMN_CLUSTERED]
+  categories: Beta median (1,900 requests); Beta mean (3,600); Paywall buyers (6,800); Top 10% of beta (14,500)
+  series 'Inference cost': 17.1; 32.4; 61.2; 130.5
+- A flat price loses margin exactly where demand is
+- Add-on price  $149.00
+- ▪	Buyers: use almost twice the beta mean
+- ▪	Top 10%: send 58% of requests at a flat fee
+- Add-on margin after inference, paywall buyers
+- 58.9%
+- ($149 − $61.20) ÷ $149
+- Add-on margin after inference, top 10%
+- 12.4%
+- ($149 − $130.50) ÷ $149
+- 1  Request volumes from the 12-week beta; inference price fixed under the current contract through December 2027
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 13 ===
+[Title] A Pro plan fits Brightwork's goals better than an add-on, with half the entry price and revenue that grows with seats
+
+- Packaging options for Dispatch Copilot, $ a month and evidence from the briefing pack
+[Table]
+  |  | $149 add-on | Pro plan, $12 more per seat | For Brightwork |
+  | Price for an average 6.2-seat account, a month | $149 | $74.4 | Pro costs half the add-on |
+  | Adoption evidence | 14% of beta volunteers paid in the paywall test | 33% of accounts moved to the last new tier (2023) within a year | Pro has the stronger precedent |
+  | Who pays for heavy use | Nobody: heavy and light users pay the same flat fee | Per-seat fee plus an allowance, with overage above it | Pro charges for cost |
+  | Fit with the market | Priced on top of Core, against a rival that includes AI | Same packaging as Routewise's Pro plan since September 2026 | Pro removes a price gap in deals |
+  | Growth with the account | Flat per account; no gain as seats grow | Rises with every seat an account adds | Built for the NRR target / Per-seat pricing turns seat growth into expansion revenue, the lever 105% NRR needs |
+- 1  Routewise launched AI scheduling included in its Pro plan in September 2026
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 14 ===
+[Title] If a third of accounts move up as in 2023, Pro adds $2.9M of ARR, or $1.0M a year after costs
+
+- Pro plan economics in the first full year, $ millions, base case of 33% migration
+- −
+- −
+- =
+- $2.9M
+- $1.3M
+- $0.6M
+- $1.03M
+- new ARR: 3,234 accounts (33% of 9,800) at $892.80 a year ($12 × 6.2 seats × 12)
+- inference: 3,600 requests a month per account (beta mean) at $0.009
+- platform, evaluation and support a year
+- contribution a year, before the one-off build
+- Pro beats the add-on and covers the NRR target, if at least 26% of accounts move
+- ▪	Add-on, same maths at the 14% paywall rate: $2.45M of ARR, $0.84M a year after costs
+- ▪	NRR: $2.89M is 5.0 percentage points of today's $57.6M ARR; the 4 percentage point gap needs $2.30M
+- ▪	At 14% (the rate measured at $149, twice Pro's price), Pro adds $1.22M and only $0.09M after costs; at 46%, $4.02M
+- ▪	Build: $1.47M (14 engineers for two quarters at $210K a year), repaid in about 17 months
+- Pro lifts NRR once, in the year accounts move up; lower mobile churn is what holds 105% after that
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 15 ===
+[Title] Company margin stays above its floor only if Pro caps included usage near 5,300 requests per account a month
+
+- AI inference cost per account, $ a month at $0.009 per request; dashed line = Pro premium of $74.40 for a 6.2-seat account
+[Chart: COLUMN_CLUSTERED]
+  categories: Beta median (1,900 requests); Beta mean (3,600); Paywall buyers (6,800); Top 10% of beta (14,500)
+  series 'Inference cost': 17.1; 32.4; 61.2; 130.5
+- Pro needs a usage allowance to stay above the 75% floor
+- ▪	Heavy users: move first; the top tenth costs more than Pro earns
+- Pro revenue per account  $74.40
+- ▪	Allowance: 854 requests per seat a month, overage above it
+- Company margin, Pro at paywall-buyer usage
+- 74.1%
+- same, with $2.38M of inference
+- Requests per account a month at a 75% margin
+- 5,296
+- (25% × $60.49M − $12.67M − $0.6M) ÷ (3,234 × $0.009 × 12)
+- 1  Base case: 33% of accounts on Pro; platform cost counted as cost of revenue; company margin 78% today
+- 2  Inference at $0.009 per request is fixed through December 2027; the 35% fall in list prices over 12 months is upside from 2028 only
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 16 ===
+[Title] How to make it happen
+- SECTION
+
+- Staff the rewrite in H1 2027, launch Pro in Q4 and track four gates toward 105% NRR
+- 1   Demand
+- 2   Timing
+- 3   Pricing
+- 4   Plan
+
+=== Slide 17 ===
+[Title] Mobile first still puts Copilot on the market by late 2027, in time for Pro migration to count in 2028
+
+- Recommended sequence, by quarter, January 2027 planning
+- Q1 2027
+- Q2 2027
+- Q3 2027
+- Q4 2027
+- H1 2028
+- H2 2028
+- Decision
+- Mobile churn check
+- NRR target
+- Mobile app rewrite
+- Rewrite keeps its engineers
+- Copilot build-out
+- 14 engineers: metering, allowance, Pro billing
+- Pricing evidence
+- Pro price test on random non-beta accounts
+- Pro plan with Copilot
+- Launch, then migration toward a third of accounts
+- Inference contract
+- Renegotiate for 2028
+- The Pro price test runs during the rewrite, so Copilot launches with a tested price and allowance rather than a survey guess
+- 1  Assumes the rewrite needs these 14 engineers for the same two quarters Copilot would have taken; to be confirmed by Engineering in January
+
+=== Slide 18 ===
+[Title] Four gates tell the executive team early whether the plan stays on course
+
+- Launch gates, thresholds from the analysis in sections 2 and 3
+- Gate
+- Threshold
+- Pro migration keeps pace with the retention target
+- 26.3%
+
+- of accounts on Pro within 12 months of launch
+- Usage stays inside the allowance that protects margin
+- 5,296
+
+- requests per Pro account a month, on average
+- January check: the rewrite targets enough mobile churn to go first; if not, launch Pro in Q2
+- 51.7%
+
+- of mobile-reliability churn removed after launch
+- Win rate against Routewise recovers once Pro includes AI
+- 44%
+
+- win rate in Routewise deals, the Q1–Q2 2026 level
+- Decision today: approve Pro at $12 more per seat, and hold the Q2 launch unless the January check fails gate 3
+- Sources: Brightwork briefing pack, Dispatch Copilot decision; team analysis
+
+=== Slide 19 ===
+[Title] Next steps
+- Action
+- Owner
+- Timing
+- Confirm the rewrite needs the 14 engineers only through Q2 2027 and fixes at least half of mobile churn; if not, launch Pro in Q2
+- CTO with Head of Customer Success
+- January 2027
+
+- Design Pro: $12 more per seat, a per-seat usage allowance and an overage rate; build metering into billing
+- CPO and CFO
+- Q1 2027
+
+- Test Pro price and allowance on a random sample of non-beta accounts
+- CPO
+- Q2–Q3 2027
+
+- Renegotiate the inference contract for 2028 to capture falling list prices
+- CFO
+- Q3–Q4 2027
+
+- Brief Sales on the Pro launch date and keep current paying beta accounts served until then
+- VP Sales and Head of Customer Success
+- Q1 2027
+
