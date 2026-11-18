@@ -71,16 +71,16 @@ correction is the only kind of change to the analysis you may make, and every on
 
 ## Rules that keep the meaning
 
-- **Keep the source's numbers as written.** Show the value the source shows ($35.4M stays $35.4M even if your own
-  sum of rounded parts gives $35.3M); put the unrounded value in the workbook, not a new rounding on the slide. A
+- **Keep the source's numbers as written.** Show the value the source shows ($12.4M stays $12.4M even if your own
+  sum of rounded parts gives $12.3M); put the unrounded value in the workbook, not a new rounding on the slide. A
   number changes only through a logged correction.
 - **Never re-rank or re-weigh.** If the source says which option, risk or sensitivity matters most, the deck says the
   same, in the same order. If the source's own table disagrees with its ranking, that is a correction to log, not a
   silent rewrite of the title.
 - **Test the source against itself.** Before mapping, read each headline claim against the source's own exhibits
-  ("the largest cause" against its bridge, "needs no capital" against its cost table). A claim its own exhibit
+  ("the biggest driver" against its bridge, "no upfront cost" against its cost table). A claim its own exhibit
   contradicts is a correction: log it and state the supported version.
-- **Keep every recommendation-level claim.** Upside and positioning claims ("keeps a share of the market's growth")
+- **Keep every recommendation-level claim.** Upside and positioning claims ("positions us for the next product cycle")
   are units too; rewording them into something narrower drops them.
 
 ## Step C4 · Fidelity check (before rendering)
