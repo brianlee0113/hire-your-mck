@@ -1,0 +1,37 @@
+{
+ "x": "DBFYZS",
+ "y": "DXJMFT",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents share the same governing thought, the same six-condition test of the founders' hypothesis and the same market, economics, funding, alternative sequence. Y's executive summary is the cleaner hierarchy: four labelled claims each with their own evidence, including the +$2.02 plan figure and the $18M network loss. X's summary puts the 'six conditions' line under the market claim, where it does not support it. Against that, Y's slide 7 chart contradicts its own title and text: the chart shows riders at +0.22 and density at −0.31, while the title says rider productivity turns the plan loss-making and density leaves a thin positive. Y also points the density risk to Trigger 1 when the density trigger is Trigger 2, and cites the cash model as p. 14 when it is p. 13. X's titles, charts and cross-references agree throughout. The flaws roughly offset.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are the same: decline the launch, scale software with hires phased against signed contracts, build a store-based fast-delivery offer for grocers, and set four re-entry triggers with an April checkpoint. Both weigh the same three options, reject the one-store pilot on the same grounds (loses money at median, breaches runway in month 10, little new learning) and test the Zipcart route the same way. Both stress-test the software alternative down to a 34% growth floor. Y lists 'extend the pop-up' as a separate rejected alternative; X carries the same point inside decision 1. No material difference in the trade-offs weighed.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the key figures correctly: −$6.17 at median, −$1.76 at best observed, −$12.57 for the pop-up, 41.5% CAGR, $2.5M left against a $4.8M floor, −$1.05 with Zipcart's moves, and break-even AOV of about $50. The difference is the plan sensitivity on slide 7. Recomputing from the pack: riders at 2.4 an hour gives −$0.31, density at 900 a day gives +$0.27, promotions at 6% gives +$0.22. X's chart matches these. Y's chart assigns the three values to the wrong bars (riders +0.22, density −0.31, promotions +0.27), so its exhibit contradicts its own claim, even though the text conclusion is right. X also flags the +20% rider-cost figure as its own illustrative assumption not in the pack; Y presents it without that caveat. X's pop-up ramp estimate (178 to 407 a day) is exact, Y's (179 to 408) is slightly off. Neither computes the best-density case with a $3.99 fee (about +$2.25), though both give the 1,042 orders-a-day break-even.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both treat the founders' hypothesis identically. Each states it explicitly, breaks it into six conditions that must hold, tests each against the evidence, and reverses it. Both grant the same fair caveats: the pop-up was early, and Zipcart shows a route may exist at top density with premium pricing. Both turn that concession into the same re-entry triggers rather than a stealth launch, and both reject the one-store pilot instead of using it as a compromise. There is no difference in how the hypothesis is handled.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents are near-identical in argument, recommendation and analysis, and both meet every defensibility criterion in the answer key. The deciding difference is accuracy. X's exhibits agree with its claims throughout, and it labels its one invented input (+20% rider cost) as illustrative. Y's sensitivity chart on the founders' plan has three values on the wrong bars, contradicting its own title, and it has two wrong cross-references. Y's executive summary is somewhat tidier and more self-contained, but a board member checking the slide 7 chart against the headline would find a mismatch on exactly the point where the founders' plan is being stress-tested. That makes X the slightly safer document to decide from.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0348522
+}

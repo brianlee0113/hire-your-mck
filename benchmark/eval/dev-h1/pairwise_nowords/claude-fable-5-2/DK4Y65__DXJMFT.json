@@ -1,0 +1,37 @@
+{
+ "x": "DK4Y65",
+ "y": "DXJMFT",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents share the same governing thought (do not launch; back software) and the same five-part argument: market, unit economics, funding, alternative, decisions. X's executive-summary claims reappear as its section titles, and each slide carries one message. Y puts the six-condition hypothesis test up front, which is a good framing device, and its executive summary carries more of the key numbers (the best-observed loss of $1.76, the $18M network loss). However, Y's slide 7 breaks its own hierarchy: the title and text say the plan turns negative if AOV or rider productivity falls to the median, but its chart shows riders at +$0.22 and density at −$0.31. X's equivalent slide is consistent between title, chart and text. Y's slide 8 also says the store loses $6.17 'even if density reached the median', which does not match the page it cites (all drivers at the median). The difference is small because the storylines are otherwise the same.",
+   "winner": "X",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are substantively identical. Both decline the launch, back software-first with hires phased against signed contracts, build a store-based fast-delivery product for pipeline grocers, and set four re-entry triggers with a 90-day checkpoint. Both weigh the same three options (the full launch, a single pilot store, software-first) against the same criteria. Both reject the one-store pilot for the right reason: even the best observed density loses money, and the runway rule is breached in month 10. Both state the main risk to their own recommendation, a 34% ARR growth floor. Both land on the answer key's preferred recommendation and meet all its defensibility criteria. Neither proposes the capped, capital-light partner test, but the re-entry triggers drawn from customer-site data serve a similar purpose in both. There is no meaningful difference in the trade-offs weighed.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both reproduce the required calculations correctly: −$6.17 at the median, −$1.76 with best AOV and best density combined, −$12.57 for the pop-up, a 41.5% CAGR, and $2.5M (about 6 months) left against the 12-month rule. Both give break-even AOVs of $63 and $50. Both apply the Zipcart fee, promotion cut and volume loss to reach −$1.05 at the median and a break-even of about 1,042 orders a day, and both compute customer payback. Neither states the roughly +$2.25 result at best observed density with the fee, though the break-even density implies it. The difference is accuracy. My recomputation of the one-driver sensitivity gives AOV −$0.73, riders −$0.31, density +$0.27 and promotions +$0.22. X's chart matches this. Y's chart assigns +$0.22 to riders, −$0.31 to density and +$0.27 to promotions, so the values are mislabelled and contradict Y's own stated conclusion on that slide. Y also claims the pop-up store would lose $6.17 'even if density reached the median', which is wrong: that figure needs all four drivers at the median, and density alone would leave a larger loss. X states this correctly ('even with every driver at the median'). X has no comparable errors.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both state the founders' hypothesis explicitly, break it into the same six necessary conditions, find none met and reverse it. Both grant what is true in the founders' view: the 40%+ market growth is real, and the pop-up was an early test. Both engage the Zipcart evidence that partly supports the founders, concluding that a profitable route may exist only at high density with a fee and is not shown in Parcelbird's data. Both turn that into concrete re-entry triggers rather than a flat rejection. Y places the hypothesis test at the front and X near the end, which is a presentation difference and not a difference in how the hypothesis is handled.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents contain essentially the same analysis, recommendation, alternatives, risk treatment and decision requests, and both match the answer key's preferred conclusion with all critical calculations right. Y is more compact and leads with the hypothesis test, which some boards would find more direct. But Y has a mislabelled sensitivity chart that contradicts its own slide title: it shows rider shortfall as still profitable and density shortfall as loss-making, the reverse of the truth and of its text. Y also has a smaller misstatement about density alone producing the −$6.17 loss. A founder on the board could use the chart inconsistency to challenge the analysis. X presents the same reasoning without these errors, so it serves the decision maker slightly better.",
+   "winner": "X",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.1030442
+}

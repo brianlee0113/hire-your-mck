@@ -160,8 +160,15 @@ def analyse():
         src = source_run(m["case"])
         se = json.loads((src / "e2e.json").read_text())
         r["source"] = {"run": src.name, "slides": se.get("slides"), "words": se.get("words")}
-        spec = next((json.loads(p.read_text()) for p in (d / "workspace" / "deliverable").glob("*.json")
-                     if "slides" in json.loads(p.read_text())), {}) if (d / "workspace" / "deliverable").exists() else {}
+        spec = {}
+        for p in sorted((d / "workspace").glob("deliverable/*.json")) + sorted((d / "workspace").glob("work/*.json")):
+            try:  # the spec may be saved next to the deck or in the run's work folder
+                js = json.loads(p.read_text())
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                continue
+            if isinstance(js, dict) and "slides" in js and "data_points" in js:
+                spec = js
+                break
         cp = spec.get("compile") or {}
         dps = spec.get("data_points") or []
         r["spec"] = {"units": len(cp.get("units") or []), "critical_units": sum(1 for u in cp.get("units") or [] if u.get("critical")),

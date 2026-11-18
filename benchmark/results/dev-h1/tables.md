@@ -1,0 +1,79 @@
+# Development arm H1 · compile mode on B's finished decks
+
+Primary: content fidelity against decision units taken from the source B deck (Fable 5.2, written before any H1 deck was checked). Secondary: pairwise vs the source deck, without word counts in the judge prompt.
+
+| Run | Slides (B) | Words (B) | Critical units preserved | Altered / missing (critical) | Corrected | Still wrong | New errors c/m/m | Numbers found | check.py fails | Pairwise vs B | Cost | API min |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| dev-h1-c2-H1r-r3 | 35 (24) | 6285 (5342) | 67/72 (93%) | 5 / 0 | 0 | 2 | 0/0/4 | 342/370 (92%) | 0 | 0.75 (n=2) | $10.72 | 35.4 |
+| dev-h1-c2-H1s-r3 | 25 (24) | 5063 (5342) | 69/72 (96%) | 3 / 0 | 1 | 1 | 0/1/1 | 352/370 (95%) | 0 | 0.75 (n=2) | $12.04 | 39.0 |
+| dev-h1-c5-H1r-r2 | 30 (19) | 5609 (4477) | 96/97 (99%) | 0 / 1 | 3 | 0 | 0/0/2 | 181/185 (98%) | 0 | 1.00 (n=2) | $6.87 | 22.6 |
+| dev-h1-c5-H1s-r2 | 21 (19) | 4492 (4477) | 97/97 (100%) | 0 / 0 | 3 | 0 | 0/0/0 | 182/185 (98%) | 0 | 1.00 (n=2) | $8.45 | 28.6 |
+
+## What changed or went missing
+
+**dev-h1-c2-H1r-r3**
+- [altered, critical] Margin bridge FY2023 → FY2025 (3.37% → 1.02%), pts of sales / $M / share: gross margin −1.02 / −15.3 / 43%; e-commerce fulfilment −0.84 / −12.6 / 36%; store lab → Total shown as −$35.3M, not −$35.4M (rounding-level). The 43% and 36% shares are not shown separately, only the combined 79%. All other points, dollars and shares match.
+- [still_wrong, critical] Blind spot: nothing in the plan addresses promotions — the largest single cause (−$10.5M). → Repeats 'promotions, the largest cause at $10.5M'. The deck's own bridge (Slides 5 and 31) shows e-commerce fulfillment at −$12.6M as the largest single driver; promotions are the largest gross-margin driver only.
+- [altered, critical] Seven firm levers across four areas are worth ~$30M a year by FY2028 (base 30.1; range 16.8–38.0, i.e. $17–38M) and reach ~2.6%. → Base 30.1 and the '$17–38M' headline kept, but the table high end is $37.9M, not 38.0 (rounding-level drift).
+- [altered, critical] Lever split: gross margin $16.9M (promotions, vendor funding, private label, shrink) · targeted labour $5.5M · delivery repricing $3.3M · exit 6 lease-expiry st → Gross-margin lever shown as $17.0M (exec summary and chart), not $16.9M. Slide 20 footnote reconciles: $16.97M unrounded, $16.9M as the sum of rounded rows. Labor 5.5, delivery 3.3 and exits 4.4 unchanged.
+- [altered, critical] Low / base / high cases: total firm levers 16.8 / 30.1 / 38.0; FY2028 operating income ($7.7M + levers) 24.5 / 37.8 / 45.7; FY2028 operating margin (on $1,444M) → High-case total is 37.9, not 38.0, and high-case operating income is 45.6, not 45.7 (rounding-level). Low and base cases and the 1.7 / 2.6 / 3.2% margins are unchanged.
+- [altered, critical] Plan bridge, operating income $M FY2025 → FY2028: 15.3 FY2025 actual; −7.6 wage step & delivery rate; 7.7 if nothing changes; +16.9 gross-margin levers (1–4); + → Gross-margin levers bar is 17, not 16.9; footnote 2 reconciles to $16.9M. Everything else matches: 15.3, −7.6, 7.7, 5.5, 3.3, 4.4, 37.8, +9.9, 47.7, and 0.5% / 2.6% / 3.4%.
+- [still_wrong, critical] Why these four first: they pay back within the year, rest on the strongest evidence, need no capital or board vote, and can be reversed if traffic suffers. → Repeats 'pay back within the year, rest on the strongest evidence, need no capital or board vote'. Slide 21 shows ~$9.5M of firm-wave one-time cost, and Slide 16 rates targeted labor only Medium. The adjacent bullet does concede the store e
+- [altered] Shrink responds to reinvested hours: base 2.6% → 2.3%; if wrong only 2.45%; FY2028 impact −$2.1M; trigger: 10-store pilot shrink vs control. Shrink-by-quartile  → FY2028 impact shown as −$2.2M, not −$2.1M (rounding-level). 2.45% case, pilot trigger and correlation caveat unchanged.
+- [new error, minor] "fewer chain hours, taken in high-labor stores (Q3 and Q4), where extra hours buy little": Adds a specification the original does not make. The original says only '−3% hours in high-labour stores'; the remake reads it as 3% of all chain hours taken entirely from Q3 and Q4 stores, which impl
+- [new error, minor] "Evidence is medium: the shrink-by-quartile pattern is a correlation, so the 10-store shrink pilot tests it before scalin": On the lever 5 slide this can be read as gating the labor rebalancing on the shrink pilot. In the original the pilot gate applies to the lever 4 shrink programme (FY2027), while lever 5 starts now and
+- [new error, minor] "repricing fixes 24% of the $10.4M; halving the rest is worth $3.2M": 'The rest' of the $10.4M is about $7.9M, and half of that is about $3.9M. The original's $3.2M is half of the remaining $6.4M home-delivery loss, not the remaining e-commerce loss.
+- [new error, minor] "all figures from the board briefing pack": Overstates provenance. The original says the analysis is based only on the pack; many figures are team estimates (one-time allowances, 25% lost volume, FY2026 phasing, 40% switch under option C), as t
+
+**dev-h1-c2-H1s-r3**
+- [altered, critical] Reaching 3.0% by FY2028 means adding ~$35M of operating income (gap to close +35.6, from 7.7 if nothing changes to the 43.3 target) — more than double FY2025's  → Headline changed from '~$35M' to 'about $36M'. The underlying gap (35.6, from 7.7 to 43.3) and 'more than double $15.3M' are unchanged; this is a rounding change only.
+- [altered, critical] C. Margin-first, click-and-collect only — as B, but close home delivery and keep click-and-collect. FY2028 ~3.0% on firm levers ($42.9M); one-time cost ~$17M; F → Numbers, commitment breach, risks and fallback verdict are the same, but footnote 1 adds a hedge not in the original: the $42.9M 'could not be rebuilt exactly from the pack'. That lowers confidence in the fallback figure.
+- [still_wrong, critical] Why these four first: they pay back within the year, rest on the strongest evidence, need no capital or board vote, and can be reversed if traffic suffers. → Repeats 'Pay back in a year; strongest evidence; no capital or vote; reversible'. Slide 17 shows wave-1 one-time costs (e.g. $3M closures), targeted labor is only Medium evidence on slide 12, and the store exits add $0 in FY2026 on slide 23
+- [altered, critical] The answer is most sensitive to traffic response and vendor funding (key risks: ValuMart traffic and vendor push-back); each risk has a trigger, and the core di → Ranking of sensitivities changed. Original: most sensitive to traffic response and vendor funding. Slide 18 title now says 'Vendor funding and wages move the answer most'. Slide 2 still names ValuMart traffic and vendor push-back as key ris
+- [altered] Shrink responds to reinvested hours: base 2.6% → 2.3%; if wrong only 2.45%; FY2028 impact −$2.1M; trigger: 10-store pilot shrink vs control. Shrink-by-quartile  → FY2028 impact changed from −$2.1M to −$2.2M. Other cells and the correlation caveat are unchanged.
+- [altered] Analysis is based only on the board briefing pack (synthetic benchmark data); all figures $ millions unless stated; fiscal years end in January. → The synthetic-data flag is kept and '$ millions' appears on individual charts, but the statements that the analysis is based only on the briefing pack and that fiscal years end in January are not in the remake.
+- [new error, material] "Vendor funding and wages move the answer most; each risk has a trigger, and the diagnosis survives every test": The original concluded the answer is most sensitive to traffic response and vendor funding. The slide 18 title replaces traffic response with wages. It follows the table's impact sizes (−$3.7M, −$3.6M
+- [new error, minor] "its $42.9M is the analysis's estimate and could not be rebuilt exactly from the pack": A hedge added on slide 11 that the original does not carry; it lowers confidence in the fallback option C figure. The figure does reconcile from the deck's own numbers and the stated 40% assumption: 3
+
+**dev-h1-c5-H1r-r2**
+- [missing, critical] Selling store-based fast delivery to pipeline grocers gives Parcelbird a share of the market's growth → The claim that store-based fast delivery to pipeline grocers gives Parcelbird a share of the market's growth is not stated anywhere. Nearest wording is 'keeps a foothold in fast delivery' (Slide 18 title) and 'Upside for C' (Slide 24), whic
+- [altered] Pop-up (6 weeks) vs median: average order value $31 vs $34 (−9%); promotions 12% vs 6% (2× higher); orders per rider-hour 2.1 vs 2.4 (−13%); orders per site per → Orders per rider-hour gap shows -12% where the original has -13% (exact value -12.5%). Other three rows match. No effect on the conclusion.
+- [altered] Implication: even if density reached the median, the store would still lose $6.17 per order (p. 5). Ramp-up alone does not close the gap. → Condition changed from 'even if density reached the median' to 'even with every driver at the median'. The $6.17 and the conclusion are unchanged. The remake's condition is the accurate one: with only density at the median and the pop-up's 
+- [new error, minor] "One age group only: 25–39, the core convenience segment": The briefing pack gives the survey's age range but does not call 25–39 the core convenience segment, and the original says only 'one age group only'. The label is unsupported. The same slide's 'Says n
+- [new error, minor] "Record the decision to decline the 2027 launch and close the pop-up; keep its data and cohort learning": The original decision is 'do not extend the pop-up'. The pack describes a six-week temporary site in autumn 2026, so 'close' implies a site still operating. Slide 26 keeps the original wording; the de
+
+**dev-h1-c5-H1s-r2**
+- [altered] Fair caveat: it was early. Six weeks on a temporary site. Orders grew 18% a week, from roughly 179 a day in week 1 to roughly 408 in week 6 (our estimate from t → Ramp estimate changed from roughly 179 → 408 orders a day to about 178 → 407; the remake derives it from the 280-a-day average (footnote 2). The 18% weekly growth, 12% promotions and $38 CAC caveats are kept; "temporary site" is not stated.
+- [altered] Density in mid-size Midwest cities: pop-up 280/day vs median 900; range 400–1,400. Effect: strengthens 'don't launch'. Monitoring: Trigger 1 (p. 16) tracks dens → The monitoring reference changed from Trigger 1 to Trigger 2. Trigger 2 is the one that holds the density threshold (1,050 orders a day), so the new pointer is arguably the right one, but it differs from the original. Evidence and effect ar
+
+## Correction log
+
+- dev-h1-c2-H1r-r3 (self-reported): Gross-margin levers 1–4: $16.9M → $17.0M (Sum of the unrounded levers (6.06 + 3.74 + 4.33 + 2.83 = 16.97); the analysis added rounded values)
+- dev-h1-c2-H1r-r3 (self-reported): High case: levers $38.0M, FY2028 operating income $45.7M → $37.9M and $45.6M (margin still about 3.2%) (Recomputed from unrounded lever values; the title range '$17–38M' is unchanged)
+- dev-h1-c2-H1r-r3 (self-reported): Shrink reaching only 2.45%: −$2.1M → −$2.2M (0.15% × $1,444M = $2.17M; the analysis subtracted rounded lever values (2.8 − 0.7))
+- dev-h1-c2-H1r-r3 (self-reported): Title: 'The answer is most sensitive to traffic response and vendor funding' → 'Traffic response and vendor funding are the key risks' (the source's order kept) (In the analysis's own table vendor funding (−$3.7M) and a 6% wage step (−$3.6M) move FY2028 more than the traffic case ()
+- dev-h1-c2-H1s-r3 (self-reported): Title: 'adding ~$35M of operating income' → 'adding about $36M' (chart value $35.6M) (The gap is $43.3M − $7.7M = $35.6M, which rounds to $36M)
+- dev-h1-c2-H1s-r3 (self-reported): Shrink only reaches 2.45%: FY2028 impact −$2.1M → −$2.2M (0.15 pp × $1,444M = $2.17M; the source took the difference of rounded lever values (2.8 − 0.7))
+- dev-h1-c2-H1s-r3 (self-reported): Title: 'The answer is most sensitive to traffic response and vendor funding' → 'Vendor funding and wages move the answer most' (The analysis's own sensitivity table ranks vendor funding (−$3.7M) and a +6% wage step (−$3.6M) above shrink (−$2.2M) an)
+- dev-h1-c2-H1s-r3 (checker): Blind spot: nothing in the plan addresses promotions — the largest single cause (−$10.5M). — Corrected by omission: the remake says only 'promotions (−$10.5M) untouched' and drops 'largest single cause'. It does not spell out that e-commerce fulfillment
+- dev-h1-c5-H1r-r2 (self-reported): Sensitivity chart (analysis p. 7): 'Riders 3.5 → 2.4 /hr' +$0.22, 'Orders/day 1,800 → 900' −$0.31, ' → Riders at the median −$0.31, density at the median +$0.27, promotions at the median +$0.22 (Recomputed from Table 3 of the pack, the three values were attached to the wrong bars; the corrected values match the an)
+- dev-h1-c5-H1r-r2 (self-reported): 'Even if density reached the median, the store would still lose $6.17 per order' → 'Even with every driver at the median, a store would still lose $6.17 per order' ($6.17 is the all-median store; the pop-up with only its density at the median would lose more (about $8–10 per order, de)
+- dev-h1-c5-H1r-r2 (checker): Plan profit per order if one driver is at the median: Riders 3.5 → 2.4 /hr: 0.22 — Riders 3.5 → 2.4 now shows -0.306 (-$0.31) in the chart and the text, matching the correct version; the plan turns negative as the title says.
+- dev-h1-c5-H1r-r2 (checker): Plan profit per order if one driver is at the median: Orders/day 1,800 → 900: −0.31 — Orders a day 1,800 → 900 now shows +0.268 (+$0.27), matching the correct version.
+- dev-h1-c5-H1r-r2 (checker): Plan profit per order if one driver is at the median: Promotions 2% → 6%: 0.27 — Promotions 2% → 6% now shows +0.218 (+$0.22), matching the correct version.
+- dev-h1-c5-H1s-r2 (self-reported): Slide 7 chart: Riders 3.5 → 2.4 = +$0.22; Orders/day 1,800 → 900 = −$0.31; Promotions 2% → 6% = +$0. → Riders 3.5 → 2.4 = −$0.31; Orders a day 1,800 → 900 = +$0.27; Promotions 2% → 6% = +$0.22 (Recomputed from Table 3: the three values were attached to the wrong bars. The corrected values match the source's own t)
+- dev-h1-c5-H1s-r2 (self-reported): Pop-up ramp: roughly 179 orders a day in week 1 to roughly 408 in week 6 → About 178 a day in week 1 to about 407 in week 6 (The source's stated method (constant 18% weekly compounding, six-week average of 280 a day) gives 177.9 and 407.1)
+- dev-h1-c5-H1s-r2 (self-reported): Slide 15: density risk monitored by 'Trigger 1 (p. 16)' → Trigger 2 (p. 17) (On the source's own trigger slide, density (orders a day) is part of trigger 2, not trigger 1; page number also moves by)
+- dev-h1-c5-H1s-r2 (self-reported): Slide 11: '(model, p. 14)' → p. 13 (The cash path by option, which shows the month 5 and month 13 readings, is on page 13)
+- dev-h1-c5-H1s-r2 (checker): Plan profit per order if one driver is at the median: Riders 3.5 → 2.4 /hr: 0.22 — Riders 3.5 → 2.4 now shows −0.306 (−$0.31), consistent with the title.
+- dev-h1-c5-H1s-r2 (checker): Plan profit per order if one driver is at the median: Orders/day 1,800 → 900: −0.31 — Orders a day 1,800 → 900 now shows +0.268 (+$0.27).
+- dev-h1-c5-H1s-r2 (checker): Plan profit per order if one driver is at the median: Promotions 2% → 6%: 0.27 — Promotions 2% → 6% now shows +0.218 (+$0.22).
+
+## Numbers on the slides
+
+| Run | Data points | Derived | Estimates | Untraceable (critical) |
+|---|---:|---:|---:|---|
+| dev-h1-c2-H1r-r3 | 387 | 248 | 43 | 6 (6) |
+| dev-h1-c2-H1s-r3 | 429 | 271 | 38 | 11 (7) |
+| dev-h1-c5-H1r-r2 | 666 | 592 | 10 | 5 (4) |
+| dev-h1-c5-H1s-r2 | 403 | 103 | 2 | 4 (3) |

@@ -1,0 +1,37 @@
+{
+ "x": "DXJMFT",
+ "y": "DK4Y65",
+ "case": "c5-negative-entry",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents carry the same governing thought and the same four-part argument (market, economics, funding, alternative), ending in the same decisions. X puts the six-condition hypothesis test up front and says the deck follows that table, which is a tidy frame. Y maps five executive-summary points to five sections with page references and closes with the six-condition table as a synthesis. The difference is X's sensitivity slide (slide 7): its title and text say AOV or rider productivity at the median turns the plan negative and that density or promotions leave a thin positive margin, but its chart shows riders at +0.22 and density at −0.31. So X's evidence contradicts its own title on that slide. Y's equivalent slide (slide 10) is consistent with its title. X also has a minor page cross-reference slip (model cited as p. 14, it sits on p. 13).",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "The recommendations are the same: decline the launch, go software-first with hires phased against signed contracts, build a store-based fast-delivery offer for grocers, and set re-entry triggers. Both weigh the same three options, including a one-store pilot rejected because median economics still lose $6.17 per order and it breaches runway in month 10. Both cover the same trade-offs (growth versus unit economics, operator versus supplier, learning versus runway) and the same 34% growth threshold as the main risk to the software path. Y adds small touches: it discloses that the re-entry thresholds and the +20% rider-cost sensitivity are the analysis's own choices, and it shows the 33% versus 34% runway check. These do not change the quality of the judgment materially.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "evidence": {
+   "reasons": "Both get the required calculations right: −$6.17 at the median, −$1.76 at best observed, −$12.57 for the pop-up, 41.5% CAGR, $2.5M left (about 6 months of runway), and break-even AOV of about $50. Both handle Zipcart the same way (median store still loses $1.05 with the fee, promotion cut and volume loss), and neither computes the best-density case with the fee. The difference is the one-driver sensitivity on the founders' plan. Recomputing from Table 3 gives AOV −0.73, riders −0.31, density +0.27, promotions +0.22. Y reports exactly these. X's chart assigns them to the wrong drivers (riders +0.22, density −0.31, promotions +0.27), which is a numerical error that contradicts its own narrative. Y is also more careful on inference limits: the survey says nothing about price, the survey and pop-up cohorts are different groups, the Zipcart volume loss is applied to site cost only, contract counts are net of unknown churn, and the +20% rider cost is an assumed sensitivity.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "Both state the founders' hypothesis explicitly, test it against the same six conditions, and reverse it with identical evidence. Both keep what the evidence supports: growth is real, a profitable route may exist at top-quartile density with a fee, and the pop-up caveat that it was early. Both set re-entry triggers rather than closing the door. X leads with the hypothesis test on slide 3; Y places it as a synthesis on slide 23 and says outright that the data bear out the founders' 40%+ growth premise. These are differences of placement, not of substance.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "The two documents are substantively the same analysis and recommendation, and both meet every defensibility criterion in the answer key: realistic unit economics, growth separated from profit, the runway check, and the software alternative with a rejected pilot. Y serves the board slightly better because its sensitivity slide is numerically correct and consistent with its title, where X's chart mislabels three of the four values and contradicts its own headline. Y is also more open about which thresholds and sensitivities are the analysis's own assumptions. X's upfront hypothesis framing is a small structural plus but does not offset the error.",
+   "winner": "Y",
+   "strength": "slight"
+  }
+ },
+ "cost_usd": 1.0836842
+}

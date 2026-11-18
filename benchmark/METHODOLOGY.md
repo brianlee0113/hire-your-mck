@@ -372,3 +372,27 @@ blind reviewers.
 critical unit altered or missing is reported by name), no critical new error appears, and `check.py` passes. The
 variant comparison is descriptive (two cases). Pairwise preference is not a fidelity measure and decides nothing on
 its own; it shows whether the compiled deck reads worse than its source.
+
+**H1 results (2026-11-18; details in `results/dev-h1/tables.md`).** All 4 runs complete, audits clean, `check.py`
+0 fails, source workbooks with 387–666 numbers each (103–592 derived; 3–7 critical numbers that could not be
+traced, each acknowledged in the spec).
+- Fidelity (critical, valid units preserved): c5 restyle 97/97, c5 restructure 96/97 (one claim missing: selling
+  store-based delivery to grocers gives a share of market growth), c2 restyle 69/72, c2 restructure 67/72. Most c2
+  "altered" units are rounding-level ($35.4M → $35.3M, 16.9 → 17.0, 38.0 → 37.9). Substantive: c2 restyle changed
+  the sensitivity ranking in one title (traffic and vendor funding → vendor funding and wages, following its own
+  table; the checker calls it a material new error, the pairwise judge calls the new title more accurate); c2 decks
+  repeated one or two of B's own invalid claims ("promotions are the largest cause"; "the first four need no
+  capital").
+- By the rule fixed above, only c5 restyle passes outright; the c2 failures are rounding-level except the ranking
+  change, and c5 restructure misses one claim. No critical new error in any deck.
+- Corrections: both c5 decks found and fixed B's mislabelled sensitivity chart (the known error), each logged.
+- Pairwise vs the source B deck (no word counts): H1 preferred or tied in all 8 verdicts (c2 0.75 and 0.75, c5
+  1.00 and 1.00), every one "slight"; the judge called each pair "the same analysis" and decided on accuracy and
+  layout. This is the first arm in which the skill's output is not behind B.
+- Restyle kept closer to the source (21–25 slides vs B's 19–24) than restructure (30–35); fidelity was equal or
+  higher with restyle. Cost per compile $6.87–12.04, API 23–39 minutes, more than expected.
+
+**Change after the freeze (analysis only).** `explore_h1.py` looked for the spec only in `deliverable/`; two runs
+saved it in `work/`, so their number classes read as 0. The script now also reads `work/`. No judgment changed.
+The slide renders for the author's review were not made: PowerPoint automation stalled overnight (a dialog or a
+permission prompt), and was stopped.

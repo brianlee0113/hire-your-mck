@@ -1,4 +1,4 @@
-# Status and next steps (2026-11-17)
+# Status and next steps (2026-11-17, H1 added 2026-11-18)
 
 Where the benchmark work stands, what was decided, and what is open. Written so the work can resume from here.
 Summary page (private artifact): https://claude.ai/artifact/RpgPmAiGjyvfSRyMUTL9C4
@@ -76,3 +76,22 @@ Open decisions for the user:
 - Keep the laptop awake during runs (`caffeinate -is <cmd>`); a sleep hangs `claude -p` turns.
 - Branches: `benchmark` (main report) → `v1.3-audit` (E1) → `v1.3-e2` (E2, current). Nothing pushed since
   `benchmark`; Codex reads GitHub, so it cannot see E1/E2 until `v1.3-e2` is pushed.
+
+## Update 2026-11-18: hybrid H chosen, H1 run
+
+Agreed with Codex (third and fourth review): fidelity first, presentation quality second; A-12 a guide; Correction
+Log; critical untraceable numbers fail QA until acknowledged; restyle vs restructure; H2a (B as is, then compile) is
+the held-out H, H2b (Decision Brief + Storyline) tried on dev cases first; holdout 6 cases × (B, E1, H2a).
+
+H1 (METHODOLOGY §15, branch `v1.3-h`): compile mode on B's c2 r3 / c5 r2 decks. Pairwise vs B (no word counts):
+H1 preferred or tied in 8 of 8 verdicts, all "slight", "same analysis". Fidelity 93–100% of critical units; c5
+restyle perfect; c2 losses mostly rounding, one sensitivity-ranking change; c5 restructure missed one claim. Both
+c5 decks fixed B's known chart error. Restyle ≥ restructure on fidelity and kept the deck length.
+
+Open next:
+1. Render H1 slides for the author's review (`scripts/make_h1_review.py render`, then `build`); PowerPoint stalled
+   overnight, check for a dialog first.
+2. Tighten compile mode before the holdout (rounding: keep the source's rounded values; titles must not re-rank
+   options or risks; check the source's claims against its own exhibits). Then freeze.
+3. Send `docs/04-holdout-request-for-codex.md`; freeze the holdout design before the cases arrive.
+4. Usage 80% on 11/18 01:52; reset 11/21 17:00. No further runs before the reset.

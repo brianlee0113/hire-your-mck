@@ -1,0 +1,914 @@
+[
+ {
+  "run_id": "dev-h1-c2-H1r-r3",
+  "case": "c2-profitability",
+  "condition": "H1r",
+  "status": "complete",
+  "slides": 35,
+  "words": 6285,
+  "native_charts": 11,
+  "check_py_fail": 0,
+  "cost_usd": 10.717459,
+  "api_min": 35.417699999999996,
+  "source": {
+   "run": "main-c2-B-r3",
+   "slides": 24,
+   "words": 5342
+  },
+  "spec": {
+   "units": 57,
+   "critical_units": 43,
+   "corrections": [
+    {
+     "unit_id": "u27",
+     "was": "Gross-margin levers 1–4: $16.9M",
+     "now": "$17.0M",
+     "why": "Sum of the unrounded levers (6.06 + 3.74 + 4.33 + 2.83 = 16.97); the analysis added rounded values"
+    },
+    {
+     "unit_id": "u43",
+     "was": "High case: levers $38.0M, FY2028 operating income $45.7M",
+     "now": "$37.9M and $45.6M (margin still about 3.2%)",
+     "why": "Recomputed from unrounded lever values; the title range '$17–38M' is unchanged"
+    },
+    {
+     "unit_id": "u44",
+     "was": "Shrink reaching only 2.45%: −$2.1M",
+     "now": "−$2.2M",
+     "why": "0.15% × $1,444M = $2.17M; the analysis subtracted rounded lever values (2.8 − 0.7)"
+    },
+    {
+     "unit_id": "u44",
+     "was": "Title: 'The answer is most sensitive to traffic response and vendor funding'",
+     "now": "'Traffic response and vendor funding are the key risks' (the source's order kept)",
+     "why": "In the analysis's own table vendor funding (−$3.7M) and a 6% wage step (−$3.6M) move FY2028 more than the traffic case (−$2.0M), so 'most sensitive' overstates; the analysis's executive summary already calls traffic and vendor push-back the key risks"
+    }
+   ],
+   "untraceable": [
+    {
+     "data_point_id": "optC",
+     "critical": true,
+     "ack": "User unavailable during the build; kept as the analysis's own estimate, shown with a 'not rebuilt from the pack' note on the slide and listed in the delivery note",
+     "note": "Option C's $42.9M cannot be rebuilt: closing delivery with a 40% switch gives about $43.5–43.8M from the pack's per-order economics"
+    },
+    {
+     "data_point_id": "w2del",
+     "critical": true,
+     "ack": "User unavailable during the build; kept as the analysis's own estimate, shown with a 'not rebuilt from the pack' note on the slide and listed in the delivery note",
+     "note": "Second-wave delivery $3.0M; the analysis's own halving calculation gives $3.2M"
+    },
+    {
+     "data_point_id": "lo7",
+     "critical": true,
+     "ack": "User unavailable during the build; kept as the analysis's own estimate, shown with a 'not rebuilt from the pack' note on the slide and listed in the delivery note",
+     "note": "Store-exit low case $3.0M: the pack gives only totals for the nine stores"
+    },
+    {
+     "data_point_id": "hi7",
+     "critical": true,
+     "ack": "User unavailable during the build; kept as the analysis's own estimate, shown with a 'not rebuilt from the pack' note on the slide and listed in the delivery note",
+     "note": "Store-exit high case $5.0M: the pack gives only totals for the nine stores"
+    },
+    {
+     "data_point_id": "pl26",
+     "critical": true,
+     "ack": "User unavailable during the build; kept as the analysis's own estimate, shown with a 'not rebuilt from the pack' note on the slide and listed in the delivery note",
+     "note": "FY2026 private-label gain $1.0M; '~25% of run-rate' would give $1.1M"
+    },
+    {
+     "data_point_id": "gate24",
+     "critical": true,
+     "ack": "User unavailable during the build; kept as the analysis's own estimate, shown with a 'not rebuilt from the pack' note on the slide and listed in the delivery note",
+     "note": "The 2.4% checkpoint threshold has no stated basis in the analysis"
+    }
+   ],
+   "data_points": 387,
+   "derived": 248,
+   "estimates": 43
+  },
+  "fidelity": {
+   "critical": {
+    "preserved": 67,
+    "altered": 5
+   },
+   "other": {
+    "preserved": 64,
+    "altered": 1
+   },
+   "critical_invalid": {
+    "still_wrong": 2
+   }
+  },
+  "altered_or_missing": [
+   {
+    "id": "U019",
+    "critical": true,
+    "status": "altered",
+    "unit": "Margin bridge FY2023 → FY2025 (3.37% → 1.02%), pts of sales / $M / share: gross margin −1.02 / −15.3 / 43%; e-commerce fulfilment −0.84 / −12.6 / 36%; store labour −0.30 / −4.5 / 13%; occupancy & energy −0.20 / −3.0 / 8%; other SG&A 0.00 / 0.0 / 0%; total −2.35 / −35.4 / 100%.",
+    "note": "Total shown as −$35.3M, not −$35.4M (rounding-level). The 43% and 36% shares are not shown separately, only the combined 79%. All other points, dollars and shares match."
+   },
+   {
+    "id": "U062",
+    "critical": true,
+    "status": "still_wrong",
+    "unit": "Blind spot: nothing in the plan addresses promotions — the largest single cause (−$10.5M).",
+    "note": "Repeats 'promotions, the largest cause at $10.5M'. The deck's own bridge (Slides 5 and 31) shows e-commerce fulfillment at −$12.6M as the largest single driver; promotions are the largest gross-margin driver only."
+   },
+   {
+    "id": "U071",
+    "critical": true,
+    "status": "altered",
+    "unit": "Seven firm levers across four areas are worth ~$30M a year by FY2028 (base 30.1; range 16.8–38.0, i.e. $17–38M) and reach ~2.6%.",
+    "note": "Base 30.1 and the '$17–38M' headline kept, but the table high end is $37.9M, not 38.0 (rounding-level drift)."
+   },
+   {
+    "id": "U072",
+    "critical": true,
+    "status": "altered",
+    "unit": "Lever split: gross margin $16.9M (promotions, vendor funding, private label, shrink) · targeted labour $5.5M · delivery repricing $3.3M · exit 6 lease-expiry stores $4.4M.",
+    "note": "Gross-margin lever shown as $17.0M (exec summary and chart), not $16.9M. Slide 20 footnote reconciles: $16.97M unrounded, $16.9M as the sum of rounded rows. Labor 5.5, delivery 3.3 and exits 4.4 unchanged."
+   },
+   {
+    "id": "U083",
+    "critical": true,
+    "status": "altered",
+    "unit": "Low / base / high cases: total firm levers 16.8 / 30.1 / 38.0; FY2028 operating income ($7.7M + levers) 24.5 / 37.8 / 45.7; FY2028 operating margin (on $1,444M) 1.7% / 2.6% / 3.2%. Even the low case adds ~$17M of operating income; the high case reaches ~3.2% on firm levers alone. Cases vary one driver per lever.",
+    "note": "High-case total is 37.9, not 38.0, and high-case operating income is 45.6, not 45.7 (rounding-level). Low and base cases and the 1.7 / 2.6 / 3.2% margins are unchanged."
+   },
+   {
+    "id": "U097",
+    "critical": true,
+    "status": "altered",
+    "unit": "Plan bridge, operating income $M FY2025 → FY2028: 15.3 FY2025 actual; −7.6 wage step & delivery rate; 7.7 if nothing changes; +16.9 gross-margin levers (1–4); +5.5 targeted labour (5); +3.3 delivery repricing (6); +4.4 exit 6 stores (7); 37.8 firm plan; +9.9 second wave; 47.7 full plan. Operating margin 1.0% / 0.5% / 2.6% / 3.4%.",
+    "note": "Gross-margin levers bar is 17, not 16.9; footnote 2 reconciles to $16.9M. Everything else matches: 15.3, −7.6, 7.7, 5.5, 3.3, 4.4, 37.8, +9.9, 47.7, and 0.5% / 2.6% / 3.4%."
+   },
+   {
+    "id": "U109",
+    "critical": true,
+    "status": "still_wrong",
+    "unit": "Why these four first: they pay back within the year, rest on the strongest evidence, need no capital or board vote, and can be reversed if traffic suffers.",
+    "note": "Repeats 'pay back within the year, rest on the strongest evidence, need no capital or board vote'. Slide 21 shows ~$9.5M of firm-wave one-time cost, and Slide 16 rates targeted labor only Medium. The adjacent bullet does concede the store exits add nothing in FY2026."
+   },
+   {
+    "id": "U121",
+    "critical": false,
+    "status": "altered",
+    "unit": "Shrink responds to reinvested hours: base 2.6% → 2.3%; if wrong only 2.45%; FY2028 impact −$2.1M; trigger: 10-store pilot shrink vs control. Shrink-by-quartile is a correlation, hence the pilot.",
+    "note": "FY2028 impact shown as −$2.2M, not −$2.1M (rounding-level). 2.45% case, pilot trigger and correlation caveat unchanged."
+   }
+  ],
+  "corrected": [],
+  "new_errors": [
+   {
+    "quote": "fewer chain hours, taken in high-labor stores (Q3 and Q4), where extra hours buy little",
+    "problem": "Adds a specification the original does not make. The original says only '−3% hours in high-labour stores'; the remake reads it as 3% of all chain hours taken entirely from Q3 and Q4 stores, which implies roughly double that cut in those stores. It matches the sizing arithmetic but is an interpretation, not a carried-over statement.",
+    "severity": "minor"
+   },
+   {
+    "quote": "Evidence is medium: the shrink-by-quartile pattern is a correlation, so the 10-store shrink pilot tests it before scaling",
+    "problem": "On the lever 5 slide this can be read as gating the labor rebalancing on the shrink pilot. In the original the pilot gate applies to the lever 4 shrink programme (FY2027), while lever 5 starts now and delivers $2.7M in FY2026.",
+    "severity": "minor"
+   },
+   {
+    "quote": "repricing fixes 24% of the $10.4M; halving the rest is worth $3.2M",
+    "problem": "'The rest' of the $10.4M is about $7.9M, and half of that is about $3.9M. The original's $3.2M is half of the remaining $6.4M home-delivery loss, not the remaining e-commerce loss.",
+    "severity": "minor"
+   },
+   {
+    "quote": "all figures from the board briefing pack",
+    "problem": "Overstates provenance. The original says the analysis is based only on the pack; many figures are team estimates (one-time allowances, 25% lost volume, FY2026 phasing, 40% switch under option C), as the remake's own source lines and Slide 35 acknowledge.",
+    "severity": "minor"
+   }
+  ],
+  "numbers": {
+   "found": 342,
+   "total": 370,
+   "missing": [
+    [
+     "U001",
+     "1.0%"
+    ],
+    [
+     "U009",
+     "-0.3"
+    ],
+    [
+     "U009",
+     "-7.3"
+    ],
+    [
+     "U018",
+     "-0.30"
+    ],
+    [
+     "U018",
+     "-0.84"
+    ],
+    [
+     "U019",
+     "-0.30"
+    ],
+    [
+     "U019",
+     "-0.20"
+    ],
+    [
+     "U019",
+     "-2.35"
+    ],
+    [
+     "U019",
+     "43%"
+    ],
+    [
+     "U019",
+     "36%"
+    ],
+    [
+     "U019",
+     "-35.4"
+    ],
+    [
+     "U019",
+     "100%"
+    ],
+    [
+     "U019",
+     "-0.84"
+    ],
+    [
+     "U025",
+     "-10.5M"
+    ],
+    [
+     "U032",
+     "0.20"
+    ],
+    [
+     "U043",
+     "2.7%"
+    ],
+    [
+     "U047",
+     "-8.2%"
+    ],
+    [
+     "U048",
+     "-1.64"
+    ],
+    [
+     "U048",
+     "3.10"
+    ],
+    [
+     "U058",
+     "-0.3"
+    ],
+    [
+     "U058",
+     "-7.3"
+    ],
+    [
+     "U058",
+     "-5.6"
+    ],
+    [
+     "U071",
+     "38.0"
+    ],
+    [
+     "U083",
+     "38.0"
+    ],
+    [
+     "U083",
+     "45.7"
+    ],
+    [
+     "U097",
+     "1.0%"
+    ],
+    [
+     "U097",
+     "-7.6"
+    ],
+    [
+     "U118",
+     "-2.0M"
+    ]
+   ]
+  },
+  "pairwise_vs_B": [
+   {
+    "score": 0.5,
+    "strength": "slight",
+    "reasons": "These are the same analysis with the same diagnosis, sizing, options, recommendation, risks and next steps; the reasoning differences are marginal and offset each other. X is slightly more careful in flagging which figures are team estimates and gives the labour lever its own slide. Y makes the hypothesis revision explicit in the main flow and is more compact. Either would serve the CEO equally well for this decision."
+   },
+   {
+    "score": 1.0,
+    "strength": "slight",
+    "reasons": "These are the same analysis and the same recommendation, so the decision maker reaches the same decision with either. Y serves slightly better: a cleaner summary hierarchy, one message per slide on promotions and e-commerce, a dedicated justification of the targeted-labour lever against the shrink risk, and explicit point-of-use flags on the figures that are team estimates rather than pack data. X's advantages are compactness and having the hypothesis test in the main flow; its misplaced summary headings and denser slides are minor weaknesses. The margin is small."
+   }
+  ]
+ },
+ {
+  "run_id": "dev-h1-c2-H1s-r3",
+  "case": "c2-profitability",
+  "condition": "H1s",
+  "status": "complete",
+  "slides": 25,
+  "words": 5063,
+  "native_charts": 10,
+  "check_py_fail": 0,
+  "cost_usd": 12.042389600000002,
+  "api_min": 39.0028,
+  "source": {
+   "run": "main-c2-B-r3",
+   "slides": 24,
+   "words": 5342
+  },
+  "spec": {
+   "units": 32,
+   "critical_units": 29,
+   "corrections": [
+    {
+     "unit_id": "u02",
+     "was": "Title: 'adding ~$35M of operating income'",
+     "now": "'adding about $36M' (chart value $35.6M)",
+     "why": "The gap is $43.3M − $7.7M = $35.6M, which rounds to $36M"
+    },
+    {
+     "unit_id": "u23",
+     "was": "Shrink only reaches 2.45%: FY2028 impact −$2.1M",
+     "now": "−$2.2M",
+     "why": "0.15 pp × $1,444M = $2.17M; the source took the difference of rounded lever values (2.8 − 0.7)"
+    },
+    {
+     "unit_id": "u23",
+     "was": "Title: 'The answer is most sensitive to traffic response and vendor funding'",
+     "now": "'Vendor funding and wages move the answer most'",
+     "why": "The analysis's own sensitivity table ranks vendor funding (−$3.7M) and a +6% wage step (−$3.6M) above shrink (−$2.2M) and traffic (−$2.0M); traffic stays a key risk in the executive summary because it is the least certain input (pack §11)"
+    }
+   ],
+   "untraceable": [
+    {
+     "data_point_id": "optC",
+     "critical": true,
+     "ack": "Kept as the analysis's estimate, flagged unverified on p.11 (no user available; recommended option chosen). A direct rebuild from the pack gives about $43.2M, so the ~3.0% conclusion holds either way",
+     "note": "Option C's $42.9M cannot be rebuilt exactly; removing the post-repricing delivery loss and the contract gain, less the click-and-collect loss on 40% switchers, gives $42.9M only if the baseline +3% rate rise is not added back"
+    },
+    {
+     "data_point_id": "chk",
+     "critical": true,
+     "ack": "Kept as the analysis's gate threshold, flagged as a team estimate (no user available; recommended option chosen)",
+     "note": "The ~2.4% mid-FY2027 checkpoint is stated by the analysis without a derivation; it sits between the low case (1.7%) and the firm plan (2.6%)"
+    },
+    {
+     "data_point_id": "pl26",
+     "critical": true,
+     "ack": "Kept as the analysis's FY2026 phasing estimate (no user available; recommended option chosen); it moves FY2026 operating income by about $0.1M at most",
+     "note": "The analysis says ~25% of run-rate, which would be about $1.1M at FY2025 scale; it shows $1.0M"
+    },
+    {
+     "data_point_id": "w_del",
+     "critical": false,
+     "note": "Analysis rounds half of the remaining $6.4M delivery loss ($3.2M) to ~$3M"
+    },
+    {
+     "data_point_id": "l7_lo",
+     "critical": false,
+     "note": "Low case for the store exit is an analysis assumption (the 6 carry less of the loss)"
+    },
+    {
+     "data_point_id": "l7_hi",
+     "critical": false,
+     "note": "High case for the store exit is an analysis assumption"
+    },
+    {
+     "data_point_id": "al_tools",
+     "critical": true,
+     "ack": "Kept as the analysis's planning allowance, flagged for CFO validation as the source deck itself does",
+     "note": "Team planning allowance"
+    },
+    {
+     "data_point_id": "al_pl",
+     "critical": true,
+     "ack": "Kept as the analysis's planning allowance, flagged for CFO validation as the source deck itself does",
+     "note": "Team planning allowance"
+    },
+    {
+     "data_point_id": "al_promo",
+     "critical": true,
+     "ack": "Kept as the analysis's planning allowance, flagged for CFO validation as the source deck itself does",
+     "note": "Team planning allowance"
+    },
+    {
+     "data_point_id": "al_del",
+     "critical": true,
+     "ack": "Kept as the analysis's planning allowance, flagged for CFO validation as the source deck itself does",
+     "note": "Team planning allowance"
+    },
+    {
+     "data_point_id": "del_tgt",
+     "critical": false,
+     "note": "Scorecard target stated by the analysis; consistent with halving the post-repricing $9.04 loss"
+    }
+   ],
+   "data_points": 429,
+   "derived": 271,
+   "estimates": 38
+  },
+  "fidelity": {
+   "critical": {
+    "preserved": 69,
+    "altered": 3
+   },
+   "other": {
+    "preserved": 63,
+    "altered": 2
+   },
+   "critical_invalid": {
+    "corrected": 1,
+    "still_wrong": 1
+   }
+  },
+  "altered_or_missing": [
+   {
+    "id": "U008",
+    "critical": true,
+    "status": "altered",
+    "unit": "Reaching 3.0% by FY2028 means adding ~$35M of operating income (gap to close +35.6, from 7.7 if nothing changes to the 43.3 target) — more than double FY2025's $15.3M.",
+    "note": "Headline changed from '~$35M' to 'about $36M'. The underlying gap (35.6, from 7.7 to 43.3) and 'more than double $15.3M' are unchanged; this is a rounding change only."
+   },
+   {
+    "id": "U068",
+    "critical": true,
+    "status": "altered",
+    "unit": "C. Margin-first, click-and-collect only — as B, but close home delivery and keep click-and-collect. FY2028 ~3.0% on firm levers ($42.9M); one-time cost ~$17M; FY2026 ~$25M; breaks the 'keep delivery' commitment (needs the owners' consent); main risks customer backlash, weaker convenience position (44% shop for it). Verdict: hold as fallback if second-wave delivery pricing fails / wave 2 falls short.",
+    "note": "Numbers, commitment breach, risks and fallback verdict are the same, but footnote 1 adds a hedge not in the original: the $42.9M 'could not be rebuilt exactly from the pack'. That lowers confidence in the fallback figure."
+   },
+   {
+    "id": "U109",
+    "critical": true,
+    "status": "still_wrong",
+    "unit": "Why these four first: they pay back within the year, rest on the strongest evidence, need no capital or board vote, and can be reversed if traffic suffers.",
+    "note": "Repeats 'Pay back in a year; strongest evidence; no capital or vote; reversible'. Slide 17 shows wave-1 one-time costs (e.g. $3M closures), targeted labor is only Medium evidence on slide 12, and the store exits add $0 in FY2026 on slide 23."
+   },
+   {
+    "id": "U117",
+    "critical": true,
+    "status": "altered",
+    "unit": "The answer is most sensitive to traffic response and vendor funding (key risks: ValuMart traffic and vendor push-back); each risk has a trigger, and the core diagnosis survives every test.",
+    "note": "Ranking of sensitivities changed. Original: most sensitive to traffic response and vendor funding. Slide 18 title now says 'Vendor funding and wages move the answer most'. Slide 2 still names ValuMart traffic and vendor push-back as key risks, so the remake is also internally inconsistent. 'Each risk has a trigger' and 'diagnosis survives' are kept."
+   },
+   {
+    "id": "U121",
+    "critical": false,
+    "status": "altered",
+    "unit": "Shrink responds to reinvested hours: base 2.6% → 2.3%; if wrong only 2.45%; FY2028 impact −$2.1M; trigger: 10-store pilot shrink vs control. Shrink-by-quartile is a correlation, hence the pilot.",
+    "note": "FY2028 impact changed from −$2.1M to −$2.2M. Other cells and the correlation caveat are unchanged."
+   },
+   {
+    "id": "U139",
+    "critical": false,
+    "status": "altered",
+    "unit": "Analysis is based only on the board briefing pack (synthetic benchmark data); all figures $ millions unless stated; fiscal years end in January.",
+    "note": "The synthetic-data flag is kept and '$ millions' appears on individual charts, but the statements that the analysis is based only on the briefing pack and that fiscal years end in January are not in the remake."
+   }
+  ],
+  "corrected": [
+   {
+    "id": "U062",
+    "unit": "Blind spot: nothing in the plan addresses promotions — the largest single cause (−$10.5M).",
+    "note": "Corrected by omission: the remake says only 'promotions (−$10.5M) untouched' and drops 'largest single cause'. It does not spell out that e-commerce fulfillment (−$12.6M) is the largest single driver, though slide 5 shows that."
+   }
+  ],
+  "new_errors": [
+   {
+    "quote": "Vendor funding and wages move the answer most; each risk has a trigger, and the diagnosis survives every test",
+    "problem": "The original concluded the answer is most sensitive to traffic response and vendor funding. The slide 18 title replaces traffic response with wages. It follows the table's impact sizes (−$3.7M, −$3.6M) but changes the original's stated ranking of risks and contradicts the remake's own slide 2 ('Key risks are ValuMart traffic and vendor push-back'). Same change as recorded under U117.",
+    "severity": "material"
+   },
+   {
+    "quote": "its $42.9M is the analysis's estimate and could not be rebuilt exactly from the pack",
+    "problem": "A hedge added on slide 11 that the original does not carry; it lowers confidence in the fallback option C figure. The figure does reconcile from the deck's own numbers and the stated 40% assumption: 37.8 + 6.4 (remaining delivery loss) − 0.5 (281k switched orders × $1.64) − 0.8 (contract gain no longer available) ≈ 42.9. Same change as recorded under U068.",
+    "severity": "minor"
+   }
+  ],
+  "numbers": {
+   "found": 352,
+   "total": 370,
+   "missing": [
+    [
+     "U008",
+     "35M"
+    ],
+    [
+     "U019",
+     "-0.20"
+    ],
+    [
+     "U019",
+     "100%"
+    ],
+    [
+     "U043",
+     "2.7%"
+    ],
+    [
+     "U048",
+     "-7.40"
+    ],
+    [
+     "U048",
+     "-13.80"
+    ],
+    [
+     "U048",
+     "3.10"
+    ],
+    [
+     "U058",
+     "-5.6"
+    ],
+    [
+     "U059",
+     "0.25"
+    ],
+    [
+     "U071",
+     "38.0"
+    ],
+    [
+     "U074",
+     "13.0"
+    ],
+    [
+     "U074",
+     "14.0"
+    ],
+    [
+     "U083",
+     "38.0"
+    ],
+    [
+     "U087",
+     "6.40"
+    ],
+    [
+     "U087",
+     "7.40"
+    ],
+    [
+     "U087",
+     "13.80"
+    ],
+    [
+     "U097",
+     "-7.6"
+    ],
+    [
+     "U118",
+     "-2.0M"
+    ]
+   ]
+  },
+  "pairwise_vs_B": [
+   {
+    "score": 0.5,
+    "strength": "slight",
+    "reasons": "The two documents are substantively the same analysis and the same recommendation, with the same sizing, constraints check, risks, triggers and board asks. The differences are presentational or offsetting: X is slightly clearer on the e-commerce per-order economics and its executive summary; Y is slightly more accurate in two titles and adds one caveat on option C. Neither would serve the CEO materially better than the other."
+   },
+   {
+    "score": 1.0,
+    "strength": "slight",
+    "reasons": "These are essentially the same analysis and the same recommendation, with the same numbers, options, phasing, covenant check and board asks; either would serve the CEO well. The deciding differences are marginal. X is slightly more internally accurate: its sensitivity headline matches its table, it does not mislabel promotions as the largest single cause, its gap rounding is right, and it is candid that option C's figure is not reproducible. Y is slightly clearer on the e-commerce per-order economics and reconciliation and on the promotions break-even explanation. Because the decision maker would reach the same decision from either, the edge to X is small."
+   }
+  ]
+ },
+ {
+  "run_id": "dev-h1-c5-H1r-r2",
+  "case": "c5-negative-entry",
+  "condition": "H1r",
+  "status": "complete",
+  "slides": 30,
+  "words": 5609,
+  "native_charts": 11,
+  "check_py_fail": 0,
+  "cost_usd": 6.8681930000000015,
+  "api_min": 22.62141666666667,
+  "source": {
+   "run": "main-c5-B-r2",
+   "slides": 19,
+   "words": 4477
+  },
+  "spec": {
+   "units": 43,
+   "critical_units": 31,
+   "corrections": [
+    {
+     "unit_id": "u14",
+     "was": "Sensitivity chart (analysis p. 7): 'Riders 3.5 → 2.4 /hr' +$0.22, 'Orders/day 1,800 → 900' −$0.31, 'Promotions 2% → 6%' +$0.27",
+     "now": "Riders at the median −$0.31, density at the median +$0.27, promotions at the median +$0.22",
+     "why": "Recomputed from Table 3 of the pack, the three values were attached to the wrong bars; the corrected values match the analysis's own title and text (AOV or rider productivity at the median turns the plan negative; density or promotions alone leave $0.2–0.3)"
+    },
+    {
+     "unit_id": "u17",
+     "was": "'Even if density reached the median, the store would still lose $6.17 per order'",
+     "now": "'Even with every driver at the median, a store would still lose $6.17 per order'",
+     "why": "$6.17 is the all-median store; the pop-up with only its density at the median would lose more (about $8–10 per order, depending on the site cost), so the original wording understated the loss. The conclusion, that ramp-up alone does not close the gap, is unchanged"
+    }
+   ],
+   "untraceable": [
+    {
+     "data_point_id": "rid20",
+     "critical": false,
+     "note": "The +20% rider-cost rise is a sensitivity size chosen by the analysis; the pack gives no size for the proposed minimum-pay rules"
+    },
+    {
+     "data_point_id": "trig_opd",
+     "critical": true,
+     "ack": "Kept as the analysis's re-entry threshold (it rounds up the 1,042 orders a day we recomputed); flagged on the slide as set by the analysis. Chosen without the user, who was unavailable",
+     "note": "Threshold set by the analysis, not a fact in the pack"
+    },
+    {
+     "data_point_id": "trig_vol",
+     "critical": true,
+     "ack": "Kept as the analysis's re-entry threshold (just above Zipcart's 14% volume loss); flagged on the slide as set by the analysis. Chosen without the user, who was unavailable",
+     "note": "Threshold set by the analysis, not a fact in the pack"
+    },
+    {
+     "data_point_id": "trig_pay",
+     "critical": true,
+     "ack": "Kept as the analysis's re-entry threshold; it is a judgment, not a pack figure. Chosen without the user, who was unavailable",
+     "note": "Threshold set by the analysis"
+    },
+    {
+     "data_point_id": "chk90",
+     "critical": true,
+     "ack": "Kept as the analysis's proposed review timing. Chosen without the user, who was unavailable",
+     "note": "Timing proposed by the analysis"
+    }
+   ],
+   "data_points": 666,
+   "derived": 592,
+   "estimates": 10
+  },
+  "fidelity": {
+   "critical": {
+    "preserved": 96,
+    "missing": 1
+   },
+   "other": {
+    "preserved": 66,
+    "altered": 2
+   },
+   "critical_invalid": {
+    "corrected": 2
+   },
+   "other_invalid": {
+    "corrected": 1
+   }
+  },
+  "altered_or_missing": [
+   {
+    "id": "U027",
+    "critical": true,
+    "status": "missing",
+    "unit": "Selling store-based fast delivery to pipeline grocers gives Parcelbird a share of the market's growth",
+    "note": "The claim that store-based fast delivery to pipeline grocers gives Parcelbird a share of the market's growth is not stated anywhere. Nearest wording is 'keeps a foothold in fast delivery' (Slide 18 title) and 'Upside for C' (Slide 24), which belong to other units and are weaker."
+   },
+   {
+    "id": "U078",
+    "critical": false,
+    "status": "altered",
+    "unit": "Pop-up (6 weeks) vs median: average order value $31 vs $34 (−9%); promotions 12% vs 6% (2× higher); orders per rider-hour 2.1 vs 2.4 (−13%); orders per site per day 280 vs 900 (−69%)",
+    "note": "Orders per rider-hour gap shows -12% where the original has -13% (exact value -12.5%). Other three rows match. No effect on the conclusion."
+   },
+   {
+    "id": "U081",
+    "critical": false,
+    "status": "altered",
+    "unit": "Implication: even if density reached the median, the store would still lose $6.17 per order (p. 5). Ramp-up alone does not close the gap.",
+    "note": "Condition changed from 'even if density reached the median' to 'even with every driver at the median'. The $6.17 and the conclusion are unchanged. The remake's condition is the accurate one: with only density at the median and the pop-up's other inputs, the loss would be about $9.71."
+   }
+  ],
+  "corrected": [
+   {
+    "id": "U070",
+    "unit": "Plan profit per order if one driver is at the median: Riders 3.5 → 2.4 /hr: 0.22",
+    "note": "Riders 3.5 → 2.4 now shows -0.306 (-$0.31) in the chart and the text, matching the correct version; the plan turns negative as the title says."
+   },
+   {
+    "id": "U071",
+    "unit": "Plan profit per order if one driver is at the median: Orders/day 1,800 → 900: −0.31",
+    "note": "Orders a day 1,800 → 900 now shows +0.268 (+$0.27), matching the correct version."
+   },
+   {
+    "id": "U072",
+    "unit": "Plan profit per order if one driver is at the median: Promotions 2% → 6%: 0.27",
+    "note": "Promotions 2% → 6% now shows +0.218 (+$0.22), matching the correct version."
+   }
+  ],
+  "new_errors": [
+   {
+    "quote": "One age group only: 25–39, the core convenience segment",
+    "problem": "The briefing pack gives the survey's age range but does not call 25–39 the core convenience segment, and the original says only 'one age group only'. The label is unsupported. The same slide's 'Says nothing about price, fees or promotions' is likewise an inference the pack neither states nor contradicts.",
+    "severity": "minor"
+   },
+   {
+    "quote": "Record the decision to decline the 2027 launch and close the pop-up; keep its data and cohort learning",
+    "problem": "The original decision is 'do not extend the pop-up'. The pack describes a six-week temporary site in autumn 2026, so 'close' implies a site still operating. Slide 26 keeps the original wording; the decision is unaffected.",
+    "severity": "minor"
+   }
+  ],
+  "numbers": {
+   "found": 181,
+   "total": 185,
+   "missing": [
+    [
+     "U007",
+     "-26%"
+    ],
+    [
+     "U007",
+     "-46%"
+    ],
+    [
+     "U099",
+     "12.0M"
+    ],
+    [
+     "U123",
+     "13B"
+    ]
+   ]
+  },
+  "pairwise_vs_B": [
+   {
+    "score": 1.0,
+    "strength": "slight",
+    "reasons": "The two documents are substantively the same analysis and recommendation, and both meet every defensibility criterion in the answer key: realistic unit economics, growth separated from profit, the runway check, and the software alternative with a rejected pilot. Y serves the board slightly better because its sensitivity slide is numerically correct and consistent with its title, where X's chart mislabels three of the four values and contradicts its own headline. Y is also more open about which thresholds and sensitivities are the analysis's own assumptions. X's upfront hypothesis framing is a small structural plus but does not offset the error."
+   },
+   {
+    "score": 1.0,
+    "strength": "slight",
+    "reasons": "The two documents contain essentially the same analysis, recommendation, alternatives, risk treatment and decision requests, and both match the answer key's preferred conclusion with all critical calculations right. Y is more compact and leads with the hypothesis test, which some boards would find more direct. But Y has a mislabelled sensitivity chart that contradicts its own slide title: it shows rider shortfall as still profitable and density shortfall as loss-making, the reverse of the truth and of its text. Y also has a smaller misstatement about density alone producing the −$6.17 loss. A founder on the board could use the chart inconsistency to challenge the analysis. X presents the same reasoning without these errors, so it serves the decision maker slightly better."
+   }
+  ]
+ },
+ {
+  "run_id": "dev-h1-c5-H1s-r2",
+  "case": "c5-negative-entry",
+  "condition": "H1s",
+  "status": "complete",
+  "slides": 21,
+  "words": 4492,
+  "native_charts": 10,
+  "check_py_fail": 0,
+  "cost_usd": 8.4481172,
+  "api_min": 28.561683333333335,
+  "source": {
+   "run": "main-c5-B-r2",
+   "slides": 19,
+   "words": 4477
+  },
+  "spec": {
+   "units": 41,
+   "critical_units": 31,
+   "corrections": [
+    {
+     "unit_id": "u13",
+     "was": "Slide 7 chart: Riders 3.5 → 2.4 = +$0.22; Orders/day 1,800 → 900 = −$0.31; Promotions 2% → 6% = +$0.27",
+     "now": "Riders 3.5 → 2.4 = −$0.31; Orders a day 1,800 → 900 = +$0.27; Promotions 2% → 6% = +$0.22",
+     "why": "Recomputed from Table 3: the three values were attached to the wrong bars. The corrected values match the source's own title and text (AOV or rider productivity at the median turns the plan negative; density or promotions alone leave $0.2–0.3)"
+    },
+    {
+     "unit_id": "u16",
+     "was": "Pop-up ramp: roughly 179 orders a day in week 1 to roughly 408 in week 6",
+     "now": "About 178 a day in week 1 to about 407 in week 6",
+     "why": "The source's stated method (constant 18% weekly compounding, six-week average of 280 a day) gives 177.9 and 407.1"
+    },
+    {
+     "unit_id": "u35",
+     "was": "Slide 15: density risk monitored by 'Trigger 1 (p. 16)'",
+     "now": "Trigger 2 (p. 17)",
+     "why": "On the source's own trigger slide, density (orders a day) is part of trigger 2, not trigger 1; page number also moves by one because source slide 14 was split"
+    },
+    {
+     "unit_id": "u22",
+     "was": "Slide 11: '(model, p. 14)'",
+     "now": "p. 13",
+     "why": "The cash path by option, which shows the month 5 and month 13 readings, is on page 13"
+    }
+   ],
+   "untraceable": [
+    {
+     "data_point_id": "tr_opd",
+     "critical": true,
+     "ack": "Kept as the analysis's chosen re-entry threshold (1,042 orders a day break-even rounded up) and flagged as a judgement threshold; chosen on the user's behalf because they were unavailable",
+     "note": "Not in the briefing pack; set by the analysis"
+    },
+    {
+     "data_point_id": "tr_vol",
+     "critical": true,
+     "ack": "Kept as the analysis's chosen re-entry threshold (just above Zipcart's 14% volume loss) and flagged as a judgement threshold; chosen on the user's behalf",
+     "note": "Not in the briefing pack; set by the analysis"
+    },
+    {
+     "data_point_id": "tr_pay",
+     "critical": true,
+     "ack": "Kept as the analysis's chosen payback window for trigger 3, flagged as a judgement threshold; chosen on the user's behalf",
+     "note": "Not in the briefing pack; set by the analysis"
+    },
+    {
+     "data_point_id": "riderup",
+     "critical": false,
+     "note": "Illustrative +20% rider-cost scenario from the analysis; the pack gives no size for the minimum-pay rules. Footnoted as source not verified on p. 16"
+    }
+   ],
+   "data_points": 403,
+   "derived": 103,
+   "estimates": 2
+  },
+  "fidelity": {
+   "critical": {
+    "preserved": 97
+   },
+   "other": {
+    "preserved": 66,
+    "altered": 2
+   },
+   "critical_invalid": {
+    "corrected": 2
+   },
+   "other_invalid": {
+    "corrected": 1
+   }
+  },
+  "altered_or_missing": [
+   {
+    "id": "U080",
+    "critical": false,
+    "status": "altered",
+    "unit": "Fair caveat: it was early. Six weeks on a temporary site. Orders grew 18% a week, from roughly 179 a day in week 1 to roughly 408 in week 6 (our estimate from the compounding). But that growth came with 12% promotions and $38 of acquisition cost per customer.",
+    "note": "Ramp estimate changed from roughly 179 → 408 orders a day to about 178 → 407; the remake derives it from the 280-a-day average (footnote 2). The 18% weekly growth, 12% promotions and $38 CAC caveats are kept; \"temporary site\" is not stated. No effect on the conclusion."
+   },
+   {
+    "id": "U146",
+    "critical": false,
+    "status": "altered",
+    "unit": "Density in mid-size Midwest cities: pop-up 280/day vs median 900; range 400–1,400. Effect: strengthens 'don't launch'. Monitoring: Trigger 1 (p. 16) tracks density across customer sites",
+    "note": "The monitoring reference changed from Trigger 1 to Trigger 2. Trigger 2 is the one that holds the density threshold (1,050 orders a day), so the new pointer is arguably the right one, but it differs from the original. Evidence and effect are unchanged."
+   }
+  ],
+  "corrected": [
+   {
+    "id": "U070",
+    "unit": "Plan profit per order if one driver is at the median: Riders 3.5 → 2.4 /hr: 0.22",
+    "note": "Riders 3.5 → 2.4 now shows −0.306 (−$0.31), consistent with the title."
+   },
+   {
+    "id": "U071",
+    "unit": "Plan profit per order if one driver is at the median: Orders/day 1,800 → 900: −0.31",
+    "note": "Orders a day 1,800 → 900 now shows +0.268 (+$0.27)."
+   },
+   {
+    "id": "U072",
+    "unit": "Plan profit per order if one driver is at the median: Promotions 2% → 6%: 0.27",
+    "note": "Promotions 2% → 6% now shows +0.218 (+$0.22)."
+   }
+  ],
+  "new_errors": [],
+  "numbers": {
+   "found": 182,
+   "total": 185,
+   "missing": [
+    [
+     "U023",
+     "18M"
+    ],
+    [
+     "U099",
+     "12.0M"
+    ],
+    [
+     "U123",
+     "13B"
+    ]
+   ]
+  },
+  "pairwise_vs_B": [
+   {
+    "score": 1.0,
+    "strength": "slight",
+    "reasons": "The analysis, recommendation and handling of the hypothesis are essentially the same in both documents, and both meet every defensibility criterion in the answer key. The deciding differences are on accuracy. Y's sensitivity chart is correct and consistent with its claim; X's has the values against the wrong drivers, so the chart contradicts the slide's own title, which a board member checking the exhibit would notice. Y also discloses that the +20% rider-cost figure is its own assumption and has the trigger and page cross-references right. X's executive summary is a little richer and better structured, but that does not outweigh the exhibit error. Y serves the decision maker slightly better."
+   },
+   {
+    "score": 1.0,
+    "strength": "slight",
+    "reasons": "The two documents are near-identical in argument, recommendation and analysis, and both meet every defensibility criterion in the answer key. The deciding difference is accuracy. X's exhibits agree with its claims throughout, and it labels its one invented input (+20% rider cost) as illustrative. Y's sensitivity chart on the founders' plan has three values on the wrong bars, contradicting its own title, and it has two wrong cross-references. Y's executive summary is somewhat tidier and more self-contained, but a board member checking the slide 7 chart against the headline would find a mismatch on exactly the point where the founders' plan is being stress-tested. That makes X the slightly safer document to decide from."
+   }
+  ]
+ }
+]
