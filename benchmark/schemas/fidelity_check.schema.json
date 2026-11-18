@@ -1,0 +1,6 @@
+{"type": "object", "additionalProperties": false, "required": ["units", "new_errors"],
+ "properties": {
+  "units": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "status", "location", "note"],
+    "properties": {"id": {"type": "string"}, "status": {"enum": ["preserved", "altered", "missing", "corrected", "still_wrong"]}, "location": {"type": "string"}, "note": {"type": "string"}}}},
+  "new_errors": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["quote", "problem", "severity"],
+    "properties": {"quote": {"type": "string"}, "problem": {"type": "string"}, "severity": {"enum": ["critical", "material", "minor"]}}}}}}

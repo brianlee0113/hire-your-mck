@@ -337,3 +337,38 @@ calls. Those outputs and the run were moved to `runs/_aborted/dev-e2-c3-watchdog
 judgments was overwritten in the move; both scored an empty document), the blind id was withdrawn, and c3 was run
 again from scratch with the same skill snapshot and prompt. No model output was rerun or selected: none of the
 four aborted attempts produced a deliverable. The watchdog now reads only each run's newest attempt.
+
+## 15. Development arm H1: compile mode on B's finished decks (hybrid direction)
+
+**Why.** Across the main benchmark, C2, the slide review, E1 and E2, the six-line prompt (B) produced the stronger
+analysis and the skill the stronger deliverable. Hybrid H lets the B prompt do the analysis and makes the skill
+compile it into a deck without changing its meaning (`references/compile.md`, commit `1fd16ab`). H1 tests only the
+compile step: can the skill carry a finished analysis onto slides with nothing decision-relevant lost? It does not
+test reasoning. The design was agreed with an independent review (Codex) before any run.
+
+**Design.** Input: B's deck for the same case, extracted to text (`extract/deck.txt`), plus the briefing pack. Source
+decks: `main-c2-B-r3` and `main-c5-B-r2`, the two B decks of the author's slide review. Two variants: **H1s**
+(`restyle`: keep B's slide order and structure, change design and wording style) and **H1r** (`restructure`: keep
+the content, re-lay the argument). Phase `dev-h1`: 2 cases × 2 variants = 4 runs, order seeded (2031). Same model,
+effort, tools, sandbox and auto-reply as before; skill snapshot includes the 1.2.1 renderer fix and compile mode.
+
+**Primary outcome: content fidelity**, measured independently of the skill's own `compile` block.
+- Fable 5.2 lists the decision units of each source deck (answer, recommendations with conditions, claims with
+  their numbers, assumptions, ranges, alternatives, thresholds and gates, risks, decisions asked, next steps), marks
+  each `critical` and `valid`. B's known errors from the main evaluation are given, so an invalid unit fixed by H1
+  counts as a correction, not a loss. Written before any H1 deck is checked.
+- Fable 5.2 then marks each unit in each H1 deck `preserved`, `altered`, `missing`, `corrected` or `still_wrong`, and
+  lists new errors as critical, material or minor.
+- Deterministic check: numbers in critical, valid units must appear in the H1 deck text.
+- Correction log: the skill's self-reported `compile.corrections` and the checker's `corrected` units, reported apart
+  from preservation.
+
+**Secondary outcomes.** Pairwise H1 vs the source B deck (Fable 5.2, both orders, **prompt without word counts**,
+`prompts/eval/judge_pairwise_nowords.md`); slides, words, cost, API time; `check.py` result; number classes in the
+workbook (sourced, derived, estimate, untraceable); later, the author's slide review (not blind) and, if available,
+blind reviewers.
+
+**Reading rules, fixed now.** H1 passes on a deck if every critical, valid unit is preserved (target 100%; a single
+critical unit altered or missing is reported by name), no critical new error appears, and `check.py` passes. The
+variant comparison is descriptive (two cases). Pairwise preference is not a fidelity measure and decides nothing on
+its own; it shows whether the compiled deck reads worse than its source.

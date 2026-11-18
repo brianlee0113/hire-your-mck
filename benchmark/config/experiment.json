@@ -40,6 +40,18 @@
    "prompt": "prompts/conditions/E2_hire_your_mck_plan.md",
    "plugin": true,
    "note": "Development arm (METHODOLOGY.md §14). Same request as C2 and E1; the skill adds gap closing, base and stress case and decision gates to the E1 audit."
+  },
+  "H1s": {
+   "name": "Hire Your McK compile mode (restyle) on B's finished deck",
+   "prompt": "prompts/conditions/H1s_compile_restyle.md",
+   "plugin": true,
+   "note": "Development arm H1 (METHODOLOGY.md §15). Input: B's deck for the same case and replicate, extracted to text, plus the briefing pack."
+  },
+  "H1r": {
+   "name": "Hire Your McK compile mode (restructure) on B's finished deck",
+   "prompt": "prompts/conditions/H1r_compile_restructure.md",
+   "plugin": true,
+   "note": "Development arm H1 (METHODOLOGY.md §15). Input: B's deck for the same case and replicate, extracted to text, plus the briefing pack."
   }
  },
  "task_template": "prompts/conditions/task.md",
@@ -70,7 +82,8 @@
   "explore-c2_order": 2028,
   "dev-e1-smoke_order": 30,
   "dev-e1_order": 2029,
-  "dev-e2_order": 2030
+  "dev-e2_order": 2030,
+  "dev-h1_order": 2031
  },
  "cases": {
   "c1-market-entry": {
@@ -189,6 +202,31 @@
    ],
    "exploratory": true,
    "compare_with": "main B, dev-e1 E1 (replicate 1)"
+  },
+  "dev-h1": {
+   "cases": [
+    "c2-profitability",
+    "c5-negative-entry"
+   ],
+   "reps": 1,
+   "reps_by_case": {
+    "c2-profitability": [
+     3
+    ],
+    "c5-negative-entry": [
+     2
+    ]
+   },
+   "conditions": [
+    "H1s",
+    "H1r"
+   ],
+   "exploratory": true,
+   "analysis_from": {
+    "c2-profitability": "main/main-c2-B-r3",
+    "c5-negative-entry": "main/main-c5-B-r2"
+   },
+   "compare_with": "main B (the source decks: c2 r3, c5 r2, the pair the author reviewed as slides)"
   }
  },
  "normalizer": {

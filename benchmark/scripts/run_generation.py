@@ -48,8 +48,9 @@ def log(msg):
 # ---------------------------------------------------------------------------------------------- setup
 def schedule(phase: str):
     ph = CONFIG["phases"][phase]
+    reps_of = lambda c: ph.get("reps_by_case", {}).get(c) or range(1, ph["reps"] + 1)  # noqa: E731
     jobs = [{"run_id": f"{phase}-{CODE[c]}-{k}-r{r}", "case": c, "condition": k, "rep": r}
-            for c in ph["cases"] for k in ph.get("conditions", list(CONFIG["conditions"])) for r in range(1, ph["reps"] + 1)]
+            for c in ph["cases"] for k in ph.get("conditions", list(CONFIG["conditions"])) for r in reps_of(c)]
     rng = random.Random(CONFIG["seeds"][f"{phase}_order"])
     rng.shuffle(jobs)
     for i, j in enumerate(jobs):
@@ -189,6 +190,9 @@ def run_job(job, phase, work_root, venv_bin, plugin_dir, plugin_hash, all_runs):
         (ws / "evidence").mkdir(parents=True)
         (ws / "deliverable").mkdir()
         shutil.copy(BENCH / "cases" / job["case"] / "packet.md", ws / "evidence" / "briefing-pack.md")
+        src = (CONFIG["phases"][phase].get("analysis_from") or {}).get(job["case"])
+        if src:  # compile arms: the finished analysis (another run's deck, extracted to text) is part of the evidence
+            shutil.copy(BENCH / "runs" / src / "extract" / "deck.txt", ws / "evidence" / "analysis.md")
         settings_p = work_root / "_settings" / f"{run_id}.json"
         settings_p.parent.mkdir(parents=True, exist_ok=True)
         settings_p.write_text(json.dumps(sandbox_settings(work_root, ws, all_runs), indent=1))

@@ -1,0 +1,5 @@
+{"type": "object", "additionalProperties": false, "required": ["units"],
+ "properties": {"units": {"type": "array", "items": {"type": "object", "additionalProperties": false,
+   "required": ["id", "type", "text", "critical", "valid"],
+   "properties": {"id": {"type": "string"}, "type": {"enum": ["answer", "recommendation", "claim", "number", "assumption", "range_or_case", "alternative", "threshold_or_gate", "risk", "decision_asked", "next_step"]},
+     "text": {"type": "string"}, "source_loc": {"type": "string"}, "critical": {"type": "boolean"}, "valid": {"type": "boolean"}, "correct_version": {"type": "string"}}}}}}
