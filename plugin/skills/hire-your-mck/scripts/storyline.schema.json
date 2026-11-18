@@ -80,6 +80,9 @@
     },
     "decision_audit": {
       "$ref": "#/$defs/decision_audit"
+    },
+    "compile": {
+      "$ref": "#/$defs/compile"
     }
   },
   "$defs": {
@@ -3436,6 +3439,133 @@
                   "type": "string"
                 }
               }
+            }
+          }
+        }
+      }
+    },
+    "compile": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "references/compile.md: a finished analysis compiled into a deck without changing its meaning.",
+      "required": [
+        "source",
+        "variant",
+        "units"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "variant": {
+          "enum": [
+            "restyle",
+            "restructure"
+          ]
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "type",
+              "text",
+              "critical"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "source_loc": {
+                "type": "string"
+              },
+              "critical": {
+                "type": "boolean"
+              },
+              "slide_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "untraceable": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "data_point_id",
+              "critical"
+            ],
+            "properties": {
+              "data_point_id": {
+                "type": "string"
+              },
+              "critical": {
+                "type": "boolean"
+              },
+              "ack": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "corrections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "was",
+              "now",
+              "why"
+            ],
+            "properties": {
+              "unit_id": {
+                "type": "string"
+              },
+              "was": {
+                "type": "string"
+              },
+              "now": {
+                "type": "string"
+              },
+              "why": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "check": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "critical_units",
+            "preserved"
+          ],
+          "properties": {
+            "critical_units": {
+              "type": "integer"
+            },
+            "preserved": {
+              "type": "integer"
+            },
+            "notes": {
+              "type": "string"
             }
           }
         }

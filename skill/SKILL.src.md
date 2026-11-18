@@ -33,6 +33,7 @@ Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow
 | `references/spec-guide.md` | Writing the JSON: fields, statuses, data points, sources, placeholders |
 | `references/style.md` | Titles, unit lines, density, conclusion devices, themes |
 | `references/deep-deck.md` | Only for `deck_deep`: the seven-step workflow that replaces Steps 1–2 |
+| `references/compile.md` | Only when the user gives a finished analysis or deck to turn into ours: replaces Steps 1, 2 and 2b |
 | `examples/*.json` | Complete specs that pass QA. Copy their shape |
 
 ## The four modes
@@ -43,6 +44,8 @@ Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow
 | `deck_deep` | A decision to work through, plus research or files | 30–60 slides built with the seven-step process: problem, issue tree, sections, `filled` |
 | `deck_flow` | The landing message (plus any context) | `ghost`: real exhibit skeleton with "?" values, takeaway to prove, data needed |
 | `single_slide` | One lead message, or research for one slide | One `filled` slide |
+
+**Compile.** When the user gives an analysis that is already done (a memo, a draft deck, a deck from another tool) and asks for it in our format ("compile", "restyle", "turn this into our deck"), build a `deck_detailed` spec with a `compile` block and follow `references/compile.md`: the analysis is the source of truth, and you carry it onto slides without changing what it means.
 
 ## Workflow
 
