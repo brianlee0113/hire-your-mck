@@ -1,0 +1,27 @@
+{
+ "run_id": "holdout-c10-B-r1",
+ "condition": "B",
+ "status": "complete",
+ "events": 428,
+ "tools": {
+  "Bash": 15,
+  "Read": 28,
+  "Skill": 1,
+  "Write": 3
+ },
+ "subagent_calls": 0,
+ "skill_available": false,
+ "skill_text_seen": false,
+ "models_used": [
+  "claude-opus-5-5"
+ ],
+ "flags": {
+  "repo_or_key_access": [],
+  "network_attempts": [
+   "{\"command\": \"cd $TMPDIR && python3 -m venv venv && ./venv/bin/pip install -q python-pptx pillow 2>&1 | tail -2; ./venv/bin/python -c \\\"import pptx, PIL; print('ok', PIL.__version__)\\\"\", \"description\": \"Create venv with python-pptx and Pillow\", \"timeout\": 180000, \"allowed_domains\": [\"pypi.org\", \"file"
+  ],
+  "sandbox_denials": 2,
+  "permission_denials": 1
+ },
+ "clean": true
+}

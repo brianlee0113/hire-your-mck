@@ -1,0 +1,157 @@
+[
+ {
+  "run_id": "holdout-c10-B-r1",
+  "condition": "B",
+  "status": "complete",
+  "events": 428,
+  "tools": {
+   "Bash": 15,
+   "Read": 28,
+   "Skill": 1,
+   "Write": 3
+  },
+  "subagent_calls": 0,
+  "skill_available": false,
+  "skill_text_seen": false,
+  "models_used": [
+   "claude-opus-5-5"
+  ],
+  "flags": {
+   "repo_or_key_access": [],
+   "network_attempts": [
+    "{\"command\": \"cd $TMPDIR && python3 -m venv venv && ./venv/bin/pip install -q python-pptx pillow 2>&1 | tail -2; ./venv/bin/python -c \\\"import pptx, PIL; print('ok', PIL.__version__)\\\"\", \"description\": \"Create venv with python-pptx and Pillow\", \"timeout\": 180000, \"allowed_domains\": [\"pypi.org\", \"file"
+   ],
+   "sandbox_denials": 2,
+   "permission_denials": 1
+  },
+  "clean": true
+ },
+ {
+  "run_id": "holdout-c11-B-r1",
+  "condition": "B",
+  "status": "complete",
+  "events": 299,
+  "tools": {
+   "Bash": 11,
+   "Read": 2,
+   "Skill": 1,
+   "Write": 2
+  },
+  "subagent_calls": 0,
+  "skill_available": false,
+  "skill_text_seen": false,
+  "models_used": [
+   "claude-opus-5-5"
+  ],
+  "flags": {
+   "repo_or_key_access": [],
+   "network_attempts": [],
+   "sandbox_denials": 1,
+   "permission_denials": 0
+  },
+  "clean": true
+ },
+ {
+  "run_id": "holdout-c6-B-r1",
+  "condition": "B",
+  "status": "complete",
+  "events": 462,
+  "tools": {
+   "Bash": 14,
+   "Read": 22,
+   "Skill": 1,
+   "Write": 3
+  },
+  "subagent_calls": 0,
+  "skill_available": false,
+  "skill_text_seen": false,
+  "models_used": [
+   "claude-opus-5-5"
+  ],
+  "flags": {
+   "repo_or_key_access": [],
+   "network_attempts": [],
+   "sandbox_denials": 0,
+   "permission_denials": 0
+  },
+  "clean": true
+ },
+ {
+  "run_id": "holdout-c7-B-r1",
+  "condition": "B",
+  "status": "complete",
+  "events": 331,
+  "tools": {
+   "Bash": 13,
+   "Read": 1,
+   "Skill": 1,
+   "Write": 2
+  },
+  "subagent_calls": 0,
+  "skill_available": false,
+  "skill_text_seen": false,
+  "models_used": [
+   "claude-opus-5-5"
+  ],
+  "flags": {
+   "repo_or_key_access": [],
+   "network_attempts": [],
+   "sandbox_denials": 1,
+   "permission_denials": 0
+  },
+  "clean": true
+ },
+ {
+  "run_id": "holdout-c8-B-r1",
+  "condition": "B",
+  "status": "complete",
+  "events": 501,
+  "tools": {
+   "Bash": 26,
+   "Read": 21,
+   "Skill": 1,
+   "Write": 2,
+   "Agent": 1
+  },
+  "subagent_calls": 1,
+  "skill_available": false,
+  "skill_text_seen": false,
+  "models_used": [
+   "claude-opus-5-5"
+  ],
+  "flags": {
+   "repo_or_key_access": [],
+   "network_attempts": [],
+   "sandbox_denials": 2,
+   "permission_denials": 0
+  },
+  "clean": true
+ },
+ {
+  "run_id": "holdout-c9-B-r1",
+  "condition": "B",
+  "status": "complete",
+  "events": 523,
+  "tools": {
+   "Bash": 21,
+   "Read": 38,
+   "Skill": 1,
+   "Write": 2
+  },
+  "subagent_calls": 0,
+  "skill_available": false,
+  "skill_text_seen": false,
+  "models_used": [
+   "claude-opus-5-5"
+  ],
+  "flags": {
+   "repo_or_key_access": [],
+   "network_attempts": [
+    "{\"command\": \"cat > work/render.py <<'EOF'\\nimport sys, os, subprocess, copy\\nfrom pptx import Presentation\\nsrc, outdir = sys.argv[1], sys.argv[2]\\nos.makedirs(outdir, exist_ok=True)\\nn = len(Presentation(src).slides)\\nfor i in range(n):\\n    p = Presentation(src)\\n    ids = p.slides._sldIdLst\\n    "
+   ],
+   "sandbox_denials": 2,
+   "permission_denials": 0
+  },
+  "clean": true
+ }
+]

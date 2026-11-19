@@ -1,0 +1,241 @@
+{
+ "run_id": "holdout-c11-B-r1",
+ "case": "c11-oem-licensing",
+ "condition": "B",
+ "rep": 1,
+ "order": 12,
+ "phase": "holdout",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 597.5,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.328",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 18,
+      "duration_ms": 596341,
+      "duration_api_ms": 589600,
+      "total_cost_usd": 2.1433283999999997,
+      "usage": {
+       "input_tokens": 34,
+       "cache_creation_input_tokens": 87264,
+       "cache_read_input_tokens": 997002,
+       "output_tokens": 62284,
+       "output_tokens_details": {
+        "thinking_tokens": 28644
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 87264,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1413,
+         "cache_read_input_tokens": 93261,
+         "cache_creation_input_tokens": 1375,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1375
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 34,
+        "outputTokens": 62284,
+        "cacheReadInputTokens": 997002,
+        "cacheCreationInputTokens": 87264,
+        "webSearchRequests": 0,
+        "costUSD": 2.1433283999999997,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 28644,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 87264,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": "d keeps the direct channel. It matches exclusivity's value even if the OEM ships 24\u201332% fewer robots.\n- **Cash isn't a reason to take the advance.** Every option stays above the $2.6M buffer. The tightest case is the pilot at $0.55M above it, and only if all 2027 royalty payments are delayed into 2028.\n- **The product isn't ready yet.** The lab trial reached 98.8% uptime against a 99.5% requirement, and the safety assessment hasn't started.\n\n**Choices I made without you (all stated in the deck and README):**\n- I used Sales' 30\u201370% estimate of how many OEM buyers would otherwise buy direct to size the lost direct sales. I counted 2028 only, which flatters exclusivity. Whether those customers would also renew in 2029 is shown as a sensitivity.\n- I charged the $0.9M engineering for all three years and the $0.45M assessment to every OEM option.\n- The pilot's three-year figures assume its $350 price and the forecast volumes would last beyond 12 months, so treat them as an upper bound. The OEM has not guaranteed that price.\n- The cash test covers deal cash flows only, because the pack doesn't give the rest of the business's spending.\n- There is no NPV, as the board asked. I didn't put a value on the smaller integration-firm pilot because the pack doesn't give its royalty terms.\n\nFiles are in `./deliverable/`:\n- Boreal_OEM_Exclusivity_Board_Deck.pptx\n- README.md\n- work/model.py \u2014 reproduces every number\n- work/build_deck.py \u2014 rebuilds the deck\n- work/fitcheck.py \u2014 the text-fit check"
+    }
+   ],
+   "started": "2026-11-19T05:59:24+00:00",
+   "ended": "2026-11-19T06:09:22+00:00",
+   "session_id": "22b0f68a-fadd-4df9-95f1-5ece39f59448",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 2.1433283999999997,
+  "duration_s": 597.5,
+  "api_s": 589.6,
+  "turns": 18,
+  "input_tokens": 34,
+  "output_tokens": 62284,
+  "cache_read_tokens": 997002,
+  "cache_creation_tokens": 87264,
+  "cost_all_attempts_usd": 2.1433283999999997
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 2.1433283999999997,
+   "input": 34,
+   "output": 62284,
+   "cache_read": 997002,
+   "cache_creation": 87264
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "Create a deck for Boreal Autonomy board: Should Boreal Autonomy grant North American exclusivity to an OEM for its industrial robot navigation software in 2027?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.\n\nHow to approach it:\n- Work hypothesis-driven. State an initial answer early, write down what would have to be true for it to hold, test each of those against the evidence, and change the answer if the evidence does not support it.\n- Build the storyline with the pyramid principle: one governing thought that answers the question, an executive summary up front whose points become the sections, and the supporting arguments and evidence beneath each point.\n- Keep every grouping MECE (mutually exclusive, collectively exhaustive).\n- Give every slide an action title: a full-sentence takeaway that the slide's content proves.\n- Base the recommendation on evidence. Quantify where the data allows and show the calculations, weigh the alternatives and their trade-offs, and state the key assumptions, risks and uncertainties.",
+ "prompt_sha256": "233c7438ac5f1e2fbdd911ff8c5ddaf67eefb55a8b36c1ecd2d048d9e0970eb7",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.328 (Claude Code)",
+ "plugin_snapshot_sha256": null,
+ "plugin_source": null,
+ "repo_head": "5b51bfbf2b58f62000942dcd71dc2f07a16f9b57",
+ "packet_sha256": "89ec353ad257cce55d83c954087d4e2fdd71230d0827d3058ffbf1b58ed32b4b",
+ "files": [
+  {
+   "path": "workspace/deliverable/Boreal_OEM_Exclusivity_Board_Deck.pptx",
+   "bytes": 109992,
+   "sha256": "a8cce862c9429e3552f68da2fc49d3a670ff8f5f07ff9f23670f87a05f310511"
+  },
+  {
+   "path": "workspace/deliverable/README.md",
+   "bytes": 2676,
+   "sha256": "78ac026e034d46ca26bfc38e8fd0c813f75587d15ee7243d62ab29713bc85067"
+  },
+  {
+   "path": "workspace/deliverable/work/build_deck.py",
+   "bytes": 54648,
+   "sha256": "4824cba771e5fcfa2249f9b772f035ca5d2050ded3f8616992497052f483416c"
+  },
+  {
+   "path": "workspace/deliverable/work/fitcheck.py",
+   "bytes": 1687,
+   "sha256": "c86aa5c2103df736519d9a2fee52f23d0e72e653c7b246e879a6318a690a31c8"
+  },
+  {
+   "path": "workspace/deliverable/work/model.py",
+   "bytes": 2320,
+   "sha256": "1f0796e563592d3b3e0c92e83dff1b8dc9a8c8b9dc23e6a08a94f133cf34e4b9"
+  }
+ ]
+}
