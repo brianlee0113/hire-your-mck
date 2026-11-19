@@ -109,3 +109,12 @@ Next:
    judge, fidelity, pairwise; stops at 82% usage or if a frozen file changed).
 2. The author reviews rendered slides blind to condition **before** reading `results/holdout/tables.md`.
 3. Send the results to Codex; HN post (~2026-11-23).
+
+## Planned after the holdout: H2b on the dev cases (agreed 2026-11-19)
+
+H2b: B writes a decision brief + storyline instead of a deck; the skill compiles that document. Possible gains:
+no layout work thrown away, less re-reading of a deck (H1's rounding and ranking drift came from deck → deck).
+Expected saving is small (H1: B $2–4 vs compile $7–12), and changing B's output may change its analysis, so it is
+tried on dev cases c2 and c5 first (2 B-brief runs + 2 compiles, about $25 / 2% usage), compared with H1s on cost,
+time and fidelity (checker v2). Priority rises if the holdout shows H2a fidelity problems. Not part of the frozen
+holdout.
