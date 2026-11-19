@@ -396,3 +396,56 @@ traced, each acknowledged in the spec).
 saved it in `work/`, so their number classes read as 0. The script now also reads `work/`. No judgment changed.
 The slide renders for the author's review were not made: PowerPoint automation stalled overnight (a dialog or a
 permission prompt), and was stopped.
+
+## 16. Holdout: B, E1 and H2a-restyle on six unseen cases (design written before the cases were opened)
+
+**Why.** H1 showed, on two development cases, that compile mode can carry a B deck onto slides without reading worse
+than its source. The holdout asks whether that holds on cases nobody tuned the skill on, and whether H2a is a
+better product than the integrated skill (E1). Design agreed with Codex (fifth review, 2026-11-18). Codex wrote the
+cases c6–c11 and their answer keys; the author of the skill (Claude) wrote this section and the rule changes below
+before opening any packet or key.
+
+**Rule changes before the freeze (from the H1 results and the fifth review).**
+- `compile.md`: a correction must be verified first (same metric, definition, base and period; a strategic ranking
+  and a sensitivity size are different things); each correction logs `source_loc`, `was`, `now`, `why`,
+  `evidence` and `affects` (every slide that carries the unit, `es` for the summary), and the affected slides are
+  re-read together. Re-ranking only on a verified contradiction. Acknowledged untraceable numbers stay marked as
+  unverified. Recommended variant: `restyle`.
+- `check.py` CP-03 fails a correction without `source_loc`, `evidence` or `affects`, or one whose `affects` leaves
+  out a slide that carries the unit.
+- Fidelity checker v2 (`prompts/eval/fidelity_check_v2.md`): five statuses, `preserved`, `verified_correction`,
+  `unsupported_alteration`, `missing`, `inherited_error`; it also reads the remake's correction log. The H1 files are
+  kept unchanged for reproducibility.
+
+**Conditions.** B (six-line prompt, as in the main benchmark), E1 (skill with decision audit, §13), H2a-restyle
+(the compile step, variant `restyle`, run on that case's B deck: its extracted text plus the briefing pack, as in
+H1). H1r is dropped: on both development cases restyle preserved as much or more and kept the deck length. 6 cases ×
+1 replicate × 3 conditions = 18 runs (B 6, E1 6, H2a 6, each H2a after its B). Same model, effort, tools, sandbox
+and auto-reply as before; the generation sandbox denies reads of `answer_keys/`.
+
+**Two comparisons, kept apart.**
+1. **B → H2a: does compiling keep the analysis?** Primary. Units from each B deck (Fable 5.2, `fidelity_units.md`,
+   known errors = B's errors found by the answer-key evaluation of that deck), written before any H2a deck is
+   checked; fidelity checker v2 on each H2a deck; deterministic number check. Reported apart: **preservation rate**
+   (critical valid units `preserved`), **correction rate** (critical invalid units `verified_correction`), and
+   counts of `unsupported_alteration`, `missing`, `inherited_error` and new errors by severity. Also: pairwise H2a vs
+   its B deck (no word counts, both orders), extra cost and API time of the compile step.
+2. **E1 vs H2a: which is the better final deliverable?** Pairwise, Fable 5.2, no word counts, both orders; a win
+   counts only when both orders agree. Rubric scores from the answer-key evaluation for all three conditions. H2a's
+   cost is reported as **B + compile**.
+
+**Reading rules, fixed now.**
+- An H2a deck passes fidelity if every critical unit is `preserved` or `verified_correction`, no critical new error
+  appears, and `check.py` passes. Reported per case by name. The question Codex asked: do the H1 failure modes
+  (re-ranking, rounding drift, a dropped claim) still appear?
+- A correction that creates a critical or material new error counts against H2a even when the corrected unit is
+  scored `verified_correction`.
+- Pairwise preference over B does not show better reasoning: H2a inherits B's analysis. Wins over B are read as
+  "no loss from compiling", ties as the expected result.
+- E1 vs H2a with 6 cases is exploratory: "ahead in at least 5 of 6 cases" is the strongest wording allowed; 4 of 6
+  or fewer is described as mixed.
+- Automated judges read text only. Visual quality is judged by the author on rendered slides, blind to condition,
+  before any automated verdict for these cases is seen; this review is the third question (is the result worth the
+  extra time and cost?).
+- After the cases are opened, nothing in the skill, the conditions or these rules changes. Any change is recorded
+  as a deviation and the affected results are marked.

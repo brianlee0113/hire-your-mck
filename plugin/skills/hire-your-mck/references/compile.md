@@ -10,7 +10,8 @@ clearer titles and editable charts are the value you add; a different argument i
 
 ## Variant
 
-Set `compile.variant` from the request (ask only if it is unclear; recommend `restructure`):
+Set `compile.variant` from the request (ask only if it is unclear; recommend `restyle`, which keeps the source's
+meaning more reliably and its length close to the source):
 
 - **`restyle`**: keep the source's slide order and its one-slide-one-point structure. Change layout, chart form,
   styling and wording style. Split a source slide only when it cannot be read at the theme's sizes; never merge two.
@@ -47,11 +48,22 @@ write data points as usual (Step 2 of `SKILL.md`, rules V-01–V-04):
 Never invent a formula to make an untraceable number look checked. In `compile.untraceable`, mark `critical: true`
 when the number is in a title, the executive summary, a gate or a recommendation's headline: `check.py` fails a
 critical untraceable number until it is acknowledged (`ack`: what the user decided, e.g. "keep as the analysis's
-estimate, flagged unverified"). Ask about it at Checkpoint 3 as a multiple-choice question.
+estimate, flagged unverified"). Ask about it at Checkpoint 3 as a multiple-choice question. Acknowledged is not
+verified: the number stays marked as the analysis's unverified estimate on its slide and in the delivery note.
 
 **Corrections.** If a number or claim in the source contradicts the evidence or its own arithmetic, do not fix it
-silently. Use the corrected value and record it in `compile.corrections` (`unit_id`, `was`, `now`, `why`). A
-correction is the only kind of change to the analysis you may make, and every one is logged.
+silently. A correction is the only kind of change to the analysis you may make, and every one is logged and checked:
+
+1. **Verify before you correct.** Confirm the error from evidence, not from appearance: the same metric, the same
+   definition, the same base and the same period. Two numbers that measure different things are not a
+   contradiction ("most important risk" is a strategic judgement; "largest swing in the sensitivity table" is a
+   number, and the two can differ). If you cannot show the error, it is not one: keep the source's wording, and if a
+   reader could misread it, add a footnote saying what each exhibit measures.
+2. **Log it** in `compile.corrections` with `unit_id`, `source_loc` (where the source says it), `was`, `now`, `why`,
+   `evidence` (the excerpt, the source's own exhibit, or the recomputation that shows the error) and `affects` (the
+   id of every slide that carries the unit or depends on it, including `es` for the executive summary).
+3. **Re-check every slide in `affects`** after the change: the executive summary, titles and body must say the
+   same thing. A correction that leaves the summary and a body slide disagreeing is a new error.
 
 ## Step C3 · Map units to slides
 
@@ -75,18 +87,20 @@ correction is the only kind of change to the analysis you may make, and every on
   sum of rounded parts gives $12.3M); put the unrounded value in the workbook, not a new rounding on the slide. A
   number changes only through a logged correction.
 - **Never re-rank or re-weigh.** If the source says which option, risk or sensitivity matters most, the deck says the
-  same, in the same order. If the source's own table disagrees with its ranking, that is a correction to log, not a
-  silent rewrite of the title.
+  same, in the same order. If the source's own table seems to disagree with its ranking, first check whether they
+  rank the same thing (step 1 of Corrections). Only a verified contradiction is corrected, and then on every slide in
+  `affects`; otherwise keep the source's ranking.
 - **Test the source against itself.** Before mapping, read each headline claim against the source's own exhibits
   ("the biggest driver" against its bridge, "no upfront cost" against its cost table). A claim its own exhibit
-  contradicts is a correction: log it and state the supported version.
+  contradicts is a correction: verify it, log it and state the supported version.
 - **Keep every recommendation-level claim.** Upside and positioning claims ("positions us for the next product cycle")
   are units too; rewording them into something narrower drops them.
 
 ## Step C4 · Fidelity check (before rendering)
 
 Read the deck against `compile.units`, unit by unit: is each critical unit there, with the same numbers,
-conditions, confidence and ranking of options? Record the result in `compile.check`
+conditions, confidence and ranking of options? Then read every correction's `affects` slides together. Record the
+result in `compile.check`
 (`critical_units`, `preserved`, `notes`). Fix any loss before rendering. Then continue with Steps 3–5 of
 `SKILL.md`; skip Step 2b.
 

@@ -1101,8 +1101,20 @@ if cp:
         elif ut.get("critical") and not str(ut.get("ack") or "").strip():
             out("CP-02", "fail", f"critical number {ut.get('data_point_id')} cannot be traced to the evidence or recomputed; ask the user and record the answer in ack")
     for k, co in enumerate(cp.get("corrections") or []):
-        if not all(str(co.get(x) or "").strip() for x in ("was", "now", "why")):
-            out("CP-03", "fail", f"correction {k + 1} needs was, now and why")
+        lacking = [x for x in ("source_loc", "was", "now", "why", "evidence") if not str(co.get(x) or "").strip()]
+        if lacking:
+            out("CP-03", "fail", f"correction {k + 1} needs {', '.join(lacking)}; a correction must show the evidence for the error")
+        aff = co.get("affects") or []
+        if not aff:
+            out("CP-03", "fail", f"correction {k + 1} lists no affected slides; name every slide that carries the unit (and 'es' if the summary does), then re-read them together")
+        bad = [x for x in aff if x != "es" and x not in slides]
+        if bad:
+            out("CP-03", "fail", f"correction {k + 1} affects unknown slide(s) {', '.join(bad)}")
+        u = next((u for u in units if u.get("id") == co.get("unit_id")), None)
+        if u and aff:
+            missed = [x for x in u.get("slide_ids") or [] if x not in aff]
+            if missed:
+                out("CP-03", "fail", f"correction {k + 1} changes unit {u.get('id')} but leaves out slide(s) {', '.join(missed)} that carry it")
     ck = cp.get("check")
     n_crit = sum(1 for u in units if u.get("critical"))
     if not ck:
