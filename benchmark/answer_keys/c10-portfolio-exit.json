@@ -1,0 +1,193 @@
+{
+  "case_id": "c10",
+  "title": "Vesper MedTech — product portfolio",
+  "decision_question": "Should Vesper MedTech discontinue its low reported-margin sterile connector C and redeploy the team to connector D?",
+  "initial_hypothesis": {
+    "holder": "CEO",
+    "statement": "Drop connector C immediately because it has 8% reported product gross margin versus 30% for D.",
+    "expected_handling": "reject",
+    "explanation": "C has high direct contribution despite allocated overhead; an immediate exit loses cash contribution and triggers contractual penalties. Redesign or an orderly future sunset is more defensible."
+  },
+  "key_insights": [
+    {
+      "id": "K1",
+      "critical": true,
+      "text": "C generates $3.8M direct contribution on $6M sales, despite an 8.3% reported margin after $3.3M shared allocation."
+    },
+    {
+      "id": "K2",
+      "critical": true,
+      "text": "Immediate C exit with the maximum D transfer changes annual operating contribution by $-2.65M before contract penalties; first year $-4.75M."
+    },
+    {
+      "id": "K3",
+      "critical": true,
+      "text": "Only $0.4M of C allocated overhead is avoidable; shared regulatory and depreciation costs do not simply disappear."
+    },
+    {
+      "id": "K4",
+      "critical": true,
+      "text": "Nine customer bundles require C, with $2.1M first-year penalties and 95% bundle service requirement."
+    },
+    {
+      "id": "K5",
+      "critical": false,
+      "text": "Redesign could save $1.25M annually for $0.55M one time, subject to customer validation and implementation."
+    },
+    {
+      "id": "K6",
+      "critical": false,
+      "text": "Renewal gap is not causal evidence because C accounts are older, smaller and less-supported."
+    }
+  ],
+  "required_calculations": [
+    {
+      "id": "Q1",
+      "text": "C direct contribution",
+      "expected": "$6.0M − $2.2M = $3.8M",
+      "tolerance": "±$0.05M"
+    },
+    {
+      "id": "Q2",
+      "text": "Exit annual net impact (optimistic D transfer)",
+      "expected": "$0.4M + $1.5M×50% − $3.8M = $-2.65M",
+      "tolerance": "±$0.05M"
+    },
+    {
+      "id": "Q3",
+      "text": "First-year impact including contract penalty",
+      "expected": "$-4.75M",
+      "tolerance": "±$0.05M"
+    },
+    {
+      "id": "Q4",
+      "text": "One-year net redesign benefit before time phasing",
+      "expected": "$0.70M = $1.25M−$0.55M",
+      "tolerance": "±$0.05M"
+    }
+  ],
+  "decision_relevant_evidence": [
+    {
+      "id": "E1",
+      "critical": true,
+      "text": "Direct-variable costs versus allocated shared costs"
+    },
+    {
+      "id": "E2",
+      "critical": true,
+      "text": "Nine bundle contracts and $2.1M exit penalty"
+    },
+    {
+      "id": "E3",
+      "critical": true,
+      "text": "D substitution limited to $1.5M incremental revenue"
+    },
+    {
+      "id": "E4",
+      "critical": false,
+      "text": "Bundle-level service definition and patient device validation"
+    }
+  ],
+  "contradictory_evidence": [
+    "C gross margin is allocated operating metric, not incremental contribution",
+    "C customers renew less but differ in size and support",
+    "Item-level service dashboard hides whole-bundle delays"
+  ],
+  "reasoning_traps": [
+    {
+      "id": "T1",
+      "text": "Equating a low allocated margin with negative avoidable contribution"
+    },
+    {
+      "id": "T2",
+      "text": "Assuming all shared overhead is saved on exit"
+    },
+    {
+      "id": "T3",
+      "text": "Treating C ownership as a cause of lower renewal"
+    },
+    {
+      "id": "T4",
+      "text": "Ignoring bundle penalty and validation"
+    }
+  ],
+  "key_tradeoffs": [
+    {
+      "id": "X1",
+      "text": "Portfolio simplicity vs contribution cash"
+    },
+    {
+      "id": "X2",
+      "text": "D growth vs customer-service continuity"
+    },
+    {
+      "id": "X3",
+      "text": "Immediate exit vs validated redesign"
+    }
+  ],
+  "plausible_recommendations": [
+    {
+      "id": "R1",
+      "defensible": "yes",
+      "text": "Retain C for now, fix bundle service and test the $0.55M redesign, then reconsider sunset when contracts renew."
+    },
+    {
+      "id": "R2",
+      "defensible": "conditional",
+      "text": "Pursue a negotiated phased exit if customer consents and new capacity/transfer economics establish positive value."
+    },
+    {
+      "id": "R3",
+      "defensible": "no",
+      "text": "Discontinue C immediately based only on the 8% reported margin."
+    }
+  ],
+  "defensibility_criteria": [
+    "Reconcile margins to avoidable cash flows",
+    "Apply contract penalty separately from annual cost",
+    "Bound D substitution with capacity and validation",
+    "Avoid causal inference from account-mix correlation"
+  ],
+  "decision_requirements": [
+    {
+      "id": "D1",
+      "question": "Are product costs classified by avoidability?",
+      "critical": true,
+      "acceptable_evidence": [
+        "contribution bridge",
+        "allocation reconciliation"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D2",
+      "question": "Does exit respect bundle contracts?",
+      "critical": true,
+      "acceptable_evidence": [
+        "contract penalties",
+        "service obligations"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D3",
+      "question": "Is D substitution backed by realistic capacity and qualification?",
+      "critical": true,
+      "acceptable_evidence": [
+        "incremental transfer scenario",
+        "capacity check"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D4",
+      "question": "Is the comparison more than reported gross margin?",
+      "critical": true,
+      "acceptable_evidence": [
+        "exit versus redesign economics",
+        "decision gate"
+      ],
+      "unnecessary_if": null
+    }
+  ]
+}

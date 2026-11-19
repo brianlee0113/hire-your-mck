@@ -1,0 +1,193 @@
+{
+  "case_id": "c7",
+  "title": "Atlas FieldOps — acquisition decision",
+  "decision_question": "Should Atlas FieldOps buy the scheduling software company RouteSprout in 2027, and on what terms, rather than build or partner?",
+  "initial_hypothesis": {
+    "holder": "CEO",
+    "statement": "Acquire RouteSprout for $18M upfront and complete integration in six months; $2.4M cross-sell ARR justifies it.",
+    "expected_handling": "revise",
+    "explanation": "Full cash purchase is infeasible under $9M floor; staged or partnered acquisition may be defensible only after ARR, churn, synergy and future-earnout diligence."
+  },
+  "key_insights": [
+    {
+      "id": "K1",
+      "critical": true,
+      "text": "Full deal requires $22.00M immediately and leaves $2.00M, violating $9M minimum cash."
+    },
+    {
+      "id": "K2",
+      "critical": true,
+      "text": "Headline valuation is 3.75× verified ARR, not 2.5×; the seller uses $7.2M bookings including one-off pilots."
+    },
+    {
+      "id": "K3",
+      "critical": true,
+      "text": "Base cross-sell ARR contributes $1.07M annually net of 80% GM and $0.85M additional support; stress case $-0.21M."
+    },
+    {
+      "id": "K4",
+      "critical": true,
+      "text": "Customer churn 21% and six-month integration assumptions make the seller synergy case uncertain."
+    },
+    {
+      "id": "K5",
+      "critical": false,
+      "text": "Staged cash expenditure $14.50M just passes the initial cash floor with $9.50M left, but its contingent $7M earnout is a future cash risk."
+    },
+    {
+      "id": "K6",
+      "critical": false,
+      "text": "A nonexclusive partnership can test demand while preserving cash, but price, exclusivity and renewal exposure need negotiation."
+    }
+  ],
+  "required_calculations": [
+    {
+      "id": "Q1",
+      "text": "Cash after full acquisition",
+      "expected": "$2.00M vs $9.00M floor",
+      "tolerance": "±$0.05M"
+    },
+    {
+      "id": "Q2",
+      "text": "Cash after staged initial commitment",
+      "expected": "$9.50M vs $9.00M floor",
+      "tolerance": "±$0.05M"
+    },
+    {
+      "id": "Q3",
+      "text": "Price / verified ARR",
+      "expected": "$18.0M / $4.8M = 3.75x",
+      "tolerance": "±0.01x"
+    },
+    {
+      "id": "Q4",
+      "text": "Annual incremental synergy",
+      "expected": "base $2.4M×80%−$0.85M=$1.07M; stress $0.8M×80%−$0.85M=$-0.21M",
+      "tolerance": "±$0.02M"
+    }
+  ],
+  "decision_relevant_evidence": [
+    {
+      "id": "E1",
+      "critical": true,
+      "text": "Board $9M minimum cash and $15M spendable limit"
+    },
+    {
+      "id": "E2",
+      "critical": true,
+      "text": "Bookings versus ARR definition"
+    },
+    {
+      "id": "E3",
+      "critical": true,
+      "text": "Churn, renewal cohorts and integration cost exposure"
+    },
+    {
+      "id": "E4",
+      "critical": false,
+      "text": "Partnership and internal-build alternatives"
+    }
+  ],
+  "contradictory_evidence": [
+    "Sellers multiple uses bookings, finance uses ARR",
+    "Large accounts renew more but also receive more support",
+    "Bookings include nonrenewable pilots and multi-year face value"
+  ],
+  "reasoning_traps": [
+    {
+      "id": "T1",
+      "text": "Taking 2.5x valuation at face value"
+    },
+    {
+      "id": "T2",
+      "text": "Assuming routing causes superior renewal"
+    },
+    {
+      "id": "T3",
+      "text": "Treating $2.4M cross-sell ARR as immediate cash EBITDA"
+    },
+    {
+      "id": "T4",
+      "text": "Ignoring earnout or integration costs in minimum cash tests"
+    }
+  ],
+  "key_tradeoffs": [
+    {
+      "id": "X1",
+      "text": "Speed to feature vs capital preservation"
+    },
+    {
+      "id": "X2",
+      "text": "Acquisition control vs retention and integration risk"
+    },
+    {
+      "id": "X3",
+      "text": "Earnout risk vs financial flexibility"
+    }
+  ],
+  "plausible_recommendations": [
+    {
+      "id": "R1",
+      "defensible": "yes",
+      "text": "Start nonexclusive commercial partnership while negotiating an evidence- and cash-gated acquisition option."
+    },
+    {
+      "id": "R2",
+      "defensible": "conditional",
+      "text": "Pursue staged purchase only if independently verified ARR, retention, integration scope and earnout reserve support it."
+    },
+    {
+      "id": "R3",
+      "defensible": "no",
+      "text": "Buy for $18M cash plus $4M integration under current limits."
+    }
+  ],
+  "defensibility_criteria": [
+    "Cash floor governs the full and staged alternatives",
+    "Valuation uses recurring ARR not gross bookings",
+    "Synergies are translated to cash contribution with uncertainty",
+    "Tradeoffs between buy, partner and build are made explicit"
+  ],
+  "decision_requirements": [
+    {
+      "id": "D1",
+      "question": "Can the initial and future cash commitments satisfy minimum liquidity?",
+      "critical": true,
+      "acceptable_evidence": [
+        "sources-and-uses",
+        "cash bridge"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D2",
+      "question": "Is the revenue denominator consistent?",
+      "critical": true,
+      "acceptable_evidence": [
+        "ARR reconciliation",
+        "valuation multiple"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D3",
+      "question": "Is customer retention sensitivity addressed?",
+      "critical": true,
+      "acceptable_evidence": [
+        "churn scenario",
+        "earnout condition"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D4",
+      "question": "Is the strongest non-acquisition path weighed?",
+      "critical": true,
+      "acceptable_evidence": [
+        "alternative matrix",
+        "partnership economics"
+      ],
+      "unnecessary_if": null
+    }
+  ]
+}

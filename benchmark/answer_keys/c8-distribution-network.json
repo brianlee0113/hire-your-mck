@@ -1,0 +1,192 @@
+{
+  "case_id": "c8",
+  "title": "Northline Home — network redesign",
+  "decision_question": "Should Northline Home close its East regional distribution center in 2027 or retain and optimize it?",
+  "initial_hypothesis": {
+    "holder": "CEO",
+    "statement": "Keep the East hub through 2027 because Central capacity and service cannot safely absorb the move.",
+    "expected_handling": "keep_with_conditions",
+    "explanation": "The proposed central consolidation yields little net annual saving, violates service in modeled conditions and exhausts capacity; keeping East is reasonable subject to a measurable optimization and future cross-dock gate."
+  },
+  "key_insights": [
+    {
+      "id": "K1",
+      "critical": true,
+      "text": "East fixed cost saved is $1.30M but higher Eastern freight adds $1.00M and handling $0.20M; net annual saving only $0.10M before exit fee."
+    },
+    {
+      "id": "K2",
+      "critical": true,
+      "text": "Central load after full East closure would be 360,000, exactly its practical capacity, and 2028 forecast rises to 389,600."
+    },
+    {
+      "id": "K3",
+      "critical": true,
+      "text": "Modeled Eastern two-day rate falls 96% to 84%, but the contract tests company-wide 92%; aggregate service must be calculated on comparable all-ZIP orders."
+    },
+    {
+      "id": "K4",
+      "critical": true,
+      "text": "98% internal East on-time claim excludes rural ZIPs and must not replace 96% contracted measure."
+    },
+    {
+      "id": "K5",
+      "critical": false,
+      "text": "Cross-dock had 93% performance over a limited six-week pilot, not a contract guarantee for peak season."
+    },
+    {
+      "id": "K6",
+      "critical": false,
+      "text": "Keep and optimize saves $0.30M annually for $0.15M systems spend, with a 2029 lease option preserved."
+    }
+  ],
+  "required_calculations": [
+    {
+      "id": "Q1",
+      "text": "Full close incremental transport and handling",
+      "expected": "$1.00M + $0.20M = $1.20M",
+      "tolerance": "±$0.02M"
+    },
+    {
+      "id": "Q2",
+      "text": "Annual net saving of closing East",
+      "expected": "$0.10M before exit fee",
+      "tolerance": "±$0.02M"
+    },
+    {
+      "id": "Q3",
+      "text": "Central capacity in 2028 with East",
+      "expected": "389,600 vs 360,000 practical",
+      "tolerance": "±500 shipments"
+    },
+    {
+      "id": "Q4",
+      "text": "2027 company-wide SLA under closure",
+      "expected": "200k×84%+160k×94%+140k×95% over 500k = 90.3%",
+      "tolerance": "±0.2 pp"
+    }
+  ],
+  "decision_relevant_evidence": [
+    {
+      "id": "E1",
+      "critical": true,
+      "text": "Two-day all-order service floor and Central capacity cap"
+    },
+    {
+      "id": "E2",
+      "critical": true,
+      "text": "Fixed plus freight/handling cost and one-time exit charge"
+    },
+    {
+      "id": "E3",
+      "critical": true,
+      "text": "All-ZIP definition and rural exclusions"
+    },
+    {
+      "id": "E4",
+      "critical": false,
+      "text": "Cross-dock peak-season evidence quality"
+    }
+  ],
+  "contradictory_evidence": [
+    "98% selective-ZIP internal KPI vs 96% contract-compliant East rate",
+    "Retention premium correlated with Eastern sales coverage",
+    "Fixed cost removed vs added transport and damage"
+  ],
+  "reasoning_traps": [
+    {
+      "id": "T1",
+      "text": "Counting $1.30M gross facility savings as net saving"
+    },
+    {
+      "id": "T2",
+      "text": "Treating Eastern SLA as network-wide without weighting"
+    },
+    {
+      "id": "T3",
+      "text": "Ignoring Central capacity once Eastern and Central volume grow"
+    },
+    {
+      "id": "T4",
+      "text": "Treating six-week cross-dock pilot as peak-season proof"
+    }
+  ],
+  "key_tradeoffs": [
+    {
+      "id": "X1",
+      "text": "Fixed cost vs delivery time"
+    },
+    {
+      "id": "X2",
+      "text": "Consolidation now vs reversible lease option"
+    },
+    {
+      "id": "X3",
+      "text": "Third-party dependence vs operating capacity"
+    }
+  ],
+  "plausible_recommendations": [
+    {
+      "id": "R1",
+      "defensible": "yes",
+      "text": "Keep East in 2027, take verified $0.30M efficiency programme, and test a properly specified peak-season cross-dock contract."
+    },
+    {
+      "id": "R2",
+      "defensible": "conditional",
+      "text": "Move selected East lanes to a partner if contractual all-ZIP SLA, capacity and net cost are proven; preserve the 2029 lease option."
+    },
+    {
+      "id": "R3",
+      "defensible": "no",
+      "text": "Close East and shift all orders to Central without extra capacity or SLA mitigation."
+    }
+  ],
+  "defensibility_criteria": [
+    "Model all-in cost not warehouse rent only",
+    "Weight SLA using all shipments and same ZIP definition",
+    "Recognize the 2028 Central capacity breach",
+    "Quantify a realistic alternative and decision gate"
+  ],
+  "decision_requirements": [
+    {
+      "id": "D1",
+      "question": "Does the recommendation satisfy company-wide service SLA?",
+      "critical": true,
+      "acceptable_evidence": [
+        "weighted delivery-service calculation",
+        "pilot comparison"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D2",
+      "question": "Does Central stay within certified capacity under growth?",
+      "critical": true,
+      "acceptable_evidence": [
+        "network volume model",
+        "capacity scenario"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D3",
+      "question": "Is net cost based on comparable definitions?",
+      "critical": true,
+      "acceptable_evidence": [
+        "fully loaded cost comparison",
+        "exit cost"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D4",
+      "question": "Is the outsourced option assessed fairly?",
+      "critical": false,
+      "acceptable_evidence": [
+        "crossdock pilot and contract trigger"
+      ],
+      "unnecessary_if": "if it cannot satisfy an explicit service floor"
+    }
+  ]
+}

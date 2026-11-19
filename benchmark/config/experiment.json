@@ -33,7 +33,8 @@
    "name": "Hire Your McK v1.3 E1 (decision audit, full-deck mode)",
    "prompt": "prompts/conditions/E1_hire_your_mck_audit.md",
    "plugin": true,
-   "note": "Development arm (METHODOLOGY.md §13). Same request as C2; the skill snapshot adds the decision audit (Step 2b) and nothing else."
+   "note": "Development arm (METHODOLOGY.md §13). Same request as C2; the skill snapshot adds the decision audit (Step 2b) and nothing else. From the holdout on, loaded from env/plugin-E1: the skill as frozen for dev-e1 (commit f5b01a4) plus the 1.2.1 waterfall renderer fix, so that E2 and compile changes in plugin/ do not reach it.",
+   "plugin_dir": "env/plugin-E1"
   },
   "E2": {
    "name": "Hire Your McK v1.3 E2 (audit turned into a plan, full-deck mode)",
@@ -45,13 +46,22 @@
    "name": "Hire Your McK compile mode (restyle) on B's finished deck",
    "prompt": "prompts/conditions/H1s_compile_restyle.md",
    "plugin": true,
-   "note": "Development arm H1 (METHODOLOGY.md §15). Input: B's deck for the same case and replicate, extracted to text, plus the briefing pack."
+   "note": "Development arm H1 (METHODOLOGY.md §15). Input: B's deck for the same case and replicate, extracted to text, plus the briefing pack.",
+   "needs_analysis": true
   },
   "H1r": {
    "name": "Hire Your McK compile mode (restructure) on B's finished deck",
    "prompt": "prompts/conditions/H1r_compile_restructure.md",
    "plugin": true,
-   "note": "Development arm H1 (METHODOLOGY.md §15). Input: B's deck for the same case and replicate, extracted to text, plus the briefing pack."
+   "note": "Development arm H1 (METHODOLOGY.md §15). Input: B's deck for the same case and replicate, extracted to text, plus the briefing pack.",
+   "needs_analysis": true
+  },
+  "H2a": {
+   "name": "Hire Your McK compile mode (restyle) on B's deck for the same case (hybrid H)",
+   "prompt": "prompts/conditions/H2a_compile_restyle.md",
+   "plugin": true,
+   "needs_analysis": true,
+   "note": "Holdout (METHODOLOGY.md §16). Same request as H1s; the skill snapshot is plugin/ at the holdout freeze (compile rules with verified corrections). Runs after B; input: B's deck, extracted to text, plus the briefing pack."
   }
  },
  "task_template": "prompts/conditions/task.md",
@@ -83,7 +93,8 @@
   "dev-e1-smoke_order": 30,
   "dev-e1_order": 2029,
   "dev-e2_order": 2030,
-  "dev-h1_order": 2031
+  "dev-h1_order": 2031,
+  "holdout_order": 2032
  },
  "cases": {
   "c1-market-entry": {
@@ -105,6 +116,30 @@
   "c5-negative-entry": {
    "decision_maker": "Parcelbird's board",
    "decision_question": "Should Parcelbird launch its own quick-commerce grocery delivery service in 2027?"
+  },
+  "c6-make-buy": {
+   "decision_maker": "Meridian Motion executive committee",
+   "decision_question": "Should Meridian Motion manufacture precision housings in-house in 2027, lease a flexible cell, or continue buying from an external supplier?"
+  },
+  "c7-m-and-a": {
+   "decision_maker": "Atlas FieldOps board",
+   "decision_question": "Should Atlas FieldOps buy the scheduling software company RouteSprout in 2027, and on what terms, rather than build or partner?"
+  },
+  "c8-distribution-network": {
+   "decision_maker": "Northline Home CEO and board",
+   "decision_question": "Should Northline Home close its East regional distribution center in 2027 or retain and optimize it?"
+  },
+  "c9-capacity-timing": {
+   "decision_maker": "Pelican Packaging investment committee",
+   "decision_question": "Should Pelican Packaging reserve a second molding-line installation slot now, build immediately, or buy temporary overflow capacity?"
+  },
+  "c10-portfolio-exit": {
+   "decision_maker": "Vesper MedTech board",
+   "decision_question": "Should Vesper MedTech discontinue its low reported-margin sterile connector C and redeploy the team to connector D?"
+  },
+  "c11-oem-licensing": {
+   "decision_maker": "Boreal Autonomy board",
+   "decision_question": "Should Boreal Autonomy grant North American exclusivity to an OEM for its industrial robot navigation software in 2027?"
   }
  },
  "phases": {
@@ -227,6 +262,32 @@
     "c5-negative-entry": "main/main-c5-B-r2"
    },
    "compare_with": "main B (the source decks: c2 r3, c5 r2, the pair the author reviewed as slides)"
+  },
+  "holdout": {
+   "cases": [
+    "c6-make-buy",
+    "c7-m-and-a",
+    "c8-distribution-network",
+    "c9-capacity-timing",
+    "c10-portfolio-exit",
+    "c11-oem-licensing"
+   ],
+   "reps": 1,
+   "conditions": [
+    "B",
+    "E1",
+    "H2a"
+   ],
+   "analysis_from": {
+    "c6-make-buy": "holdout/holdout-c6-B-r1",
+    "c7-m-and-a": "holdout/holdout-c7-B-r1",
+    "c8-distribution-network": "holdout/holdout-c8-B-r1",
+    "c9-capacity-timing": "holdout/holdout-c9-B-r1",
+    "c10-portfolio-exit": "holdout/holdout-c10-B-r1",
+    "c11-oem-licensing": "holdout/holdout-c11-B-r1"
+   },
+   "stages": "1) B and E1 (--conditions B E1), audit, extract_deck; 2) H2a (--conditions H2a) on the extracted B decks",
+   "note": "Held-out cases written by Codex; nothing in the skill, conditions or reading rules changes after they were opened (§16)."
   }
  },
  "normalizer": {

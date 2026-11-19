@@ -95,3 +95,17 @@ Open next:
    options or risks; check the source's claims against its own exhibits). Then freeze.
 3. Send `docs/04-holdout-request-for-codex.md`; freeze the holdout design before the cases arrive.
 4. Usage 80% on 11/18 01:52; reset 11/21 17:00. No further runs before the reset.
+
+## Update 2026-11-19: holdout ready, frozen
+
+Codex's fifth review accepted: H2a-restyle as the candidate; verified corrections (evidence, source location, every
+affected slide re-read); five fidelity statuses with preservation and correction reported apart; holdout B / E1 /
+H2a-restyle; H1r dropped. Rule changes committed before the cases were opened (`2c4fca0`). Codex's cases c6–c11
+installed (rebuild byte-identical, validator pass), E1 pinned to its dev-e1 skill (`env/plugin-E1`), staged H2a
+runner, `explore_holdout.py`, `run_holdout.sh`, `FREEZE-holdout.json`. METHODOLOGY §16.
+
+Next:
+1. After the usage reset (2026-11-21 17:00): `caffeinate -is benchmark/scripts/run_holdout.sh` (18 generations, then
+   judge, fidelity, pairwise; stops at 82% usage or if a frozen file changed).
+2. The author reviews rendered slides blind to condition **before** reading `results/holdout/tables.md`.
+3. Send the results to Codex; HN post (~2026-11-23).

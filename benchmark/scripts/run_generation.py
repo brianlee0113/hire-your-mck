@@ -33,7 +33,8 @@ from common import BENCH, CONFIG, REPO, claude_bin, claude_version, clean_env, g
 
 LOCK = threading.Lock()
 CODE = {"c1-market-entry": "c1", "c2-profitability": "c2", "c3-ai-assistant": "c3", "c4-pricing-churn": "c4",
-        "c5-negative-entry": "c5"}
+        "c5-negative-entry": "c5", "c6-make-buy": "c6", "c7-m-and-a": "c7", "c8-distribution-network": "c8",
+        "c9-capacity-timing": "c9", "c10-portfolio-exit": "c10", "c11-oem-licensing": "c11"}
 
 
 def now():
@@ -73,8 +74,14 @@ def ensure_env(work_root: pathlib.Path) -> pathlib.Path:
     return venv / "bin"
 
 
-def ensure_plugin_snapshot(work_root: pathlib.Path) -> tuple[pathlib.Path, str]:
-    src = REPO / "plugin"
+def plugin_source(cond: str) -> pathlib.Path:
+    """The skill a condition loads: the repo's plugin/, or a frozen copy named in the condition (e.g. env/plugin-E1)."""
+    rel = CONFIG["conditions"][cond].get("plugin_dir")
+    return BENCH / rel if rel else REPO / "plugin"
+
+
+def ensure_plugin_snapshot(work_root: pathlib.Path, src: pathlib.Path | None = None) -> tuple[pathlib.Path, str]:
+    src = src or REPO / "plugin"
     h = tree_hash(src)
     dst = work_root / "_plugin" / f"hire-your-mck-{h[:12]}"
     if not dst.exists():
@@ -190,7 +197,7 @@ def run_job(job, phase, work_root, venv_bin, plugin_dir, plugin_hash, all_runs):
         (ws / "evidence").mkdir(parents=True)
         (ws / "deliverable").mkdir()
         shutil.copy(BENCH / "cases" / job["case"] / "packet.md", ws / "evidence" / "briefing-pack.md")
-        src = (CONFIG["phases"][phase].get("analysis_from") or {}).get(job["case"])
+        src = (CONFIG["phases"][phase].get("analysis_from") or {}).get(job["case"]) if cfg["conditions"][job["condition"]].get("needs_analysis", False) else None
         if src:  # compile arms: the finished analysis (another run's deck, extracted to text) is part of the evidence
             shutil.copy(BENCH / "runs" / src / "extract" / "deck.txt", ws / "evidence" / "analysis.md")
         settings_p = work_root / "_settings" / f"{run_id}.json"
@@ -204,7 +211,7 @@ def run_job(job, phase, work_root, venv_bin, plugin_dir, plugin_hash, all_runs):
                 "--permission-mode", "dontAsk", "--output-format", "stream-json", "--verbose",
                 "--max-budget-usd", str(cfg["limits"]["max_budget_usd_per_run"])]
         if cfg["conditions"][job["condition"]]["plugin"]:
-            base += ["--plugin-dir", str(plugin_dir)]
+            base += ["--plugin-dir", str(plugin_dir[job["condition"]][0])]
         transcript = out / f"transcript-attempt{attempt}.jsonl"
         prompt = build_prompt(job)
         autoreply = (BENCH / cfg["autoreply"]).read_text().strip()
@@ -278,7 +285,8 @@ def run_job(job, phase, work_root, venv_bin, plugin_dir, plugin_hash, all_runs):
     meta = {**job, "phase": phase, "status": final["status"], "attempts": attempts, "totals": tot, "models_used": models_used,
             "autoreplies_used": max(0, len(final["turns"]) - 1), "prompt": build_prompt(job), "prompt_sha256": sha256_text(build_prompt(job)),
             "generator": CONFIG["generator"], "tools": CONFIG["tools"], "claude_code_version": claude_version(),
-            "plugin_snapshot_sha256": plugin_hash if CONFIG["conditions"][job["condition"]]["plugin"] else None,
+            "plugin_snapshot_sha256": plugin_hash[job["condition"]] if CONFIG["conditions"][job["condition"]]["plugin"] else None,
+            "plugin_source": str(plugin_source(job["condition"]).relative_to(REPO)) if CONFIG["conditions"][job["condition"]]["plugin"] else None,
             "repo_head": git_head(), "packet_sha256": sha256_file(BENCH / "cases" / job["case"] / "packet.md"),
             "files": [{"path": str(p.relative_to(out)), "bytes": p.stat().st_size, "sha256": sha256_file(p)} for p in files]}
     meta_p.write_text(json.dumps(meta, indent=1))
@@ -294,9 +302,15 @@ def main():
     ap.add_argument("--parallel", type=int, default=CONFIG["parallel"])
     ap.add_argument("--work-root", default=os.environ.get("HYM_BENCH_WORK", str(pathlib.Path.home() / "hym-bench-work")))
     ap.add_argument("--only", nargs="*")
+    ap.add_argument("--conditions", nargs="*", help="run only these conditions of the phase (a compile arm after its source)")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     jobs = schedule(a.phase)
+    todo = [j for j in jobs if (not a.only or j["run_id"] in a.only) and (not a.conditions or j["condition"] in a.conditions)]
+    for j in todo:  # a compile arm needs its source deck, extracted, before it can start
+        src = (CONFIG["phases"][a.phase].get("analysis_from") or {}).get(j["case"])
+        if src and CONFIG["conditions"][j["condition"]].get("needs_analysis", False) and not (BENCH / "runs" / src / "extract" / "deck.txt").exists():
+            sys.exit(f"{j['run_id']}: source deck {src} is not extracted yet; run the source condition and extract_deck first")
     (BENCH / "runs" / a.phase).mkdir(parents=True, exist_ok=True)
     sched_p = BENCH / "runs" / a.phase / "schedule.json"
     if not sched_p.exists():
@@ -308,13 +322,15 @@ def main():
     work_root = pathlib.Path(a.work_root).resolve()
     work_root.mkdir(parents=True, exist_ok=True)
     venv_bin = ensure_env(work_root)
-    plugin_dir, plugin_hash = ensure_plugin_snapshot(work_root)
+    conds = sorted({j["condition"] for j in jobs})
+    snaps = {c: ensure_plugin_snapshot(work_root, plugin_source(c)) for c in conds}
+    plugin_dir = {c: snaps[c] for c in conds}
+    plugin_hash = {c: snaps[c][1] for c in conds}
     env_info = {"created": now(), "claude_code_version": claude_version(), "repo_head": git_head(), "work_root": str(work_root),
-                "plugin_snapshot": str(plugin_dir), "plugin_sha256": plugin_hash, "python_gen": str(venv_bin / "python"),
+                "plugin_snapshot": {c: str(snaps[c][0]) for c in conds}, "plugin_sha256": plugin_hash, "python_gen": str(venv_bin / "python"),
                 "gen_packages": subprocess.run(["uv", "pip", "freeze", "--python", str(venv_bin / "python")], capture_output=True, text=True).stdout.split(),
                 "platform": os.uname().sysname + " " + os.uname().release + " " + os.uname().machine}
     (BENCH / "runs" / a.phase / f"environment-{dt.datetime.now():%Y%m%dT%H%M%S}.json").write_text(json.dumps(env_info, indent=1))
-    todo = [j for j in jobs if not a.only or j["run_id"] in a.only]
     all_runs = [j["run_id"] for j in jobs]
     log(f"{a.phase}: {len(todo)} jobs, parallel {a.parallel}, work root {work_root}")
     with cf.ThreadPoolExecutor(max_workers=a.parallel) as ex:

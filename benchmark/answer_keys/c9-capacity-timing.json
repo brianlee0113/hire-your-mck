@@ -1,0 +1,193 @@
+{
+  "case_id": "c9",
+  "title": "Pelican Packaging — capacity timing",
+  "decision_question": "Should Pelican Packaging reserve a second molding-line installation slot now, build immediately, or buy temporary overflow capacity?",
+  "initial_hypothesis": {
+    "holder": "Operations Director",
+    "statement": "Reserve a $0.6M 2027 installation slot, but do not release full line capex until contracts and cash support it.",
+    "expected_handling": "keep_with_conditions",
+    "explanation": "Reserving capacity is a modest real option within near-term liquidity while full machine capex currently breaches the cash floor; contract overflow and a financing gate are needed."
+  },
+  "key_insights": [
+    {
+      "id": "K1",
+      "critical": true,
+      "text": "Ordering now leaves $4.00M after approved R&D, below $7.0M floor; slot alone leaves $8.20M."
+    },
+    {
+      "id": "K2",
+      "critical": true,
+      "text": "Practical accepted capacity is 9.0M, not 10.0M nameplate; forecasts exceed it by 0.6M, 2.2M and 3.4M in 2028–30."
+    },
+    {
+      "id": "K3",
+      "critical": true,
+      "text": "Existing external molder can cover 2028 and 2029 overflow by volume but not all 2030 forecast overflow or unvalidated specialty SKU."
+    },
+    {
+      "id": "K4",
+      "critical": true,
+      "text": "Deposit is credited toward $4.8M machine, not an extra cost, and does not remove the future funding need."
+    },
+    {
+      "id": "K5",
+      "critical": false,
+      "text": "The 23% growth correlation between prior investment and sales is not causal evidence."
+    },
+    {
+      "id": "K6",
+      "critical": false,
+      "text": "The 98% contractual fill-rate is monthly; annual capacity arithmetic cannot guarantee it."
+    }
+  ],
+  "required_calculations": [
+    {
+      "id": "Q1",
+      "text": "Cash after immediate full investment",
+      "expected": "$4.00M vs $7M minimum",
+      "tolerance": "±$0.05M"
+    },
+    {
+      "id": "Q2",
+      "text": "Cash after forfeitable slot deposit",
+      "expected": "$8.20M vs $7M minimum; deposit forfeited if cancelled",
+      "tolerance": "±$0.05M"
+    },
+    {
+      "id": "Q3",
+      "text": "2028/29 contract-molding premium",
+      "expected": "$0.07M / $0.26M",
+      "tolerance": "±$0.01M"
+    },
+    {
+      "id": "Q4",
+      "text": "2029 line contribution versus turning away incremental overflow (not versus contracting it out)",
+      "expected": "$0.44M = 2.2M×$0.45−$0.55M before capex",
+      "tolerance": "±$0.02M"
+    }
+  ],
+  "decision_relevant_evidence": [
+    {
+      "id": "E1",
+      "critical": true,
+      "text": "Cash minimum after approved R&D"
+    },
+    {
+      "id": "E2",
+      "critical": true,
+      "text": "Nameplate versus practical accepted capacity"
+    },
+    {
+      "id": "E3",
+      "critical": true,
+      "text": "Five-month outsource lead and specialty qualification"
+    },
+    {
+      "id": "E4",
+      "critical": false,
+      "text": "Difference between signed minimum and forecast demand"
+    }
+  ],
+  "contradictory_evidence": [
+    "23% more sales for earlier investors is confounded by sector and contracts",
+    "Nameplate utilization vs accepted-unit practical capacity",
+    "Contribution per incremental sale vs outsourced premium are different metrics"
+  ],
+  "reasoning_traps": [
+    {
+      "id": "T1",
+      "text": "Treating nameplate as sellable capacity"
+    },
+    {
+      "id": "T2",
+      "text": "Claiming the $0.6M deposit fixes future financing"
+    },
+    {
+      "id": "T3",
+      "text": "Counting deposit twice in equipment outlay"
+    },
+    {
+      "id": "T4",
+      "text": "Inferring capacity purchases cause sales growth from peer comparison"
+    }
+  ],
+  "key_tradeoffs": [
+    {
+      "id": "X1",
+      "text": "Preserving investment option vs committing capital"
+    },
+    {
+      "id": "X2",
+      "text": "Internal capacity vs outsourced premium"
+    },
+    {
+      "id": "X3",
+      "text": "Annual capacity vs monthly customer service"
+    }
+  ],
+  "plausible_recommendations": [
+    {
+      "id": "R1",
+      "defensible": "yes",
+      "text": "Reserve a slot conditionally, secure contract overflow for 2028, and release full capex only with confirmed volume and liquidity."
+    },
+    {
+      "id": "R2",
+      "defensible": "conditional",
+      "text": "Defer even the slot if customer demand slips materially or outside molder can meet all constraints more cheaply."
+    },
+    {
+      "id": "R3",
+      "defensible": "no",
+      "text": "Commit $4.8M now without new financing or R&D adjustment."
+    }
+  ],
+  "defensibility_criteria": [
+    "Respect cash floor and practical capacity",
+    "Credit deposit correctly",
+    "Plan near-term overflow with validation limits",
+    "Set a measurable future investment gate"
+  ],
+  "decision_requirements": [
+    {
+      "id": "D1",
+      "question": "Does full investment fit after R&D and cash reserve?",
+      "critical": true,
+      "acceptable_evidence": [
+        "cash commitments bridge",
+        "covenant test"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D2",
+      "question": "Are all units comparable accepted units?",
+      "critical": true,
+      "acceptable_evidence": [
+        "practical-capacity test",
+        "scrap treatment"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D3",
+      "question": "Can external capacity cover the gap before new machine delivery?",
+      "critical": true,
+      "acceptable_evidence": [
+        "yearly capacity schedule",
+        "lead-time plan"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D4",
+      "question": "What contracts and cash would trigger full investment?",
+      "critical": true,
+      "acceptable_evidence": [
+        "go/no-go criteria",
+        "conditions and timing"
+      ],
+      "unnecessary_if": null
+    }
+  ]
+}

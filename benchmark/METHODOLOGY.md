@@ -449,3 +449,21 @@ and auto-reply as before; the generation sandbox denies reads of `answer_keys/`.
   extra time and cost?).
 - After the cases are opened, nothing in the skill, the conditions or these rules changes. Any change is recorded
   as a deviation and the affected results are marked.
+
+**Harness (added when the cases were installed, before the freeze).**
+- Cases: Codex's bundle, rebuilt with `cases/build_holdout_cases.py` (byte-identical to the bundle) and checked with
+  `cases/validate_holdout_cases.py` (pass). The bundle's register script was not run; the cases were registered by
+  hand in `config/experiment.json` and the runner's case codes. Notes: `docs/05-holdout-cases-from-codex.md`.
+  Generation workspaces get only `packet.md`; the sandbox denies reads of the whole repository, which includes
+  `answer_keys/` and `cases/holdout_models.py`.
+- **E1 skill.** `plugin/` now also holds the E2 plan steps and compile mode, so E1 runs from `env/plugin-E1`: the
+  plugin as frozen for dev-e1 (commit `f5b01a4`) plus the 1.2.1 waterfall renderer fix (a rendering bug fix, kept so
+  that the human slide review does not penalise E1 for a fixed bug). H2a runs from `plugin/` at the freeze. B loads
+  no plugin.
+- Phase `holdout` (seed 2032): stage 1 runs B and E1, stage 2 runs H2a on the extracted B decks
+  (`run_generation.py --conditions`). `scripts/run_holdout.sh` runs the whole pipeline with the usage guard;
+  `scripts/explore_holdout.py` does the B → H2a fidelity check, the pairwise comparisons (H2a vs B, E1 vs H2a, and
+  E1 vs B for context) and the tables. Rubric scores: `evaluate.py judge --judge primary` on all 18 documents,
+  blinded together.
+- `FREEZE-holdout.json` (`scripts/freeze_holdout.py`) records the hashes of the design files, the cases and keys,
+  and both plugin trees; the pipeline stops if any of them changed.

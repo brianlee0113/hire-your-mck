@@ -1,0 +1,193 @@
+{
+  "case_id": "c6",
+  "title": "Meridian Motion — make or buy",
+  "decision_question": "Should Meridian Motion manufacture precision housings in-house in 2027, lease a flexible cell, or continue buying from an external supplier?",
+  "initial_hypothesis": {
+    "holder": "VP of Operations",
+    "statement": "Buy an owned machining cell in 2027 because $46 of internal variable cost is below the supplier quote.",
+    "expected_handling": "reject",
+    "explanation": "The proposed owned cell breaches the 2027 capex cap and cash floor, while including scrap and fixed costs removes most apparent variable-cost savings; a reversible supply/lease path is viable."
+  },
+  "key_insights": [
+    {
+      "id": "K1",
+      "critical": true,
+      "text": "Owned cell requires $7.30M upfront, above $5.00M capex cap and leaves only $1.90M cash versus $4.00M floor."
+    },
+    {
+      "id": "K2",
+      "critical": true,
+      "text": "2028 supplier cost $7.50M, owned cell operating cost $5.54M before recovery of capex; three-year owned total $24.09M versus supplier $22.50M."
+    },
+    {
+      "id": "K3",
+      "critical": true,
+      "text": "The $46 vs $73 comparison mixes cost per started unit and factory-gate price; correct supplier cost is $75 per accepted delivered unit."
+    },
+    {
+      "id": "K4",
+      "critical": true,
+      "text": "The 98.5% internal yield excludes start-up, rework and downtime; use 8% first-year and 4% subsequent scrap scenarios."
+    },
+    {
+      "id": "K5",
+      "critical": false,
+      "text": "Leased-cell three-year total including setup is $22.20M on plan volumes, but its forecast has capacity, contract and downtime risk."
+    },
+    {
+      "id": "K6",
+      "critical": false,
+      "text": "Supplier reliability is 96.8% against a 97% requirement; reserve capacity and build contingency rather than treat make-or-buy as only a cost choice."
+    }
+  ],
+  "required_calculations": [
+    {
+      "id": "Q1",
+      "text": "Own cell 2027 cash after up-front spending",
+      "expected": "$1.90M vs $4.00M floor",
+      "tolerance": "±$0.05M"
+    },
+    {
+      "id": "Q2",
+      "text": "Supplier full delivered unit price",
+      "expected": "$73 + $2 = $75 per accepted unit",
+      "tolerance": "exact"
+    },
+    {
+      "id": "Q3",
+      "text": "2028 own-cell good-unit manufacturing cost",
+      "expected": "$46 / (1-4%) = $47.92 plus $0.75M fixed",
+      "tolerance": "±$0.10/unit"
+    },
+    {
+      "id": "Q4",
+      "text": "2027–29 comparable cumulative cost",
+      "expected": "outsource $22.50M; own cell $24.09M; lease $22.20M",
+      "tolerance": "±$0.15M"
+    }
+  ],
+  "decision_relevant_evidence": [
+    {
+      "id": "E1",
+      "critical": true,
+      "text": "Five-million capex cap and four-million liquidity floor"
+    },
+    {
+      "id": "E2",
+      "critical": true,
+      "text": "Scrap, fixed costs and start-up time"
+    },
+    {
+      "id": "E3",
+      "critical": true,
+      "text": "Accepted-unit vs started-unit and freight definitions"
+    },
+    {
+      "id": "E4",
+      "critical": false,
+      "text": "Supplier reliability and reserved 40,000-unit option"
+    }
+  ],
+  "contradictory_evidence": [
+    "Demonstration yield vs full-production yield",
+    "Cheap internal variable cost vs full ownership cost",
+    "Owned plants have fewer delays but different scale and demand patterns"
+  ],
+  "reasoning_traps": [
+    {
+      "id": "T1",
+      "text": "Taking 98.5% demo yield as the first-year production rate"
+    },
+    {
+      "id": "T2",
+      "text": "Comparing $46 per started unit with $73 factory-gate buying cost"
+    },
+    {
+      "id": "T3",
+      "text": "Ignoring the capex cap or minimum liquidity"
+    },
+    {
+      "id": "T4",
+      "text": "Treating cross-plant delay correlation as proof of insourcing causality"
+    }
+  ],
+  "key_tradeoffs": [
+    {
+      "id": "X1",
+      "text": "Cost vs delivery continuity"
+    },
+    {
+      "id": "X2",
+      "text": "Capital irreversibility vs forecast uncertainty"
+    },
+    {
+      "id": "X3",
+      "text": "Supplier concentration vs new operating capability"
+    }
+  ],
+  "plausible_recommendations": [
+    {
+      "id": "R1",
+      "defensible": "yes",
+      "text": "Keep outsourcing with reserved second-source capacity and time-boxed lease feasibility, with volume and service gates."
+    },
+    {
+      "id": "R2",
+      "defensible": "conditional",
+      "text": "Install a flexible leased cell if independently validated reliability, site readiness and throughput justify the setup and annual fixed charge."
+    },
+    {
+      "id": "R3",
+      "defensible": "no",
+      "text": "Approve the $7.3M owned cell now under the present board constraints."
+    }
+  ],
+  "defensibility_criteria": [
+    "Compare accepted-unit fully loaded economics and cash constraints",
+    "Address contract service reliability and contingent capacity",
+    "Distinguish factory-gate and delivered costs, demo and real yields",
+    "State evidence needed before any irrevocable build"
+  ],
+  "decision_requirements": [
+    {
+      "id": "D1",
+      "question": "Does each option satisfy capital and minimum cash?",
+      "critical": true,
+      "acceptable_evidence": [
+        "cash bridge",
+        "capital schedule"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D2",
+      "question": "Were yields, costs and units normalized?",
+      "critical": true,
+      "acceptable_evidence": [
+        "per-good-unit calculation",
+        "cost table"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D3",
+      "question": "Is delivery reliability protected?",
+      "critical": true,
+      "acceptable_evidence": [
+        "capacity and contingency plan",
+        "contract gate"
+      ],
+      "unnecessary_if": null
+    },
+    {
+      "id": "D4",
+      "question": "Are build/lease decisions gated on true demand?",
+      "critical": false,
+      "acceptable_evidence": [
+        "threshold",
+        "pilot decision rule"
+      ],
+      "unnecessary_if": "if only outsourcing is recommended with an explicit reassessment"
+    }
+  ]
+}
