@@ -1,0 +1,275 @@
+{
+ "run_id": "holdout-c11-H2a-r1",
+ "case": "c11-oem-licensing",
+ "condition": "H2a",
+ "rep": 1,
+ "order": 4,
+ "phase": "holdout",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 1491.8,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "hire-your-mck:hire-your-mck",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "hire-your-mck",
+        "path": "/Users/brianlee0113/hym-bench-work/_plugin/hire-your-mck-6f05966a12b9",
+        "source": "hire-your-mck@inline",
+        "version": "1.2.1"
+       },
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.328",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 63,
+      "duration_ms": 1491003,
+      "duration_api_ms": 1463459,
+      "total_cost_usd": 8.3066824,
+      "usage": {
+       "input_tokens": 118,
+       "cache_creation_input_tokens": 306987,
+       "cache_read_input_tokens": 12096750,
+       "output_tokens": 151960,
+       "output_tokens_details": {
+        "thinking_tokens": 80042
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 306987,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1797,
+         "cache_read_input_tokens": 314041,
+         "cache_creation_input_tokens": 318,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 318
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 126,
+        "outputTokens": 159157,
+        "cacheReadInputTokens": 12213487,
+        "cacheCreationInputTokens": 351876,
+        "webSearchRequests": 0,
+        "costUSD": 8.3066824,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 85305,
+        "cacheCreationEphemeral5mInputTokens": 44889,
+        "cacheCreationEphemeral1hInputTokens": 306987,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 1,
+       "requested": {
+        "background": 0,
+        "foreground": 1,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 1,
+       "spawned_by_subagents": 0,
+       "completed": 1,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {
+        "general-purpose": 1
+       }
+      }
+     },
+     "result_text_tail": "om the analysis.\n\nNo corrections were needed. The pack shows the 2027 stress royalty as $0.97M and the analysis as $0.98M; both are roundings of 3,250 \u00d7 $300 = $0.975M, so the deck keeps 0.98. No placeholders remain.\n\n**Remaining QA warnings:**\n- Most pages are denser than the guide suggests. I kept every item from the source rather than drop any, and all text renders at 11 pt or larger.\n- On pp. 4, 8 and 12 the sidebar figures interpret the exhibit rather than being calculated from it.\n- On p. 13 the \"$2.6M\" in the title and on p. 20 the \"65%\" appear only as text. The renderer can't show two-decimal $M values as data points, so tables with those values use exact text, and those numbers are traced on the Calculations sheet.\n\n**Not done:**\n- **No visual check:** I couldn't look at the slides as images. LibreOffice isn't installed and the sandbox blocks driving Keynote, so layout was checked only by the renderer's font measurements. Please open the file and look through it.\n- **Workbook post-step:** I added a step that lists the numbers written in table cells and bullets on each page's workbook sheet, since the renderer only lists numbers it draws as charts or callouts.\n- **No re-check against web pages:** with no web sources, the step that re-opens cited pages wasn't needed.\n\nThe spec and build scripts are in `./build/`; `sh build/make.sh` rebuilds both files.\n\nNext, I can switch the theme (`mono` prints well for a board pack) or replace the Gate 2 volume with a value you set."
+    }
+   ],
+   "started": "2026-11-20T06:10:59+00:00",
+   "ended": "2026-11-20T06:35:51+00:00",
+   "session_id": "150bb48c-8e10-4c42-970f-9fad9862f598",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 8.3066824,
+  "duration_s": 1491.8,
+  "api_s": 1463.459,
+  "turns": 63,
+  "input_tokens": 118,
+  "output_tokens": 151960,
+  "cache_read_tokens": 12096750,
+  "cache_creation_tokens": 306987,
+  "cost_all_attempts_usd": 8.3066824
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 8.3066824,
+   "input": 126,
+   "output": 159157,
+   "cache_read": 12213487,
+   "cache_creation": 351876
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "/hire-your-mck Mode: compile, variant `restyle`. The analysis for this request is already done: ./evidence/analysis.md is a finished deck for it, extracted to text slide by slide (with its tables and chart data). Turn it into our deck without changing its analysis. Keep its slide order and its one-point-per-slide structure. It was built from the briefing pack in ./evidence/briefing-pack.md; use the pack to source and check its numbers. In the task below, \"work only from it\" means: use no sources other than the two files in ./evidence/.\n\nCreate a deck for Boreal Autonomy board: Should Boreal Autonomy grant North American exclusivity to an OEM for its industrial robot navigation software in 2027?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "24802b0d1c4722a302fb0e4a1b404d37e8ff4eaea733867551d0e2a4ee2216cc",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.328 (Claude Code)",
+ "plugin_snapshot_sha256": "6f05966a12b90f988e556749adb55ff672b73bdc5ef7e65931fad6ffa5f75867",
+ "plugin_source": "plugin",
+ "repo_head": "17552f8b1b19ec481bc20b81f5e0c2d2a369f8b2",
+ "packet_sha256": "89ec353ad257cce55d83c954087d4e2fdd71230d0827d3058ffbf1b58ed32b4b",
+ "files": [
+  {
+   "path": "workspace/build/augment_workbook.py",
+   "bytes": 4689,
+   "sha256": "d41696df93d5854fd9bc5d0a4dc31e019365af18c365ec46bf5b4c2617518c81"
+  },
+  {
+   "path": "workspace/build/boreal-exclusivity.json",
+   "bytes": 124456,
+   "sha256": "7835d240898af54a69635fb392e29d015f692e2be5aaa28e6741785d314b2e66"
+  },
+  {
+   "path": "workspace/build/build_spec.py",
+   "bytes": 85264,
+   "sha256": "de20f0b4d6a2b2a4a61fb817092f76d48161d1af22a699c874e3d3f136aeb181"
+  },
+  {
+   "path": "workspace/build/check.txt",
+   "bytes": 2225,
+   "sha256": "4c2d4bc6ad49bdc6b9189484e9c9dc2273ce3d0582547422d977e967c7cddb86"
+  },
+  {
+   "path": "workspace/build/deck_text.txt",
+   "bytes": 32847,
+   "sha256": "8c81094197536b493333106ed20dea7f51218cc59a6481992efe591d470988f8"
+  },
+  {
+   "path": "workspace/build/fit.py",
+   "bytes": 1089,
+   "sha256": "79cae39ebd2c87dd93db6663e249f3277bc66502abcf75eea38ac0d79a317bea"
+  },
+  {
+   "path": "workspace/build/make.sh",
+   "bytes": 611,
+   "sha256": "dae20737ff34af452baeaeb018dd29703f0e026dbbf7e288db8cb08e1205cc99"
+  },
+  {
+   "path": "workspace/build/measure.py",
+   "bytes": 1441,
+   "sha256": "7bb28fd128841fe05e2f6276dff9364ba0f1de13949f3383841d3b0c1f05e4a3"
+  },
+  {
+   "path": "workspace/deliverable/boreal-exclusivity-sources.xlsx",
+   "bytes": 78333,
+   "sha256": "1e7375a83d5d97cf382b51f73ec540f3cb2504874c38dfeba29ef5a48ac13cbf"
+  },
+  {
+   "path": "workspace/deliverable/boreal-exclusivity.pptx",
+   "bytes": 128092,
+   "sha256": "abdc494713d5c0b2b2dbbb964e782b9792a9aac3fad0058dd0dab3b865117171"
+  }
+ ]
+}

@@ -1,0 +1,288 @@
+{
+ "run_id": "holdout-c7-H2a-r1",
+ "case": "c7-m-and-a",
+ "condition": "H2a",
+ "rep": 1,
+ "order": 8,
+ "phase": "holdout",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 1420.9,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "hire-your-mck:hire-your-mck",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "hire-your-mck",
+        "path": "/Users/brianlee0113/hym-bench-work/_plugin/hire-your-mck-6f05966a12b9",
+        "source": "hire-your-mck@inline",
+        "version": "1.2.1"
+       },
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.328",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 66,
+      "duration_ms": 1419518,
+      "duration_api_ms": 1390510,
+      "total_cost_usd": 8.1394496,
+      "usage": {
+       "input_tokens": 124,
+       "cache_creation_input_tokens": 325119,
+       "cache_read_input_tokens": 12703708,
+       "output_tokens": 149863,
+       "output_tokens_details": {
+        "thinking_tokens": 75053
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 325119,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1260,
+         "cache_read_input_tokens": 324706,
+         "cache_creation_input_tokens": 413,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 413
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 124,
+        "outputTokens": 149863,
+        "cacheReadInputTokens": 12703708,
+        "cacheCreationInputTokens": 325119,
+        "webSearchRequests": 0,
+        "costUSD": 8.1394496,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 75053,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 325119,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": " words.\n- **Executive summary trimmed so it reads at 12 pt or larger.** Two points from the source summary are now only on their own slides: \"synergy evidence is correlation only\" (slide 10) and \"a build ships late 2028\" (slide 13).\n- **Two exhibits changed form:**\n  - Slide 7's three-bar chart is folded into the bridge table as a \"Sellers' pitch\" row.\n  - Slide 15's ceiling calculation is now a strip of number cards under the term sheet.\n- **Calculations page split in two** (pages 21\u201322) so the table stays readable.\n- **Workaround: post-render step.** Tables can't show two-decimal figures like 0.07 or 0.92 as linked numbers, so those are typed into the cells. That left 14 slides with no source line and empty workbook sheets. A script I wrote (`work/postprocess.py`) fixes both after rendering, using a hand-made list of which numbers appear on each slide. Running `render.py` on its own will undo that fix.\n\n**Warnings left in QA:** most slides are dense (over 1,300 characters) because I kept every point from the source. Some title numbers appear in table text rather than as linked values. Two pack excerpts write the number as a word (\"eighteen months\", \"two years\").\n\nI couldn't preview the slides as images: there's no LibreOffice here and the sandbox blocks opening apps. I checked the layout through the renderer's measurements and its warnings. Open the `.pptx` once in PowerPoint before you send it.\n\nI can switch the theme or tighten the densest slides (10, 11, 14) if you want."
+    }
+   ],
+   "started": "2026-11-20T05:41:44+00:00",
+   "ended": "2026-11-20T06:05:25+00:00",
+   "session_id": "3c3e305a-6429-409f-bb78-c71420a67c70",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 8.1394496,
+  "duration_s": 1420.9,
+  "api_s": 1390.51,
+  "turns": 66,
+  "input_tokens": 124,
+  "output_tokens": 149863,
+  "cache_read_tokens": 12703708,
+  "cache_creation_tokens": 325119,
+  "cost_all_attempts_usd": 8.1394496
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 8.1394496,
+   "input": 124,
+   "output": 149863,
+   "cache_read": 12703708,
+   "cache_creation": 325119
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "/hire-your-mck Mode: compile, variant `restyle`. The analysis for this request is already done: ./evidence/analysis.md is a finished deck for it, extracted to text slide by slide (with its tables and chart data). Turn it into our deck without changing its analysis. Keep its slide order and its one-point-per-slide structure. It was built from the briefing pack in ./evidence/briefing-pack.md; use the pack to source and check its numbers. In the task below, \"work only from it\" means: use no sources other than the two files in ./evidence/.\n\nCreate a deck for Atlas FieldOps board: Should Atlas FieldOps buy the scheduling software company RouteSprout in 2027, and on what terms, rather than build or partner?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "6854625d384b4f98bfd7201e2252a9d8928333ec12b78f6e93338d9de6cd35eb",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.328 (Claude Code)",
+ "plugin_snapshot_sha256": "6f05966a12b90f988e556749adb55ff672b73bdc5ef7e65931fad6ffa5f75867",
+ "plugin_source": "plugin",
+ "repo_head": "17552f8b1b19ec481bc20b81f5e0c2d2a369f8b2",
+ "packet_sha256": "8b1e3abc5bbb2f5075aa81dbc2cafc124b8ad62731cff119bd5b65b0c8ebbc97",
+ "files": [
+  {
+   "path": "workspace/deliverable/atlas-routesprout-sources.xlsx",
+   "bytes": 85366,
+   "sha256": "e903fcdc572f667b129eb0df8102d31f0a770b68b2e7988bb6b062dea356f63a"
+  },
+  {
+   "path": "workspace/deliverable/atlas-routesprout.json",
+   "bytes": 119198,
+   "sha256": "6723a5a71b55303aa019be19c8b7ca3ac94429714d925257bfbec71905319230"
+  },
+  {
+   "path": "workspace/deliverable/atlas-routesprout.pptx",
+   "bytes": 126413,
+   "sha256": "878d409ad591af6cd877a4d8bdc249240d52329a8fc38796eb79304d193ae6c7"
+  },
+  {
+   "path": "workspace/work/build_spec.py",
+   "bytes": 82327,
+   "sha256": "fe8f39d10e12168b823e7b71659f9f30bb37ef2f402ba74369bbaad603862a12"
+  },
+  {
+   "path": "workspace/work/fit.py",
+   "bytes": 1741,
+   "sha256": "420b95b1267b359b5c1b8c99b6d0b94bb0efc7d95f020d56c30f8cd5ea3d7b59"
+  },
+  {
+   "path": "workspace/work/patch1.py",
+   "bytes": 7851,
+   "sha256": "8016fb12b57b095c02dbd94b78c96d8b69df5da11aefb91d928fec7b4f1f7797"
+  },
+  {
+   "path": "workspace/work/patch2.py",
+   "bytes": 10069,
+   "sha256": "1c76f20bff38377079de1bb587b8314de4089358ed54f910bd3c68bf01e1e731"
+  },
+  {
+   "path": "workspace/work/patch3.py",
+   "bytes": 11490,
+   "sha256": "0caafd5a0acef986034d68b126453cf27d12d185c318feb648cb52da82b4e93a"
+  },
+  {
+   "path": "workspace/work/patch4.py",
+   "bytes": 4325,
+   "sha256": "e06602be2609da7bdf6f5e4e6531813c0060c3654d976e9c37abf1f61018e70e"
+  },
+  {
+   "path": "workspace/work/postprocess.py",
+   "bytes": 4525,
+   "sha256": "59554833b86371fcd287a9e1ecf615389272bd7b294ce67b643e51f6420f0227"
+  },
+  {
+   "path": "workspace/work/tablefit.py",
+   "bytes": 1678,
+   "sha256": "1101d30e064e40d8281715f5e55af31d8d5ae83e31a7b39ed555b675fea79771"
+  },
+  {
+   "path": "workspace/work/text_refs.json",
+   "bytes": 2931,
+   "sha256": "c1d9461dde073e325762ef2b6c0221dfe2fe739d99f4f1cb843572d8733aafe8"
+  },
+  {
+   "path": "workspace/work/titles.py",
+   "bytes": 646,
+   "sha256": "704b67cff63c29863c114726ce802ac40e3cb8277783bb07dfc17672f1414f12"
+  }
+ ]
+}

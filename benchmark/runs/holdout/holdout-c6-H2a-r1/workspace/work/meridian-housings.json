@@ -1,0 +1,4744 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Precision housings in 2027: keep buying, de-risk the supply, and hold a leased cell as a gated fallback",
+  "subtitle": "Answer to: make precision housings in-house in 2027, lease a flexible cell, or keep buying? For decision at the January 2027 Executive Committee",
+  "company_name": "Meridian Motion",
+  "audience": "Executive Committee",
+  "purpose": "Should Meridian Motion manufacture precision housings in-house in 2027, lease a flexible cell, or continue buying from an external supplier?",
+  "date": "2026-11-20",
+  "language": "en-US",
+  "confidentiality": "Based solely on the internal briefing pack; nominal, pre-tax, undiscounted unless stated. Briefing data is synthetic",
+  "theme": "navy"
+ },
+ "inputs": [
+  {
+   "id": "in-bp",
+   "kind": "file",
+   "label": "Meridian Motion briefing pack (synthetic data)",
+   "content": "./evidence/briefing-pack.md"
+  },
+  {
+   "id": "in-an",
+   "kind": "file",
+   "label": "Finished analysis deck, extracted slide by slide",
+   "content": "./evidence/analysis.md"
+  }
+ ],
+ "storyline": {
+  "governing_thought": "Keep buying in 2027 on a de-risked supply, pre-qualify a gated lease, and build no cell in 2027",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "Judged on four tests, not unit price, only buying with a de-risked supply fails none",
+    "supports": [
+     "3",
+     "3b",
+     "4",
+     "5"
+    ],
+    "sub_points": [
+     {
+      "text": "Our starting hypothesis, a leased cell, failed three of the five conditions it needed",
+      "slide_id": "4"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "The owned cell is not a 2027 option",
+    "supports": [
+     "6",
+     "7"
+    ],
+    "sub_points": [
+     {
+      "text": "It needs $7.3M against the $5.0M capital limit and leaves ~$3.2M of cash, below the $4.0M floor",
+      "slide_id": "7"
+     },
+     {
+      "text": "The circulated $27 saving is $16 per good housing in 2027; payback is 3.7 years at 100k units (7.2 at 65k)",
+      "slide_id": "6"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "Leasing is a cost near-tie that turns negative if any one assumption slips",
+    "supports": [
+     "8",
+     "9"
+    ],
+    "sub_points": [
+     {
+      "text": "It saves $0.3M (1%) over 2027–29 in the plan, but costs $1.4M more on conservative demand",
+      "slide_id": "8"
+     },
+     {
+      "text": "It costs $0.5M more if it runs 7 months of 2027 on full fixed cost; break-even is 207k units in 2028–29",
+      "slide_id": "9"
+     }
+    ]
+   },
+   {
+    "id": "4",
+    "text": "Delivery reliability is a supply-design problem that buying can fix faster than any cell",
+    "supports": [
+     "10",
+     "11"
+    ],
+    "sub_points": [
+     {
+      "text": "The 0.2-percentage-point shortfall (96.8% on time against 97%) traces to one flood closure",
+      "slide_id": "10"
+     },
+     {
+      "text": "Four supply levers act in 0–13 weeks, against 5–9+ months for a cell, for $0.25M capital and ≤ $0.72M working capital",
+      "slide_id": "11"
+     }
+    ]
+   },
+   {
+    "id": "5",
+    "text": "Pre-agreed gates would switch to the lease; act before the March 2027 quote expiry",
+    "supports": [
+     "12",
+     "13",
+     "14",
+     "15"
+    ],
+    "sub_points": [
+     {
+      "text": "Triggers: committed 2028–29 volume of 208k+, a price above ~$84 (~$74 with committed volume) or on-time delivery under 97% for two quarters",
+      "slide_id": "13"
+     },
+     {
+      "text": "The plan keeps 2027 year-end cash near $8.2M, enough to fund the lease if a gate trips",
+      "slide_id": "12"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Approve buy and de-risk for 2027, $0.25M alternate-shop tooling, up to $0.72M buffer stock, the site survey and the gates",
+    "owner": "Executive Committee",
+    "timing": "Jan 2027"
+   },
+   {
+    "action": "Sign the supplier extension (2028–29 price, split orders, 40k reservation) before the quote lapses",
+    "owner": "Procurement (proposed)",
+    "timing": "By Mar 2027"
+   },
+   {
+    "action": "Build alternate-shop tooling and place the first split quarterly order",
+    "owner": "Procurement, Quality (proposed)",
+    "timing": "Feb–Mar 2027"
+   },
+   {
+    "action": "Build the buffer toward 6 weeks and sign the emergency-supplier framework",
+    "owner": "Operations, Finance (proposed)",
+    "timing": "Feb–Mar 2027"
+   },
+   {
+    "action": "Commission the lessor's site survey and agree a scrap trial on the new housing",
+    "owner": "Manufacturing engineering (proposed)",
+    "timing": "Jan–Mar 2027"
+   },
+   {
+    "action": "Run the first gate review (P1–P3, T1–T3): trigger the lease for 2028?",
+    "owner": "CFO, COO (proposed)",
+    "timing": "Jun 2027"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "1",
+   "title": "The answer and the four tests",
+   "exec_item_id": "1",
+   "tracker_label": "Answer"
+  },
+  {
+   "id": "2",
+   "title": "The owned cell",
+   "exec_item_id": "2",
+   "tracker_label": "Owned cell"
+  },
+  {
+   "id": "3",
+   "title": "The leased cell",
+   "exec_item_id": "3",
+   "tracker_label": "Leased cell"
+  },
+  {
+   "id": "4",
+   "title": "Delivery reliability",
+   "exec_item_id": "4",
+   "tracker_label": "Reliability"
+  },
+  {
+   "id": "5",
+   "title": "Recommendation, gates and next steps",
+   "exec_item_id": "5",
+   "tracker_label": "Gates and next steps"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "3",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "The decision must pass four tests: affordability, like-for-like cost, delivery reliability and robustness, not unit price",
+    "count_word": 4,
+    "clauses": 1
+   },
+   "message_type": "structure",
+   "archetype": "framework-pillars",
+   "rationale": "Made of four tests -> framework-pillars (source slide 3, right half)",
+   "unit_line": "**Tests every option must pass**, from the board's constraints and the CEO's brief",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "framework",
+    "shape": "pillars",
+    "foundation": "The customer mandates delivery reliability and dimensional quality, not insourcing",
+    "items": [
+     {
+      "id": "1",
+      "header": "Affordability: within the board's limits",
+      "detail": [
+       "No more than $5.0M of new 2027 capital",
+       "Year-end unrestricted cash above $4.0M",
+       "Starting from $9.2M today, with no new debt or equity"
+      ]
+     },
+     {
+      "id": "2",
+      "header": "Like-for-like cost: lowest per good unit",
+      "detail": [
+       "Measured over 2027–29 on good, accepted units",
+       "Holds in planning demand of 300k units",
+       "Holds in conservative demand of 230k units"
+      ],
+      "footer": "Cost per good unit = cost per start ÷ (1 − scrap rate)"
+     },
+     {
+      "id": "3",
+      "header": "Delivery reliability: meet the contract",
+      "detail": [
+       "At least 97% of units shipped within ten business days",
+       "Plus an executable outage contingency, as the CEO asked",
+       "Reliability and quality are what the customer requires"
+      ]
+     },
+     {
+      "id": "4",
+      "header": "Robustness: survives adverse moves",
+      "detail": [
+       "Holds if demand, scrap, supplier price or start-up timing move against it",
+       "Housing volumes are not guaranteed",
+       "The conservative case cuts 2028 from 100k to 65k units"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Briefing pack §2–§4; Briefing data is synthetic; all figures nominal, pre-tax and undiscounted unless stated"
+   ]
+  },
+  {
+   "id": "3b",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "The cells' lower quoted unit costs come with upfront cash, fixed cost, scrap and a slower start that unit price misses"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Three options on the same terms -> comparison-table (source slide 3, left half; split because both halves do not fit at 14 pt)",
+   "unit_line": "**Terms as quoted for each option**, cost per good unit and 2027 timing",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Buy from supplier",
+     "Lease flexible cell",
+     "Build owned cell"
+    ],
+    "rows": [
+     {
+      "label": "Unit cost per good unit",
+      "cells": [
+       {
+        "text": "$73 gate + $2 freight/QA = $75"
+       },
+       {
+        "text": "$49 per start → $52.13 yr 1, $51.04 later"
+       },
+       {
+        "text": "$46 per start → $50.00 yr 1, $47.92 later"
+       }
+      ]
+     },
+     {
+      "label": "Upfront cash",
+      "cells": [
+       {
+        "text": "None; optional $0.25M alternate-shop tooling"
+       },
+       {
+        "text": "$2.0M installation and training"
+       },
+       {
+        "text": "$7.3M ($6.5M equipment + $0.8M install)"
+       }
+      ]
+     },
+     {
+      "label": "Fixed cost per year",
+      "cells": [
+       {
+        "text": "None"
+       },
+       {
+        "text": "$1.60M lease and staffing"
+       },
+       {
+        "text": "$0.75M staffing"
+       }
+      ]
+     },
+     {
+      "label": "Scrap, year 1 / later",
+      "cells": [
+       {
+        "text": "Covered by price (pays good units only)"
+       },
+       {
+        "text": "6% / 4% of starts"
+       },
+       {
+        "text": "8% / 4% of starts"
+       }
+      ]
+     },
+     {
+      "label": "Practical capacity",
+      "cells": [
+       {
+        "text": "Up to 140k a year if renewed"
+       },
+       {
+        "text": "125k accepted units a year"
+       },
+       {
+        "text": "120k accepted units a year"
+       }
+      ]
+     },
+     {
+      "label": "Time to first output",
+      "cells": [
+       {
+        "text": "In place; quote valid to March 2027"
+       },
+       {
+        "text": "About 5 months, if the site survey passes"
+       },
+       {
+        "text": "9-month equipment lead time + install"
+       }
+      ]
+     },
+     {
+      "label": "After 2029",
+      "cells": [
+       {
+        "text": "2028–29 price and capacity indicative"
+       },
+       {
+        "text": "Terminable, no residual value"
+       },
+       {
+        "text": "Resale about $2.1M (non-binding)"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Briefing pack §3. Cost per good unit = cost per start ÷ (1 − scrap rate); the supplier is paid for accepted units only",
+    "Briefing data is synthetic; all figures nominal, pre-tax and undiscounted unless stated"
+   ]
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Leasing a flexible cell, our starting hypothesis, failed three of its five conditions and gave way to buy and de-risk",
+    "count_word": 5,
+    "clauses": 1
+   },
+   "message_type": "argument",
+   "archetype": "comparison-table",
+   "rationale": "Five conditions tested against the evidence -> comparison-table with a verdict column",
+   "unit_line": "**Initial hypothesis (Nov 2026): lease the flexible cell in 2027**; all five conditions had to hold",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "verdict_header": "Verdict",
+    "columns": [
+     "What would have to be true",
+     "What the evidence shows"
+    ],
+    "rows": [
+     {
+      "label": "1 · Cheaper",
+      "cells": [
+       {
+        "text": "Cheaper than buying, like-for-like, across plausible demand"
+       },
+       {
+        "text": "Saves $0.3M (1%) over 2027–29 in the plan; costs $1.4M more in the conservative case (p. 9)"
+       }
+      ],
+      "note": "Not supported"
+     },
+     {
+      "label": "2 · Affordable",
+      "cells": [
+       {
+        "text": "Fits the $5.0M capital limit and the $4.0M cash floor"
+       },
+       {
+        "text": "$2.0M upfront; implied year-end 2027 cash about $7.4M (p. 8)"
+       }
+      ],
+      "note": "Supported"
+     },
+     {
+      "label": "3 · In time",
+      "cells": [
+       {
+        "text": "Running early enough to protect 2027 deliveries"
+       },
+       {
+        "text": "Five months only if the power/ventilation survey passes: earliest ~June 2027; quote expires in March (p. 11)"
+       }
+      ],
+      "note": "Not supported"
+     },
+     {
+      "label": "4 · Buying can't be fixed",
+      "cells": [
+       {
+        "text": "Buying cannot be made reliable enough to meet 97%"
+       },
+       {
+        "text": "96.8% on time, late orders in one flood closure; dual sourcing, reserved units, an emergency supplier exist (pp. 11–12)"
+       }
+      ],
+      "note": "Not supported"
+     },
+     {
+      "label": "5 · Scrap achievable",
+      "cells": [
+       {
+        "text": "Meridian can run a cell at the quoted 6% first-year scrap"
+       },
+       {
+        "text": "Never run a production cell; the 98.5% demo yield excludes start-up, rework and downtime, not at full speed"
+       }
+      ],
+      "note": "Unproven"
+     }
+    ]
+   },
+   "so_what": "Revised answer: buy and de-risk, with the lease as a gated fallback; the owned cell fails conditions 1 and 2",
+   "so_what_style": "bar",
+   "footnotes": [
+    "We started with the lease because it fits the capital limit, starts faster than a build and gives Meridian control of supply. The owned cell fails conditions 1 and 2 outright: $7.3M of capital; $1.6M more cost than buying over 2027–29 in the plan",
+    "Briefing pack §2–§6; team analysis"
+   ]
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Only buying with a de-risked supply fails no test; the lease fails on robustness and the owned cell fails all four",
+    "count_word": 4,
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Three options on the same four tests -> comparison-table, verdict row highlighted",
+   "unit_line": "**Options against the four tests**, pass / partial / fail with the evidence; cost deltas are 2027–29 totals compared with buying",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Buy + de-risk",
+     "Lease flexible cell",
+     "Build owned cell"
+    ],
+    "rows": [
+     {
+      "label": "Affordability: ≤ $5.0M capital, cash > $4.0M",
+      "cells": [
+       {
+        "text": "Pass: $0.25M capital; year-end 2027 cash about $8.2M incl. buffer stock"
+       },
+       {
+        "text": "Pass: $2.0M upfront; year-end 2027 cash about $7.4M"
+       },
+       {
+        "text": "Fail: $7.3M against the $5.0M limit; cash about $3.2M, below the $4.0M floor"
+       }
+      ]
+     },
+     {
+      "label": "Like-for-like cost: 2027–29, plan and conservative",
+      "cells": [
+       {
+        "text": "Pass: cheapest in the conservative case; within $0.3M (1%) of the lease in the plan"
+       },
+       {
+        "text": "Partial: $0.3M cheaper than buying in the plan; $1.4M dearer in the conservative case"
+       },
+       {
+        "text": "Fail: $1.6M dearer in plan, $3.5M conservative; wins only if the non-binding $2.1M resale is realised"
+       }
+      ]
+     },
+     {
+      "label": "Delivery reliability: 97% in ten days, contingency",
+      "cells": [
+       {
+        "text": "Partial: 96.8% today; the five-layer contingency closes the gap, but only if executed by March"
+       },
+       {
+        "text": "Partial: in-house control, but earliest about 5 months and survey-dependent; Meridian has never run a cell"
+       },
+       {
+        "text": "Fail: no output before about Q4 2027; untested at full speed; 8% first-year scrap"
+       }
+      ]
+     },
+     {
+      "label": "Robustness: demand, scrap, price, timing",
+      "cells": [
+       {
+        "text": "Partial: exposed to supplier price after March 2027; capped by price gate T2 (p. 14)"
+       },
+       {
+        "text": "Fail: edge vanishes with 6% lower volume, a seven-month 2027 or a ~$1.40 lower supplier price"
+       },
+       {
+        "text": "Fail: needs 279k units in 2028–29 to pay back by 2029 without resale, above its 240k capacity"
+       }
+      ]
+     },
+     {
+      "label": "Verdict",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Recommended for 2027"
+       },
+       {
+        "text": "Gated fallback (p. 14)"
+       },
+       {
+        "text": "Not in 2027; revisit 2028 or later"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Briefing pack; team analysis. Cost deltas are 2027–29 totals compared with buying, nominal and undiscounted",
+    "A seven-month 2027 erases the lease's edge when the lease and staffing cost is paid for the full year; pro-rated, the edge shrinks to $0.21M (p. 10)"
+   ]
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Counting freight, scrap and fixed cost cuts the $27 saving per housing to $16 in 2027; payback is 3.7 years, not under three",
+    "numbers": [
+     {
+      "text": "$27",
+      "data_ref": "cfo27"
+     },
+     {
+      "text": "$16",
+      "data_ref": "sav27"
+     },
+     {
+      "text": "3.7 years",
+      "data_ref": "pb100"
+     }
+    ],
+    "highlights": [
+     "True 2027 saving"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "waterfall-bridge",
+   "rationale": "What adds up from the claimed saving to the true one -> waterfall",
+   "unit_line": "**Owned-cell saving compared with buying**, $ per good housing, 2027 (80k units, 8% scrap)",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Payback in years on $7.3M upfront = $7.3M ÷ annual net saving",
+     "rows": [
+      {
+       "label": "CFO slide: ignores freight, scrap and fixed cost",
+       "basis": "$27 × 100k = $2.7M a year",
+       "point": {
+        "data_ref": "pb_cfo"
+       }
+      },
+      {
+       "label": "Corrected, 100k units",
+       "basis": "$19.58 × 100k = $1.96M a year",
+       "point": {
+        "data_ref": "pb100"
+       },
+       "highlight": true
+      },
+      {
+       "label": "Corrected, 65k units (conservative 2028)",
+       "basis": "$27.08 × 65k − $0.75M = $1.01M a year",
+       "point": {
+        "data_ref": "pb65"
+       }
+      }
+     ],
+     "bullets": [
+      "**Plan volumes:** 2027–29 savings of $5.7M do not recover the $7.3M"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "waterfall",
+    "categories": [
+     "CFO slide: $73 against $46",
+     "Freight & QA the CFO omitted",
+     "First-year scrap (8%)",
+     "Fixed staffing ($0.75M ÷ 80k)",
+     "True 2027 saving"
+    ],
+    "series": [
+     {
+      "name": "Saving per housing",
+      "points": [
+       {
+        "data_ref": "cfo27"
+       },
+       {
+        "data_ref": "frt2"
+       },
+       {
+        "data_ref": "wf_scr"
+       },
+       {
+        "data_ref": "wf_fix"
+       },
+       {
+        "data_ref": "sav27"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "True 2027 saving"
+    ],
+    "value_format": "0.00"
+   },
+   "footnotes": [
+    "Steady state (4% scrap, 100k units): $27.08 − $7.50 fixed = $19.58 per unit. Paybacks are undiscounted and pre-tax: financing or time value lengthens each one",
+    "Briefing pack §3, §5. The $75 procurement figure is the same quote incl. freight, not a second quote. Payback in years"
+   ]
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Building the cell breaches both board limits: $7.3M of capital against a $5.0M cap, and ~$3.2M of cash against a $4.0M floor",
+    "numbers": [
+     {
+      "text": "$7.3M",
+      "data_ref": "own_up"
+     },
+     {
+      "text": "$5.0M",
+      "data_ref": "caplim"
+     },
+     {
+      "text": "$3.2M",
+      "data_ref": "cash_own"
+     },
+     {
+      "text": "$4.0M",
+      "data_ref": "floor"
+     }
+    ],
+    "clauses": 2
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Two limits, one claim -> two panels, no arrow (B-09)",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "Only the owned cell needs more than the $5.0M approvable without new financing",
+      "unit_line": "**New 2027 capital**, $ millions, against the $5.0M limit",
+      "body": {
+       "kind": "chart",
+       "chart_type": "column",
+       "categories": [
+        "Buy + de-risk",
+        "Lease cell",
+        "Owned cell"
+       ],
+       "series": [
+        {
+         "name": "New 2027 capital",
+         "points": [
+          {
+           "data_ref": "tool025"
+          },
+          {
+           "data_ref": "lease_up"
+          },
+          {
+           "data_ref": "own_up"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Owned cell"
+       ],
+       "value_format": "0.00",
+       "benchmark": {
+        "label": "$5.0M capital limit",
+        "point": {
+         "data_ref": "caplim"
+        }
+       }
+      }
+     },
+     {
+      "header": "Only the owned cell would end 2027 below the cash floor",
+      "unit_line": "**Implied year-end 2027 cash**, $ millions, against the $4.0M floor",
+      "body": {
+       "kind": "chart",
+       "chart_type": "column",
+       "categories": [
+        "Buy + de-risk",
+        "Lease cell",
+        "Owned cell"
+       ],
+       "series": [
+        {
+         "name": "Year-end 2027 cash",
+         "points": [
+          {
+           "data_ref": "cash_buy"
+          },
+          {
+           "data_ref": "cash_lease"
+          },
+          {
+           "data_ref": "cash_own"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Owned cell"
+       ],
+       "value_format": "0.00",
+       "benchmark": {
+        "label": "$4.0M cash floor",
+        "point": {
+         "data_ref": "floor"
+        }
+       }
+      }
+     }
+    ]
+   },
+   "so_what": "Even if financed, the owned cell would not help 2027: equipment takes nine months, so first output arrives about Q4 2027 at the earliest",
+   "so_what_style": "line",
+   "footnotes": [
+    "Cash drops to $1.9M the moment the $7.3M is paid. The 98.5% demo yield excludes start-up, rework and three days of downtime; the engineer plans 8% scrap",
+    "Year-end cash = $9.2M − 2027 outflow above today's $6.0M buy spend; rest of business cash-neutral; buy includes the $0.72M buffer"
+   ]
+  },
+  {
+   "id": "8",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "The lease saves only $0.3M (1%) against buying over 2027–29 in the plan, and costs $1.4M more on conservative demand",
+    "numbers": [
+     {
+      "text": "1%",
+      "data_ref": "l_share"
+     }
+    ],
+    "highlights": [
+     "Lease"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "Three options compared in two demand cases -> clustered column, lease highlighted",
+   "unit_line": "**Total cost of supplying good housings, 2027–29**, $ millions; planning 300k units, conservative 230k",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "big_number": {
+      "data_ref": "l_share"
+     },
+     "caption": "the lease's planning-case saving as a share of the $22.50M cost of buying",
+     "bullets": [
+      "**Per good housing:** buy $75.00 in both cases; lease $74.00 (plan) and $80.98 (conservative); own $80.31 and $90.16, or $73.31 and $81.03 if resale is realised",
+      "**Why the gap is so small:** scrap turns the lease's $49 into $51–52 per good unit, and $1.6M a year of lease and staffing absorbs most of the $23–24 unit margin until volume exceeds ~67k a year",
+      "**Why own still loses:** its $7.3M upfront is never recovered by 2029 unless a dealer's non-binding $2.1M resale indication comes true"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "Buy",
+     "Lease",
+     "Own",
+     "Own net of $2.1M resale"
+    ],
+    "series": [
+     {
+      "name": "Planning demand",
+      "points": [
+       {
+        "data_ref": "buy_tot_p"
+       },
+       {
+        "data_ref": "l_tot_p"
+       },
+       {
+        "data_ref": "o_tot_p"
+       },
+       {
+        "data_ref": "on_tot_p"
+       }
+      ]
+     },
+     {
+      "name": "Conservative demand",
+      "points": [
+       {
+        "data_ref": "buy_tot_c"
+       },
+       {
+        "data_ref": "l_tot_c"
+       },
+       {
+        "data_ref": "o_tot_c"
+       },
+       {
+        "data_ref": "on_tot_c"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Lease"
+    ],
+    "value_format": "0.00"
+   },
+   "footnotes": [
+    "Planning 80k / 100k / 120k units, conservative 80k / 65k / 85k; nominal, undiscounted, incl. upfront cost; full-year 2027 for both cells (favours them). Detail: pp. 18–19"
+   ]
+  },
+  {
+   "id": "9",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "A 6% volume shortfall, a mid-2027 start at full fixed cost or a ~$1.40 lower supplier price erases the lease's $0.3M edge",
+    "numbers": [
+     {
+      "text": "$0.3M",
+      "data_ref": "lsav_base"
+     }
+    ],
+    "highlights": [
+     "2028–29 volume 6% below plan (207k units)",
+     "Lease runs 7 months of 2027, full-year fixed cost"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "One assumption changed at a time, ranked by effect -> sensitivity bars, the bars the title names highlighted",
+   "unit_line": "**Lease saving compared with buying over 2027–29**, $ millions; each bar changes one assumption from the planning base case",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The break-even points sit close to today's plan and price",
+     "bullets": [
+      "**Volume:** the lease breaks even at 207k units in 2028–29, against a plan of 220k",
+      "**Price, plan:** the lease wins only if the supplier's 2028–29 price exceeds $73.6, against $75 today",
+      "**Price, conservative:** above $84.2 the lease wins even with conservative demand"
+     ],
+     "implication": "A 1% edge does not pay for first-time operating risk in a cell Meridian has never run"
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "Supplier 2028–29 price +$5 (to $80 delivered)",
+     "Base case: planning demand, full-year 2027",
+     "Lease runs 7 months of 2027, fixed cost pro-rated",
+     "Lease later-year scrap 6% instead of 4%",
+     "2028–29 volume 6% below plan (207k units)",
+     "Supplier 2028–29 price −$2 (to $73 delivered)",
+     "Lease runs 7 months of 2027, full-year fixed cost",
+     "Conservative demand (65k in 2028, 85k in 2029)"
+    ],
+    "series": [
+     {
+      "name": "Lease saving",
+      "points": [
+       {
+        "data_ref": "sens_p5"
+       },
+       {
+        "data_ref": "lsav_base"
+       },
+       {
+        "data_ref": "sens_7pr"
+       },
+       {
+        "data_ref": "sens_s6"
+       },
+       {
+        "data_ref": "sens_vol"
+       },
+       {
+        "data_ref": "sens_m2"
+       },
+       {
+        "data_ref": "sens_7fy"
+       },
+       {
+        "data_ref": "sens_cons"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "2028–29 volume 6% below plan (207k units)",
+     "Lease runs 7 months of 2027, full-year fixed cost"
+    ],
+    "value_format": "0.00"
+   },
+   "footnotes": [
+    "Positive = lease cheaper. A mid-2027 start erases the edge when lease and staffing are paid for the full year; pro-rated, the edge is $0.21M",
+    "Break-even price = (lease 2027–29 total − $6.00M 2027 buy cost) ÷ 2028–29 units"
+   ]
+  },
+  {
+   "id": "10",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "One flood closure explains the 0.2-percentage-point reliability gap; supply levers act in 0–13 weeks, a cell in 5–9+ months",
+    "numbers": [
+     {
+      "text": "0.2",
+      "data_ref": "otd_gap"
+     }
+    ],
+    "clauses": 2
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Two clauses: the size and cause of the gap, then how fast each lever acts -> two panels",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "The gap is a logistics event, not a capacity gap",
+      "unit_line": "**On-time delivery within ten business days**, supplier, trailing",
+      "body": {
+       "kind": "kpi",
+       "items": [
+        {
+         "point": {
+          "data_ref": "otd_gap"
+         },
+         "caption": "gap to the 97.0% requirement: 96.8% on time, about 160 housings a year at 80k units",
+         "drivers": [
+          "Late orders were concentrated in one flood-related road closure",
+          "The customer requires reliability and quality, not ownership",
+          "Losing the designation would also hit electronics and software sales (unquantified)"
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "header": "Supply levers act in weeks; a cell takes months to arrive",
+      "unit_line": "**Weeks until each lever can supply housings**, from decision",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Buffer stock at Meridian (immediate)",
+        "Emergency second supplier ($88)",
+        "Supplier's 40k reserved units",
+        "Leased cell (+ site survey)",
+        "Owned cell (+ install)"
+       ],
+       "series": [
+        {
+         "name": "Weeks to supply",
+         "points": [
+          {
+           "data_ref": "w_buf"
+          },
+          {
+           "data_ref": "w_emg"
+          },
+          {
+           "data_ref": "w_res"
+          },
+          {
+           "data_ref": "w_lease"
+          },
+          {
+           "data_ref": "w_own"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Buffer stock at Meridian (immediate)",
+        "Emergency second supplier ($88)",
+        "Supplier's 40k reserved units"
+       ],
+       "value_format": "0"
+      }
+     }
+    ]
+   },
+   "so_what": "Reliability must come from supply design: any cell is a 2028 capacity decision, not a 2027 fix",
+   "so_what_style": "line",
+   "footnotes": [
+    "Hedging 2029 by buying capacity early is unnecessary when a lease takes about five months. Plants with machine shops had fewer delays, but larger, steadier volumes: correlation only",
+    "Weeks from decision to relief; cell timings exclude ramp-up and assume the site survey passes. Briefing pack §2, §4–§5"
+   ]
+  },
+  {
+   "id": "11",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "A five-layer supply contingency protects the 97% requirement for $0.25M of capital and up to $0.72M of working capital",
+    "count_word": 5,
+    "clauses": 1
+   },
+   "message_type": "structure",
+   "archetype": "data-table",
+   "rationale": "Five layers, each with what it protects, timing and cost -> data-table",
+   "unit_line": "**Outage contingency while buying**, by layer",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "What we put in place",
+     "Protects against",
+     "Time to act",
+     "Cost"
+    ],
+    "rows": [
+     {
+      "label": "1 · Buffer stock",
+      "cells": [
+       {
+        "text": "Hold ~6 weeks (~9,600 units) to bridge the emergency notice"
+       },
+       {
+        "text": "One-week outages; road closures"
+       },
+       {
+        "text": "Immediate"
+       },
+       {
+        "text": "Up to $0.72M working capital"
+       }
+      ]
+     },
+     {
+      "label": "2 · Second source",
+      "cells": [
+       {
+        "text": "Tool the alternate shop; split quarterly orders (~25%)"
+       },
+       {
+        "text": "Single-shop failure"
+       },
+       {
+        "text": "Tooling lead time to confirm"
+       },
+       {
+        "text": "$0.25M capital"
+       }
+      ]
+     },
+     {
+      "label": "3 · Reserved capacity",
+      "cells": [
+       {
+        "text": "Contract the 40k reserved units; extend 2028–29 pricing by March"
+       },
+       {
+        "text": "Demand upside; capacity sold elsewhere"
+       },
+       {
+        "text": "90 days' notice"
+       },
+       {
+        "text": "Negotiated; no take-or-pay"
+       }
+      ]
+     },
+     {
+      "label": "4 · Emergency supplier",
+      "cells": [
+       {
+        "text": "Framework with the second approved supplier at $88 a unit"
+       },
+       {
+        "text": "Outage that outlasts the buffer"
+       },
+       {
+        "text": "6 weeks' notice"
+       },
+       {
+        "text": "~$15 a unit: ~$0.1M a month of full outage"
+       }
+      ]
+     },
+     {
+      "label": "5 · Lease fallback",
+      "cells": [
+       {
+        "text": "Finish site survey; hold terms; trigger only via gates (p. 14)"
+       },
+       {
+        "text": "Supplier failure; sustained price rise"
+       },
+       {
+        "text": "About 5 months"
+       },
+       {
+        "text": "$2.0M + $1.6M a year, if triggered"
+       }
+      ]
+     }
+    ]
+   },
+   "so_what": "Cheaper unless an outage tops a year: the lease's $1.4M conservative-case cost buys ~14 emergency months",
+   "so_what_style": "bar",
+   "footnotes": [
+    "Buffer = 6 weeks × 1,600 units a week (80k ÷ 50 weeks) × $75; carrying cost not yet modelled. Alternate shop kept warm by split orders; its unit price assumed equal to the quote",
+    "One emergency month at 2027 volume: ~6,700 units × $15 = ~$0.1M; premium assumes $2 freight/QA on top of $88. Briefing pack §2–§4, §6"
+   ]
+  },
+  {
+   "id": "12",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "The plan uses $0.25M of the $5.0M capital limit and keeps cash near $8.2M, enough to trigger the lease if a gate trips",
+    "numbers": [
+     {
+      "text": "$0.25M",
+      "data_ref": "tool_neg"
+     },
+     {
+      "text": "$8.2M",
+      "data_ref": "cash_buy"
+     }
+    ],
+    "clauses": 2
+   },
+   "message_type": "component",
+   "archetype": "multi-chart-panel",
+   "rationale": "Cash bridge under the recommendation, then the same bridge if the lease is triggered -> two waterfall panels (source: one bridge with a subtotal)",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "The recommendation leaves $4.2M of headroom above the $4.0M cash floor",
+      "unit_line": "**Unrestricted cash bridge, 2027**, $ millions, recommendation",
+      "body": {
+       "kind": "chart",
+       "chart_type": "waterfall",
+       "categories": [
+        "Cash today",
+        "Alternate-shop tooling",
+        "Buffer stock (6 weeks)",
+        "Year-end 2027: recommendation"
+       ],
+       "series": [
+        {
+         "name": "Cash",
+         "points": [
+          {
+           "data_ref": "cash0"
+          },
+          {
+           "data_ref": "tool_neg"
+          },
+          {
+           "data_ref": "buf_neg"
+          },
+          {
+           "data_ref": "cash_buy"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Year-end 2027: recommendation"
+       ],
+       "value_format": "0.00"
+      }
+     },
+     {
+      "header": "Even if the lease is triggered in 2027, $2.2M of headroom remains",
+      "unit_line": "**Year-end 2027 cash if the lease is triggered**, $ millions",
+      "body": {
+       "kind": "chart",
+       "chart_type": "waterfall",
+       "categories": [
+        "Year-end 2027: recommendation",
+        "Lease upfront, only if triggered",
+        "Year-end 2027 if lease triggered"
+       ],
+       "series": [
+        {
+         "name": "Cash",
+         "points": [
+          {
+           "data_ref": "cash_buy"
+          },
+          {
+           "data_ref": "lease_trig_cash"
+          },
+          {
+           "data_ref": "cash_trig"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Year-end 2027 if lease triggered"
+       ],
+       "value_format": "0.00"
+      }
+     }
+    ]
+   },
+   "so_what": "5% of the capital limit used; the main exposure is $0.22M for each $1 added to the 2028–29 supplier price",
+   "so_what_style": "line",
+   "footnotes": [
+    "Headroom: $8.23M − $4.0M = $4.2M; $6.23M − $4.0M = $2.2M. Rest of business cash-neutral; if triggered at the June 2027 gate, lease operations start ~5 months later"
+   ]
+  },
+  {
+   "id": "13",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Six pre-agreed gates decide whether the lease is triggered; the owned cell needs financing and proven volume first",
+    "count_word": 6,
+    "clauses": 1
+   },
+   "message_type": "structure",
+   "archetype": "data-table",
+   "rationale": "Gates with threshold, rationale and status -> data-table",
+   "unit_line": "**Lease gates, reviewed quarterly from June 2027**: P1–P3 must all pass before signing; any one of T1–T3 then switches to the lease",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "Threshold",
+     "Why this level",
+     "Status today"
+    ],
+    "rows": [
+     {
+      "label": "P1 · Site ready",
+      "cells": [
+       {
+        "text": "Lessor's survey confirms power and ventilation"
+       },
+       {
+        "text": "The five-month deployment depends on it"
+       },
+       {
+        "text": "Not started"
+       }
+      ]
+     },
+     {
+      "label": "P2 · Spec frozen",
+      "cells": [
+       {
+        "text": "Customer dimensional testing complete"
+       },
+       {
+        "text": "No design change before it; quote and set-up assume today's spec"
+       },
+       {
+        "text": "Pending"
+       }
+      ]
+     },
+     {
+      "label": "P3 · Process proven",
+      "cells": [
+       {
+        "text": "≥ 94% first-year yield, new housing at full speed, incl. start-up, rework, downtime"
+       },
+       {
+        "text": "Lease economics assume 6% scrap; the 98.5% demo excluded these"
+       },
+       {
+        "text": "Not demonstrated"
+       }
+      ]
+     },
+     {
+      "label": "T1 · Volume",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Firm customer commitment ≥ 208k units for 2028–29"
+       },
+       {
+        "text": "Lease break-even volume at today's price"
+       },
+       {
+        "text": "Forecast 220k, not guaranteed; conservative 150k"
+       }
+      ]
+     },
+     {
+      "label": "T2 · Price",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Supplier 2028–29 delivered price > $84, or > $74 with T1"
+       },
+       {
+        "text": "Above $84 the lease wins even on conservative volume"
+       },
+       {
+        "text": "$75 to March 2027; later prices indicative"
+       }
+      ]
+     },
+     {
+      "label": "T3 · Reliability",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "On-time delivery < 97% two quarters running with the contingency in place, or supplier refuses split orders or reservation"
+       },
+       {
+        "text": "Contract requirement; the designation carries electronics and software sales"
+       },
+       {
+        "text": "96.8% trailing; one flood event"
+       }
+      ]
+     }
+    ]
+   },
+   "so_what": "Owned cell: revisit from 2028 only with financing, 120k+ a year committed, ≤ 4% scrap proven, binding resale",
+   "so_what_style": "bar",
+   "footnotes": [
+    "Owned cell: $7.3M exceeds the $5.0M limit, so financing comes first; scrap proven at full speed; resale or buy-back binding. Decide ≥ 12 months before capacity is needed (nine-month lead time)",
+    "Thresholds from team analysis (pp. 9–10). On-time delivery = share of requested units shipped within ten business days; yield and delivery measured on accepted units"
+   ]
+  },
+  {
+   "id": "14",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Next steps: lock supply terms before the March 2027 quote expiry, stand up the second source and pre-qualify the lease"
+   },
+   "message_type": "structure",
+   "archetype": "timeline-roadmap",
+   "rationale": "Workstreams by month -> timeline-roadmap",
+   "unit_line": "**Plan by workstream and proposed owner**, January to June 2027",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "timeline",
+    "periods": [
+     "Jan 2027",
+     "Feb 2027",
+     "Mar 2027",
+     "Apr–Jun 2027"
+    ],
+    "rows": [
+     {
+      "label": "Supply terms · Procurement",
+      "bars": [
+       {
+        "start": "Jan 2027",
+        "end": "Jan 2027",
+        "label": "Open renewal: 2028–29 price, split orders, 40k reservation"
+       },
+       {
+        "start": "Feb 2027",
+        "end": "Feb 2027",
+        "label": "Negotiate multi-year price, OTD clause, flood-route logistics"
+       },
+       {
+        "start": "Mar 2027",
+        "end": "Mar 2027",
+        "label": "Sign the extension before the quote lapses",
+        "emphasis": true
+       },
+       {
+        "start": "Apr–Jun 2027",
+        "end": "Apr–Jun 2027",
+        "label": "Track OTD on accepted units monthly"
+       }
+      ]
+     },
+     {
+      "label": "Second source · Procurement, QA",
+      "bars": [
+       {
+        "start": "Jan 2027",
+        "end": "Jan 2027",
+        "label": "Approve $0.25M tooling; request unit quote"
+       },
+       {
+        "start": "Feb 2027",
+        "end": "Feb 2027",
+        "label": "Build tooling; first-article inspection"
+       },
+       {
+        "start": "Mar 2027",
+        "end": "Mar 2027",
+        "label": "Place first split quarterly order"
+       },
+       {
+        "start": "Apr–Jun 2027",
+        "end": "Apr–Jun 2027",
+        "label": "Ramp to target share (~25%)"
+       }
+      ]
+     },
+     {
+      "label": "Outage cover · Ops, Finance",
+      "bars": [
+       {
+        "start": "Jan 2027",
+        "end": "Jan 2027",
+        "label": "Size buffer; Finance models carrying cost"
+       },
+       {
+        "start": "Feb 2027",
+        "end": "Feb 2027",
+        "label": "Build buffer toward 6 weeks; sign emergency framework"
+       },
+       {
+        "start": "Mar 2027",
+        "end": "Mar 2027",
+        "label": "Buffer complete; drill the outage playbook"
+       },
+       {
+        "start": "Apr–Jun 2027",
+        "end": "Apr–Jun 2027",
+        "label": "Re-size buffer against actual OTD"
+       }
+      ]
+     },
+     {
+      "label": "Lease option · Mfg. engineering",
+      "bars": [
+       {
+        "start": "Jan 2027",
+        "end": "Jan 2027",
+        "label": "Commission site survey (power, ventilation)"
+       },
+       {
+        "start": "Feb 2027",
+        "end": "Feb 2027",
+        "label": "Agree a scrap trial on the new housing"
+       },
+       {
+        "start": "Mar 2027",
+        "end": "Mar 2027",
+        "label": "Survey result; hold lease terms"
+       },
+       {
+        "start": "Apr–Jun 2027",
+        "end": "Apr–Jun 2027",
+        "label": "Full-speed trial if survey passes"
+       }
+      ]
+     },
+     {
+      "label": "Governance · CFO, COO",
+      "bars": [
+       {
+        "start": "Jan 2027",
+        "end": "Jan 2027",
+        "label": "ExCo decision; cost per good unit as standard metric"
+       },
+       {
+        "start": "Feb 2027",
+        "end": "Feb 2027",
+        "label": "Quantify exposure if the designation is lost"
+       },
+       {
+        "start": "Mar 2027",
+        "end": "Mar 2027",
+        "label": "Gate dashboard live (P1–P3, T1–T3)"
+       },
+       {
+        "start": "Apr–Jun 2027",
+        "end": "Apr–Jun 2027",
+        "label": "June gate review #1: trigger lease for 2028?",
+        "emphasis": true
+       }
+      ]
+     }
+    ],
+    "milestones": [
+     {
+      "at": "Mar 2027",
+      "label": "Supplier quote expires"
+     },
+     {
+      "at": "Apr–Jun 2027",
+      "label": "First gate review (June)"
+     }
+    ]
+   },
+   "so_what": "Decision requested: buy and de-risk for 2027, $0.25M tooling, ≤ $0.72M buffer, the site survey and the gates",
+   "so_what_style": "bar",
+   "footnotes": [
+    "Team analysis. Owners are proposed roles, to be confirmed by the Executive Committee. OTD = on-time delivery"
+   ]
+  },
+  {
+   "id": "15",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Supplier pricing after March 2027 and late contingency execution are the main exposures; both have owners and gates",
+    "clauses": 1
+   },
+   "message_type": "argument",
+   "archetype": "comparison-table",
+   "rationale": "Uncertainties with effect and mitigation -> comparison-table, the two the title names highlighted",
+   "unit_line": "**Key uncertainties and assumptions**, effect on the answer and what to watch",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "What it would do to the answer",
+     "Mitigation and signal to watch"
+    ],
+    "rows": [
+     {
+      "label": "Supplier price after March 2027",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Only indicative: each +$1 on 2028–29 adds $0.22M to buying; above ~$84 the lease wins outright"
+       },
+       {
+        "text": "Lock multi-year price before March; gate T2"
+       }
+      ]
+     },
+     {
+      "label": "Contingency not in place in time",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "A 2027 outage before the buffer and second source exist could breach 97%"
+       },
+       {
+        "text": "Plan with named owners; monthly on-time review"
+       }
+      ]
+     },
+     {
+      "label": "Demand above plan (> 140k after 2029)",
+      "cells": [
+       {
+        "text": "Supplier capacity binds; strengthens a cell from 2029"
+       },
+       {
+        "text": "Reserved units now; gate T1; revisit own from 2028"
+       }
+      ]
+     },
+     {
+      "label": "Demand below plan",
+      "cells": [
+       {
+        "text": "Strengthens buying: lease −$1.4M, owned cell −$3.5M in the conservative case"
+       },
+       {
+        "text": "None needed: buying is the low-regret choice"
+       }
+      ]
+     },
+     {
+      "label": "Alternate-shop price and quality",
+      "cells": [
+       {
+        "text": "Unknown: splitting orders may cost more than $75 per good unit"
+       },
+       {
+        "text": "Get a quote; first-article and dimensional checks first"
+       }
+      ]
+     },
+     {
+      "label": "Inventory carrying cost",
+      "cells": [
+       {
+        "text": "Not modelled: at an assumed 25% a year, ~$0.5M over 2027–29; conservative ranking unchanged"
+       },
+       {
+        "text": "Finance to estimate before the buffer build in February"
+       }
+      ]
+     },
+     {
+      "label": "Loss of the customer designation",
+      "cells": [
+       {
+        "text": "Unquantified: a large value could justify paying for in-house control"
+       },
+       {
+        "text": "Quantify by February; gate T3 reacts to sustained misses"
+       }
+      ]
+     },
+     {
+      "label": "Nominal, pre-tax, undiscounted basis",
+      "cells": [
+       {
+        "text": "Discounting penalises upfront-heavy options most, so it would strengthen buying"
+       },
+       {
+        "text": "Full financing model before any capital request"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Briefing pack §6; team analysis. Lease and owned-cell figures are 2027–29 cost compared with buying"
+   ]
+  },
+  {
+   "id": "app",
+   "role": "appendix_divider",
+   "status": "filled"
+  },
+  {
+   "id": "A1",
+   "role": "backup",
+   "section_id": "3",
+   "backup_of": "8",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Counting scrap, fixed and upfront cost per good unit, buying is cheapest or near-cheapest in both demand cases"
+   },
+   "message_type": "item",
+   "archetype": "data-table",
+   "rationale": "Cost model by option, year and case -> data-table (source Appendix A, table)",
+   "unit_line": "**Cost of supplying good housings**, $ millions nominal, 2027–29; positive \"vs buy\" = costs more than buying",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "2027",
+     "2028",
+     "2029",
+     "Upfront",
+     "Total",
+     "vs buy",
+     "$/good unit"
+    ],
+    "rows": [
+     {
+      "label": "Planning · Buy",
+      "cells": [
+       {
+        "text": "6.00"
+       },
+       {
+        "text": "7.50"
+       },
+       {
+        "text": "9.00"
+       },
+       {
+        "text": "—"
+       },
+       {
+        "text": "22.50"
+       },
+       {
+        "text": "—"
+       },
+       {
+        "text": "$75.00"
+       }
+      ]
+     },
+     {
+      "label": "Planning · Lease",
+      "cells": [
+       {
+        "text": "5.77"
+       },
+       {
+        "text": "6.70"
+       },
+       {
+        "text": "7.73"
+       },
+       {
+        "text": "2.00"
+       },
+       {
+        "text": "22.20"
+       },
+       {
+        "text": "−0.30"
+       },
+       {
+        "text": "$74.00"
+       }
+      ]
+     },
+     {
+      "label": "Planning · Own",
+      "cells": [
+       {
+        "text": "4.75"
+       },
+       {
+        "text": "5.54"
+       },
+       {
+        "text": "6.50"
+       },
+       {
+        "text": "7.30"
+       },
+       {
+        "text": "24.09"
+       },
+       {
+        "text": "+1.59"
+       },
+       {
+        "text": "$80.31"
+       }
+      ]
+     },
+     {
+      "label": "Planning · Own net of $2.1M resale",
+      "cells": [
+       {
+        "text": "4.75"
+       },
+       {
+        "text": "5.54"
+       },
+       {
+        "text": "6.50"
+       },
+       {
+        "text": "5.20*"
+       },
+       {
+        "text": "21.99"
+       },
+       {
+        "text": "−0.51"
+       },
+       {
+        "text": "$73.31"
+       }
+      ]
+     },
+     {
+      "label": "Conservative · Buy",
+      "cells": [
+       {
+        "text": "6.00"
+       },
+       {
+        "text": "4.88"
+       },
+       {
+        "text": "6.38"
+       },
+       {
+        "text": "—"
+       },
+       {
+        "text": "17.25"
+       },
+       {
+        "text": "—"
+       },
+       {
+        "text": "$75.00"
+       }
+      ]
+     },
+     {
+      "label": "Conservative · Lease",
+      "cells": [
+       {
+        "text": "5.77"
+       },
+       {
+        "text": "4.92"
+       },
+       {
+        "text": "5.94"
+       },
+       {
+        "text": "2.00"
+       },
+       {
+        "text": "18.63"
+       },
+       {
+        "text": "+1.38"
+       },
+       {
+        "text": "$80.98"
+       }
+      ]
+     },
+     {
+      "label": "Conservative · Own",
+      "cells": [
+       {
+        "text": "4.75"
+       },
+       {
+        "text": "3.86"
+       },
+       {
+        "text": "4.82"
+       },
+       {
+        "text": "7.30"
+       },
+       {
+        "text": "20.74"
+       },
+       {
+        "text": "+3.49"
+       },
+       {
+        "text": "$90.16"
+       }
+      ]
+     },
+     {
+      "label": "Conservative · Own net of $2.1M resale",
+      "cells": [
+       {
+        "text": "4.75"
+       },
+       {
+        "text": "3.86"
+       },
+       {
+        "text": "4.82"
+       },
+       {
+        "text": "5.20*"
+       },
+       {
+        "text": "18.64"
+       },
+       {
+        "text": "+1.39"
+       },
+       {
+        "text": "$81.03"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "* $7.3M upfront less $2.1M resale after 2029. Planning volumes 80k / 100k / 120k; conservative 80k / 65k / 85k good units",
+    "Briefing pack §3–§4; team analysis. Inputs and worked examples on the next page"
+   ]
+  },
+  {
+   "id": "A2",
+   "role": "backup",
+   "section_id": "3",
+   "backup_of": "8",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Each cell's cost per good unit is its cost per start grossed up for scrap, plus its fixed and upfront cost"
+   },
+   "message_type": "argument",
+   "archetype": "text-columns",
+   "rationale": "Inputs, then worked examples -> two text columns (source Appendix A, side panel; split from the table so both read at 14 pt)",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "Inputs used come straight from the briefing pack",
+      "detail": [
+       "Buy: $73 + $2 freight/QA per good unit",
+       "Lease: $49 per start; scrap 6% in year 1, 4% later; $1.6M a year; $2.0M upfront",
+       "Own: $46 per start; scrap 8% in year 1, 4% later; $0.75M a year; $7.3M upfront; about $2.1M resale after 2029",
+       "Volumes: plan 80k / 100k / 120k; conservative 80k / 65k / 85k good units"
+      ]
+     },
+     {
+      "header": "Worked examples show how each figure is built",
+      "detail": [
+       "Lease 2027: 80,000 ÷ (1 − 6%) = 85,106 starts × $49 = $4.17M + $1.60M fixed = $5.77M",
+       "Own 2028 (plan): 100,000 ÷ (1 − 4%) = 104,167 starts × $46 = $4.79M + $0.75M fixed = $5.54M",
+       "Year-end 2027 cash, own: $9.2M − ($7.3M + $4.75M − $6.00M) = $3.15M; lease: $9.2M − ($2.0M + $5.77M − $6.00M) = $7.43M",
+       "Lease break-even volume: ($2.0M + 2 × $1.6M − $0.23M 2027 saving) ÷ ($75 − $51.04) = 207k units in 2028–29",
+       "Break-even supplier price: ($22.20M − $6.00M) ÷ 220k = $73.6 (plan); ($18.63M − $6.00M) ÷ 150k = $84.2 (conservative)"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Buy 2027: 80,000 good units × $75 = $6.00M. Briefing pack §3–§4; team analysis"
+   ]
+  },
+  {
+   "id": "B1",
+   "role": "backup",
+   "section_id": "1",
+   "backup_of": "3b",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Most of our logged modelling choices tilt toward the cells and therefore do not flatter the case for buying (1/2)"
+   },
+   "message_type": "argument",
+   "archetype": "definition-table",
+   "rationale": "Choices with rationale -> definition table (source Appendix B; split in two so it reads at 14 pt)",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "definition",
+    "columns": [
+     "Rationale and effect"
+    ],
+    "rows": [
+     {
+      "label": "Horizon 2027–29",
+      "cells": [
+       {
+        "text": "Matches the pack's volume data, lease termination point and resale date; later years not modelled"
+       }
+      ]
+     },
+     {
+      "label": "Nominal, pre-tax, undiscounted",
+      "cells": [
+       {
+        "text": "As the pack instructs; resale shown separately because the dealer indication is not binding"
+       }
+      ]
+     },
+     {
+      "label": "Full-year 2027 operation for both cells",
+      "cells": [
+       {
+        "text": "Physically impossible (5- and 9-month lead times), but favours the cells; partial year tested on p. 10"
+       }
+      ]
+     },
+     {
+      "label": "Supplier cost = $73 + $2 = $75 per good unit",
+      "cells": [
+       {
+        "text": "The $75 procurement figure is the same quote, not a second one; supplier price covers rejects"
+       }
+      ]
+     },
+     {
+      "label": "Emergency supplier = $88 + $2 freight/QA †",
+      "cells": [
+       {
+        "text": "Pack does not say whether $88 is delivered; adding $2 is conservative for the contingency cost"
+       }
+      ]
+     },
+     {
+      "label": "Year-end cash = $9.2M − incremental 2027 outflow",
+      "cells": [
+       {
+        "text": "Assumes the rest of the business is cash-neutral; buy is charged its $0.72M buffer, cells are not"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Team analysis. Items marked † would most benefit from management confirmation before the January decision"
+   ]
+  },
+  {
+   "id": "B2",
+   "role": "backup",
+   "section_id": "1",
+   "backup_of": "3b",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Most of our logged modelling choices tilt toward the cells and therefore do not flatter the case for buying (2/2)"
+   },
+   "message_type": "argument",
+   "archetype": "definition-table",
+   "rationale": "Choices with rationale -> definition table (source Appendix B; split in two so it reads at 14 pt)",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "definition",
+    "columns": [
+     "Rationale and effect"
+    ],
+    "rows": [
+     {
+      "label": "Lease $2.0M counted against the $5.0M capital limit",
+      "cells": [
+       {
+        "text": "Conservative: the lease passes either way"
+       }
+      ]
+     },
+     {
+      "label": "Alternate-shop unit price = supplier quote †",
+      "cells": [
+       {
+        "text": "Pack gives only the $0.25M tooling charge; to be confirmed by quote"
+       }
+      ]
+     },
+     {
+      "label": "Buffer = 6 weeks at 1,600 units a week",
+      "cells": [
+       {
+        "text": "Bridges the emergency supplier's six-week notice; assumes 50 shipping weeks; carrying cost excluded †"
+       }
+      ]
+     },
+     {
+      "label": "Demo yield of 98.5% not used",
+      "cells": [
+       {
+        "text": "Excludes start-up runs, rework and downtime; the engineer's 8% first-year scrap used instead"
+       }
+      ]
+     },
+     {
+      "label": "Machine-shop correlation not used",
+      "cells": [
+       {
+        "text": "Confounded by volume and product mix; no before/after evidence of a causal effect"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Team analysis. Items marked † would most benefit from management confirmation before the January decision"
+   ]
+  },
+  {
+   "id": "C",
+   "role": "backup",
+   "section_id": "2",
+   "backup_of": "6",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Five claims circulating in management do not survive a like-for-like test against the briefing evidence",
+    "count_word": 5
+   },
+   "message_type": "argument",
+   "archetype": "comparison-table",
+   "rationale": "Claims against evidence -> comparison-table (source Appendix C)",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Who",
+     "What the evidence shows",
+     "Corrected view"
+    ],
+    "rows": [
+     {
+      "label": "\"A $46 variable cost is obviously cheaper than the $75 outside price\"",
+      "cells": [
+       {
+        "text": "VP Operations"
+       },
+       {
+        "text": "Compares cost per start with cost per good unit; omits scrap, $0.75M fixed cost and $7.3M upfront"
+       },
+       {
+        "text": "Own costs $80.31 per good unit over 2027–29 in the plan, against $75"
+       }
+      ]
+     },
+     {
+      "label": "\"$27 saving per housing; payback under three years at 100k\"",
+      "cells": [
+       {
+        "text": "CFO slide"
+       },
+       {
+        "text": "Gate price against per-start cost; ignores $2 freight, 8% scrap, fixed cost and the cash floor"
+       },
+       {
+        "text": "$15.63 saving in 2027; payback 3.7 years at 100k, 7.2 at 65k"
+       }
+      ]
+     },
+     {
+      "label": "\"98.5% yield validates the cost model\"",
+      "cells": [
+       {
+        "text": "Operations dashboard"
+       },
+       {
+        "text": "Excludes start-up, rework and three days' downtime; new housing not run at full speed"
+       },
+       {
+        "text": "Plan on 8% first-year scrap until proven (gate P3)"
+       }
+      ]
+     },
+     {
+      "label": "\"Plants with machine shops have fewer delays\"",
+      "cells": [
+       {
+        "text": "Sales director"
+       },
+       {
+        "text": "Those plants had larger, steadier volumes and different products; no before/after evidence"
+       },
+       {
+        "text": "Correlation only, not a reason to insource"
+       }
+      ]
+     },
+     {
+      "label": "\"Buying capacity early reduces 2029 lead-time risk\"",
+      "cells": [
+       {
+        "text": "VP Operations"
+       },
+       {
+        "text": "Equipment takes nine months and a lease five; no customer guarantees the volumes"
+       },
+       {
+        "text": "Decide 2029 capacity in 2028 through the gates, with evidence"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Briefing pack §1, §4–§5; team analysis"
+   ]
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "gate73",
+   "slide_id": "3b",
+   "label": "Supplier quoted price at the supplier gate, per good unit",
+   "value": 73,
+   "unit": "$",
+   "source_id": "bp",
+   "excerpt": "| Quoted unit cost | $73 at supplier gate | $46 per unit started | $49 per unit started |",
+   "locator": "§3 Economics and quotations, table, Quoted unit cost"
+  },
+  {
+   "id": "own46",
+   "slide_id": "3b",
+   "label": "Owned cell variable cost per unit started",
+   "value": 46,
+   "unit": "$",
+   "source_id": "bp",
+   "excerpt": "| Quoted unit cost | $73 at supplier gate | $46 per unit started | $49 per unit started |",
+   "locator": "§3 Economics and quotations, table, Quoted unit cost"
+  },
+  {
+   "id": "lease49",
+   "slide_id": "3b",
+   "label": "Leased cell variable cost per unit started",
+   "value": 49,
+   "unit": "$",
+   "source_id": "bp",
+   "excerpt": "| Quoted unit cost | $73 at supplier gate | $46 per unit started | $49 per unit started |",
+   "locator": "§3 Economics and quotations, table, Quoted unit cost"
+  },
+  {
+   "id": "frt2",
+   "slide_id": "3b",
+   "label": "Supplier freight and inbound QA per good unit",
+   "value": 2,
+   "unit": "$",
+   "source_id": "bp",
+   "excerpt": "| Freight and inbound QA | $2 per good unit | included in variable cost | included in variable cost |",
+   "locator": "§3 Economics and quotations, table, Freight and inbound QA"
+  },
+  {
+   "id": "tool025",
+   "slide_id": "3b",
+   "label": "Optional alternate-shop tooling charge",
+   "value": 0.25,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "| Initial investment | None; optional alternate-shop tooling $0.25M | $6.5M equipment + $0.8M installation | $2.0M installation and training |",
+   "locator": "§3 Economics and quotations, table, Initial investment"
+  },
+  {
+   "id": "own_eq",
+   "slide_id": "3b",
+   "label": "Owned cell equipment",
+   "value": 6.5,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "| Initial investment | None; optional alternate-shop tooling $0.25M | $6.5M equipment + $0.8M installation | $2.0M installation and training |",
+   "locator": "§3 Economics and quotations, table, Initial investment"
+  },
+  {
+   "id": "own_inst",
+   "slide_id": "3b",
+   "label": "Owned cell installation",
+   "value": 0.8,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "| Initial investment | None; optional alternate-shop tooling $0.25M | $6.5M equipment + $0.8M installation | $2.0M installation and training |",
+   "locator": "§3 Economics and quotations, table, Initial investment"
+  },
+  {
+   "id": "lease_up",
+   "slide_id": "3b",
+   "label": "Leased cell installation and training (upfront)",
+   "value": 2.0,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "| Initial investment | None; optional alternate-shop tooling $0.25M | $6.5M equipment + $0.8M installation | $2.0M installation and training |",
+   "locator": "§3 Economics and quotations, table, Initial investment"
+  },
+  {
+   "id": "own_fix",
+   "slide_id": "3b",
+   "label": "Owned cell fixed staffing per year",
+   "value": 0.75,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "| Recurring fixed cost | none beyond quoted price | $0.75M per year | $1.60M annual lease and staffing |",
+   "locator": "§3 Economics and quotations, table, Recurring fixed cost"
+  },
+  {
+   "id": "lease_fix",
+   "slide_id": "3b",
+   "label": "Leased cell annual lease and staffing",
+   "value": 1.6,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "| Recurring fixed cost | none beyond quoted price | $0.75M per year | $1.60M annual lease and staffing |",
+   "locator": "§3 Economics and quotations, table, Recurring fixed cost"
+  },
+  {
+   "id": "own_s1",
+   "slide_id": "3b",
+   "label": "Owned cell first-year scrap, share of starts",
+   "value": 0.08,
+   "unit": "%",
+   "source_id": "bp",
+   "excerpt": "| First-year scrap | supplier price covers rejects | 8% of starts | 6% of starts |",
+   "locator": "§3 Economics and quotations, table, First-year scrap"
+  },
+  {
+   "id": "lease_s1",
+   "slide_id": "3b",
+   "label": "Leased cell first-year scrap, share of starts",
+   "value": 0.06,
+   "unit": "%",
+   "source_id": "bp",
+   "excerpt": "| First-year scrap | supplier price covers rejects | 8% of starts | 6% of starts |",
+   "locator": "§3 Economics and quotations, table, First-year scrap"
+  },
+  {
+   "id": "s_later",
+   "slide_id": "3b",
+   "label": "Later-year scrap for either cell, share of starts",
+   "value": 0.04,
+   "unit": "%",
+   "source_id": "bp",
+   "excerpt": "| Later-year scrap | supplier price covers rejects | 4% of starts | 4% of starts |",
+   "locator": "§3 Economics and quotations, table, Later-year scrap"
+  },
+  {
+   "id": "cap_buy",
+   "slide_id": "3b",
+   "label": "Supplier practical annual output if renewed",
+   "value": 140,
+   "unit": "k",
+   "source_id": "bp",
+   "excerpt": "| Practical annual output | up to 140,000 if renewed | 120,000 accepted units | 125,000 accepted units |",
+   "locator": "§3 Economics and quotations, table, Practical annual output",
+   "definition": "thousand units a year"
+  },
+  {
+   "id": "cap_own",
+   "slide_id": "3b",
+   "label": "Owned cell practical annual output",
+   "value": 120,
+   "unit": "k",
+   "source_id": "bp",
+   "excerpt": "| Practical annual output | up to 140,000 if renewed | 120,000 accepted units | 125,000 accepted units |",
+   "locator": "§3 Economics and quotations, table, Practical annual output",
+   "definition": "thousand accepted units a year"
+  },
+  {
+   "id": "cap_lease",
+   "slide_id": "3b",
+   "label": "Leased cell practical annual output",
+   "value": 125,
+   "unit": "k",
+   "source_id": "bp",
+   "excerpt": "| Practical annual output | up to 140,000 if renewed | 120,000 accepted units | 125,000 accepted units |",
+   "locator": "§3 Economics and quotations, table, Practical annual output",
+   "definition": "thousand accepted units a year"
+  },
+  {
+   "id": "resale",
+   "slide_id": "3b",
+   "label": "Owned cell equipment resale after 2029 (dealer indication, not binding)",
+   "value": 2.1,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "Build equipment could be sold for an estimated $2.1M after 2029, but a dealer's indication is not a binding offer.",
+   "locator": "§3, below the table"
+  },
+  {
+   "id": "lt_own",
+   "slide_id": "3b",
+   "label": "Lead time for new equipment orders",
+   "value": 9,
+   "unit": "months",
+   "source_id": "bp",
+   "locator": "§5: \"the head of Finance notes that new equipment orders take nine months\""
+  },
+  {
+   "id": "lt_lease",
+   "slide_id": "3b",
+   "label": "Leased cell deployment time if the site survey passes",
+   "value": 5,
+   "unit": "months",
+   "source_id": "bp",
+   "locator": "§5: \"The lease company promises a five-month deployment if its site survey passes.\""
+  },
+  {
+   "id": "caplim",
+   "slide_id": "3",
+   "label": "New 2027 capital that can be approved without new financing",
+   "value": 5.0,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "At most **$5.0M of new 2027 capital spending** can be approved without a new financing agreement.",
+   "locator": "§2 Constraints agreed by the board"
+  },
+  {
+   "id": "floor",
+   "slide_id": "3",
+   "label": "Minimum year-end unrestricted cash",
+   "value": 4.0,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "Separately, year-end unrestricted cash must remain above **$4.0M**.",
+   "locator": "§2 Constraints agreed by the board"
+  },
+  {
+   "id": "cash0",
+   "slide_id": "3",
+   "label": "Available cash today",
+   "value": 9.2,
+   "unit": "$M",
+   "source_id": "bp",
+   "excerpt": "Today's available cash is **$9.2M** and no debt or equity increase is approved.",
+   "locator": "§2 Constraints agreed by the board"
+  },
+  {
+   "id": "v27",
+   "slide_id": "3",
+   "label": "Good housings, 2027 (both demand cases)",
+   "value": 80,
+   "unit": "k",
+   "source_id": "bp",
+   "excerpt": "Housing demand planning assumes 80,000 good units in 2027, 100,000 in 2028 and 120,000 in 2029.",
+   "locator": "§2 and §4 volume table",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "v28p",
+   "slide_id": "3",
+   "label": "Good housings, 2028, planning case",
+   "value": 100,
+   "unit": "k",
+   "source_id": "bp",
+   "excerpt": "Housing demand planning assumes 80,000 good units in 2027, 100,000 in 2028 and 120,000 in 2029.",
+   "locator": "§2 and §4 volume table",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "v29p",
+   "slide_id": "3",
+   "label": "Good housings, 2029, planning case",
+   "value": 120,
+   "unit": "k",
+   "source_id": "bp",
+   "excerpt": "Housing demand planning assumes 80,000 good units in 2027, 100,000 in 2028 and 120,000 in 2029.",
+   "locator": "§2 and §4 volume table",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "v28c",
+   "slide_id": "3",
+   "label": "Good housings, 2028, conservative case",
+   "value": 65,
+   "unit": "k",
+   "source_id": "bp",
+   "excerpt": "The major customer's forecast is not a guaranteed order; the conservative 2028 case is 65,000 units.",
+   "locator": "§2",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "v29c",
+   "slide_id": "3",
+   "label": "Good housings, 2029, conservative case",
+   "value": 85,
+   "unit": "k",
+   "source_id": "bp",
+   "excerpt": "| Conservative demand | 80,000 | 65,000 | 85,000 |",
+   "locator": "§4 volume table, Conservative demand",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "otd_req",
+   "slide_id": "3",
+   "label": "Customer requirement: share of requested units shipped within ten business days",
+   "value": 0.97,
+   "unit": "%",
+   "source_id": "bp",
+   "excerpt": "A customer delivery contract requires 97% of requested units to ship within ten business days.",
+   "locator": "§2"
+  },
+  {
+   "id": "otd",
+   "slide_id": "4",
+   "label": "Supplier on-time delivery within ten business days, trailing",
+   "value": 0.968,
+   "unit": "%",
+   "source_id": "bp",
+   "excerpt": "The supplier has delivered 96.8% of orders within ten business days, slightly below the customer requirement, but late deliveries were concentrated during one flood-related road closure.",
+   "locator": "§4"
+  },
+  {
+   "id": "demo",
+   "slide_id": "4",
+   "label": "Demonstration cell production yield on the internal dashboard",
+   "value": 0.985,
+   "unit": "%",
+   "source_id": "bp",
+   "excerpt": "An internal dashboard reports **98.5% production yield** for the demonstration cell.",
+   "locator": "§4"
+  },
+  {
+   "id": "res40",
+   "slide_id": "10",
+   "label": "Supplier reserved units available on notice",
+   "value": 40,
+   "unit": "k",
+   "source_id": "bp",
+   "excerpt": "The supplier can provide 40,000 reserved units after giving ninety days' notice.",
+   "locator": "§2",
+   "definition": "thousand units"
+  },
+  {
+   "id": "notice_res",
+   "slide_id": "10",
+   "label": "Notice period for the supplier's reserved units",
+   "value": 90,
+   "unit": "days",
+   "source_id": "bp",
+   "locator": "§2: \"after giving ninety days' notice\""
+  },
+  {
+   "id": "emg88",
+   "slide_id": "10",
+   "label": "Second approved supplier, emergency price per accepted unit",
+   "value": 88,
+   "unit": "$",
+   "source_id": "bp",
+   "excerpt": "A second approved supplier is available for emergency orders at $88 per accepted unit with six-week notice.",
+   "locator": "§4"
+  },
+  {
+   "id": "notice_emg",
+   "slide_id": "10",
+   "label": "Notice period for the emergency supplier",
+   "value": 6,
+   "unit": "weeks",
+   "source_id": "bp",
+   "locator": "§4: \"with six-week notice\""
+  },
+  {
+   "id": "cfo27",
+   "slide_id": "6",
+   "label": "Saving per housing on the circulated CFO slide ($73 against $46)",
+   "value": 27,
+   "unit": "$",
+   "source_id": "bp",
+   "excerpt": "Buying at $73 versus making at $46 saves $27 on every housing; at 100,000 units the payback is under three years.",
+   "locator": "§5 Internal presentation circulated to management"
+  },
+  {
+   "id": "proc75",
+   "slide_id": "6",
+   "label": "Supplier freight-inclusive price on the procurement chart",
+   "value": 75,
+   "unit": "$",
+   "source_id": "bp",
+   "excerpt": "A separate procurement chart labels the supplier's freight-inclusive price as $75; it is not a second quote.",
+   "locator": "§5"
+  },
+  {
+   "id": "wks50",
+   "slide_id": "11",
+   "label": "Shipping weeks a year used to size the buffer",
+   "value": 50,
+   "unit": "weeks",
+   "source_id": "an",
+   "excerpt": "Buffer = 6 weeks × 1,600 units/week (80k ÷ 50 weeks) × $75",
+   "locator": "Analysis slide 11, source line"
+  },
+  {
+   "id": "carry_rate",
+   "slide_id": "15",
+   "label": "Assumed annual inventory carrying cost rate",
+   "value": 0.25,
+   "unit": "%",
+   "source_id": "an",
+   "excerpt": "At an assumed 25% a year the buffer adds ~$0.5M over 2027–29",
+   "locator": "Analysis slide 15, Inventory carrying cost row"
+  },
+  {
+   "id": "split25",
+   "slide_id": "11",
+   "label": "Share of volume proposed for the alternate shop",
+   "value": 0.25,
+   "unit": "%",
+   "source_id": "an",
+   "excerpt": "split quarterly orders (e.g. ~25% of volume)",
+   "locator": "Analysis slide 11, Layer 2"
+  },
+  {
+   "id": "emg_frt",
+   "slide_id": "11",
+   "label": "Freight and QA assumed on top of the emergency price",
+   "value": 2,
+   "unit": "$",
+   "source_id": "an",
+   "excerpt": "Emergency premium assumes $2 freight/QA on top of $88",
+   "locator": "Analysis slide 11, source line"
+  },
+  {
+   "id": "dec12",
+   "slide_id": "13",
+   "label": "Lead time for deciding on an owned cell before capacity is needed",
+   "value": 12,
+   "unit": "months",
+   "source_id": "an",
+   "excerpt": "Decide ≥ 12 months before the capacity is needed (nine-month equipment lead time).",
+   "locator": "Analysis slide 13"
+  },
+  {
+   "id": "w_buf",
+   "slide_id": "10",
+   "label": "Weeks until buffer stock can supply housings",
+   "value": 0,
+   "unit": "weeks",
+   "source_id": "an",
+   "locator": "Analysis slide 10 and slide 11, Layer 1 Buffer stock: time to act \"Immediate\""
+  },
+  {
+   "id": "buy75",
+   "slide_id": "3b",
+   "label": "Supplier cost per good unit, delivered",
+   "value": 75,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "gate73",
+    "frt2"
+   ],
+   "formula": "$73 + $2",
+   "calc": "gate73 + frt2"
+  },
+  {
+   "id": "lease_cpu1",
+   "slide_id": "3b",
+   "label": "Leased cell cost per good unit, first year",
+   "value": 52.13,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "lease49",
+    "lease_s1"
+   ],
+   "formula": "$49 ÷ (1 − 6%)",
+   "calc": "lease49 / (1 - lease_s1)"
+  },
+  {
+   "id": "lease_cpu2",
+   "slide_id": "3b",
+   "label": "Leased cell cost per good unit, later years",
+   "value": 51.04,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "lease49",
+    "s_later"
+   ],
+   "formula": "$49 ÷ (1 − 4%)",
+   "calc": "lease49 / (1 - s_later)"
+  },
+  {
+   "id": "own_cpu1",
+   "slide_id": "3b",
+   "label": "Owned cell cost per good unit, first year",
+   "value": 50.0,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "own46",
+    "own_s1"
+   ],
+   "formula": "$46 ÷ (1 − 8%)",
+   "calc": "own46 / (1 - own_s1)"
+  },
+  {
+   "id": "own_cpu2",
+   "slide_id": "3b",
+   "label": "Owned cell cost per good unit, later years",
+   "value": 47.92,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "own46",
+    "s_later"
+   ],
+   "formula": "$46 ÷ (1 − 4%)",
+   "calc": "own46 / (1 - s_later)"
+  },
+  {
+   "id": "own_up",
+   "slide_id": "3b",
+   "label": "Owned cell upfront investment",
+   "value": 7.3,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "own_eq",
+    "own_inst"
+   ],
+   "formula": "$6.5M + $0.8M",
+   "calc": "own_eq + own_inst"
+  },
+  {
+   "id": "vol_plan",
+   "slide_id": "3",
+   "label": "Good housings 2027–29, planning case",
+   "value": 300,
+   "unit": "k",
+   "source_id": "calc",
+   "derived_from": [
+    "v27",
+    "v28p",
+    "v29p"
+   ],
+   "formula": "80k + 100k + 120k",
+   "calc": "v27 + v28p + v29p",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "vol_cons",
+   "slide_id": "3",
+   "label": "Good housings 2027–29, conservative case",
+   "value": 230,
+   "unit": "k",
+   "source_id": "calc",
+   "derived_from": [
+    "v27",
+    "v28c",
+    "v29c"
+   ],
+   "formula": "80k + 65k + 85k",
+   "calc": "v27 + v28c + v29c",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "vol2829p",
+   "slide_id": "9",
+   "label": "Good housings 2028–29, planning case",
+   "value": 220,
+   "unit": "k",
+   "source_id": "calc",
+   "derived_from": [
+    "v28p",
+    "v29p"
+   ],
+   "formula": "100k + 120k",
+   "calc": "v28p + v29p",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "vol2829c",
+   "slide_id": "13",
+   "label": "Good housings 2028–29, conservative case",
+   "value": 150,
+   "unit": "k",
+   "source_id": "calc",
+   "derived_from": [
+    "v28c",
+    "v29c"
+   ],
+   "formula": "65k + 85k",
+   "calc": "v28c + v29c",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "buy27",
+   "slide_id": "8",
+   "label": "Buy, 2027 cost",
+   "value": 6.0,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v27",
+    "buy75"
+   ],
+   "formula": "80k × $75",
+   "calc": "v27 * buy75 / 1000"
+  },
+  {
+   "id": "buy28p",
+   "slide_id": "A1",
+   "label": "Buy, 2028 cost, planning",
+   "value": 7.5,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v28p",
+    "buy75"
+   ],
+   "formula": "100k × $75",
+   "calc": "v28p * buy75 / 1000"
+  },
+  {
+   "id": "buy29p",
+   "slide_id": "A1",
+   "label": "Buy, 2029 cost, planning",
+   "value": 9.0,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v29p",
+    "buy75"
+   ],
+   "formula": "120k × $75",
+   "calc": "v29p * buy75 / 1000"
+  },
+  {
+   "id": "buy28c",
+   "slide_id": "A1",
+   "label": "Buy, 2028 cost, conservative",
+   "value": 4.88,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v28c",
+    "buy75"
+   ],
+   "formula": "65k × $75",
+   "calc": "v28c * buy75 / 1000"
+  },
+  {
+   "id": "buy29c",
+   "slide_id": "A1",
+   "label": "Buy, 2029 cost, conservative",
+   "value": 6.38,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v29c",
+    "buy75"
+   ],
+   "formula": "85k × $75",
+   "calc": "v29c * buy75 / 1000"
+  },
+  {
+   "id": "l27",
+   "slide_id": "A1",
+   "label": "Lease, 2027 cost",
+   "value": 5.77,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v27",
+    "lease_s1",
+    "lease49",
+    "lease_fix"
+   ],
+   "formula": "80k ÷ (1 − 6%) × $49 + $1.6M",
+   "calc": "v27 / (1 - lease_s1) * lease49 / 1000 + lease_fix"
+  },
+  {
+   "id": "l28p",
+   "slide_id": "A1",
+   "label": "Lease, 2028 cost, planning",
+   "value": 6.7,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v28p",
+    "s_later",
+    "lease49",
+    "lease_fix"
+   ],
+   "formula": "100k ÷ (1 − 4%) × $49 + $1.6M",
+   "calc": "v28p / (1 - s_later) * lease49 / 1000 + lease_fix"
+  },
+  {
+   "id": "l29p",
+   "slide_id": "A1",
+   "label": "Lease, 2029 cost, planning",
+   "value": 7.73,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v29p",
+    "s_later",
+    "lease49",
+    "lease_fix"
+   ],
+   "formula": "120k ÷ (1 − 4%) × $49 + $1.6M",
+   "calc": "v29p / (1 - s_later) * lease49 / 1000 + lease_fix"
+  },
+  {
+   "id": "l28c",
+   "slide_id": "A1",
+   "label": "Lease, 2028 cost, conservative",
+   "value": 4.92,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v28c",
+    "s_later",
+    "lease49",
+    "lease_fix"
+   ],
+   "formula": "65k ÷ (1 − 4%) × $49 + $1.6M",
+   "calc": "v28c / (1 - s_later) * lease49 / 1000 + lease_fix"
+  },
+  {
+   "id": "l29c",
+   "slide_id": "A1",
+   "label": "Lease, 2029 cost, conservative",
+   "value": 5.94,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v29c",
+    "s_later",
+    "lease49",
+    "lease_fix"
+   ],
+   "formula": "85k ÷ (1 − 4%) × $49 + $1.6M",
+   "calc": "v29c / (1 - s_later) * lease49 / 1000 + lease_fix"
+  },
+  {
+   "id": "o27",
+   "slide_id": "A1",
+   "label": "Own, 2027 cost",
+   "value": 4.75,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v27",
+    "own_s1",
+    "own46",
+    "own_fix"
+   ],
+   "formula": "80k ÷ (1 − 8%) × $46 + $0.75M",
+   "calc": "v27 / (1 - own_s1) * own46 / 1000 + own_fix"
+  },
+  {
+   "id": "o28p",
+   "slide_id": "A1",
+   "label": "Own, 2028 cost, planning",
+   "value": 5.54,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v28p",
+    "s_later",
+    "own46",
+    "own_fix"
+   ],
+   "formula": "100k ÷ (1 − 4%) × $46 + $0.75M",
+   "calc": "v28p / (1 - s_later) * own46 / 1000 + own_fix"
+  },
+  {
+   "id": "o29p",
+   "slide_id": "A1",
+   "label": "Own, 2029 cost, planning",
+   "value": 6.5,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v29p",
+    "s_later",
+    "own46",
+    "own_fix"
+   ],
+   "formula": "120k ÷ (1 − 4%) × $46 + $0.75M",
+   "calc": "v29p / (1 - s_later) * own46 / 1000 + own_fix"
+  },
+  {
+   "id": "o28c",
+   "slide_id": "A1",
+   "label": "Own, 2028 cost, conservative",
+   "value": 3.86,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v28c",
+    "s_later",
+    "own46",
+    "own_fix"
+   ],
+   "formula": "65k ÷ (1 − 4%) × $46 + $0.75M",
+   "calc": "v28c / (1 - s_later) * own46 / 1000 + own_fix"
+  },
+  {
+   "id": "o29c",
+   "slide_id": "A1",
+   "label": "Own, 2029 cost, conservative",
+   "value": 4.82,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v29c",
+    "s_later",
+    "own46",
+    "own_fix"
+   ],
+   "formula": "85k ÷ (1 − 4%) × $46 + $0.75M",
+   "calc": "v29c / (1 - s_later) * own46 / 1000 + own_fix"
+  },
+  {
+   "id": "buy_tot_p",
+   "slide_id": "8",
+   "label": "Buy, total cost 2027–29, planning",
+   "value": 22.5,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "buy27",
+    "buy28p",
+    "buy29p"
+   ],
+   "formula": "6.00 + 7.50 + 9.00",
+   "calc": "buy27 + buy28p + buy29p"
+  },
+  {
+   "id": "buy_tot_c",
+   "slide_id": "8",
+   "label": "Buy, total cost 2027–29, conservative",
+   "value": 17.25,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "buy27",
+    "buy28c",
+    "buy29c"
+   ],
+   "formula": "6.00 + 4.88 + 6.38",
+   "calc": "buy27 + buy28c + buy29c"
+  },
+  {
+   "id": "l_tot_p",
+   "slide_id": "8",
+   "label": "Lease, total cost 2027–29 incl. upfront, planning",
+   "value": 22.2,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "l27",
+    "l28p",
+    "l29p",
+    "lease_up"
+   ],
+   "formula": "5.77 + 6.70 + 7.73 + 2.00",
+   "calc": "l27 + l28p + l29p + lease_up"
+  },
+  {
+   "id": "l_tot_c",
+   "slide_id": "8",
+   "label": "Lease, total cost 2027–29 incl. upfront, conservative",
+   "value": 18.63,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "l27",
+    "l28c",
+    "l29c",
+    "lease_up"
+   ],
+   "formula": "5.77 + 4.92 + 5.94 + 2.00",
+   "calc": "l27 + l28c + l29c + lease_up"
+  },
+  {
+   "id": "o_tot_p",
+   "slide_id": "8",
+   "label": "Own, total cost 2027–29 incl. upfront, planning",
+   "value": 24.09,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "o27",
+    "o28p",
+    "o29p",
+    "own_up"
+   ],
+   "formula": "4.75 + 5.54 + 6.50 + 7.30",
+   "calc": "o27 + o28p + o29p + own_up"
+  },
+  {
+   "id": "o_tot_c",
+   "slide_id": "8",
+   "label": "Own, total cost 2027–29 incl. upfront, conservative",
+   "value": 20.74,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "o27",
+    "o28c",
+    "o29c",
+    "own_up"
+   ],
+   "formula": "4.75 + 3.86 + 4.82 + 7.30",
+   "calc": "o27 + o28c + o29c + own_up"
+  },
+  {
+   "id": "on_tot_p",
+   "slide_id": "8",
+   "label": "Own net of $2.1M resale, total 2027–29, planning",
+   "value": 21.99,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "o_tot_p",
+    "resale"
+   ],
+   "formula": "24.09 − 2.1",
+   "calc": "o_tot_p - resale"
+  },
+  {
+   "id": "on_tot_c",
+   "slide_id": "8",
+   "label": "Own net of $2.1M resale, total 2027–29, conservative",
+   "value": 18.64,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "o_tot_c",
+    "resale"
+   ],
+   "formula": "20.74 − 2.1",
+   "calc": "o_tot_c - resale"
+  },
+  {
+   "id": "own_up_net",
+   "slide_id": "A1",
+   "label": "Owned cell upfront net of resale",
+   "value": 5.2,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "own_up",
+    "resale"
+   ],
+   "formula": "$7.3M − $2.1M",
+   "calc": "own_up - resale"
+  },
+  {
+   "id": "l_d_p",
+   "slide_id": "8",
+   "label": "Lease cost compared with buying, 2027–29, planning",
+   "value": -0.3,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "l_tot_p",
+    "buy_tot_p"
+   ],
+   "formula": "22.20 − 22.50",
+   "calc": "l_tot_p - buy_tot_p"
+  },
+  {
+   "id": "l_d_c",
+   "slide_id": "8",
+   "label": "Lease cost compared with buying, 2027–29, conservative",
+   "value": 1.38,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "l_tot_c",
+    "buy_tot_c"
+   ],
+   "formula": "18.63 − 17.25",
+   "calc": "l_tot_c - buy_tot_c"
+  },
+  {
+   "id": "o_d_p",
+   "slide_id": "8",
+   "label": "Own cost compared with buying, 2027–29, planning",
+   "value": 1.59,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "o_tot_p",
+    "buy_tot_p"
+   ],
+   "formula": "24.09 − 22.50",
+   "calc": "o_tot_p - buy_tot_p"
+  },
+  {
+   "id": "o_d_c",
+   "slide_id": "8",
+   "label": "Own cost compared with buying, 2027–29, conservative",
+   "value": 3.49,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "o_tot_c",
+    "buy_tot_c"
+   ],
+   "formula": "20.74 − 17.25",
+   "calc": "o_tot_c - buy_tot_c"
+  },
+  {
+   "id": "on_d_p",
+   "slide_id": "A1",
+   "label": "Own net of resale compared with buying, planning",
+   "value": -0.51,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "on_tot_p",
+    "buy_tot_p"
+   ],
+   "formula": "21.99 − 22.50",
+   "calc": "on_tot_p - buy_tot_p"
+  },
+  {
+   "id": "on_d_c",
+   "slide_id": "A1",
+   "label": "Own net of resale compared with buying, conservative",
+   "value": 1.39,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "on_tot_c",
+    "buy_tot_c"
+   ],
+   "formula": "18.64 − 17.25",
+   "calc": "on_tot_c - buy_tot_c"
+  },
+  {
+   "id": "l_share",
+   "slide_id": "8",
+   "label": "Lease saving as a share of the cost of buying, planning",
+   "value": 0.01,
+   "unit": "%",
+   "source_id": "calc",
+   "derived_from": [
+    "l_d_p",
+    "buy_tot_p"
+   ],
+   "formula": "0.30 ÷ 22.50",
+   "calc": "(0 - l_d_p) / buy_tot_p"
+  },
+  {
+   "id": "l_pu_p",
+   "slide_id": "8",
+   "label": "Lease, average cost per good housing 2027–29, planning",
+   "value": 74.0,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "l_tot_p",
+    "vol_plan"
+   ],
+   "formula": "$22.20M ÷ 300k",
+   "calc": "l_tot_p / vol_plan * 1000"
+  },
+  {
+   "id": "l_pu_c",
+   "slide_id": "8",
+   "label": "Lease, average cost per good housing 2027–29, conservative",
+   "value": 80.98,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "l_tot_c",
+    "vol_cons"
+   ],
+   "formula": "$18.63M ÷ 230k",
+   "calc": "l_tot_c / vol_cons * 1000"
+  },
+  {
+   "id": "o_pu_p",
+   "slide_id": "8",
+   "label": "Own, average cost per good housing 2027–29, planning",
+   "value": 80.31,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "o_tot_p",
+    "vol_plan"
+   ],
+   "formula": "$24.09M ÷ 300k",
+   "calc": "o_tot_p / vol_plan * 1000"
+  },
+  {
+   "id": "o_pu_c",
+   "slide_id": "8",
+   "label": "Own, average cost per good housing 2027–29, conservative",
+   "value": 90.16,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "o_tot_c",
+    "vol_cons"
+   ],
+   "formula": "$20.74M ÷ 230k",
+   "calc": "o_tot_c / vol_cons * 1000"
+  },
+  {
+   "id": "on_pu_p",
+   "slide_id": "8",
+   "label": "Own net of resale, average cost per good housing, planning",
+   "value": 73.31,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "on_tot_p",
+    "vol_plan"
+   ],
+   "formula": "$21.99M ÷ 300k",
+   "calc": "on_tot_p / vol_plan * 1000"
+  },
+  {
+   "id": "on_pu_c",
+   "slide_id": "8",
+   "label": "Own net of resale, average cost per good housing, conservative",
+   "value": 81.03,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "on_tot_c",
+    "vol_cons"
+   ],
+   "formula": "$18.64M ÷ 230k",
+   "calc": "on_tot_c / vol_cons * 1000"
+  },
+  {
+   "id": "own_sav_ops",
+   "slide_id": "6",
+   "label": "Owned cell cumulative operating saving against buying, 2027–29, planning",
+   "value": 5.71,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "buy_tot_p",
+    "o27",
+    "o28p",
+    "o29p"
+   ],
+   "formula": "22.50 − (4.75 + 5.54 + 6.50)",
+   "calc": "buy_tot_p - o27 - o28p - o29p"
+  },
+  {
+   "id": "lfix_be",
+   "slide_id": "8",
+   "label": "Annual volume at which the lease's unit margin covers its fixed cost",
+   "value": 66.8,
+   "unit": "k",
+   "source_id": "calc",
+   "derived_from": [
+    "lease_fix",
+    "buy75",
+    "lease_cpu2"
+   ],
+   "formula": "$1.6M ÷ ($75 − $51.04)",
+   "calc": "lease_fix / (buy75 - lease_cpu2) * 1000",
+   "definition": "thousand good units a year"
+  },
+  {
+   "id": "wf_scr",
+   "slide_id": "6",
+   "label": "Owned cell first-year scrap cost per good housing",
+   "value": -4.0,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "own_cpu1",
+    "own46"
+   ],
+   "formula": "−($50.00 − $46)",
+   "calc": "own46 - own_cpu1"
+  },
+  {
+   "id": "wf_fix",
+   "slide_id": "6",
+   "label": "Owned cell fixed staffing per good housing, 2027",
+   "value": -9.38,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "own_fix",
+    "v27"
+   ],
+   "formula": "−$0.75M ÷ 80k",
+   "calc": "0 - own_fix / v27 * 1000"
+  },
+  {
+   "id": "sav27",
+   "slide_id": "6",
+   "label": "Owned cell true saving per good housing against buying, 2027",
+   "value": 15.63,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "cfo27",
+    "frt2",
+    "wf_scr",
+    "wf_fix"
+   ],
+   "formula": "$27 + $2 − $4.00 − $9.38",
+   "calc": "cfo27 + frt2 + wf_scr + wf_fix"
+  },
+  {
+   "id": "ann_cfo",
+   "slide_id": "6",
+   "label": "Annual saving implied by the CFO slide at 100k units",
+   "value": 2.7,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "cfo27",
+    "v28p"
+   ],
+   "formula": "$27 × 100k",
+   "calc": "cfo27 * v28p / 1000"
+  },
+  {
+   "id": "pb_cfo",
+   "slide_id": "6",
+   "label": "Payback on the CFO slide's basis",
+   "value": 2.7,
+   "unit": "years",
+   "source_id": "calc",
+   "derived_from": [
+    "own_up",
+    "cfo27",
+    "v28p"
+   ],
+   "formula": "$7.3M ÷ ($27 × 100k)",
+   "calc": "own_up / (cfo27 * v28p / 1000)"
+  },
+  {
+   "id": "sav_ss_unit",
+   "slide_id": "6",
+   "label": "Owned cell steady-state saving per good housing before fixed cost (4% scrap)",
+   "value": 27.08,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "buy75",
+    "own_cpu2"
+   ],
+   "formula": "$75 − $47.92",
+   "calc": "buy75 - own_cpu2"
+  },
+  {
+   "id": "fix_pu100",
+   "slide_id": "6",
+   "label": "Owned cell fixed cost per housing at 100k units",
+   "value": 7.5,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "own_fix",
+    "v28p"
+   ],
+   "formula": "$0.75M ÷ 100k",
+   "calc": "own_fix / v28p * 1000"
+  },
+  {
+   "id": "sav_ss_net",
+   "slide_id": "6",
+   "label": "Owned cell steady-state net saving per housing at 100k units",
+   "value": 19.58,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "sav_ss_unit",
+    "fix_pu100"
+   ],
+   "formula": "$27.08 − $7.50",
+   "calc": "sav_ss_unit - fix_pu100"
+  },
+  {
+   "id": "ann100",
+   "slide_id": "6",
+   "label": "Owned cell annual net saving at 100k units",
+   "value": 1.96,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "sav_ss_net",
+    "v28p"
+   ],
+   "formula": "$19.58 × 100k",
+   "calc": "sav_ss_net * v28p / 1000"
+  },
+  {
+   "id": "pb100",
+   "slide_id": "6",
+   "label": "Owned cell payback at 100k units, corrected",
+   "value": 3.7,
+   "unit": "years",
+   "source_id": "calc",
+   "derived_from": [
+    "own_up",
+    "ann100",
+    "cfo27",
+    "frt2"
+   ],
+   "formula": "$7.3M ÷ $1.96M",
+   "calc": "own_up / ann100"
+  },
+  {
+   "id": "ann65",
+   "slide_id": "6",
+   "label": "Owned cell annual net saving at 65k units (conservative 2028)",
+   "value": 1.01,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "sav_ss_unit",
+    "v28c",
+    "own_fix"
+   ],
+   "formula": "$27.08 × 65k − $0.75M",
+   "calc": "sav_ss_unit * v28c / 1000 - own_fix"
+  },
+  {
+   "id": "pb65",
+   "slide_id": "6",
+   "label": "Owned cell payback at 65k units, corrected",
+   "value": 7.2,
+   "unit": "years",
+   "source_id": "calc",
+   "derived_from": [
+    "own_up",
+    "ann65",
+    "cfo27",
+    "frt2"
+   ],
+   "formula": "$7.3M ÷ $1.01M",
+   "calc": "own_up / ann65"
+  },
+  {
+   "id": "own_pb_vol",
+   "slide_id": "5",
+   "label": "2028–29 volume the owned cell needs to pay back by 2029 without resale",
+   "value": 279,
+   "unit": "k",
+   "source_id": "calc",
+   "derived_from": [
+    "own_up",
+    "buy27",
+    "o27",
+    "own_fix",
+    "sav_ss_unit"
+   ],
+   "formula": "($7.3M − ($6.00M − $4.75M) + 2 × $0.75M) ÷ $27.08",
+   "calc": "(own_up - (buy27 - o27) + 2 * own_fix) / sav_ss_unit * 1000",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "own_cap2",
+   "slide_id": "5",
+   "label": "Owned cell capacity over 2028–29",
+   "value": 240,
+   "unit": "k",
+   "source_id": "calc",
+   "derived_from": [
+    "cap_own"
+   ],
+   "formula": "2 × 120k",
+   "calc": "2 * cap_own",
+   "definition": "thousand accepted units"
+  },
+  {
+   "id": "buf_wks",
+   "slide_id": "11",
+   "label": "Buffer stock held, weeks of supply",
+   "value": 6,
+   "unit": "weeks",
+   "source_id": "calc",
+   "derived_from": [
+    "notice_emg"
+   ],
+   "formula": "sized to the emergency supplier's six-week notice",
+   "calc": "notice_emg"
+  },
+  {
+   "id": "wk_units",
+   "slide_id": "11",
+   "label": "Housings shipped per week in 2027",
+   "value": 1600,
+   "unit": "units",
+   "source_id": "calc",
+   "derived_from": [
+    "v27",
+    "wks50"
+   ],
+   "formula": "80k ÷ 50 weeks",
+   "calc": "v27 / wks50 * 1000"
+  },
+  {
+   "id": "buf_units",
+   "slide_id": "11",
+   "label": "Buffer stock, housings",
+   "value": 9600,
+   "unit": "units",
+   "source_id": "calc",
+   "derived_from": [
+    "wk_units",
+    "buf_wks"
+   ],
+   "formula": "6 weeks × 1,600",
+   "calc": "wk_units * buf_wks"
+  },
+  {
+   "id": "buf",
+   "slide_id": "7",
+   "label": "Buffer stock working capital",
+   "value": 0.72,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "buf_units",
+    "buy75"
+   ],
+   "formula": "9,600 × $75",
+   "calc": "buf_units * buy75 / 1000000"
+  },
+  {
+   "id": "cash_buy",
+   "slide_id": "7",
+   "label": "Year-end 2027 cash, buy and de-risk",
+   "value": 8.23,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "cash0",
+    "tool025",
+    "buf"
+   ],
+   "formula": "$9.2M − $0.25M − $0.72M",
+   "calc": "cash0 - tool025 - buf"
+  },
+  {
+   "id": "cash_lease",
+   "slide_id": "7",
+   "label": "Year-end 2027 cash, lease cell",
+   "value": 7.43,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "cash0",
+    "lease_up",
+    "l27",
+    "buy27"
+   ],
+   "formula": "$9.2M − ($2.0M + $5.77M − $6.00M)",
+   "calc": "cash0 - (lease_up + l27 - buy27)"
+  },
+  {
+   "id": "cash_own",
+   "slide_id": "7",
+   "label": "Year-end 2027 cash, owned cell",
+   "value": 3.15,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "cash0",
+    "own_up",
+    "o27",
+    "buy27"
+   ],
+   "formula": "$9.2M − ($7.3M + $4.75M − $6.00M)",
+   "calc": "cash0 - (own_up + o27 - buy27)"
+  },
+  {
+   "id": "cash_own_pay",
+   "slide_id": "7",
+   "label": "Cash immediately after paying the $7.3M owned-cell investment",
+   "value": 1.9,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "cash0",
+    "own_up"
+   ],
+   "formula": "$9.2M − $7.3M",
+   "calc": "cash0 - own_up"
+  },
+  {
+   "id": "cap_share",
+   "slide_id": "12",
+   "label": "Share of the $5.0M 2027 capital limit used by the recommendation",
+   "value": 0.05,
+   "unit": "%",
+   "source_id": "calc",
+   "derived_from": [
+    "tool025",
+    "caplim"
+   ],
+   "formula": "$0.25M ÷ $5.0M",
+   "calc": "tool025 / caplim"
+  },
+  {
+   "id": "head_buy",
+   "slide_id": "12",
+   "label": "Headroom above the $4.0M cash floor, recommendation",
+   "value": 4.23,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "cash_buy",
+    "floor"
+   ],
+   "formula": "$8.23M − $4.0M",
+   "calc": "cash_buy - floor"
+  },
+  {
+   "id": "lease_trig_cash",
+   "slide_id": "12",
+   "label": "Lease upfront if triggered",
+   "value": -2.0,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "lease_up"
+   ],
+   "formula": "−$2.0M",
+   "calc": "0 - lease_up"
+  },
+  {
+   "id": "cash_trig",
+   "slide_id": "12",
+   "label": "Year-end 2027 cash if the lease is triggered",
+   "value": 6.23,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "cash_buy",
+    "lease_up"
+   ],
+   "formula": "$8.23M − $2.0M",
+   "calc": "cash_buy - lease_up"
+  },
+  {
+   "id": "head_trig",
+   "slide_id": "12",
+   "label": "Headroom above the $4.0M cash floor if the lease is triggered",
+   "value": 2.23,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "cash_trig",
+    "floor"
+   ],
+   "formula": "$6.23M − $4.0M",
+   "calc": "cash_trig - floor"
+  },
+  {
+   "id": "tool_neg",
+   "slide_id": "12",
+   "label": "Alternate-shop tooling (cash outflow)",
+   "value": -0.25,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "tool025"
+   ],
+   "formula": "−$0.25M",
+   "calc": "0 - tool025"
+  },
+  {
+   "id": "buf_neg",
+   "slide_id": "12",
+   "label": "Buffer stock (cash outflow)",
+   "value": -0.72,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "buf"
+   ],
+   "formula": "−$0.72M",
+   "calc": "0 - buf"
+  },
+  {
+   "id": "d_per1",
+   "slide_id": "12",
+   "label": "Extra 2027–29 cost of buying for every $1 added to the 2028–29 supplier price",
+   "value": 0.22,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "vol2829p"
+   ],
+   "formula": "220k × $1",
+   "calc": "vol2829p / 1000"
+  },
+  {
+   "id": "lsav27",
+   "slide_id": "9",
+   "label": "Lease saving against buying in 2027, full year",
+   "value": 0.23,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "buy27",
+    "l27"
+   ],
+   "formula": "$6.00M − $5.77M",
+   "calc": "buy27 - l27"
+  },
+  {
+   "id": "lsav_base",
+   "slide_id": "9",
+   "label": "Lease saving against buying 2027–29, planning base case",
+   "value": 0.3,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "l_d_p"
+   ],
+   "formula": "−(22.20 − 22.50)",
+   "calc": "0 - l_d_p"
+  },
+  {
+   "id": "sens_p5",
+   "slide_id": "9",
+   "label": "Lease saving if the supplier's 2028–29 price is $5 higher",
+   "value": 1.4,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "lsav_base",
+    "vol2829p"
+   ],
+   "formula": "$0.30M + 220k × $5",
+   "calc": "lsav_base + vol2829p * 5 / 1000"
+  },
+  {
+   "id": "l27_7pr",
+   "slide_id": "9",
+   "label": "2027 supply cost if the lease runs 7 months, fixed cost pro-rated",
+   "value": 5.87,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v27",
+    "lease_s1",
+    "lease49",
+    "lease_fix",
+    "buy75"
+   ],
+   "formula": "7/12 × 80k ÷ (1 − 6%) × $49 + 7/12 × $1.6M + 5/12 × 80k × $75",
+   "calc": "v27 * 7 / 12 / (1 - lease_s1) * lease49 / 1000 + lease_fix * 7 / 12 + v27 * 5 / 12 * buy75 / 1000"
+  },
+  {
+   "id": "l27_7fy",
+   "slide_id": "9",
+   "label": "2027 supply cost if the lease runs 7 months, full-year fixed cost",
+   "value": 6.53,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "v27",
+    "lease_s1",
+    "lease49",
+    "lease_fix",
+    "buy75"
+   ],
+   "formula": "7/12 × 80k ÷ (1 − 6%) × $49 + $1.6M + 5/12 × 80k × $75",
+   "calc": "v27 * 7 / 12 / (1 - lease_s1) * lease49 / 1000 + lease_fix + v27 * 5 / 12 * buy75 / 1000"
+  },
+  {
+   "id": "sens_7pr",
+   "slide_id": "9",
+   "label": "Lease saving if it runs 7 months of 2027, fixed cost pro-rated",
+   "value": 0.21,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "lsav_base",
+    "lsav27",
+    "buy27",
+    "l27_7pr"
+   ],
+   "formula": "0.30 − 0.23 + (6.00 − 5.87)",
+   "calc": "lsav_base - lsav27 + buy27 - l27_7pr"
+  },
+  {
+   "id": "sens_s6",
+   "slide_id": "9",
+   "label": "Lease saving if later-year scrap is 6% instead of 4%",
+   "value": 0.06,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "lsav_base",
+    "vol2829p",
+    "lease_s1",
+    "s_later",
+    "lease49"
+   ],
+   "formula": "0.30 − 220k × $49 × (1 ÷ 0.94 − 1 ÷ 0.96)",
+   "calc": "lsav_base - (vol2829p / (1 - lease_s1) - vol2829p / (1 - s_later)) * lease49 / 1000"
+  },
+  {
+   "id": "be_vol",
+   "slide_id": "9",
+   "label": "2028–29 volume at which the lease breaks even against buying",
+   "value": 207.4,
+   "unit": "k",
+   "source_id": "calc",
+   "derived_from": [
+    "lease_up",
+    "lease_fix",
+    "lsav27",
+    "buy75",
+    "lease_cpu2"
+   ],
+   "formula": "($2.0M + 2 × $1.6M − $0.23M) ÷ ($75 − $51.04)",
+   "calc": "(lease_up + 2 * lease_fix - lsav27) / (buy75 - lease_cpu2) * 1000",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "sens_vol",
+   "slide_id": "9",
+   "label": "Lease saving if 2028–29 volume is 6% below plan (207k)",
+   "value": 0.0,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "lsav_base",
+    "vol2829p",
+    "be_vol",
+    "buy75",
+    "lease_cpu2"
+   ],
+   "formula": "$0.30M − (220k − 207k) × ($75 − $51.04) ≈ 0",
+   "calc": "lsav_base - (vol2829p - be_vol) * (buy75 - lease_cpu2) / 1000"
+  },
+  {
+   "id": "sens_m2",
+   "slide_id": "9",
+   "label": "Lease saving if the supplier's 2028–29 price is $2 lower",
+   "value": -0.14,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "lsav_base",
+    "vol2829p"
+   ],
+   "formula": "$0.30M − 220k × $2",
+   "calc": "lsav_base - vol2829p * 2 / 1000"
+  },
+  {
+   "id": "sens_7fy",
+   "slide_id": "9",
+   "label": "Lease saving if it runs 7 months of 2027 but pays full-year fixed cost",
+   "value": -0.46,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "lsav_base",
+    "lsav27",
+    "buy27",
+    "l27_7fy"
+   ],
+   "formula": "0.30 − 0.23 + (6.00 − 6.53)",
+   "calc": "lsav_base - lsav27 + buy27 - l27_7fy"
+  },
+  {
+   "id": "sens_cons",
+   "slide_id": "9",
+   "label": "Lease saving with conservative demand",
+   "value": -1.38,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "l_d_c"
+   ],
+   "formula": "−(18.63 − 17.25)",
+   "calc": "0 - l_d_c"
+  },
+  {
+   "id": "be_p",
+   "slide_id": "9",
+   "label": "2028–29 supplier price above which the lease wins, planning",
+   "value": 73.6,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "l_tot_p",
+    "buy27",
+    "vol2829p"
+   ],
+   "formula": "($22.20M − $6.00M) ÷ 220k",
+   "calc": "(l_tot_p - buy27) / vol2829p * 1000"
+  },
+  {
+   "id": "be_c",
+   "slide_id": "9",
+   "label": "2028–29 supplier price above which the lease wins, conservative",
+   "value": 84.2,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "l_tot_c",
+    "buy27",
+    "vol2829c"
+   ],
+   "formula": "($18.63M − $6.00M) ÷ 150k",
+   "calc": "(l_tot_c - buy27) / vol2829c * 1000"
+  },
+  {
+   "id": "price_gap",
+   "slide_id": "9",
+   "label": "Supplier price cut that erases the lease's edge",
+   "value": 1.4,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "buy75",
+    "be_p"
+   ],
+   "formula": "$75 − $73.6",
+   "calc": "buy75 - be_p"
+  },
+  {
+   "id": "t1",
+   "slide_id": "13",
+   "label": "Gate T1: committed 2028–29 volume that triggers the lease",
+   "value": 208,
+   "unit": "k",
+   "source_id": "calc",
+   "derived_from": [
+    "be_vol"
+   ],
+   "formula": "207.4k break-even, rounded up to the next thousand",
+   "calc": "be_vol",
+   "definition": "thousand good units"
+  },
+  {
+   "id": "t2a",
+   "slide_id": "13",
+   "label": "Gate T2: supplier 2028–29 delivered price that triggers the lease on any volume",
+   "value": 84,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "be_c"
+   ],
+   "formula": "$84.2 break-even, rounded",
+   "calc": "be_c"
+  },
+  {
+   "id": "t2b",
+   "slide_id": "13",
+   "label": "Gate T2: supplier price that triggers the lease together with T1",
+   "value": 74,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "be_p"
+   ],
+   "formula": "$73.6 break-even, rounded",
+   "calc": "be_p"
+  },
+  {
+   "id": "p3",
+   "slide_id": "13",
+   "label": "Gate P3: first-year yield on accepted units the lease must prove",
+   "value": 0.94,
+   "unit": "%",
+   "source_id": "calc",
+   "derived_from": [
+    "lease_s1"
+   ],
+   "formula": "1 − 6% scrap",
+   "calc": "1 - lease_s1"
+  },
+  {
+   "id": "otd_gap",
+   "slide_id": "10",
+   "label": "On-time delivery gap to the 97% requirement",
+   "value": -0.2,
+   "unit": "pp",
+   "source_id": "calc",
+   "derived_from": [
+    "otd",
+    "otd_req"
+   ],
+   "formula": "96.8% − 97.0%",
+   "calc": "(otd - otd_req) * 100"
+  },
+  {
+   "id": "late_units",
+   "slide_id": "10",
+   "label": "Housings a year the gap represents at 80k units",
+   "value": 160,
+   "unit": "units",
+   "source_id": "calc",
+   "derived_from": [
+    "otd_req",
+    "otd",
+    "v27"
+   ],
+   "formula": "0.2% × 80,000",
+   "calc": "(otd_req - otd) * v27 * 1000"
+  },
+  {
+   "id": "w_emg",
+   "slide_id": "10",
+   "label": "Weeks until the emergency supplier can deliver",
+   "value": 6,
+   "unit": "weeks",
+   "source_id": "calc",
+   "derived_from": [
+    "notice_emg"
+   ],
+   "formula": "six-week notice",
+   "calc": "notice_emg"
+  },
+  {
+   "id": "w_res",
+   "slide_id": "10",
+   "label": "Weeks until the supplier's reserved units can deliver",
+   "value": 12.9,
+   "unit": "weeks",
+   "source_id": "calc",
+   "derived_from": [
+    "notice_res"
+   ],
+   "formula": "90 days ÷ 7",
+   "calc": "notice_res / 7"
+  },
+  {
+   "id": "w_lease",
+   "slide_id": "10",
+   "label": "Weeks until a leased cell can supply (survey passes, before ramp-up)",
+   "value": 21.7,
+   "unit": "weeks",
+   "source_id": "calc",
+   "derived_from": [
+    "lt_lease"
+   ],
+   "formula": "5 months × 52 ÷ 12",
+   "calc": "lt_lease * 52 / 12"
+  },
+  {
+   "id": "w_own",
+   "slide_id": "10",
+   "label": "Weeks until an owned cell can supply (equipment lead time, before install)",
+   "value": 39,
+   "unit": "weeks",
+   "source_id": "calc",
+   "derived_from": [
+    "lt_own"
+   ],
+   "formula": "9 months × 52 ÷ 12",
+   "calc": "lt_own * 52 / 12"
+  },
+  {
+   "id": "emg_prem",
+   "slide_id": "11",
+   "label": "Emergency supply premium per housing over buying",
+   "value": 15,
+   "unit": "$",
+   "source_id": "calc",
+   "derived_from": [
+    "emg88",
+    "emg_frt",
+    "buy75"
+   ],
+   "formula": "$88 + $2 − $75",
+   "calc": "emg88 + emg_frt - buy75"
+  },
+  {
+   "id": "mon_units",
+   "slide_id": "11",
+   "label": "Housings in one month at 2027 volume",
+   "value": 6700,
+   "unit": "units",
+   "source_id": "calc",
+   "derived_from": [
+    "v27"
+   ],
+   "formula": "80,000 ÷ 12",
+   "calc": "v27 / 12 * 1000"
+  },
+  {
+   "id": "emg_month",
+   "slide_id": "11",
+   "label": "Extra cost of one fully emergency-sourced month",
+   "value": 0.1,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "mon_units",
+    "emg_prem"
+   ],
+   "formula": "6,700 × $15",
+   "calc": "mon_units * emg_prem / 1000000"
+  },
+  {
+   "id": "emg_months",
+   "slide_id": "11",
+   "label": "Months of emergency supply equal in cost to the lease's conservative-case downside",
+   "value": 13.8,
+   "unit": "months",
+   "source_id": "calc",
+   "derived_from": [
+    "l_d_c",
+    "emg_month"
+   ],
+   "formula": "$1.38M ÷ $0.1M",
+   "calc": "l_d_c / emg_month"
+  },
+  {
+   "id": "carry",
+   "slide_id": "15",
+   "label": "Buffer carrying cost over 2027–29 at an assumed 25% a year",
+   "value": 0.54,
+   "unit": "$M",
+   "source_id": "calc",
+   "derived_from": [
+    "buf",
+    "carry_rate"
+   ],
+   "formula": "$0.72M × 25% × 3 years",
+   "calc": "buf * carry_rate * 3",
+   "estimate": true,
+   "assumptions": [
+    "Carrying cost of 25% of inventory value a year (the analysis's assumption; the pack says it is not yet modelled)",
+    "Buffer held at $0.72M for all three years"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "bp",
+   "kind": "user_provided",
+   "name": "Meridian Motion briefing pack (synthetic data)",
+   "input_id": "in-bp"
+  },
+  {
+   "id": "an",
+   "kind": "user_provided",
+   "name": "Team analysis (decision paper, Nov 2026)",
+   "input_id": "in-an"
+  },
+  {
+   "id": "calc",
+   "kind": "derived",
+   "name": "calculations from the briefing pack"
+  }
+ ],
+ "compile": {
+  "source": "./evidence/analysis.md (finished 18-slide decision paper), checked against ./evidence/briefing-pack.md",
+  "variant": "restyle",
+  "units": [
+   {
+    "id": "u1",
+    "type": "answer",
+    "text": "Continue buying in 2027; convert the single supplier into a dual-sourced, capacity-reserved supply with a five-layer outage contingency; pre-qualify a leased cell triggered only by pre-agreed gates; do not build the owned cell",
+    "source_loc": "Slides 1–2",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "5",
+     "14"
+    ]
+   },
+   {
+    "id": "u2",
+    "type": "frame",
+    "text": "The decision must pass four tests (affordability, like-for-like cost, delivery reliability, robustness), not a unit-price comparison",
+    "source_loc": "Slide 3",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "3"
+    ]
+   },
+   {
+    "id": "u3",
+    "type": "evidence",
+    "text": "Terms as quoted for buy, lease and own: unit cost per good unit, upfront cash, fixed cost, scrap, capacity, timing, after 2029",
+    "source_loc": "Slide 3 table",
+    "critical": true,
+    "slide_ids": [
+     "3b"
+    ]
+   },
+   {
+    "id": "u4",
+    "type": "constraint",
+    "text": "The customer mandates reliability and dimensional quality, not insourcing; volumes are not guaranteed (conservative 2028 = 65k)",
+    "source_loc": "Slide 3",
+    "critical": true,
+    "slide_ids": [
+     "3",
+     "10"
+    ]
+   },
+   {
+    "id": "u5",
+    "type": "claim",
+    "text": "Starting hypothesis (lease) failed three of five conditions (1, 3, 4 not supported; 2 supported; 5 unproven); answer revised to buy and de-risk",
+    "source_loc": "Slide 4",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "4"
+    ]
+   },
+   {
+    "id": "u6",
+    "type": "claim",
+    "text": "Buy + de-risk is the only option with no failing test; lease fails robustness (partial on cost and reliability); owned cell fails all four",
+    "source_loc": "Slide 5",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "5"
+    ]
+   },
+   {
+    "id": "u7",
+    "type": "claim",
+    "text": "Owned cell needs $7.3M against the $5.0M limit and leaves ~$3.2M of year-end cash, below the $4.0M floor",
+    "source_loc": "Slides 2, 7",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "7",
+     "5"
+    ]
+   },
+   {
+    "id": "u8",
+    "type": "claim",
+    "text": "The circulated $27 saving is $16 (15.63) per good housing in 2027; payback 3.7 years at 100k, 7.2 at 65k, not under three",
+    "source_loc": "Slides 2, 6",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "6",
+     "C"
+    ]
+   },
+   {
+    "id": "u9",
+    "type": "claim",
+    "text": "Undiscounted, pre-tax; cumulative 2027–29 owned-cell savings ($5.7M) do not recover $7.3M",
+    "source_loc": "Slide 6",
+    "critical": false,
+    "slide_ids": [
+     "6"
+    ]
+   },
+   {
+    "id": "u10",
+    "type": "claim",
+    "text": "Even financed, the owned cell cannot help 2027 (nine-month lead time, first output ~Q4 2027); cash drops to $1.9M on payment; demo yield excludes start-up, rework, downtime",
+    "source_loc": "Slide 7",
+    "critical": true,
+    "slide_ids": [
+     "7"
+    ]
+   },
+   {
+    "id": "u11",
+    "type": "claim",
+    "text": "Lease saves $0.3M (1%) over 2027–29 in the plan; costs $1.4M more in the conservative case",
+    "source_loc": "Slides 2, 8",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "8",
+     "4",
+     "5"
+    ]
+   },
+   {
+    "id": "u12",
+    "type": "alternative",
+    "text": "Owned cell costs $1.6M more in the plan and $3.5M conservative; wins only if the non-binding $2.1M resale is realised",
+    "source_loc": "Slides 5, 8, 16",
+    "critical": true,
+    "slide_ids": [
+     "5",
+     "8",
+     "A1"
+    ]
+   },
+   {
+    "id": "u13",
+    "type": "claim",
+    "text": "The gap is small because scrap lifts the lease's $49 to $51–52 per good unit and $1.6M a year of fixed cost absorbs the margin until ~67k a year",
+    "source_loc": "Slide 8",
+    "critical": false,
+    "slide_ids": [
+     "8"
+    ]
+   },
+   {
+    "id": "u14",
+    "type": "threshold",
+    "text": "Lease edge vanishes with 6% lower volume, a seven-month 2027 (full-year fixed cost), or a ~$1.40 lower supplier price; break-evens 207k units, $73.6, $84.2",
+    "source_loc": "Slides 2, 9",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "9",
+     "5"
+    ]
+   },
+   {
+    "id": "u15",
+    "type": "claim",
+    "text": "A 1% edge does not pay for first-time operating risk in a cell Meridian has never run",
+    "source_loc": "Slide 9",
+    "critical": true,
+    "slide_ids": [
+     "9"
+    ]
+   },
+   {
+    "id": "u16",
+    "type": "claim",
+    "text": "Reliability gap is 0.2 percentage points (96.8% against 97%) and traces to one flood closure",
+    "source_loc": "Slides 2, 10",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "10"
+    ]
+   },
+   {
+    "id": "u17",
+    "type": "claim",
+    "text": "Supply levers act in 0–13 weeks; cells take 5–9+ months; any cell is a 2028 capacity decision, not a 2027 reliability fix",
+    "source_loc": "Slides 2, 10",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "10"
+    ]
+   },
+   {
+    "id": "u18",
+    "type": "claim",
+    "text": "The machine-shop correlation is confounded and not causal; do not rely on it",
+    "source_loc": "Slides 10, 18",
+    "critical": false,
+    "slide_ids": [
+     "10",
+     "C"
+    ]
+   },
+   {
+    "id": "u19",
+    "type": "recommendation",
+    "text": "Five-layer contingency (buffer, second source, reserved capacity, emergency supplier, lease fallback) for $0.25M capital and up to $0.72M working capital",
+    "source_loc": "Slides 2, 11",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "11"
+    ]
+   },
+   {
+    "id": "u20",
+    "type": "claim",
+    "text": "Insurance arithmetic: one emergency month ~$0.1M; the lease's $1.4M downside buys ~14 months, so the contingency is cheaper unless an outage exceeds a year",
+    "source_loc": "Slide 11",
+    "critical": false,
+    "slide_ids": [
+     "11"
+    ]
+   },
+   {
+    "id": "u21",
+    "type": "claim",
+    "text": "Recommendation uses $0.25M of the $5.0M limit (5%), keeps year-end cash ~$8.2M ($4.2M headroom), $2.2M headroom even if the lease is triggered",
+    "source_loc": "Slides 2, 12",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "12"
+    ]
+   },
+   {
+    "id": "u22",
+    "type": "risk",
+    "text": "Main cost exposure: $0.22M extra for each $1 the supplier adds to the 2028–29 price",
+    "source_loc": "Slides 12, 15",
+    "critical": true,
+    "slide_ids": [
+     "12",
+     "15"
+    ]
+   },
+   {
+    "id": "u23",
+    "type": "gate",
+    "text": "Prerequisites P1 site ready, P2 spec frozen, P3 ≥94% first-year yield at full speed must all pass before a lease is signed",
+    "source_loc": "Slide 13",
+    "critical": true,
+    "slide_ids": [
+     "13"
+    ]
+   },
+   {
+    "id": "u24",
+    "type": "gate",
+    "text": "Triggers: T1 committed 2028–29 volume ≥208k; T2 price >$84, or >$74 with T1; T3 OTD <97% for two quarters or supplier refuses split orders/reservation; reviewed quarterly from June 2027",
+    "source_loc": "Slides 2, 13",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "13"
+    ]
+   },
+   {
+    "id": "u25",
+    "type": "gate",
+    "text": "Owned cell: revisit no earlier than 2028 and only with $7.3M financing, committed demand ≥120k a year, ≤4% scrap proven, binding resale; decide ≥12 months ahead",
+    "source_loc": "Slide 13",
+    "critical": true,
+    "slide_ids": [
+     "13"
+    ]
+   },
+   {
+    "id": "u26",
+    "type": "next_step",
+    "text": "Act before the March 2027 quote expiry: supply terms, second source, outage cover, lease option, governance workstreams with proposed owners",
+    "source_loc": "Slides 2, 14",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "14",
+     "end"
+    ]
+   },
+   {
+    "id": "u27",
+    "type": "decision",
+    "text": "Decision requested: approve buy and de-risk for 2027, $0.25M tooling, up to $0.72M buffer, the site survey and the gates",
+    "source_loc": "Slide 14",
+    "critical": true,
+    "slide_ids": [
+     "14",
+     "end"
+    ]
+   },
+   {
+    "id": "u28",
+    "type": "risk",
+    "text": "The answer is most exposed to supplier pricing after March 2027 and to executing the contingency on time",
+    "source_loc": "Slide 15",
+    "critical": true,
+    "slide_ids": [
+     "15"
+    ]
+   },
+   {
+    "id": "u29",
+    "type": "risk",
+    "text": "Other uncertainties: demand above/below plan, alternate-shop price, carrying cost (~$0.5M at 25%), designation loss unquantified, nominal basis",
+    "source_loc": "Slide 15",
+    "critical": false,
+    "slide_ids": [
+     "15"
+    ]
+   },
+   {
+    "id": "u30",
+    "type": "assumption",
+    "text": "Cost model by option, year and demand case with inputs and worked examples",
+    "source_loc": "Slide 16",
+    "critical": false,
+    "slide_ids": [
+     "A1",
+     "A2"
+    ]
+   },
+   {
+    "id": "u31",
+    "type": "assumption",
+    "text": "Logged modelling choices mostly tilt toward the cells; † items need management confirmation",
+    "source_loc": "Slide 17",
+    "critical": false,
+    "slide_ids": [
+     "B1",
+     "B2"
+    ]
+   },
+   {
+    "id": "u32",
+    "type": "claim",
+    "text": "Five circulating management claims do not survive a like-for-like test",
+    "source_loc": "Slide 18",
+    "critical": false,
+    "slide_ids": [
+     "C"
+    ]
+   },
+   {
+    "id": "u33",
+    "type": "assumption",
+    "text": "All figures nominal, pre-tax and undiscounted; briefing data is synthetic",
+    "source_loc": "Slide 1",
+    "critical": false,
+    "slide_ids": [
+     "3",
+     "3b",
+     "15"
+    ]
+   }
+  ],
+  "untraceable": [
+   {
+    "data_point_id": "wks50",
+    "critical": false,
+    "note": "Analysis's assumption of 50 shipping weeks used to size the buffer; not in the pack"
+   },
+   {
+    "data_point_id": "carry_rate",
+    "critical": false,
+    "note": "Analysis's assumed 25% carrying cost; the pack says carrying cost is not yet modelled"
+   },
+   {
+    "data_point_id": "split25",
+    "critical": false,
+    "note": "Analysis's proposed alternate-shop share (e.g. ~25%)"
+   },
+   {
+    "data_point_id": "emg_frt",
+    "critical": false,
+    "note": "Analysis's assumption that the $88 emergency price excludes $2 freight/QA"
+   },
+   {
+    "data_point_id": "w_buf",
+    "critical": false,
+    "note": "Analysis's reading that buffer stock acts immediately"
+   },
+   {
+    "data_point_id": "dec12",
+    "critical": true,
+    "ack": "User unavailable; chose the recommended option: keep the analysis's 12-month decision lead for the owned-cell gate, flagged as the analysis's unverified planning choice (the pack gives only the nine-month equipment lead time)",
+    "note": "Owned-cell gate: decide at least 12 months before capacity is needed"
+   }
+  ],
+  "corrections": [],
+  "check": {
+   "critical_units": 24,
+   "preserved": 24,
+   "notes": "Read unit by unit against the deck: every critical unit is on a main-deck slide with the source's numbers, conditions and option ranking. No corrections: every number recomputes from the briefing pack within rounding (the pro-rated seven-month lease row recomputes to $0.20–0.21M; kept at the source's $0.21M). Clarifications, not changes: the source says a mid-2027 start erases the lease's edge, which its own sensitivity exhibit supports only when the lease pays a full year of fixed cost; the exec sub-point now says 'on full fixed cost' and slides 5 and 9 carry a footnote. Layout changes: source slide 3 split into the four tests (3) and the terms table (3b); the cash bridge (source 12) drawn as two waterfall panels because the renderer has no mid-chart subtotal; Appendix A split into the table (A1) and inputs/worked examples (A2); Appendix B split into two pages (B1, B2). Page references updated to this deck's numbering. An independent fidelity read of the rendered deck against the source confirmed every number; the wording drift it found (exec item said five layers act in 0–13 weeks where the source names four levers; gate P3 lost \"new housing\"; the contingency bar lost \"conservative case\"; \"would strengthen\" became \"strengthens\"; the capital limit lost \"without new financing\"; the governing thought lost \"pre-qualify\" and the 2027 scope) was fixed. End-page owners marked proposed, as in the source."
+  }
+ }
+}

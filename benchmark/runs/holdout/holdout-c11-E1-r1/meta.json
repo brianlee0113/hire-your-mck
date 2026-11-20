@@ -1,0 +1,245 @@
+{
+ "run_id": "holdout-c11-E1-r1",
+ "case": "c11-oem-licensing",
+ "condition": "E1",
+ "rep": 1,
+ "order": 3,
+ "phase": "holdout",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 848.9,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "hire-your-mck:hire-your-mck",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "hire-your-mck",
+        "path": "/Users/brianlee0113/hym-bench-work/_plugin/hire-your-mck-c16061fa352c",
+        "source": "hire-your-mck@inline",
+        "version": "1.2.0"
+       },
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.328",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 42,
+      "duration_ms": 848138,
+      "duration_api_ms": 915685,
+      "total_cost_usd": 4.478126800000002,
+      "usage": {
+       "input_tokens": 74,
+       "cache_creation_input_tokens": 186843,
+       "cache_read_input_tokens": 5058111,
+       "output_tokens": 87706,
+       "output_tokens_details": {
+        "thinking_tokens": 44875
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 186843,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1536,
+         "cache_read_input_tokens": 190482,
+         "cache_creation_input_tokens": 3733,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3733
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 78,
+        "outputTokens": 95541,
+        "cacheReadInputTokens": 5079329,
+        "cacheCreationInputTokens": 198120,
+        "webSearchRequests": 0,
+        "costUSD": 4.478126800000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 50947,
+        "cacheCreationEphemeral5mInputTokens": 11277,
+        "cacheCreationEphemeral1hInputTokens": 186843,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 1,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 1
+       },
+       "started_in_background": 1,
+       "max_depth": 1,
+       "spawned_by_subagents": 0,
+       "completed": 1,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {
+        "general-purpose": 1
+       }
+      }
+     },
+     "result_text_tail": "ated because the 2028 revenue recurs.\n- **Engineering cost:** the $0.9M OEM team is counted for all three years, and 2027 uses the partner's 5,000-robot forecast. I flag that this assumes certification arrives on time.\n\n**What the second reviewer changed:** I had a second reviewer attack the recommendation before building the slides. It confirmed the arithmetic and changed three things:\n- **Volume gate:** raised from the OEM's 5,000 robots a year to about 8,800. That is what it takes to cover the team plus 70% of the lost direct profit.\n- **Liquidity claim:** narrowed to \"fundable without the advance\", because the pack gives no operating burn.\n- **New page:** I added a slide that tests \"take Option X for the cash\" on the same numbers.\n\n**QA:** the checker passes with no failures. Three warnings remain because the pack writes \"three years\", \"five competitors\" and the 100% ceiling in words, so there is no figure to match. Re-checking web sources didn't apply, since all sources are the pack. The backup table and two calculation cards show $ thousands so that values like $0.45M don't round to \"$0.5M\".\n\nThe OEM has not agreed to any of the protections, and won't guarantee the $350 price beyond the pilot. The deck says this where it matters.\n\nNext, I can switch the theme, or make a shorter board-pack version.\n\nFiles are in `deliverable/`:\n- boreal-oem-exclusivity.pptx\n- boreal-oem-exclusivity-sources.xlsx\n- boreal-oem-exclusivity.json (the spec; `work/build_spec.py` regenerates it)"
+    }
+   ],
+   "started": "2026-11-20T06:47:43+00:00",
+   "ended": "2026-11-20T07:01:52+00:00",
+   "session_id": "26cd2858-a820-4c0f-8d87-977c43d9144e",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 4.478126800000002,
+  "duration_s": 848.9,
+  "api_s": 915.685,
+  "turns": 42,
+  "input_tokens": 74,
+  "output_tokens": 87706,
+  "cache_read_tokens": 5058111,
+  "cache_creation_tokens": 186843,
+  "cost_all_attempts_usd": 4.478126800000002
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 4.478126800000002,
+   "input": 78,
+   "output": 95541,
+   "cache_read": 5079329,
+   "cache_creation": 198120
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "/hire-your-mck Mode: full deck with data (`deck_detailed`).\n\nCreate a deck for Boreal Autonomy board: Should Boreal Autonomy grant North American exclusivity to an OEM for its industrial robot navigation software in 2027?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "91b0541867e5ecb1eab0b6ca3ca1f8d901bf76ab3eb2f512919fb2e28aab4a0e",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.328 (Claude Code)",
+ "plugin_snapshot_sha256": "c16061fa352cd546cb19a17c71f9249b1e76ccaf3546fd258fb5941fbcfd8006",
+ "plugin_source": "benchmark/env/plugin-E1",
+ "repo_head": "17552f8b1b19ec481bc20b81f5e0c2d2a369f8b2",
+ "packet_sha256": "89ec353ad257cce55d83c954087d4e2fdd71230d0827d3058ffbf1b58ed32b4b",
+ "files": [
+  {
+   "path": "workspace/deliverable/boreal-oem-exclusivity-sources.xlsx",
+   "bytes": 46938,
+   "sha256": "8655fb03264a9116024bff6cb46362e19668ff4a9f4096a116ad881274b27cd2"
+  },
+  {
+   "path": "workspace/deliverable/boreal-oem-exclusivity.json",
+   "bytes": 90130,
+   "sha256": "18d0fe078c1a764032dd601dc314f7b8b4742f2dcfce1e04d9cfd28183bb2b4d"
+  },
+  {
+   "path": "workspace/deliverable/boreal-oem-exclusivity.pptx",
+   "bytes": 117188,
+   "sha256": "29a4fce1e4afd28d39c92e95ffe3ef1fcd7eb1677df192ae971187434eab96a0"
+  },
+  {
+   "path": "workspace/work/build_spec.py",
+   "bytes": 50523,
+   "sha256": "7f9c775f66891afb659cbe831767fe8c39aaf3ef9a317722e19db2111fe18005"
+  }
+ ]
+}

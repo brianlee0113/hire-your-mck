@@ -1,0 +1,3812 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Keep connector C: redesign it now, fix bundle service, and decide any 2029 sunset on evidence",
+  "subtitle": "Board question: should Vesper discontinue low reported-margin sterile connector C and redeploy the team to connector D? Pre-read for the February 2027 board meeting",
+  "company_name": "Vesper MedTech",
+  "audience": "Board of Directors",
+  "purpose": "Decide whether to discontinue connector C and redeploy the team to connector D",
+  "date": "2026-11-20",
+  "language": "en-US",
+  "confidentiality": "Synthetic benchmark data · US$ millions, FY2026 full year, from the board briefing pack",
+  "theme": "navy"
+ },
+ "inputs": [
+  {
+   "id": "in-1",
+   "kind": "file",
+   "label": "Board briefing pack (synthetic benchmark data)",
+   "content": "evidence/briefing-pack.md"
+  },
+  {
+   "id": "in-2",
+   "kind": "file",
+   "label": "Finished analysis deck, extracted slide by slide",
+   "content": "evidence/analysis.md"
+  }
+ ],
+ "storyline": {
+  "governing_thought": "Do not discontinue C in 2027: exiting destroys cash and breaches board constraints. Redesign C, fix bundle service and make any sunset a 2029 decision",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "C's 8% margin comes from the cost allocation; on contribution margin, C is actually the portfolio's strongest connector",
+    "supports": [
+     "3",
+     "4",
+     "5"
+    ],
+    "sub_points": [
+     {
+      "text": "C earns $3.8M of direct contribution, a 63% margin, compared with 50% for D and A and 42% for B",
+      "slide_id": "5"
+     },
+     {
+      "text": "Only $0.4M of C's $3.3M allocated cost is avoidable; the other $2.9M would move onto A, B and D",
+      "slide_id": "4"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "Exiting C in 2027 loses $4.75M in the first year and $2.65M every year after, and breaks two non-negotiables",
+    "supports": [
+     "6",
+     "7",
+     "8",
+     "9"
+    ],
+    "sub_points": [
+     {
+      "text": "Even at the optimistic 25% migration D adds only $0.75M; break-even needs $6.8M of D sales (113% of C)",
+      "slide_id": "7"
+     },
+     {
+      "text": "The $2.1M penalty alone is 2.3 times the $0.9M envelope; C is in 9 of 14 major bundles, with no validated substitute",
+      "slide_id": "8"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "The customer case for exit does not hold up: the real problem is bundle fill, caused by A and B",
+    "supports": [
+     "10",
+     "11"
+    ],
+    "sub_points": [
+     {
+      "text": "The 9-percentage-point renewal gap is confounded by size, equipment and coverage, with no before/after test",
+      "slide_id": "10"
+     },
+     {
+      "text": "C's 98% on-time figure omits A/B bundle misses; bundle fill is 91% against 95%, and exit would not fix it",
+      "slide_id": "11"
+     }
+    ]
+   },
+   {
+    "id": "4",
+    "text": "Recommended: redesign C now (+$2.4M over 2027–29), recover bundle fill, then hand the team to D",
+    "supports": [
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17"
+    ],
+    "sub_points": [
+     {
+      "text": "The $0.55M redesign pays back in about 5 months, breaks even at 19% of the saving and fits the $0.9M",
+      "slide_id": "13"
+     },
+     {
+      "text": "Renew the two bundles without exit notice, with a consent-based D path; Q4 2028 gate on any 2029 sunset",
+      "slide_id": "15"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Take the six decisions: reject a 2027 exit, approve the $0.55M redesign and $0.35M reserve, mandate the bundle-fill KPI, set Gate 2 criteria",
+    "owner": "Board",
+    "timing": "Feb 2027"
+   },
+   {
+    "action": "Set renewal terms for the two bundles: C retained, consent-based D clause, 2029-aligned term",
+    "owner": "Commercial + Legal (proposed)",
+    "timing": "Q1 2027"
+   },
+   {
+    "action": "Present the A/B bundle-fill recovery plan to reach ≥95%, with dates and cost",
+    "owner": "Operations (proposed)",
+    "timing": "Feb 2027"
+   },
+   {
+    "action": "Run the C redesign and two-site pilot; bring Gate 1 (convert the whole line?) to the board",
+    "owner": "Engineering team (proposed)",
+    "timing": "Mar–Aug 2027"
+   },
+   {
+    "action": "Run D adapter qualification with willing C customers and record observed acceptance",
+    "owner": "Engineering (D) + Sales (proposed)",
+    "timing": "From Jul 2027"
+   },
+   {
+    "action": "Gate 2: decide any 2029 sunset on observed evidence, before contract notice deadlines",
+    "owner": "Board",
+    "timing": "Q4 2028"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "1",
+   "title": "Is C really unprofitable?",
+   "exec_item_id": "1",
+   "tracker_label": "Profitability"
+  },
+  {
+   "id": "2",
+   "title": "What would exiting C cost?",
+   "exec_item_id": "2",
+   "tracker_label": "Exit cost"
+  },
+  {
+   "id": "3",
+   "title": "Is C hurting customers?",
+   "exec_item_id": "3",
+   "tracker_label": "Customers"
+  },
+  {
+   "id": "4",
+   "title": "What should Vesper do instead?",
+   "exec_item_id": "4",
+   "tracker_label": "Plan"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "3",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Our starting hypothesis, \"keep C\", survived four of five tests; the fifth showed that keeping C unchanged is not enough"
+   },
+   "message_type": "argument",
+   "archetype": "comparison-table",
+   "rationale": "Five tests of one hypothesis on the same three attributes -> comparison table with a verdict column",
+   "unit_line": "**Initial hypothesis, set before testing:** retain C, because its low reported margin is an allocation effect rather than an avoidable economic cost",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Test against the briefing-pack evidence"
+    ],
+    "verdict_header": "Verdict",
+    "rows": [
+     {
+      "label": "1. C earns more cash than its exit would save",
+      "cells": [
+       {
+        "text": "$3.8M direct contribution against $0.4M avoidable fixed cost: exit gives up a net $3.4M a year before migration"
+       }
+      ],
+      "note": "Holds"
+     },
+     {
+      "label": "2. D cannot replace what C earns",
+      "cells": [
+       {
+        "text": "Ceiling of 25% of C revenue = $1.5M (all of D's spare capacity) × 50% = $0.75M, against $3.4M at stake"
+       }
+      ],
+      "note": "Holds"
+     },
+     {
+      "label": "3. Exit costs and constraints bind",
+      "cells": [
+       {
+        "text": "$2.1M first-year penalties against $0.9M approved cash; C in 9 of 14 major bundles; no substitute validated on every hospital model"
+       }
+      ],
+      "note": "Holds"
+     },
+     {
+      "label": "4. C is not driving customer attrition",
+      "cells": [
+       {
+        "text": "9-percentage-point renewal gap is correlational and confounded (size, legacy equipment, coverage); no before/after evidence"
+       }
+      ],
+      "note": "Unproven"
+     },
+     {
+      "label": "5. Retaining C as-is is acceptable",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Bundle fill 91% against 95% required; C faces price pressure; a $1.25M a year redesign saving costs $0.55M"
+       }
+      ],
+      "note": "Fails: refine"
+     }
+    ]
+   },
+   "callout": {
+    "target": "5. Retaining C as-is is acceptable",
+    "header": "Fails: refine",
+    "detail": "Revised answer: keep C, but not unchanged. Fund the redesign, restore 95% bundle fill, use the renewals to open a consent-based path to D, and decide any 2029 sunset in Q4 2028 on observed evidence"
+   },
+   "footnotes": [
+    "Test 4 stays open, and the plan includes a way to resolve it (page 10). Verdicts: Holds = supports the hypothesis; Unproven = evidence inconclusive; Fails: refine = hypothesis needs refining"
+   ]
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "C's 8% margin is an allocation effect: only $0.4M of its $3.3M allocated cost is avoidable, against $3.8M of contribution",
+    "numbers": [
+     {
+      "text": "$0.4M",
+      "data_ref": "avdn"
+     }
+    ],
+    "highlights": [
+     "Avoidable fixed cost"
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "waterfall-bridge",
+   "rationale": "Walk from sales to reported profit, separating avoidable from stranded cost -> waterfall",
+   "unit_line": "**Connector C, walk from sales to reported profit**, $ millions, FY2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "big_number": {
+      "data_ref": "loss"
+     },
+     "caption": "a year of profit lost if C exits, before any migration: the decision-relevant figure, not 8%",
+     "bullets": [
+      "**Two different margins:** reported margin = (6.0 − 2.2 − 3.3) ÷ 6.0 = 8.3%; contribution margin = 3.8 ÷ 6.0 = 63.3%",
+      "**88% of the allocation stays:** $2.9M of the $3.3M is shared regulatory documentation and plant depreciation, spread by historical engineering hours",
+      "**The dashboard label misleads:** \"product gross margin\" is measured after shared allocations, so it cannot rank products for an exit or capacity decision"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "waterfall",
+    "categories": [
+     "Sales",
+     "Direct variable cost",
+     "Avoidable fixed cost",
+     "Shared cost that stays (reallocated)",
+     "Reported profit"
+    ],
+    "series": [
+     {
+      "name": "Connector C",
+      "points": [
+       {
+        "data_ref": "sC"
+       },
+       {
+        "data_ref": "vCn"
+       },
+       {
+        "data_ref": "avdn"
+       },
+       {
+        "data_ref": "stayn"
+       },
+       {
+        "data_ref": "rpC"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Avoidable fixed cost"
+    ],
+    "value_format": "0.0"
+   },
+   "footnotes": [
+    "Direct contribution $3.8M = 63% of sales; reported profit $0.5M = 8.3%. Avoidable fixed cost $0.40M a year per Finance; variable cost fully avoidable"
+   ]
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "On contribution C is the strongest connector, 63% against D's 50%, and its exit would strand $2.9M of cost on A, B and D",
+    "numbers": [
+     {
+      "text": "63%",
+      "data_ref": "cmC"
+     },
+     {
+      "text": "50%",
+      "data_ref": "cmD"
+     },
+     {
+      "text": "$2.9M",
+      "data_ref": "stay"
+     }
+    ],
+    "clauses": 2
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Two sides of one point: margin ranking flips on contribution; exit pushes stranded cost onto the rest -> two panels, no arrow",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "connector": "none",
+    "panels": [
+     {
+      "header": "On contribution margin C ranks first; on reported margin it ranks last",
+      "unit_line": "**Margin by product**, % of sales, FY2026",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Connector A (sales $14.0M)",
+        "Connector B (sales $9.0M)",
+        "Connector C (sales $6.0M)",
+        "Connector D (sales $4.0M)"
+       ],
+       "series": [
+        {
+         "name": "Reported margin (after allocations)",
+         "points": [
+          {
+           "data_ref": "rA"
+          },
+          {
+           "data_ref": "rB"
+          },
+          {
+           "data_ref": "rC"
+          },
+          {
+           "data_ref": "rD"
+          }
+         ]
+        },
+        {
+         "name": "Direct contribution margin",
+         "points": [
+          {
+           "data_ref": "cmA"
+          },
+          {
+           "data_ref": "cmB"
+          },
+          {
+           "data_ref": "cmC"
+          },
+          {
+           "data_ref": "cmD"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Connector C (sales $6.0M)"
+       ],
+       "value_format": "0%"
+      }
+     },
+     {
+      "header": "If C exits, the stranded cost lands on A, B and D, and B's reported margin falls to about 17%",
+      "unit_line": "**Reported margin if C exits**, illustrative, % of sales, once $2.9M is reallocated pro rata",
+      "delta": {
+       "data_ref": "stay"
+      },
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Connector A",
+        "Connector B",
+        "Connector D (with 25% C migration)"
+       ],
+       "series": [
+        {
+         "name": "Today",
+         "points": [
+          {
+           "data_ref": "rA"
+          },
+          {
+           "data_ref": "rB"
+          },
+          {
+           "data_ref": "rD"
+          }
+         ]
+        },
+        {
+         "name": "After C exits",
+         "points": [
+          {
+           "data_ref": "rA2"
+          },
+          {
+           "data_ref": "rB2"
+          },
+          {
+           "data_ref": "rD2"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Connector B"
+       ],
+       "value_format": "0.0%"
+      }
+     }
+    ]
+   },
+   "so_what": "The same margin-ranking logic would then pick B as the next \"weakest\" product, while total allocated cost falls by only $0.4M, from $6.5M to $6.1M",
+   "so_what_style": "line",
+   "footnotes": [
+    "Contribution margin = (sales − variable) ÷ sales; reported = (sales − variable − allocated) ÷ sales. In dollars A's $7.0M contribution is largest; C's $3.8M equals B's",
+    "Pack gives no split of the stranded cost; assumed pro rata (1.2 : 1.2 : 0.8): A and B $1.20M → $2.29M each, D $0.80M → $1.53M. D includes $1.5M migrated revenue at 50%"
+   ]
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Exiting C costs $4.75M of cash contribution in year one and $2.65M a year after, even if D wins the optimistic 25%",
+    "numbers": [
+     {
+      "text": "$4.75M",
+      "data_ref": "yr1"
+     },
+     {
+      "text": "$2.65M",
+      "data_ref": "rec"
+     }
+    ],
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "multi-chart-panel",
+   "rationale": "Recurring bridge, one-time penalty and the effect on operating profit prove one claim -> three panels, no arrows",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "panels",
+    "connector": "none",
+    "panels": [
+     {
+      "header": "Every year: exit loses $2.65M even with D migration at its ceiling",
+      "unit_line": "**Recurring annual impact of exit** against retaining C, $M",
+      "body": {
+       "kind": "chart",
+       "chart_type": "waterfall",
+       "categories": [
+        "C direct contribution lost",
+        "Avoidable fixed cost saved",
+        "D migration at ceiling (25% × $6.0M × 50%)",
+        "Recurring annual impact"
+       ],
+       "series": [
+        {
+         "name": "Exit bridge",
+         "points": [
+          {
+           "data_ref": "lostC"
+          },
+          {
+           "data_ref": "avd"
+          },
+          {
+           "data_ref": "mgc"
+          },
+          {
+           "data_ref": "rec"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [],
+       "value_format": "0.00"
+      }
+     },
+     {
+      "header": "Year one: one-time penalties deepen the loss to $4.75M",
+      "unit_line": "**First 12 months after exit** against retaining C, $M",
+      "body": {
+       "kind": "chart",
+       "chart_type": "waterfall",
+       "categories": [
+        "Recurring annual impact",
+        "First-year bundle penalties (one-time)",
+        "First-year impact"
+       ],
+       "series": [
+        {
+         "name": "First-year bridge",
+         "points": [
+          {
+           "data_ref": "rec"
+          },
+          {
+           "data_ref": "penn"
+          },
+          {
+           "data_ref": "yr1"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [],
+       "value_format": "0.00"
+      }
+     },
+     {
+      "header": "Operating profit falls 26%, or 34% with no migration",
+      "unit_line": "**Operating profit after allocations**, $M a year",
+      "body": {
+       "kind": "chart",
+       "chart_type": "column",
+       "categories": [
+        "Today (FY2026)",
+        "Exit C, 25% migration",
+        "Exit C, no migration"
+       ],
+       "series": [
+        {
+         "name": "Operating profit",
+         "points": [
+          {
+           "data_ref": "op"
+          },
+          {
+           "data_ref": "opx"
+          },
+          {
+           "data_ref": "opn"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Exit C, 25% migration"
+       ],
+       "value_format": "0.00"
+      }
+     }
+    ]
+   },
+   "so_what": "Penalties are one-time: even with every penalty waived, exit still loses $2.65M a year",
+   "so_what_style": "line",
+   "footnotes": [
+    "25% of C revenue is a ceiling from three sales interviews, not a forecast; it needs customer-specific adapters and validation. Not yet costed: requalification, clinical documentation, lost A/B accounts",
+    "Penalty is first-year only, per Finance. Operating profit = contribution 16.6 − fixed 6.5; exit: (16.6 − 3.8 + 0.75) − (6.5 − 0.4)"
+   ]
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "No migration rate makes exit pay: even full migration to D still loses $0.4M a year, and D can absorb only 25% today",
+    "numbers": [
+     {
+      "text": "$0.4M",
+      "data_ref": "m100"
+     }
+    ],
+    "highlights": [
+     "All of C ($6.0M of D sales)"
+    ],
+    "clauses": 1
+   },
+   "message_type": "frequency",
+   "archetype": "column-time-series",
+   "rationale": "Impact across migration shares -> columns by share, the full-migration bar highlighted",
+   "unit_line": "**Recurring annual impact of exit, by share of C revenue migrating to D**, $M; impact = −3.8 + 0.4 + (share × $6.0M × 50%)",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "big_number": {
+      "data_ref": "be"
+     },
+     "caption": "of migrated D revenue needed to offset the $3.4M lost each year ($3.4M ÷ 50%): 113% of C's entire $6.0M revenue and 4.5 times D's spare capacity",
+     "bullets": [
+      "**Why D cannot close the gap:** C's 63% contribution margin is higher than D's incremental 50%, so each dollar moved from C to D earns less",
+      "**Migration crowds out D growth:** the 25% ceiling would use all of D's $1.5M spare capacity, leaving no room for D's own organic growth",
+      "**The 25% is unobserved:** it is the portfolio team's ceiling from three interviews; Finance has not estimated any recapture beyond it"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "None",
+     "25%: D's spare capacity ($1.5M)",
+     "50% ($3.0M)",
+     "75% ($4.5M)",
+     "All of C ($6.0M of D sales)"
+    ],
+    "series": [
+     {
+      "name": "Recurring annual impact",
+      "points": [
+       {
+        "data_ref": "nomig"
+       },
+       {
+        "data_ref": "rec"
+       },
+       {
+        "data_ref": "m50"
+       },
+       {
+        "data_ref": "m75"
+       },
+       {
+        "data_ref": "m100"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "All of C ($6.0M of D sales)"
+    ],
+    "value_format": "0.00"
+   },
+   "footnotes": [
+    "Shares above 25% are hypothetical: they exceed D's current capacity and would need new D capacity and a validated adapter at every account. Excludes the one-time $2.1M penalty"
+   ]
+  },
+  {
+   "id": "8",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "With its penalty alone 2.3 times the cash envelope and C in 9 of 14 major bundles, a 2027 exit breaks board constraints",
+    "numbers": [
+     {
+      "text": "2.3 times",
+      "data_ref": "penx"
+     },
+     {
+      "text": "9",
+      "data_ref": "nb"
+     }
+    ],
+    "count_word": null,
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "framework-pillars",
+   "rationale": "Four board requirements, each failed by a 2027 exit -> four pillars with the gap as the number",
+   "unit_line": "**Board requirements against a Q2 2027 exit of C**",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "framework",
+    "shape": "pillars",
+    "items": [
+     {
+      "header": "≥95% bundle fill: fails",
+      "point": {
+       "data_ref": "gap4"
+      },
+      "point_caption": "fill against the 95% minimum",
+      "detail": [
+       "9 of 14 major hospital relationships specify a bundle with C alongside A and B",
+       "No substitute for C has completed validation on every hospital model",
+       "Removing C leaves them incomplete; fill is already 91% and would worsen"
+      ]
+     },
+     {
+      "header": "≤$0.9M one-time cash: fails",
+      "point": {
+       "data_ref": "penx"
+      },
+      "emphasis": true,
+      "point_caption": "$2.1M penalty ÷ $0.9M cash",
+      "detail": [
+       "$2.1M of first-year penalties payable unless counterparties consent, at least $1.2M over the envelope",
+       "Replacement qualification and clinical documentation come on top",
+       "Those have not been costed yet"
+      ]
+     },
+     {
+      "header": "Customer commitments: fails",
+      "point": {
+       "data_ref": "nb"
+      },
+      "point_caption": "customers must consent",
+      "detail": [
+       "Exit requires notice, replacement qualification and clinical documentation",
+       "Two bundle agreements are being renewed now",
+       "An exit notice would go into live negotiations"
+      ]
+     },
+     {
+      "header": "Cash contribution test: fails",
+      "detail": [
+       "Judged on cash, not the allocation report: contribution falls $3.4M a year before migration",
+       "It falls by $2.65M a year after the 25% migration ceiling",
+       "The $2.1M penalty comes on top in year one: −$4.75M"
+      ]
+     }
+    ]
+   },
+   "so_what": "A 2027 exit needs the board to relax at least two of its own constraints; no other option does (page 12)",
+   "so_what_style": "bar",
+   "footnotes": [
+    "Assumes the $2.1M penalty counts against the 2027 one-time cash envelope because it is a direct cash consequence of the portfolio change"
+   ]
+  },
+  {
+   "id": "9",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Redeploying to D cannot replace C, because D's spare capacity caps the gain at $0.75M a year, available even if C stays",
+    "numbers": [
+     {
+      "text": "$0.75M",
+      "data_ref": "mgc"
+     }
+    ],
+    "highlights": [
+     "Most D can add at present capacity ($1.5M revenue × 50%)"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "What exit gives up against the most D can add -> two bars, D highlighted",
+   "unit_line": "**Annual cash contribution**, $M a year",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "big_number": {
+      "data_ref": "lossx"
+     },
+     "caption": "C's economics compared with the most D can add without new capacity",
+     "bullets": [
+      "**Known:** D has room for $1.5M more revenue whether or not C exits; migrating C customers would fill it and crowd out D's own growth",
+      "**Known:** the redesign needs one design team for about four months, then hands it back; **not known:** what those months cost, which we do not invent",
+      "**Illustrative ceiling:** a full four-month delay to D would cost at most 4/12 × $0.75M ≈ $0.25M, against $1.25M a year of savings",
+      "**Redeploy to D?** Yes, in sequence: C redesign March to June 2027, then D adapter validation and growth from July"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "C profit lost on exit (contribution − avoidable fixed)",
+     "Most D can add at present capacity ($1.5M revenue × 50%)"
+    ],
+    "series": [
+     {
+      "name": "Annual cash contribution",
+      "points": [
+       {
+        "data_ref": "loss"
+       },
+       {
+        "data_ref": "mgc"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Most D can add at present capacity ($1.5M revenue × 50%)"
+    ],
+    "value_format": "0.00"
+   },
+   "footnotes": [
+    "D's 30% margin is after allocations; its 50% incremental contribution is still below C's 63%. D's growth adds value at the margin, not $3.8M of existing contribution",
+    "The $0.25M is a bound under a stated assumption, not an estimate of lost D sales"
+   ]
+  },
+  {
+   "id": "10",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "The renewal gap does not show C causes churn: size, legacy equipment and coverage confound it, and it is untested",
+    "clauses": 1
+   },
+   "message_type": "argument",
+   "archetype": "text-columns",
+   "rationale": "Claim, the confounders it ignores, and the test to require -> three columns, the test emphasised",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "The claim: accounts that buy C renew less often, so C causes it",
+      "point": {
+       "data_ref": "gap9"
+      },
+      "point_caption": "lower renewal for C buyers",
+      "detail": [
+       "The CEO reads a scatter of hospital renewal rates by product mix as C causing dissatisfaction",
+       "Correlation, not causation: C accounts differ systematically from the rest",
+       "No counterfactual: no before/after evidence that removing C raises retention",
+       "It cannot support exit, and it cannot rule out a C effect either"
+      ]
+     },
+     {
+      "header": "Three factors the comparison does not control for",
+      "detail": [
+       "Smaller hospitals on legacy equipment (named in the briefing pack)",
+       "Lower customer-success coverage (named in the briefing pack)",
+       "Bundle fill of 91% at the nine C-bundle customers, caused by A/B misses: a further plausible confounder (our hypothesis, untested; the pack does not link it to renewals)",
+       "Each of these could lower renewal on its own"
+      ]
+     },
+     {
+      "header": "Tests to run before the Q4 2028 gate",
+      "emphasis": true,
+      "detail": [
+       "Compare renewal within matched segments (size × equipment age × customer-success coverage)",
+       "Control for the bundle fill each account actually received",
+       "Code lost-account exit reasons for any mention of C",
+       "Track retention of any accounts that drop C or move to D",
+       "Only a gap that persists within segments feeds the sunset decision, valued against the $3.4M a year C contributes"
+      ],
+      "footer": "Decision rule: within-segment gap"
+     }
+    ]
+   }
+  },
+  {
+   "id": "11",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "The real service problem is bundle fill at 91% against a 95% contract, caused by A and B misses an exit would not fix",
+    "numbers": [
+     {
+      "text": "91%",
+      "data_ref": "fill"
+     },
+     {
+      "text": "95%",
+      "data_ref": "fmin"
+     }
+    ],
+    "highlights": [
+     "Contracted bundle fill (actual, nine bundle customers)"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "Two definitions of fill against the contract minimum -> two columns with a benchmark line",
+   "unit_line": "**Two fill-rate measures**, %, FY2026; dashed line = contract minimum",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Fix the measure and the A/B misses, not C",
+     "bullets": [
+      "**The dashboard's 98%** counts C as filled even when the bundle ships late because A or B is missing; the contract measures complete bundles",
+      "**Redefine the KPI:** bundle-level contracted fill becomes the headline service metric for every bundle customer; product-level fill only a diagnostic",
+      "**Root-cause the A and B misses** on the nine bundle accounts, size buffer stock or allocation priority, and report monthly to the board until fill holds at 95% or above for two consecutive quarters",
+      "**Unknown: recovery speed.** The pack gives no timeline or cost; Q3 2027 is a working target for Operations to confirm in February"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "C on-time fill (service dashboard)",
+     "Contracted bundle fill (actual, nine bundle customers)"
+    ],
+    "series": [
+     {
+      "name": "Fill rate",
+      "points": [
+       {
+        "data_ref": "otd"
+       },
+       {
+        "data_ref": "fill"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Contracted bundle fill (actual, nine bundle customers)"
+    ],
+    "value_format": "0%",
+    "benchmark": {
+     "label": "Contract minimum",
+     "point": {
+      "data_ref": "fmin"
+     }
+    }
+   },
+   "footnotes": [
+    "The cause sits in A and B, not C: exiting C leaves the A/B misses in place and makes the nine C-bundles incomplete. Bundle fill is 4 percentage points below the contract minimum"
+   ]
+  },
+  {
+   "id": "12",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Only redesigning C adds value and meets every constraint, at +$2.4M over 2027–29 against −$8.7M for an immediate exit",
+    "numbers": [
+     {
+      "text": "$2.4M",
+      "data_ref": "rcum"
+     },
+     {
+      "text": "$8.7M",
+      "data_ref": "xcum"
+     }
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Four options on the same cash and constraint criteria -> comparison table",
+   "unit_line": "**Four options compared**: cash contribution against retaining C unchanged, $M, and the board's constraints",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Exit C in Q2 2027",
+     "Retain C unchanged",
+     "Delayed sunset in 2029 (no redesign)",
+     "Redesign C now, 2029 sunset gate"
+    ],
+    "rows": [
+     {
+      "label": "Cash, 2027",
+      "cells": [
+       {
+        "text": "−3.43"
+       },
+       {
+        "text": "0"
+       },
+       {
+        "text": "0"
+       },
+       {
+        "text": "−0.13"
+       }
+      ]
+     },
+     {
+      "label": "Cash, 2028 and 2029, each",
+      "cells": [
+       {
+        "text": "−2.65"
+       },
+       {
+        "text": "0"
+       },
+       {
+        "text": "0"
+       },
+       {
+        "text": "+1.25"
+       }
+      ]
+     },
+     {
+      "label": "Cumulative 2027–29",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "xcum"
+        }
+       },
+       {
+        "text": "0"
+       },
+       {
+        "text": "0"
+       },
+       {
+        "point": {
+         "data_ref": "rcum"
+        }
+       }
+      ]
+     },
+     {
+      "label": "Stress or later years",
+      "cells": [
+       {
+        "text": "−10.6 with no migration"
+       },
+       {
+        "text": "0"
+       },
+       {
+        "text": "−2.65 to −3.4 a year from 2030"
+       },
+       {
+        "text": "+0.40 in the downside case"
+       }
+      ]
+     },
+     {
+      "label": "One-time cash against $0.9M",
+      "cells": [
+       {
+        "text": "≥$2.1M penalties + qualification: fails"
+       },
+       {
+        "text": "$0: meets"
+       },
+       {
+        "text": "$0 if exits match expiries: meets"
+       },
+       {
+        "text": "$0.55M + $0.35M reserve: meets"
+       }
+      ]
+     },
+     {
+      "label": "95% bundle fill",
+      "cells": [
+       {
+        "text": "Worsens: no validated substitute"
+       },
+       {
+        "text": "Needs A/B fix"
+       },
+       {
+        "text": "Needs A/B fix; time to validate adapter"
+       },
+       {
+        "text": "Needs A/B fix (in plan)"
+       }
+      ]
+     },
+     {
+      "label": "Customer commitments",
+      "cells": [
+       {
+        "text": "Penalties unless 9 customers consent"
+       },
+       {
+        "text": "Honoured"
+       },
+       {
+        "text": "Honoured; exit only at expiry"
+       },
+       {
+        "text": "Honoured; renewals add D path"
+       }
+      ]
+     },
+     {
+      "label": "Main risk",
+      "cells": [
+       {
+        "text": "A/B bundle volume at risk (unquantified); B next \"weakest\""
+       },
+       {
+        "text": "Price pressure erodes C; $1.25M saving forgone"
+       },
+       {
+        "text": "As retain; locks in high-cost C until 2029"
+       },
+       {
+        "text": "Requalification delay at 2 customers; savings below estimate"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Exit effective 1 Jul 2027 (half-year loss plus full $2.1M penalty in 2027), 25% migration; redesign savings from 1 Sep 2027; downside on page 13"
+   ]
+  },
+  {
+   "id": "13",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "The $0.55M redesign pays back in about 5 months and still breaks even if it delivers only a fifth of the $1.25M estimate",
+    "numbers": [
+     {
+      "text": "5 months",
+      "data_ref": "pay"
+     }
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "data-table",
+   "rationale": "Sensitivity grid of redesign cases by year -> data table kept as a grid, payback in the sidebar",
+   "unit_line": "**Redesign scenarios**: cash contribution against retaining C unchanged, $M",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "big_number": {
+      "data_ref": "pay"
+     },
+     "caption": "months to pay back the redesign from run-rate savings: $0.55M ÷ $1.25M a year = 0.44 years",
+     "bullets": [
+      "**Breaks even at 19%** of the estimated saving, or 31% if the full $0.9M is spent; the downside case still returns +$0.40M",
+      "**The margin ranking goes away:** if the saving comes out of direct cost, C's reported margin rises to about 29%, level with D's 30%",
+      "**Operating profit rises 12%,** from $10.1M to $11.35M a year at full run-rate",
+      "**Caution:** $1.25M equals 57% of C's $2.2M direct cost, an engineering estimate at current volume; the two-site pilot tests it before the whole line converts"
+     ]
+    }
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "2027",
+     "2028",
+     "2029",
+     "2027–29"
+    ],
+    "rows": [
+     {
+      "label": "Base: $1.25M a year from Sep 2027; $0.55M cost",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "−0.13"
+       },
+       {
+        "text": "+1.25"
+       },
+       {
+        "text": "+1.25"
+       },
+       {
+        "text": "+2.37"
+       }
+      ]
+     },
+     {
+      "label": "Downside: $0.63M a year from Dec 2027; $0.90M cost",
+      "cells": [
+       {
+        "text": "−0.85"
+       },
+       {
+        "text": "+0.63"
+       },
+       {
+        "text": "+0.63"
+       },
+       {
+        "text": "+0.40"
+       }
+      ]
+     },
+     {
+      "label": "Break-even: $0.24M a year from Sep 2027; $0.55M cost",
+      "cells": [
+       {
+        "text": "−0.47"
+       },
+       {
+        "text": "+0.24"
+       },
+       {
+        "text": "+0.24"
+       },
+       {
+        "text": "0.00"
+       }
+      ]
+     },
+     {
+      "label": "Break-even with the full $0.9M spent: $0.39M a year",
+      "cells": [
+       {
+        "text": "−0.77"
+       },
+       {
+        "text": "+0.39"
+       },
+       {
+        "text": "+0.39"
+       },
+       {
+        "text": "0.00"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Rounded. 2027 savings run Sep–Dec (4 months); the 2027–29 window is 2.33 years. Downside 2027: −0.90 + 0.63 × 1/12. Break-even rows solve for the saving that makes the 2027–29 total zero",
+    "Redesign cost excludes possible requalification tests at two customers; the downside case uses the $0.35M left in the envelope for them"
+   ]
+  },
+  {
+   "id": "14",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Use the two renewals to secure C supply, bundle-level service terms and a consent-based path to D, not to give exit notice"
+   },
+   "message_type": "structure",
+   "archetype": "comparison-table",
+   "rationale": "Five workstreams with actions, lead and timing -> table",
+   "unit_line": "**Contract and service plan**, by workstream, 2027",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Actions"
+    ],
+    "verdict_header": "Lead (proposed) · timing",
+    "rows": [
+     {
+      "label": "1. The two bundle renewals",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Renew with C, no exit notice; D + adapter substitution only with customer consent, after qualification; end terms with the 2029 cohort so any sunset is penalty-free"
+       }
+      ],
+      "note": "Commercial + Legal · Q1 2027; terms set at Feb board"
+     },
+     {
+      "label": "2. The other seven bundle customers",
+      "cells": [
+       {
+        "text": "Confirm C supply through current terms; pre-notify the design change; agree requalification tests early with the two customers that need them"
+       }
+      ],
+      "note": "Account leads + Quality · Q1 2027"
+     },
+     {
+      "label": "3. Bundle service recovery",
+      "cells": [
+       {
+        "text": "Bundle-level fill as the contract KPI on every dashboard; root-cause A/B misses; A/B buffer or priority for bundle accounts; monthly report until ≥95%"
+       }
+      ],
+      "note": "Operations · Start Feb 2027; target ≥95% by Q3 2027"
+     },
+     {
+      "label": "4. Penalty exposure",
+      "cells": [
+       {
+        "text": "Carry the $2.1M as a contingent one-time liability tied to premature termination, not annual overhead (Finance's rule)"
+       }
+      ],
+      "note": "Finance · Ongoing"
+     },
+     {
+      "label": "5. D substitution evidence",
+      "cells": [
+       {
+        "text": "Qualify adapter and quality with willing C customers; record actual acceptance, not interview estimates"
+       }
+      ],
+      "note": "Engineering (D) + Sales · From Jul 2027"
+     }
+    ]
+   },
+   "so_what": "Only consent or expiry makes a later exit penalty-free; fixing A/B fill protects all nine bundles",
+   "so_what_style": "bar",
+   "footnotes": [
+    "Why this order: the penalty stands unless counterparties consent; fixing A/B fill protects the nine bundles whatever happens to C",
+    "Leads and the Q3 2027 fill target are proposals for management to confirm; the briefing pack names neither owners nor a recovery date"
+   ]
+  },
+  {
+   "id": "15",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "A staged plan with two gates protects $3.8M of contribution today and keeps a 2029 sunset open if the evidence turns",
+    "numbers": [
+     {
+      "text": "$3.8M",
+      "data_ref": "cC"
+     }
+    ],
+    "clauses": 1
+   },
+   "message_type": "time-series",
+   "archetype": "timeline-roadmap",
+   "rationale": "Workstreams over 2027–29 with two gates -> timeline, gate criteria in the sidebar",
+   "unit_line": "**Plan by workstream**, by quarter, 2027–29",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Two gates decide what follows",
+     "bullets": [
+      "**Gate 1, end Aug 2027 (convert the whole line?):** go if the pilot run-rate saving is ≥$0.4M a year, the break-even with the full $0.9M spent, and no requalification failed; otherwise stop at the pilot sites, with spend capped inside the $0.9M envelope",
+      "**Gate 2, Q4 2028 or the notice deadline (sunset in 2029?):** only if the D adapter is validated on every hospital model in C bundles, acceptance is high enough, D capacity is in place, fill held ≥95% for 2 quarters, the renewal gap is causal and the exit bridge is positive"
+     ],
+     "rows": [
+      {
+       "label": "C contribution protected now, a year",
+       "point": {
+        "data_ref": "cC"
+       }
+      }
+     ]
+    }
+   },
+   "body": {
+    "kind": "timeline",
+    "periods": [
+     "1Q27",
+     "2Q27",
+     "3Q27",
+     "4Q27",
+     "1Q28",
+     "2Q28",
+     "3Q28",
+     "4Q28",
+     "1Q29",
+     "2Q29",
+     "3Q29",
+     "4Q29"
+    ],
+    "rows": [
+     {
+      "label": "C redesign",
+      "bars": [
+       {
+        "start": "1Q27",
+        "end": "2Q27",
+        "label": "Design + validation"
+       },
+       {
+        "start": "3Q27",
+        "end": "3Q27",
+        "label": "Pilot"
+       },
+       {
+        "start": "4Q27",
+        "end": "4Q29",
+        "label": "Full line at run-rate savings (from Sep 2027)",
+        "emphasis": true
+       }
+      ]
+     },
+     {
+      "label": "Engineering team",
+      "bars": [
+       {
+        "start": "1Q27",
+        "end": "2Q27",
+        "label": "On C"
+       },
+       {
+        "start": "3Q27",
+        "end": "4Q29",
+        "label": "On D: adapter validation and D growth"
+       }
+      ]
+     },
+     {
+      "label": "Bundle fill",
+      "bars": [
+       {
+        "start": "1Q27",
+        "end": "3Q27",
+        "label": "A/B root cause; recover to ≥95%"
+       },
+       {
+        "start": "4Q27",
+        "end": "4Q29",
+        "label": "Sustain ≥95%; monthly board report"
+       }
+      ]
+     },
+     {
+      "label": "Contracts",
+      "bars": [
+       {
+        "start": "1Q27",
+        "end": "1Q27",
+        "label": "Renew"
+       },
+       {
+        "start": "2Q27",
+        "end": "4Q28",
+        "label": "2 renewed; bundle terms run; requalification with 2 customers"
+       },
+       {
+        "start": "1Q29",
+        "end": "4Q29",
+        "label": "2029 expiries"
+       }
+      ]
+     },
+     {
+      "label": "D substitution evidence",
+      "bars": [
+       {
+        "start": "3Q27",
+        "end": "4Q28",
+        "label": "Adapter qualification; observed acceptance"
+       },
+       {
+        "start": "1Q29",
+        "end": "4Q29",
+        "label": "Only if Gate 2 passes: migrate at expiry"
+       }
+      ]
+     }
+    ],
+    "milestones": [
+     {
+      "at": "1Q27",
+      "label": "Feb board"
+     },
+     {
+      "at": "3Q27",
+      "label": "Gate 1"
+     },
+     {
+      "at": "4Q28",
+      "label": "Gate 2"
+     }
+    ]
+   },
+   "footnotes": [
+    "Assumes redesign kick-off in Mar 2027, four-month validation and a two-month pilot. Contract notice periods are not in the briefing pack; Gate 2 must precede them"
+   ]
+  },
+  {
+   "id": "16",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "None of the open unknowns is likely to flip the decision against exit, and each is tested at a gate in the plan"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Six unknowns on the same three attributes -> table",
+   "unit_line": "**Open unknowns**: evidence, effect on the recommendation and how the plan resolves each",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "What the evidence says",
+     "Effect on the recommendation",
+     "How the plan resolves it"
+    ],
+    "rows": [
+     {
+      "label": "D substitution acceptance",
+      "cells": [
+       {
+        "text": "25% is a ceiling from three sales interviews; adapters and validation are customer-specific"
+       },
+       {
+        "text": "None: even full migration of C revenue loses $0.4M a year"
+       },
+       {
+        "text": "Observed acceptance in qualification (from Jul 2027)"
+       }
+      ]
+     },
+     {
+      "label": "Requalification at 2 customers",
+      "cells": [
+       {
+        "text": "Not included in the $0.55M; could delay savings"
+       },
+       {
+        "text": "Low: the downside (3 months late, $0.9M spent, half the savings) is still +$0.40M"
+       },
+       {
+        "text": "Early engagement in Q1 2027; $0.35M reserve"
+       }
+      ]
+     },
+     {
+      "label": "Redesign savings at scale",
+      "cells": [
+       {
+        "text": "$1.25M is an estimate at current volume, 57% of C's direct cost"
+       },
+       {
+        "text": "Low: breaks even at 19% of the estimate (31% if the full $0.9M is spent)"
+       },
+       {
+        "text": "Two-site pilot; Gate 1 threshold $0.4M a year"
+       }
+      ]
+     },
+     {
+      "label": "Speed of bundle-fill recovery",
+      "cells": [
+       {
+        "text": "Fill is 91% against 95%; no recovery timeline or cost in the pack"
+       },
+       {
+        "text": "Same under every option, since the cause is A/B; matters for renewals"
+       },
+       {
+        "text": "Ops plan in February; monthly board tracking"
+       }
+      ]
+     },
+     {
+      "label": "Engineering opportunity cost",
+      "cells": [
+       {
+        "text": "Not quantified for the four months on C"
+       },
+       {
+        "text": "Low: illustrative ceiling ≈$0.25M against $1.25M a year of savings"
+       },
+       {
+        "text": "Team moves to D from Jul 2027"
+       }
+      ]
+     },
+     {
+      "label": "C price pressure",
+      "cells": [
+       {
+        "text": "Competitive pressure named, not quantified"
+       },
+       {
+        "text": "Exit breaks even on run-rate only if C contribution falls about 70%, from $3.8M to $1.15M"
+       },
+       {
+        "text": "Re-test C contribution at Gate 2"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Key assumptions: FY2026 volumes and costs hold through 2029; the penalty is payable in full unless counterparties consent; the $0.4M avoidable fixed cost is Finance's estimate; cash effects are undiscounted (three-year horizon)",
+    "C price-pressure threshold: exit run-rate = −C contribution + 0.4 + 0.75 = 0, so C contribution = $1.15M"
+   ]
+  },
+  {
+   "id": "17",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Six decisions for the board keep $3.8M of contribution, avoid $2.1M of penalties and add about $1.25M a year",
+    "numbers": [
+     {
+      "text": "$3.8M",
+      "data_ref": "cC"
+     },
+     {
+      "text": "$2.1M",
+      "data_ref": "pen"
+     }
+    ],
+    "count_word": 6,
+    "clauses": 1
+   },
+   "message_type": "argument",
+   "archetype": "framework-pillars",
+   "rationale": "Six numbered decisions for the February board -> six tiles, numbers on the two the title names",
+   "unit_line": "**Decisions for the February 2027 board**",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "framework",
+    "shape": "tiles",
+    "items": [
+     {
+      "header": "1. Reject discontinuing connector C in 2027",
+      "point": {
+       "data_ref": "cC"
+      },
+      "point_caption": "of direct contribution kept a year",
+      "detail": [
+       "Exit loses $4.75M in year one and $2.65M a year after",
+       "It breaches the cash and fill constraints"
+      ]
+     },
+     {
+      "header": "2. Approve $0.55M for the C redesign, plus up to $0.35M reserve",
+      "detail": [
+       "Within the $0.9M envelope",
+       "Pilot at two sites first; Gate 1 at end of Aug 2027",
+       "About $1.25M a year of savings at run-rate"
+      ]
+     },
+     {
+      "header": "3. Mandate bundle-level contracted fill as the service KPI",
+      "detail": [
+       "Operations to present an A/B recovery plan to reach ≥95%, with dates and cost"
+      ]
+     },
+     {
+      "header": "4. Authorise renewal terms for the two bundle agreements",
+      "point": {
+       "data_ref": "pen"
+      },
+      "point_caption": "of first-year penalties avoided",
+      "detail": [
+       "C retained; consent-based D substitution clause",
+       "Terms aligned to 2029 expiries"
+      ]
+     },
+     {
+      "header": "5. Sequence engineering: C redesign Mar–Jun 2027, then D",
+      "detail": [
+       "The D adapter work also builds the evidence for any later sunset"
+      ]
+     },
+     {
+      "header": "6. Set Gate 2 criteria for any 2029 sunset (Q4 2028)",
+      "detail": [
+       "Validated adapter, observed acceptance, sustained ≥95% fill",
+       "Causal renewal test and a positive exit bridge"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "app",
+   "role": "appendix_divider",
+   "status": "filled"
+  },
+  {
+   "id": "18",
+   "role": "backup",
+   "backup_of": "6",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Every number in the deck comes from briefing-pack inputs with the arithmetic shown here"
+   },
+   "message_type": "argument",
+   "archetype": "text-columns",
+   "rationale": "Calculation log in four blocks -> text columns",
+   "unit_line": "**Calculation log**, $ millions, FY2026",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "Margins and company profit",
+      "detail": [
+       "Contribution margin: A 7.0/14.0 = 50.0%; B 3.8/9.0 = 42.2%; C 3.8/6.0 = 63.3%; D 2.0/4.0 = 50.0%",
+       "Reported margin: A 5.8/14.0 = 41.4%; B 2.6/9.0 = 28.9%; C 0.5/6.0 = 8.3%; D 1.2/4.0 = 30.0%",
+       "C allocated 3.3 = avoidable 0.4 + non-avoidable 2.9 (88%)",
+       "Company: contribution 16.6 − allocated 6.5 = operating profit 10.1"
+      ]
+     },
+     {
+      "header": "Exit bridge",
+      "detail": [
+       "Recurring: −3.8 + 0.4 + (0.25 × 6.0 × 0.50 = 0.75) = −2.65; no migration −3.40; first 12 months −2.65 − 2.1 = −4.75",
+       "Calendar 2027 (exit 1 Jul): −1.9 + 0.2 + 0.375 − 2.1 = −3.43; 2027–29 = −8.73 (no migration −3.8 − 3.4 − 3.4 = −10.6)",
+       "Break-even D revenue = 3.4 ÷ 0.5 = 6.8 = 113% of C sales, 4.5 times D spare capacity of 1.5",
+       "Operating profit after exit: 13.55 − 6.1 = 7.45 (−26%); no migration 6.7 (−34%)"
+      ]
+     },
+     {
+      "header": "Reallocation if C exits (pro rata)",
+      "detail": [
+       "2.9 split 1.2 : 1.2 : 0.8 gives A +1.0875, B +1.0875, D +0.725",
+       "A (14 − 7 − 2.29) ÷ 14 = 33.7%; B (9 − 5.2 − 2.29) ÷ 9 = 16.8%",
+       "D (5.5 − 2.75 − 1.53) ÷ 5.5 = 22.3% with migration, 11.9% without"
+      ]
+     },
+     {
+      "header": "Redesign and other bounds",
+      "detail": [
+       "Payback 0.55 ÷ 1.25 = 0.44 years ≈ 5.3 months; base 2027 = −0.55 + 1.25 × 4/12 = −0.13, total +2.37",
+       "Downside 2027 = −0.90 + 0.625 × 1/12 = −0.85; total +0.40. Break-even 0.55 ÷ 2.333 = 0.236 (19%); with 0.9 spent 0.386 (31%)",
+       "C reported margin after redesign (6.0 − 0.95 − 3.3) ÷ 6.0 = 29.2%; operating profit 11.35 (+12%)",
+       "Engineering ceiling 4/12 × 0.75 = 0.25; price-pressure break-even 3.8 − 1.15 = 2.65 drop (70%)"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "19",
+   "role": "backup",
+   "backup_of": "12",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Where the pack was silent we made eight working assumptions, each conservative or neutral to the answer",
+    "count_word": 8
+   },
+   "message_type": "item",
+   "archetype": "data-table",
+   "rationale": "Eight judgement calls with their effect -> table",
+   "unit_line": "**Judgement calls**, to confirm with Finance and Operations",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "definition",
+    "columns": [
+     "Assumption used",
+     "Why it is safe, or its effect if wrong"
+    ],
+    "rows": [
+     {
+      "label": "Exit timing",
+      "cells": [
+       {
+        "text": "Exit effective 1 Jul 2027 (\"Q2 2027\"); the full $2.1M penalty falls in 2027"
+       },
+       {
+        "text": "Exit looks no better under any timing; the recurring loss does not depend on timing"
+       }
+      ]
+     },
+     {
+      "label": "Penalty and cash envelope",
+      "cells": [
+       {
+        "text": "The $2.1M penalty counts against the $0.9M one-time cash for 2027 portfolio changes"
+       },
+       {
+        "text": "Even outside the envelope, exit fails the fill and contribution tests"
+       }
+      ]
+     },
+     {
+      "label": "Migration",
+      "cells": [
+       {
+        "text": "25% migration used as a ceiling, never a forecast; no recapture beyond it"
+       },
+       {
+        "text": "Full migration of C revenue still loses $0.4M a year"
+       }
+      ]
+     },
+     {
+      "label": "Reallocation split",
+      "cells": [
+       {
+        "text": "The $2.9M of stranded cost moves pro rata to today's A/B/D allocation"
+       },
+       {
+        "text": "Illustrative only; total company profit is unaffected by the split"
+       }
+      ]
+     },
+     {
+      "label": "Redesign timing",
+      "cells": [
+       {
+        "text": "Kick-off Mar 2027, four-month validation, two-month two-site pilot, savings from Sep 2027"
+       },
+       {
+        "text": "Pilot-site savings in Jul–Aug ignored (conservative)"
+       }
+      ]
+     },
+     {
+      "label": "Savings location",
+      "cells": [
+       {
+        "text": "The $1.25M saving reduces C's direct cost (used only for the 29% reported-margin figure)"
+       },
+       {
+        "text": "The cash case is unchanged wherever the saving sits"
+       }
+      ]
+     },
+     {
+      "label": "Delayed sunset",
+      "cells": [
+       {
+        "text": "Exits at contract expiry in 2029 avoid the penalty; contracts not expiring would still need consent"
+       },
+       {
+        "text": "Only affects the post-2029 view"
+       }
+      ]
+     },
+     {
+      "label": "Horizon and discounting",
+      "cells": [
+       {
+        "text": "2027–29, undiscounted; FY2026 volumes, prices and costs held flat"
+       },
+       {
+        "text": "A short horizon and early redesign cash flows mean discounting would not change the ranking"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "No questions could be put to management while preparing this deck; these choices should be confirmed with Finance and Operations"
+   ]
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "sA",
+   "slide_id": "4",
+   "label": "Connector A annual sales",
+   "value": 14.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"A\"; column Annual sales = \"$14.0M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "vA",
+   "slide_id": "4",
+   "label": "Connector A direct variable cost",
+   "value": 7.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"A\"; column Direct variable cost = \"$7.0M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "aA",
+   "slide_id": "4",
+   "label": "Connector A allocated fixed/shared cost",
+   "value": 1.2,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"A\"; column Allocated fixed/shared cost = \"$1.2M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "rA",
+   "slide_id": "5",
+   "label": "Connector A reported margin (after allocations)",
+   "value": 0.414,
+   "unit": "%",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"A\"; column Reported margin = \"41.4%\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "cA",
+   "slide_id": "4",
+   "label": "Connector A direct contribution",
+   "value": 7.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"A\"; column Direct contribution = \"$7.0M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "sB",
+   "slide_id": "5",
+   "label": "Connector B annual sales",
+   "value": 9.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"B\"; column Annual sales = \"$9.0M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "vB",
+   "slide_id": "5",
+   "label": "Connector B direct variable cost",
+   "value": 5.2,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"B\"; column Direct variable cost = \"$5.2M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "aB",
+   "slide_id": "5",
+   "label": "Connector B allocated fixed/shared cost",
+   "value": 1.2,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"B\"; column Allocated fixed/shared cost = \"$1.2M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "rB",
+   "slide_id": "5",
+   "label": "Connector B reported margin (after allocations)",
+   "value": 0.289,
+   "unit": "%",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"B\"; column Reported margin = \"28.9%\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "cB",
+   "slide_id": "5",
+   "label": "Connector B direct contribution",
+   "value": 3.8,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"B\"; column Direct contribution = \"$3.8M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "sC",
+   "slide_id": "4",
+   "label": "Connector C annual sales",
+   "value": 6.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"C\"; column Annual sales = \"$6.0M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "vC",
+   "slide_id": "4",
+   "label": "Connector C direct variable cost",
+   "value": 2.2,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"C\"; column Direct variable cost = \"$2.2M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "aC",
+   "slide_id": "4",
+   "label": "Connector C allocated fixed/shared cost",
+   "value": 3.3,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"C\"; column Allocated fixed/shared cost = \"$3.3M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "rC",
+   "slide_id": "5",
+   "label": "Connector C reported margin (after allocations)",
+   "value": 0.083,
+   "unit": "%",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"C\"; column Reported margin = \"8.3%\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "cC",
+   "slide_id": "4",
+   "label": "Connector C direct contribution",
+   "value": 3.8,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"C\"; column Direct contribution = \"$3.8M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "sD",
+   "slide_id": "5",
+   "label": "Connector D annual sales",
+   "value": 4.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"D\"; column Annual sales = \"$4.0M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "vD",
+   "slide_id": "5",
+   "label": "Connector D direct variable cost",
+   "value": 2.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"D\"; column Direct variable cost = \"$2.0M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "aD",
+   "slide_id": "5",
+   "label": "Connector D allocated fixed/shared cost",
+   "value": 0.8,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"D\"; column Allocated fixed/shared cost = \"$0.8M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "rD",
+   "slide_id": "5",
+   "label": "Connector D reported margin (after allocations)",
+   "value": 0.3,
+   "unit": "%",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"D\"; column Reported margin = \"30.0%\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "cD",
+   "slide_id": "5",
+   "label": "Connector D direct contribution",
+   "value": 2.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Product \"D\"; column Direct contribution = \"$2.0M\"",
+   "locator": "Briefing pack §3, Product P&L as circulated"
+  },
+  {
+   "id": "rC8",
+   "slide_id": "4",
+   "label": "Connector C reported product gross margin, as quoted by the CEO",
+   "value": 0.08,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "The CEO proposes discontinuing connector C in early 2027 because its reported product gross margin is only 8%, compared with 30% for newer connector D.",
+   "locator": "Briefing pack §1, Decision context"
+  },
+  {
+   "id": "avd",
+   "slide_id": "4",
+   "label": "C allocated cost that Finance estimates could actually be eliminated",
+   "value": 0.4,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Finance estimates only **$0.40M a year** of those costs could actually be eliminated.",
+   "locator": "Briefing pack §3"
+  },
+  {
+   "id": "pen",
+   "slide_id": "6",
+   "label": "First-year service and qualification penalties if C is terminated prematurely",
+   "value": 2.1,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "First year after exit",
+   "excerpt": "Terminating C prematurely triggers **$2.1M of first-year service and qualification penalties**, separate from lost contribution.",
+   "locator": "Briefing pack §2"
+  },
+  {
+   "id": "cash",
+   "slide_id": "8",
+   "label": "One-time cash approved for portfolio changes in 2027",
+   "value": 0.9,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "2027",
+   "excerpt": "Only **$0.9M one-time cash** is approved for portfolio changes in 2027.",
+   "locator": "Briefing pack §2"
+  },
+  {
+   "id": "rdc",
+   "slide_id": "12",
+   "label": "C redesign cost (qualification and engineering)",
+   "value": 0.55,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "2027",
+   "excerpt": "A redesign of C is estimated to cost $0.55M in qualification and engineering.",
+   "locator": "Briefing pack §2"
+  },
+  {
+   "id": "sav",
+   "slide_id": "12",
+   "label": "Annual direct saving from the C redesign at current volume (engineering estimate)",
+   "value": 1.25,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "a year",
+   "excerpt": "Manufacturing Engineering estimates that changing C from three molded subassemblies to two could save $1.25M a year at current volume.",
+   "locator": "Briefing pack §6"
+  },
+  {
+   "id": "dcap",
+   "slide_id": "7",
+   "label": "Additional revenue D can accept at present capacity",
+   "value": 1.5,
+   "unit": "$M",
+   "source_id": "s1",
+   "period": "present capacity",
+   "excerpt": "D production has room to accept up to $1.5M of additional revenue at present capacity.",
+   "locator": "Briefing pack §2"
+  },
+  {
+   "id": "mig",
+   "slide_id": "6",
+   "label": "Share of discontinued C revenue the portfolio team assumes can migrate to D (ceiling)",
+   "value": 0.25,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "The portfolio team assumes 25% of discontinued C revenue can migrate to D, which would occupy D's entire currently available $1.5M revenue capacity.",
+   "locator": "Briefing pack §4",
+   "definition": "an optimistic ceiling from three sales interviews, not an observed conversion rate"
+  },
+  {
+   "id": "dinc",
+   "slide_id": "6",
+   "label": "Incremental contribution on D sales at existing capacity",
+   "value": 0.5,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "D's quoted gross margin of 30% after allocations is different from the **50% incremental contribution** on D sales at its existing capacity.",
+   "locator": "Briefing pack §4"
+  },
+  {
+   "id": "fmin",
+   "slide_id": "8",
+   "label": "Minimum contracted bundle fill rate",
+   "value": 0.95,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "Maintain at least **95% contracted bundle fill rate**.",
+   "locator": "Briefing pack §2"
+  },
+  {
+   "id": "fill",
+   "slide_id": "8",
+   "label": "Actual bundle-level contract fill, nine bundle customers",
+   "value": 0.91,
+   "unit": "%",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "Actual bundle-level contract fill is **91% for the nine bundle customers**, against the 95% required.",
+   "locator": "Briefing pack §5"
+  },
+  {
+   "id": "otd",
+   "slide_id": "11",
+   "label": "C on-time fill rate on the service dashboard",
+   "value": 0.98,
+   "unit": "%",
+   "source_id": "s1",
+   "period": "FY2026",
+   "excerpt": "A service dashboard reports C's on-time fill rate as 98%, but the figure excludes late **bundle deliveries** whenever A or B is the missing item.",
+   "locator": "Briefing pack §5"
+  },
+  {
+   "id": "gap9",
+   "slide_id": "10",
+   "label": "Renewal gap: accounts buying C against accounts that do not",
+   "value": 9,
+   "unit": "pp",
+   "source_id": "s1",
+   "excerpt": "Accounts that purchase C renew 9 percentage points less often than those that do not",
+   "locator": "Briefing pack §5"
+  },
+  {
+   "id": "nb",
+   "slide_id": "8",
+   "label": "Major hospital relationships whose bundle contains C",
+   "value": 9,
+   "unit": "relationships",
+   "source_id": "s1",
+   "excerpt": "Nine of the fourteen major hospital relationships specify a bundle containing connector C as well as A and B.",
+   "locator": "Briefing pack §2 (number written as a word)"
+  },
+  {
+   "id": "nmaj",
+   "slide_id": "8",
+   "label": "Major hospital relationships",
+   "value": 14,
+   "unit": "relationships",
+   "source_id": "s1",
+   "excerpt": "Nine of the fourteen major hospital relationships specify a bundle containing connector C as well as A and B.",
+   "locator": "Briefing pack §2 (number written as a word)"
+  },
+  {
+   "id": "cmA",
+   "slide_id": "5",
+   "label": "Connector A contribution margin",
+   "value": 0.5,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cA",
+    "sA"
+   ],
+   "formula": "7.0 ÷ 14.0",
+   "calc": "cA / sA"
+  },
+  {
+   "id": "cmB",
+   "slide_id": "5",
+   "label": "Connector B contribution margin",
+   "value": 0.422,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cB",
+    "sB"
+   ],
+   "formula": "3.8 ÷ 9.0",
+   "calc": "cB / sB"
+  },
+  {
+   "id": "cmC",
+   "slide_id": "5",
+   "label": "Connector C contribution margin",
+   "value": 0.633,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cC",
+    "sC"
+   ],
+   "formula": "3.8 ÷ 6.0",
+   "calc": "cC / sC"
+  },
+  {
+   "id": "cmD",
+   "slide_id": "5",
+   "label": "Connector D contribution margin",
+   "value": 0.5,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cD",
+    "sD"
+   ],
+   "formula": "2.0 ÷ 4.0",
+   "calc": "cD / sD"
+  },
+  {
+   "id": "vCn",
+   "slide_id": "4",
+   "label": "C direct variable cost (walk step)",
+   "value": -2.2,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "vC"
+   ],
+   "formula": "− 2.2",
+   "calc": "0 - vC"
+  },
+  {
+   "id": "avdn",
+   "slide_id": "4",
+   "label": "C avoidable fixed cost (walk step)",
+   "value": -0.4,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "avd"
+   ],
+   "formula": "− 0.4",
+   "calc": "0 - avd"
+  },
+  {
+   "id": "stay",
+   "slide_id": "5",
+   "label": "C allocated cost that stays and is reallocated to A, B and D",
+   "value": 2.9,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "aC",
+    "avd"
+   ],
+   "formula": "3.3 − 0.4",
+   "calc": "aC - avd"
+  },
+  {
+   "id": "stayn",
+   "slide_id": "4",
+   "label": "C shared cost that stays (walk step)",
+   "value": -2.9,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "avd",
+    "aC"
+   ],
+   "formula": "0.4 − 3.3",
+   "calc": "avd - aC"
+  },
+  {
+   "id": "rpC",
+   "slide_id": "4",
+   "label": "C reported profit after allocations",
+   "value": 0.5,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "sC",
+    "vC",
+    "aC"
+   ],
+   "formula": "6.0 − 2.2 − 3.3",
+   "calc": "sC - vC - aC"
+  },
+  {
+   "id": "stsh",
+   "slide_id": "4",
+   "label": "Share of C's allocated cost that stays if C exits",
+   "value": 0.879,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "aC",
+    "avd"
+   ],
+   "formula": "2.9 ÷ 3.3",
+   "calc": "(aC - avd) / aC"
+  },
+  {
+   "id": "loss",
+   "slide_id": "4",
+   "label": "Annual profit lost if C exits, before migration (contribution − avoidable fixed)",
+   "value": 3.4,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "sC",
+    "vC",
+    "avd"
+   ],
+   "formula": "6.0 − 2.2 − 0.4",
+   "calc": "sC - vC - avd"
+  },
+  {
+   "id": "mrev",
+   "slide_id": "6",
+   "label": "C revenue migrating to D at the 25% ceiling",
+   "value": 1.5,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "mig",
+    "sC"
+   ],
+   "formula": "25% × 6.0",
+   "calc": "mig * sC"
+  },
+  {
+   "id": "mgc",
+   "slide_id": "6",
+   "label": "Contribution D adds from migrated C revenue at the ceiling",
+   "value": 0.75,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "mrev",
+    "dinc"
+   ],
+   "formula": "1.5 × 50%",
+   "calc": "mrev * dinc"
+  },
+  {
+   "id": "lostC",
+   "slide_id": "6",
+   "label": "C direct contribution lost on exit (bridge step)",
+   "value": -3.8,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cC"
+   ],
+   "formula": "− 3.8",
+   "calc": "0 - cC"
+  },
+  {
+   "id": "rec",
+   "slide_id": "6",
+   "label": "Recurring annual cash-contribution impact of exit, 25% migration",
+   "value": -2.65,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "a year after exit",
+   "derived_from": [
+    "avd",
+    "mgc",
+    "cC"
+   ],
+   "formula": "−3.8 + 0.4 + 0.75",
+   "calc": "avd + mgc - cC"
+  },
+  {
+   "id": "nomig",
+   "slide_id": "7",
+   "label": "Recurring annual impact of exit, no migration",
+   "value": -3.4,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "a year after exit",
+   "derived_from": [
+    "avd",
+    "cC"
+   ],
+   "formula": "−3.8 + 0.4",
+   "calc": "avd - cC"
+  },
+  {
+   "id": "penn",
+   "slide_id": "6",
+   "label": "First-year bundle penalties (bridge step)",
+   "value": -2.1,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "First year after exit",
+   "derived_from": [
+    "pen"
+   ],
+   "formula": "− 2.1",
+   "calc": "0 - pen"
+  },
+  {
+   "id": "yr1",
+   "slide_id": "6",
+   "label": "First-year impact of exit, 25% migration, incl. penalties",
+   "value": -4.75,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "First year after exit",
+   "derived_from": [
+    "rec",
+    "pen"
+   ],
+   "formula": "−2.65 − 2.1",
+   "calc": "rec - pen"
+  },
+  {
+   "id": "totc",
+   "slide_id": "6",
+   "label": "Total direct contribution, four connectors",
+   "value": 16.6,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cA",
+    "cB",
+    "cC",
+    "cD"
+   ],
+   "formula": "7.0 + 3.8 + 3.8 + 2.0",
+   "calc": "cA + cB + cC + cD"
+  },
+  {
+   "id": "tota",
+   "slide_id": "5",
+   "label": "Total allocated fixed/shared cost, four connectors",
+   "value": 6.5,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "aA",
+    "aB",
+    "aC",
+    "aD"
+   ],
+   "formula": "1.2 + 1.2 + 3.3 + 0.8",
+   "calc": "aA + aB + aC + aD"
+  },
+  {
+   "id": "op",
+   "slide_id": "6",
+   "label": "Company operating profit after allocations",
+   "value": 10.1,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "totc",
+    "tota"
+   ],
+   "formula": "16.6 − 6.5",
+   "calc": "totc - tota"
+  },
+  {
+   "id": "opx",
+   "slide_id": "6",
+   "label": "Operating profit after exit, 25% migration",
+   "value": 7.45,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "a year after exit",
+   "derived_from": [
+    "op",
+    "rec"
+   ],
+   "formula": "10.1 − 2.65",
+   "calc": "op + rec"
+  },
+  {
+   "id": "opn",
+   "slide_id": "6",
+   "label": "Operating profit after exit, no migration",
+   "value": 6.7,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "a year after exit",
+   "derived_from": [
+    "op",
+    "nomig"
+   ],
+   "formula": "10.1 − 3.4",
+   "calc": "op + nomig"
+  },
+  {
+   "id": "opxch",
+   "slide_id": "6",
+   "label": "Change in operating profit after exit, 25% migration",
+   "value": -0.262,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "rec",
+    "op"
+   ],
+   "formula": "−2.65 ÷ 10.1",
+   "calc": "rec / op"
+  },
+  {
+   "id": "opnch",
+   "slide_id": "6",
+   "label": "Change in operating profit after exit, no migration",
+   "value": -0.337,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "nomig",
+    "op"
+   ],
+   "formula": "−3.4 ÷ 10.1",
+   "calc": "nomig / op"
+  },
+  {
+   "id": "m50",
+   "slide_id": "7",
+   "label": "Recurring annual impact of exit, 50% of C revenue migrating (hypothetical)",
+   "value": -1.9,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "avd",
+    "cC",
+    "sC",
+    "dinc"
+   ],
+   "formula": "−3.8 + 0.4 + 50% × 6.0 × 50%",
+   "calc": "avd - cC + 0.5 * sC * dinc"
+  },
+  {
+   "id": "m75",
+   "slide_id": "7",
+   "label": "Recurring annual impact of exit, 75% of C revenue migrating (hypothetical)",
+   "value": -1.15,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "avd",
+    "cC",
+    "sC",
+    "dinc"
+   ],
+   "formula": "−3.8 + 0.4 + 75% × 6.0 × 50%",
+   "calc": "avd - cC + 0.75 * sC * dinc"
+  },
+  {
+   "id": "m100",
+   "slide_id": "7",
+   "label": "Recurring annual impact of exit, all C revenue migrating (hypothetical)",
+   "value": -0.4,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "avd",
+    "cC",
+    "sC",
+    "dinc"
+   ],
+   "formula": "−3.8 + 0.4 + 6.0 × 50%",
+   "calc": "avd - cC + sC * dinc"
+  },
+  {
+   "id": "be",
+   "slide_id": "7",
+   "label": "Migrated D revenue needed for exit to break even",
+   "value": 6.8,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "nomig",
+    "dinc"
+   ],
+   "formula": "3.4 ÷ 50%",
+   "calc": "0 - nomig / dinc"
+  },
+  {
+   "id": "bcsh",
+   "slide_id": "7",
+   "label": "Break-even D revenue as a share of C's revenue",
+   "value": 1.133,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "be",
+    "sC"
+   ],
+   "formula": "6.8 ÷ 6.0",
+   "calc": "be / sC"
+  },
+  {
+   "id": "bex",
+   "slide_id": "7",
+   "label": "Break-even D revenue as a multiple of D's spare capacity",
+   "value": 4.53,
+   "unit": "x",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "be",
+    "dcap"
+   ],
+   "formula": "6.8 ÷ 1.5",
+   "calc": "be / dcap"
+  },
+  {
+   "id": "penx",
+   "slide_id": "8",
+   "label": "Exit penalty as a multiple of the one-time cash envelope",
+   "value": 2.33,
+   "unit": "x",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "pen",
+    "cash"
+   ],
+   "formula": "2.1 ÷ 0.9",
+   "calc": "pen / cash"
+  },
+  {
+   "id": "over",
+   "slide_id": "8",
+   "label": "Amount by which the penalty alone exceeds the cash envelope",
+   "value": 1.2,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "pen",
+    "cash"
+   ],
+   "formula": "2.1 − 0.9",
+   "calc": "pen - cash"
+  },
+  {
+   "id": "gap4",
+   "slide_id": "8",
+   "label": "Bundle fill against the contracted minimum",
+   "value": -4,
+   "unit": "pp",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "fill",
+    "fmin"
+   ],
+   "formula": "(91% − 95%) × 100",
+   "calc": "(fill - fmin) * 100"
+  },
+  {
+   "id": "lossx",
+   "slide_id": "9",
+   "label": "C profit lost on exit as a multiple of the most D can add at present capacity",
+   "value": 4.53,
+   "unit": "x",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "loss",
+    "mgc"
+   ],
+   "formula": "3.4 ÷ 0.75",
+   "calc": "loss / mgc"
+  },
+  {
+   "id": "abd",
+   "slide_id": "5",
+   "label": "Today's allocated cost of A, B and D",
+   "value": 3.2,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "aA",
+    "aB",
+    "aD"
+   ],
+   "formula": "1.2 + 1.2 + 0.8",
+   "calc": "aA + aB + aD"
+  },
+  {
+   "id": "rate",
+   "slide_id": "5",
+   "label": "Reallocated cost per $1 of today's A/B/D allocation (pro rata)",
+   "value": 0.906,
+   "unit": "x",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "stay",
+    "abd"
+   ],
+   "formula": "2.9 ÷ 3.2",
+   "calc": "stay / abd",
+   "assumptions": [
+    "Pack says the remaining cost 'would move to A, B and D' without a split; the analysis assumes pro rata to today's allocation (1.2 : 1.2 : 0.8)"
+   ]
+  },
+  {
+   "id": "newA",
+   "slide_id": "5",
+   "label": "A allocated cost if C exits (pro rata)",
+   "value": 2.29,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "aA",
+    "rate"
+   ],
+   "formula": "1.2 + 1.2 × 2.9 ÷ 3.2",
+   "calc": "aA + aA * rate",
+   "estimate": true,
+   "assumptions": [
+    "The $2.9M of stranded C cost moves to A, B and D pro rata to today's allocation (1.2 : 1.2 : 0.8); the pack gives no split",
+    "Illustrative only: total company profit does not depend on the split"
+   ]
+  },
+  {
+   "id": "newB",
+   "slide_id": "5",
+   "label": "B allocated cost if C exits (pro rata)",
+   "value": 2.29,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "aB",
+    "rate"
+   ],
+   "formula": "1.2 + 1.2 × 2.9 ÷ 3.2",
+   "calc": "aB + aB * rate",
+   "estimate": true,
+   "assumptions": [
+    "The $2.9M of stranded C cost moves to A, B and D pro rata to today's allocation (1.2 : 1.2 : 0.8); the pack gives no split",
+    "Illustrative only: total company profit does not depend on the split"
+   ]
+  },
+  {
+   "id": "newD",
+   "slide_id": "5",
+   "label": "D allocated cost if C exits (pro rata)",
+   "value": 1.53,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "aD",
+    "rate"
+   ],
+   "formula": "0.8 + 0.8 × 2.9 ÷ 3.2",
+   "calc": "aD + aD * rate",
+   "estimate": true,
+   "assumptions": [
+    "The $2.9M of stranded C cost moves to A, B and D pro rata to today's allocation (1.2 : 1.2 : 0.8); the pack gives no split",
+    "Illustrative only: total company profit does not depend on the split"
+   ]
+  },
+  {
+   "id": "newT",
+   "slide_id": "5",
+   "label": "Total allocated cost if C exits",
+   "value": 6.1,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "tota",
+    "avd"
+   ],
+   "formula": "6.5 − 0.4",
+   "calc": "tota - avd"
+  },
+  {
+   "id": "rA2",
+   "slide_id": "5",
+   "label": "A reported margin after C exits (pro rata reallocation)",
+   "value": 0.337,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cA",
+    "newA",
+    "sA"
+   ],
+   "formula": "(14 − 7 − 2.29) ÷ 14",
+   "calc": "(cA - newA) / sA",
+   "assumptions": [
+    "The $2.9M of stranded C cost moves to A, B and D pro rata to today's allocation (1.2 : 1.2 : 0.8); the pack gives no split",
+    "Illustrative only: total company profit does not depend on the split"
+   ]
+  },
+  {
+   "id": "rB2",
+   "slide_id": "5",
+   "label": "B reported margin after C exits (pro rata reallocation)",
+   "value": 0.168,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cB",
+    "newB",
+    "sB"
+   ],
+   "formula": "(9 − 5.2 − 2.29) ÷ 9",
+   "calc": "(cB - newB) / sB",
+   "assumptions": [
+    "The $2.9M of stranded C cost moves to A, B and D pro rata to today's allocation (1.2 : 1.2 : 0.8); the pack gives no split",
+    "Illustrative only: total company profit does not depend on the split"
+   ]
+  },
+  {
+   "id": "rD2",
+   "slide_id": "5",
+   "label": "D reported margin after C exits, with 25% C migration (pro rata reallocation)",
+   "value": 0.223,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cD",
+    "mgc",
+    "newD",
+    "sD",
+    "mrev"
+   ],
+   "formula": "(5.5 − 2.75 − 1.53) ÷ 5.5",
+   "calc": "(cD + mgc - newD) / (sD + mrev)",
+   "assumptions": [
+    "The $2.9M of stranded C cost moves to A, B and D pro rata to today's allocation (1.2 : 1.2 : 0.8); the pack gives no split",
+    "Illustrative only: total company profit does not depend on the split",
+    "D includes $1.5M of migrated C revenue at 50% contribution"
+   ]
+  },
+  {
+   "id": "rD2n",
+   "slide_id": "18",
+   "label": "D reported margin after C exits, no migration (pro rata reallocation)",
+   "value": 0.119,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cD",
+    "newD",
+    "sD"
+   ],
+   "formula": "(4 − 2 − 1.53) ÷ 4",
+   "calc": "(cD - newD) / sD",
+   "assumptions": [
+    "The $2.9M of stranded C cost moves to A, B and D pro rata to today's allocation (1.2 : 1.2 : 0.8); the pack gives no split",
+    "Illustrative only: total company profit does not depend on the split"
+   ]
+  },
+  {
+   "id": "x27",
+   "slide_id": "12",
+   "label": "Exit C: cash contribution against retaining C unchanged, calendar 2027",
+   "value": -3.43,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027",
+   "derived_from": [
+    "rec",
+    "pen"
+   ],
+   "formula": "−1.9 + 0.2 + 0.375 − 2.1",
+   "calc": "0.5 * rec - pen",
+   "assumptions": [
+    "Exit effective 1 Jul 2027 ('Q2 2027'): calendar 2027 loses half a year of contribution and pays the full $2.1M penalty",
+    "Migration at the 25% ceiling; FY2026 volumes, prices and costs held flat; undiscounted"
+   ]
+  },
+  {
+   "id": "xcum",
+   "slide_id": "12",
+   "label": "Exit C: cash contribution against retaining C unchanged, 2027–29",
+   "value": -8.73,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027–29",
+   "derived_from": [
+    "x27",
+    "rec"
+   ],
+   "formula": "−3.43 − 2.65 − 2.65",
+   "calc": "x27 + 2 * rec",
+   "assumptions": [
+    "Exit effective 1 Jul 2027 ('Q2 2027'): calendar 2027 loses half a year of contribution and pays the full $2.1M penalty",
+    "Migration at the 25% ceiling; FY2026 volumes, prices and costs held flat; undiscounted"
+   ]
+  },
+  {
+   "id": "xcumn",
+   "slide_id": "12",
+   "label": "Exit C with no migration: cash contribution against retaining C unchanged, 2027–29",
+   "value": -10.6,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027–29",
+   "derived_from": [
+    "nomig",
+    "pen"
+   ],
+   "formula": "−3.8 − 3.4 − 3.4",
+   "calc": "0.5 * nomig - pen + 2 * nomig",
+   "assumptions": [
+    "Exit effective 1 Jul 2027 ('Q2 2027'): calendar 2027 loses half a year of contribution and pays the full $2.1M penalty"
+   ]
+  },
+  {
+   "id": "r27",
+   "slide_id": "12",
+   "label": "Redesign C: cash contribution against retaining C unchanged, calendar 2027",
+   "value": -0.13,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027",
+   "derived_from": [
+    "sav",
+    "rdc"
+   ],
+   "formula": "−0.55 + 1.25 × 4/12",
+   "calc": "sav * 4 / 12 - rdc",
+   "assumptions": [
+    "Redesign kick-off Mar 2027, four-month validation, two-month two-site pilot; savings from 1 Sep 2027 (4 months in 2027)",
+    "FY2026 volumes held flat; undiscounted; pilot-site savings in Jul–Aug ignored"
+   ]
+  },
+  {
+   "id": "rcum",
+   "slide_id": "12",
+   "label": "Redesign C: cash contribution against retaining C unchanged, 2027–29 (base case)",
+   "value": 2.37,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027–29",
+   "derived_from": [
+    "r27",
+    "sav"
+   ],
+   "formula": "−0.13 + 1.25 + 1.25",
+   "calc": "r27 + 2 * sav",
+   "assumptions": [
+    "Redesign kick-off Mar 2027, four-month validation, two-month two-site pilot; savings from 1 Sep 2027 (4 months in 2027)",
+    "FY2026 volumes held flat; undiscounted; pilot-site savings in Jul–Aug ignored"
+   ]
+  },
+  {
+   "id": "res",
+   "slide_id": "12",
+   "label": "Reserve left in the cash envelope after the redesign",
+   "value": 0.35,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027",
+   "derived_from": [
+    "cash",
+    "rdc"
+   ],
+   "formula": "0.9 − 0.55",
+   "calc": "cash - rdc"
+  },
+  {
+   "id": "payy",
+   "slide_id": "13",
+   "label": "Redesign payback on run-rate savings, years",
+   "value": 0.44,
+   "unit": "years",
+   "source_id": "s0",
+   "derived_from": [
+    "rdc",
+    "sav"
+   ],
+   "formula": "0.55 ÷ 1.25",
+   "calc": "rdc / sav"
+  },
+  {
+   "id": "pay",
+   "slide_id": "13",
+   "label": "Redesign payback on run-rate savings, months",
+   "value": 5.3,
+   "unit": "months",
+   "source_id": "s0",
+   "derived_from": [
+    "rdc",
+    "sav"
+   ],
+   "formula": "0.55 ÷ 1.25 × 12",
+   "calc": "rdc / sav * 12"
+  },
+  {
+   "id": "win",
+   "slide_id": "13",
+   "label": "Years of redesign savings within 2027–29 (Sep 2027 to Dec 2029)",
+   "value": 2.33,
+   "unit": "years",
+   "source_id": "s0",
+   "period": "2027–29",
+   "derived_from": [],
+   "formula": "28 months ÷ 12",
+   "calc": "28 / 12",
+   "assumptions": [
+    "Redesign kick-off Mar 2027, four-month validation, two-month two-site pilot; savings from 1 Sep 2027 (4 months in 2027)"
+   ]
+  },
+  {
+   "id": "bes",
+   "slide_id": "13",
+   "label": "Annual saving at which the redesign breaks even by 2029, $0.55M cost",
+   "value": 0.24,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "a year",
+   "derived_from": [
+    "rdc",
+    "win"
+   ],
+   "formula": "0.55 ÷ 2.33",
+   "calc": "rdc / win",
+   "assumptions": [
+    "Redesign kick-off Mar 2027, four-month validation, two-month two-site pilot; savings from 1 Sep 2027 (4 months in 2027)"
+   ]
+  },
+  {
+   "id": "bssh",
+   "slide_id": "13",
+   "label": "Break-even saving as a share of the $1.25M engineering figure",
+   "value": 0.19,
+   "unit": "%",
+   "source_id": "s0",
+   "derived_from": [
+    "bes",
+    "sav"
+   ],
+   "formula": "0.24 ÷ 1.25",
+   "calc": "bes / sav"
+  },
+  {
+   "id": "bes9",
+   "slide_id": "13",
+   "label": "Annual saving at which the redesign breaks even by 2029, full $0.9M spent",
+   "value": 0.39,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "a year",
+   "derived_from": [
+    "cash",
+    "win"
+   ],
+   "formula": "0.9 ÷ 2.33",
+   "calc": "cash / win",
+   "assumptions": [
+    "Redesign kick-off Mar 2027, four-month validation, two-month two-site pilot; savings from 1 Sep 2027 (4 months in 2027)"
+   ]
+  },
+  {
+   "id": "bs9sh",
+   "slide_id": "13",
+   "label": "Break-even saving with full $0.9M spent, as a share of the $1.25M engineering figure",
+   "value": 0.31,
+   "unit": "%",
+   "source_id": "s0",
+   "derived_from": [
+    "bes9",
+    "sav"
+   ],
+   "formula": "0.39 ÷ 1.25",
+   "calc": "bes9 / sav"
+  },
+  {
+   "id": "be27",
+   "slide_id": "13",
+   "label": "Break-even case, 2027 cash",
+   "value": -0.47,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027",
+   "derived_from": [
+    "bes",
+    "rdc"
+   ],
+   "formula": "−0.55 + 0.24 × 4/12",
+   "calc": "bes * 4 / 12 - rdc",
+   "assumptions": [
+    "Redesign kick-off Mar 2027, four-month validation, two-month two-site pilot; savings from 1 Sep 2027 (4 months in 2027)"
+   ]
+  },
+  {
+   "id": "be927",
+   "slide_id": "13",
+   "label": "Break-even case with full $0.9M spent, 2027 cash",
+   "value": -0.77,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027",
+   "derived_from": [
+    "bes9",
+    "cash"
+   ],
+   "formula": "−0.90 + 0.39 × 4/12",
+   "calc": "bes9 * 4 / 12 - cash",
+   "assumptions": [
+    "Redesign kick-off Mar 2027, four-month validation, two-month two-site pilot; savings from 1 Sep 2027 (4 months in 2027)"
+   ]
+  },
+  {
+   "id": "dsav",
+   "slide_id": "13",
+   "label": "Downside case annual saving (half of $1.25M)",
+   "value": 0.63,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "a year",
+   "derived_from": [
+    "sav"
+   ],
+   "formula": "50% × 1.25",
+   "calc": "0.5 * sav",
+   "assumptions": [
+    "Downside case: half the estimated saving ($0.625M a year), three months late (from Dec 2027), and the full $0.9M envelope spent, the $0.35M reserve covering requalification tests at two customers"
+   ]
+  },
+  {
+   "id": "d27",
+   "slide_id": "13",
+   "label": "Downside case, 2027 cash",
+   "value": -0.85,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027",
+   "derived_from": [
+    "sav",
+    "cash"
+   ],
+   "formula": "−0.90 + 0.625 × 1/12",
+   "calc": "0.5 * sav / 12 - cash",
+   "assumptions": [
+    "Downside case: half the estimated saving ($0.625M a year), three months late (from Dec 2027), and the full $0.9M envelope spent, the $0.35M reserve covering requalification tests at two customers"
+   ]
+  },
+  {
+   "id": "rdown",
+   "slide_id": "12",
+   "label": "Redesign C: 2027–29 value in the downside case",
+   "value": 0.4,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027–29",
+   "derived_from": [
+    "sav",
+    "cash"
+   ],
+   "formula": "−0.85 + 0.625 + 0.625",
+   "calc": "0.5 * sav / 12 - cash + sav",
+   "assumptions": [
+    "Downside case: half the estimated saving ($0.625M a year), three months late (from Dec 2027), and the full $0.9M envelope spent, the $0.35M reserve covering requalification tests at two customers"
+   ]
+  },
+  {
+   "id": "vC2",
+   "slide_id": "13",
+   "label": "C direct cost after the redesign saving",
+   "value": 0.95,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "vC",
+    "sav"
+   ],
+   "formula": "2.2 − 1.25",
+   "calc": "vC - sav"
+  },
+  {
+   "id": "rmC2",
+   "slide_id": "13",
+   "label": "C reported margin after the redesign, if the saving comes out of direct cost",
+   "value": 0.292,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "sC",
+    "vC",
+    "sav",
+    "aC"
+   ],
+   "formula": "(6.0 − 0.95 − 3.3) ÷ 6.0",
+   "calc": "(sC - vC + sav - aC) / sC",
+   "assumptions": [
+    "The $1.25M saving reduces C's direct cost"
+   ]
+  },
+  {
+   "id": "op2",
+   "slide_id": "13",
+   "label": "Operating profit at full redesign run-rate",
+   "value": 11.35,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "a year at run-rate",
+   "derived_from": [
+    "op",
+    "sav"
+   ],
+   "formula": "10.1 + 1.25",
+   "calc": "op + sav"
+  },
+  {
+   "id": "op2ch",
+   "slide_id": "13",
+   "label": "Rise in operating profit at full redesign run-rate",
+   "value": 0.124,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "a year at run-rate",
+   "derived_from": [
+    "sav",
+    "op"
+   ],
+   "formula": "1.25 ÷ 10.1",
+   "calc": "sav / op"
+  },
+  {
+   "id": "savsh",
+   "slide_id": "13",
+   "label": "Redesign saving as a share of C's direct cost",
+   "value": 0.568,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "sav",
+    "vC"
+   ],
+   "formula": "1.25 ÷ 2.2",
+   "calc": "sav / vC"
+  },
+  {
+   "id": "eng",
+   "slide_id": "9",
+   "label": "Illustrative ceiling on the cost of the design team's four months on C",
+   "value": 0.25,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "2027",
+   "derived_from": [
+    "mgc"
+   ],
+   "formula": "4/12 × 0.75",
+   "calc": "4 / 12 * mgc",
+   "estimate": true,
+   "assumptions": [
+    "Bound only: assumes the team's absence delays filling D's spare capacity by the full four months",
+    "The pack gives no quantified opportunity cost; this is not an estimate of lost D sales"
+   ]
+  },
+  {
+   "id": "cbe",
+   "slide_id": "16",
+   "label": "C contribution at which exit breaks even on run-rate",
+   "value": 1.15,
+   "unit": "$M",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "avd",
+    "mgc"
+   ],
+   "formula": "0.4 + 0.75",
+   "calc": "avd + mgc"
+  },
+  {
+   "id": "cdrop",
+   "slide_id": "16",
+   "label": "Fall in C contribution needed for exit to break even on run-rate",
+   "value": 0.697,
+   "unit": "%",
+   "source_id": "s0",
+   "period": "FY2026",
+   "derived_from": [
+    "cC",
+    "avd",
+    "mgc"
+   ],
+   "formula": "(3.8 − 1.15) ÷ 3.8",
+   "calc": "(cC - avd - mgc) / cC"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "user_provided",
+   "name": "Vesper MedTech board briefing pack (FY2026 full-year figures; synthetic data)",
+   "input_id": "in-1"
+  },
+  {
+   "id": "s0",
+   "kind": "derived",
+   "name": "Calculation from briefing-pack inputs"
+  }
+ ],
+ "compile": {
+  "source": "evidence/analysis.md (finished board deck, 19 slides), built from evidence/briefing-pack.md",
+  "variant": "restyle",
+  "units": [
+   {
+    "id": "u1",
+    "type": "answer",
+    "text": "Do not discontinue C in 2027; redesign C, fix bundle service, and make any sunset a 2029 decision on evidence",
+    "source_loc": "Slides 1–2",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "3",
+     "17"
+    ]
+   },
+   {
+    "id": "u2",
+    "type": "claim",
+    "text": "C's 8% margin comes from the allocation; C earns $3.8M direct contribution, a 63% contribution margin vs 50% for D and A and 42% for B",
+    "source_loc": "Slides 2, 4, 5",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "4",
+     "5"
+    ]
+   },
+   {
+    "id": "u3",
+    "type": "claim",
+    "text": "Only $0.4M of C's $3.3M allocated cost is avoidable; $2.9M (88%) stays and moves onto A, B and D",
+    "source_loc": "Slides 2, 4, 5",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "4",
+     "5"
+    ]
+   },
+   {
+    "id": "u4",
+    "type": "claim",
+    "text": "Exiting C gives up a net $3.4M a year before any migration; the dashboard 'gross margin' is after allocations and cannot rank products for exit",
+    "source_loc": "Slides 3, 4",
+    "critical": true,
+    "slide_ids": [
+     "3",
+     "4",
+     "7",
+     "9"
+    ]
+   },
+   {
+    "id": "u5",
+    "type": "claim",
+    "text": "If C exits, stranded cost lands on A, B and D (pro rata assumption): B's reported margin falls to ~17% and B becomes the next 'weakest'; total allocated cost falls only $0.4M",
+    "source_loc": "Slide 5",
+    "critical": false,
+    "slide_ids": [
+     "5"
+    ]
+   },
+   {
+    "id": "u6",
+    "type": "claim",
+    "text": "Exit cuts cash contribution by $4.75M in year one and $2.65M every year after, even at the optimistic 25% migration; operating profit falls 26% (34% with no migration)",
+    "source_loc": "Slides 2, 6",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "6"
+    ]
+   },
+   {
+    "id": "u7",
+    "type": "assumption",
+    "text": "25% migration is an optimistic ceiling from three sales interviews, not a forecast; penalties are one-time per Finance; replacement qualification, clinical documentation and lost A/B accounts not yet costed",
+    "source_loc": "Slide 6",
+    "critical": true,
+    "slide_ids": [
+     "6",
+     "7",
+     "16"
+    ]
+   },
+   {
+    "id": "u8",
+    "type": "claim",
+    "text": "No migration rate makes exit pay: full migration still loses $0.4M a year; break-even needs $6.8M of D revenue, 113% of C and 4.5x D spare capacity",
+    "source_loc": "Slides 2, 7",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "7"
+    ]
+   },
+   {
+    "id": "u9",
+    "type": "constraint",
+    "text": "A 2027 exit breaks the non-negotiables: $2.1M penalty is 2.3x the $0.9M envelope; C in 9 of 14 major bundles; no validated substitute; fill already 91%; needs consent of 9 customers",
+    "source_loc": "Slides 2, 8",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "8"
+    ]
+   },
+   {
+    "id": "u10",
+    "type": "claim",
+    "text": "D's spare capacity caps the upside at $0.75M a year, capturable without exiting C; C's economics are 4.5x that; D's 50% incremental contribution is below C's 63%; growth is not replacement",
+    "source_loc": "Slide 9",
+    "critical": true,
+    "slide_ids": [
+     "9"
+    ]
+   },
+   {
+    "id": "u11",
+    "type": "recommendation",
+    "text": "Redeploy the team to D in sequence: C redesign Mar–Jun 2027, then D from July; engineering opportunity cost not quantified, illustrative ceiling ~$0.25M",
+    "source_loc": "Slides 9, 15, 17",
+    "critical": true,
+    "slide_ids": [
+     "9",
+     "15",
+     "17"
+    ]
+   },
+   {
+    "id": "u12",
+    "type": "claim",
+    "text": "The 9-percentage-point renewal gap is correlational and confounded (size, legacy equipment, CS coverage, plausibly bundle fill); no before/after test; cannot support exit nor rule out a C effect",
+    "source_loc": "Slides 2, 3, 10",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "3",
+     "10"
+    ]
+   },
+   {
+    "id": "u13",
+    "type": "gate",
+    "text": "Tests before the Q4 2028 gate (matched segments, control for fill, exit reasons, retention of accounts moving to D); only a within-segment gap feeds the sunset decision, valued against $3.4M a year",
+    "source_loc": "Slide 10",
+    "critical": true,
+    "slide_ids": [
+     "10"
+    ]
+   },
+   {
+    "id": "u14",
+    "type": "claim",
+    "text": "Bundle fill is 91% vs 95% contracted; the C dashboard's 98% excludes A/B bundle misses; the cause is A and B, so exiting C would not fix it",
+    "source_loc": "Slides 2, 11",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "11"
+    ]
+   },
+   {
+    "id": "u15",
+    "type": "recommendation",
+    "text": "Redefine the KPI to bundle-level fill, root-cause A/B misses, report monthly until ≥95% for two quarters; recovery speed unknown, Q3 2027 working target",
+    "source_loc": "Slides 11, 14",
+    "critical": true,
+    "slide_ids": [
+     "11",
+     "14",
+     "17"
+    ]
+   },
+   {
+    "id": "u16",
+    "type": "claim",
+    "text": "Redesign is the only option that adds value and meets every constraint: +$2.4M (2.37) over 2027–29 vs −$8.7M (−8.73, −10.6 no migration) for exit; retain and delayed sunset 0",
+    "source_loc": "Slides 2, 12",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "12"
+    ]
+   },
+   {
+    "id": "u17",
+    "type": "alternative",
+    "text": "Retain unchanged: price pressure erodes C and the $1.25M saving is forgone; delayed 2029 sunset without redesign locks in high-cost C; exit risks A/B bundle volume and makes B next weakest",
+    "source_loc": "Slide 12",
+    "critical": true,
+    "slide_ids": [
+     "12"
+    ]
+   },
+   {
+    "id": "u18",
+    "type": "claim",
+    "text": "The $0.55M redesign pays back in ~5 months; breaks even at 19% of the $1.25M estimate (31% if full $0.9M spent); downside (half savings, 3 months late, $0.9M) still +$0.40M",
+    "source_loc": "Slides 2, 13",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "13"
+    ]
+   },
+   {
+    "id": "u19",
+    "type": "claim",
+    "text": "Redesign lifts C's reported margin to ~29% (level with D's 30%) and operating profit 12% to $11.35M; caution: $1.25M is 57% of C's direct cost, tested by the two-site pilot",
+    "source_loc": "Slide 13",
+    "critical": false,
+    "slide_ids": [
+     "13"
+    ]
+   },
+   {
+    "id": "u20",
+    "type": "recommendation",
+    "text": "Use the two renewals to keep C, give no exit notice, add a consent-based D substitution clause and align term end with 2029 expiries",
+    "source_loc": "Slides 2, 14, 17",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "14",
+     "17"
+    ]
+   },
+   {
+    "id": "u21",
+    "type": "next_step",
+    "text": "Other seven bundle customers: confirm supply, pre-notify the design change; carry the $2.1M as a contingent one-time liability; run D adapter qualification from Jul 2027; leads proposed",
+    "source_loc": "Slide 14",
+    "critical": false,
+    "slide_ids": [
+     "14"
+    ]
+   },
+   {
+    "id": "u22",
+    "type": "gate",
+    "text": "Gate 1, end Aug 2027: convert the whole line only if pilot run-rate saving ≥$0.4M a year and no requalification failed; otherwise stop at pilot sites within $0.9M",
+    "source_loc": "Slides 15, 17",
+    "critical": true,
+    "slide_ids": [
+     "15",
+     "17"
+    ]
+   },
+   {
+    "id": "u23",
+    "type": "gate",
+    "text": "Gate 2, Q4 2028 (or notice deadline): sunset only if adapter validated on every hospital model, acceptance high enough, D capacity in place, fill ≥95% for 2 quarters, renewal gap causal, exit bridge positive",
+    "source_loc": "Slides 15, 17",
+    "critical": true,
+    "slide_ids": [
+     "15",
+     "17"
+    ]
+   },
+   {
+    "id": "u24",
+    "type": "risk",
+    "text": "None of the open unknowns is likely to flip the decision against exit; each is tested at a gate, incl. C price pressure (exit breaks even only if C contribution falls ~70% to $1.15M)",
+    "source_loc": "Slide 16",
+    "critical": true,
+    "slide_ids": [
+     "16"
+    ]
+   },
+   {
+    "id": "u25",
+    "type": "decision",
+    "text": "Six decisions for the February 2027 board: reject exit, approve $0.55M + $0.35M reserve, mandate bundle KPI, authorise renewal terms, sequence engineering, set Gate 2 criteria",
+    "source_loc": "Slide 17",
+    "critical": true,
+    "slide_ids": [
+     "17"
+    ]
+   },
+   {
+    "id": "u26",
+    "type": "assumption",
+    "text": "Key assumptions: FY2026 volumes hold; penalty payable unless consent; $0.4M is Finance's estimate; undiscounted three-year horizon; penalty counted against the cash envelope",
+    "source_loc": "Slides 8, 16, 19",
+    "critical": false,
+    "slide_ids": [
+     "8",
+     "16",
+     "19"
+    ]
+   },
+   {
+    "id": "u27",
+    "type": "assumption",
+    "text": "Eight judgement calls where the pack was silent, each conservative or answer-neutral",
+    "source_loc": "Slide 19",
+    "critical": false,
+    "slide_ids": [
+     "19"
+    ]
+   },
+   {
+    "id": "u28",
+    "type": "method",
+    "text": "Calculation log of every number from briefing-pack inputs",
+    "source_loc": "Slide 18",
+    "critical": false,
+    "slide_ids": [
+     "18"
+    ]
+   },
+   {
+    "id": "u29",
+    "type": "method",
+    "text": "Hypothesis test: 'keep C' survived four of five tests; the fifth showed keeping C unchanged is not enough",
+    "source_loc": "Slide 3",
+    "critical": true,
+    "slide_ids": [
+     "3"
+    ]
+   }
+  ],
+  "untraceable": [],
+  "corrections": [],
+  "check": {
+   "critical_units": 23,
+   "preserved": 23,
+   "notes": "Read unit by unit against the slides: same numbers, conditions, ranking of options and gates; slide order 1–19 kept. Every number traced to the briefing pack or recomputed from it; no corrections needed. Wording clarified, not changed: exec item 1 says 'on contribution margin ... strongest' (source: 'highest-contribution'), since in dollars A's $7.0M is larger; slide 5 footnote says so. Slide 6 shown as three panels because the renderer's waterfall has no subtotals; slide 8 shown as four pillars and slide 17 as six tiles instead of tables/lists; slide 13's three KPI tiles folded into a sidebar. Two-decimal $M values in tables are shown as written in the source."
+  }
+ }
+}

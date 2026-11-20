@@ -1,0 +1,4817 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Don't give exclusivity away before it is earned",
+  "subtitle": "Sign a nonexclusive OEM pilot now; make North American exclusivity conditional on certification and audited volumes",
+  "company_name": "Boreal Autonomy",
+  "audience": "Board of Directors · board pre-read for the April 2027 decision",
+  "purpose": "Should Boreal Autonomy grant North American exclusivity to an OEM for its industrial robot navigation software in 2027?",
+  "date": "2026-11-20",
+  "language": "en-US",
+  "confidentiality": "Board pre-read from the board briefing pack only (synthetic benchmark data); all $ figures undiscounted, no NPV",
+  "theme": "navy"
+ },
+ "inputs": [
+  {
+   "id": "in-1",
+   "kind": "file",
+   "label": "Board briefing pack",
+   "content": "evidence/briefing-pack.md"
+  },
+  {
+   "id": "in-2",
+   "kind": "file",
+   "label": "Finished analysis deck (source of truth for the storyline)",
+   "content": "evidence/analysis.md"
+  }
+ ],
+ "storyline": {
+  "governing_thought": "Decline exclusivity at signing: sign a 12-month nonexclusive pilot (Option N) at $350 a robot, with pre-agreed gates that switch on limited exclusivity (Option M)",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "The deal is worth less than it is being presented as",
+    "supports": [
+     "3",
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "sub_points": [
+     {
+      "text": "The $2.0M is a recoupable advance, not extra revenue: three-year OEM cash is $8.7M, not $10.7M",
+      "slide_id": "4"
+     },
+     {
+      "text": "Net of all costs, exclusivity is worth +$2.2–2.8M at plan but only −$0.04M to +$0.55M at 65% volumes",
+      "slide_id": "6"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "The evidence the board requires for irreversible exclusivity does not exist yet",
+    "supports": [
+     "8",
+     "9",
+     "10"
+    ],
+    "sub_points": [
+     {
+      "text": "Lab uptime is 98.8% against a 99.5% production bar, and the third-party assessment has not started",
+      "slide_id": "8"
+     },
+     {
+      "text": "Volumes are unaudited, the growth claim is correlational; the draft lacks audit, floor, release, escrow",
+      "slide_id": "9"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "The phased N→M structure beats every alternative",
+    "supports": [
+     "11",
+     "12",
+     "13"
+    ],
+    "sub_points": [
+     {
+      "text": "It earns $50 more a robot, keeps the direct channel and matches X's value even at 24–32% fewer robots",
+      "slide_id": "12"
+     },
+     {
+      "text": "It holds cash at least $0.55M above the $2.6M buffer and fails none of the board's conditions",
+      "slide_id": "13"
+     }
+    ]
+   },
+   {
+    "id": "4",
+    "text": "Gates, signposts and next steps make the decision reversible",
+    "supports": [
+     "14",
+     "15",
+     "16",
+     "17",
+     "18"
+    ],
+    "sub_points": [
+     {
+      "text": "Switch on exclusivity only after certification, two audited quarters of 2,250+ robots and signed protections",
+      "slide_id": "14"
+     },
+     {
+      "text": "If the OEM insists on exclusivity at signing, walk away to direct sales plus the integration-firm pilot",
+      "slide_id": "15"
+     },
+     {
+      "text": "Start the $0.45M assessment now: it is on the critical path for every OEM route",
+      "slide_id": "18"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Engage the third-party security and industrial-safety assessor ($0.45M)",
+    "owner": "CTO / Engineering",
+    "timing": "Nov–Dec 2026"
+   },
+   {
+    "action": "Add customer-level identifiers to the direct pipeline and OEM reports",
+    "owner": "Sales + Finance",
+    "timing": "Dec 2026–Mar 2027"
+   },
+   {
+    "action": "Negotiate the N term sheet with audit, escrow, release, gates and carve-outs",
+    "owner": "Partnerships + Legal",
+    "timing": "Jan–Mar 2027"
+   },
+   {
+    "action": "Replace the CFO dashboard with a full incremental-margin view",
+    "owner": "CFO",
+    "timing": "Jan–Mar 2027"
+   },
+   {
+    "action": "Decide: approve the gated N→M structure or a fallback",
+    "owner": "Board",
+    "timing": "Apr 2027"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "1",
+   "title": "The deal is worth less than presented",
+   "exec_item_id": "1",
+   "tracker_label": "Value"
+  },
+  {
+   "id": "2",
+   "title": "The evidence does not exist yet",
+   "exec_item_id": "2",
+   "tracker_label": "Evidence"
+  },
+  {
+   "id": "3",
+   "title": "N→M beats every alternative",
+   "exec_item_id": "3",
+   "tracker_label": "Alternatives"
+  },
+  {
+   "id": "4",
+   "title": "Gates make it reversible",
+   "exec_item_id": "4",
+   "tracker_label": "Path forward"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "3",
+   "role": "content",
+   "status": "filled",
+   "section_id": "1",
+   "lead_message": {
+    "text": "With only one of six conditions for exclusivity at signing even partly met, the 'don't sign yet' hypothesis stands",
+    "count_word": 6,
+    "clauses": 1
+   },
+   "message_type": "argument",
+   "archetype": "comparison-table",
+   "rationale": "Conditions tested on the same criteria -> comparison table; the verdict sits inside the table",
+   "unit_line": "**Test of the initial hypothesis**: what must be true for exclusivity at signing (Option X) to be right, checked against the briefing pack",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "For exclusivity at signing to be right, it must be true that…",
+     "What the evidence shows"
+    ],
+    "rows": [
+     {
+      "label": "Value 1 · does not hold",
+      "cells": [
+       {
+        "text": "The $2.0M signing payment adds value on top of royalties"
+       },
+       {
+        "text": "It is an advance against the first $2.0M of royalties, open to offset; three-year cash is $8.7M either way (p. 4)"
+       }
+      ]
+     },
+     {
+      "label": "Value 2 · partly holds: plan case only",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Exclusivity creates value even in the low case, with realistic overlap"
+       },
+       {
+        "text": "+$2.2–2.8M at plan; −$0.04M to +$0.55M at 65% volumes, Sales' 30–70% overlap (p. 5–7)"
+       }
+      ]
+     },
+     {
+      "label": "Evidence 3 · does not hold",
+      "cells": [
+       {
+        "text": "The product is production-ready in the OEM's hardware"
+       },
+       {
+        "text": "98.8% lab uptime against 99.5% required; no loaded or peak test; assessment not started (p. 8)"
+       }
+      ]
+     },
+     {
+      "label": "Evidence 4 · does not hold",
+      "cells": [
+       {
+        "text": "OEM volumes and the growth story are reliable enough to commit on"
+       },
+       {
+        "text": "Shipments unaudited; 14,000 'booked devices' without purchase orders; competitor case correlational (p. 9)"
+       }
+      ]
+     },
+     {
+      "label": "Alternatives 5 · does not hold",
+      "cells": [
+       {
+        "text": "Exclusivity is the only way to win the OEM's volume"
+       },
+       {
+        "text": "The OEM will consider N (nonexclusive, $350 a robot) and M (gated exclusivity) (p. 11–12)"
+       }
+      ]
+     },
+     {
+      "label": "Protection 6 · does not hold",
+      "cells": [
+       {
+        "text": "The contract protects Boreal if forecasts or certification miss"
+       },
+       {
+        "text": "No audit right, no royalty floor after the advance, no release triggers, no code escrow (p. 10)"
+       }
+      ]
+     }
+    ]
+   },
+   "so_what": "The problem is exclusivity before evidence, not exclusivity itself: the answer is a gated path, not a flat 'no'",
+   "footnotes": [
+    "The hypothesis survives, refined. Stated before testing: do not grant exclusivity at signing; a nonexclusive or milestone deal keeps the OEM upside and the direct channel",
+    "Source: board briefing pack §1–6; team analysis"
+   ]
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "status": "filled",
+   "section_id": "1",
+   "lead_message": {
+    "text": "The $2.0M is an advance on royalties, not extra revenue: three-year OEM cash is $8.7M, not the implied $10.7M",
+    "numbers": [
+     {
+      "text": "$10.7M",
+      "data_ref": "framing"
+     }
+    ]
+   },
+   "message_type": "component",
+   "archetype": "data-table",
+   "rationale": "Year-by-year cash mechanics of the advance -> data table, kept as the source's table",
+   "unit_line": "**Option X cash from the OEM**, $ millions (robots in units), plan and 65% stress, 2027–29, undiscounted",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "Counting the advance as revenue double-counts it",
+     "big_number": {
+      "data_ref": "framing"
+     },
+     "caption": "implied by the 'revenue win plus recurring royalties' framing: 23% more than the $8.7M Boreal will receive",
+     "bullets": [
+      "**Revenue** is royalties earned as robots ship and payment is collected: $1.5M in 2027 at plan, not $3.5M",
+      "**The $2.0M** is a minimum-guarantee liability until earned; the partner can demand an offset if guaranteed performance is missed",
+      "**It buys timing only:** it brings $1.5–2.0M of cash forward into 2027, which Boreal does not need to stay above its buffer"
+     ]
+    }
+   },
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "Robots shipped",
+     "Royalties earned at $300",
+     "Advance credit applied",
+     "Royalty cash received",
+     "Total OEM cash, incl. $2.0M at signing"
+    ],
+    "rows": [
+     {
+      "label": "Plan 2027",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "f27"
+        }
+       },
+       {
+        "text": "1.50"
+       },
+       {
+        "text": "−1.50"
+       },
+       {
+        "text": "0.00"
+       },
+       {
+        "text": "2.00"
+       }
+      ]
+     },
+     {
+      "label": "Plan 2028",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "f28"
+        }
+       },
+       {
+        "text": "3.00"
+       },
+       {
+        "text": "−0.50"
+       },
+       {
+        "text": "2.50"
+       },
+       {
+        "text": "2.50"
+       }
+      ]
+     },
+     {
+      "label": "Plan 2029",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "f29"
+        }
+       },
+       {
+        "text": "4.20"
+       },
+       {
+        "text": "0.00"
+       },
+       {
+        "text": "4.20"
+       },
+       {
+        "text": "4.20"
+       }
+      ]
+     },
+     {
+      "label": "Plan total",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "pl_rob"
+        }
+       },
+       {
+        "text": "8.70"
+       },
+       {
+        "text": "−2.00"
+       },
+       {
+        "text": "6.70"
+       },
+       {
+        "text": "8.70"
+       }
+      ],
+      "highlight": true
+     },
+     {
+      "label": "65% stress 2027",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "st27"
+        }
+       },
+       {
+        "text": "0.98"
+       },
+       {
+        "text": "−0.98"
+       },
+       {
+        "text": "0.00"
+       },
+       {
+        "text": "2.00"
+       }
+      ]
+     },
+     {
+      "label": "Stress 2028",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "st28"
+        }
+       },
+       {
+        "text": "1.95"
+       },
+       {
+        "text": "−1.03"
+       },
+       {
+        "text": "0.93"
+       },
+       {
+        "text": "0.93"
+       }
+      ]
+     },
+     {
+      "label": "Stress 2029",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "st29"
+        }
+       },
+       {
+        "text": "2.73"
+       },
+       {
+        "text": "0.00"
+       },
+       {
+        "text": "2.73"
+       },
+       {
+        "text": "2.73"
+       }
+      ]
+     },
+     {
+      "label": "Stress total",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "st_rob"
+        }
+       },
+       {
+        "text": "5.66"
+       },
+       {
+        "text": "−2.00"
+       },
+       {
+        "text": "3.66"
+       },
+       {
+        "text": "5.66"
+       }
+      ],
+      "highlight": true
+     }
+    ]
+   },
+   "footnotes": [
+    "Reading the table: the advance is cash received early, then netted out of 2028 royalty cash, so total cash always equals royalties earned",
+    "In the stress case, 2028 royalty cash falls to $0.93M because $1.03M of credit is still being recouped"
+   ]
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "status": "filled",
+   "section_id": "1",
+   "lead_message": {
+    "text": "After full costs, only about $0.56M of the $3.00M in 2028 plan royalties is incremental: 19%, not the dashboard's 100%",
+    "numbers": [
+     {
+      "text": "$3.00M",
+      "data_ref": "r28"
+     },
+     {
+      "text": "$0.56M",
+      "data_ref": "inc50"
+     },
+     {
+      "text": "19%",
+      "data_ref": "incsh"
+     }
+    ],
+    "highlights": [
+     "Incremental value"
+    ]
+   },
+   "message_type": "component",
+   "archetype": "waterfall-bridge",
+   "rationale": "What the royalty shrinks to after each cost -> waterfall bridge",
+   "unit_line": "**Option X, 2028 plan year**, $ millions; displaced direct margin at 50% overlap, the midpoint of Sales' 30–70%",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "Three views of the same royalty",
+     "big_number": {
+      "data_ref": "incsh"
+     },
+     "caption": "of the royalty is incremental at plan in the complete view, against 100% in the CFO dashboard, which counts only the $300 royalty",
+     "bullets": [
+      "**Per robot:** $220 (73%) after $80 of support, before any fixed cost; $1.30M of OEM contribution before channel effects",
+      "**Across Sales' overlap range:** $0.27–0.86M for 30–70%",
+      "**At 65% volumes:** negative, $1.95M − $0.52M − $0.90M − $0.74M = −$0.21M in 2028"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "waterfall",
+    "sort": "none",
+    "value_format": "\"$\"0.00\"M\"",
+    "categories": [
+     "2028 royalties (10,000 × $300)",
+     "Variable support (10,000 × $80)",
+     "OEM-specific engineering",
+     "Displaced direct gross margin",
+     "Incremental value"
+    ],
+    "series": [
+     {
+      "name": "2028, plan",
+      "points": [
+       {
+        "data_ref": "r28"
+       },
+       {
+        "data_ref": "w_sup"
+       },
+       {
+        "data_ref": "w_eng"
+       },
+       {
+        "data_ref": "w_lost"
+       },
+       {
+        "data_ref": "inc50"
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "Incremental value"
+    ]
+   },
+   "footnotes": [
+    "Exclusivity bars all new direct North American licences, including customers on other OEMs' robots: that forgone margin is a cost of Option X, not of the OEM channel in general",
+    "Lost direct margin = 50% (midpoint of Sales' 30–70% overlap) × $1.8M ARR × 82% gross margin"
+   ]
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "status": "filled",
+   "section_id": "1",
+   "lead_message": {
+    "text": "Exclusivity is worth +$2.2–2.8M over 2027–29 at plan but only −$0.04M to +$0.55M if the OEM ships 65% of plan",
+    "numbers": [
+     {
+      "text": "+$2.2–2.8M",
+      "data_ref": "pl_v70"
+     },
+     {
+      "text": "+$2.2–2.8M",
+      "data_ref": "pl_v30"
+     },
+     {
+      "text": "−$0.04M",
+      "data_ref": "st_v70"
+     },
+     {
+      "text": "+$0.55M",
+      "data_ref": "st_v30"
+     }
+    ],
+    "highlights": [
+     "65% stress, 18,850 robots"
+    ]
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Sensitivity grid (volume case × overlap) for the base case and the renewal sensitivity -> two panels of multi-series columns",
+   "unit_line": "**Option X three-year incremental value, 2027–29**, $ millions, undiscounted, by OEM volume case and channel overlap",
+   "body": {
+    "kind": "panels",
+    "connector": "none",
+    "panels": [
+     {
+      "header": "A. Base case, lost direct customers counted in 2028 only: the low case leaves at most $0.55M for three years of irreversible exclusivity",
+      "unit_line": "**Option X value, 2027–29**, $M, by channel overlap",
+      "body": {
+       "kind": "chart",
+       "chart_type": "column",
+       "sort": "none",
+       "value_format": "+\"$\"0.00\"M\";-\"$\"0.00\"M\"",
+       "categories": [
+        "0% (CEO view)",
+        "30% (Sales low)",
+        "50% (midpoint)",
+        "70% (Sales high)",
+        "100% (all displaced)"
+       ],
+       "series": [
+        {
+         "name": "Plan, 29,000 robots",
+         "points": [
+          {
+           "data_ref": "pl_v0"
+          },
+          {
+           "data_ref": "pl_v30"
+          },
+          {
+           "data_ref": "pl_v50"
+          },
+          {
+           "data_ref": "pl_v70"
+          },
+          {
+           "data_ref": "pl_v100"
+          }
+         ]
+        },
+        {
+         "name": "65% stress, 18,850 robots",
+         "points": [
+          {
+           "data_ref": "st_v0"
+          },
+          {
+           "data_ref": "st_v30"
+          },
+          {
+           "data_ref": "st_v50"
+          },
+          {
+           "data_ref": "st_v70"
+          },
+          {
+           "data_ref": "st_v100"
+          }
+         ]
+        }
+       ],
+       "highlight": [
+        "65% stress, 18,850 robots"
+       ]
+      }
+     },
+     {
+      "header": "B. If lost 2028 direct customers would also have renewed in 2029, the low case destroys up to $1.1M at Sales' 70% overlap",
+      "unit_line": "**Option X value, 2027–29**, $M, by channel overlap",
+      "body": {
+       "kind": "chart",
+       "chart_type": "column",
+       "sort": "none",
+       "value_format": "+\"$\"0.00\"M\";-\"$\"0.00\"M\"",
+       "categories": [
+        "0% (CEO view)",
+        "30% (Sales low)",
+        "50% (midpoint)",
+        "70% (Sales high)",
+        "100% (all displaced)"
+       ],
+       "series": [
+        {
+         "name": "Plan, 29,000 robots",
+         "points": [
+          {
+           "data_ref": "pl_v0"
+          },
+          {
+           "data_ref": "plB30"
+          },
+          {
+           "data_ref": "plB50"
+          },
+          {
+           "data_ref": "plB70"
+          },
+          {
+           "data_ref": "plB100"
+          }
+         ]
+        },
+        {
+         "name": "65% stress, 18,850 robots",
+         "points": [
+          {
+           "data_ref": "st_v0"
+          },
+          {
+           "data_ref": "stB30"
+          },
+          {
+           "data_ref": "stB50"
+          },
+          {
+           "data_ref": "stB70"
+          },
+          {
+           "data_ref": "stB100"
+          }
+         ]
+        }
+       ],
+       "highlight": [
+        "65% stress, 18,850 robots"
+       ]
+      }
+     }
+    ]
+   },
+   "footnotes": [
+    "Value = Σ(royalties − $80 × robots − $0.9M engineering) − $0.45M assessment − overlap × ($1.8M × 82%). A is the pack-grounded floor (favours X); B is a sensitivity (churn not in pack)",
+    "Full-year engineering from 2027 is conservative: a late start helps all OEM options equally, so the ranking does not change. No NPV, per board instruction"
+   ]
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "status": "filled",
+   "section_id": "1",
+   "lead_message": {
+    "text": "Exclusivity breaks even only at 6,100–8,800 robots a year; the 65% case of 6,500 barely clears the most optimistic end",
+    "numbers": [
+     {
+      "text": "6,500",
+      "data_ref": "st28"
+     }
+    ],
+    "highlights": [
+     "Breakeven, 30% overlap",
+     "Breakeven, 70% overlap",
+     "OEM 2028: 65% stress"
+    ]
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "Hurdle against expected volumes -> bars in a fixed order, Sales' range and the stress case highlighted",
+   "unit_line": "**OEM robots a year** needed for exclusivity to beat staying nonexclusive, by channel overlap, against 2028 OEM volumes",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The plan clears the hurdle; the stress case clears only the 30% end",
+     "bullets": [
+      "**Breakeven bars:** each robot contributes $220, which must cover $0.9M of engineering plus the displaced direct margin",
+      "**Sales' 30–70% overlap:** a hurdle of 6,100–8,800 robots a year; the plan's 10,000 clears it, the stress case's 6,500 clears only the 30% end",
+      "**Option M's gate:** 5,000 annualised is below every realistic breakeven; raise it to about 9,000 (2,250 a quarter) unless the scope excludes customers on other OEMs' robots",
+      "**Under Option N:** the OEM programme alone breaks even at 3,333 robots ($0.9M ÷ $270), and the direct channel is untouched"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "sort": "none",
+    "value_format": "#,##0",
+    "categories": [
+     "Breakeven, 0% overlap",
+     "Breakeven, 30% overlap",
+     "Breakeven, 50% overlap",
+     "Breakeven, 70% overlap",
+     "Breakeven, 100% overlap",
+     "OEM 2028: 65% stress",
+     "OEM 2028: partner plan"
+    ],
+    "series": [
+     {
+      "name": "Robots per year",
+      "points": [
+       {
+        "data_ref": "be0"
+       },
+       {
+        "data_ref": "be30"
+       },
+       {
+        "data_ref": "be50"
+       },
+       {
+        "data_ref": "be70"
+       },
+       {
+        "data_ref": "be100"
+       },
+       {
+        "data_ref": "st28"
+       },
+       {
+        "data_ref": "f28"
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "Breakeven, 30% overlap",
+     "Breakeven, 70% overlap",
+     "OEM 2028: 65% stress"
+    ]
+   },
+   "footnotes": [
+    "Breakeven = ($0.9M + overlap × $1.476M) ÷ ($300 − $80)"
+   ]
+  },
+  {
+   "id": "8",
+   "role": "content",
+   "status": "filled",
+   "section_id": "2",
+   "lead_message": {
+    "text": "The software still misses the OEM's bar, yet Option X binds exclusivity at signing, at least five months before certification"
+   },
+   "message_type": "time-series",
+   "archetype": "timeline-roadmap",
+   "rationale": "Option X timing against the board's own condition -> timeline; the readiness gap reads in the sidebar",
+   "unit_line": "**Option X timing against certification**, November 2026 to December 2027",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "reasons",
+     "header": "The production bar is not yet met",
+     "reasons": [
+      {
+       "header": "Lab uptime",
+       "point": {
+        "data_ref": "uptime"
+       },
+       "detail": "60 robots, 12 weeks; no fully loaded warehouse, no collision-heavy peaks"
+      },
+      {
+       "header": "OEM bar",
+       "point": {
+        "data_ref": "bar"
+       },
+       "detail": "In production hardware, with documented safe-stop: not yet demonstrated"
+      },
+      {
+       "header": "Downtime cut",
+       "point": {
+        "data_ref": "cut"
+       },
+       "detail": "1.2% → 0.5% of hours: 105 → 44 hours a robot-year at 24/7 (24 → 10 over the trial)"
+      }
+     ]
+    }
+   },
+   "body": {
+    "kind": "timeline",
+    "periods": [
+     "Nov 2026",
+     "Apr 2027",
+     "Sep 2027",
+     "Dec 2027"
+    ],
+    "rows": [
+     {
+      "label": "Certification",
+      "bars": [
+       {
+        "start": "Nov 2026",
+        "end": "Sep 2027",
+        "label": "Third-party assessment ($0.45M) not started; September is an engineering projection, not a plan with a vendor"
+       }
+      ]
+     },
+     {
+      "label": "Option X exclusivity",
+      "bars": [
+       {
+        "start": "Apr 2027",
+        "end": "Dec 2027",
+        "emphasis": true,
+        "label": "Binding from signing, before any validation in OEM hardware"
+       }
+      ]
+     },
+     {
+      "label": "OEM 2027 plan",
+      "bars": [
+       {
+        "start": "Apr 2027",
+        "end": "Dec 2027",
+        "label": "5,000 robots assumed shipped, yet deployment cannot start until the assessment is complete"
+       }
+      ]
+     }
+    ],
+    "milestones": [
+     {
+      "at": "Nov 2026",
+      "label": "Today"
+     },
+     {
+      "at": "Apr 2027",
+      "label": "Board meets: X binds"
+     },
+     {
+      "at": "Sep 2027",
+      "label": "Earliest certification"
+     }
+    ]
+   },
+   "so_what": "The board requires validation in OEM hardware before irreversible exclusivity; X fails this by design",
+   "footnotes": [
+    "The 2027 plan of 5,000 robots, and with it the advance's offset exposure, is at risk. The gap is closable but unproven: conditions will be harsher than the lab"
+   ]
+  },
+  {
+   "id": "9",
+   "role": "content",
+   "status": "filled",
+   "section_id": "2",
+   "lead_message": {
+    "text": "The upside case rests on unaudited volumes, an untested 'fully incremental' claim and a correlational competitor analogy"
+   },
+   "message_type": "argument",
+   "archetype": "text-columns",
+   "rationale": "Three separate weaknesses of the upside case -> text columns, each with its impact",
+   "unit_line": "**Evidence behind the upside case**, by claim, with its impact on the economics",
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "OEM volumes are a forecast, not a commitment",
+      "detail": [
+       "Quarterly shipment data are not independently audited, and the draft contract has no audit right",
+       "The 14,000 'booked devices' have no purchase orders: treat them as a 2029 forecast",
+       "The 2027 forecast of 5,000 assumes production shipments in a year when certification lands in September at the earliest",
+       "The board is unwilling to rely solely on verbal OEM launch forecasts"
+      ],
+      "footer": "Plan → 65%: −$2.2M of value (p. 6)"
+     },
+     {
+      "header": "Channel overlap is unknown, and it drives the answer",
+      "detail": [
+       "The CEO says the OEM channel has 0% overlap (entirely incremental); Sales says 30–70% of OEM buyers overlap with its pipeline",
+       "Neither view is backed by customer-level identifiers",
+       "Each 10 percentage points of overlap is worth about $0.15M a year of displaced direct gross margin ($1.8M × 82% × 10%)",
+       "Overlap can be measured during a nonexclusive pilot, not after exclusivity has closed the direct channel"
+      ],
+      "footer": "30% → 70%: breakeven 6,100 → 8,800"
+     },
+     {
+      "header": "'Exclusivity caused competitors' growth' is not shown",
+      "detail": [
+       "Five competitors' exclusive OEM deals coincided with faster growth: a correlation",
+       "Those firms had more marketing support, more mature products and higher market share before they signed; any of these could explain the growth",
+       "Boreal has none of these advantages yet: its product is uncertified and its leverage limited",
+       "No causal evidence is available, so the economics give this argument zero weight"
+      ],
+      "footer": "No proof it adds volume over N"
+     }
+    ]
+   },
+   "footnotes": [
+    "Source: board briefing pack §2, §4–5; team analysis"
+   ]
+  },
+  {
+   "id": "10",
+   "role": "content",
+   "status": "filled",
+   "section_id": "2",
+   "lead_message": {
+    "text": "As drafted, the contract leaves Boreal exposed on six terms, with a scope that blocks the growing direct channel",
+    "count_word": 6,
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Six contract terms on the same three criteria -> comparison table, the scope row highlighted",
+   "unit_line": "**Draft OEM agreement**, by term: what it says, the risk to Boreal and what any exclusivity requires",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Draft agreement",
+     "Risk to Boreal",
+     "Required before any exclusivity"
+    ],
+    "rows": [
+     {
+      "label": "Audit rights",
+      "cells": [
+       {
+        "text": "No clear right to audit reported shipments"
+       },
+       {
+        "text": "Royalties and volume gates rest on unaudited OEM reports"
+       },
+       {
+        "text": "Independent, shipment-level audit right; quarterly reports reconciled to invoices"
+       }
+      ]
+     },
+     {
+      "label": "Royalty floor",
+      "cells": [
+       {
+        "text": "None once the $2.0M advance is used up"
+       },
+       {
+        "text": "Direct channel barred with no minimum income"
+       },
+       {
+        "text": "Annual minimum royalty; exclusivity lapses automatically if missed"
+       }
+      ]
+     },
+     {
+      "label": "Release triggers",
+      "cells": [
+       {
+        "text": "No automatic release"
+       },
+       {
+        "text": "Locked in if the model is retired or certification slips"
+       },
+       {
+        "text": "Automatic release on model retirement, certification slip or missed minimums"
+       }
+      ]
+     },
+     {
+      "label": "IP protection",
+      "cells": [
+       {
+        "text": "Source code delivered as freely reusable OEM IP"
+       },
+       {
+        "text": "Loss of Boreal's core asset and future leverage"
+       },
+       {
+        "text": "Source code escrow with narrow release conditions; no IP transfer"
+       }
+      ]
+     },
+     {
+      "label": "Scope",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "All new North American sales, including customers on other OEMs' robots"
+       },
+       {
+        "text": "Chief strategic opportunity cost: about $1.48M a year of direct margin at risk"
+       },
+       {
+        "text": "Limit to the OEM's robot series; carve out existing and other-OEM customers"
+       }
+      ]
+     },
+     {
+      "label": "Guarantee offset",
+      "cells": [
+       {
+        "text": "Partner can demand an offset if guaranteed performance is missed"
+       },
+       {
+        "text": "The $2.0M can claw back, e.g. if certification delays 2027 shipments"
+       },
+       {
+        "text": "Define the offset; cap it at the unearned balance; no offset for OEM-driven shortfalls"
+       }
+      ]
+     }
+    ]
+   },
+   "so_what": "Existing direct contracts cannot be terminated for convenience, so any exclusivity can cover only future new North American robot sales",
+   "so_what_style": "line",
+   "footnotes": [
+    "Without that limit, Boreal faces unquantified contract claims. Source: board briefing pack §2, §3, §6 (legal counsel and software team review); team analysis"
+   ]
+  },
+  {
+   "id": "11",
+   "role": "content",
+   "status": "filled",
+   "section_id": "3",
+   "lead_message": {
+    "text": "Of five routes, only the phased N→M structure keeps the OEM upside without an irreversible bet before the evidence exists",
+    "count_word": 5,
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Five options on the same criteria -> comparison table; options as rows, verdict in the row label, recommended pair highlighted",
+   "unit_line": "**Routes open to the board**, compared on value, resilience, reversibility, board conditions and deal risk",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Indicative value, 2027–29",
+     "Low-case resilience",
+     "Reversibility",
+     "Board conditions*",
+     "Deal risk with OEM"
+    ],
+    "rows": [
+     {
+      "label": "X: exclusive at signing · reject as drafted",
+      "cells": [
+       {
+        "text": "+$2.2–2.8M plan; −$0.04M to +$0.55M at 65%"
+       },
+       {
+        "text": "Weak: thin margin, offset exposure"
+       },
+       {
+        "text": "None: 3 years, binding at signing"
+       },
+       {
+        "text": "Fails validation-first"
+       },
+       {
+        "text": "Lowest: it is the OEM's ask"
+       }
+      ]
+     },
+     {
+      "label": "N: 12-month nonexclusive pilot · recommend, phase 1",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Up to +$4.7M plan / +$1.9M at 65% if terms hold (upper bound)"
+       },
+       {
+        "text": "Strong: no guarantee to recoup; $270 a robot"
+       },
+       {
+        "text": "High: 12 months"
+       },
+       {
+        "text": "Meets all"
+       },
+       {
+        "text": "Medium: OEM's offer; price not guaranteed"
+       }
+      ]
+     },
+     {
+      "label": "M: exclusivity after gates · recommend, phase 2",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "X-like upside, taken only once proven"
+       },
+       {
+        "text": "Strong: gates screen out the low case"
+       },
+       {
+        "text": "High until the gates are met"
+       },
+       {
+        "text": "Meets all"
+       },
+       {
+        "text": "Medium: termination payment open"
+       }
+      ]
+     },
+     {
+      "label": "Direct sales only · fallback",
+      "cells": [
+       {
+        "text": "Keeps ~$1.48M a year of direct margin (2028 ARR); no OEM upside"
+       },
+       {
+        "text": "Strong"
+       },
+       {
+        "text": "High"
+       },
+       {
+        "text": "Meets all"
+       },
+       {
+        "text": "Forgoes the OEM"
+       }
+      ]
+     },
+     {
+      "label": "Defer until certified · fallback if N refused",
+      "cells": [
+       {
+        "text": "As direct, less the $0.45M assessment"
+       },
+       {
+        "text": "Strong"
+       },
+       {
+        "text": "High"
+       },
+       {
+        "text": "Meets all"
+       },
+       {
+        "text": "High: OEM may pick another supplier"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "*Validation in OEM hardware before irreversible exclusivity; existing licences protected; $2.6M liquidity buffer held. Values from p. 6, 12 and 13",
+    "The integration firm's 1,200-robot nonexclusive pilot complements N and the fallbacks; X would likely bar it. Its royalty terms are not in the pack. Source: board briefing pack §1, §4, §6; team analysis"
+   ]
+  },
+  {
+   "id": "12",
+   "role": "content",
+   "status": "filled",
+   "section_id": "3",
+   "lead_message": {
+    "text": "Nonexclusive terms would match exclusivity's value even if the OEM shipped 24–32% fewer robots without exclusivity",
+    "numbers": [
+     {
+      "text": "24–32%",
+      "data_ref": "cush30"
+     },
+     {
+      "text": "24–32%",
+      "data_ref": "cush70"
+     }
+    ],
+    "highlights": [
+     "N terms, same volumes"
+    ]
+   },
+   "message_type": "item",
+   "archetype": "column-time-series",
+   "rationale": "Value of the same volumes under X and N terms -> clustered columns, N highlighted",
+   "unit_line": "**Three-year value, 2027–29**, $ millions, Option X at Sales' overlap range against Option N terms at the same volumes",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Why N wins on value per unit of risk",
+     "bullets": [
+      "**Per robot:** N pays $350 compared with $300 ($270 compared with $220 after support), with no direct-channel displacement",
+      "**Stress case:** the volume cushion is 27–39%",
+      "**Caveats:** the OEM may ship less without exclusivity and will not guarantee pricing; the N bars are an upper bound, the cushion is the robust finding"
+     ],
+     "rows": [
+      {
+       "label": "Fewer robots at which N still matches X, 30% overlap",
+       "basis": "1 − 22,000 ÷ 29,000 plan robots",
+       "point": {
+        "data_ref": "cush30"
+       },
+       "highlight": true
+      },
+      {
+       "label": "Fewer robots at which N still matches X, 70% overlap",
+       "basis": "1 − 19,800 ÷ 29,000 plan robots",
+       "point": {
+        "data_ref": "cush70"
+       },
+       "highlight": true
+      }
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "sort": "none",
+    "value_format": "+\"$\"0.00\"M\";-\"$\"0.00\"M\"",
+    "categories": [
+     "Partner plan (29,000 robots)",
+     "65% stress (18,850 robots)"
+    ],
+    "series": [
+     {
+      "name": "X, 30% overlap",
+      "points": [
+       {
+        "data_ref": "pl_v30"
+       },
+       {
+        "data_ref": "st_v30"
+       }
+      ]
+     },
+     {
+      "name": "X, 70% overlap",
+      "points": [
+       {
+        "data_ref": "pl_v70"
+       },
+       {
+        "data_ref": "st_v70"
+       }
+      ]
+     },
+     {
+      "name": "N terms, same volumes",
+      "points": [
+       {
+        "data_ref": "pl_N"
+       },
+       {
+        "data_ref": "st_N"
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "N terms, same volumes"
+    ]
+   },
+   "footnotes": [
+    "N assumes its $350 terms and partner volumes persist for 3 years (not guaranteed); some OEM buyers would substitute for direct buyers under N. Parity = (X value + $2.7M + $0.45M) ÷ $270"
+   ]
+  },
+  {
+   "id": "13",
+   "role": "content",
+   "status": "filled",
+   "section_id": "3",
+   "lead_message": {
+    "text": "Every route keeps cash above the $2.6M buffer; the advance's liquidity benefit is temporary and can be clawed back",
+    "highlights": [
+     "X: plan, advance in hand",
+     "X: certification slips, $2.0M offset"
+    ]
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "rationale": "Headroom by route against the same buffer -> bars in route order, the two X cases highlighted",
+   "unit_line": "**Cash headroom above the $2.6M liquidity buffer**, end-2027, $ millions, by route",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Liquidity does not require the advance",
+     "bullets": [
+      "**Start:** $4.9M of cash leaves $2.3M of headroom above the buffer; OEM routes then spend the $0.45M assessment, $0.9M of engineering and $80 a robot of support ($0.40M at 5,000 robots) before royalty cash arrives",
+      "**N's tightest point is $0.55M**, if reporting lags push all 2027 royalties into 2028; mitigations: monthly remittance, engineering phased to shipments, OEM-funded integration work",
+      "**X looks richest ($2.55M)** only because the advance is unearned; a certification slip plus an offset demand takes it back to $1.85M"
+     ],
+     "implication": "The advance is not a reason to sign X"
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "sort": "none",
+    "value_format": "\"$\"0.00\"M\"",
+    "categories": [
+     "Direct sales only",
+     "Defer: assessment only",
+     "N: royalties collected in-year",
+     "N: worst case, no 2027 royalty cash (lag)",
+     "X: plan, advance in hand",
+     "X: certification slips, $2.0M offset"
+    ],
+    "series": [
+     {
+      "name": "Headroom above $2.6M buffer, end-2027",
+      "points": [
+       {
+        "data_ref": "hd_direct"
+       },
+       {
+        "data_ref": "hd_def"
+       },
+       {
+        "data_ref": "hd_N"
+       },
+       {
+        "data_ref": "hd_Nlag"
+       },
+       {
+        "data_ref": "hd_X"
+       },
+       {
+        "data_ref": "hd_Xslip"
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "X: plan, advance in hand",
+     "X: certification slips, $2.0M offset"
+    ]
+   },
+   "footnotes": [
+    "Headroom = $4.9M cash − $2.6M buffer + deal cash flows to end-2027. Rest-of-business burn is not in the pack and is assumed to be covered by the buffer"
+   ]
+  },
+  {
+   "id": "14",
+   "role": "content",
+   "status": "filled",
+   "section_id": "4",
+   "lead_message": {
+    "text": "Sign Option N now; three pre-agreed gates switch on limited exclusivity once certification and audited volumes show it pays",
+    "count_word": 3,
+    "clauses": 1
+   },
+   "message_type": "structure",
+   "archetype": "process-flow",
+   "rationale": "Phased path with gates between phases -> process flow; the three gates read in the sidebar",
+   "unit_line": "**Recommended path**, three phases; exclusivity only after all three gates are passed",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "reasons",
+     "header": "All three gates must pass before Phase 2",
+     "reasons": [
+      {
+       "header": "Certification",
+       "detail": "≥ 99.5% uptime in OEM production hardware, loaded warehouse, peaks; documented safe-stop; assessment passed"
+      },
+      {
+       "header": "Verified demand",
+       "detail": "Two consecutive audited quarters ≥ 2,250 robots (~9,000 a year), breakeven at 70% overlap; 5,000 only with other-OEM carve-out"
+      },
+      {
+       "header": "Contract protections",
+       "detail": "Audit right, royalty floor, release triggers, code escrow, existing and other-OEM carve-outs, defined offset"
+      }
+     ]
+    }
+   },
+   "body": {
+    "kind": "process",
+    "steps": [
+     {
+      "header": "Phase 0 · now to Apr 2027: prepare",
+      "detail": [
+       "Commission the $0.45M third-party security and safety assessment now",
+       "Negotiate the N term sheet with the M gates pre-agreed",
+       "Tag customers so OEM and direct overlap can be measured"
+      ],
+      "footer": "Board decision in April 2027"
+     },
+     {
+      "header": "Phase 1 · Apr 2027 to ~Q1 2028: Option N, nonexclusive pilot",
+      "emphasis": true,
+      "detail": [
+       "12 months, $350 per shipped robot, no advance",
+       "Boreal keeps all direct and other-OEM rights",
+       "Audit rights and monthly royalty reports from day one"
+      ],
+      "footer": "Exit: Gates 1–3, all passed"
+     },
+     {
+      "header": "Phase 2 · earliest ~Q2 2028: Option M, limited exclusivity",
+      "detail": [
+       "Existing licences untouched; new North American sales of the OEM's robot series only",
+       "Up to 3 years, with an annual minimum royalty",
+       "Automatic release if minimums are missed, the model is retired or certification lapses",
+       "Termination payment of at least 1 year of displaced direct margin (~$1.5M)"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Gates verified by the board, not by OEM assertion. Gate 2 volume: the p. 7 breakeven at 70% overlap (8,787 robots a year), rounded up. Source: board briefing pack §2, §5–7; team analysis"
+   ]
+  },
+  {
+   "id": "15",
+   "role": "content",
+   "status": "filled",
+   "section_id": "4",
+   "lead_message": {
+    "text": "Negotiate by trading price, scope and timing for evidence, and walk away from any form of exclusivity that binds at signing"
+   },
+   "message_type": "argument",
+   "archetype": "text-columns",
+   "rationale": "Negotiating position in three parts -> text columns, must-haves emphasised",
+   "unit_line": "**Negotiating position with the OEM**: must-haves, tradeables and the fallback (BATNA)",
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "Must-haves: walk away without them",
+      "emphasis": true,
+      "detail": [
+       "No exclusivity before Gates 1–3 are met",
+       "Existing direct contracts excluded; exclusivity covers future new sales only",
+       "Independent shipment audit right",
+       "Source code escrow; no transfer of reusable IP",
+       "Automatic release on model retirement or certification slip"
+      ]
+     },
+     {
+      "header": "Tradeables: give to get",
+      "detail": [
+       "Royalty: concede from $350 toward $300 at conversion in return for a royalty floor",
+       "Volume gate: accept 5,000 a year instead of about 9,000 if the scope excludes other-OEM customers",
+       "Geography: narrower regions or named verticals first",
+       "Term: shorter initial exclusivity (e.g. 2 years) with renewal on performance",
+       "An advance at conversion, structured as a capped and clearly defined guarantee"
+      ]
+     },
+     {
+      "header": "Fallback if the OEM refuses: direct sales plus the integration pilot",
+      "detail": [
+       "Continue direct sales: about $1.8M of new ARR in 2028, about $1.48M of gross margin",
+       "Take the integration firm's nonexclusive 1,200-robot pilot ($0.22M support budget, no guarantee)",
+       "Complete certification anyway; return to the OEM with production evidence",
+       "This loses the OEM's upside (+$2.2–2.8M at plan) but avoids the low-case downside"
+      ]
+     }
+    ]
+   },
+   "so_what": "Leverage is limited, but the OEM itself put N and M on the table, and Boreal has not committed its IP",
+   "footnotes": [
+    "Messaging: announce a 'strategic OEM partnership' now; report any advance as a recoupable guarantee, never as revenue. Source: board briefing pack §1, §4, §6; team analysis"
+   ]
+  },
+  {
+   "id": "16",
+   "role": "content",
+   "status": "filled",
+   "section_id": "4",
+   "lead_message": {
+    "text": "The pilot is designed to produce all four measurable signposts that would change the recommendation",
+    "count_word": 4,
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "rationale": "Four signposts on the same three criteria -> comparison table",
+   "unit_line": "**Signposts the board asked for**, with the thresholds that would move the decision either way",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Today",
+     "Move toward exclusivity if…",
+     "Move away from the OEM if…"
+    ],
+    "rows": [
+     {
+      "label": "Verified OEM shipments",
+      "cells": [
+       {
+        "text": "Unaudited forecast; no purchase orders"
+       },
+       {
+        "text": "Audited run-rate ≥ ~8,800 robots a year: exclusivity pays even at 70% overlap"
+       },
+       {
+        "text": "Run-rate < ~3,300 a year (N) or ~4,100 a year (X): royalties do not cover $0.9M of engineering"
+       }
+      ]
+     },
+     {
+      "label": "Realised direct-channel overlap",
+      "cells": [
+       {
+        "text": "0% (CEO) against 30–70% (Sales); no customer IDs"
+       },
+       {
+        "text": "Measured ≤ 30%: breakeven falls to ~6,100 robots a year"
+       },
+       {
+        "text": "Measured ≥ 70%: breakeven ~8,800 a year; insist on carving out other-OEM customers"
+       }
+      ]
+     },
+     {
+      "label": "Support cost per device",
+      "cells": [
+       {
+        "text": "$80 estimate"
+       },
+       {
+        "text": "Pilot confirms ≤ $80 and the $0.9M a year of engineering holds"
+       },
+       {
+        "text": "Above ~$107 a robot, X loses value even at plan volume with 70% overlap (~$166 at 30%)"
+       }
+      ]
+     },
+     {
+      "label": "Audit right",
+      "cells": [
+       {
+        "text": "Absent from draft"
+       },
+       {
+        "text": "Shipment-level independent audit agreed and the first audit reconciles"
+       },
+       {
+        "text": "No satisfactory audit right: no exclusivity at any reported volume"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Thresholds from the p. 7 breakeven formula. Support-cost threshold = ($3.0M − $0.9M − overlap × $1.476M) ÷ 10,000 robots = $107 (70%) or $166 (30%) a robot. Source: board briefing pack §7; team analysis"
+   ]
+  },
+  {
+   "id": "17",
+   "role": "content",
+   "status": "filled",
+   "section_id": "4",
+   "lead_message": {
+    "text": "The recommendation holds under its key assumptions; the fallback limits the downside of the main risk, an OEM walkout",
+    "clauses": 2
+   },
+   "message_type": "argument",
+   "archetype": "text-columns",
+   "rationale": "Two sides of one robustness claim (assumptions, risks) -> two text columns",
+   "unit_line": "**Robustness of the recommendation**: assumptions with the direction of their bias, and risks with their mitigation",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "Key assumptions, and which way each biases the answer",
+      "detail": [
+       "**$0.9M a year of engineering for all of 2027–29 on every OEM route:** conservative, equal across X, N and M; the $0.45M assessment, needed for any OEM production route, is neutral across them",
+       "**30–70% overlap applied to the $1.8M direct ARR, 2028 cohort only in the base case:** favours X (a floor on the lost margin)",
+       "**82% direct gross margin, before unquantified sales support:** slightly overstates direct value",
+       "**N's $350 and partner volumes persist beyond 12 months:** favours N; shown as an upper bound",
+       "**No discounting; headroom counts deal cash only:** per the board; rest-of-business burn is not in the pack"
+      ]
+     },
+     {
+      "header": "Risks and mitigations: the OEM walking away matters most",
+      "emphasis": true,
+      "detail": [
+       "**The OEM rejects N and M and signs with a competitor (limited leverage):** M is the OEM's own proposal; trade price, scope and term; the fallback is direct sales plus the integration pilot",
+       "**Certification slips past September 2027:** start the assessment now; release triggers; no exclusivity until passed",
+       "**Royalty reporting lag squeezes cash to $0.55M of headroom:** monthly remittance, phased engineering, OEM-funded integration work",
+       "**Support cost, engineering effort or OEM volumes miss the estimate or plan:** measure in the pilot and reprice before conversion; Gate 2 uses audited volumes, with a royalty floor after conversion",
+       "**The competitor claim proves causal after all:** gated M still captures exclusivity benefits once proven"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Source: board briefing pack §2–7; team analysis"
+   ]
+  },
+  {
+   "id": "18",
+   "role": "content",
+   "status": "filled",
+   "section_id": "4",
+   "lead_message": {
+    "text": "Start certification now because every OEM route depends on it; bring the gated N→M term sheet to the April 2027 board"
+   },
+   "message_type": "time-series",
+   "archetype": "data-table",
+   "rationale": "Dated actions with owners and outputs -> data table in time order",
+   "unit_line": "**Decisions requested today:** reject Option X as drafted · authorise management to negotiate N with the M gates and must-haves · approve the $0.45M assessment",
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "Action",
+     "Proposed owner",
+     "Output or decision point"
+    ],
+    "rows": [
+     {
+      "label": "Nov–Dec 2026",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Engage the security and industrial-safety assessor ($0.45M)"
+       },
+       {
+        "text": "CTO / Engineering"
+       },
+       {
+        "text": "Signed scope; plan to Sep 2027"
+       }
+      ]
+     },
+     {
+      "label": "Dec 2026–Mar 2027",
+      "cells": [
+       {
+        "text": "Add customer-level identifiers to pipeline and OEM reports"
+       },
+       {
+        "text": "Sales + Finance"
+       },
+       {
+        "text": "Baseline for measuring overlap"
+       }
+      ]
+     },
+     {
+      "label": "Jan–Mar 2027",
+      "cells": [
+       {
+        "text": "Negotiate N: audit, escrow, release, gates, carve-outs"
+       },
+       {
+        "text": "Partnerships + Legal"
+       },
+       {
+        "text": "Term sheet for board approval"
+       }
+      ]
+     },
+     {
+      "label": "Jan–Mar 2027 ",
+      "cells": [
+       {
+        "text": "Replace the CFO dashboard with full incremental margin"
+       },
+       {
+        "text": "CFO"
+       },
+       {
+        "text": "Royalty − $80 a robot − $0.9M − lost direct margin"
+       }
+      ]
+     },
+     {
+      "label": "Apr 2027",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Board decision: approve N→M or a fallback"
+       },
+       {
+        "text": "Board"
+       },
+       {
+        "text": "Signed pilot, or direct + integration pilot"
+       }
+      ]
+     },
+     {
+      "label": "Sep 2027",
+      "cells": [
+       {
+        "text": "Certification in OEM hardware, loaded and at peak"
+       },
+       {
+        "text": "Engineering"
+       },
+       {
+        "text": "Gate 1"
+       }
+      ]
+     },
+     {
+      "label": "Q4 2027–Q1 2028",
+      "cells": [
+       {
+        "text": "Two audited quarters of shipments; support-cost readout"
+       },
+       {
+        "text": "Finance"
+       },
+       {
+        "text": "Gate 2 evidence"
+       }
+      ]
+     },
+     {
+      "label": "~Q2 2028",
+      "cells": [
+       {
+        "text": "Gate review: convert to M, extend N or exit"
+       },
+       {
+        "text": "Board"
+       },
+       {
+        "text": "Exclusivity decision on evidence"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Approving the assessment now leaves $1.85M of headroom above the buffer. Owners are proposed. Source: board briefing pack §1, §2, §5; team analysis"
+   ]
+  },
+  {
+   "id": "app",
+   "role": "appendix_divider",
+   "status": "filled"
+  },
+  {
+   "id": "A",
+   "role": "backup",
+   "backup_of": "6",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Option X year-by-year economics under the plan and 65% stress cases",
+    "prefix": "Appendix A:"
+   },
+   "message_type": "component",
+   "archetype": "data-table",
+   "rationale": "Year-by-year build of the three-year values -> data table",
+   "unit_line": "**Option X economics**, $ millions, undiscounted; lost direct margin at 30% / 70% overlap, 2028 cohort only",
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "Plan 2027",
+     "Plan 2028",
+     "Plan 2029",
+     "Plan total",
+     "Stress 2027",
+     "Stress 2028",
+     "Stress 2029",
+     "Stress total"
+    ],
+    "rows": [
+     {
+      "label": "Robots shipped",
+      "cells": [
+       {
+        "text": "5,000"
+       },
+       {
+        "text": "10,000"
+       },
+       {
+        "text": "14,000"
+       },
+       {
+        "text": "29,000"
+       },
+       {
+        "text": "3,250"
+       },
+       {
+        "text": "6,500"
+       },
+       {
+        "text": "9,100"
+       },
+       {
+        "text": "18,850"
+       }
+      ]
+     },
+     {
+      "label": "Royalties earned ($300)",
+      "cells": [
+       {
+        "text": "1.50"
+       },
+       {
+        "text": "3.00"
+       },
+       {
+        "text": "4.20"
+       },
+       {
+        "text": "8.70"
+       },
+       {
+        "text": "0.98"
+       },
+       {
+        "text": "1.95"
+       },
+       {
+        "text": "2.73"
+       },
+       {
+        "text": "5.66"
+       }
+      ]
+     },
+     {
+      "label": "Variable support ($80)",
+      "cells": [
+       {
+        "text": "−0.40"
+       },
+       {
+        "text": "−0.80"
+       },
+       {
+        "text": "−1.12"
+       },
+       {
+        "text": "−2.32"
+       },
+       {
+        "text": "−0.26"
+       },
+       {
+        "text": "−0.52"
+       },
+       {
+        "text": "−0.73"
+       },
+       {
+        "text": "−1.51"
+       }
+      ]
+     },
+     {
+      "label": "OEM engineering",
+      "cells": [
+       {
+        "text": "−0.90"
+       },
+       {
+        "text": "−0.90"
+       },
+       {
+        "text": "−0.90"
+       },
+       {
+        "text": "−2.70"
+       },
+       {
+        "text": "−0.90"
+       },
+       {
+        "text": "−0.90"
+       },
+       {
+        "text": "−0.90"
+       },
+       {
+        "text": "−2.70"
+       }
+      ]
+     },
+     {
+      "label": "OEM contribution",
+      "cells": [
+       {
+        "text": "0.20"
+       },
+       {
+        "text": "1.30"
+       },
+       {
+        "text": "2.18"
+       },
+       {
+        "text": "3.68"
+       },
+       {
+        "text": "−0.19"
+       },
+       {
+        "text": "0.53"
+       },
+       {
+        "text": "1.10"
+       },
+       {
+        "text": "1.45"
+       }
+      ]
+     },
+     {
+      "label": "Security / safety assessment",
+      "cells": [
+       {
+        "text": "−0.45"
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": "−0.45"
+       },
+       {
+        "text": "−0.45"
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": "−0.45"
+       }
+      ]
+     },
+     {
+      "label": "Value before channel effects",
+      "cells": [
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": "3.23"
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": "1.00"
+       }
+      ]
+     },
+     {
+      "label": "Lost direct GM, 30% / 70%",
+      "cells": [
+       {
+        "text": ""
+       },
+       {
+        "text": "−0.44 / −1.03"
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": "−0.44 / −1.03"
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": "−0.44 / −1.03"
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": "−0.44 / −1.03"
+       }
+      ]
+     },
+     {
+      "label": "Exclusivity value, 30% / 70%",
+      "cells": [
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": "2.79 / 2.20"
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": "0.55 / −0.04"
+       }
+      ],
+      "highlight": true
+     },
+     {
+      "label": "Memo: cash incl. advance",
+      "cells": [
+       {
+        "text": "2.00"
+       },
+       {
+        "text": "2.50"
+       },
+       {
+        "text": "4.20"
+       },
+       {
+        "text": "8.70"
+       },
+       {
+        "text": "2.00"
+       },
+       {
+        "text": "0.93"
+       },
+       {
+        "text": "2.73"
+       },
+       {
+        "text": "5.66"
+       }
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Direct gross margin at risk = $1.8M new 2028 ARR × 82% = $1.476M; × 30% = $0.44M; × 70% = $1.03M. Totals may differ by ±0.01 (rounding). Source: board briefing pack §3–4; team analysis"
+   ]
+  },
+  {
+   "id": "B",
+   "role": "backup",
+   "backup_of": "7",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Formulas, data sources and the gaps the pilot should close",
+    "prefix": "Appendix B:"
+   },
+   "message_type": "structure",
+   "archetype": "text-columns",
+   "rationale": "Formulas and data gaps -> text columns",
+   "unit_line": "**Method**: formulas behind every number, and how each gap in the pack was handled",
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "Value formulas",
+      "detail": [
+       "Royalty cash (X) = royalties earned − advance credit still unrecouped (first $2.0M of royalties)",
+       "OEM contribution = robots × (royalty − $80) − $0.9M engineering a year",
+       "Exclusivity value = Σ contribution − $0.45M assessment − overlap × $1.8M × 82%",
+       "Breakeven robots a year = ($0.9M + overlap × $1.476M) ÷ ($300 − $80)"
+      ]
+     },
+     {
+      "header": "Parity, cash and uptime formulas",
+      "detail": [
+       "N parity volume = (X value + $2.7M + $0.45M) ÷ ($350 − $80)",
+       "Headroom = $4.9M − $2.6M + deal cash flows to end-2027",
+       "Downtime cut = 1 − (0.5% ÷ 1.2%) = 58%"
+      ]
+     },
+     {
+      "header": "Gaps bounded with ranges or sensitivities",
+      "detail": [
+       "Channel overlap: no customer-level data; Sales' 30–70% range used, bounded by 0% and 100%",
+       "Direct churn and later cohorts: not in the pack; base case counts the 2028 cohort only, with a 2029 renewal sensitivity on p. 6",
+       "Discount rate: not in the pack; no NPV is computed, per the board"
+      ]
+     },
+     {
+      "header": "Gaps treated qualitatively or as indicative",
+      "detail": [
+       "OEM enforcement terms and termination payment: not in the pack; treated qualitatively",
+       "Integration-firm royalty: not in the pack; treated as a nonexclusive complement, not valued",
+       "Rest-of-business cash burn: not in the pack; the $2.6M buffer is assumed to cover it",
+       "Pricing under N and M: the OEM will not guarantee it; shown as indicative"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Source: board briefing pack §1–7 and team analysis; the Calculations sheet of the source workbook holds every formula live"
+   ]
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "cash",
+   "slide_id": "13",
+   "label": "Unrestricted cash",
+   "value": 4.9,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "Boreal has $4.9M unrestricted cash and requires a $2.6M liquidity buffer for continued product development and customer support.",
+   "locator": "§2 Non-negotiable restrictions"
+  },
+  {
+   "id": "buffer",
+   "slide_id": "13",
+   "label": "Required liquidity buffer",
+   "value": 2.6,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "Boreal has $4.9M unrestricted cash and requires a $2.6M liquidity buffer for continued product development and customer support.",
+   "locator": "§2 Non-negotiable restrictions"
+  },
+  {
+   "id": "assess",
+   "slide_id": "6",
+   "label": "Security and industrial-safety assessment, one-time cost",
+   "value": 0.45,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "A security and industrial-safety assessment costing $0.45M must be completed before any large OEM production deployment.",
+   "locator": "§2 Non-negotiable restrictions"
+  },
+  {
+   "id": "f27",
+   "slide_id": "4",
+   "label": "OEM robots shipped, partner forecast, 2027",
+   "value": 5000,
+   "unit": "robots",
+   "source_id": "s1",
+   "excerpt": "\"Robots shipped, partner forecast\"; column 2027 = \"5,000\"",
+   "locator": "§3 OEM forecast table",
+   "period": "2027"
+  },
+  {
+   "id": "f28",
+   "slide_id": "4",
+   "label": "OEM robots shipped, partner forecast, 2028",
+   "value": 10000,
+   "unit": "robots",
+   "source_id": "s1",
+   "excerpt": "\"Robots shipped, partner forecast\"; column 2028 = \"10,000\"",
+   "locator": "§3 OEM forecast table",
+   "period": "2028"
+  },
+  {
+   "id": "f29",
+   "slide_id": "4",
+   "label": "OEM robots shipped, partner forecast, 2029",
+   "value": 14000,
+   "unit": "robots",
+   "source_id": "s1",
+   "excerpt": "\"Robots shipped, partner forecast\"; column 2029 = \"14,000\"",
+   "locator": "§3 OEM forecast table",
+   "period": "2029"
+  },
+  {
+   "id": "r27",
+   "slide_id": "4",
+   "label": "Nominal royalty at $300 per robot, plan, 2027",
+   "value": 1.5,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "\"Nominal royalty at $300/robot\"; column 2027 = \"$1.50M\"",
+   "locator": "§3 OEM forecast table",
+   "period": "2027"
+  },
+  {
+   "id": "r28",
+   "slide_id": "4",
+   "label": "Nominal royalty at $300 per robot, plan, 2028",
+   "value": 3.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "\"Nominal royalty at $300/robot\"; column 2028 = \"$3.00M\"",
+   "locator": "§3 OEM forecast table",
+   "period": "2028"
+  },
+  {
+   "id": "r29",
+   "slide_id": "4",
+   "label": "Nominal royalty at $300 per robot, plan, 2029",
+   "value": 4.2,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "\"Nominal royalty at $300/robot\"; column 2029 = \"$4.20M\"",
+   "locator": "§3 OEM forecast table",
+   "period": "2029"
+  },
+  {
+   "id": "sup",
+   "slide_id": "5",
+   "label": "Variable support cost per shipped robot",
+   "value": 80,
+   "unit": "$",
+   "source_id": "s1",
+   "excerpt": "\"Support variable cost per robot\"; column 2027 = \"$80\"",
+   "locator": "§3 OEM forecast table"
+  },
+  {
+   "id": "roy",
+   "slide_id": "4",
+   "label": "Option X royalty per robot shipped",
+   "value": 300,
+   "unit": "$",
+   "source_id": "s1",
+   "excerpt": "The OEM proposes three years of exclusive distribution in North America, a $2.0M payment at signing and a $300 royalty per robot shipped.",
+   "locator": "§1 The proposed deal"
+  },
+  {
+   "id": "adv",
+   "slide_id": "4",
+   "label": "Payment at signing (advance minimum guarantee)",
+   "value": 2.0,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "The OEM proposes three years of exclusive distribution in North America, a $2.0M payment at signing and a $300 royalty per robot shipped.",
+   "locator": "§1 The proposed deal",
+   "definition": "recoupable advance credited against the first $2.0M of earned royalties (§3)"
+  },
+  {
+   "id": "st",
+   "slide_id": "6",
+   "label": "Low case: share of partner forecast volumes",
+   "value": 0.65,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "The board wants the economics of the advance credit explained without double-counting, a comparison with the direct and nonexclusive channels, and a low-case test at 65% of projected shipments.",
+   "locator": "§7 Decision requirements"
+  },
+  {
+   "id": "eng",
+   "slide_id": "5",
+   "label": "OEM-specific engineering, quality and support effort per year",
+   "value": 0.9,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "Boreal also expects $0.9M per year of OEM-specific engineering, quality and support effort once deployments begin, in addition to $80 variable support cost per shipped robot.",
+   "locator": "§3 OEM forecast and deal economics"
+  },
+  {
+   "id": "arr",
+   "slide_id": "5",
+   "label": "New direct software ARR in the exclusivity area, 2028",
+   "value": 1.8,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "Boreal expects to generate approximately $1.8M of new direct software ARR in 2028 from customers in the exclusivity area that might instead be routed through the OEM.",
+   "locator": "§4 Direct channel economics",
+   "period": "2028"
+  },
+  {
+   "id": "gm",
+   "slide_id": "5",
+   "label": "Direct gross margin on new ARR",
+   "value": 0.82,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "Finance uses 82% direct gross margin on that ARR before incremental sales support",
+   "locator": "§4 Direct channel economics"
+  },
+  {
+   "id": "ov30",
+   "slide_id": "6",
+   "label": "Channel overlap, Sales low estimate",
+   "value": 0.3,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "The CEO says the OEM channel is entirely incremental, but Sales estimates that 30–70% of OEM buyers could overlap with its direct pipeline.",
+   "locator": "§4 Direct channel economics"
+  },
+  {
+   "id": "ov70",
+   "slide_id": "6",
+   "label": "Channel overlap, Sales high estimate",
+   "value": 0.7,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "The CEO says the OEM channel is entirely incremental, but Sales estimates that 30–70% of OEM buyers could overlap with its direct pipeline.",
+   "locator": "§4 Direct channel economics"
+  },
+  {
+   "id": "integ",
+   "slide_id": "11",
+   "label": "Integration firm nonexclusive pilot size",
+   "value": 1200,
+   "unit": "robots",
+   "source_id": "s1",
+   "excerpt": "A separate industrial integration firm has offered a smaller nonexclusive pilot for 1,200 robots, with a $0.22M support budget and no minimum guarantee.",
+   "locator": "§4 Direct channel economics"
+  },
+  {
+   "id": "integ_sup",
+   "slide_id": "15",
+   "label": "Integration firm pilot support budget",
+   "value": 0.22,
+   "unit": "$M",
+   "source_id": "s1",
+   "excerpt": "A separate industrial integration firm has offered a smaller nonexclusive pilot for 1,200 robots, with a $0.22M support budget and no minimum guarantee.",
+   "locator": "§4 Direct channel economics"
+  },
+  {
+   "id": "uptime",
+   "slide_id": "8",
+   "label": "Lab trial uptime (60 robots, twelve weeks)",
+   "value": 0.988,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "A twelve-week lab trial on 60 robots had 98.8% uptime, but the OEM's required production acceptance is 99.5% uptime and documented safe-stop performance in a fully loaded warehouse.",
+   "locator": "§5 Evidence from the commercial pilot"
+  },
+  {
+   "id": "bar",
+   "slide_id": "8",
+   "label": "OEM production acceptance uptime",
+   "value": 0.995,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "A twelve-week lab trial on 60 robots had 98.8% uptime, but the OEM's required production acceptance is 99.5% uptime and documented safe-stop performance in a fully loaded warehouse.",
+   "locator": "§5 Evidence from the commercial pilot"
+  },
+  {
+   "id": "trial_n",
+   "slide_id": "8",
+   "label": "Robots in the lab trial",
+   "value": 60,
+   "unit": "robots",
+   "source_id": "s1",
+   "excerpt": "A twelve-week lab trial on 60 robots had 98.8% uptime",
+   "locator": "§5 Evidence from the commercial pilot"
+  },
+  {
+   "id": "dash",
+   "slide_id": "5",
+   "label": "Gross margin on the royalty in the CFO dashboard",
+   "value": 1.0,
+   "unit": "%",
+   "source_id": "s1",
+   "excerpt": "The CFO's \"partner contribution margin\" dashboard reports 100% gross margin on the $300 royalty; it excludes $80 per-robot support, dedicated $0.9M annual engineering and the potential lost direct channel.",
+   "locator": "§5 Evidence from the commercial pilot"
+  },
+  {
+   "id": "booked",
+   "slide_id": "9",
+   "label": "OEM robots called 'booked devices' in the competitor deck",
+   "value": 14000,
+   "unit": "robots",
+   "source_id": "s1",
+   "excerpt": "The competitor deck also calls the OEM's expected 14,000 future robots \"booked devices\" although customers have not yet issued purchase orders.",
+   "locator": "§5 Evidence from the commercial pilot"
+  },
+  {
+   "id": "nroy",
+   "slide_id": "7",
+   "label": "Option N royalty per shipped robot",
+   "value": 350,
+   "unit": "$",
+   "source_id": "s1",
+   "excerpt": "Option N is a 12-month nonexclusive pilot, $350 per shipped robot and no upfront guarantee",
+   "locator": "§6 Internal negotiation options"
+  },
+  {
+   "id": "nmonths",
+   "slide_id": "11",
+   "label": "Option N pilot length",
+   "value": 12,
+   "unit": "months",
+   "source_id": "s1",
+   "excerpt": "Option N is a 12-month nonexclusive pilot, $350 per shipped robot and no upfront guarantee",
+   "locator": "§6 Internal negotiation options"
+  },
+  {
+   "id": "mgate",
+   "slide_id": "7",
+   "label": "Option M volume gate proposed by the OEM, annualized",
+   "value": 5000,
+   "unit": "robots",
+   "source_id": "s1",
+   "excerpt": "Option M, grants exclusivity only after certification and two consecutive quarters above 5,000 shipped robots annualized",
+   "locator": "§6 Internal negotiation options"
+  },
+  {
+   "id": "ov0",
+   "slide_id": "6",
+   "label": "Channel overlap, CEO view (entirely incremental), lower bound",
+   "value": 0.0,
+   "unit": "%",
+   "source_id": "s2",
+   "excerpt": "Channel overlap: no customer-level data. We used Sales' 30–70% range, bounded by 0% and 100%.",
+   "locator": "Analysis, Appendix B"
+  },
+  {
+   "id": "ov100",
+   "slide_id": "6",
+   "label": "Channel overlap, upper bound (all displaced)",
+   "value": 1.0,
+   "unit": "%",
+   "source_id": "s2",
+   "excerpt": "Channel overlap: no customer-level data. We used Sales' 30–70% range, bounded by 0% and 100%.",
+   "locator": "Analysis, Appendix B"
+  },
+  {
+   "id": "hrs",
+   "slide_id": "8",
+   "label": "Operating hours per robot-year assumed (24/7)",
+   "value": 8760,
+   "unit": "hours",
+   "source_id": "s2",
+   "excerpt": "Downtime hours assume 24/7 operation (8,760 h/yr).",
+   "locator": "Analysis, slide 8 source line",
+   "estimate": true,
+   "calc": "365 * 24",
+   "assumptions": [
+    "Robots operate 24 hours a day, 365 days a year (analysis assumption)"
+   ]
+  },
+  {
+   "id": "weeks",
+   "slide_id": "8",
+   "label": "Lab trial length",
+   "value": 12,
+   "unit": "weeks",
+   "source_id": "s2",
+   "excerpt": "Lab uptime: 60 robots, 12 weeks",
+   "locator": "Analysis, slide 8 (pack §5: 'twelve-week lab trial')"
+  },
+  {
+   "id": "step10",
+   "slide_id": "9",
+   "label": "Overlap step used to size the sensitivity",
+   "value": 0.1,
+   "unit": "%",
+   "source_id": "s2",
+   "excerpt": "Each 10 points of overlap is worth ~$0.15M a year of displaced direct gross margin ($1.8M × 82% × 10%).",
+   "locator": "Analysis, slide 9"
+  },
+  {
+   "id": "gate_q",
+   "slide_id": "14",
+   "label": "Gate 2 volume: audited robots per quarter",
+   "value": 2250,
+   "unit": "robots",
+   "source_id": "s2",
+   "excerpt": "Two consecutive audited quarters of ≥ 2,250 robots (~9,000/yr), at or above breakeven at 70% overlap.",
+   "locator": "Analysis, slide 14, Gate 2",
+   "definition": "the analysis's proposed gate, rounded up from the 8,787-robot breakeven at 70% overlap"
+  },
+  {
+   "id": "gate_y",
+   "slide_id": "7",
+   "label": "Gate 2 volume, annualized",
+   "value": 9000,
+   "unit": "robots",
+   "source_id": "s2",
+   "excerpt": "Two consecutive audited quarters of ≥ 2,250 robots (~9,000/yr), at or above breakeven at 70% overlap.",
+   "locator": "Analysis, slide 14, Gate 2"
+  },
+  {
+   "id": "fwd",
+   "slide_id": "4",
+   "label": "Cash the advance brings forward into 2027",
+   "value": 1.5,
+   "unit": "$M",
+   "source_id": "s2",
+   "excerpt": "What the advance buys: timing only. It brings $1.5–2.0M of cash forward into 2027",
+   "locator": "Analysis, slide 4 sidebar",
+   "value_high": 2.0
+  },
+  {
+   "id": "pl_rob",
+   "slide_id": "4",
+   "label": "OEM robots shipped 2027–29, plan",
+   "value": 29000,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "f27 + f28 + f29",
+   "derived_from": [
+    "f27",
+    "f28",
+    "f29"
+   ],
+   "formula": "5,000 + 10,000 + 14,000"
+  },
+  {
+   "id": "st27",
+   "slide_id": "4",
+   "label": "OEM robots shipped, 65% stress, 2027",
+   "value": 3250,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "f27 * st",
+   "derived_from": [
+    "f27",
+    "st"
+   ],
+   "formula": "plan 2027 × 65%",
+   "period": "2027"
+  },
+  {
+   "id": "st28",
+   "slide_id": "4",
+   "label": "OEM robots shipped, 65% stress, 2028",
+   "value": 6500,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "f28 * st",
+   "derived_from": [
+    "f28",
+    "st"
+   ],
+   "formula": "plan 2028 × 65%",
+   "period": "2028"
+  },
+  {
+   "id": "st29",
+   "slide_id": "4",
+   "label": "OEM robots shipped, 65% stress, 2029",
+   "value": 9100,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "f29 * st",
+   "derived_from": [
+    "f29",
+    "st"
+   ],
+   "formula": "plan 2029 × 65%",
+   "period": "2029"
+  },
+  {
+   "id": "st_rob",
+   "slide_id": "4",
+   "label": "OEM robots shipped 2027–29, 65% stress",
+   "value": 18850,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "st27 + st28 + st29",
+   "derived_from": [
+    "st27",
+    "st28",
+    "st29"
+   ],
+   "formula": "sum of stress years"
+  },
+  {
+   "id": "pl_roy",
+   "slide_id": "4",
+   "label": "Royalties earned 2027–29, plan",
+   "value": 8.7,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "r27 + r28 + r29",
+   "derived_from": [
+    "r27",
+    "r28",
+    "r29"
+   ],
+   "formula": "1.50 + 3.00 + 4.20"
+  },
+  {
+   "id": "st27r",
+   "slide_id": "4",
+   "label": "Royalties earned, 65% stress, 2027",
+   "value": 0.975,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st27 * roy / 1000000",
+   "derived_from": [
+    "st27",
+    "roy"
+   ],
+   "formula": "stress robots 2027 × $300",
+   "period": "2027",
+   "definition": "pack §3 shows $0.97M for 2027 and the analysis $0.98M: both round the same $0.975M"
+  },
+  {
+   "id": "st28r",
+   "slide_id": "4",
+   "label": "Royalties earned, 65% stress, 2028",
+   "value": 1.95,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st28 * roy / 1000000",
+   "derived_from": [
+    "st28",
+    "roy"
+   ],
+   "formula": "stress robots 2028 × $300",
+   "period": "2028"
+  },
+  {
+   "id": "st29r",
+   "slide_id": "4",
+   "label": "Royalties earned, 65% stress, 2029",
+   "value": 2.73,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st29 * roy / 1000000",
+   "derived_from": [
+    "st29",
+    "roy"
+   ],
+   "formula": "stress robots 2029 × $300",
+   "period": "2029"
+  },
+  {
+   "id": "st_roy",
+   "slide_id": "4",
+   "label": "Royalties earned 2027–29, 65% stress",
+   "value": 5.655,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st27r + st28r + st29r",
+   "derived_from": [
+    "st27r",
+    "st28r",
+    "st29r"
+   ],
+   "formula": "sum of stress years"
+  },
+  {
+   "id": "rem28",
+   "slide_id": "4",
+   "label": "Advance credit still to recoup in 2028, plan",
+   "value": 0.5,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "adv - r27",
+   "derived_from": [
+    "adv",
+    "r27"
+   ],
+   "formula": "$2.0M − $1.5M of 2027 royalties"
+  },
+  {
+   "id": "cash28",
+   "slide_id": "4",
+   "label": "Royalty cash received 2028, plan (net of credit)",
+   "value": 2.5,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "r28 - rem28",
+   "derived_from": [
+    "r28",
+    "rem28"
+   ],
+   "formula": "3.00 − 0.50"
+  },
+  {
+   "id": "pl_rcash",
+   "slide_id": "4",
+   "label": "Royalty cash received 2027–29, plan",
+   "value": 6.7,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "cash28 + r29",
+   "derived_from": [
+    "cash28",
+    "r29"
+   ],
+   "formula": "0 + 2.50 + 4.20"
+  },
+  {
+   "id": "pl_cash",
+   "slide_id": "4",
+   "label": "Total OEM cash 2027–29 incl. advance, plan",
+   "value": 8.7,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "adv + cash28 + r29",
+   "derived_from": [
+    "adv",
+    "cash28",
+    "r29"
+   ],
+   "formula": "2.00 + 2.50 + 4.20"
+  },
+  {
+   "id": "rem28s",
+   "slide_id": "4",
+   "label": "Advance credit still to recoup in 2028, stress",
+   "value": 1.025,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "adv - st27r",
+   "derived_from": [
+    "adv",
+    "st27r"
+   ],
+   "formula": "$2.0M − $0.975M"
+  },
+  {
+   "id": "cash28s",
+   "slide_id": "4",
+   "label": "Royalty cash received 2028, stress",
+   "value": 0.925,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st28r - rem28s",
+   "derived_from": [
+    "st28r",
+    "rem28s"
+   ],
+   "formula": "1.95 − 1.025"
+  },
+  {
+   "id": "st_rcash",
+   "slide_id": "4",
+   "label": "Royalty cash received 2027–29, stress",
+   "value": 3.655,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "cash28s + st29r",
+   "derived_from": [
+    "cash28s",
+    "st29r"
+   ],
+   "formula": "0 + 0.925 + 2.73"
+  },
+  {
+   "id": "st_cash",
+   "slide_id": "4",
+   "label": "Total OEM cash 2027–29 incl. advance, stress",
+   "value": 5.655,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "adv + cash28s + st29r",
+   "derived_from": [
+    "adv",
+    "cash28s",
+    "st29r"
+   ],
+   "formula": "2.00 + 0.925 + 2.73"
+  },
+  {
+   "id": "framing",
+   "slide_id": "4",
+   "label": "Three-year OEM income implied by the 'revenue win plus recurring royalties' framing",
+   "value": 10.7,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "adv + pl_roy",
+   "derived_from": [
+    "adv",
+    "pl_roy"
+   ],
+   "formula": "$2.0M advance counted on top of $8.7M of royalties"
+  },
+  {
+   "id": "overst",
+   "slide_id": "4",
+   "label": "Overstatement of three-year OEM income in the framing",
+   "value": 0.23,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "adv / pl_cash",
+   "derived_from": [
+    "adv",
+    "pl_cash"
+   ],
+   "formula": "$2.0M ÷ $8.7M"
+  },
+  {
+   "id": "rev27x",
+   "slide_id": "4",
+   "label": "2027 'revenue' if the advance were counted as revenue",
+   "value": 3.5,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "r27 + adv",
+   "derived_from": [
+    "r27",
+    "adv"
+   ],
+   "formula": "$1.5M + $2.0M"
+  },
+  {
+   "id": "zero",
+   "slide_id": "4",
+   "label": "Advance credit applied in 2029, plan",
+   "value": 0.0,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "adv - r27 - rem28",
+   "derived_from": [
+    "adv",
+    "r27",
+    "rem28"
+   ],
+   "formula": "fully recouped by end-2028"
+  },
+  {
+   "id": "cu",
+   "slide_id": "5",
+   "label": "Option X contribution per robot after support",
+   "value": 220,
+   "unit": "$",
+   "source_id": "s3",
+   "calc": "roy - sup",
+   "derived_from": [
+    "roy",
+    "sup"
+   ],
+   "formula": "$300 − $80"
+  },
+  {
+   "id": "cshare",
+   "slide_id": "5",
+   "label": "Option X contribution per robot as share of royalty",
+   "value": 0.73,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "cu / roy",
+   "derived_from": [
+    "cu",
+    "roy"
+   ],
+   "formula": "$220 ÷ $300"
+  },
+  {
+   "id": "sup28",
+   "slide_id": "5",
+   "label": "Variable support cost 2028, plan",
+   "value": 0.8,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "f28 * sup / 1000000",
+   "derived_from": [
+    "f28",
+    "sup"
+   ],
+   "formula": "10,000 × $80"
+  },
+  {
+   "id": "contr28",
+   "slide_id": "5",
+   "label": "OEM contribution 2028, plan",
+   "value": 1.3,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "r28 - sup28 - eng",
+   "derived_from": [
+    "r28",
+    "sup28",
+    "eng"
+   ],
+   "formula": "3.00 − 0.80 − 0.90"
+  },
+  {
+   "id": "dgm",
+   "slide_id": "5",
+   "label": "Direct gross margin at risk on new 2028 ARR",
+   "value": 1.476,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "arr * gm",
+   "derived_from": [
+    "arr",
+    "gm"
+   ],
+   "formula": "$1.8M × 82%"
+  },
+  {
+   "id": "ov50",
+   "slide_id": "5",
+   "label": "Channel overlap, midpoint of Sales' range",
+   "value": 0.5,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "(ov30 + ov70) / 2",
+   "derived_from": [
+    "ov30",
+    "ov70"
+   ],
+   "formula": "midpoint of 30–70%"
+  },
+  {
+   "id": "lost50",
+   "slide_id": "5",
+   "label": "Displaced direct gross margin at 50% overlap",
+   "value": 0.738,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "ov50 * dgm",
+   "derived_from": [
+    "ov50",
+    "dgm"
+   ],
+   "formula": "50% × $1.476M"
+  },
+  {
+   "id": "lost30",
+   "slide_id": "6",
+   "label": "Displaced direct gross margin at 30% overlap",
+   "value": 0.4428,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "ov30 * dgm",
+   "derived_from": [
+    "ov30",
+    "dgm"
+   ],
+   "formula": "30% × $1.476M"
+  },
+  {
+   "id": "lost70",
+   "slide_id": "6",
+   "label": "Displaced direct gross margin at 70% overlap",
+   "value": 1.0332,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "ov70 * dgm",
+   "derived_from": [
+    "ov70",
+    "dgm"
+   ],
+   "formula": "70% × $1.476M"
+  },
+  {
+   "id": "inc50",
+   "slide_id": "5",
+   "label": "Incremental value of 2028 royalties after full costs, plan, 50% overlap",
+   "value": 0.562,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "contr28 - lost50",
+   "derived_from": [
+    "contr28",
+    "lost50"
+   ],
+   "formula": "1.30 − 0.738"
+  },
+  {
+   "id": "incsh",
+   "slide_id": "5",
+   "label": "Incremental value as share of 2028 royalties, plan, 50% overlap",
+   "value": 0.19,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "inc50 / r28",
+   "derived_from": [
+    "inc50",
+    "r28"
+   ],
+   "formula": "$0.562M ÷ $3.00M"
+  },
+  {
+   "id": "inc30",
+   "slide_id": "5",
+   "label": "Incremental value 2028, plan, 30% overlap",
+   "value": 0.857,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "contr28 - lost30",
+   "derived_from": [
+    "contr28",
+    "lost30"
+   ],
+   "formula": "1.30 − 0.443"
+  },
+  {
+   "id": "inc70",
+   "slide_id": "5",
+   "label": "Incremental value 2028, plan, 70% overlap",
+   "value": 0.267,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "contr28 - lost70",
+   "derived_from": [
+    "contr28",
+    "lost70"
+   ],
+   "formula": "1.30 − 1.033"
+  },
+  {
+   "id": "sup28s",
+   "slide_id": "5",
+   "label": "Variable support cost 2028, stress",
+   "value": 0.52,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st28 * sup / 1000000",
+   "derived_from": [
+    "st28",
+    "sup"
+   ],
+   "formula": "6,500 × $80"
+  },
+  {
+   "id": "inc50s",
+   "slide_id": "5",
+   "label": "Incremental value 2028, 65% stress, 50% overlap",
+   "value": -0.208,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st28r - sup28s - eng - lost50",
+   "derived_from": [
+    "st28r",
+    "sup28s",
+    "eng",
+    "lost50"
+   ],
+   "formula": "1.95 − 0.52 − 0.90 − 0.74"
+  },
+  {
+   "id": "w_sup",
+   "slide_id": "5",
+   "label": "Waterfall step: variable support 2028",
+   "value": -0.8,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "0 - sup28",
+   "derived_from": [
+    "sup28"
+   ],
+   "formula": "−(10,000 × $80)"
+  },
+  {
+   "id": "w_eng",
+   "slide_id": "5",
+   "label": "Waterfall step: OEM-specific engineering 2028",
+   "value": -0.9,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "0 - eng",
+   "derived_from": [
+    "eng"
+   ],
+   "formula": "−$0.9M"
+  },
+  {
+   "id": "w_lost",
+   "slide_id": "5",
+   "label": "Waterfall step: displaced direct gross margin, 50% overlap",
+   "value": -0.738,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "0 - lost50",
+   "derived_from": [
+    "lost50"
+   ],
+   "formula": "−$0.738M"
+  },
+  {
+   "id": "sup27",
+   "slide_id": "13",
+   "label": "Variable support cost 2027, plan",
+   "value": 0.4,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "f27 * sup / 1000000",
+   "derived_from": [
+    "f27",
+    "sup"
+   ],
+   "formula": "5,000 × $80"
+  },
+  {
+   "id": "sup29",
+   "slide_id": "A",
+   "label": "Variable support cost 2029, plan",
+   "value": 1.12,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "f29 * sup / 1000000",
+   "derived_from": [
+    "f29",
+    "sup"
+   ],
+   "formula": "14,000 × $80"
+  },
+  {
+   "id": "pl_sup",
+   "slide_id": "A",
+   "label": "Variable support cost 2027–29, plan",
+   "value": 2.32,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_rob * sup / 1000000",
+   "derived_from": [
+    "pl_rob",
+    "sup"
+   ],
+   "formula": "29,000 × $80"
+  },
+  {
+   "id": "eng3",
+   "slide_id": "6",
+   "label": "OEM engineering 2027–29 (full years)",
+   "value": 2.7,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "eng * 3",
+   "derived_from": [
+    "eng"
+   ],
+   "formula": "$0.9M × 3 years",
+   "assumptions": [
+    "Full-year engineering from 2027 on every OEM route (conservative; equal across X, N and M)"
+   ]
+  },
+  {
+   "id": "contr27",
+   "slide_id": "A",
+   "label": "OEM contribution 2027, plan",
+   "value": 0.2,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "r27 - sup27 - eng",
+   "derived_from": [
+    "r27",
+    "sup27",
+    "eng"
+   ],
+   "formula": "1.50 − 0.40 − 0.90"
+  },
+  {
+   "id": "contr29",
+   "slide_id": "A",
+   "label": "OEM contribution 2029, plan",
+   "value": 2.18,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "r29 - sup29 - eng",
+   "derived_from": [
+    "r29",
+    "sup29",
+    "eng"
+   ],
+   "formula": "4.20 − 1.12 − 0.90"
+  },
+  {
+   "id": "pl_contr",
+   "slide_id": "A",
+   "label": "OEM contribution 2027–29, plan",
+   "value": 3.68,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_roy - pl_sup - eng3",
+   "derived_from": [
+    "pl_roy",
+    "pl_sup",
+    "eng3"
+   ],
+   "formula": "8.70 − 2.32 − 2.70"
+  },
+  {
+   "id": "pl_v0",
+   "slide_id": "6",
+   "label": "Option X value 2027–29 before channel effects, plan",
+   "value": 3.23,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_contr - assess",
+   "derived_from": [
+    "pl_contr",
+    "assess"
+   ],
+   "formula": "3.68 − 0.45"
+  },
+  {
+   "id": "sup27s",
+   "slide_id": "A",
+   "label": "Variable support cost 2027, stress",
+   "value": 0.26,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st27 * sup / 1000000",
+   "derived_from": [
+    "st27",
+    "sup"
+   ],
+   "formula": "3,250 × $80"
+  },
+  {
+   "id": "sup29s",
+   "slide_id": "A",
+   "label": "Variable support cost 2029, stress",
+   "value": 0.728,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st29 * sup / 1000000",
+   "derived_from": [
+    "st29",
+    "sup"
+   ],
+   "formula": "9,100 × $80"
+  },
+  {
+   "id": "st_sup",
+   "slide_id": "A",
+   "label": "Variable support cost 2027–29, stress",
+   "value": 1.508,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_rob * sup / 1000000",
+   "derived_from": [
+    "st_rob",
+    "sup"
+   ],
+   "formula": "18,850 × $80"
+  },
+  {
+   "id": "contr27s",
+   "slide_id": "A",
+   "label": "OEM contribution 2027, stress",
+   "value": -0.185,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st27r - sup27s - eng",
+   "derived_from": [
+    "st27r",
+    "sup27s",
+    "eng"
+   ],
+   "formula": "0.975 − 0.26 − 0.90"
+  },
+  {
+   "id": "contr28s",
+   "slide_id": "A",
+   "label": "OEM contribution 2028, stress",
+   "value": 0.53,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st28r - sup28s - eng",
+   "derived_from": [
+    "st28r",
+    "sup28s",
+    "eng"
+   ],
+   "formula": "1.95 − 0.52 − 0.90"
+  },
+  {
+   "id": "contr29s",
+   "slide_id": "A",
+   "label": "OEM contribution 2029, stress",
+   "value": 1.102,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st29r - sup29s - eng",
+   "derived_from": [
+    "st29r",
+    "sup29s",
+    "eng"
+   ],
+   "formula": "2.73 − 0.728 − 0.90"
+  },
+  {
+   "id": "st_contr",
+   "slide_id": "A",
+   "label": "OEM contribution 2027–29, stress",
+   "value": 1.447,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_roy - st_sup - eng3",
+   "derived_from": [
+    "st_roy",
+    "st_sup",
+    "eng3"
+   ],
+   "formula": "5.655 − 1.508 − 2.70"
+  },
+  {
+   "id": "st_v0",
+   "slide_id": "6",
+   "label": "Option X value 2027–29 before channel effects, stress",
+   "value": 0.997,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_contr - assess",
+   "derived_from": [
+    "st_contr",
+    "assess"
+   ],
+   "formula": "1.447 − 0.45"
+  },
+  {
+   "id": "pl_v30",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, plan, 30% overlap (2028 cohort only)",
+   "value": 2.787,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_v0 - lost30",
+   "derived_from": [
+    "pl_v0",
+    "lost30"
+   ],
+   "formula": "value before channel effects − 30% × $1.476M"
+  },
+  {
+   "id": "plB30",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, plan, 30% overlap, if lost 2028 customers renew in 2029",
+   "value": 2.344,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_v0 - lost30 * 2",
+   "derived_from": [
+    "pl_v0",
+    "lost30"
+   ],
+   "formula": "value before channel effects − 2 × 30% × $1.476M",
+   "assumptions": [
+    "Lost 2028 direct customers would also have renewed in 2029 (direct churn is not in the pack)"
+   ]
+  },
+  {
+   "id": "pl_v50",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, plan, 50% overlap (2028 cohort only)",
+   "value": 2.492,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_v0 - lost50",
+   "derived_from": [
+    "pl_v0",
+    "lost50"
+   ],
+   "formula": "value before channel effects − 50% × $1.476M"
+  },
+  {
+   "id": "plB50",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, plan, 50% overlap, if lost 2028 customers renew in 2029",
+   "value": 1.754,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_v0 - lost50 * 2",
+   "derived_from": [
+    "pl_v0",
+    "lost50"
+   ],
+   "formula": "value before channel effects − 2 × 50% × $1.476M",
+   "assumptions": [
+    "Lost 2028 direct customers would also have renewed in 2029 (direct churn is not in the pack)"
+   ]
+  },
+  {
+   "id": "pl_v70",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, plan, 70% overlap (2028 cohort only)",
+   "value": 2.197,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_v0 - lost70",
+   "derived_from": [
+    "pl_v0",
+    "lost70"
+   ],
+   "formula": "value before channel effects − 70% × $1.476M"
+  },
+  {
+   "id": "plB70",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, plan, 70% overlap, if lost 2028 customers renew in 2029",
+   "value": 1.164,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_v0 - lost70 * 2",
+   "derived_from": [
+    "pl_v0",
+    "lost70"
+   ],
+   "formula": "value before channel effects − 2 × 70% × $1.476M",
+   "assumptions": [
+    "Lost 2028 direct customers would also have renewed in 2029 (direct churn is not in the pack)"
+   ]
+  },
+  {
+   "id": "pl_v100",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, plan, 100% overlap (2028 cohort only)",
+   "value": 1.754,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_v0 - dgm",
+   "derived_from": [
+    "pl_v0",
+    "dgm"
+   ],
+   "formula": "value before channel effects − 100% × $1.476M"
+  },
+  {
+   "id": "plB100",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, plan, 100% overlap, if lost 2028 customers renew in 2029",
+   "value": 0.278,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_v0 - dgm * 2",
+   "derived_from": [
+    "pl_v0",
+    "dgm"
+   ],
+   "formula": "value before channel effects − 2 × 100% × $1.476M",
+   "assumptions": [
+    "Lost 2028 direct customers would also have renewed in 2029 (direct churn is not in the pack)"
+   ]
+  },
+  {
+   "id": "st_v30",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, 65% stress, 30% overlap (2028 cohort only)",
+   "value": 0.554,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_v0 - lost30",
+   "derived_from": [
+    "st_v0",
+    "lost30"
+   ],
+   "formula": "value before channel effects − 30% × $1.476M"
+  },
+  {
+   "id": "stB30",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, 65% stress, 30% overlap, if lost 2028 customers renew in 2029",
+   "value": 0.111,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_v0 - lost30 * 2",
+   "derived_from": [
+    "st_v0",
+    "lost30"
+   ],
+   "formula": "value before channel effects − 2 × 30% × $1.476M",
+   "assumptions": [
+    "Lost 2028 direct customers would also have renewed in 2029 (direct churn is not in the pack)"
+   ]
+  },
+  {
+   "id": "st_v50",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, 65% stress, 50% overlap (2028 cohort only)",
+   "value": 0.259,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_v0 - lost50",
+   "derived_from": [
+    "st_v0",
+    "lost50"
+   ],
+   "formula": "value before channel effects − 50% × $1.476M"
+  },
+  {
+   "id": "stB50",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, 65% stress, 50% overlap, if lost 2028 customers renew in 2029",
+   "value": -0.479,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_v0 - lost50 * 2",
+   "derived_from": [
+    "st_v0",
+    "lost50"
+   ],
+   "formula": "value before channel effects − 2 × 50% × $1.476M",
+   "assumptions": [
+    "Lost 2028 direct customers would also have renewed in 2029 (direct churn is not in the pack)"
+   ]
+  },
+  {
+   "id": "st_v70",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, 65% stress, 70% overlap (2028 cohort only)",
+   "value": -0.036,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_v0 - lost70",
+   "derived_from": [
+    "st_v0",
+    "lost70"
+   ],
+   "formula": "value before channel effects − 70% × $1.476M"
+  },
+  {
+   "id": "stB70",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, 65% stress, 70% overlap, if lost 2028 customers renew in 2029",
+   "value": -1.069,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_v0 - lost70 * 2",
+   "derived_from": [
+    "st_v0",
+    "lost70"
+   ],
+   "formula": "value before channel effects − 2 × 70% × $1.476M",
+   "assumptions": [
+    "Lost 2028 direct customers would also have renewed in 2029 (direct churn is not in the pack)"
+   ]
+  },
+  {
+   "id": "st_v100",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, 65% stress, 100% overlap (2028 cohort only)",
+   "value": -0.479,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_v0 - dgm",
+   "derived_from": [
+    "st_v0",
+    "dgm"
+   ],
+   "formula": "value before channel effects − 100% × $1.476M"
+  },
+  {
+   "id": "stB100",
+   "slide_id": "6",
+   "label": "Option X value 2027–29, 65% stress, 100% overlap, if lost 2028 customers renew in 2029",
+   "value": -1.955,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_v0 - dgm * 2",
+   "derived_from": [
+    "st_v0",
+    "dgm"
+   ],
+   "formula": "value before channel effects − 2 × 100% × $1.476M",
+   "assumptions": [
+    "Lost 2028 direct customers would also have renewed in 2029 (direct churn is not in the pack)"
+   ]
+  },
+  {
+   "id": "vol_swing",
+   "slide_id": "9",
+   "label": "Change in Option X three-year value from plan to 65% volumes",
+   "value": -2.233,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_v0 - pl_v0",
+   "derived_from": [
+    "st_v0",
+    "pl_v0"
+   ],
+   "formula": "0.997 − 3.23"
+  },
+  {
+   "id": "be0",
+   "slide_id": "7",
+   "label": "Breakeven OEM robots a year, 0% overlap",
+   "value": 4090.9,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "eng * 1000000 / cu",
+   "derived_from": [
+    "eng",
+    "cu"
+   ],
+   "formula": "$0.9M ÷ $220"
+  },
+  {
+   "id": "be30",
+   "slide_id": "7",
+   "label": "Breakeven OEM robots a year, 30% overlap",
+   "value": 6103.6,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "(eng + lost30) * 1000000 / cu",
+   "derived_from": [
+    "eng",
+    "lost30",
+    "cu"
+   ],
+   "formula": "($0.9M + 30% × $1.476M) ÷ $220"
+  },
+  {
+   "id": "be50",
+   "slide_id": "7",
+   "label": "Breakeven OEM robots a year, 50% overlap",
+   "value": 7445.5,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "(eng + lost50) * 1000000 / cu",
+   "derived_from": [
+    "eng",
+    "lost50",
+    "cu"
+   ],
+   "formula": "($0.9M + 50% × $1.476M) ÷ $220"
+  },
+  {
+   "id": "be70",
+   "slide_id": "7",
+   "label": "Breakeven OEM robots a year, 70% overlap",
+   "value": 8787.3,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "(eng + lost70) * 1000000 / cu",
+   "derived_from": [
+    "eng",
+    "lost70",
+    "cu"
+   ],
+   "formula": "($0.9M + 70% × $1.476M) ÷ $220"
+  },
+  {
+   "id": "be100",
+   "slide_id": "7",
+   "label": "Breakeven OEM robots a year, 100% overlap",
+   "value": 10800,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "(eng + dgm) * 1000000 / cu",
+   "derived_from": [
+    "eng",
+    "dgm",
+    "cu"
+   ],
+   "formula": "($0.9M + $1.476M) ÷ $220"
+  },
+  {
+   "id": "be_rng",
+   "slide_id": "7",
+   "label": "Breakeven range at Sales' 30–70% overlap, rounded",
+   "value": 6100,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "be30",
+   "derived_from": [
+    "be30",
+    "be70"
+   ],
+   "formula": "6,104 and 8,787 rounded to the nearest hundred",
+   "value_high": 8800
+  },
+  {
+   "id": "nunit",
+   "slide_id": "7",
+   "label": "Option N contribution per robot after support",
+   "value": 270,
+   "unit": "$",
+   "source_id": "s3",
+   "calc": "nroy - sup",
+   "derived_from": [
+    "nroy",
+    "sup"
+   ],
+   "formula": "$350 − $80"
+  },
+  {
+   "id": "beN",
+   "slide_id": "7",
+   "label": "Option N breakeven robots a year (OEM programme alone)",
+   "value": 3333.3,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "eng * 1000000 / nunit",
+   "derived_from": [
+    "eng",
+    "nunit"
+   ],
+   "formula": "$0.9M ÷ $270"
+  },
+  {
+   "id": "beN_r",
+   "slide_id": "16",
+   "label": "Option N breakeven, rounded",
+   "value": 3300,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "beN * 0.99",
+   "derived_from": [
+    "beN"
+   ],
+   "formula": "3,333 rounded to the nearest hundred"
+  },
+  {
+   "id": "be0_r",
+   "slide_id": "16",
+   "label": "Option X breakeven at 0% overlap, rounded",
+   "value": 4100,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "be0",
+   "derived_from": [
+    "be0"
+   ],
+   "formula": "4,091 rounded to the nearest hundred"
+  },
+  {
+   "id": "prem",
+   "slide_id": "12",
+   "label": "Option N royalty premium over Option X per robot",
+   "value": 50,
+   "unit": "$",
+   "source_id": "s3",
+   "calc": "nroy - roy",
+   "derived_from": [
+    "nroy",
+    "roy"
+   ],
+   "formula": "$350 − $300"
+  },
+  {
+   "id": "thr70",
+   "slide_id": "16",
+   "label": "Support cost per robot at which Option X loses value at plan volume, 70% overlap",
+   "value": 107,
+   "unit": "$",
+   "source_id": "s3",
+   "calc": "(r28 - eng - lost70) * 1000000 / f28",
+   "derived_from": [
+    "r28",
+    "eng",
+    "lost70",
+    "f28"
+   ],
+   "formula": "($3.0M − $0.9M − 70% × $1.476M) ÷ 10,000"
+  },
+  {
+   "id": "thr30",
+   "slide_id": "16",
+   "label": "Support cost per robot at which Option X loses value at plan volume, 30% overlap",
+   "value": 166,
+   "unit": "$",
+   "source_id": "s3",
+   "calc": "(r28 - eng - lost30) * 1000000 / f28",
+   "derived_from": [
+    "r28",
+    "eng",
+    "lost30",
+    "f28"
+   ],
+   "formula": "($3.0M − $0.9M − 30% × $1.476M) ÷ 10,000"
+  },
+  {
+   "id": "lab_dt",
+   "slide_id": "8",
+   "label": "Downtime share of hours, lab trial",
+   "value": 0.012,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "1 - uptime",
+   "derived_from": [
+    "uptime"
+   ],
+   "formula": "1 − 98.8%"
+  },
+  {
+   "id": "bar_dt",
+   "slide_id": "8",
+   "label": "Downtime share of hours allowed by the OEM bar",
+   "value": 0.005,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "1 - bar",
+   "derived_from": [
+    "bar"
+   ],
+   "formula": "1 − 99.5%"
+  },
+  {
+   "id": "cut",
+   "slide_id": "8",
+   "label": "Downtime cut still needed to reach the OEM bar",
+   "value": -0.58,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "0 - (1 - bar_dt / lab_dt)",
+   "derived_from": [
+    "bar_dt",
+    "lab_dt"
+   ],
+   "formula": "−(1 − 0.5% ÷ 1.2%)"
+  },
+  {
+   "id": "hr_lab",
+   "slide_id": "8",
+   "label": "Downtime hours per robot-year at lab uptime",
+   "value": 105,
+   "unit": "hours",
+   "source_id": "s3",
+   "calc": "lab_dt * hrs",
+   "derived_from": [
+    "lab_dt",
+    "hrs"
+   ],
+   "formula": "1.2% × 8,760 h",
+   "estimate": true,
+   "assumptions": [
+    "Robots operate 24 hours a day, 365 days a year (analysis assumption)"
+   ]
+  },
+  {
+   "id": "hr_bar",
+   "slide_id": "8",
+   "label": "Downtime hours per robot-year at the OEM bar",
+   "value": 44,
+   "unit": "hours",
+   "source_id": "s3",
+   "calc": "bar_dt * hrs",
+   "derived_from": [
+    "bar_dt",
+    "hrs"
+   ],
+   "formula": "0.5% × 8,760 h",
+   "estimate": true,
+   "assumptions": [
+    "Robots operate 24 hours a day, 365 days a year (analysis assumption)"
+   ]
+  },
+  {
+   "id": "trial_h",
+   "slide_id": "8",
+   "label": "Hours in the 12-week trial at 24/7 operation",
+   "value": 2016,
+   "unit": "hours",
+   "source_id": "s3",
+   "calc": "weeks * 7 * 24",
+   "derived_from": [
+    "weeks"
+   ],
+   "formula": "12 weeks × 168 h",
+   "estimate": true,
+   "assumptions": [
+    "Robots operate 24 hours a day, 365 days a year (analysis assumption)"
+   ]
+  },
+  {
+   "id": "tr_lab",
+   "slide_id": "8",
+   "label": "Downtime hours per robot over the trial, lab",
+   "value": 24,
+   "unit": "hours",
+   "source_id": "s3",
+   "calc": "lab_dt * trial_h",
+   "derived_from": [
+    "lab_dt",
+    "trial_h"
+   ],
+   "formula": "1.2% × 2,016 h",
+   "estimate": true,
+   "assumptions": [
+    "Robots operate 24 hours a day, 365 days a year (analysis assumption)"
+   ]
+  },
+  {
+   "id": "tr_bar",
+   "slide_id": "8",
+   "label": "Downtime hours per robot over the trial, at the OEM bar",
+   "value": 10,
+   "unit": "hours",
+   "source_id": "s3",
+   "calc": "bar_dt * trial_h",
+   "derived_from": [
+    "bar_dt",
+    "trial_h"
+   ],
+   "formula": "0.5% × 2,016 h",
+   "estimate": true,
+   "assumptions": [
+    "Robots operate 24 hours a day, 365 days a year (analysis assumption)"
+   ]
+  },
+  {
+   "id": "ov10",
+   "slide_id": "9",
+   "label": "Displaced direct gross margin per 10 percentage points of overlap, a year",
+   "value": 0.1476,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "dgm * step10",
+   "derived_from": [
+    "dgm",
+    "step10"
+   ],
+   "formula": "$1.8M × 82% × 10%"
+  },
+  {
+   "id": "pl_N",
+   "slide_id": "11",
+   "label": "Option N terms, value 2027–29, plan volumes",
+   "value": 4.68,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "pl_rob * nunit / 1000000 - eng3 - assess",
+   "derived_from": [
+    "pl_rob",
+    "nunit",
+    "eng3",
+    "assess"
+   ],
+   "formula": "29,000 × $270 − $2.7M − $0.45M",
+   "assumptions": [
+    "Option N's $350 terms and partner volumes persist for three years, which the OEM has not guaranteed (upper bound)",
+    "Same $0.9M a year of engineering and $0.45M assessment as Option X"
+   ]
+  },
+  {
+   "id": "st_N",
+   "slide_id": "11",
+   "label": "Option N terms, value 2027–29, 65% volumes",
+   "value": 1.94,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "st_rob * nunit / 1000000 - eng3 - assess",
+   "derived_from": [
+    "st_rob",
+    "nunit",
+    "eng3",
+    "assess"
+   ],
+   "formula": "18,850 × $270 − $2.7M − $0.45M",
+   "assumptions": [
+    "Option N's $350 terms and partner volumes persist for three years, which the OEM has not guaranteed (upper bound)",
+    "Same $0.9M a year of engineering and $0.45M assessment as Option X"
+   ]
+  },
+  {
+   "id": "par30",
+   "slide_id": "12",
+   "label": "Robots at which N matches X's three-year value, 30% overlap",
+   "value": 22000,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "(pl_v30 + eng3 + assess) * 1000000 / nunit",
+   "derived_from": [
+    "pl_v30",
+    "eng3",
+    "assess",
+    "nunit"
+   ],
+   "formula": "($2.79M + $2.7M + $0.45M) ÷ $270, rounded"
+  },
+  {
+   "id": "par70",
+   "slide_id": "12",
+   "label": "Robots at which N matches X's three-year value, 70% overlap",
+   "value": 19800,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "(pl_v70 + eng3 + assess) * 1000000 / nunit",
+   "derived_from": [
+    "pl_v70",
+    "eng3",
+    "assess",
+    "nunit"
+   ],
+   "formula": "($2.20M + $2.7M + $0.45M) ÷ $270, rounded"
+  },
+  {
+   "id": "cush30",
+   "slide_id": "12",
+   "label": "Volume cushion: fewer robots at which N still matches X, plan, 30% overlap",
+   "value": 0.24,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "1 - par30 / pl_rob",
+   "derived_from": [
+    "par30",
+    "pl_rob"
+   ],
+   "formula": "1 − 22,000 ÷ 29,000"
+  },
+  {
+   "id": "cush70",
+   "slide_id": "12",
+   "label": "Volume cushion: fewer robots at which N still matches X, plan, 70% overlap",
+   "value": 0.32,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "1 - par70 / pl_rob",
+   "derived_from": [
+    "par70",
+    "pl_rob"
+   ],
+   "formula": "1 − 19,800 ÷ 29,000"
+  },
+  {
+   "id": "spar30",
+   "slide_id": "12",
+   "label": "Robots at which N matches X, stress, 30% overlap",
+   "value": 13719,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "(st_v30 + eng3 + assess) * 1000000 / nunit",
+   "derived_from": [
+    "st_v30",
+    "eng3",
+    "assess",
+    "nunit"
+   ],
+   "formula": "($0.554M + $2.7M + $0.45M) ÷ $270"
+  },
+  {
+   "id": "spar70",
+   "slide_id": "12",
+   "label": "Robots at which N matches X, stress, 70% overlap",
+   "value": 11533,
+   "unit": "robots",
+   "source_id": "s3",
+   "calc": "(st_v70 + eng3 + assess) * 1000000 / nunit",
+   "derived_from": [
+    "st_v70",
+    "eng3",
+    "assess",
+    "nunit"
+   ],
+   "formula": "(−$0.036M + $2.7M + $0.45M) ÷ $270"
+  },
+  {
+   "id": "cush_s",
+   "slide_id": "12",
+   "label": "Volume cushion in the stress case",
+   "value": 0.27,
+   "unit": "%",
+   "source_id": "s3",
+   "calc": "1 - spar30 / st_rob",
+   "derived_from": [
+    "spar30",
+    "spar70",
+    "st_rob"
+   ],
+   "formula": "1 − 13,719 ÷ 18,850 and 1 − 11,533 ÷ 18,850",
+   "value_high": 0.39
+  },
+  {
+   "id": "hd0",
+   "slide_id": "13",
+   "label": "Headroom above the buffer today",
+   "value": 2.3,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "cash - buffer",
+   "derived_from": [
+    "cash",
+    "buffer"
+   ],
+   "formula": "$4.9M − $2.6M"
+  },
+  {
+   "id": "hd_def",
+   "slide_id": "13",
+   "label": "Headroom end-2027: defer (assessment only)",
+   "value": 1.85,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "hd0 - assess",
+   "derived_from": [
+    "hd0",
+    "assess"
+   ],
+   "formula": "2.3 − 0.45"
+  },
+  {
+   "id": "nrev27",
+   "slide_id": "13",
+   "label": "Option N royalties 2027, plan, collected in-year",
+   "value": 1.75,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "f27 * nroy / 1000000",
+   "derived_from": [
+    "f27",
+    "nroy"
+   ],
+   "formula": "5,000 × $350"
+  },
+  {
+   "id": "hd_N",
+   "slide_id": "13",
+   "label": "Headroom end-2027: N, royalties collected in-year",
+   "value": 2.3,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "hd0 - assess - eng - sup27 + nrev27",
+   "derived_from": [
+    "hd0",
+    "assess",
+    "eng",
+    "sup27",
+    "nrev27"
+   ],
+   "formula": "2.3 − 0.45 − 0.90 − 0.40 + 1.75"
+  },
+  {
+   "id": "hd_Nlag",
+   "slide_id": "13",
+   "label": "Headroom end-2027: N, no 2027 royalty cash (reporting lag)",
+   "value": 0.55,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "hd0 - assess - eng - sup27",
+   "derived_from": [
+    "hd0",
+    "assess",
+    "eng",
+    "sup27"
+   ],
+   "formula": "2.3 − 0.45 − 0.90 − 0.40"
+  },
+  {
+   "id": "hd_X",
+   "slide_id": "13",
+   "label": "Headroom end-2027: X at plan, advance in hand",
+   "value": 2.55,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "hd0 + adv - assess - eng - sup27",
+   "derived_from": [
+    "hd0",
+    "adv",
+    "assess",
+    "eng",
+    "sup27"
+   ],
+   "formula": "2.3 + 2.0 − 0.45 − 0.90 − 0.40 (2027 royalties all credited to the advance)"
+  },
+  {
+   "id": "hd_Xslip",
+   "slide_id": "13",
+   "label": "Headroom end-2027: X, certification slips and $2.0M offset demanded",
+   "value": 1.85,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "hd0 + adv - adv - assess",
+   "derived_from": [
+    "hd0",
+    "adv",
+    "assess"
+   ],
+   "formula": "2.3 + 2.0 advance − 2.0 offset − 0.45; no deployments, so no engineering or support"
+  },
+  {
+   "id": "hd_direct",
+   "slide_id": "13",
+   "label": "Headroom end-2027: direct sales only",
+   "value": 2.3,
+   "unit": "$M",
+   "source_id": "s3",
+   "calc": "hd0",
+   "derived_from": [
+    "hd0"
+   ],
+   "formula": "no deal cash flows"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "user_provided",
+   "name": "Board briefing pack",
+   "input_id": "in-1"
+  },
+  {
+   "id": "s2",
+   "kind": "user_provided",
+   "name": "Team analysis deck (Nov 2026)",
+   "input_id": "in-2"
+  },
+  {
+   "id": "s3",
+   "kind": "derived",
+   "name": "Team analysis"
+  }
+ ],
+ "compile": {
+  "source": "evidence/analysis.md (finished board deck, 20 slides, extracted to text) built from evidence/briefing-pack.md",
+  "variant": "restyle",
+  "units": [
+   {
+    "id": "u1",
+    "type": "answer",
+    "text": "Decline Option X as drafted; sign Option N, a 12-month nonexclusive pilot at $350 per robot, and agree up front the gates under which Option M takes effect",
+    "source_loc": "slides 1, 2, 14",
+    "critical": true,
+    "slide_ids": [
+     "c",
+     "es",
+     "14",
+     "18"
+    ]
+   },
+   {
+    "id": "u2",
+    "type": "condition",
+    "text": "Option M takes effect only when certification is passed, two audited quarters at about 9,000 robots a year are shown and contract protections are signed",
+    "source_loc": "slides 2, 14",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "14"
+    ]
+   },
+   {
+    "id": "u3",
+    "type": "claim",
+    "text": "The $2.0M is a recoupable advance, not extra revenue: three-year OEM cash is $8.7M, not $10.7M",
+    "source_loc": "slides 2, 4",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "4"
+    ]
+   },
+   {
+    "id": "u4",
+    "type": "claim",
+    "text": "The 'revenue win' framing overstates three-year OEM income by 23%; revenue is royalties earned ($1.5M in 2027, not $3.5M); the $2.0M is a liability until earned",
+    "source_loc": "slide 4",
+    "critical": false,
+    "slide_ids": [
+     "4",
+     "15"
+    ]
+   },
+   {
+    "id": "u5",
+    "type": "claim",
+    "text": "The advance buys timing only ($1.5–2.0M into 2027), which Boreal does not need to stay above its buffer",
+    "source_loc": "slides 4, 13",
+    "critical": false,
+    "slide_ids": [
+     "4",
+     "13"
+    ]
+   },
+   {
+    "id": "u6",
+    "type": "claim",
+    "text": "After full costs, only about $0.56M of the $3.00M in 2028 plan royalties is incremental: 19%, not the dashboard's 100%",
+    "source_loc": "slide 5",
+    "critical": true,
+    "slide_ids": [
+     "5"
+    ]
+   },
+   {
+    "id": "u7",
+    "type": "claim",
+    "text": "Per robot $220 (73%) after support; $0.27–0.86M across 30–70% overlap; at 65% volumes 2028 is −$0.21M",
+    "source_loc": "slide 5",
+    "critical": false,
+    "slide_ids": [
+     "5"
+    ]
+   },
+   {
+    "id": "u8",
+    "type": "claim",
+    "text": "Exclusivity bars all new direct North American licences incl. other-OEM customers: that forgone margin is a cost of Option X, not of the OEM channel",
+    "source_loc": "slides 5, 10",
+    "critical": false,
+    "slide_ids": [
+     "5",
+     "10"
+    ]
+   },
+   {
+    "id": "u9",
+    "type": "claim",
+    "text": "Exclusivity is worth +$2.2–2.8M at plan but only −$0.04M to +$0.55M at 65% volumes over 2027–29",
+    "source_loc": "slides 2, 3, 6",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "3",
+     "6",
+     "11"
+    ]
+   },
+   {
+    "id": "u10",
+    "type": "stress case",
+    "text": "If lost 2028 direct customers would also renew in 2029, the low case destroys up to $1.1M at 70% overlap",
+    "source_loc": "slide 6",
+    "critical": true,
+    "slide_ids": [
+     "6"
+    ]
+   },
+   {
+    "id": "u11",
+    "type": "assumption",
+    "text": "Full-year engineering from 2027 is conservative; a late start helps all OEM options equally and does not change the ranking",
+    "source_loc": "slides 6, 17",
+    "critical": false,
+    "slide_ids": [
+     "6",
+     "17"
+    ]
+   },
+   {
+    "id": "u12",
+    "type": "threshold",
+    "text": "Exclusivity breaks even at 6,100–8,800 robots a year at 30–70% overlap; the plan clears it, the 65% case (6,500) clears only the 30% end",
+    "source_loc": "slide 7",
+    "critical": true,
+    "slide_ids": [
+     "7"
+    ]
+   },
+   {
+    "id": "u13",
+    "type": "gate",
+    "text": "Option M's 5,000 gate is below every realistic breakeven and should rise to about 9,000 (2,250 a quarter) unless other-OEM customers are carved out",
+    "source_loc": "slides 7, 14, 15",
+    "critical": true,
+    "slide_ids": [
+     "7",
+     "14",
+     "15"
+    ]
+   },
+   {
+    "id": "u14",
+    "type": "threshold",
+    "text": "Under Option N the OEM programme alone breaks even at 3,333 robots a year",
+    "source_loc": "slides 7, 16",
+    "critical": false,
+    "slide_ids": [
+     "7",
+     "16"
+    ]
+   },
+   {
+    "id": "u15",
+    "type": "evidence",
+    "text": "Lab uptime 98.8% against a 99.5% bar; loaded-warehouse, peak and production-hardware performance not demonstrated; assessment not started; September 2027 certification is a projection",
+    "source_loc": "slides 2, 3, 8",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "3",
+     "8"
+    ]
+   },
+   {
+    "id": "u16",
+    "type": "claim",
+    "text": "Option X makes exclusivity binding at signing, about five months before the earliest certification, and so fails the board's validation condition by design",
+    "source_loc": "slide 8",
+    "critical": true,
+    "slide_ids": [
+     "8"
+    ]
+   },
+   {
+    "id": "u17",
+    "type": "risk",
+    "text": "Deployment cannot start before the assessment, so the 2027 plan of 5,000 robots and the advance's offset exposure are at risk",
+    "source_loc": "slide 8",
+    "critical": false,
+    "slide_ids": [
+     "8"
+    ]
+   },
+   {
+    "id": "u18",
+    "type": "claim",
+    "text": "Downtime must fall 58% (105 → 44 hours a robot-year; about 24 → 10 hours over the trial): closable but unproven",
+    "source_loc": "slide 8",
+    "critical": false,
+    "slide_ids": [
+     "8"
+    ]
+   },
+   {
+    "id": "u19",
+    "type": "evidence",
+    "text": "OEM volumes are unaudited; the 14,000 'booked devices' have no purchase orders; the board will not rely on verbal forecasts",
+    "source_loc": "slides 2, 9",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "9"
+    ]
+   },
+   {
+    "id": "u20",
+    "type": "evidence",
+    "text": "Channel overlap is unknown (0% CEO against 30–70% Sales), worth about $0.15M a year per 10 percentage points, and measurable only in a nonexclusive pilot",
+    "source_loc": "slide 9",
+    "critical": true,
+    "slide_ids": [
+     "9"
+    ]
+   },
+   {
+    "id": "u21",
+    "type": "evidence",
+    "text": "The competitor growth claim is correlational and gets zero weight",
+    "source_loc": "slides 2, 9",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "9"
+    ]
+   },
+   {
+    "id": "u22",
+    "type": "claim",
+    "text": "The draft contract leaves Boreal exposed on six terms (audit, floor, release, IP, scope, offset), each with the fix required",
+    "source_loc": "slides 2, 10",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "10"
+    ]
+   },
+   {
+    "id": "u23",
+    "type": "constraint",
+    "text": "Existing direct contracts cannot be terminated for convenience: any exclusivity can cover only future new North American sales",
+    "source_loc": "slides 10, 15",
+    "critical": true,
+    "slide_ids": [
+     "10",
+     "15"
+    ]
+   },
+   {
+    "id": "u24",
+    "type": "alternatives",
+    "text": "Five routes compared: X reject as drafted; N recommend as phase 1; M recommend as phase 2; direct sales fallback; defer fallback if N refused",
+    "source_loc": "slide 11",
+    "critical": true,
+    "slide_ids": [
+     "11"
+    ]
+   },
+   {
+    "id": "u25",
+    "type": "claim",
+    "text": "N's value is up to +$4.7M at plan / +$1.9M at 65% if its terms hold: an upper bound",
+    "source_loc": "slides 11, 12",
+    "critical": false,
+    "slide_ids": [
+     "11",
+     "12"
+    ]
+   },
+   {
+    "id": "u26",
+    "type": "alternative",
+    "text": "The integration firm's 1,200-robot nonexclusive pilot complements N and the fallbacks; X would likely bar it",
+    "source_loc": "slides 11, 15",
+    "critical": false,
+    "slide_ids": [
+     "11",
+     "15"
+    ]
+   },
+   {
+    "id": "u27",
+    "type": "claim",
+    "text": "N matches X's three-year value even if the OEM ships 24–32% fewer robots (27–39% in the stress case); the volume cushion is the robust finding",
+    "source_loc": "slides 2, 12",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "12"
+    ]
+   },
+   {
+    "id": "u28",
+    "type": "claim",
+    "text": "N earns $50 more per robot and does not displace the direct channel",
+    "source_loc": "slides 2, 12",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "12"
+    ]
+   },
+   {
+    "id": "u29",
+    "type": "constraint",
+    "text": "Every route keeps cash above the $2.6M buffer; N's worst case leaves $0.55M, with mitigations",
+    "source_loc": "slides 2, 13",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "13"
+    ]
+   },
+   {
+    "id": "u30",
+    "type": "claim",
+    "text": "X's $2.55M headroom exists only because the advance is unearned; a slip plus offset takes it to $1.85M; liquidity does not require the advance",
+    "source_loc": "slide 13",
+    "critical": true,
+    "slide_ids": [
+     "13"
+    ]
+   },
+   {
+    "id": "u31",
+    "type": "plan",
+    "text": "Phase 0 prepare, Phase 1 Option N, Phase 2 Option M (series only, up to 3 years, minimum royalty, release triggers, termination payment ≥ ~$1.5M)",
+    "source_loc": "slide 14",
+    "critical": true,
+    "slide_ids": [
+     "14"
+    ]
+   },
+   {
+    "id": "u32",
+    "type": "gates",
+    "text": "Gate 1 certification, Gate 2 two audited quarters ≥ 2,250 robots, Gate 3 contract protections; all three before Phase 2, each verifiable by the board",
+    "source_loc": "slides 2, 14",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "14"
+    ]
+   },
+   {
+    "id": "u33",
+    "type": "negotiation",
+    "text": "Must-haves: no exclusivity before the gates, existing contracts excluded, audit right, escrow, automatic release; walk away without them",
+    "source_loc": "slide 15",
+    "critical": true,
+    "slide_ids": [
+     "15"
+    ]
+   },
+   {
+    "id": "u34",
+    "type": "negotiation",
+    "text": "Tradeables: royalty toward $300 for a floor, 5,000 gate if scope carved out, narrower geography, shorter term, a defined capped advance at conversion",
+    "source_loc": "slide 15",
+    "critical": false,
+    "slide_ids": [
+     "15"
+    ]
+   },
+   {
+    "id": "u35",
+    "type": "fallback",
+    "text": "If the OEM refuses: continue direct sales, take the integration pilot, certify anyway; loses +$2.2–2.8M of upside but avoids the low-case downside",
+    "source_loc": "slides 2, 15",
+    "critical": true,
+    "slide_ids": [
+     "es",
+     "15"
+    ]
+   },
+   {
+    "id": "u36",
+    "type": "context",
+    "text": "Leverage is limited but the OEM put N and M on the table and Boreal has not committed its IP; announce a partnership; report any advance as a guarantee",
+    "source_loc": "slide 15",
+    "critical": false,
+    "slide_ids": [
+     "15"
+    ]
+   },
+   {
+    "id": "u37",
+    "type": "signposts",
+    "text": "Four signposts with thresholds: verified shipments (~8,800 / ~3,300 / ~4,100), realised overlap (≤30% / ≥70%), support cost ($80; $107 / $166), audit right",
+    "source_loc": "slide 16",
+    "critical": true,
+    "slide_ids": [
+     "16"
+    ]
+   },
+   {
+    "id": "u38",
+    "type": "assumptions",
+    "text": "Key assumptions and the direction of their bias",
+    "source_loc": "slide 17",
+    "critical": false,
+    "slide_ids": [
+     "17"
+    ]
+   },
+   {
+    "id": "u39",
+    "type": "risks",
+    "text": "The main risk is the OEM walking away; the fallback limits it; other risks with mitigations",
+    "source_loc": "slide 17",
+    "critical": true,
+    "slide_ids": [
+     "17"
+    ]
+   },
+   {
+    "id": "u40",
+    "type": "decisions",
+    "text": "Decisions requested: reject X as drafted; authorise negotiation of N with the pre-agreed M gates and must-haves; approve the $0.45M assessment now (leaves $1.85M headroom)",
+    "source_loc": "slide 18",
+    "critical": true,
+    "slide_ids": [
+     "18"
+    ]
+   },
+   {
+    "id": "u41",
+    "type": "next steps",
+    "text": "Dated next steps with proposed owners, from the assessor in Nov–Dec 2026 to the gate review around Q2 2028",
+    "source_loc": "slide 18",
+    "critical": true,
+    "slide_ids": [
+     "18",
+     "end"
+    ]
+   },
+   {
+    "id": "u42",
+    "type": "claim",
+    "text": "Only one of six conditions for exclusivity at signing partly holds: the hypothesis survives, refined to a gated path rather than a flat 'no'",
+    "source_loc": "slide 3",
+    "critical": true,
+    "slide_ids": [
+     "3"
+    ]
+   },
+   {
+    "id": "u43",
+    "type": "backup",
+    "text": "Option X year-by-year economics, plan and stress",
+    "source_loc": "slide 19",
+    "critical": false,
+    "slide_ids": [
+     "A"
+    ]
+   },
+   {
+    "id": "u44",
+    "type": "backup",
+    "text": "Formulas and data gaps",
+    "source_loc": "slide 20",
+    "critical": false,
+    "slide_ids": [
+     "B"
+    ]
+   },
+   {
+    "id": "u45",
+    "type": "framing",
+    "text": "Synthetic benchmark data from the briefing pack only; all $ figures undiscounted; no NPV, as the board requested",
+    "source_loc": "slide 1",
+    "critical": false,
+    "slide_ids": [
+     "c",
+     "6",
+     "B"
+    ]
+   }
+  ],
+  "untraceable": [
+   {
+    "data_point_id": "gate_q",
+    "critical": true,
+    "ack": "Kept as the analysis's proposed gate (choice made in the user's absence): it is a policy threshold rounded up from the 8,787-robot breakeven at 70% overlap, which is recomputed from the pack; flagged on p. 14 as rounded up",
+    "note": "Not a pack number; reproducible only as a rounding choice, so sourced to the analysis"
+   },
+   {
+    "data_point_id": "gate_y",
+    "critical": true,
+    "ack": "Kept as the analysis's proposed gate, annualised (4 × 2,250); same basis as gate_q",
+    "note": "Not a pack number"
+   },
+   {
+    "data_point_id": "fwd",
+    "critical": false,
+    "note": "The analysis does not show how the $1.5–2.0M range is built; kept as written on p. 4 and marked as the analysis's figure"
+   },
+   {
+    "data_point_id": "hrs",
+    "critical": false,
+    "note": "24/7 operation (8,760 hours a year) is the analysis's assumption, not in the pack; downtime hours on p. 8 are estimates built on it, with the basis shown"
+   }
+  ],
+  "corrections": [],
+  "check": {
+   "critical_units": 29,
+   "preserved": 29,
+   "notes": "Read unit by unit against the deck: every critical unit is on a main-deck slide with the source's numbers, conditions and option ranking (X reject; N phase 1; M phase 2; direct fallback; defer fallback if N refused). All source numbers recomputed from the pack; no correction was needed. Pack §3 prints the 2027 stress royalty as $0.97M and the analysis as $0.98M: both round 3,250 × $300 = $0.975M, so the analysis's 0.98 is kept. Changes of form only: p. 5 drops the source's separate subtotal bar (the $1.30M contribution moves to the sidebar); p. 6 shows the two sensitivity grids as two multi-series column panels instead of shaded tables; p. 11 transposes the options table (options as rows); p. 17 combines two pairs of rows into single bullets. Titles shortened to 25 words or fewer while keeping every qualifier."
+  }
+ }
+}
