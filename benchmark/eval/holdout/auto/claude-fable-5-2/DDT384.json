@@ -1,0 +1,180 @@
+{
+ "blind_id": "DDT384",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision exactly as posed (reserve / build now / bridge, plus do nothing) for the January 2027 committee. It uses the stated constraints as explicit pass/fail criteria: the $7.0M cash floor after $2.2M R&D, the 98% monthly fill rate with rebid right, the molder's 2.5M ceiling, five-month notice and specialty validation gap. It identifies early what the answer turns on (unsigned demand, funding of the $4.2M balance, slot terms) and answers each board request: trigger, near-term overflow plan, what makes the slot a bad option, downside cases, gates. Nothing material to fix.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the four executive-summary points map to the four sections, and almost every title is a claim its slide supports; the titles alone give the argument. Flaws: the cash test is restated four or five times, and slides 12, 16 and 17 overlap on conditions, downside cases and uncertainties. There is also one internal tension: slide 8 says the recommended path 'costs nothing in capacity' versus ordering now, while slide 6 shows the bridge leaves only about 2% monthly headroom in 2029. The exec summary states the June 2027 order date as fact, while slide 12 admits the pack gives no slot terms.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-did the main calculations and they hold: cash $4.0M and $8.2M; practical utilization 92/107/124/138%; molder premium $0.07M/$0.27M (with a labelled scrap adjustment, within tolerance of the key); 4.6M break-even; monthly supply ratios 83/98/109%; path costs $6.45M versus about $5.8M; slot break-even probabilities 133/41/24%. All critical evidence is used, including evidence against the recommendation (the line does not pay on margin alone; signed minimums give only 0.9M overflow). The $0.45 and $0.12 figures are kept distinct, and assumptions are flagged in an appendix. Flaws: the line-versus-refusal contribution is computed for 2030 only, not the key's 2029 figure of $0.44M. The June 2027 order deadline is an inference presented as fact in the summary. The funded-case cash low of $7.5M omits molder premiums and line fixed cost that other rows deduct, so 'the floor holds in every case' is overstated. The rebid exposure rests on a $0.45 x 9.0M proxy and illustrative loss shares, though these are labelled.",
+    "score": 4
+   },
+   "strategic_judgment": {
+    "rationale": "A clear recommendation that follows from the analysis: conditional deposit, molder bridge booked by June 2027 with holiday capacity and safety stock, and release of the $4.2M only on three measurable triggers (10.5M signed units or a simulated breach; at least $3.5M committed funding; readiness). Alternatives are compared on the decision criteria in one table. Trade-offs are explicit: option value versus commitment, make-versus-buy break-even, annual versus monthly service. It says what would make the slot a bad buy and gives a fallback (decline if the order date cannot move), dated gates with owners and defaults, and four downside cases including the uncomfortable 'demand arrives, funding does not' case. It avoids all four traps and tests its own recommendation against contrary evidence. The remaining weaknesses (thin H1 2029 headroom under its own plan, a funding trigger that excludes running costs) are partly mitigated by the simulation trigger and the stated cash-flow caveat.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title of slide 2 and the language is plain and precise. However, 20 slides and about 4,800 words is longer than the decision needs: the cash arithmetic recurs on slides 2, 3, 7, 11, 14, 18 and 19, and slides 12, 16 and 17 partly duplicate each other. The board's long list of requests justifies most of the content, but not all the repetition.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "As offered, the slot expects an order by June 2027, but funding is only plausible in 2028",
+    "why": "The pack gives no slot expiry or order deadline; it only says a machine ordered by June 2027 is expected mid-2028. The document admits this on slide 12 and in Appendix B but states it as fact in the executive summary."
+   },
+   {
+    "quote": "specialty volume not yet in 2028",
+    "why": "The pack gives the specialty share only for 2029 (20%); zero specialty volume in 2028 is an assumption (flagged in Appendix B) but is listed on slide 3 as evidence from the briefing pack."
+   },
+   {
+    "quote": "One customer contract can meet two triggers at once: a signed-volume guarantee raises committed demand and secures the loan.",
+    "why": "The pack says only that the CFO thinks a prepayment or guarantee could support a supplemental loan, with nothing contracted; 'secures' overstates this."
+   },
+   {
+    "quote": "Choosing 'reserve + bridge' over 'order now' costs nothing in capacity",
+    "why": "Ordering now would put the line in place from about January 2028, whereas the recommended path relies on the molder until about mid-2029 with roughly 2% monthly headroom by the document's own figures; the two paths are not equivalent in capacity."
+   },
+   {
+    "quote": "The cash floor holds in every case.",
+    "why": "The cash lows exclude operating cash flow (not in the pack) and, in the funded case, the molder premiums and $0.55M/year fixed cost; the floor is shown to hold only on commitments, not established for every case."
+   }
+  ],
+  "numerical_errors": [
+   {
+    "quote": "Forecast, funded (0.6 / 2.3 / 3.5) ... ~$5.8M incl. line; $7.5M (+0.5)",
+    "correct": "Using the method applied to the other rows (deducting molder premiums from cash), the low would be about $7.3M ($7.5M - $0.07M - $0.14M); deducting the line's $0.83M fixed cost to 2030 as well gives about $6.5M, below the $7.0M floor unless operating cash flow covers it."
+   }
+  ],
+  "logical_contradictions": [
+   {
+    "quote_a": "Choosing 'reserve + bridge' over 'order now' costs nothing in capacity; it removes the covenant breach and a $4.8M bet on unsigned demand.",
+    "quote_b": "In 2029 even the molder bridge leaves only ~2% monthly headroom: a launch cluster could trigger the two misses that open a rebid.",
+    "why": "Under the recommended path the line produces from about mid-2029, so early 2029 runs on the thin molder bridge; ordering now would have the line from about January 2028. The recommended path therefore does give up capacity headroom relative to ordering now."
+   }
+  ],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Approve the $0.6M slot deposit for March 2027 only if the supplier agrees in writing to an order date of Q1 2028 or later (otherwise decline). Decline the full order and any public capacity announcement. Bridge 2028 with the contract molder (0.6M units, signed by June 2027 with holiday capacity), a capped 2027 safety stock and specialty kept in-house. Release the $4.2M balance only when signed 2029/2030 minimums reach 10.5M units (or a simulation shows two or more fill-rate breaches), at least $3.5M of funding is committed, and supplier and validation readiness are confirmed. Target decision Q1 2028, last date Q3 2028.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "Meets all four defensibility criteria. It respects the cash floor ($8.2M after the deposit; full order shown at $4.0M) and uses 9.0M practical capacity. It credits the deposit correctly ($4.2M balance, explicitly not double-counted, and not treated as funding). It plans 2028 overflow with the five-month notice, holiday capacity and specialty validation limits. It sets measurable demand, funding and readiness gates with dates and defaults."
+  },
+  "hypothesis_handling": {
+   "observed": "kept_with_conditions",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 0,
+   "rationale": "The document tests the Operations Director's hypothesis against six 'what would have to be true' conditions and keeps it with tighter conditions, matching the key's expected handling. Funding of the $4.2M becomes a release trigger, and the slot's order date and lead-time value must be confirmed before the March deposit. It catches the contradictory evidence: nameplate versus practical utilization, the confounded 23% peer-growth claim, and $0.45 contribution versus $0.12 premium as different measures. It also challenges whether the slot buys anything scarce and shows it does not pay on margin alone. Uncertainty is handled through signed-minimum, slip and unfunded cases and a list of flagged judgment calls. The one overreach is treating a June 2027 order deadline as a term of the offer in the summary, though the document labels it an inference elsewhere."
+  },
+  "overall_comment": "Strong, decision-ready work that reaches the key's preferred answer (R1) with correct core arithmetic, all critical evidence used and none of the four traps. Its best features are the measurable release triggers, the explicit test of whether the slot is worth buying (not on margin alone; only as protection against a rebid), the monthly fill-rate check, and the honest 'demand arrives but funding does not' downside case.\n\nMaterial flaws:\n- **Order deadline:** the executive summary presents a June 2027 order deadline as a term of the offer, when the pack gives no slot terms.\n- **Cash floor claim:** 'the cash floor holds in every case' rests on an inconsistent treatment of premiums and fixed costs in the funded case.\n- **Capacity claim:** 'costs nothing in capacity' versus ordering now conflicts with the document's own finding of about 2% monthly headroom in 2029.\n- **Missing calculation:** the line-versus-refusal contribution is shown for 2030 only, not for 2029.\n- **Length:** the deck is longer and more repetitive than the decision needs.\n\nThe rebid economics rest on an illustrative proxy, which is labelled as such.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 1.0511036,
+ "wall_s": 115.8307888507843,
+ "is_error": false,
+ "error_text": null
+}

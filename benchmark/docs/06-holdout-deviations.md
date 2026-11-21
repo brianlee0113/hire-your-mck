@@ -27,3 +27,16 @@ not have, so every E1 spec shows the same 4 fails. Re-checked with E1's own `che
 
 Report these values for E1. H2a uses `plugin/`, whose `check.py` is the repository's, so its values stand (0 fails
 in all six). The script was not changed, to keep the frozen files intact; the judges never see `check.py` results.
+
+## Evaluation run, 2026-11-20 23:35 – 11-21 00:20 EST (usage guard raised to 0.96)
+
+- Run before the weekly reset with `GUARD=0.96` (the frozen default is 0.82; the guard is an operating limit, not
+  part of the design). Weekly usage 0.89 → 0.95.
+- normalize, blind, rubric judge (18/18), fidelity units and check (6/6) complete.
+- **Pairwise incomplete: 20 of 36 calls ok, 16 failed** with HTTP 429 `usage_limit_reached` — the Fable model's
+  own limit, separate from the weekly total; resets 2026-11-21 17:00. Affected: c8 and c9 (all 6 calls each), c7
+  (4 of 6). c6, c10, c11 complete. Failed calls left `*.error.json`; the rerun skips finished calls:
+  `benchmark/.venv/bin/python benchmark/scripts/explore_holdout.py pairwise --parallel 4`, then `... analyse`.
+  `results/holdout/tables.md` from this run is partial for the pairwise column and must not be reported.
+- Author's slide review package built before any verdict was seen (`scripts/make_holdout_review.py`,
+  `eval/holdout-slides/`, commit 8cb20c8).

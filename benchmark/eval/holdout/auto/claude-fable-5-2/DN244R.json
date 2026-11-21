@@ -1,0 +1,161 @@
+{
+ "blind_id": "DN244R",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "scores": {
+   "problem_framing": {
+    "rationale": "Frames the decision exactly as posed, including the 'redeploy to D' half, which it answers as 'yes, in sequence'. It treats the question as a choice among four routes (exit, retain, delayed sunset, redesign) rather than a yes/no. The pack's constraints (95% bundle fill, $0.9M one-time cash, customer commitments, Finance's cash-contribution test) are used explicitly as pass/fail criteria on slides 8 and 12. Every item the board asked for is delivered: margin walk, exit bridge, three-way comparison, contract plan, correlation test and dashboard definition. The few issues the answer turns on (avoidability, D cap, penalty, causality) are identified on slides 2-3. Nothing material to fix.",
+    "score": 5
+   },
+   "storyline_coherence": {
+    "rationale": "The governing thought answers the question, the executive summary maps onto the sections, and almost every title is a quantified claim its slide supports; the titles alone give the argument. Flaws: (1) the D-cannot-replace-C point is made three times (slides 6, 7, 9), slide 8 largely restates slide 6, and slides 17 and 21 duplicate each other. (2) Slide 12's title says redesign 'meets every constraint', but its own table shows the 95% fill constraint as 'Needs A/B fix' with recovery speed unknown, so the title overstates the slide. (3) Slide 3 tests a self-set 'keep C' hypothesis rather than the CEO's, which is scaffolding more than argument. (4) Slide 16's title ('flip the decision against exit') is muddled. Strong hierarchy with some redundancy and one overstated title.",
+    "score": 4
+   },
+   "evidence_and_reasoning": {
+    "rationale": "I re-did every calculation I could and all reconcile to the pack: contribution margins 50/42.2/63.3/50%; exit bridge -3.8+0.4+0.75 = -2.65; first year -4.75; break-even D revenue 6.8; operating profit 10.1 to 7.45 or 6.7; pro-rata reallocation margins 33.7/16.8/22.3%; calendar-2027 exit -3.43 and cumulative -8.7; redesign payback 5.3 months, -0.13 in 2027 and +2.37 cumulative; downside +0.40; break-even savings 19% and 31%; price-pressure break-even about 70%. Derivations are transparent in the calculation log. All critical evidence is used, including evidence that cuts against the recommendation: it flags that the $1.25M saving is 57% of C's direct cost, that requalification is excluded from the $0.55M, and that the renewal data 'cannot rule out a C effect either'. Assumptions where the pack is silent are labelled with their effect. It declines to invent an engineering opportunity cost and offers a labelled bound instead. Minor overstatements ('the cause sits in A and B, not C'; 'meets every constraint') are not material to the conclusion.",
+    "score": 5
+   },
+   "strategic_judgment": {
+    "rationale": "A clear recommendation that follows from the analysis and matches the key's defensible R1, with R2 preserved as a gated option. The four options are compared on cash and on each board constraint. Trade-offs are explicit: D growth versus existing contribution, engineering time, and locking in a high-cost C versus redesign. It says what would change the answer: Gate 1 threshold of $0.4M a year of savings, Gate 2 criteria for a 2029 sunset, a roughly 70% fall in C contribution, and a within-segment renewal gap. The contract plan and next steps are concrete, with owners marked as proposals. It avoids all four traps and keeps the penalty separate from recurring cost. Small weaknesses: it commits the whole $0.9M envelope (redesign plus reserve) before the cost of the A/B fill fix is known, and the Gate 2 criterion 'acceptance is high enough' is not quantified. Neither undermines the decision.",
+    "score": 5
+   },
+   "clarity_and_concision": {
+    "rationale": "The answer is in the title and the first line of the summary, and the language is plain and precise with numbers attached. But 21 slides and about 4,800 words is more than the decision needs. The -2.65/-4.75 bridge and the D cap are restated on several slides, slide 3 is method scaffolding, and the uncertainty table, assumptions backup, decisions slide and next-steps slide overlap. Strong but not lean.",
+    "score": 4
+   }
+  },
+  "unsupported_claims": [
+   {
+    "quote": "Only redesigning C adds value and meets every constraint",
+    "why": "By the document's own table the 95% bundle-fill constraint is unmet under every option ('Needs A/B fix'), and the recovery timeline and cost are unknown. The redesign meets the cash and commitment constraints, not yet the fill constraint."
+   },
+   {
+    "quote": "The cause sits in A and B, not C",
+    "why": "The pack says the dashboard hides late bundles when A or B is the missing item and that the gap is not evidence against C. It does not attribute the whole 91% versus 95% shortfall to A/B, and C itself misses 2%. A reasonable inference, stated with more certainty than the pack gives."
+   },
+   {
+    "quote": "D's spare capacity caps the gain at $0.75M a year, available even if C stays",
+    "why": "Assumes D's organic demand would fill the full $1.5M of spare capacity without C migration. The pack says D is growing at double digits but does not establish demand for the whole $1.5M."
+   }
+  ],
+  "numerical_errors": [],
+  "logical_contradictions": [],
+  "critical_evidence": [
+   {
+    "id": "E1",
+    "used": "yes"
+   },
+   {
+    "id": "E2",
+    "used": "yes"
+   },
+   {
+    "id": "E3",
+    "used": "yes"
+   }
+  ],
+  "insights": [
+   {
+    "id": "K1",
+    "reached": "yes"
+   },
+   {
+    "id": "K2",
+    "reached": "yes"
+   },
+   {
+    "id": "K3",
+    "reached": "yes"
+   },
+   {
+    "id": "K4",
+    "reached": "yes"
+   },
+   {
+    "id": "K5",
+    "reached": "yes"
+   },
+   {
+    "id": "K6",
+    "reached": "yes"
+   }
+  ],
+  "calculations": [
+   {
+    "id": "Q1",
+    "status": "correct"
+   },
+   {
+    "id": "Q2",
+    "status": "correct"
+   },
+   {
+    "id": "Q3",
+    "status": "correct"
+   },
+   {
+    "id": "Q4",
+    "status": "partly_correct"
+   }
+  ],
+  "tradeoffs": [
+   {
+    "id": "X1",
+    "identified": "yes"
+   },
+   {
+    "id": "X2",
+    "identified": "yes"
+   },
+   {
+    "id": "X3",
+    "identified": "yes"
+   }
+  ],
+  "traps": [
+   {
+    "id": "T1",
+    "fell_in": "no"
+   },
+   {
+    "id": "T2",
+    "fell_in": "no"
+   },
+   {
+    "id": "T3",
+    "fell_in": "no"
+   },
+   {
+    "id": "T4",
+    "fell_in": "no"
+   }
+  ],
+  "recommendation": {
+   "summary": "Reject a 2027 exit of C. Fund the $0.55M redesign (plus up to $0.35M reserve) with a two-site pilot and Gate 1. Make bundle-level fill the service KPI and fix the A/B misses. Renew the two bundle agreements with C retained and a consent-based D substitution clause. Move the engineering team to D after the four-month redesign. Decide any 2029 sunset at a Q4 2028 gate on observed evidence.",
+   "closest_plausible_id": "R1",
+   "defensible": "yes",
+   "rationale": "Meets all four defensibility criteria. It reconciles the 8.3% reported margin to avoidable cash flows ($3.8M contribution, $0.4M avoidable fixed cost). It treats the $2.1M penalty as a one-time first-year item separate from the -$2.65M recurring loss. It bounds D substitution at $1.5M of capacity and 50% contribution, and shows that even 100% migration still loses $0.4M a year. It refuses causal inference from the renewal gap and proposes matched-segment tests. A conditional phased exit (R2) is kept open through Gate 2."
+  },
+  "hypothesis_handling": {
+   "observed": "rejected",
+   "appropriate": "yes",
+   "noticed_contradictions": "yes",
+   "challenged_assumptions": "yes",
+   "acknowledges_uncertainty": "yes",
+   "unsupported_causal_claims": 1,
+   "rationale": "The CEO's 'drop C on its 8% margin' hypothesis is explicitly rejected on evidence: the margin is an allocation artefact, only $0.4M is avoidable, exit costs $2.65M a year and $4.75M in year one, and the penalty and bundle constraints bind. This matches the key's expected handling and is not contrarian. The document surfaces all three contradictory evidence items: allocated margin versus contribution, the confounded renewal gap, and the item-level dashboard hiding bundle delays. It keeps the churn question open ('cannot rule out a C effect either') with tests before Gate 2. It also refines its own 'keep C' position to 'keep, but redesign'. One oddity: slide 3 frames the hypothesis under test as the team's own 'keep C' rather than the CEO's, though the CEO's claims are still tested directly. The one mildly overstated causal claim is that the bundle-fill shortfall is caused by A and B, not C."
+  },
+  "overall_comment": "Very strong document; weighted score about 4.65 (framing 5, coherence 4, evidence 5, judgment 5, clarity 4). Every number I re-derived matches the pack, and three of the four required calculations are stated exactly. Q4 is marked partly correct: the $0.70M one-year net redesign benefit is never stated, though the document gives payback (5.3 months) and a time-phased 2027–29 view (+$2.37M) from the same inputs.\n\nIt goes beyond the key in useful ways: the break-even D revenue of $6.8M, the finding that full migration still loses $0.4M a year, the pro-rata reallocation showing B becomes the next 'weakest' product, break-even savings thresholds, and the caution that the saving is 57% of C's direct cost. The recommendation matches R1 with gates and kill criteria, and no trap is fallen into.\n\nMain weaknesses:\n- **Redundancy and length:** the D cap and the exit bridge are restated across slides 6–9, and the closing slides overlap.\n- **Overstated title:** slide 12 says redesign 'meets every constraint' while bundle fill is still below 95% under every option.\n- **A/B attribution:** the fill shortfall is pinned on A and B somewhat more firmly than the pack supports.\n- **Envelope fully committed:** the whole $0.9M is assigned to redesign plus reserve before the cost of the fill fix is known.",
+  "source_guess": {
+   "guess": "specialised_tool",
+   "confidence": "medium"
+  }
+ },
+ "cost_usd": 0.9939275999999999,
+ "wall_s": 101.96169090270996,
+ "is_error": false,
+ "error_text": null
+}

@@ -1,0 +1,37 @@
+{
+ "x": "D45DG6",
+ "y": "D3JU5H",
+ "case": "c6-make-buy",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "X runs a tidy four-part pyramid (economics, limits and demand risk, delivery, recommendation) in which each summary line maps to a section and each title is backed by its own numbers. Its one tension is that the summary headlines the owned cell as saving $0.51M, which depends on the non-binding resale that the same deck later says cannot be relied on. Y sets four tests up front and carries them through the option matrix, the gates and the risk table, which is equally consistent. Y's flaws are small: the summary opens with the team's own 'starting hypothesis' (a lease) rather than the answer, it says 'four supply levers' in one place and 'five-layer contingency' in another, and it headlines ~$3.2M cash while footnoting $1.9M. Neither hierarchy is materially more consistent than the other.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both reach the key's preferred answer (R1): keep buying, add a second source and reserved capacity, hold the lease as a gated option, reject the owned cell. Y weighs the alternatives more fully. It scores each option on affordability, cost, reliability and robustness with explicit pass/partial/fail evidence. It runs a one-at-a-time sensitivity on the lease (volume, price, scrap, start timing). It separates prerequisite gates (site survey, spec freeze, a full-speed scrap trial with a ≥94% yield threshold) from switching triggers, which gives the CEO the 'operational gate that would change the answer'. It also states when the owned cell could be revisited, shows a cash bridge for the recommendation itself, and lists residual exposures with mitigations, including the unquantified designation loss. X's triggers (222k units, $86.2 price, 97% delivery) are sound and well calculated, and its four-layer contingency is executable, but it has no process-proof gate and a thinner treatment of what could go wrong with the recommended path.",
+   "winner": "Y",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both are numerically accurate on the checks I reproduced: $75 delivered, $50.00/$47.92 and $52.13/$51.04 per good unit, $22.5M / $22.2M / $24.09M totals, the break-evens and the trigger prices. Both avoid the demo-yield, started-vs-accepted and correlation traps. X states the key's $1.9M cash figure directly; Y headlines ~$3.2M year-end cash, which nets in operating savings from a full-year 2027 run it elsewhere calls physically impossible, though it footnotes the $1.9M. Against that, X's headline economics ('owned cell saves $0.51M', '2.3%') rest on the non-binding $2.1M resale as base case, with the $24.1M no-resale figure shown as a variant. Y treats no-resale ($24.09M, $1.6M dearer) as the base and resale as the variant, which is the more defensible reading of the evidence and matches the key. Y also shows worked calculations, logs its modelling choices and their direction of bias, and tests partial-year start-up quantitatively where X only caveats it. X has one good catch Y makes less of: the on-time figure is measured on orders while the contract counts units.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "revision": {
+   "reasons": "Both reject the VP of Operations' build-now hypothesis for the right reasons: mismatched cost bases, scrap and fixed cost, the capital cap and the cash floor. X dismantles the CFO's $27 slide in its opening section with a per-unit bridge down to $1.70 and the 78% recovery figure, which is direct and effective. But X's headline still shows the owned cell as marginally cheaper on a non-binding resale. Y quotes and refutes the VP's claim explicitly ($80.31 per good unit against $75), corrects the CFO's payback (3.7 years, 7.2 at 65k), and separately rebuts the 98.5% yield, the machine-shop correlation and the 'buy capacity early' argument. Y's framing of a lease as 'our starting hypothesis' is a distraction from the pack's actual hypothesis, but it does not weaken the rejection of the owned cell, and Y states what evidence would reopen it.",
+   "winner": "Y",
+   "strength": "slight"
+  },
+  "overall": {
+   "reasons": "Both documents would lead the committee to the same defensible decision with correct normalised economics, a cash and capital test, and a delivery contingency. Y serves the decision maker better. It treats the owned cell's cost without relying on the non-binding resale. It shows how fragile the lease's 1% edge is across several assumptions. It gives a cash bridge for the recommended plan, including headroom if the lease is triggered. Its gate structure includes operational prerequisites (site survey, spec freeze, a full-speed scrap trial) alongside the volume, price and reliability triggers, and it sets conditions for revisiting the owned cell. X is tighter and matches the key's $1.9M cash figure more directly, and its triggers are well calculated, but it is thinner on gates, sensitivities and residual risks, and its headline owned-cell saving depends on the resale.",
+   "winner": "Y",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 1.0064442
+}

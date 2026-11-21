@@ -1,0 +1,941 @@
+[
+ {
+  "case": "c6-make-buy",
+  "runs": {
+   "B": {
+    "run_id": "holdout-c6-B-r1",
+    "status": "complete",
+    "slides": 18,
+    "words": 4267,
+    "check_py_fail": null,
+    "cost_usd": 3.1453042000000004,
+    "api_min": 12.493733333333333,
+    "weighted": 4.15
+   },
+   "E1": {
+    "run_id": "holdout-c6-E1-r1",
+    "status": "complete",
+    "slides": 20,
+    "words": 2872,
+    "check_py_fail": 4,
+    "cost_usd": 5.1209052,
+    "api_min": 17.590666666666667,
+    "weighted": 4.4
+   },
+   "H2a": {
+    "run_id": "holdout-c6-H2a-r1",
+    "status": "complete",
+    "slides": 23,
+    "words": 4947,
+    "check_py_fail": 0,
+    "cost_usd": 9.944933999999996,
+    "api_min": 28.539483333333333,
+    "weighted": 4.15
+   }
+  },
+  "compile": {
+   "corrections": [],
+   "untraceable": [
+    {
+     "data_point_id": "wks50",
+     "critical": false,
+     "note": "Analysis's assumption of 50 shipping weeks used to size the buffer; not in the pack"
+    },
+    {
+     "data_point_id": "carry_rate",
+     "critical": false,
+     "note": "Analysis's assumed 25% carrying cost; the pack says carrying cost is not yet modelled"
+    },
+    {
+     "data_point_id": "split25",
+     "critical": false,
+     "note": "Analysis's proposed alternate-shop share (e.g. ~25%)"
+    },
+    {
+     "data_point_id": "emg_frt",
+     "critical": false,
+     "note": "Analysis's assumption that the $88 emergency price excludes $2 freight/QA"
+    },
+    {
+     "data_point_id": "w_buf",
+     "critical": false,
+     "note": "Analysis's reading that buffer stock acts immediately"
+    },
+    {
+     "data_point_id": "dec12",
+     "critical": true,
+     "ack": "User unavailable; chose the recommended option: keep the analysis's 12-month decision lead for the owned-cell gate, flagged as the analysis's unverified planning choice (the pack gives only the nine-month equipment lead time)",
+     "note": "Owned-cell gate: decide at least 12 months before capacity is needed"
+    }
+   ],
+   "critical_untraceable": 1
+  },
+  "fidelity": {
+   "critical": {
+    "valid": {
+     "preserved": 81,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 0
+    },
+    "invalid": {
+     "preserved": 0,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 2
+    }
+   },
+   "new_errors": [],
+   "problems": [
+    {
+     "id": "U006",
+     "status": "inherited_error",
+     "unit": "The owned cell would leave ~$3.2M ($3.15M) of year-end 2027 cash, below the $4.0M floor. Worked: $9.2M − ($7.3M upfront + $4.75M 2027 cost − $6.00M buy baseline) = $3.15M.",
+     "note": "Repeats ~$3.2M ($3.15M) year-end 2027 cash for the owned cell, crediting full-year 2027 operating savings while the same deck says first output is ~Q4 2027 at the earliest. On that timing cash is about $1.9M. Not corrected and not logged; the floor-breach conclusion is unchanged."
+    },
+    {
+     "id": "U019",
+     "status": "inherited_error",
+     "unit": "Gate T1 Volume: trigger the lease on a firm customer commitment ≥ 208k units for 2028–29. Why this level: lease break-even volume at today's price. Status today: forecast 220k, not guaranteed; conservative 150k.",
+     "note": "T1 is still set at ≥ 208k units, justified as 'lease break-even volume at today's price'. That is a zero-gain level resting on a full-year 2027 start, though the first gate review is June 2027 for a 2028 start. Not corrected and not logged."
+    }
+   ],
+   "corrections": [],
+   "numbers": {
+    "found": 268,
+    "total": 287,
+    "missing": [
+     [
+      "U011",
+      "17.25M"
+     ],
+     [
+      "U011",
+      "1.38M"
+     ],
+     [
+      "U012",
+      "-0.46M"
+     ],
+     [
+      "U022",
+      "9.20"
+     ],
+     [
+      "U049",
+      "3.49M"
+     ],
+     [
+      "U049",
+      "24.09M"
+     ],
+     [
+      "U049",
+      "17.25M"
+     ],
+     [
+      "U049",
+      "1.59M"
+     ],
+     [
+      "U049",
+      "20.74M"
+     ],
+     [
+      "U054",
+      "27.00"
+     ],
+     [
+      "U059",
+      "7.30M"
+     ],
+     [
+      "U059",
+      "2.00M"
+     ],
+     [
+      "U068",
+      "-0.51M"
+     ],
+     [
+      "U068",
+      "1.39M"
+     ],
+     [
+      "U082",
+      "40000"
+     ],
+     [
+      "U088",
+      "-0.25"
+     ],
+     [
+      "U088",
+      "9.20"
+     ],
+     [
+      "U088",
+      "-2.00"
+     ],
+     [
+      "U088",
+      "-0.72"
+     ]
+    ]
+   },
+   "pass": false
+  },
+  "pairwise": {
+   "H2a vs B": [
+    {
+     "winner": "H2a",
+     "strength": "slight",
+     "reasons": "These are essentially the same analysis with the same recommendation, numbers, gates and contingency plan; either would serve the Executive Committee well. The only substantive reasoning difference is that Y states the seven-month lease sensitivity accurately (the edge is erased only if full-year fixed cost is paid; pro-rated it stays +$0.21M), while X overstates it in its summary and a slide title. X has a slightly richer governing thought and less redundancy, but that is presentational. Y gets a marginal edge on accuracy."
+    },
+    {
+     "winner": "tie",
+     "strength": "slight",
+     "reasons": "The two documents are substantively the same analysis, with the same recommendation, calculations, gates, contingency and risk treatment. Y has a slightly more self-explanatory governing thought and cleaner structure. X is slightly more precise on the seven-month lease sensitivity. These offset, and a decision maker would be served equally well by either."
+    }
+   ],
+   "E1 vs H2a": [
+    {
+     "winner": "H2a",
+     "strength": "clear",
+     "reasons": "Both documents would lead the committee to the same defensible decision with correct core numbers. X serves the CEO's four requests more completely. It gives the recommendation, a cash bridge with headroom even if the lease is triggered, a fuller gate set including process proof at full speed, and a five-layer contingency with costs, timings and owners. It also tests whether the lease's 1% edge survives volume, price, scrap and start-up timing. Y is tighter and has two points X lacks: the orders-versus-units measurement basis and thresholds computed for a 2028-start lease. But it is thinner on sensitivities and gate design, and its framing of the owned cell leans on the non-binding resale. X's flaws (the ~$3.2M headline cash figure and gate thresholds on a 2027-start basis) do not change the decision."
+    },
+    {
+     "winner": "H2a",
+     "strength": "clear",
+     "reasons": "Both documents would lead the committee to the same defensible decision with correct normalised economics, a cash and capital test, and a delivery contingency. Y serves the decision maker better. It treats the owned cell's cost without relying on the non-binding resale. It shows how fragile the lease's 1% edge is across several assumptions. It gives a cash bridge for the recommended plan, including headroom if the lease is triggered. Its gate structure includes operational prerequisites (site survey, spec freeze, a full-speed scrap trial) alongside the volume, price and reliability triggers, and it sets conditions for revisiting the owned cell. X is tighter and matches the key's $1.9M cash figure more directly, and its triggers are well calculated, but it is thinner on gates, sensitivities and residual risks, and its headline owned-cell saving depends on the resale."
+    }
+   ],
+   "E1 vs B": [
+    {
+     "winner": "B",
+     "strength": "clear",
+     "reasons": "Both documents meet the key's defensibility criteria and reach the same sound recommendation with accurate numbers. X would serve the CEO better on each thing asked for: the option recommendation, cash implications (explicit bridge and headroom, including if the lease is triggered), the operational gates that would change the answer (prerequisites plus triggers, and owned-cell revisit conditions), and delivery protection (a five-layer contingency with costs and timings, and a 90-day plan with owners). It is also the more conservative on the owned-cell economics and more thorough on sensitivities. Y is tighter and has a few sharper points: 2028-start trigger thresholds, the orders-versus-units measurement gap, the $1.9M cash figure, and the capacity-headroom observation. But it is thinner on gates and robustness, and its headline owned-cell saving relies on the non-binding resale."
+    },
+    {
+     "winner": "B",
+     "strength": "slight",
+     "reasons": "Both give the same defensible recommendation and cover all critical requirements: cash and capital limits, normalised economics, delivery protection and gates. X is tighter and numerically cleaner, with the correct $1.9M cash figure and thresholds rebuilt for a 2028 lease. Y gives the decision maker more of what the CEO asked for: an explicit cash bridge, including the case where the lease is triggered; operational prerequisite gates plus triggers; quantified sensitivities, including partial-year 2027; a costed contingency; a risk register; and a direct rebuttal of each circulating claim. Y's flaws are the $3.2M cash headline and thresholds built on a 2027-start lease, but they do not change the conclusion. On balance Y serves the decision slightly better."
+    }
+   ]
+  }
+ },
+ {
+  "case": "c7-m-and-a",
+  "runs": {
+   "B": {
+    "run_id": "holdout-c7-B-r1",
+    "status": "complete",
+    "slides": 20,
+    "words": 4807,
+    "check_py_fail": null,
+    "cost_usd": 2.3877040000000003,
+    "api_min": 11.311733333333333,
+    "weighted": 4.4
+   },
+   "E1": {
+    "run_id": "holdout-c7-E1-r1",
+    "status": "complete",
+    "slides": 23,
+    "words": 3146,
+    "check_py_fail": 4,
+    "cost_usd": 4.0576124,
+    "api_min": 13.94055,
+    "weighted": 4.4
+   },
+   "H2a": {
+    "run_id": "holdout-c7-H2a-r1",
+    "status": "complete",
+    "slides": 22,
+    "words": 4891,
+    "check_py_fail": 0,
+    "cost_usd": 8.1394496,
+    "api_min": 23.175166666666666,
+    "weighted": 4.15
+   }
+  },
+  "compile": {
+   "corrections": [],
+   "untraceable": [
+    {
+     "data_point_id": "mo18",
+     "critical": true,
+     "ack": "Kept as the analysis's stated timing assumption (close July 2027 after a March board and about 3 months of diligence, so 18 months to end-2028); not in the pack; shown on p.4 as an assumption. Chosen without the user (unavailable), as recommended",
+     "note": "Drives the operating drag (1.5 years) behind the cash-floor title and the upfront ceiling"
+    },
+    {
+     "data_point_id": "up85",
+     "critical": true,
+     "ack": "Kept as the analysis's recommended ceiling: a judgement rounded down from the $8.7M maximum affordable upfront, which is recomputed from the pack (15.0 − 4.0 − 2.3). Chosen without the user (unavailable), as recommended",
+     "note": "Policy choice, not a pack figure; its upper bound is traceable"
+    },
+    {
+     "data_point_id": "dilmo",
+     "critical": false,
+     "note": "Diligence length (about 3 months) is the analysis's assumption; only used for timeline placement"
+    },
+    {
+     "data_point_id": "bandlo",
+     "critical": false,
+     "note": "Lower earnout band ($1.4M) is a proposed term in the analysis; not stated in the pack (close to the $1.36M partnership break-even)"
+    }
+   ],
+   "critical_untraceable": 2
+  },
+  "fidelity": {
+   "critical": {
+    "valid": {
+     "preserved": 74,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 0
+    },
+    "invalid": {
+     "preserved": 0,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 3
+    }
+   },
+   "new_errors": [
+    {
+     "quote": "categories: Cash today; Upfront price; Integration; RouteSprout EBITDA; Integration-era support; Cross-sell gross profit; Board floor; Headroom ... series 'Path B cash': 24; 11; 3.5; 1.5; 1.275; 1.44; 8.165; 0",
+     "problem": "In the Slide 4 Path B cash walk, the bar labelled 'Board floor' carries 8.165, which is the lowest cash at end-2028, not the $9.0M floor. The original walk had a 'lowest cash end-2028' line (8.2) and a separate headroom line. A reader could take the floor to be about $8.2M. The surrounding text states the $9.0M floor and the $8.2M result correctly, so the verdict is unaffected.",
+     "severity": "minor"
+    }
+   ],
+   "problems": [
+    {
+     "id": "U025",
+     "status": "inherited_error",
+     "unit": "Earnout: up to $9.5M more if earned, so the total stays within the sellers' $18.0M headline.",
+     "note": "Still $8.5M + up to $9.5M with 'total within the sellers' $18.0M'. That is the same total the deck calls overstated at 3.75x, with no lower total and no explanation of why $18.0M is acceptable. Not in the correction log."
+    },
+    {
+     "id": "U106",
+     "status": "inherited_error",
+     "unit": "Threshold 3 — Signed routing demand. Today: $0 signed; $2.4M is the Sales VP's view. Threshold: at least $1.36M run-rate shows demand; about $2.3M is needed to cover RouteSprout's losses. If not met: below $1.36M, reconsider routing altogether, including the build.",
+     "note": "Still 'At least $1.36M of run-rate shows demand; about $2.3M is needed to cover RouteSprout's losses'. The buy threshold stays at the partnership break-even, far below the deck's own crossover ($3.47M; $2.78M after support ends), with no reason given for buying below it. Not in the correction log."
+    },
+    {
+     "id": "U119",
+     "status": "inherited_error",
+     "unit": "Q1 2028 gate: Buy if all six thresholds are met (p.16). Otherwise continue the partnership, or start the build if demand is proven but the partner falls short.",
+     "note": "Still 'buy if all six thresholds are met (p. 16)'. The gate can clear with routing ARR from $1.36M, below the crossover where the deck says the partnership out-earns ownership. No added crossover condition or explanation; not in the correction log."
+    }
+   ],
+   "corrections": [],
+   "numbers": {
+    "found": 263,
+    "total": 272,
+    "missing": [
+     [
+      "U016",
+      "2.02M"
+     ],
+     [
+      "U017",
+      "310"
+     ],
+     [
+      "U024",
+      "1.8x"
+     ],
+     [
+      "U035",
+      "-9.3"
+     ],
+     [
+      "U036",
+      "-11.0"
+     ],
+     [
+      "U081",
+      "0.8x"
+     ],
+     [
+      "U081",
+      "0.44x"
+     ],
+     [
+      "U100",
+      "1.8x"
+     ],
+     [
+      "U104",
+      "1.8x"
+     ]
+    ]
+   },
+   "pass": false
+  },
+  "pairwise": {
+   "H2a vs B": [
+    {
+     "winner": "B",
+     "strength": "slight",
+     "reasons": "The two documents are near-duplicates in analysis, numbers, recommendation, terms, thresholds and risks, and both meet the answer key's criteria for a defensible conclusion. Y serves the decision maker slightly better: its executive summary leads with the recommendation and a clean five-pillar structure, its initial hypothesis is stated explicitly, and its Path B cash walk is more clearly labelled. X's reasoning is the same but its hierarchy is flatter and one waterfall label is wrong. The difference is small."
+    },
+    {
+     "winner": "tie",
+     "strength": "slight",
+     "reasons": "The two documents are the same analysis with the same numbers, recommendation, terms, thresholds, risks and next steps. They differ only in layout and minor wording. X has a slightly cleaner executive summary and a two-case cash table; Y has a clearer drag build-up and a clearer note on the renewal assumption, with one mislabelled bar and an empty divider slide. None of this would change how well the board is served, so the difference is negligible."
+    }
+   ],
+   "E1 vs H2a": [],
+   "E1 vs B": []
+  }
+ },
+ {
+  "case": "c8-distribution-network",
+  "runs": {
+   "B": {
+    "run_id": "holdout-c8-B-r1",
+    "status": "complete",
+    "slides": 18,
+    "words": 4651,
+    "check_py_fail": null,
+    "cost_usd": 3.7751807999999993,
+    "api_min": 14.988116666666667,
+    "weighted": 4.65
+   },
+   "E1": {
+    "run_id": "holdout-c8-E1-r1",
+    "status": "complete",
+    "slides": 19,
+    "words": 2738,
+    "check_py_fail": 4,
+    "cost_usd": 3.2781992000000004,
+    "api_min": 11.384766666666668,
+    "weighted": 4.9
+   },
+   "H2a": {
+    "run_id": "holdout-c8-H2a-r1",
+    "status": "complete",
+    "slides": 22,
+    "words": 4559,
+    "check_py_fail": 0,
+    "cost_usd": 7.742093799999999,
+    "api_min": 23.145966666666666,
+    "weighted": 4.9
+   }
+  },
+  "compile": {
+   "corrections": [],
+   "untraceable": [
+    {
+     "data_point_id": "testcap",
+     "critical": true,
+     "ack": "User not available during the build; the recommended option was taken: keep it as the analysis's stated assumption or proposal, labelled as such on the slide and in the delivery note (not verified against the pack)",
+     "note": "Northline assumption pending a provider quote; the pack gives only a two-year minimum"
+    },
+    {
+     "data_point_id": "peak90",
+     "critical": true,
+     "ack": "User not available during the build; the recommended option was taken: keep it as the analysis's stated assumption or proposal, labelled as such on the slide and in the delivery note (not verified against the pack)",
+     "note": "Proposed gate threshold from the analysis"
+    },
+    {
+     "data_point_id": "costgate",
+     "critical": true,
+     "ack": "User not available during the build; the recommended option was taken: keep it as the analysis's stated assumption or proposal, labelled as such on the slide and in the delivery note (not verified against the pack)",
+     "note": "Proposed gate threshold from the analysis"
+    },
+    {
+     "data_point_id": "guard95",
+     "critical": true,
+     "ack": "User not available during the build; the recommended option was taken: keep it as the analysis's stated assumption or proposal, labelled as such on the slide and in the delivery note (not verified against the pack)",
+     "note": "Proposed guardrail from the analysis"
+    }
+   ],
+   "critical_untraceable": 4
+  },
+  "fidelity": {
+   "critical": {
+    "valid": {
+     "preserved": 94,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 0
+    },
+    "invalid": {
+     "preserved": 0,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 0
+    }
+   },
+   "new_errors": [],
+   "problems": [],
+   "corrections": [],
+   "numbers": {
+    "found": 272,
+    "total": 276,
+    "missing": [
+     [
+      "U006",
+      "1.0M"
+     ],
+     [
+      "U046",
+      "1.00M"
+     ],
+     [
+      "U047",
+      "1.10M"
+     ],
+     [
+      "U056",
+      "0.00"
+     ]
+    ]
+   },
+   "pass": true
+  },
+  "pairwise": {
+   "H2a vs B": [],
+   "E1 vs H2a": [],
+   "E1 vs B": []
+  }
+ },
+ {
+  "case": "c9-capacity-timing",
+  "runs": {
+   "B": {
+    "run_id": "holdout-c9-B-r1",
+    "status": "complete",
+    "slides": 20,
+    "words": 4771,
+    "check_py_fail": null,
+    "cost_usd": 3.8757026000000008,
+    "api_min": 13.2041,
+    "weighted": 4.4
+   },
+   "E1": {
+    "run_id": "holdout-c9-E1-r1",
+    "status": "complete",
+    "slides": 18,
+    "words": 2693,
+    "check_py_fail": 4,
+    "cost_usd": 3.7206454,
+    "api_min": 13.633833333333333,
+    "weighted": 4.4
+   },
+   "H2a": {
+    "run_id": "holdout-c9-H2a-r1",
+    "status": "complete",
+    "slides": 23,
+    "words": 4907,
+    "check_py_fail": 0,
+    "cost_usd": 8.657060200000002,
+    "api_min": 27.257866666666665,
+    "weighted": 4.4
+   }
+  },
+  "compile": {
+   "corrections": [],
+   "untraceable": [
+    {
+     "data_point_id": "thr",
+     "critical": true,
+     "ack": "User unavailable; chose the recommended option: keep the analysis's proposed 10.5M demand trigger as a policy choice, flagged on slide 14 and in the workbook as the analysis's proposal (not in the pack) for the committee to confirm",
+     "note": "Policy threshold proposed by the analysis; its rationale (signed overflow ~1.6M uses two-thirds of the molder ceiling) recomputes from the pack"
+    },
+    {
+     "data_point_id": "buffer",
+     "critical": true,
+     "ack": "User unavailable; chose the recommended option: keep the analysis's $0.5M cash buffer as a proposal, flagged on slide 14 for the committee to confirm",
+     "note": "Drives the $7.5M cash target and the $3.5M funding trigger, both recomputed from it"
+    },
+    {
+     "data_point_id": "rebid_s25",
+     "critical": false,
+     "note": "Illustrative share in the analysis; flagged in the slide 11 footnote"
+    },
+    {
+     "data_point_id": "rebid_s50",
+     "critical": false,
+     "note": "Illustrative share in the analysis; flagged in the slide 11 footnote"
+    },
+    {
+     "data_point_id": "spec28",
+     "critical": false,
+     "note": "Analysis assumption (Appendix B); flagged in footnotes on slides 5 and 20"
+    },
+    {
+     "data_point_id": "spec30",
+     "critical": false,
+     "note": "Analysis assumption (Appendix B); moves 2030 overflow by about 0.1M units"
+    }
+   ],
+   "critical_untraceable": 2
+  },
+  "fidelity": {
+   "critical": {
+    "valid": {
+     "preserved": 86,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 0
+    },
+    "invalid": {
+     "preserved": 0,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 3
+    }
+   },
+   "new_errors": [],
+   "problems": [
+    {
+     "id": "U066",
+     "status": "inherited_error",
+     "unit": "Choosing 'reserve + bridge' over 'order now' costs nothing in capacity; it removes the covenant breach and a $4.8M bet on unsigned demand",
+     "note": "Remake states 'No capacity lost against ordering now'. The recommended path gives up the line from ~Jan 2028 to ~mid-2029 and leaves only ~2% monthly headroom in 2029 (the remake's own Slide 6). Not corrected, not in the log."
+    },
+    {
+     "id": "U128",
+     "status": "inherited_error",
+     "unit": "Case 'Forecast, funded': lowest cash vs $7.0M floor = $7.5M (+0.5)",
+     "note": "Still shows $7.5M (+0.5) as lowest cash. Unlike the other rows it does not deduct molder premiums (~$7.3M) or the line's $0.83M fixed cost (~$6.5M, below the floor without operating cash flow). Footnote 2 describes it as the trigger level at the balance payment but still presents it as the low."
+    },
+    {
+     "id": "U133",
+     "status": "inherited_error",
+     "unit": "The cash floor holds in every case",
+     "note": "The sentence 'the cash floor holds in every case' is no longer written out. The table still shows all four cases above the floor, including the funded case at $7.5M (+0.5). The corrected reading (~$7.3M after premiums, ~$6.5M after the line's fixed cost) appears nowhere."
+    }
+   ],
+   "corrections": [],
+   "numbers": {
+    "found": 270,
+    "total": 279,
+    "missing": [
+     [
+      "U010",
+      "-0.27M"
+     ],
+     [
+      "U010",
+      "-29"
+     ],
+     [
+      "U021",
+      "-30"
+     ],
+     [
+      "U040",
+      "-30"
+     ],
+     [
+      "U060",
+      "-30"
+     ],
+     [
+      "U068",
+      "-29"
+     ],
+     [
+      "U083",
+      "2.48M"
+     ],
+     [
+      "U083",
+      "1.46M"
+     ],
+     [
+      "U127",
+      "-30"
+     ]
+    ]
+   },
+   "pass": false
+  },
+  "pairwise": {
+   "H2a vs B": [],
+   "E1 vs H2a": [],
+   "E1 vs B": []
+  }
+ },
+ {
+  "case": "c10-portfolio-exit",
+  "runs": {
+   "B": {
+    "run_id": "holdout-c10-B-r1",
+    "status": "complete",
+    "slides": 19,
+    "words": 4730,
+    "check_py_fail": null,
+    "cost_usd": 3.2067260000000006,
+    "api_min": 11.826966666666667,
+    "weighted": 4.65
+   },
+   "E1": {
+    "run_id": "holdout-c10-E1-r1",
+    "status": "complete",
+    "slides": 18,
+    "words": 2750,
+    "check_py_fail": 4,
+    "cost_usd": 3.5281357999999994,
+    "api_min": 12.464566666666666,
+    "weighted": 4.65
+   },
+   "H2a": {
+    "run_id": "holdout-c10-H2a-r1",
+    "status": "complete",
+    "slides": 21,
+    "words": 4788,
+    "check_py_fail": 0,
+    "cost_usd": 8.440237599999998,
+    "api_min": 25.118366666666667,
+    "weighted": 4.65
+   }
+  },
+  "compile": {
+   "corrections": [],
+   "untraceable": [],
+   "critical_untraceable": 0
+  },
+  "fidelity": {
+   "critical": {
+    "valid": {
+     "preserved": 73,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 0
+    },
+    "invalid": {
+     "preserved": 0,
+     "verified_correction": 1,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 0
+    }
+   },
+   "new_errors": [],
+   "problems": [],
+   "corrections": [
+    {
+     "id": "u005",
+     "unit": "C's 8% margin comes from the cost allocation; C is actually the portfolio's highest-contribution connector.",
+     "note": "The invalid 'highest-contribution connector' is now 'on contribution margin, C is ... the strongest connector'. Slide 5 adds 'In dollars A's $7.0M contribution is largest; C's $3.8M equals B's', which matches the pack table. Consistent everywhere it appears. The correction log is empty, so the fix is not logged, but the remake states the correct version."
+    }
+   ],
+   "numbers": {
+    "found": 255,
+    "total": 263,
+    "missing": [
+     [
+      "u033",
+      "2026%"
+     ],
+     [
+      "u042",
+      "3.80"
+     ],
+     [
+      "u042",
+      "2.10"
+     ],
+     [
+      "u048",
+      "0.0M"
+     ],
+     [
+      "u048",
+      "1.90"
+     ],
+     [
+      "u048",
+      "100%"
+     ],
+     [
+      "u086",
+      "1.25x"
+     ],
+     [
+      "u087",
+      "0.625x"
+     ]
+    ]
+   },
+   "pass": true
+  },
+  "pairwise": {
+   "H2a vs B": [
+    {
+     "winner": "H2a",
+     "strength": "slight",
+     "reasons": "The two documents are substantively the same analysis and recommendation, both closely aligned with the answer key. Y is marginally more careful on one point: it says C leads on contribution margin, not on contribution, and adds the dollar caveat that A's $7.0M is largest. Y also consolidates the next steps with owners and dates in one place. X has a slightly cleaner action title on its summary slide. The net difference is very small, with a marginal edge to Y for precision."
+    },
+    {
+     "winner": "tie",
+     "strength": "slight",
+     "reasons": "These are substantively the same analysis with the same recommendation, numbers, option comparison, contract plan and gates. X is marginally more precise on contribution margin versus contribution dollars and has a consolidated next-steps slide. Y has an action-titled executive summary and lists the renewal-gap tests among its next steps. None of this would change what the board decides, so the difference is negligible."
+    }
+   ],
+   "E1 vs H2a": [
+    {
+     "winner": "H2a",
+     "strength": "clear",
+     "reasons": "Both documents are defensible and meet all four of the key's criteria: margins reconciled to avoidable cash, the penalty treated as one-time, D substitution bounded by capacity and validation, and no causal reading of the renewal gap. Y serves the board better because it delivers more of what the committee asked for. It gives a time-phased comparison of exit, retain, delayed sunset and redesign against each constraint. It adds sensitivities showing the conclusion is robust: no migration rate makes exit pay, the redesign breaks even at 19–31% of the estimated saving, and exit needs a 70% fall in C contribution. It also provides a concrete contract plan, quantified gates and a transparent assumption log. X is accurate, leaner, and more disciplined about not quantifying the engineering opportunity cost. But it offers less decision support on downside cases, gate thresholds and the redeploy-to-D question."
+    },
+    {
+     "winner": "H2a",
+     "strength": "clear",
+     "reasons": "Both documents are defensible, numerically correct and reach the key's preferred conclusion. Y is concise and clean, and would serve a board adequately. X delivers more fully what the board asked for: the margin-to-avoidable-cost walk, a quantified exit bridge with migration sensitivity, a time-phased comparison of exit, retain, delayed sunset and redesign against each constraint, a downside redesign case, a contract plan covering all nine bundle customers, explicit tests of the correlation and dashboard claims, and quantified gates. It also lists its assumptions transparently. Its extra length carries real analytical content rather than padding, and its few overstatements (A/B as the cause of the fill gap, the illustrative engineering bound, \"four of five\") are minor and mostly flagged."
+    }
+   ],
+   "E1 vs B": [
+    {
+     "winner": "B",
+     "strength": "clear",
+     "reasons": "Both documents are correct, defensible and avoid all four traps; X is a concise, accurate deck a board could act on. Y better delivers what the committee asked for. It gives the margin-to-avoidable-cost walk, an exit bridge with the penalty separated, and a single time-phased comparison of exit, retain, delayed sunset and redesign. Its contract plan is concrete, the correlation and dashboard tests are explicit, and the sensitivity table shows which unknowns could change the answer. Its quantified gates (pilot saving of at least $0.4M a year; six sunset criteria) and its sequencing of the engineering team give the board decisions it can approve in February. Y's minor overstatements (A/B causation, the illustrative opportunity-cost bound) are flagged as assumptions and do not affect the conclusion."
+    },
+    {
+     "winner": "B",
+     "strength": "clear",
+     "reasons": "Both documents are defensible and reach the answer key's preferred recommendation with correct core numbers. X serves the board better because it delivers everything section 7 of the pack asks for: the margin-to-contribution walk, the quantified exit bridge, a single multi-year comparison of exit, retain, delayed sunset and redesign, a detailed contract plan, and explicit tests of the correlation claim and the dashboard definition. It adds sensitivity analysis showing the recommendation holds on migration rate, redesign savings, requalification delay and price pressure. It closes with six concrete board decisions and gates with numeric thresholds. Y is tighter and slightly more cautious in places, but it has less decision machinery: no downside case, no multi-year view, and qualitative gate criteria. Its headline also mixes the no-migration and best-case figures. X's few overstatements (attributing the fill gap to A and B, the illustrative engineering bound) are flagged as assumptions and do not change the conclusion."
+    }
+   ]
+  }
+ },
+ {
+  "case": "c11-oem-licensing",
+  "runs": {
+   "B": {
+    "run_id": "holdout-c11-B-r1",
+    "status": "complete",
+    "slides": 20,
+    "words": 4750,
+    "check_py_fail": null,
+    "cost_usd": 2.1433283999999997,
+    "api_min": 9.826666666666666,
+    "weighted": 4.65
+   },
+   "E1": {
+    "run_id": "holdout-c11-E1-r1",
+    "status": "complete",
+    "slides": 21,
+    "words": 3031,
+    "check_py_fail": 4,
+    "cost_usd": 4.478126800000002,
+    "api_min": 15.261416666666666,
+    "weighted": 4.4
+   },
+   "H2a": {
+    "run_id": "holdout-c11-H2a-r1",
+    "status": "complete",
+    "slides": 22,
+    "words": 4895,
+    "check_py_fail": 0,
+    "cost_usd": 8.3066824,
+    "api_min": 24.390983333333335,
+    "weighted": 4.4
+   }
+  },
+  "compile": {
+   "corrections": [],
+   "untraceable": [],
+   "critical_untraceable": 0
+  },
+  "fidelity": {
+   "critical": {
+    "valid": {
+     "preserved": 104,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 0
+    },
+    "invalid": {
+     "preserved": 0,
+     "verified_correction": 0,
+     "unsupported_alteration": 0,
+     "missing": 0,
+     "inherited_error": 1
+    }
+   },
+   "new_errors": [],
+   "problems": [
+    {
+     "id": "U057",
+     "status": "inherited_error",
+     "unit": "Grey bars show the annual OEM shipments needed for exclusivity to beat staying nonexclusive.",
+     "note": "Subtitle still reads 'OEM robots a year needed for exclusivity to beat staying nonexclusive'. The formula ($0.9M + overlap × $1.476M) ÷ $220 measures breakeven against no OEM deal (direct only), not against Option N. Not corrected, and no correction is logged."
+    }
+   ],
+   "corrections": [],
+   "numbers": {
+    "found": 268,
+    "total": 271,
+    "missing": [
+     [
+      "U049",
+      "-0.48"
+     ],
+     [
+      "U056",
+      "4091"
+     ],
+     [
+      "U056",
+      "6104"
+     ]
+    ]
+   },
+   "pass": false
+  },
+  "pairwise": {
+   "H2a vs B": [
+    {
+     "winner": "tie",
+     "strength": "slight",
+     "reasons": "These are substantively the same analysis: the same recommendation, calculations, gates, signposts, risks and next steps. The only differences are structural. X has a slightly cleaner hierarchy, while Y has a few topic-label titles and a redundant, truncated closing slide. Those do not change how well either document serves the board's decision, so the difference is negligible."
+    },
+    {
+     "winner": "tie",
+     "strength": "slight",
+     "reasons": "These are substantively the same analysis: same recommendation, same calculations, same gates, signposts, negotiation position and fallback. Both meet every defensibility criterion in the key: no double-counting, full costs and channel opportunity cost, binding certification and audit gates, and a real nonexclusive alternative. Y's executive summary is slightly more self-contained and X's wording on the renewal sensitivity is slightly more careful. Those differences offset and are mostly presentational, so a board would reach the same decision with the same confidence from either."
+    }
+   ],
+   "E1 vs H2a": [
+    {
+     "winner": "H2a",
+     "strength": "clear",
+     "reasons": "Both documents are defensible, numerically sound and reach the same recommendation with gates and change-triggers. Y would serve the board better. It gives the advance-credit mechanics in both plan and stress cases, a three-year X-versus-N comparison with a volume cushion, and a liquidity check for every route including the clawback risk. It also gives a negotiating position with must-haves, tradeables and a walk-away fallback, which matters given Boreal's limited leverage, and signposts with thresholds in both directions. X is leaner and clean, with a nicely specified gate path. It leaves the board without a plan if the OEM refuses, and its comparison of alternatives is thinner."
+    },
+    {
+     "winner": "H2a",
+     "strength": "clear",
+     "reasons": "The two documents make the same defensible recommendation with correct core economics, so the difference lies in how well each equips the board. X gives a fuller basis for the decision: stress-case cash timing, a three-year value across the overlap range with a renewal sensitivity, liquidity for each route, a negotiating position with must-haves, tradeables and a walk-away, signposts with thresholds in both directions, and assumptions marked with the direction of their bias. Y is tighter and equally accurate on the essentials, but it leaves the board without a fallback if the OEM refuses the pilot, and its treatment of alternatives and multi-year channel loss is thinner."
+    }
+   ],
+   "E1 vs B": [
+    {
+     "winner": "B",
+     "strength": "clear",
+     "reasons": "Both documents are defensible, numerically sound and aligned with the key's preferred recommendation. Y is leaner and very clearly argued. X would serve the board better because it covers more of what the board asked for. It explains the advance without double-counting in both the plan and stress cases. It gives a three-year overlap-by-volume grid for the 65% test and compares liquidity across all routes. It sets three verifiable gates and four signposts with thresholds in each direction. It also provides a negotiation plan with must-haves, tradeables and a fallback, which matters given Boreal's limited leverage. Y has no fallback if the OEM refuses the pilot and carries a few small inconsistencies. X's own flaws are minor: loose breakeven wording, an inconsistent offset scenario, and an unsupported messaging suggestion."
+    },
+    {
+     "winner": "B",
+     "strength": "clear",
+     "reasons": "Both are strong, numerically sound and land on the same defensible recommendation with quantified gates and change-the-answer thresholds. Y would serve the board better. It gives one three-year value for exclusivity that includes the direct-channel loss, at plan and at 65%, with a renewal sensitivity. It compares all routes on value, reversibility, liquidity and deal risk. It also equips the board for the negotiation with must-haves, tradeables, a fallback and specific decisions to authorise, while admitting limited leverage and the upper-bound nature of the pilot figures. X is leaner and equally accurate on the core economics, but it leaves the 'what if the OEM says no' question and the deferral option underdeveloped."
+    }
+   ]
+  }
+ }
+]

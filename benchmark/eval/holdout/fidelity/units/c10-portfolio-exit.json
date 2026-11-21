@@ -1,0 +1,1014 @@
+{
+ "case": "c10-portfolio-exit",
+ "source_run": "holdout-c10-B-r1",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "units": [
+   {
+    "id": "u001",
+    "type": "answer",
+    "text": "Keep connector C: redesign it now, fix bundle service, and decide any 2029 sunset on evidence",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 1 title"
+   },
+   {
+    "id": "u002",
+    "type": "decision_asked",
+    "text": "Board question: should Vesper discontinue low reported-margin sterile connector C and redeploy the team to connector D? Pre-read for the February 2027 board meeting.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 1"
+   },
+   {
+    "id": "u003",
+    "type": "assumption",
+    "text": "All figures in US$ millions, FY2026 full year, from the board briefing pack (synthetic benchmark data). Prepared November 2026.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 1"
+   },
+   {
+    "id": "u004",
+    "type": "answer",
+    "text": "Do not discontinue C in 2027: exiting would destroy cash and breach board constraints. Redesign C, fix bundle service, and make any sunset a 2029 decision.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 title"
+   },
+   {
+    "id": "u005",
+    "type": "claim",
+    "text": "C's 8% margin comes from the cost allocation; C is actually the portfolio's highest-contribution connector.",
+    "critical": true,
+    "valid": false,
+    "correct_version": "C's 8% margin comes from the cost allocation; C has the portfolio's highest contribution margin (63% vs 50% for A and D, 42% for B). In absolute direct contribution A is highest at $7.0M; C earns $3.8M, tied with B.",
+    "source_loc": "Slide 2 (A)"
+   },
+   {
+    "id": "u006",
+    "type": "number",
+    "text": "C earns $3.8M direct contribution, a 63% contribution margin vs 50% for D, 50% for A and 42% for B.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (A)"
+   },
+   {
+    "id": "u007",
+    "type": "number",
+    "text": "Only $0.4M of C's $3.3M allocated cost is avoidable; the other $2.9M would move onto A, B and D.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (A); Slide 4 title"
+   },
+   {
+    "id": "u008",
+    "type": "claim",
+    "text": "Exiting C in 2027 loses $4.75M in the first year and $2.65M every year after, and breaks two non-negotiables.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (B)"
+   },
+   {
+    "id": "u009",
+    "type": "number",
+    "text": "Even if D wins the optimistic 25% of C revenue, D adds only $0.75M; break-even would need $6.8M of D sales (113% of C).",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (B)"
+   },
+   {
+    "id": "u010",
+    "type": "number",
+    "text": "The $2.1M penalty alone is 2.3x the $0.9M cash envelope; C sits in 9 of 14 major bundles with no validated substitute.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (B); Slide 8 title"
+   },
+   {
+    "id": "u011",
+    "type": "claim",
+    "text": "The customer case for exit does not hold up: the real problem is bundle fill, caused by A and B.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (C)"
+   },
+   {
+    "id": "u012",
+    "type": "claim",
+    "text": "The 9-point renewal gap does not show C causes churn: it is confounded by hospital size, legacy equipment and customer-success coverage (C buyers are smaller, legacy-equipment, lower-coverage accounts; each of these could lower renewal on its own); there is no before/after test.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (C); Slide 10 title and verdict"
+   },
+   {
+    "id": "u013",
+    "type": "number",
+    "text": "C's 98% on-time figure leaves out bundle misses caused by A and B. Bundle fill is 91% vs the 95% contracted (–4 pts), the C dashboard hides it, and exiting C would not fix it.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (C); Slide 11 title and chart"
+   },
+   {
+    "id": "u014",
+    "type": "recommendation",
+    "text": "Recommended: redesign C now (+$2.4M over 2027–29), recover bundle fill, then hand the team to D.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (D)"
+   },
+   {
+    "id": "u015",
+    "type": "number",
+    "text": "The $0.55M redesign pays back in ~5 months of savings and still breaks even at 19% (about a fifth) of the $1.25M estimate; it fits within the $0.9M.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (D); Slide 13 title"
+   },
+   {
+    "id": "u016",
+    "type": "recommendation",
+    "text": "Renew the two bundles without exit notice and with a consent-based D path; hold a Q4 2028 gate on a 2029 sunset.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 2 (D)"
+   },
+   {
+    "id": "u017",
+    "type": "claim",
+    "text": "Our starting hypothesis, \"keep C\", survived four of five tests; the fifth showed that keeping C unchanged is not enough.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 3 title"
+   },
+   {
+    "id": "u018",
+    "type": "assumption",
+    "text": "Initial hypothesis (set before testing): Vesper should retain C, because its low reported margin is an allocation effect rather than an avoidable economic cost.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 3"
+   },
+   {
+    "id": "u019",
+    "type": "claim",
+    "text": "Test 1, C earns more cash than its exit would save: C direct contribution $3.8M vs avoidable fixed cost $0.4M, so exit gives up a net $3.4M a year before any migration. Verdict: Holds.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 3"
+   },
+   {
+    "id": "u020",
+    "type": "claim",
+    "text": "Test 2, D cannot replace what C earns: migration ceiling 25% of C revenue = $1.5M (all of D's spare capacity) x 50% = $0.75M, vs $3.4M at stake. Verdict: Holds.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 3"
+   },
+   {
+    "id": "u021",
+    "type": "claim",
+    "text": "Test 3, exit costs and constraints bind: $2.1M first-year penalties vs $0.9M approved cash; C sits in 9 of 14 major bundles and no substitute is validated across every hospital model. Verdict: Holds.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 3"
+   },
+   {
+    "id": "u022",
+    "type": "claim",
+    "text": "Test 4, C is not driving customer attrition: the 9-point renewal gap is correlational and confounded (size, legacy equipment, CS coverage); there is no before/after evidence either way. Verdict: Unproven.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 3"
+   },
+   {
+    "id": "u023",
+    "type": "claim",
+    "text": "Test 5, retaining C as-is is acceptable: bundle fill is 91% vs 95% required; C faces price pressure; a $1.25M a year redesign saving is available for $0.55M. Verdict: Fails: refine.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 3"
+   },
+   {
+    "id": "u024",
+    "type": "recommendation",
+    "text": "Revised answer: Keep C, but not unchanged. Fund the C redesign, bring bundle fill back to 95%, use the renewals to open a consent-based path to D, and treat a 2029 sunset as a decision for Q4 2028, made on observed evidence.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 3"
+   },
+   {
+    "id": "u025",
+    "type": "claim",
+    "text": "Test 4 stays open, and the plan includes a way to resolve it.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 3"
+   },
+   {
+    "id": "u026",
+    "type": "number",
+    "text": "Two different margins. Reported margin = (6.0 – 2.2 – 3.3) / 6.0 = 8.3%. Contribution margin = 3.8 / 6.0 = 63.3%. C's 8% \"gross margin\" comes from the allocation.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 4 title and text"
+   },
+   {
+    "id": "u027",
+    "type": "claim",
+    "text": "88% of the allocation stays. $2.9M of the $3.3M is shared regulatory documentation and plant depreciation, spread by historical engineering hours. It does not go away when the SKU does.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 4; Slide 18"
+   },
+   {
+    "id": "u028",
+    "type": "number",
+    "text": "Exit decisions turn on $3.4M. Exiting C removes $3.8M of contribution and saves $0.4M of fixed cost, so Vesper loses $3.4M a year before any migration to D. Decision-relevant figure: $3.4M a year of profit lost on exit, not 8%.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 4"
+   },
+   {
+    "id": "u029",
+    "type": "claim",
+    "text": "The dashboard label misleads. The figure called \"product gross margin\" is measured after shared allocations, so it cannot be used to rank products for an exit or capacity decision.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 4"
+   },
+   {
+    "id": "u030",
+    "type": "number",
+    "text": "Connector C walk, FY2026, $M: sales 6.0; direct variable cost –2.2; direct contribution 3.8 (63% of sales); avoidable fixed cost –0.4; profit lost if C exits 3.4; shared cost that stays (reallocated) –2.9; reported profit 0.5 (8.3% of sales).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 4 chart"
+   },
+   {
+    "id": "u031",
+    "type": "assumption",
+    "text": "Avoidable fixed cost of $0.40M is per Finance (Finance's estimate); direct variable cost is fully avoidable if shipments end.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 4 source note; Slide 16 key assumptions"
+   },
+   {
+    "id": "u032",
+    "type": "claim",
+    "text": "On contribution, C is Vesper's strongest connector (63% vs D's 50%), and exiting it would move $2.9M of stranded cost onto A, B and D.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 5 title"
+   },
+   {
+    "id": "u033",
+    "type": "number",
+    "text": "Margin by product, FY2026, % of sales. Reported margin (after allocations): A 41.4%, B 28.9%, C 8.3%, D 30.0%. Direct contribution margin: A 7.0/14.0 = 50.0%; B 3.8/9.0 = 42.2%; C 3.8/6.0 = 63.3%; D 2.0/4.0 = 50.0%.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 5 chart; Slide 18"
+   },
+   {
+    "id": "u034",
+    "type": "number",
+    "text": "Sales: Connector A $14.0M, Connector B $9.0M, Connector C $6.0M, Connector D $4.0M.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 5 chart"
+   },
+   {
+    "id": "u035",
+    "type": "number",
+    "text": "If C exits, allocated cost today → after exit, $M: A 1.20 → 2.29; B 1.20 → 2.29; D 0.80 → 1.53; Total 3.20 → 6.10 (2.9 split 1.2 : 1.2 : 0.8 gives A +1.0875, B +1.0875, D +0.725).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 5 table; Slide 18"
+   },
+   {
+    "id": "u036",
+    "type": "number",
+    "text": "If C exits, illustrative reported margin today → after exit: A 41.4% → 33.7%; B 28.9% → 16.8%; D (with 25% C migration) 30.0% → 22.3% (11.9% without migration).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 5 table; Slide 18"
+   },
+   {
+    "id": "u037",
+    "type": "claim",
+    "text": "Implication: the stranded cost does not go away when C does; it lands on A, B and D. B's reported margin would fall to about 17%, and the same margin-ranking logic would then pick B as the next \"weakest\" product.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 5"
+   },
+   {
+    "id": "u038",
+    "type": "number",
+    "text": "Total allocated cost falls by only $0.4M (from 6.5 to 6.1).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 5"
+   },
+   {
+    "id": "u039",
+    "type": "assumption",
+    "text": "Allocation basis: the pack says the remaining cost \"would move to A, B and D\" but does not give the split. We assume the $2.9M moves pro rata to today's allocation (1.2 : 1.2 : 0.8). D's figure includes $1.5M of migrated revenue at 50% contribution. Illustrative only; total company profit is unaffected by the split.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 5; Slide 19"
+   },
+   {
+    "id": "u040",
+    "type": "assumption",
+    "text": "Definitions: contribution margin = (sales – direct variable cost) / sales. Reported margin = (sales – variable – allocated) / sales.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 5 source note; Slide 18"
+   },
+   {
+    "id": "u041",
+    "type": "claim",
+    "text": "Exiting C cuts cash contribution by $4.75M in its first year and $2.65M every year after, even if D wins the optimistic 25% of C revenue.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 6 title"
+   },
+   {
+    "id": "u042",
+    "type": "number",
+    "text": "Exit bridge vs retaining C, first 12 months after exit, $M: C direct contribution lost –3.80; avoidable fixed cost saved +0.40; D migration at ceiling (25% x $6.0M x 50%) +0.75; recurring annual impact –2.65; first-year bundle penalties (one-time) –2.10; first-year impact –4.75.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 6 chart; Slide 18"
+   },
+   {
+    "id": "u043",
+    "type": "range_or_case",
+    "text": "Operating profit after allocations, $M a year: Today (FY2026) 10.10 (total contribution 16.6 – allocated fixed 6.5); Exit C, 25% migration 7.45 (–26%) (contribution 16.6 – 3.8 + 0.75 = 13.55; fixed 6.5 – 0.4 = 6.1); Exit C, no migration 6.70 (–34%).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 6; Slide 18"
+   },
+   {
+    "id": "u044",
+    "type": "claim",
+    "text": "Penalties are one-time. Following Finance, the $2.1M is treated as a first-year cost, not recurring overhead. Even with every penalty waived, exit still loses $2.65M a year.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 6"
+   },
+   {
+    "id": "u045",
+    "type": "assumption",
+    "text": "Migration is a ceiling, not a forecast. The 25% is unobserved: it is the portfolio team's ceiling from three sales interviews and needs customer-specific adapters and validation. Finance has not estimated any recapture beyond it; no recapture beyond it is assumed.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 6; Slide 7; Slide 19"
+   },
+   {
+    "id": "u046",
+    "type": "risk",
+    "text": "Not yet costed: replacement qualification, clinical documentation, and any A/B accounts lost with the bundle.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 6"
+   },
+   {
+    "id": "u047",
+    "type": "claim",
+    "text": "No migration rate makes exit pay: even if every C customer moved to D, Vesper would still lose $0.4M a year, and D can take only 25% today.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 7 title; Slide 16; Slide 19"
+   },
+   {
+    "id": "u048",
+    "type": "range_or_case",
+    "text": "Recurring annual impact of exit by share of C revenue migrating to D, $M (Impact = –3.8 + 0.4 + (share x $6.0M x 50%)): 0% ($0.0M of D sales) –3.40; 25% ($1.5M) –2.65; 50% ($3.0M) –1.90; 75% ($4.5M) –1.15; 100% ($6.0M) –0.40.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 7 chart"
+   },
+   {
+    "id": "u049",
+    "type": "threshold_or_gate",
+    "text": "Break-even requires the impossible: $6.8M of migrated D revenue needed to offset the $3.4M lost each year ($3.4M ÷ 50%). That is 113% of C's entire $6.0M revenue and 4.5x D's spare capacity.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 7; Slide 18"
+   },
+   {
+    "id": "u050",
+    "type": "claim",
+    "text": "Why D cannot close the gap: C's contribution margin (63%) is higher than D's incremental 50%, so each dollar moved from C to D earns less.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 7"
+   },
+   {
+    "id": "u051",
+    "type": "claim",
+    "text": "Migration crowds out D growth: the 25% ceiling would use all of D's $1.5M spare capacity, leaving no room for D's own organic growth.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 7; Slide 9"
+   },
+   {
+    "id": "u052",
+    "type": "range_or_case",
+    "text": "Bars beyond 25% are hypothetical and exceed D's current capacity: above D's current spare capacity ($1.5M) needs new D capacity and a validated adapter at every account. Chart excludes the one-time $2.1M penalty.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 7"
+   },
+   {
+    "id": "u053",
+    "type": "threshold_or_gate",
+    "text": "Board requirement ≥95% contracted bundle fill rate: 9 of 14 major hospital relationships specify a bundle containing C alongside A and B. No substitute for C has completed validation across every hospital model, so removing C leaves those bundles incomplete. Fill is already 91%. Gap: already –4 pts; would worsen. Status: Fails.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 8"
+   },
+   {
+    "id": "u054",
+    "type": "threshold_or_gate",
+    "text": "Board requirement ≤$0.9M one-time cash for 2027 portfolio changes: first-year bundle penalties of $2.1M are payable unless counterparties consent. Replacement qualification and clinical documentation come on top and have not been costed. Gap: ≥$1.2M over (2.3x). Status: Fails.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 8"
+   },
+   {
+    "id": "u055",
+    "type": "threshold_or_gate",
+    "text": "Honour customer commitments: exit requires notice, replacement qualification and clinical documentation. Two bundle agreements are being renewed now, so an exit notice would go into live negotiations. Consent of 9 bundle customers needed. Status: Fails.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 8"
+   },
+   {
+    "id": "u056",
+    "type": "threshold_or_gate",
+    "text": "Judge on cash contribution, not the allocation report: cash contribution falls by $3.4M a year before migration and $2.65M after the 25% ceiling, plus the $2.1M penalty in year one. –$4.75M yr 1; –$2.65M a year after. Status: Fails.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 8"
+   },
+   {
+    "id": "u057",
+    "type": "claim",
+    "text": "Implication: a 2027 exit cannot go ahead without the board relaxing at least two of its own constraints. No other option on the table requires that.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 8"
+   },
+   {
+    "id": "u058",
+    "type": "assumption",
+    "text": "Assumes the $2.1M penalty counts against the $0.9M 2027 one-time cash envelope because it is a direct cash consequence of the portfolio change. Even outside the envelope, exit fails the fill and contribution tests.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 8 source note; Slide 19"
+   },
+   {
+    "id": "u059",
+    "type": "claim",
+    "text": "Moving the team to D cannot replace C: D's spare capacity caps the upside at $0.75M a year, and Vesper can capture that without exiting C (D's room for $1.5M more revenue at present capacity exists whether or not C exits).",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 9 title and text"
+   },
+   {
+    "id": "u060",
+    "type": "number",
+    "text": "Annual cash contribution, $M: C profit lost on exit (contribution – avoidable fixed) 3.40 vs most D can add at present capacity ($1.5M revenue x 50%) 0.75. C's economics are 4.5x the most D can add without new capacity.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 9 chart"
+   },
+   {
+    "id": "u061",
+    "type": "claim",
+    "text": "D's \"30% margin\" is also after allocations. D's incremental contribution at existing capacity is 50%, still below C's 63%.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 9"
+   },
+   {
+    "id": "u062",
+    "type": "claim",
+    "text": "Growth is not replacement. D's double-digit market growth adds value at the margin. It does not justify giving up $3.8M of existing contribution (Finance's point).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 9"
+   },
+   {
+    "id": "u063",
+    "type": "assumption",
+    "text": "Known: the C redesign needs one design team for about four months (validation phase), then hands the team back.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 9"
+   },
+   {
+    "id": "u064",
+    "type": "risk",
+    "text": "Not known: the pack gives no quantified opportunity cost for the four months of engineering on C, and we do not invent one.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 9; Slide 16"
+   },
+   {
+    "id": "u065",
+    "type": "range_or_case",
+    "text": "Illustrative ceiling only: suppose the team's absence delayed filling D's spare capacity by the full four months. The cost would then be at most 4/12 x $0.75M ≈ $0.25M, against $1.25M a year of redesign savings. The $0.25M is a bound under a stated assumption, not an estimate of lost D sales. Effect on recommendation: low.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 9; Slide 16; Slide 18"
+   },
+   {
+    "id": "u066",
+    "type": "recommendation",
+    "text": "Answer to \"redeploy to D?\": yes, but in sequence. The team works on the C redesign from March to June 2027 and moves to D (adapter validation and growth) from July.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 9; Slide 15; Slide 16"
+   },
+   {
+    "id": "u067",
+    "type": "claim",
+    "text": "No counterfactual. The sample has no before/after evidence that removing C raises retention. It cannot support exit, and it cannot rule out a C effect either.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 10"
+   },
+   {
+    "id": "u068",
+    "type": "next_step",
+    "text": "Tests to run before the Q4 2028 gate: compare renewal within matched segments (size x equipment age x CS coverage); control for bundle fill each account actually received; code lost-account exit reasons for any mention of C; track retention of any accounts that drop C or move to D.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 10"
+   },
+   {
+    "id": "u069",
+    "type": "threshold_or_gate",
+    "text": "Decision rule: only a renewal gap that persists within segments should feed the sunset decision, and then it should be valued against the $3.4M a year C contributes.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 10"
+   },
+   {
+    "id": "u070",
+    "type": "claim",
+    "text": "A further plausible confounder: bundle fill of 91%, caused by A/B misses (our hypothesis, untested). The 9 C-bundle customers are the ones receiving 91% fill, but the pack does not link this to renewals.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 10"
+   },
+   {
+    "id": "u071",
+    "type": "claim",
+    "text": "The dashboard definition: C's 98% counts C as filled even when the bundle ships late because A or B is missing. The contract measures complete bundles, and that figure is 91%.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 11"
+   },
+   {
+    "id": "u072",
+    "type": "claim",
+    "text": "The cause sits in A and B, not C. Exiting C leaves the A/B misses in place and makes the nine C-bundles incomplete.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 11"
+   },
+   {
+    "id": "u073",
+    "type": "recommendation",
+    "text": "Redefine the KPI: make bundle-level contracted fill the headline service metric for every bundle customer (the contract KPI on every service dashboard). Report product-level fill only as a diagnostic.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 11; Slide 14"
+   },
+   {
+    "id": "u074",
+    "type": "next_step",
+    "text": "Bundle service recovery (Operations): root-cause the A and B misses on the nine bundle accounts; size buffer stock or allocation priority for A and B in those bundles. Start Feb 2027; target ≥95% by Q3 2027.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 11; Slide 14; Slide 15"
+   },
+   {
+    "id": "u075",
+    "type": "next_step",
+    "text": "Report monthly to the board until fill has stayed at 95% or above for two consecutive quarters; then sustain ≥95%.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 11; Slide 14; Slide 15"
+   },
+   {
+    "id": "u076",
+    "type": "assumption",
+    "text": "Unknown: recovery speed. The pack does not say how fast bundle service can recover or what that costs. A Q3 2027 target is set as a working assumption for Operations to confirm in February. Leads and the Q3 2027 fill target are proposals for management to confirm; the pack names neither owners nor a recovery date.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 11; Slide 14 source note"
+   },
+   {
+    "id": "u077",
+    "type": "claim",
+    "text": "Redesigning C is the only option that adds value and meets every constraint: +$2.4M over 2027–29, against –$8.7M for an immediate exit.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 12 title"
+   },
+   {
+    "id": "u078",
+    "type": "alternative",
+    "text": "Exit C in Q2 2027: cash contribution vs retain unchanged, $M: 2027 –3.43; 2028 –2.65; 2029 –2.65; cumulative 2027–29 –8.73 (–10.6 with no migration). One-time cash vs $0.9M: ≥$2.1M penalties + qualification: fails. 95% bundle fill: worsens, no validated substitute. Customer commitments: penalties unless 9 customers consent. Main risk: A/B bundle volume at risk (unquantified); B next 'weakest'.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 12"
+   },
+   {
+    "id": "u079",
+    "type": "alternative",
+    "text": "Retain C unchanged: cash contribution vs retain unchanged 0 / 0 / 0, cumulative 0. One-time cash $0: meets. 95% bundle fill: needs A/B fix. Customer commitments: honoured. Main risk: price pressure erodes C; $1.25M saving forgone.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 12"
+   },
+   {
+    "id": "u080",
+    "type": "alternative",
+    "text": "Delayed sunset in 2029 (no redesign): 0 / 0 / 0, cumulative 0 (–2.65 to –3.4 a year from 2030). One-time cash $0 if exits match expiries: meets. 95% bundle fill: needs A/B fix; time to validate adapter. Customer commitments: honoured; exit only at expiry. Main risk: as retain; locks in high-cost C until 2029.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 12"
+   },
+   {
+    "id": "u081",
+    "type": "alternative",
+    "text": "Redesign C now, 2029 sunset gate: 2027 –0.13; 2028 +1.25; 2029 +1.25; cumulative 2027–29 +2.37 (downside +0.40). One-time cash $0.55M + $0.35M reserve: meets. 95% bundle fill: needs A/B fix (in plan). Customer commitments: honoured; renewals add D path. Main risk: requalification delay at 2 customers; savings below estimate.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 12"
+   },
+   {
+    "id": "u082",
+    "type": "assumption",
+    "text": "Exit timing: exit effective 1 Jul 2027 (\"Q2 2027\"); 2027 loses half-year contribution and the full $2.1M penalty falls in 2027; migration at the 25% ceiling. Exit looks no better under any timing; recurring loss is timing-independent.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 12 source note; Slide 19"
+   },
+   {
+    "id": "u083",
+    "type": "number",
+    "text": "Calendar 2027 (exit 1 Jul): –1.9 + 0.2 + 0.375 – 2.1 = –3.43; 2027–29 = –3.43 – 2.65 – 2.65 = –8.73 (no migration: –3.8 – 3.4 – 3.4 = –10.6).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 18"
+   },
+   {
+    "id": "u084",
+    "type": "number",
+    "text": "Payback on run-rate savings ~5 months: $0.55M ÷ $1.25M a year = 0.44 years (≈ 5.3 months of run-rate).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 13; Slide 18"
+   },
+   {
+    "id": "u085",
+    "type": "threshold_or_gate",
+    "text": "19% of estimated savings needed to break even by 2029: $0.55M ÷ 2.33 years of savings = $0.24M a year (0.236).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 13; Slide 18"
+   },
+   {
+    "id": "u086",
+    "type": "range_or_case",
+    "text": "Base case: $1.25M a year from Sep 2027; $0.55M cost. Cash contribution vs retain unchanged, $M: 2027 –0.13 (= –0.55 + 1.25 x 4/12); 2028 +1.25; 2029 +1.25; 2027–29 +2.37.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 13; Slide 18"
+   },
+   {
+    "id": "u087",
+    "type": "range_or_case",
+    "text": "Downside case: 50% of savings, 3 months late, full $0.9M envelope spent: $0.63M a year from Dec 2027; $0.90M cost. 2027 –0.85 (= –0.90 + 0.625 x 1/12); 2028 +0.63; 2029 +0.63; 2027–29 value +$0.40M.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 13; Slide 18"
+   },
+   {
+    "id": "u088",
+    "type": "range_or_case",
+    "text": "Break-even case: $0.24M a year from Sep 2027; $0.55M cost: 2027 –0.47; 2028 +0.24; 2029 +0.24; 2027–29 0.00.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 13"
+   },
+   {
+    "id": "u089",
+    "type": "range_or_case",
+    "text": "Break-even with full $0.9M spent: $0.39M a year (0.386; 31% of the $1.25M estimate): 2027 –0.77; 2028 +0.39; 2029 +0.39; 2027–29 0.00.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 13; Slide 16; Slide 18"
+   },
+   {
+    "id": "u090",
+    "type": "claim",
+    "text": "C's reported margin rises to ~29% (29.2%), level with D's 30%, if the $1.25M comes out of direct cost: (6.0 – 0.95 – 3.3) / 6.0. The ranking that started this debate goes away. Assumption: the $1.25M direct saving reduces C's direct cost (used only for the 29% figure); the cash case is unchanged wherever the saving sits.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 13; Slide 18; Slide 19"
+   },
+   {
+    "id": "u091",
+    "type": "number",
+    "text": "Operating profit rises 12%, from $10.1M to $11.35M a year at full run-rate.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 13; Slide 18"
+   },
+   {
+    "id": "u092",
+    "type": "risk",
+    "text": "Redesign savings at scale: $1.25M equals 57% of C's $2.2M direct cost, an engineering estimate at current volume. The two-site pilot exists to test it before the whole line converts. Effect on recommendation: low, breaks even at 19% of estimate (31% if the full $0.9M is spent); resolved by two-site pilot and Gate 1 threshold of $0.4M a year.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 13; Slide 16"
+   },
+   {
+    "id": "u093",
+    "type": "assumption",
+    "text": "Rounded. 2027 savings run Sep–Dec (4 months); window = 28 months = 2.33 years. Break-even rows solve for the savings that make the 2027–29 total zero.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 13 note"
+   },
+   {
+    "id": "u094",
+    "type": "risk",
+    "text": "Requalification at 2 customers: redesign cost of $0.55M excludes possible requalification tests at two customers, which could delay savings; the downside case uses the $0.35M remaining in the envelope for them. Effect: low, downside (3 months late, $0.9M spent, half the savings) is still +$0.40M. Resolved by early engagement in Q1 2027 and the $0.35M reserve.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 13 source note; Slide 16"
+   },
+   {
+    "id": "u095",
+    "type": "recommendation",
+    "text": "Use the two renewals to secure C supply, bundle-level service terms and a consent-based path to D, not to give exit notice.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 14 title"
+   },
+   {
+    "id": "u096",
+    "type": "recommendation",
+    "text": "Workstream 1, the two bundle renewals (Commercial + Legal; Q1 2027; terms set at Feb board): renew with C in the bundle and give no exit notice; add a clause allowing substitution by a validated D + adapter only with customer consent, after qualification; align term end with the 2029 expiry cohort so any sunset can happen at expiry, without penalty.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 14; Slide 15"
+   },
+   {
+    "id": "u097",
+    "type": "next_step",
+    "text": "Workstream 2, the other seven bundle customers (Account leads + Quality; Q1 2027): confirm C supply through current terms; pre-notify the C design change and agree requalification tests early with the two customers that need them.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 14"
+   },
+   {
+    "id": "u098",
+    "type": "recommendation",
+    "text": "Workstream 4, penalty exposure (Finance; ongoing): carry the $2.1M as a contingent one-time liability tied to premature termination, not as annual overhead (Finance's rule).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 14"
+   },
+   {
+    "id": "u099",
+    "type": "next_step",
+    "text": "Workstream 5, D substitution evidence (Engineering (D) + Sales; from Jul 2027): run adapter and quality qualification with willing C customers; record actual acceptance, not interview estimates.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 14; Slide 15; Slide 16"
+   },
+   {
+    "id": "u100",
+    "type": "claim",
+    "text": "Why this order: the penalty stands unless counterparties consent, so consent-based substitution and expiry-aligned terms are the only routes to a penalty-free exit later. Fixing A/B fill protects all nine bundles whatever happens to C.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 14"
+   },
+   {
+    "id": "u101",
+    "type": "recommendation",
+    "text": "A staged plan with two decision gates protects $3.8M of contribution today and keeps a 2029 sunset open if the evidence turns.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 15 title"
+   },
+   {
+    "id": "u102",
+    "type": "assumption",
+    "text": "Redesign timing: kick-off Mar 2027, 4-month validation, 2-month two-site pilot, full line at run-rate savings from Sep 2027 (1 Sep 2027, after validation and pilot). Pilot-site savings in Jul–Aug ignored (conservative).",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 15; Slide 12 source note; Slide 19"
+   },
+   {
+    "id": "u103",
+    "type": "threshold_or_gate",
+    "text": "Gate 1, end of Aug 2027: convert the whole C line? Go if the pilot run-rate saving is ≥$0.4M a year (the break-even with the full $0.9M spent) and no customer requalification has failed.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 15; Slide 16"
+   },
+   {
+    "id": "u104",
+    "type": "threshold_or_gate",
+    "text": "Gate 1 otherwise: stop at the pilot sites, with spend capped inside the $0.9M envelope.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 15"
+   },
+   {
+    "id": "u105",
+    "type": "threshold_or_gate",
+    "text": "Gate 2, Q4 2028 (or the notice deadline, if earlier): sunset C in 2029? Consider sunset only if: D adapter validated on every hospital model in C bundles; observed acceptance high enough; D capacity in place; fill ≥95% for 2 quarters; renewal gap shown to be causal; updated exit bridge positive.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 15"
+   },
+   {
+    "id": "u106",
+    "type": "threshold_or_gate",
+    "text": "Only if Gate 2 passes: migrate (C customers to D) at expiry, at the 2029 expiries.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 15 timeline"
+   },
+   {
+    "id": "u107",
+    "type": "assumption",
+    "text": "Contract notice periods are not in the pack; Gate 2 must precede them.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 15 source note"
+   },
+   {
+    "id": "u108",
+    "type": "claim",
+    "text": "None of the open unknowns is likely to flip the decision against exit, and each is tested at a gate in the plan.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 16 title"
+   },
+   {
+    "id": "u109",
+    "type": "risk",
+    "text": "Unknown, D substitution acceptance: 25% is a ceiling from three sales interviews; adapters and validation are customer-specific. Effect on the recommendation: none, even 100% migration loses $0.4M a year. Resolved by observed acceptance in qualification (from Jul 2027).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 16"
+   },
+   {
+    "id": "u110",
+    "type": "risk",
+    "text": "Unknown, speed of bundle-fill recovery: fill is 91% vs 95%; no recovery timeline or cost in the pack. Effect: same under every option, since the cause is A/B; matters for renewals. Resolved by Ops plan in Feb and monthly board tracking.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 16"
+   },
+   {
+    "id": "u111",
+    "type": "threshold_or_gate",
+    "text": "C price pressure: competitive pressure named, not quantified. Exit breaks even on run-rate only if C contribution falls ~70%, from $3.8M to $1.15M (exit run-rate = –C contribution + 0.4 + 0.75 = 0; 3.8 – 1.15 = 2.65 drop). Re-test C contribution at Gate 2.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 16; Slide 18"
+   },
+   {
+    "id": "u112",
+    "type": "assumption",
+    "text": "Key assumptions: FY2026 volumes, prices and costs hold flat through 2029; horizon 2027–29, cash effects undiscounted (the horizon is three years). A short horizon and early redesign cash flows mean discounting would not change the ranking.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 16; Slide 19"
+   },
+   {
+    "id": "u113",
+    "type": "assumption",
+    "text": "Key assumption: the penalty is payable in full unless counterparties consent.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 16"
+   },
+   {
+    "id": "u114",
+    "type": "decision_asked",
+    "text": "We ask the board for six decisions that keep $3.8M of contribution, avoid $2.1M of penalties and add about $1.25M a year.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 17 title"
+   },
+   {
+    "id": "u115",
+    "type": "decision_asked",
+    "text": "Reject discontinuing connector C in 2027. Exit loses $4.75M in year one and $2.65M a year after, and breaches the cash and fill constraints.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 17"
+   },
+   {
+    "id": "u116",
+    "type": "decision_asked",
+    "text": "Approve $0.55M for the C redesign, plus up to $0.35M reserve, within the $0.9M envelope. Pilot at two sites first; Gate 1 at end of Aug 2027.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 17"
+   },
+   {
+    "id": "u117",
+    "type": "decision_asked",
+    "text": "Mandate bundle-level contracted fill as the service KPI. Operations to present an A/B recovery plan to reach ≥95%, with dates and cost.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 17"
+   },
+   {
+    "id": "u118",
+    "type": "decision_asked",
+    "text": "Authorise renewal terms for the two bundle agreements: C retained; consent-based D substitution clause; terms aligned to 2029 expiries.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 17"
+   },
+   {
+    "id": "u119",
+    "type": "decision_asked",
+    "text": "Sequence engineering: C redesign Mar–Jun 2027, then D. The D adapter work also builds the evidence for any later sunset.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 17"
+   },
+   {
+    "id": "u120",
+    "type": "decision_asked",
+    "text": "Set Gate 2 criteria for any 2029 sunset (Q4 2028): validated adapter, observed acceptance, sustained ≥95% fill, causal renewal test, positive exit bridge.",
+    "critical": true,
+    "valid": true,
+    "source_loc": "Slide 17"
+   },
+   {
+    "id": "u121",
+    "type": "claim",
+    "text": "Every number in the deck comes from briefing-pack inputs with the arithmetic shown in the calculation log (Appendix A).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 18 title"
+   },
+   {
+    "id": "u122",
+    "type": "number",
+    "text": "Reported margin calculation: A 5.8/14.0 = 41.4%; B 2.6/9.0 = 28.9%; C 0.5/6.0 = 8.3%; D 1.2/4.0 = 30.0%. C allocated 3.3 = avoidable 0.4 + non-avoidable 2.9 (88%).",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 18"
+   },
+   {
+    "id": "u123",
+    "type": "assumption",
+    "text": "Where the pack was silent we made eight working assumptions; each is conservative or does not change the answer.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 19 title"
+   },
+   {
+    "id": "u124",
+    "type": "assumption",
+    "text": "Delayed sunset: exits at contract expiry in 2029 avoid the penalty; contracts not expiring would still need consent. Only affects the post-2029 view.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 19"
+   },
+   {
+    "id": "u125",
+    "type": "next_step",
+    "text": "No questions could be put to management while preparing this deck; these choices (the working assumptions) should be confirmed with Finance and Operations.",
+    "critical": false,
+    "valid": true,
+    "source_loc": "Slide 19 source note"
+   }
+  ]
+ },
+ "cost_usd": 1.720232
+}
