@@ -616,6 +616,79 @@ def _clean_axes(chart, tok, show_values=False):
     _font(va.tick_labels, tok, color=tok["muted"])
 
 
+def short_chart(sid, plot_h):
+    """A chart squeezed under a legend, a basis row or a sidebar keeps its bars but loses its labels."""
+    if plot_h < 1.1:
+        SIDEBAR_WARN.append(f"slide {sid}: a chart has only {max(plot_h, 0):.1f} in of height for its bars; "
+                            "drop the basis row or sidebar, or give the chart its own slide")
+
+
+def _fit_width(texts, slot_in, family, size, min_size=9, bold=False):
+    """Largest size (0.5 pt steps, not below min_size) at which every text fits slot_in inches on one line."""
+    texts = [s for s in texts if s]
+    while texts and size > min_size and max(measure.width_pt(s, family, size, bold) for s in texts) / 72.0 > slot_in:
+        size -= 0.5
+    return size
+
+
+def _fit_names(names, slot_w, family, size, min_size=9, max_lines=3, slot_h=None):
+    """Largest size at which each category name wraps into slot_w without breaking a word, in at most max_lines
+    lines (and within slot_h inches when given). Returns (size, fits)."""
+    def ok(sz):
+        for n in names:
+            if any(measure.width_pt(wd, family, sz) / 72.0 > slot_w for wd in str(n).split()):
+                return False
+            nl = measure.lines(str(n), slot_w, family, sz)
+            if nl > max_lines or (slot_h is not None and nl * sz * 1.2 / 72.0 > slot_h):
+                return False
+        return True
+    while size > min_size and not ok(size):
+        size -= 0.5
+    return size, ok(size)
+
+
+def _broken(names, slot_w, family, size):
+    """Names with line breaks where they wrap in slot_w: PowerPoint keeps a level category name on one line
+    and lets it run into its neighbours, but honours a line break in the name."""
+    out = []
+    for n in names:
+        if measure.width_pt(str(n), family, size) / 72.0 <= slot_w * 1.25:
+            out.append(n)  # PowerPoint lays out a name a little wider than its slot by itself; a break would clip it
+            continue
+        lines_, cur = [], ""
+        for wd in str(n).split():  # whole words only: a name cut mid-word ('RouteSprou / t') reads worse than a tight one
+            if cur and measure.width_pt(cur + " " + wd, family, size) / 72.0 > slot_w:
+                lines_.append(cur)
+                cur = wd
+            else:
+                cur = (cur + " " + wd).strip()
+        lines_.append(cur)
+        out.append("\n".join(lines_) if len(lines_) > 1 else n)
+    return out
+
+
+def _level_names(ca):
+    """Category names stay horizontal and wrap at spaces, and none is skipped: PowerPoint otherwise tilts or
+    drops names when the slots are narrow (a half-width panel shows 'Cas…', or two of four bar names)."""
+    tx = ca._element.find(qn("c:txPr"))
+    if tx is not None:
+        bp = tx.find(qn("a:bodyPr"))
+        if bp is not None:
+            bp.set("rot", "0")
+            bp.set("vert", "horz")
+    if ca._element.find(qn("c:tickLblSkip")) is None:
+        skip = etree.Element(qn("c:tickLblSkip"), val="1")
+        after = None
+        for tag in ("c:lblOffset", "c:lblAlgn", "c:auto", "c:crosses", "c:crossesAt", "c:crossAx"):
+            after = ca._element.find(qn(tag))
+            if after is not None:
+                break
+        if after is not None:
+            after.addnext(skip)
+        else:
+            ca._element.append(skip)
+
+
 def _fill(fmt_obj, color, dash_line=None):
     if color:
         fmt_obj.fill.solid()
@@ -665,7 +738,11 @@ def chart(c, spec, slide, body, box):
     unit = next(((spec.dpoint(p) or {}).get("unit") for s in series for p in s["points"] if spec.dpoint(p)), None)
     # number format on the source cells too: Keynote and Google Slides read it from there, not from the labels
     cd = CategoryChartData(number_format=excel_format(unit, body.get("value_format")))
-    cd.categories = cats
+    if ctype in ("bar", "survey_bar"):
+        cd.categories = cats
+    else:  # level names wrap only at line breaks we put in
+        v_slot = w * 0.92 / max(len(cats), 1) * 0.96
+        cd.categories = _broken(cats, v_slot, t["font_body"], _fit_names(cats, v_slot, t["font_body"], S["label"] + 1)[0])
     for s in series:
         vals = []
         for i, p in enumerate(s["points"]):
@@ -702,17 +779,68 @@ def chart(c, spec, slide, body, box):
             span = max(max(tops), 0) - min(tops)
             ch.value_axis.minimum_scale = min(tops) - span * 0.16
             ch.value_axis.maximum_scale = max(max(tops), 0) + span * (head - 1)
-    _font(ch.category_axis.tick_labels, t, size=S["label"] + 1)
+    short_chart(slide.get("id"), h - (0.4 if multi else 0))
+    # fit names and value labels to the room each category gets: a half-width panel has far less of it
+    fam = t["font_body"]
+    n_cat, n_ser = len(cats), len(series)
+    horiz = ctype in ("bar", "survey_bar")
+    grouped = n_ser > 1 and ctype not in ("stacked_column", "stacked_100", "line")
+    name_size, label_size = S["label"] + 1, S["label"] + 2
+    if horiz:
+        plot_h = h - (0.4 if multi else 0.1)
+        slot = plot_h / max(n_cat, 1)
+        for gap in ((45, 20) if grouped else (45,)):  # narrower gaps only when the bars are too thin for labels
+            thick = slot / ((n_ser if grouped else 1) + gap / 100)
+            if thick * 1.1 * 72 / 1.2 >= label_size:
+                break
+        label_size = max(9, min(label_size, math.floor(thick * 1.1 * 72 / 1.2 * 2) / 2))
+        name_size, fits = _fit_names(cats, w * 0.38, fam, name_size, slot_h=slot)
+        if thick * 72 / 1.2 < 9 * 0.9:
+            SIDEBAR_WARN.append(f"slide {slide.get('id')}: {n_cat} x {n_ser} bars are too thin for their value "
+                                "labels at this size; give the chart a full-width panel or fewer series")
+    elif ctype != "line":
+        slot = w * 0.92 / max(n_cat, 1)
+        texts = [fmt(spec.value(p), unit, nf) for s_ in series for p in s_["points"] if spec.value(p) is not None]
+        stacked_ = ctype in ("stacked_column", "stacked_100")
+        for gap in ((45, 20) if grouped else (45,)):  # narrower gaps only when the labels need the room
+            bar_w = slot / ((n_ser if grouped else 1) + gap / 100)
+            # grouped labels sit over their own bar; stacked ones sit inside it and wrap ('$0.27 / M') when wider
+            label_room = bar_w * 1.15 if grouped else (bar_w * 0.95 if stacked_ else slot * 0.96)
+            if _fit_width(texts, label_room, fam, label_size, bold=True) == label_size:
+                break
+        label_size = _fit_width(texts, label_room, fam, label_size, bold=True)
+        if grouped and texts and max(measure.width_pt(x_, fam, label_size, True) for x_ in texts) / 72.0 > label_room:
+            SIDEBAR_WARN.append(f"slide {slide.get('id')}: {n_cat} x {n_ser} columns are too narrow for their value "
+                                "labels at 9 pt; give the chart a full-width panel or fewer series")
+        name_size, fits = _fit_names(cats, slot * 0.96, fam, name_size)
+    else:
+        gap = None
+        name_size, fits = _fit_names(cats, w * 0.92 / max(n_cat, 1) * 0.96, fam, name_size)
+    if not fits:
+        SIDEBAR_WARN.append(f"slide {slide.get('id')}: category names do not fit their slots at 9 pt; shorten them")
+    _font(ch.category_axis.tick_labels, t, size=name_size)
+    _level_names(ch.category_axis)
     if ctype in ("bar", "survey_bar"):
         ch.category_axis.reverse_order = True
     if any((spec.value(p) or 0) < 0 for s_ in series for p in s_["points"]):
         from pptx.enum.chart import XL_TICK_LABEL_POSITION
         ch.category_axis.tick_label_position = XL_TICK_LABEL_POSITION.LOW  # names stay left of (or under) negative bars
     plot = ch.plots[0]
-    if hasattr(plot, "gap_width"):
-        plot.gap_width = 45
+    if hasattr(plot, "gap_width") and gap is not None:
+        plot.gap_width = gap
     if ctype in ("stacked_column", "stacked_100"):
         plot.overlap = 100
+    def seg_too_short(v, size):
+        if v is None:
+            return False
+        if v == 0:
+            return True
+        cols = list(zip(*[[abs(spec.value(q) or 0) for q in s_["points"]] for s_ in series]))
+        top = max((sum(col) for col in cols), default=0)
+        if ctype == "stacked_100":
+            return False
+        plot_h = h - (0.45 if multi else 0.1) - 0.35
+        return top > 0 and abs(v) / (top * 1.12) * plot_h < size * 1.2 / 72.0
     highlight = set(body.get("highlight", []))
     colors = series_colors(t, [s_["name"] for s_ in series], highlight, line=ctype == "line") if multi else [t["other_bars"]]
     if multi and len(series) > 5:
@@ -751,10 +879,14 @@ def chart(c, spec, slide, body, box):
                 # name the line only when there are several; a lone line is named by the unit line,
                 # and a longer label wraps over the line's end
                 val_txt = f"{s_spec['name']}  {val_txt}"
+            if ctype in ("stacked_column", "stacked_100") and not p.get("placeholder") and seg_too_short(spec.value(p), label_size):
+                val_txt = ""  # a zero or sliver segment has no room for its value; the sources sheet still holds it
             dl.text_frame.text = val_txt
+            if not val_txt:
+                continue
             run = dl.text_frame.paragraphs[0].runs[0]
             hl = (cat in highlight and not multi) or s_spec["name"] in highlight
-            run.font.size = Pt(S["label"] + 2)
+            run.font.size = Pt(label_size if ctype != "line" else S["label"] + 2)
             run.font.bold = hl or p.get("placeholder", False)
             run.font.name = t["font_body"]
             stacked = ctype in ("stacked_column", "stacked_100")
@@ -849,8 +981,10 @@ def waterfall(c, spec, body, box):
             base.append(0); up.append(hi); down.append(lo)
     below = any(lo < 0 for lo, _ in spans)
     name = body["series"][0]["name"]
+    slot = w * 0.92 / max(n, 1)
+    name_size, fits = _fit_names(cats, slot * 0.96, t["font_body"], S["label"] + 1)
     cd = CategoryChartData(number_format=nf)
-    cd.categories = cats
+    cd.categories = _broken(cats, slot * 0.96, t["font_body"], name_size)
     cd.add_series("base", base)
     cd.add_series(name, up)
     if below:
@@ -861,9 +995,19 @@ def waterfall(c, spec, body, box):
     ch.has_legend = False
     ch.font.name = t["font_body"]
     _clean_axes(ch, t)
-    _font(ch.category_axis.tick_labels, t, size=S["label"] + 1)
+    short_chart(f"waterfall '{name}'", h)
+    # fit names and value labels to each bar's slot: in a half-width panel eight bars get about half an inch each
+    unit_ph = "$?M" if (unit or "$M").startswith("$") else "?"
+    texts = [("+" if 0 < i < n - 1 and (v is None or v > 0) else "") + (unit_ph if v is None else fmt(v, unit, nf))
+             for i, v in enumerate(vals)]
+    label_size = _fit_width(texts, slot * 0.98, t["font_body"], S["label"] + 2, bold=True)
+    if not fits or max(measure.width_pt(s_, t["font_body"], label_size, True) for s_ in texts) / 72 > slot:
+        SIDEBAR_WARN.append(f"waterfall '{body['series'][0]['name']}': {n} bars are too narrow for their names or values at 9 pt; "
+                            "give the chart a full-width panel or merge small steps")
+    _font(ch.category_axis.tick_labels, t, size=name_size)
+    _level_names(ch.category_axis)
     plot = ch.plots[0]
-    plot.gap_width = 40
+    plot.gap_width = 40 if slot > 0.8 else 25
     plot.overlap = 100
     b, *parts = plot.series
     _fill(b.format, None)
@@ -892,11 +1036,9 @@ def waterfall(c, spec, body, box):
         dl = s.points[i].data_label
         dl.has_text_frame = True
         v = vals[i]
-        unit_ph = "$?M" if (unit or "$M").startswith("$") else "?"
-        sign = "+" if (not total and (v is None or v > 0)) else ""
-        dl.text_frame.text = (sign + unit_ph) if v is None else sign + fmt(v, unit, nf)
+        dl.text_frame.text = texts[i]
         r = dl.text_frame.paragraphs[0].runs[0]
-        r.font.size = Pt(S["label"] + 2)
+        r.font.size = Pt(label_size)
         r.font.bold = True
         r.font.name = t["font_body"]
         dark = (total or hl) and v is not None
