@@ -47,3 +47,8 @@ in all six). The script was not changed, to keep the frozen files intact; the ju
   recognised, so the review is not fully blind.
 - Author's slide review package built before any verdict was seen (`scripts/make_holdout_review.py`,
   `eval/holdout-slides/`, commit 8cb20c8).
+
+## Change to the skill after the holdout (2026-11-23)
+- Renderer fix `8ac18a5`: chart names and value labels fitted to narrow panels; new warnings for charts too thin,
+  narrow or short. Prompted by the author's review of c7 H2a slide 4, so the holdout decks cannot be used to evaluate
+  this fix. All holdout scores come from decks rendered before it and are unaffected.
