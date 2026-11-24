@@ -1,0 +1,37 @@
+{
+ "x": "DN58MH",
+ "y": "D4YT5Z",
+ "case": "c8-distribution-network",
+ "judge": {
+  "model": "claude-fable-5-2",
+  "effort": "high"
+ },
+ "output": {
+  "coherence": {
+   "reasons": "Both documents hold a consistent hierarchy from governing thought to summary to slide evidence. Y is the tighter of the two: four summary claims each map to one section (cost, limits, options, plan). X's three pillars (closure does not pay, closure breaks or cannot prove the constraints, optimize-test-gate) also map cleanly to its slides, and its recommended path D is consistent with the governing thought. Each has one small wobble. Y's summary says Option K is 'the only design that passes service, capacity, budget and reversibility tests', yet its own slides show the status quo as 'safe' and the cross-dock clearing 92% on paper. X scores the status quo as 'failing economics' only because K is cheaper, which is a loose use of pass/fail. X's extra length does not break its logic, so the difference is negligible.",
+   "winner": "tie",
+   "strength": "slight"
+  },
+  "judgment": {
+   "reasons": "Both land on the answer key's preferred recommendation (keep East, take Option K, test the cross-dock, decide at the 2029 lease end) and both drop close-to-Central. X weighs the alternatives more fully. It shows that waiting beats closing now even under the favourable 'credited minimum' reading of the cross-dock quote ($0.14M gain over two years). It sets explicit gate criteria: at least 92% all-ZIP, at least 90% in peak weeks, a 93.5% network buffer, and at least $0.2M a year below K. Its test covers both the holiday peak and the spring promotion, where the operator has given no guarantee. It adds a 95% guardrail on East service while shifts are renegotiated, and checks that East can handle 220k orders. Y's plan is sound and assigns owners, and it correctly isolates the fee-versus-floor question as the one input that could change 2029. But its test covers only the holiday peak and its mid-2028 decision has no quantified pass thresholds. X's trade-off treatment of reversibility, the $1.7M lock-in and the lopsided downside is more complete.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "evidence": {
+   "reasons": "Both get every required calculation right: $1.2M of added freight and damage, $0.10M net saving, 389,600 against 360,000 at Central, and a 90.3% network rate. Both derive the 88.3% Eastern threshold and treat the $0.85M minimum consistently, with the same sensitivity. I checked X's fuller network cost model (2027 and 2028 totals, two-year totals, break-evens at 160k, 50k and 150k orders) and found no errors. Y's figures also check out ($650K loss, 50-cent surcharge break-even, $8.75 break-even rate, 2.5-year payback at zero damage). X uses the critical evidence more thoroughly. It sizes a lower-growth case (374.8k, still over capacity), as the pack asked. It notes that the measurement basis of the 84% and 93% rates is unstated and stress-tests the pilot with an illustrative rural adjustment, clearly labelled. It handles the retention confound even-handedly ('corrections cut both ways') and lists its analyst assumptions explicitly. Y has two mild overreaches: calling the 84% 'a deliberate service cut the board has ruled out', which stretches the freight-discount rule, and the 'only design that passes' claim. Y treats lower growth only qualitatively.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "revision": {
+   "reasons": "The key expects the CEO's hypothesis to be kept with conditions. X tests it explicitly, breaking it into five sub-claims with verdicts. It finds that the hypothesis holds but needs three refinements: optimize rather than just retain; capacity rules out only close-to-Central, so the cross-dock must be rejected on cost and unproven service instead; and keep East through 2029, not permanently, with a gate. It also supplies the proof the CEO lacked, that keeping East is the cheapest way to meet the SLA. Y reaches the same keep-with-conditions position and also shows K is cheapest, but it never engages the CEO's capacity reasoning as a hypothesis. It does not note that the capacity argument fails to dispose of the cross-dock. X's handling is more deliberate and more precise about where the CEO's rationale is and is not sufficient.",
+   "winner": "X",
+   "strength": "clear"
+  },
+  "overall": {
+   "reasons": "Both documents are accurate and reach the defensible recommendation, and Y is commendably concise with clear owners. X would serve the board better. It tests every item the board asked for: net saving, the binding SLA, the 2028 capacity breach including a lower-growth case, the lease and one-time budget, and a middle path. It then turns the middle path into an executable decision with quantified gate criteria, a test covering both holiday and promotion peaks, guardrails on Option K, and a demonstration that deferral beats closing now even under the most favourable reading of the cross-dock contract. Its explicit treatment of the CEO's hypothesis and its stated assumptions make the recommendation easier to challenge and to defend.",
+   "winner": "X",
+   "strength": "clear"
+  }
+ },
+ "cost_usd": 0.9447562
+}

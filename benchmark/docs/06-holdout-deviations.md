@@ -38,5 +38,12 @@ in all six). The script was not changed, to keep the frozen files intact; the ju
   (4 of 6). c6, c10, c11 complete. Failed calls left `*.error.json`; the rerun skips finished calls:
   `benchmark/.venv/bin/python benchmark/scripts/explore_holdout.py pairwise --parallel 4`, then `... analyse`.
   `results/holdout/tables.md` from this run is partial for the pairwise column and must not be reported.
+- **Rerun 2026-11-23 22:46–22:50: the 16 missing pairwise calls completed** (freeze check passed first; no errors),
+  then `analyse`. `results/holdout/tables.md` and `summary.json` are now complete (36/36) and can be reported.
+  Log: `logs/holdout-pairwise-rerun.log`.
+- **Author's blind slide review stopped at 7 of 18 pairs** (the author found it repetitive): 6 with an overall
+  verdict, P6 partial, P8 opened only. Answers exported before any verdict was seen:
+  `results/holdout/human-review/answers-2026-11-23.json`. In most answered pairs the author marked one deck as
+  recognised, so the review is not fully blind.
 - Author's slide review package built before any verdict was seen (`scripts/make_holdout_review.py`,
   `eval/holdout-slides/`, commit 8cb20c8).

@@ -8,8 +8,8 @@ Pairwise: Fable 5.2, no word counts, both orders; a win counts only when both or
 |---|---|---|---|---|---|---|---|---|
 | c6-make-buy | 81/81 (100%) | 0/2 (0%) | 0 / 0 / 2 | 0/0/0 | 268/287 (93%) | 0 | no | tie/split |
 | c7-m-and-a | 74/74 (100%) | 0/3 (0%) | 0 / 0 / 3 | 0/0/1 | 263/272 (97%) | 0 | no | tie/split |
-| c8-distribution-network | 94/94 (100%) | – | 0 / 0 / 0 | 0/0/0 | 272/276 (99%) | 0 | yes | – |
-| c9-capacity-timing | 86/86 (100%) | 0/3 (0%) | 0 / 0 / 3 | 0/0/0 | 270/279 (97%) | 0 | no | – |
+| c8-distribution-network | 94/94 (100%) | – | 0 / 0 / 0 | 0/0/0 | 272/276 (99%) | 0 | yes | tie/split |
+| c9-capacity-timing | 86/86 (100%) | 0/3 (0%) | 0 / 0 / 3 | 0/0/0 | 270/279 (97%) | 0 | no | tie/split |
 | c10-portfolio-exit | 73/73 (100%) | 1/1 (100%) | 0 / 0 / 0 | 0/0/0 | 255/263 (97%) | 0 | yes | tie/split |
 | c11-oem-licensing | 104/104 (100%) | 0/1 (0%) | 0 / 0 / 1 | 0/0/0 | 268/271 (99%) | 0 | no | tie/split |
 
@@ -18,13 +18,13 @@ Pairwise: Fable 5.2, no word counts, both orders; a win counts only when both or
 | Case | E1 vs H2a | E1 vs B | Rubric B / E1 / H2a | Slides B / E1 / H2a | Cost B / E1 / H2a (= B + compile) | API min B / E1 / H2a |
 |---|---|---|---|---|---|---|
 | c6-make-buy | H2a (both) | B (both) | 4.15 / 4.40 / 4.15 | 18 / 20 / 23 | $3.15 / $5.12 / $13.09 | 12.49 / 17.59 / 41.03 |
-| c7-m-and-a | – | – | 4.40 / 4.40 / 4.15 | 20 / 23 / 22 | $2.39 / $4.06 / $10.53 | 11.31 / 13.94 / 34.49 |
-| c8-distribution-network | – | – | 4.65 / 4.90 / 4.90 | 18 / 19 / 22 | $3.78 / $3.28 / $11.52 | 14.99 / 11.38 / 38.13 |
-| c9-capacity-timing | – | – | 4.40 / 4.40 / 4.40 | 20 / 18 / 23 | $3.88 / $3.72 / $12.53 | 13.20 / 13.63 / 40.46 |
+| c7-m-and-a | H2a (both) | B (both) | 4.40 / 4.40 / 4.15 | 20 / 23 / 22 | $2.39 / $4.06 / $10.53 | 11.31 / 13.94 / 34.49 |
+| c8-distribution-network | H2a (both) | B (both) | 4.65 / 4.90 / 4.90 | 18 / 19 / 22 | $3.78 / $3.28 / $11.52 | 14.99 / 11.38 / 38.13 |
+| c9-capacity-timing | H2a (both) | B (both) | 4.40 / 4.40 / 4.40 | 20 / 18 / 23 | $3.88 / $3.72 / $12.53 | 13.20 / 13.63 / 40.46 |
 | c10-portfolio-exit | H2a (both) | B (both) | 4.65 / 4.65 / 4.65 | 19 / 18 / 21 | $3.21 / $3.53 / $11.65 | 11.83 / 12.46 / 36.95 |
 | c11-oem-licensing | H2a (both) | B (both) | 4.65 / 4.40 / 4.40 | 20 / 21 / 22 | $2.14 / $4.48 / $10.45 | 9.83 / 15.26 / 34.22 |
 
-H2a ahead in 3 of 6 cases, E1 ahead in 0, tie or split in 0. Reading rule (§16): 5 of 6 is the strongest wording allowed; 4 or fewer is mixed.
+H2a ahead in 6 of 6 cases, E1 ahead in 0, tie or split in 0. Reading rule (§16): 5 of 6 is the strongest wording allowed; 4 or fewer is mixed.
 
 ## 3. What changed, went missing or was inherited (H2a)
 
