@@ -43,3 +43,21 @@ request to v1.3-h went to `single_slide` and produced one slide in about 10 minu
 
 ## Cost
 6 runs; deep decks cost about $7–8 each with the old skill: ≈ $45.
+
+## Results (run 2026-11-26, 14:40–15:08, all six complete)
+
+Mode · slides · wall time · cost; every deck opens and passes its own skill's `check.py` with 0 FAIL.
+
+| Case | Cm (main) | V13n (v1.3-h) | V13n / Cm |
+|---|---|---|---|
+| c1 | `deck_deep` · 45 · 24.2 min · $7.63 | `deck_deep` · 43 · 24.2 min · $7.51 | 1.00 |
+| c3 | `deck_deep` · 44 · 20.1 min · $5.65 | `deck_deep` · 43 · 26.9 min · $8.05 | 1.34 |
+| c5 | `deck_deep` · 43 · 20.1 min · $6.15 | `deck_deep` · 43 · 23.1 min · $7.00 | 1.15 (1.149) |
+| **Total / geometric mean** | 64.4 min · $19.43 | 74.2 min · $22.56 | **1.15** |
+
+- **Mode: same behaviour.** Both skills chose `deck_deep` in all three cases, 43–45 slides. The v3-B8 one-slide
+  problem did not appear with this request.
+- **Time: by the fixed rule, no real difference** (gap under 15% in two of three cases), but only just: c5 is at
+  1.149, and the mean gap is 15% (+3.3 min a deck), cost +16%. In `deck_deep`, v1.3 is probably a little slower;
+  in `deck_detailed` (speed test) it was not.
+- Not tested: the vaguer v3-B8 request ("here is the material, make a deck").
