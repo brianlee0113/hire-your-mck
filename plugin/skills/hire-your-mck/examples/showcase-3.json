@@ -1848,5 +1848,82 @@
    "kind": "user_provided",
    "name": "Example Health patient survey, October 2026 (fictional)"
   }
- ]
+ ],
+ "decision_audit": {
+  "constraints": [
+   {
+    "item": "Clinician rota gaps also slow Riverside, not only phone check-in",
+    "reflected": true,
+    "effect": "the plan closes rota gaps alongside online booking",
+    "slide_ids": [
+     "10",
+     "11"
+    ]
+   },
+   {
+    "item": "Online booking must cover every visit type",
+    "reflected": true,
+    "effect": "the first move lists online booking for every visit type",
+    "slide_ids": [
+     "11"
+    ]
+   }
+  ],
+  "alternatives": [
+   {
+    "option": "Send text reminders only, without moving booking online",
+    "verdict": "combined",
+    "why": "reminders fix forgetting, but the most common reason is that patients could not book or reschedule in time; the plan does both",
+    "triage": "body",
+    "slide_ids": [
+     "13",
+     "11"
+    ]
+   }
+  ],
+  "failure_threshold": {
+   "driver": "no-show rate at Riverside and Oak Park after the switch",
+   "threshold": "if it stays above the network median of 13% at the pilot review, booking is not the first thing to fix",
+   "range": "not sized: the scatter on slide 5 shows the link across clinics, not the effect of switching one",
+   "triage": "body",
+   "slide_ids": [
+    "5",
+    "15"
+   ]
+  },
+  "consistency": {
+   "headline": "Moving Riverside and Oak Park to online booking is the fastest way to cut no-shows across the network",
+   "holds": true,
+   "fix": ""
+  },
+  "cases": {
+   "base": "Riverside (21%) and Oak Park (19%) fall to the 13% network median",
+   "stress": "they close only half the gap, to about 16-17%; still the largest single cut in lost visits",
+   "holds_in_stress": true,
+   "slide_ids": [
+    "5",
+    "15"
+   ]
+  },
+  "gates": [
+   {
+    "metric": "no-show rate at Riverside and Oak Park",
+    "threshold": "above 16% at the pilot review",
+    "when": "pilot review, Q2 2027",
+    "response": "do not roll out to other clinics; fix the rota and reminders first",
+    "slide_ids": [
+     "15"
+    ]
+   },
+   {
+    "metric": "share of visits booked online at the two pilot clinics",
+    "threshold": "under 40% by the end of Q2 2027",
+    "when": "Q2 2027",
+    "response": "add desk-assisted online booking before the network rollout",
+    "slide_ids": [
+     "15"
+    ]
+   }
+  ]
+ }
 }

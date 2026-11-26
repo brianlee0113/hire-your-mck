@@ -1066,5 +1066,79 @@
       "kind": "user_provided",
       "name": "Example Freight mid-market plan (fictional)"
     }
-  ]
+  ],
+  "decision_audit": {
+    "constraints": [
+      {
+        "item": "Large accounts must accept index-linked contracts",
+        "reflected": true,
+        "effect": "the pricing lever starts with a pilot on top accounts before the full rollout",
+        "slide_ids": [
+          "5"
+        ]
+      },
+      {
+        "item": "Capital for two new cross-docks in Dallas and Atlanta",
+        "reflected": false,
+        "effect": "the $11M network lever is before cross-dock capital, which the deck does not size",
+        "slide_ids": [
+          "5"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "option": "Start in the Midwest instead of the Sun Belt",
+        "verdict": "rejected",
+        "why": "smaller spend and a weaker network fit; it stays the fallback if Sun Belt network fit slips",
+        "triage": "body",
+        "slide_ids": [
+          "4"
+        ]
+      }
+    ],
+    "failure_threshold": {
+      "driver": "margin from index pricing, 55% of the gain",
+      "threshold": "the three levers add up to exactly the $40M gap, so any shortfall in the $22M pricing lever leaves the target unmet",
+      "range": "base $160M margin in 2027 (slide 1); low and high not sized",
+      "triage": "body",
+      "slide_ids": [
+        "1"
+      ]
+    },
+    "consistency": {
+      "headline": "Example Freight can close its margin gap and win the mid-market by starting in the Sun Belt",
+      "holds": true,
+      "fix": ""
+    },
+    "cases": {
+      "base": "$160M margin in 2027, gap closed",
+      "stress": "pricing delivers half its $22M: about $149M, $11M short; the Sun Belt start still holds, the target date slips",
+      "holds_in_stress": true,
+      "slide_ids": [
+        "1"
+      ]
+    },
+    "gates": [
+      {
+        "metric": "top accounts signed to index-linked contracts",
+        "threshold": "fewer than half of the 200 top accounts by the end of Q2 2027",
+        "when": "pilot review, Q2 2027",
+        "response": "hold the full rollout and revisit the index terms",
+        "slide_ids": [
+          "5"
+        ]
+      },
+      {
+        "metric": "Sun Belt network fit",
+        "threshold": "Dallas cross-dock not open by Q4 2027",
+        "when": "Q4 2027",
+        "response": "move the second region to the Midwest fallback",
+        "slide_ids": [
+          "4",
+          "5"
+        ]
+      }
+    ]
+  }
 }
