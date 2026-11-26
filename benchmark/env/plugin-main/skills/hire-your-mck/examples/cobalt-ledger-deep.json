@@ -1,0 +1,6457 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_deep",
+ "meta": {
+  "title": "Launching AI in Cobalt Ledger",
+  "subtitle": "Discussion document for the CEO",
+  "company_name": "Cobalt Ledger",
+  "audience": "CEO",
+  "purpose": "Should Cobalt Ledger launch an AI package for its small-business customers in H1 2027, in what form and at what price, so that it pays back within 24 months?",
+  "date": "2026-11-10",
+  "language": "en-US",
+  "confidentiality": "Fictional company; market numbers from public sources, company economics are estimates",
+  "theme": "navy",
+  "deck_type": "client_diagnostic"
+ },
+ "storyline": {
+  "governing_thought": "Build AI into every paid plan in 2027, starting with the books and the close, and raise prices after a pilot: it pays back in about 9 months",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "Small firms are ready for AI in accounting, as long as it comes inside the tool they already pay for",
+    "supports": [
+     "L1",
+     "1a1",
+     "1a4",
+     "1a2",
+     "1b1",
+     "1b2",
+     "1c1"
+    ],
+    "sub_points": [
+     {
+      "text": "AI use rose from 17% to 25% of US firms in a year",
+      "slide_id": "1a1"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "AI cuts the time small firms spend on their books, and approval steps keep it accurate enough to trust",
+    "supports": [
+     "L2",
+     "2a1",
+     "2a2",
+     "2b1"
+    ],
+    "sub_points": [
+     {
+      "text": "Firms using AI accounting software closed their books 7.5 days faster",
+      "slide_id": "2a1"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "AI is now standard in small-business accounting software, charged through the plan price",
+    "supports": [
+     "L3",
+     "3a1",
+     "3b1",
+     "3b2"
+    ],
+    "sub_points": [
+     {
+      "text": "None of five platforms sells AI as a separate product",
+      "slide_id": "3b1"
+     }
+    ]
+   },
+   {
+    "id": "4",
+    "text": "A $5 monthly uplift pays back the package in about 9 months, with no churn gain counted",
+    "supports": [
+     "L4",
+     "4a1",
+     "4a2",
+     "4b1",
+     "4c1"
+    ],
+    "sub_points": [
+     {
+      "text": "AI running costs come to about $10 per customer a year",
+      "slide_id": "4b1"
+     }
+    ]
+   },
+   {
+    "id": "5",
+    "text": "Pilot with the smallest customers in H1 2027, then raise plan prices in H2 2027",
+    "supports": [
+     "L5",
+     "5b",
+     "5f",
+     "5e",
+     "5c",
+     "5d"
+    ],
+    "sub_points": [
+     {
+      "text": "Raise prices only once the pilot shows hours saved",
+      "slide_id": "5b"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Approve the build team and the H1 2027 pilot",
+    "owner": "CEO and CFO",
+    "timing": "Dec 2026"
+   },
+   {
+    "action": "Scope categorization, the close and approval controls",
+    "owner": "Product",
+    "timing": "Q1 2027"
+   },
+   {
+    "action": "Recruit pilot customers among the smallest firms",
+    "owner": "Customer success",
+    "timing": "Q1 2027"
+   },
+   {
+    "action": "Decide the plan price change after the pilot review",
+    "owner": "CEO and CFO",
+    "timing": "Q3 2027"
+   }
+  ]
+ },
+ "problem": {
+  "statement": "Should Cobalt Ledger launch an AI package for its small-business customers in H1 2027, in what form and at what price, so that it pays back within 24 months?",
+  "decision_maker": "CEO, approving the launch budget and date",
+  "success_criteria": [
+   "Pays back within 24 months",
+   "No rise in churn among the smallest customers",
+   "Launch in H1 2027"
+  ],
+  "deadline": "Executive meeting, December 2026",
+  "accuracy": "Order of magnitude (±25%)",
+  "out_of_scope": [
+   "Building our own AI model",
+   "Mid-sized and large customers (250+ employees)"
+  ],
+  "one_day_answer": {
+   "situation": "Small firms are adopting AI fast but have barely used it in accounting, and Cobalt Ledger has no AI package",
+   "complication": "Intuit, Xero and others already build AI into their plans, so AI is becoming standard and waiting risks losing customers",
+   "resolution": "Launch an AI package in H1 2027 built into bookkeeping and the month-end close, priced as a tier uplift that pays back within 24 months"
+  }
+ },
+ "issue_tree": [
+  {
+   "id": "n1",
+   "code": "1",
+   "label": "Demand",
+   "hypothesis": "Small firms will use AI in their accounting once it comes inside the tools they already use"
+  },
+  {
+   "id": "n1a",
+   "code": "1a",
+   "parent": "n1",
+   "hypothesis": "AI adoption among small firms is rising fast, and accounting is the function they use it in least",
+   "priority": {
+    "importance": "high",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "AI use share over time by firm size; use by function and size",
+    "exhibit": "line-trend by size class; bar-ranking by function",
+    "sources": [
+     "Census BTOS biweekly and AI supplement"
+    ],
+    "knock_out": true
+   },
+   "finding": {
+    "verdict": "confirmed",
+    "note": "AI use rose from 17% to 25% of firms in a year; finance and accounting is the least-used function for small firms"
+   }
+  },
+  {
+   "id": "n1b",
+   "code": "1b",
+   "parent": "n1",
+   "hypothesis": "Small firms hold back because they cannot see where AI fits, not because of price",
+   "priority": {
+    "importance": "high",
+    "influence": "high"
+   },
+   "workplan": {
+    "analysis": "Reasons for not planning to use AI; challenges for planners and users",
+    "exhibit": "bar-ranking of reasons; two-panel challenges",
+    "sources": [
+     "BTOS AI supplement Q13",
+     "Fed Small Business Credit Survey 2026"
+    ]
+   },
+   "finding": {
+    "verdict": "confirmed",
+    "note": "63% of the smallest firms without plans say AI does not apply; 7% say it is too expensive"
+   }
+  },
+  {
+   "id": "n1c",
+   "code": "1c",
+   "parent": "n1",
+   "hypothesis": "Small-business customers will pay more for AI that saves bookkeeping time",
+   "priority": {
+    "importance": "high",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "Stated willingness to pay; paid AI tier take-up at peers",
+    "exhibit": "survey-bars",
+    "sources": [
+     "Small-business surveys (Intuit, Xero, NFIB, Gusto)",
+     "peer disclosures"
+    ]
+   },
+   "finding": {
+    "verdict": "revised",
+    "note": "77% use AI but only 12% paid for a dedicated tool: they pay inside a plan, not as an add-on"
+   }
+  },
+  {
+   "id": "n2",
+   "code": "2",
+   "label": "Value",
+   "hypothesis": "AI cuts the time small firms spend on bookkeeping and the month-end close"
+  },
+  {
+   "id": "n2a",
+   "code": "2a",
+   "parent": "n2",
+   "hypothesis": "Firms using AI accounting software close their books faster and do less manual entry",
+   "priority": {
+    "importance": "high",
+    "influence": "high"
+   },
+   "workplan": {
+    "analysis": "Field evidence on close time, entry time and reallocation",
+    "exhibit": "kpi-big-numbers; bar-ranking of bookkeeping hours by task",
+    "sources": [
+     "Choi and Xie (Stanford GSB) working paper",
+     "time-use surveys of small-business bookkeeping"
+    ],
+    "knock_out": true
+   },
+   "finding": {
+    "verdict": "confirmed",
+    "note": "7.5 days faster close in field data; owners' hours are spread evenly across tasks, so the package must cover the cycle"
+   }
+  },
+  {
+   "id": "n2b",
+   "code": "2b",
+   "parent": "n2",
+   "hypothesis": "Showing sources and asking for approval keeps AI accuracy acceptable to owners",
+   "priority": {
+    "importance": "high",
+    "influence": "high"
+   },
+   "workplan": {
+    "analysis": "Accuracy concerns; human-in-the-loop controls at peers",
+    "exhibit": "comparison-table of controls",
+    "sources": [
+     "SBCS 2026",
+     "peer product documentation"
+    ]
+   },
+   "finding": {
+    "verdict": "confirmed",
+    "note": "QuickBooks and Xero both require approval and show reasoning; Xero reports 96% of automatic matches uncorrected"
+   }
+  },
+  {
+   "id": "n3",
+   "code": "3",
+   "label": "Competition",
+   "hypothesis": "AI is becoming standard in small-business accounting software, so waiting costs customers"
+  },
+  {
+   "id": "n3a",
+   "code": "3a",
+   "parent": "n3",
+   "hypothesis": "The leading platforms launched AI assistants for small firms between 2023 and 2025",
+   "priority": {
+    "importance": "high",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "Launch dates and scope of AI at Intuit, Xero, Shopify, others",
+    "exhibit": "timeline-roadmap",
+    "sources": [
+     "company press releases"
+    ]
+   },
+   "finding": {
+    "verdict": "confirmed",
+    "note": "Intuit, Xero and Shopify launched assistants 2023–25"
+   }
+  },
+  {
+   "id": "n3b",
+   "code": "3b",
+   "parent": "n3",
+   "hypothesis": "Competitors include AI in existing plans and raised list prices, which sets the room for our price",
+   "priority": {
+    "importance": "medium",
+    "influence": "high"
+   },
+   "workplan": {
+    "analysis": "Plan pricing and what AI is included; list price history",
+    "exhibit": "comparison-table; column-time-series",
+    "sources": [
+     "pricing pages",
+     "price-change announcements"
+    ]
+   },
+   "finding": {
+    "verdict": "confirmed",
+    "note": "AI is in the plans of QuickBooks, Xero and Zoho; Intuit tied its 2026 price rise to AI"
+   }
+  },
+  {
+   "id": "n4",
+   "code": "4",
+   "label": "Economics",
+   "hypothesis": "An AI package pays back within 24 months"
+  },
+  {
+   "id": "n4a",
+   "code": "4a",
+   "parent": "n4",
+   "hypothesis": "An AI tier lifts revenue per customer, as it did at comparable platforms",
+   "priority": {
+    "importance": "high",
+    "influence": "high"
+   },
+   "workplan": {
+    "analysis": "Revenue per customer before and after AI tiers at peers; pricing options",
+    "exhibit": "bar-ranking; comparison-table",
+    "sources": [
+     "Intuit and Xero annual reports"
+    ],
+    "knock_out": true
+   },
+   "finding": {
+    "verdict": "revised",
+    "note": "Intuit revenue per customer grew 15% in FY2026 while customers grew 3%; QuickBooks Online growth is credited to price, customers and mix, never to a separate AI product: the uplift works through the plan price"
+   }
+  },
+  {
+   "id": "n4b",
+   "code": "4b",
+   "parent": "n4",
+   "hypothesis": "Running AI costs a small share of what a customer pays",
+   "priority": {
+    "importance": "high",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "Model price per token × usage per customer per month",
+    "exhibit": "calculation-bridge",
+    "sources": [
+     "model provider price lists",
+     "usage assumptions"
+    ]
+   },
+   "finding": {
+    "verdict": "confirmed",
+    "note": "About $10 per customer a year at high usage, under a fifth of a $5 monthly uplift"
+   }
+  },
+  {
+   "id": "n4c",
+   "code": "4c",
+   "parent": "n4",
+   "hypothesis": "AI features reduce churn among small-business customers",
+   "priority": {
+    "importance": "medium",
+    "influence": "medium"
+   },
+   "workplan": {
+    "analysis": "Churn evidence for AI users at peers",
+    "exhibit": "kpi-big-numbers",
+    "sources": [
+     "peer disclosures",
+     "SaaS benchmark reports"
+    ]
+   },
+   "finding": {
+    "verdict": "refuted",
+    "note": "No platform links AI to lower churn; Xero churn stayed at 1.14% a month; retention gain set to zero"
+   }
+  },
+  {
+   "id": "nx1",
+   "label": "Regulation",
+   "hypothesis": "Liability rules for AI errors in bookkeeping will shape what the package can do",
+   "priority": {
+    "importance": "medium",
+    "influence": "low"
+   },
+   "cut_reason": "Outside the CEO's influence; it sets controls in the launch plan, not whether to launch"
+  },
+  {
+   "id": "nx2",
+   "label": "Own model",
+   "hypothesis": "Building our own AI model would give a cost or quality edge over licensed models",
+   "cut_reason": "Out of scope (checkpoint 1): the package uses licensed models"
+  },
+  {
+   "id": "nx3",
+   "label": "Larger firms",
+   "hypothesis": "Mid-sized and large customers would adopt an AI package faster than small firms",
+   "cut_reason": "Out of scope (checkpoint 1): the decision covers small-business customers"
+  }
+ ],
+ "sections": [
+  {
+   "id": "1",
+   "title": "Small firms are ready for AI in accounting",
+   "tracker_label": "Demand",
+   "exec_item_id": "1",
+   "tree_node": "n1",
+   "lead_slide": "L1",
+   "question": "Are small firms ready to use AI in their accounting, and what holds them back?"
+  },
+  {
+   "id": "2",
+   "title": "AI saves bookkeeping time",
+   "tracker_label": "Value",
+   "exec_item_id": "2",
+   "tree_node": "n2",
+   "lead_slide": "L2",
+   "question": "How much time does AI save, and can owners trust what it does?"
+  },
+  {
+   "id": "3",
+   "title": "Competitors already ship AI",
+   "tracker_label": "Competition",
+   "exec_item_id": "3",
+   "tree_node": "n3",
+   "lead_slide": "L3",
+   "question": "Have competitors already made AI part of the product and the price?"
+  },
+  {
+   "id": "4",
+   "title": "The package pays back",
+   "tracker_label": "Economics",
+   "exec_item_id": "4",
+   "tree_node": "n4",
+   "lead_slide": "L4",
+   "question": "Does an AI package pay back within 24 months?"
+  },
+  {
+   "id": "5",
+   "title": "How to make it happen",
+   "tracker_label": "Plan",
+   "exec_item_id": "5",
+   "lead_slide": "L5",
+   "question": "How should we launch it, and what could go wrong?"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "q",
+   "role": "problem_statement",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "d1",
+   "role": "agenda_tracker",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Small firms are ready for AI in accounting as long as it comes inside the tool they already pay for"
+   },
+   "message_type": "argument",
+   "archetype": "numbered-levers",
+   "body": {
+    "kind": "levers",
+    "headers": [
+     "Finding",
+     "Evidence"
+    ],
+    "items": [
+     {
+      "code": "1a",
+      "text": "Adoption is rising fast and accounting is the function they use least",
+      "point": {
+       "data_ref": "fA"
+      },
+      "metric": "of the smallest firms use AI in finance and accounting"
+     },
+     {
+      "code": "1b",
+      "text": "They hold back because they cannot see where it fits, not because of price",
+      "point": {
+       "data_ref": "r10"
+      },
+      "metric": "of the smallest firms without plans say AI does not apply to them"
+     },
+     {
+      "code": "1c",
+      "text": "They will pay for it inside a plan, rarely as a separate tool",
+      "point": {
+       "data_ref": "paid12"
+      },
+      "metric": "of US businesses paid for a dedicated AI tool"
+     }
+    ]
+   },
+   "unit_line": "**Status of each condition**, latest data"
+  },
+  {
+   "id": "1a1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Our customers will soon expect AI: its use among US firms rose from 17% to 25% in under a year",
+    "numbers": [
+     {
+      "text": "17%",
+      "data_ref": "t202524"
+     },
+     {
+      "text": "25%",
+      "data_ref": "t202621"
+     }
+    ],
+    "highlights": [
+     "All US firms"
+    ],
+    "clauses": 1
+   },
+   "message_type": "time-series",
+   "archetype": "line-trend",
+   "rationale": "Changed over time, many points -> line-trend",
+   "unit_line": "**US firms using AI in any business function**, % of firms, last reading of each month, Nov 2025 to Oct 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "big_number",
+     "header": "Adoption is building month after month, not spiking",
+     "big_number": {
+      "data_ref": "rise1"
+     },
+     "caption": "relative rise in the share of firms using AI in eleven months",
+     "bullets": [
+      "**Mar–Oct:** up in almost every month, a steady climb rather than a spike"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "line",
+    "categories": [
+     "Nov",
+     "Dec",
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun",
+     "Jul",
+     "Aug",
+     "Sep",
+     "Oct"
+    ],
+    "series": [
+     {
+      "name": "All US firms",
+      "points": [
+       {
+        "data_ref": "t202524"
+       },
+       {
+        "data_ref": "t202526"
+       },
+       {
+        "data_ref": "t202602"
+       },
+       {
+        "data_ref": "t202604"
+       },
+       {
+        "data_ref": "t202606"
+       },
+       {
+        "data_ref": "t202608"
+       },
+       {
+        "data_ref": "t202611"
+       },
+       {
+        "data_ref": "t202613"
+       },
+       {
+        "data_ref": "t202615"
+       },
+       {
+        "data_ref": "t202617"
+       },
+       {
+        "data_ref": "t202619"
+       },
+       {
+        "data_ref": "t202621"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "All US firms"
+    ],
+    "value_format": "0%"
+   },
+   "footnotes": [
+    "Census reworded the question in November 2025 (\"in any of its business functions\"), so earlier readings are not comparable and are left out",
+    "The latest cycle (published Nov 5, 2026) renamed AI \"Super Intelligence\" in the question, and \"Do not know\" answers jumped; it is left out until the series settles"
+   ],
+   "tree_node": "n1a"
+  },
+  {
+   "id": "1a4",
+   "role": "content",
+   "section_id": "1",
+   "tree_node": "n1a",
+   "status": "filled",
+   "archetype": "map",
+   "message_type": "item",
+   "lead_message": {
+    "text": "AI use is not a coastal story: Utah, Colorado and Arizona lead, while West Virginia is under 10%",
+    "numbers": [
+     {
+      "text": "10%",
+      "data_ref": "st-WV"
+     }
+    ]
+   },
+   "unit_line": "**US firms using AI in any business function**, % of firms by state, October 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Our customers are everywhere AI is spreading",
+     "bullets": [
+      "**Leaders:** Utah at 32.1%, Colorado at 31.9% and Arizona at 31.5%, ahead of California at 24.6%",
+      "**Laggards:** West Virginia at 9.8%, Idaho at 13.5% and Wyoming at 14.4%"
+     ],
+     "implication": "Launch nationally: demand is not confined to the coasts"
+    }
+   },
+   "body": {
+    "kind": "map",
+    "geo": "us_states",
+    "style": "choropleth",
+    "regions": [
+     {
+      "code": "AK"
+     },
+     {
+      "code": "AL",
+      "point": {
+       "data_ref": "st-AL"
+      }
+     },
+     {
+      "code": "AR",
+      "point": {
+       "data_ref": "st-AR"
+      }
+     },
+     {
+      "code": "AZ",
+      "point": {
+       "data_ref": "st-AZ"
+      }
+     },
+     {
+      "code": "CA",
+      "point": {
+       "data_ref": "st-CA"
+      }
+     },
+     {
+      "code": "CO",
+      "point": {
+       "data_ref": "st-CO"
+      }
+     },
+     {
+      "code": "CT",
+      "point": {
+       "data_ref": "st-CT"
+      }
+     },
+     {
+      "code": "DC",
+      "point": {
+       "data_ref": "st-DC"
+      }
+     },
+     {
+      "code": "DE",
+      "point": {
+       "data_ref": "st-DE"
+      }
+     },
+     {
+      "code": "FL",
+      "point": {
+       "data_ref": "st-FL"
+      }
+     },
+     {
+      "code": "GA",
+      "point": {
+       "data_ref": "st-GA"
+      }
+     },
+     {
+      "code": "HI",
+      "point": {
+       "data_ref": "st-HI"
+      }
+     },
+     {
+      "code": "IA",
+      "point": {
+       "data_ref": "st-IA"
+      }
+     },
+     {
+      "code": "ID",
+      "point": {
+       "data_ref": "st-ID"
+      }
+     },
+     {
+      "code": "IL",
+      "point": {
+       "data_ref": "st-IL"
+      }
+     },
+     {
+      "code": "IN",
+      "point": {
+       "data_ref": "st-IN"
+      }
+     },
+     {
+      "code": "KS",
+      "point": {
+       "data_ref": "st-KS"
+      }
+     },
+     {
+      "code": "KY",
+      "point": {
+       "data_ref": "st-KY"
+      }
+     },
+     {
+      "code": "LA",
+      "point": {
+       "data_ref": "st-LA"
+      }
+     },
+     {
+      "code": "MA",
+      "point": {
+       "data_ref": "st-MA"
+      }
+     },
+     {
+      "code": "MD",
+      "point": {
+       "data_ref": "st-MD"
+      }
+     },
+     {
+      "code": "ME",
+      "point": {
+       "data_ref": "st-ME"
+      }
+     },
+     {
+      "code": "MI",
+      "point": {
+       "data_ref": "st-MI"
+      }
+     },
+     {
+      "code": "MN",
+      "point": {
+       "data_ref": "st-MN"
+      }
+     },
+     {
+      "code": "MO",
+      "point": {
+       "data_ref": "st-MO"
+      }
+     },
+     {
+      "code": "MS",
+      "point": {
+       "data_ref": "st-MS"
+      }
+     },
+     {
+      "code": "MT",
+      "point": {
+       "data_ref": "st-MT"
+      }
+     },
+     {
+      "code": "NC",
+      "point": {
+       "data_ref": "st-NC"
+      }
+     },
+     {
+      "code": "ND",
+      "point": {
+       "data_ref": "st-ND"
+      }
+     },
+     {
+      "code": "NE",
+      "point": {
+       "data_ref": "st-NE"
+      }
+     },
+     {
+      "code": "NH",
+      "point": {
+       "data_ref": "st-NH"
+      }
+     },
+     {
+      "code": "NJ",
+      "point": {
+       "data_ref": "st-NJ"
+      }
+     },
+     {
+      "code": "NM",
+      "point": {
+       "data_ref": "st-NM"
+      }
+     },
+     {
+      "code": "NV",
+      "point": {
+       "data_ref": "st-NV"
+      }
+     },
+     {
+      "code": "NY",
+      "point": {
+       "data_ref": "st-NY"
+      }
+     },
+     {
+      "code": "OH",
+      "point": {
+       "data_ref": "st-OH"
+      }
+     },
+     {
+      "code": "OK",
+      "point": {
+       "data_ref": "st-OK"
+      }
+     },
+     {
+      "code": "OR",
+      "point": {
+       "data_ref": "st-OR"
+      }
+     },
+     {
+      "code": "PA",
+      "point": {
+       "data_ref": "st-PA"
+      }
+     },
+     {
+      "code": "RI",
+      "point": {
+       "data_ref": "st-RI"
+      }
+     },
+     {
+      "code": "SC",
+      "point": {
+       "data_ref": "st-SC"
+      }
+     },
+     {
+      "code": "SD",
+      "point": {
+       "data_ref": "st-SD"
+      }
+     },
+     {
+      "code": "TN",
+      "point": {
+       "data_ref": "st-TN"
+      }
+     },
+     {
+      "code": "TX",
+      "point": {
+       "data_ref": "st-TX"
+      }
+     },
+     {
+      "code": "UT",
+      "point": {
+       "data_ref": "st-UT"
+      }
+     },
+     {
+      "code": "VA",
+      "point": {
+       "data_ref": "st-VA"
+      }
+     },
+     {
+      "code": "VT",
+      "point": {
+       "data_ref": "st-VT"
+      }
+     },
+     {
+      "code": "WA",
+      "point": {
+       "data_ref": "st-WA"
+      }
+     },
+     {
+      "code": "WI",
+      "point": {
+       "data_ref": "st-WI"
+      }
+     },
+     {
+      "code": "WV",
+      "point": {
+       "data_ref": "st-WV"
+      }
+     },
+     {
+      "code": "WY",
+      "point": {
+       "data_ref": "st-WY"
+      }
+     }
+    ],
+    "breaks": [
+     0.15,
+     0.2,
+     0.25,
+     0.3
+    ],
+    "legend_title": "Firms using AI"
+   },
+   "footnotes": [
+    "Alaska is suppressed by the Census Bureau for this cycle (sample too small)"
+   ]
+  },
+  {
+   "id": "1a2",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "The smallest firms trail on AI everywhere and furthest in finance and accounting",
+    "highlights": [
+     "1–4 employees"
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "heatmap",
+   "rationale": "Same exhibit as the page before, one function (A-10) -> bar-ranking",
+   "unit_line": "**US firms using AI**, % of firms in each size class, Census Business Trends and Outlook Survey",
+   "body": {
+    "kind": "table",
+    "table_type": "heatmap",
+    "columns": [
+     "Any business function, Oct 2026",
+     "Finance and accounting, 2025–26"
+    ],
+    "rows": [
+     {
+      "label": "1–4 employees",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "zA"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "fA"
+        }
+       }
+      ],
+      "highlight": true,
+      "note": "Lowest in finance; most of our customers"
+     },
+     {
+      "label": "5–9",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "zB"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "fB"
+        }
+       }
+      ]
+     },
+     {
+      "label": "10–19",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "zC"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "fC"
+        }
+       }
+      ]
+     },
+     {
+      "label": "20–49",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "zD"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "fD"
+        }
+       }
+      ]
+     },
+     {
+      "label": "50–99",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "zE"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "fE"
+        }
+       }
+      ]
+     },
+     {
+      "label": "100–249",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "zF"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "fF"
+        }
+       }
+      ]
+     },
+     {
+      "label": "250 or more",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "zG"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "fG"
+        }
+       }
+      ],
+      "note": "3.5 times the smallest firms in finance"
+     }
+    ],
+    "verdict_header": "Reading"
+   },
+   "footnotes": [
+    "Census BTOS 2026 AI supplement; reference period November 2025 to January 2026"
+   ],
+   "tree_node": "n1a"
+  },
+  {
+   "id": "1b1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Fit, not price, is what keeps the smallest firms away from AI",
+    "highlights": [
+     "Does not apply to us"
+    ],
+    "clauses": 1
+   },
+   "message_type": "frequency",
+   "archetype": "survey-bars",
+   "rationale": "How respondents answered -> survey-bars",
+   "unit_line": "**Reasons for not planning to use AI**, % of firms with 1–4 employees and no AI plans, Nov 2025 to Jan 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The barrier is relevance, which product design can fix",
+     "bullets": [
+      "**Not applicable:** owners do not see AI in their own work, so showing it inside the ledger answers this directly",
+      "**Lack of knowledge:** the second reason is also about not seeing the use, not about the technology",
+      "**Too expensive:** last of the six, so a price cut alone would not move these firms"
+     ],
+     "rows": [
+      {
+       "label": "\"Not applicable\" answers for every \"too expensive\" answer",
+       "basis": "63.3% ÷ 6.7%",
+       "point": {
+        "data_ref": "rx4"
+       },
+       "highlight": true
+      }
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "survey_bar",
+    "categories": [
+     "Does not apply to us",
+     "Unsure of the use",
+     "Privacy or security",
+     "Not mature yet",
+     "Bias",
+     "Too expensive"
+    ],
+    "series": [
+     {
+      "name": "Share of firms",
+      "points": [
+       {
+        "data_ref": "r10"
+       },
+       {
+        "data_ref": "r3"
+       },
+       {
+        "data_ref": "r4"
+       },
+       {
+        "data_ref": "r2"
+       },
+       {
+        "data_ref": "r5"
+       },
+       {
+        "data_ref": "r1"
+       }
+      ]
+     }
+    ],
+    "sort": "desc",
+    "highlight": [
+     "Does not apply to us"
+    ],
+    "value_format": "0%"
+   },
+   "footnotes": [
+    "Firms could choose more than one reason; shown are the six most-cited reasons other than \"Other\""
+   ],
+   "tree_node": "n1b"
+  },
+  {
+   "id": "1b2",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Our package must be built in and checkable: adopters cannot find tools that fit, and users doubt accuracy",
+    "clauses": 2
+   },
+   "message_type": "item",
+   "archetype": "multi-chart-panel",
+   "rationale": "Two clauses, one claim -> multi-chart-panel, no arrow (B-09)",
+   "layout": {
+    "variant": "split_2"
+   },
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "Before adopting, the hardest part is finding a tool that fits the business",
+      "unit_line": "**Top challenges, small employer firms planning to use AI**, % of firms, 2025",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Finding tools that fit",
+        "Setup and training"
+       ],
+       "series": [
+        {
+         "name": "Share of firms",
+         "points": [
+          {
+           "data_ref": "c1"
+          },
+          {
+           "data_ref": "c2"
+          }
+         ]
+        }
+       ],
+       "sort": "desc",
+       "highlight": [
+        "Finding tools that fit"
+       ],
+       "value_format": "0%"
+      }
+     },
+     {
+      "header": "After adopting, the worry is whether the answers are right",
+      "unit_line": "**Top challenges, small employer firms using AI**, % of firms, 2025",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Accuracy",
+        "Adapting tools"
+       ],
+       "series": [
+        {
+         "name": "Share of firms",
+         "points": [
+          {
+           "data_ref": "c3"
+          },
+          {
+           "data_ref": "c4"
+          }
+         ]
+        }
+       ],
+       "sort": "desc",
+       "highlight": [
+        "Accuracy"
+       ],
+       "value_format": "0%"
+      }
+     }
+    ]
+   },
+   "so_what": "Built-in AI ends the search for a tool; a source on every suggestion answers the accuracy worry",
+   "so_what_style": "bar",
+   "footnotes": [
+    "Federal Reserve Banks' Small Business Credit Survey of employer firms with 1–499 employees, fielded September to November 2025"
+   ],
+   "tree_node": "n1b"
+  },
+  {
+   "id": "1c1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Few small firms pay for AI tools on their own — AI belongs inside the plan, not in an add-on"
+   },
+   "message_type": "item",
+   "archetype": "kpi-big-numbers",
+   "tree_node": "n1c",
+   "unit_line": "**Use of and spend on AI**, US small businesses, 2025–26",
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "use77"
+      },
+      "caption": "use AI at least monthly",
+      "relation": "Intuit survey of US small firms, Jan 2026",
+      "drivers": [
+       "Up from under half in mid-2024",
+       "Includes chat assistants used for free",
+       "Shows demand is no longer the question"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "paid12"
+      },
+      "caption": "paid for a dedicated AI tool, 2021–2025",
+      "relation": "Intuit payment records of its own customers",
+      "drivers": [
+       "Use is wide, paying is rare",
+       "Owners rarely add a new subscription",
+       "The paying habit sits with the tools they already have"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "med22"
+      },
+      "caption": "median yearly AI spend among firms that use AI tools",
+      "relation": "Among owners who already spend on AI",
+      "drivers": [
+       "Spend exists once AI is part of a tool",
+       "Four in ten spend little on AI tools",
+       "Room for a modest uplift, not a premium product"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "The two Intuit figures have different bases: a January 2026 survey, and payment records of businesses on its platform, 2021–2025"
+   ]
+  },
+  {
+   "id": "d2",
+   "role": "agenda_tracker",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L2",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "AI cuts the time small firms spend on their books, and approval steps keep it accurate enough to trust"
+   },
+   "message_type": "argument",
+   "archetype": "numbered-levers",
+   "body": {
+    "kind": "levers",
+    "headers": [
+     "Finding",
+     "Evidence"
+    ],
+    "items": [
+     {
+      "code": "2a",
+      "text": "AI accounting software saves real time at month end",
+      "point": {
+       "data_ref": "k1"
+      },
+      "metric": "days faster monthly close"
+     },
+     {
+      "code": "2b",
+      "text": "Owners can check and approve what the AI does",
+      "point": {
+       "data_ref": "x96"
+      },
+      "metric": "of Xero's automatic matches left uncorrected"
+     }
+    ]
+   },
+   "unit_line": "**Status of each condition**, latest data"
+  },
+  {
+   "id": "2a1",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Accountants using AI closed the books 7.5 days faster, the gain our customers would feel first",
+    "numbers": [
+     {
+      "text": "7.5 days",
+      "data_ref": "k1"
+     }
+    ],
+    "clauses": 1
+   },
+   "message_type": "item",
+   "archetype": "kpi-big-numbers",
+   "rationale": "Three results of one study -> kpi-big-numbers",
+   "unit_line": "**Measured effect of AI accounting software**, field data from small and mid-sized firms, 2025",
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "k1"
+      },
+      "caption": "days faster monthly close",
+      "relation": "The gain an owner sees at every close",
+      "drivers": [
+       "General ledger entries also became 12% more granular",
+       "A shorter close puts cash and profit figures in front of the owner sooner",
+       "Measured on real transactions, not in a lab"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "k2"
+      },
+      "caption": "more weekly client support",
+      "relation": "Time saved went to clients, not to cuts",
+      "drivers": [
+       "Accountants answered more client questions each week",
+       "Time saved went to clients rather than to cuts in staff",
+       "For our customers: faster answers from their bookkeeper"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "k3"
+      },
+      "caption": "of accountant time moved from data entry",
+      "relation": "Routine entry is where AI takes over first",
+      "drivers": [
+       "Time moved to client communication and quality checks",
+       "Routine entry is the work AI took over first",
+       "So our first AI features should take on entry and categorization"
+      ]
+     }
+    ]
+   },
+   "footnotes": [
+    "Field data from 79 small and mid-sized firms using one AI accounting product, plus a panel survey of 277 accountants; an observational study, not a randomized trial"
+   ],
+   "tree_node": "n2a"
+  },
+  {
+   "id": "2a2",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "With owners' accounting hours spread evenly across five tasks, AI has to help with the whole cycle",
+    "clauses": 1
+   },
+   "message_type": "component",
+   "archetype": "bar-ranking",
+   "tree_node": "n2a",
+   "unit_line": "**Hours a week owners spend on each accounting task**, US firms with $50K–$1M revenue, Q4 2023",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "No single task dominates the week",
+     "bullets": [
+      "**About 20 hours in all:** half a working week on accounting, by the owner personally, in a 2023 survey",
+      "**Even split:** every task takes about four hours, so automating one step saves little"
+     ],
+     "implication": "Start with bank feeds and the close, then extend to invoicing and expenses in the same package"
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "Bookkeeping",
+     "Financial reporting",
+     "Expense tracking",
+     "Invoicing",
+     "Income taxes"
+    ],
+    "series": [
+     {
+      "name": "Hours a week",
+      "points": [
+       {
+        "data_ref": "hb"
+       },
+       {
+        "data_ref": "hr"
+       },
+       {
+        "data_ref": "he"
+       },
+       {
+        "data_ref": "hi"
+       },
+       {
+        "data_ref": "ht"
+       }
+      ]
+     }
+    ],
+    "sort": "desc",
+    "highlight": [],
+    "value_format": "0.0"
+   },
+   "footnotes": [
+    "Survey of 750 US owners of firms with $50K–$1M revenue, Q4 2023, commissioned by an accounting-software vendor"
+   ]
+  },
+  {
+   "id": "2b1",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Leading platforms keep the owner in control: AI explains each suggestion and nothing posts without approval"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "tree_node": "n2b",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "QuickBooks Online",
+     "Xero JAX"
+    ],
+    "rows": [
+     {
+      "label": "Shows how sure it is",
+      "cells": [
+       {
+        "text": "Confidence badge; orange alert when data is thin"
+       },
+       {
+        "text": "Reconciles alone only when highly confident"
+       }
+      ],
+      "note": "Flags thin data"
+     },
+     {
+      "label": "Explains the suggestion",
+      "cells": [
+       {
+        "text": "Review signal shows similar past transactions"
+       },
+       {
+        "text": "Every match labeled, reasoning on hover"
+       }
+      ],
+      "note": "Owner sees why"
+     },
+     {
+      "label": "Owner approves",
+      "cells": [
+       {
+        "text": "Confirm before posting; close drafts need approval"
+       },
+       {
+        "text": "Owner keeps the final say and can edit any match"
+       }
+      ]
+     },
+     {
+      "label": "Accuracy reported",
+      "cells": [
+       {
+        "text": "Not disclosed"
+       },
+       {
+        "point": {
+         "data_ref": "x96"
+        }
+       }
+      ],
+      "note": "Only Xero publishes it"
+     }
+    ],
+    "verdict_header": "For Cobalt Ledger"
+   },
+   "layout": {
+    "variant": "full"
+   },
+   "unit_line": "**AI controls in bank reconciliation**, as described by each vendor, November 2026",
+   "footnotes": [
+    "Controls from QuickBooks and Xero support and product pages, accessed November 2026"
+   ],
+   "callout": {
+    "target": "Owner approves",
+    "header": "Build it in from day one",
+    "detail": "Approval is what owners need before they trust AI with the books"
+   }
+  },
+  {
+   "id": "d3",
+   "role": "agenda_tracker",
+   "section_id": "3",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L3",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "AI is now standard in small-business accounting software, which makes waiting the riskier choice"
+   },
+   "message_type": "argument",
+   "archetype": "numbered-levers",
+   "body": {
+    "kind": "levers",
+    "headers": [
+     "Finding",
+     "Evidence"
+    ],
+    "items": [
+     {
+      "code": "3a",
+      "text": "The leading platforms have shipped AI assistants to small firms",
+      "point": {
+       "data_ref": "x73"
+      },
+      "metric": "of Xero customers have used its AI"
+     },
+     {
+      "code": "3b",
+      "text": "They include it in the plan and raise the plan price",
+      "point": {
+       "data_ref": "qbe"
+      },
+      "metric": "QuickBooks Essentials a month, raised for AI in 2026"
+     }
+    ]
+   },
+   "unit_line": "**Status of each condition**, latest data"
+  },
+  {
+   "id": "3a1",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "With Intuit, Xero and Shopify all shipping AI assistants to small businesses, waiting would leave us the exception",
+    "clauses": 1
+   },
+   "message_type": "structure",
+   "archetype": "timeline-roadmap",
+   "rationale": "Launches over time, with dates -> timeline-roadmap",
+   "unit_line": "**AI assistant launches by small-business software platforms**, by half-year, from company press releases",
+   "layout": {
+    "variant": "full"
+   },
+   "body": {
+    "kind": "timeline",
+    "periods": [
+     "H2 2023",
+     "H1 2024",
+     "H2 2024",
+     "H1 2025",
+     "H2 2025",
+     "H1 2026",
+     "H2 2026",
+     "H1 2027"
+    ],
+    "rows": [
+     {
+      "label": "Intuit (QuickBooks)",
+      "bars": [
+       {
+        "start": "H2 2023",
+        "end": "H1 2024",
+        "label": "Intuit Assist, beta to rollout"
+       },
+       {
+        "start": "H2 2025",
+        "end": "H2 2025",
+        "label": "AI agents"
+       }
+      ]
+     },
+     {
+      "label": "Xero",
+      "bars": [
+       {
+        "start": "H2 2025",
+        "end": "H2 2025",
+        "label": "JAX features"
+       }
+      ]
+     },
+     {
+      "label": "Shopify",
+      "bars": [
+       {
+        "start": "H2 2025",
+        "end": "H2 2025",
+        "label": "Sidekick agent"
+       }
+      ]
+     },
+     {
+      "label": "Cobalt Ledger",
+      "bars": [
+       {
+        "start": "H1 2027",
+        "end": "H1 2027",
+        "label": "Our launch",
+        "emphasis": true
+       }
+      ]
+     }
+    ],
+    "milestones": [
+     {
+      "at": "H2 2026",
+      "label": "Today"
+     }
+    ]
+   },
+   "so_what": "AI is becoming standard in small-business software, so our risk is being late, not early",
+   "so_what_style": "line",
+   "footnotes": [
+    "Intuit: Sept 6, 2023 and July 1, 2025 press releases; Xero: Sept 3, 2025 media release; Shopify: Winter '26 Edition, Dec 10, 2025",
+    "Intuit says its agents save businesses up to 12 hours a month; Xero says 73% of its customers have used AI on its platform since March 2025"
+   ],
+   "tree_node": "n3a"
+  },
+  {
+   "id": "3b1",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "The two largest platforms include AI in their plans, and none of the five sells it as a separate product"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "tree_node": "n3b",
+   "unit_line": "**US list prices**, $ per month, lowest and highest plan, November 2026",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Lowest plan",
+     "Highest plan",
+     "AI in the plan"
+    ],
+    "rows": [
+     {
+      "label": "QuickBooks Online",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p0"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "p3"
+        }
+       },
+       {
+        "text": "In every paid plan; more capacity on higher plans"
+       }
+      ]
+     },
+     {
+      "label": "Xero",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p5"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "p7"
+        }
+       },
+       {
+        "text": "JAX included at no extra charge for now"
+       }
+      ]
+     },
+     {
+      "label": "Zoho Books",
+      "highlight": false,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p13"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "p17"
+        }
+       },
+       {
+        "text": "Zia built in"
+       }
+      ]
+     },
+     {
+      "label": "FreshBooks",
+      "highlight": false,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p9"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "p11"
+        }
+       },
+       {
+        "text": "None built in; free connectors to outside assistants"
+       }
+      ]
+     },
+     {
+      "label": "Wave",
+      "highlight": false,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p20"
+        }
+       },
+       {
+        "point": {
+         "data_ref": "p21"
+        }
+       },
+       {
+        "text": "None"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "3b2",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "QuickBooks has raised its Essentials price by more than half since 2022 and tied the 2026 rise to its new AI",
+    "highlights": [
+     "2026"
+    ]
+   },
+   "message_type": "time-series",
+   "archetype": "column-time-series",
+   "tree_node": "n3b",
+   "unit_line": "**QuickBooks Online Essentials list price**, $ per month, US, after each summer price change",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "AI now carries the price rise",
+     "bullets": [
+      "**2026:** Intuit said the new prices support its AI capabilities, the first time it named AI as the reason",
+      "**Every plan rose:** Plus and Advanced went up by more than Essentials",
+      "**Market price:** customers now expect AI in the plan, and a modest uplift is in line with the leaders"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "2022",
+     "2025",
+     "2026"
+    ],
+    "series": [
+     {
+      "name": "Essentials",
+      "points": [
+       {
+        "data_ref": "qe2022"
+       },
+       {
+        "data_ref": "qe2025"
+       },
+       {
+        "data_ref": "qe2026"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "2026"
+    ],
+    "value_format": "$0"
+   }
+  },
+  {
+   "id": "d4",
+   "role": "agenda_tracker",
+   "section_id": "4",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L4",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "The AI package pays back in about 9 months on the price uplift alone, well inside the 24-month test",
+    "numbers": [
+     {
+      "text": "9 months",
+      "data_ref": "pb"
+     }
+    ]
+   },
+   "message_type": "component",
+   "archetype": "calculation-bridge",
+   "unit_line": "**Payback of the AI package**, months, 2027 plan, team estimate",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "launch"
+      },
+      "caption": "to build: 20 engineers for a year at the US median developer wage (4b)"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "net"
+      },
+      "caption": "a month from a $5 plan uplift across 100,000 customers, less AI running costs (4a, 4b)"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "pb"
+      },
+      "caption": "months to pay back; no churn gain counted, since no platform shows one (4c)"
+     }
+    ],
+    "assumptions_header": "The estimate counts only the price uplift",
+    "assumptions": [
+     "Every paying customer moves to the higher price at renewal",
+     "The team cost uses the BLS median wage, loaded to total compensation",
+     "Design and marketing costs are left out; each extra $0.4M adds about a month",
+     "Lower churn is not counted (4c); it would only shorten the payback"
+    ]
+   }
+  },
+  {
+   "id": "4a1",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Intuit's growth now comes per customer: revenue per customer grows 15% a year while customers grow 3%",
+    "numbers": [
+     {
+      "text": "15%",
+      "data_ref": "ia26"
+     }
+    ],
+    "highlights": [
+     "FY2026"
+    ]
+   },
+   "message_type": "item",
+   "archetype": "bar-ranking",
+   "tree_node": "n4a",
+   "unit_line": "**Intuit Online Ecosystem revenue per customer**, growth on the prior year, %, fiscal years to July",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Growth per customer, not new customers",
+     "bullets": [
+      "**Customers:** paying customers grew only 3% in fiscal 2026, so almost all the growth came per customer",
+      "**QuickBooks Online:** revenue rose 23%, which Intuit credits to higher effective prices, customer growth and mix shift",
+      "**Charging model:** the leader earns more from each customer through its plans and reports no separate AI product"
+     ]
+    }
+   },
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "FY2024",
+     "FY2025",
+     "FY2026"
+    ],
+    "series": [
+     {
+      "name": "Revenue per customer growth",
+      "points": [
+       {
+        "data_ref": "ia24"
+       },
+       {
+        "data_ref": "ia25"
+       },
+       {
+        "data_ref": "ia26"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "FY2026"
+    ],
+    "value_format": "0%"
+   }
+  },
+  {
+   "id": "4a2",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Peers charge for AI by raising the price of plans that include it — the model that suits small firms"
+   },
+   "message_type": "item",
+   "archetype": "text-columns",
+   "tree_node": "n4a",
+   "body": {
+    "kind": "text",
+    "style": "columns",
+    "columns": [
+     {
+      "header": "AI in the plan, plan price raised",
+      "emphasis": true,
+      "point": {
+       "data_ref": "qbe"
+      },
+      "point_caption": "QuickBooks Online Essentials a month",
+      "detail": [
+       "QuickBooks puts AI in every paid plan, with more capacity on higher plans",
+       "Intuit tied its August 2026 rise to the new AI",
+       "No new purchase decision for the owner"
+      ],
+      "footer": "Recommended for Cobalt Ledger"
+     },
+     {
+      "header": "Separate AI add-on",
+      "point": {
+       "data_ref": "mcb"
+      },
+      "point_caption": "Microsoft Copilot Business per user a month",
+      "detail": [
+       "Bought per user on top of the suite",
+       "Works for firms with an IT budget",
+       "Few small firms buy AI tools on their own (1c)"
+      ],
+      "footer": "Hard sell to a sole owner"
+     },
+     {
+      "header": "Usage-based charge",
+      "detail": [
+       "Xero plans to charge for heavy use on top of plans that include JAX",
+       "Not yet priced",
+       "Hard for an owner to budget"
+      ],
+      "footer": "A later option for heavy users"
+     }
+    ]
+   }
+  },
+  {
+   "id": "4b1",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Running the AI costs about $10 per customer a year, under a fifth of the plan uplift it pays for",
+    "numbers": [
+     {
+      "text": "$10",
+      "data_ref": "aic"
+     }
+    ]
+   },
+   "message_type": "component",
+   "archetype": "calculation-bridge",
+   "tree_node": "n4b",
+   "unit_line": "**AI running cost per customer**, $ per year, at November 2026 model prices, team estimate",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "catc"
+      },
+      "caption": "to categorize 2,000 bank transactions a month on Claude Haiku 5.5"
+     },
+     {
+      "op": "+",
+      "point": {
+       "data_ref": "chc"
+      },
+      "caption": "to answer 50 questions a month on Claude Sonnet 5.5"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "aic"
+      },
+      "caption": "AI cost per customer per year"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "uyr"
+      },
+      "caption": "from a $5 monthly uplift"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "ash"
+      },
+      "caption": "of the uplift goes to running the AI"
+     }
+    ],
+    "assumptions_header": "Usage is set high, so the cost is an upper bound",
+    "assumptions": [
+     "Categorization runs on Claude Haiku 5.5 and assistant questions on Claude Sonnet 5.5, at November 2026 list prices",
+     "Usage per customer is set high on purpose: 2,000 categorizations and 50 questions a month",
+     "Token counts per categorization come from a 2026 receipt-classification study; per question they are our assumption"
+    ]
+   }
+  },
+  {
+   "id": "4c1",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "The payback case counts no retention gain because no platform shows that AI lowers churn"
+   },
+   "message_type": "item",
+   "archetype": "kpi-big-numbers",
+   "tree_node": "n4c",
+   "unit_line": "**Retention evidence**, latest fiscal year",
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "xch"
+      },
+      "caption": "average monthly churn at Xero, fiscal 2026",
+      "relation": "The same level as before JAX launched",
+      "drivers": [
+       "Xero credits the platform's value, not AI",
+       "No split of churn between AI users and others",
+       "Our best public baseline for small-firm churn"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "icn"
+      },
+      "caption": "million Intuit Online paying customers, fiscal 2026",
+      "relation": "Grew 3%, more slowly than the year before",
+      "drivers": [
+       "Intuit reports AI engagement, not retention",
+       "Customer growth slowed while AI use rose",
+       "Revenue growth came from price, not customers"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "grr"
+      },
+      "caption": "of revenue kept a year later by AI-only products under $50 a month",
+      "relation": "Stand-alone AI tools churn fast",
+      "drivers": [
+       "A caution for selling AI on its own",
+       "Built-in AI avoids a separate cancel decision",
+       "Not evidence about AI inside accounting software"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "d5",
+   "role": "agenda_tracker",
+   "section_id": "5",
+   "status": "filled",
+   "archetype": "agenda-tracker",
+   "message_type": "navigation"
+  },
+  {
+   "id": "L5",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Three phases take the package from a pilot to every small-business customer by the end of 2027"
+   },
+   "message_type": "structure",
+   "archetype": "process-flow",
+   "body": {
+    "kind": "process",
+    "steps": [
+     {
+      "header": "Pilot, H1 2027",
+      "detail": [
+       "Bank-feed categorization and month-end close",
+       "Approval on every AI entry",
+       "Smallest customers who opt in",
+       "Track hours saved and errors"
+      ],
+      "emphasis": true,
+      "footer": "Gate: time saved, errors caught"
+     },
+     {
+      "header": "Launch, H2 2027",
+      "detail": [
+       "AI in every paid plan",
+       "Plan price raised at renewal",
+       "Assistant questions added",
+       "Accountant partners briefed"
+      ],
+      "footer": "Gate: churn flat after the price change"
+     },
+     {
+      "header": "Extend, 2028",
+      "detail": [
+       "Invoicing and expense tracking",
+       "Reporting and tax preparation",
+       "Usage limits by plan",
+       "Review model choice and cost"
+      ],
+      "footer": "Exit: the whole accounting cycle covered"
+     }
+    ]
+   },
+   "callout": {
+    "target": "Pilot, H1 2027",
+    "header": "Decision point",
+    "detail": "Raise prices only once the pilot shows hours saved"
+   }
+  },
+  {
+   "id": "5b",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "5a:",
+    "text": "A pilot with the smallest customers proves the time saved before any price changes"
+   },
+   "message_type": "argument",
+   "archetype": "initiative-one-pager",
+   "body": {
+    "kind": "initiative",
+    "template": "actions_impact",
+    "header": "Prove hours saved and errors caught with customers who opt in",
+    "rows": [
+     {
+      "label": "Build",
+      "actions": [
+       "Bank-feed categorization, month-end close, approval on every entry",
+       "Usage limits by plan from the first release"
+      ]
+     },
+     {
+      "label": "Pilot",
+      "actions": [
+       "Smallest customers who opt in, for one quarter",
+       "Weekly review of hours saved and corrected entries"
+      ]
+     },
+     {
+      "label": "Decide",
+      "actions": [
+       "Raise prices only if hours saved hold and churn stays flat",
+       "Price decision at the Q3 2027 review"
+      ]
+     }
+    ],
+    "impact": {
+     "point": {
+      "data_ref": "i12"
+     },
+     "label": "Benchmark: hours a month Intuit says its agents save"
+    },
+    "owner": "AI package lead",
+    "timing": "Q1–Q3 2027"
+   }
+  },
+  {
+   "id": "5f",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "archetype": "from-to",
+   "message_type": "argument",
+   "lead_message": {
+    "text": "The package turns the owner from the person who keeps the books into the person who approves them"
+   },
+   "body": {
+    "kind": "from_to",
+    "from_label": "From: bookkeeping software",
+    "to_label": "To: books the AI keeps",
+    "rows": [
+     {
+      "label": "Bank feeds",
+      "from": "Owner categorizes each transaction",
+      "to": "AI categorizes, owner approves",
+      "to_detail": "Nothing posts without approval (2b)"
+     },
+     {
+      "label": "Month end",
+      "from": "A week of closing work",
+      "to": "Books close as transactions arrive",
+      "to_detail": "Reconciliation runs every day"
+     },
+     {
+      "label": "Questions",
+      "from": "Wait for the bookkeeper",
+      "to": "Ask the assistant, with sources",
+      "to_detail": "Answers cite the ledger lines they use"
+     },
+     {
+      "label": "Errors",
+      "from": "Found at tax time",
+      "to": "Flagged when confidence is low",
+      "to_detail": "Owners review only what the AI is unsure of"
+     },
+     {
+      "label": "Price",
+      "from": "AI sold as an add-on",
+      "to": "AI in every paid plan",
+      "to_detail": "Plan price rises after the pilot (4a)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "5e",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "archetype": "org-chart",
+   "message_type": "structure",
+   "lead_message": {
+    "text": "One AI package lead reporting to the CEO runs the launch through pilot squads"
+   },
+   "body": {
+    "kind": "org",
+    "nodes": [
+     {
+      "id": "ceo",
+      "label": "CEO"
+     },
+     {
+      "id": "lead",
+      "label": "AI package lead",
+      "sub": "new, full time",
+      "parent": "ceo",
+      "status": "new"
+     },
+     {
+      "id": "prod",
+      "label": "Product",
+      "parent": "lead"
+     },
+     {
+      "id": "plat",
+      "label": "AI platform team",
+      "parent": "lead",
+      "status": "new"
+     },
+     {
+      "id": "cs",
+      "label": "Customer success",
+      "parent": "lead"
+     },
+     {
+      "id": "fin",
+      "label": "Finance",
+      "parent": "lead",
+      "status": "changed",
+      "sub": "owns the price decision"
+     },
+     {
+      "id": "sq",
+      "label": "Pilot squads",
+      "sub": "one per customer cohort",
+      "parent": "plat",
+      "count": 3,
+      "status": "new"
+     }
+    ],
+    "side": [
+     {
+      "label": "Launch steering group",
+      "sub": "CEO, CFO, product; monthly",
+      "attach": "ceo"
+     }
+    ],
+    "roles": [
+     {
+      "node": "lead",
+      "bullets": [
+       "Owns scope, the pilot review and the launch date",
+       "Reports hours saved, errors and churn monthly",
+       "Brings the price decision to the steering group"
+      ]
+     },
+     {
+      "node": "sq",
+      "bullets": [
+       "A product manager, engineers and a customer-success lead",
+       "Runs approval flows and error reviews with pilot customers",
+       "Feeds fixes back before the broad launch"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "5c",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Four risks need an owner before launch, led by accuracy"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "What could go wrong",
+     "How we reduce it",
+     "Owner"
+    ],
+    "rows": [
+     {
+      "label": "Accuracy",
+      "cells": [
+       {
+        "text": "A wrong entry reaches the books"
+       },
+       {
+        "text": "Approval on every entry; confidence flags"
+       },
+       {
+        "text": "Product"
+       }
+      ]
+     },
+     {
+      "label": "Price reaction",
+      "cells": [
+       {
+        "text": "Customers leave at the new price"
+       },
+       {
+        "text": "Raise only after the pilot; grandfather the smallest"
+       },
+       {
+        "text": "CFO"
+       }
+      ],
+      "note": "Watch churn monthly"
+     },
+     {
+      "label": "AI cost",
+      "cells": [
+       {
+        "text": "Heavy users cost more than planned"
+       },
+       {
+        "text": "Usage limits by plan; cheaper model for categorization"
+       },
+       {
+        "text": "Engineering"
+       }
+      ],
+      "note": "Cap usage early"
+     },
+     {
+      "label": "Competitor move",
+      "cells": [
+       {
+        "text": "A rival cuts price or adds more AI"
+       },
+       {
+        "text": "Lead on the close and approval, not on chat"
+       },
+       {
+        "text": "CEO"
+       }
+      ],
+      "note": "Compete on the close"
+     }
+    ],
+    "verdict_header": "Watch point"
+   },
+   "callout": {
+    "target": "Accuracy",
+    "header": "Highest risk",
+    "detail": "One wrong entry in the books costs more trust than a missing feature"
+   }
+  },
+  {
+   "id": "5d",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Four numbers will tell the CEO within six months whether the launch is working"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "Benchmark",
+     "Why it matters"
+    ],
+    "rows": [
+     {
+      "label": "Days saved at month end",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "k1"
+        }
+       },
+       {
+        "text": "The value customers pay for (2a)"
+       }
+      ]
+     },
+     {
+      "label": "Monthly churn after the price change",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "xch"
+        }
+       },
+       {
+        "text": "Must not rise above the market baseline (4c)"
+       }
+      ]
+     },
+     {
+      "label": "AI cost per customer",
+      "cells": [
+       {
+        "text": "Under a fifth of the uplift"
+       },
+       {
+        "text": "Keeps the uplift profitable (4b)"
+       }
+      ]
+     },
+     {
+      "label": "Payback",
+      "highlight": true,
+      "cells": [
+       {
+        "text": "Inside the two-year test"
+       },
+       {
+        "text": "The CEO's success criterion (4)"
+       }
+      ]
+     }
+    ]
+   },
+   "unit_line": "**Launch scorecard**, benchmark to beat"
+  },
+  {
+   "id": "app",
+   "role": "appendix_divider",
+   "status": "filled"
+  },
+  {
+   "id": "bx",
+   "role": "backup",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Three branches were left out on purpose, two by agreement and one because we cannot move it"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "tree_node": [
+    "nx1",
+    "nx2",
+    "nx3"
+   ],
+   "body": {
+    "kind": "table",
+    "table_type": "definition",
+    "columns": [
+     "Hypothesis",
+     "Why it is not in the deck"
+    ],
+    "rows": [
+     {
+      "label": "Regulation",
+      "cells": [
+       {
+        "text": "Liability rules for AI errors will shape what the package can do"
+       },
+       {
+        "text": "Outside the CEO's influence; handled by approval controls in the plan (5)"
+       }
+      ]
+     },
+     {
+      "label": "Own model",
+      "cells": [
+       {
+        "text": "Our own AI model would cut cost or raise quality"
+       },
+       {
+        "text": "Out of scope at the brief; licensed models cost about $10 per customer a year (4b)"
+       }
+      ]
+     },
+     {
+      "label": "Larger firms",
+      "cells": [
+       {
+        "text": "Mid-sized and large customers would adopt faster"
+       },
+       {
+        "text": "Out of scope at the brief; the decision covers small-business customers"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "b1",
+   "role": "backup",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Every number is graded by how far it has been checked"
+   },
+   "message_type": "item",
+   "archetype": "definition-table",
+   "backup_of": "L1",
+   "body": {
+    "kind": "table",
+    "table_type": "definition",
+    "columns": [
+     "What it means"
+    ],
+    "rows": [
+     {
+      "label": "Tier T1 / T2",
+      "cells": [
+       {
+        "text": "Official statistics, filings, company disclosures about themselves / research firms and reputable surveys"
+       }
+      ]
+     },
+     {
+      "label": "Tier T3",
+      "cells": [
+       {
+        "text": "Trade press reporting a company's number; used only for price history before 2026"
+       }
+      ]
+     },
+     {
+      "label": "Grade A",
+      "cells": [
+       {
+        "text": "T1 or T2, re-checked on the page, and for key numbers a second source"
+       }
+      ]
+     },
+     {
+      "label": "Grade B",
+      "cells": [
+       {
+        "text": "The excerpt matches, but no re-check yet or only one source"
+       }
+      ]
+     },
+     {
+      "label": "Grade C",
+      "cells": [
+       {
+        "text": "T3, not found on re-check, or sources disagree; footnoted on the slide"
+       }
+      ]
+     },
+     {
+      "label": "Grade E",
+      "cells": [
+       {
+        "text": "Our estimate, built from sourced inputs and stated assumptions"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "b2",
+   "role": "backup",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "The Census survey now asks about Super Intelligence, formerly AI, with the same question behind it"
+   },
+   "message_type": "item",
+   "archetype": "definition-table",
+   "backup_of": "1a1",
+   "body": {
+    "kind": "table",
+    "table_type": "definition",
+    "columns": [
+     "Definition"
+    ],
+    "rows": [
+     {
+      "label": "Survey",
+      "cells": [
+       {
+        "text": "Business Trends and Outlook Survey, US Census Bureau, every two weeks"
+       }
+      ]
+     },
+     {
+      "label": "Question",
+      "cells": [
+       {
+        "text": "Did this business use Super Intelligence (formerly Artificial Intelligence or AI) in any business function in the last two weeks"
+       }
+      ]
+     },
+     {
+      "label": "Size classes",
+      "cells": [
+       {
+        "text": "Employment size classes A to G, from 1–4 employees to 250 or more"
+       }
+      ]
+     },
+     {
+      "label": "Wording change",
+      "cells": [
+       {
+        "text": "Found when the source was re-opened in November 2026; the values we use did not change"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "b3",
+   "role": "backup",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Other surveys find higher AI use because they count any use of free tools"
+   },
+   "message_type": "item",
+   "archetype": "data-table",
+   "backup_of": "1a1",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "AI use",
+     "Who was asked",
+     "What counts as use"
+    ],
+    "rows": [
+     {
+      "label": "Census survey, Oct 2026",
+      "highlight": true,
+      "cells": [
+       {
+        "point": {
+         "data_ref": "t202621"
+        }
+       },
+       {
+        "text": "All US employer firms, every two weeks"
+       },
+       {
+        "text": "Strictest: used in a business function in the last two weeks; our measure"
+       }
+      ]
+     },
+     {
+      "label": "US Chamber of Commerce, June 2025",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "use58"
+        }
+       },
+       {
+        "text": "US firms under 250 employees, online survey"
+       },
+       {
+        "text": "Broader: any generative AI, self-identified"
+       }
+      ]
+     },
+     {
+      "label": "Intuit survey, Jan 2026",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "use77"
+        }
+       },
+       {
+        "text": "US small and mid-sized firms, online panel"
+       },
+       {
+        "text": "Broadest: any AI at least monthly, free or paid"
+       }
+      ]
+     },
+     {
+      "label": "Intuit payment records, 2021–2025",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "paid12"
+        }
+       },
+       {
+        "text": "Businesses on Intuit's platform"
+       },
+       {
+        "text": "Paid for a dedicated AI tool"
+       }
+      ]
+     }
+    ]
+   },
+   "unit_line": "**Share of US businesses using AI**, by source",
+   "layout": {
+    "variant": "full"
+   }
+  },
+  {
+   "id": "b4",
+   "role": "backup",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "QuickBooks and Xero put AI in every paid plan and add capacity as the price rises (1/2)"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "backup_of": "3b1",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "List price a month",
+     "AI in the plan"
+    ],
+    "rows": [
+     {
+      "label": "QuickBooks Simple Start",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p0"
+        }
+       },
+       {
+        "text": "AI chat with limited capacity"
+       }
+      ],
+      "note": "Entry plan; unchanged in 2026"
+     },
+     {
+      "label": "QuickBooks Essentials",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p1"
+        }
+       },
+       {
+        "text": "AI chat and agents"
+       }
+      ],
+      "note": "Raised $10 in 2026, tied to AI"
+     },
+     {
+      "label": "QuickBooks Plus",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p2"
+        }
+       },
+       {
+        "text": "Adds AI auto-categorization"
+       }
+      ],
+      "note": "Most popular plan"
+     },
+     {
+      "label": "QuickBooks Advanced",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p3"
+        }
+       },
+       {
+        "text": "Full AI capacity"
+       }
+      ],
+      "note": "For larger teams"
+     },
+     {
+      "label": "Xero Early",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p5"
+        }
+       },
+       {
+        "text": "JAX chat; auto-reconcile is an add-on"
+       }
+      ],
+      "note": "Entry plan"
+     },
+     {
+      "label": "Xero Growing",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p6"
+        }
+       },
+       {
+        "text": "JAX chat and auto-reconcile"
+       }
+      ],
+      "note": "Middle plan"
+     },
+     {
+      "label": "Xero Established",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p7"
+        }
+       },
+       {
+        "text": "JAX chat and auto-reconcile"
+       }
+      ],
+      "note": "Top plan"
+     }
+    ],
+    "verdict_header": "Note"
+   },
+   "unit_line": "**US list prices and AI by plan**, $ per month, November 2026"
+  },
+  {
+   "id": "b5",
+   "role": "backup",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Zoho builds AI into every plan, while FreshBooks and Wave offer none of their own (2/2)"
+   },
+   "message_type": "item",
+   "archetype": "comparison-table",
+   "backup_of": "3b1",
+   "body": {
+    "kind": "table",
+    "table_type": "comparison",
+    "columns": [
+     "List price a month",
+     "AI in the plan"
+    ],
+    "rows": [
+     {
+      "label": "Zoho Books Standard",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p13"
+        }
+       },
+       {
+        "text": "Zia built in"
+       }
+      ],
+      "note": "Monthly billing"
+     },
+     {
+      "label": "Zoho Books Professional",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p14"
+        }
+       },
+       {
+        "text": "Zia built in"
+       }
+      ]
+     },
+     {
+      "label": "Zoho Books Premium",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p15"
+        }
+       },
+       {
+        "text": "Zia built in"
+       }
+      ]
+     },
+     {
+      "label": "Zoho Books Elite",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p16"
+        }
+       },
+       {
+        "text": "Zia built in"
+       }
+      ]
+     },
+     {
+      "label": "Zoho Books Ultimate",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p17"
+        }
+       },
+       {
+        "text": "Zia built in"
+       }
+      ],
+      "note": "Top plan"
+     },
+     {
+      "label": "FreshBooks Lite",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p9"
+        }
+       },
+       {
+        "text": "None; free outside assistants"
+       }
+      ]
+     },
+     {
+      "label": "FreshBooks Plus",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p10"
+        }
+       },
+       {
+        "text": "None; free outside assistants"
+       }
+      ],
+      "note": "Most popular plan"
+     },
+     {
+      "label": "FreshBooks Premium",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p11"
+        }
+       },
+       {
+        "text": "None; free outside assistants"
+       }
+      ]
+     },
+     {
+      "label": "Wave Pro",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "p21"
+        }
+       },
+       {
+        "text": "None"
+       }
+      ],
+      "note": "Paid plan above a free one"
+     }
+    ],
+    "verdict_header": "Note"
+   },
+   "unit_line": "**US list prices and AI by plan**, $ per month, monthly billing, November 2026"
+  },
+  {
+   "id": "b6",
+   "role": "backup",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "The payback estimate rests on six planning assumptions for the CEO to confirm"
+   },
+   "message_type": "item",
+   "archetype": "definition-table",
+   "backup_of": "L4",
+   "body": {
+    "kind": "table",
+    "table_type": "data",
+    "columns": [
+     "Value",
+     "Basis"
+    ],
+    "rows": [
+     {
+      "label": "Paying small-business customers",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "cust"
+        }
+       },
+       {
+        "text": "Company planning figure"
+       }
+      ]
+     },
+     {
+      "label": "Plan price uplift, $ a month",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "upl"
+        }
+       },
+       {
+        "text": "Half of QuickBooks' 2026 AI-linked rise on Essentials"
+       }
+      ]
+     },
+     {
+      "label": "Engineers building it",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "team"
+        }
+       },
+       {
+        "text": "One product team for a year"
+       }
+      ]
+     },
+     {
+      "label": "Categorizations a month",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "ncat"
+        }
+       },
+       {
+        "text": "Set high: a busy small firm's bank feed"
+       }
+      ]
+     },
+     {
+      "label": "Assistant questions a month",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "nq"
+        }
+       },
+       {
+        "text": "Set high: a few questions a working day"
+       }
+      ]
+     },
+     {
+      "label": "Wages as a share of employer cost",
+      "cells": [
+       {
+        "point": {
+         "data_ref": "wsh"
+        }
+       },
+       {
+        "text": "BLS, private industry, June 2026"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "b7",
+   "role": "backup",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "prefix": "BACKUP:",
+    "text": "Payback stays within 24 months as long as the uplift is above about $2.50 a month",
+    "numbers": [
+     {
+      "text": "$2.50",
+      "data_ref": "thr"
+     }
+    ]
+   },
+   "message_type": "item",
+   "archetype": "data-table",
+   "backup_of": "L4",
+   "unit_line": "**Lowest monthly uplift that pays back within 24 months**, $ per customer, team estimate",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "launch"
+      },
+      "caption": "launch cost, spread over 24 months"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "cust"
+      },
+      "caption": "paying customers share it"
+     },
+     {
+      "op": "+",
+      "point": {
+       "data_ref": "aic"
+      },
+      "caption": "AI cost per customer, taken per month"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "thr"
+      },
+      "caption": "the uplift below which payback passes 24 months"
+     }
+    ],
+    "assumptions_header": "Our $5 plan sits at twice the break-even uplift",
+    "assumptions": [
+     "20 engineers for 12 months at the BLS median developer wage, loaded to total compensation (wages are 70% of it)",
+     "No other launch costs (design, marketing) are counted; they would add about a month per $0.4M",
+     "Every paying customer moves to the higher price at renewal; no churn gain is counted (4c)"
+    ]
+   }
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "t202524",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202524",
+   "value": 0.173,
+   "unit": "%",
+   "period": "Nov 2025",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202524 = \"17.3%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "t202526",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202526",
+   "value": 0.178,
+   "unit": "%",
+   "period": "Dec 2025",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202526 = \"17.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "t202602",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202602",
+   "value": 0.182,
+   "unit": "%",
+   "period": "Jan 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202602 = \"18.2%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "t202604",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202604",
+   "value": 0.175,
+   "unit": "%",
+   "period": "Feb 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202604 = \"17.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "t202606",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202606",
+   "value": 0.189,
+   "unit": "%",
+   "period": "Mar 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202606 = \"18.9%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "t202608",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202608",
+   "value": 0.198,
+   "unit": "%",
+   "period": "Apr 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202608 = \"19.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "t202611",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202611",
+   "value": 0.206,
+   "unit": "%",
+   "period": "May 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202611 = \"20.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "t202613",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202613",
+   "value": 0.206,
+   "unit": "%",
+   "period": "Jun 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202613 = \"20.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "t202615",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202615",
+   "value": 0.215,
+   "unit": "%",
+   "period": "Jul 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202615 = \"21.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "t202617",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202617",
+   "value": 0.224,
+   "unit": "%",
+   "period": "Aug 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202617 = \"22.4%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "t202619",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202619",
+   "value": 0.238,
+   "unit": "%",
+   "period": "Sep 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202619 = \"23.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "t202621",
+   "slide_id": "1a1",
+   "label": "US firms using AI, BTOS cycle 202621",
+   "value": 0.246,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1",
+   "excerpt": "Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7",
+   "used_in": "line chart",
+   "corroboration": [
+    {
+     "source_id": "w25",
+     "value": 0.58,
+     "excerpt": "58% of small businesses self-identified that they use generative AI—up from 40% in 2024 and more than double compared to 2023 (23%).",
+     "note": "Broader definition: any self-identified generative AI use, firms under 250 employees; Census kept as the stricter measure"
+    }
+   ],
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier; wording or scope corrected on the slide"
+   }
+  },
+  {
+   "id": "rise1",
+   "slide_id": "1a1",
+   "label": "Relative rise in the share of US firms using AI, Nov 2025 to Oct 2026",
+   "value": 0.42,
+   "unit": "%",
+   "period": "Nov 2025 to Oct 2026",
+   "source_id": "s0",
+   "used_in": "sidebar big number",
+   "derived_from": [
+    "t202621",
+    "t202524"
+   ],
+   "formula": "24.6% ÷ 17.3% − 1",
+   "calc": "t202621 / t202524 - 1"
+  },
+  {
+   "id": "zA",
+   "slide_id": "1a2",
+   "label": "Firms with 1–4 employees using AI",
+   "value": 0.243,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize A, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.3%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "zB",
+   "slide_id": "1a2",
+   "label": "Firms with 5–9 employees using AI",
+   "value": 0.226,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize B, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"22.6%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "zC",
+   "slide_id": "1a2",
+   "label": "Firms with 10–19 employees using AI",
+   "value": 0.246,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize C, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.6%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "zD",
+   "slide_id": "1a2",
+   "label": "Firms with 20–49 employees using AI",
+   "value": 0.26,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize D, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"26.0%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "zE",
+   "slide_id": "1a2",
+   "label": "Firms with 50–99 employees using AI",
+   "value": 0.29,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize E, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"29.0%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "zF",
+   "slide_id": "1a2",
+   "label": "Firms with 100–249 employees using AI",
+   "value": 0.353,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize F, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"35.3%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "zG",
+   "slide_id": "1a2",
+   "label": "Firms with 250+ employees using AI",
+   "value": 0.436,
+   "unit": "%",
+   "period": "Oct 2026 (cycle 202621)",
+   "source_id": "s2",
+   "excerpt": "Empsize G, Q7 \"did this business use Artificial Intelligence (AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"43.6%\"",
+   "locator": "Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "fA",
+   "slide_id": "1a2",
+   "label": "Firms with 1–4 employees using AI in finance and accounting",
+   "value": 0.059,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"5.9%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart",
+   "corroboration": [
+    {
+     "source_id": "w22",
+     "value": 0.35,
+     "excerpt": "The most recent data shows some country-level variation. In the US, marketing leads (45%), followed by customer service (37%) and bookkeeping (35%). ... The latest US results stand out: bookkeeping has entered the top three tasks where businesses report using AI.",
+     "note": "Different population: share of AI-using firms that use it for bookkeeping, not of all firms; Census kept"
+    }
+   ],
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "fB",
+   "slide_id": "1a2",
+   "label": "Firms with 5–9 employees using AI in finance and accounting",
+   "value": 0.061,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize B, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"6.1%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "fC",
+   "slide_id": "1a2",
+   "label": "Firms with 10–19 employees using AI in finance and accounting",
+   "value": 0.069,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize C, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"6.9%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "fD",
+   "slide_id": "1a2",
+   "label": "Firms with 20–49 employees using AI in finance and accounting",
+   "value": 0.082,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize D, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"8.2%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "fE",
+   "slide_id": "1a2",
+   "label": "Firms with 50–99 employees using AI in finance and accounting",
+   "value": 0.108,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize E, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"10.8%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "fF",
+   "slide_id": "1a2",
+   "label": "Firms with 100–249 employees using AI in finance and accounting",
+   "value": 0.155,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize F, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"15.5%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "fG",
+   "slide_id": "1a2",
+   "label": "Firms with 250+ employees using AI in finance and accounting",
+   "value": 0.205,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize G, scope 1, Q2 \"In the last six months, did this business use Artificial Intelligence (AI) in any of the following business functions?\", \"Finance and accounting\", Estimate - Yes = \"20.5%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "bar chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "fall",
+   "slide_id": "1a2",
+   "label": "All US firms using AI in finance and accounting",
+   "value": 0.066,
+   "unit": "%",
+   "period": "last six months, supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "scope 1, Q2, \"Finance and accounting\", Estimate - Yes = \"6.6%\"",
+   "locator": "National Response Estimates sheet",
+   "used_in": "benchmark",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "r10",
+   "slide_id": "1b1",
+   "label": "Firms with 1–4 employees and no AI plans citing: Does not apply to us",
+   "value": 0.633,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"AI is not applicable to this business\" = \"63.3%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "r3",
+   "slide_id": "1b1",
+   "label": "Firms with 1–4 employees and no AI plans citing: Unsure of the use",
+   "value": 0.212,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"Lack of knowledge on the capabilities of AI\" = \"21.2%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "r4",
+   "slide_id": "1b1",
+   "label": "Firms with 1–4 employees and no AI plans citing: Privacy or security",
+   "value": 0.201,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"Concerns about privacy/security\" = \"20.1%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "r2",
+   "slide_id": "1b1",
+   "label": "Firms with 1–4 employees and no AI plans citing: Not mature yet",
+   "value": 0.126,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"AI is not a mature enough technology yet\" = \"12.6%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "r5",
+   "slide_id": "1b1",
+   "label": "Firms with 1–4 employees and no AI plans citing: Bias",
+   "value": 0.089,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"Concerns about bias\" = \"8.9%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "r1",
+   "slide_id": "1b1",
+   "label": "Firms with 1–4 employees and no AI plans citing: Too expensive",
+   "value": 0.067,
+   "unit": "%",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s3",
+   "excerpt": "Empsize A, scope 6, Q13 \"Why does this business not plan to use Artificial Intelligence (AI) during the next six months?\", \"Too expensive\" = \"6.7%\"",
+   "locator": "Employment Response Estimates sheet",
+   "used_in": "survey bars",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "rx4",
+   "slide_id": "1b1",
+   "label": "'Not applicable' as a multiple of 'too expensive', firms with 1–4 employees",
+   "value": 9.4,
+   "unit": "x",
+   "period": "supplement Nov 2025–Jan 2026",
+   "source_id": "s0",
+   "used_in": "sidebar row",
+   "derived_from": [
+    "r10",
+    "r1"
+   ],
+   "formula": "63.3% ÷ 6.7%",
+   "calc": "r10 / r1"
+  },
+  {
+   "id": "c1",
+   "slide_id": "1b2",
+   "label": "Small employer firms naming a top AI challenge — Planning firms: finding tools to meet business needs",
+   "value": 0.54,
+   "unit": "%",
+   "period": "survey fielded Sep–Nov 2025",
+   "source_id": "s4",
+   "excerpt": "For AI users, the top challenges were accuracy (46%) and adapting tools to meet business needs (43%). For firms that plan to use AI in the next 12 months, the top challenges were finding tools to meet business needs (54%) and the time required to implement or train employees on AI (37%).",
+   "locator": "Overview, PDF p. 5",
+   "used_in": "panel chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "c2",
+   "slide_id": "1b2",
+   "label": "Small employer firms naming a top AI challenge — Planning firms: time to implement or train employees",
+   "value": 0.37,
+   "unit": "%",
+   "period": "survey fielded Sep–Nov 2025",
+   "source_id": "s4",
+   "excerpt": "For AI users, the top challenges were accuracy (46%) and adapting tools to meet business needs (43%). For firms that plan to use AI in the next 12 months, the top challenges were finding tools to meet business needs (54%) and the time required to implement or train employees on AI (37%).",
+   "locator": "Overview, PDF p. 5",
+   "used_in": "panel chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "c3",
+   "slide_id": "1b2",
+   "label": "Small employer firms naming a top AI challenge — AI users: accuracy",
+   "value": 0.46,
+   "unit": "%",
+   "period": "survey fielded Sep–Nov 2025",
+   "source_id": "s4",
+   "excerpt": "For AI users, the top challenges were accuracy (46%) and adapting tools to meet business needs (43%). For firms that plan to use AI in the next 12 months, the top challenges were finding tools to meet business needs (54%) and the time required to implement or train employees on AI (37%).",
+   "locator": "Overview, PDF p. 5",
+   "used_in": "panel chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "c4",
+   "slide_id": "1b2",
+   "label": "Small employer firms naming a top AI challenge — AI users: adapting tools to meet business needs",
+   "value": 0.43,
+   "unit": "%",
+   "period": "survey fielded Sep–Nov 2025",
+   "source_id": "s4",
+   "excerpt": "For AI users, the top challenges were accuracy (46%) and adapting tools to meet business needs (43%). For firms that plan to use AI in the next 12 months, the top challenges were finding tools to meet business needs (54%) and the time required to implement or train employees on AI (37%).",
+   "locator": "Overview, PDF p. 5",
+   "used_in": "panel chart",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "k1",
+   "slide_id": "2a1",
+   "label": "Reduction in monthly close time for firms using AI accounting software",
+   "value": 7.5,
+   "unit": "days",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "AI usage further corresponds to improved financial reporting quality, evidenced by a 12% increase in general ledger granularity and a 7.5-day reduction in monthly close time.",
+   "locator": "Abstract",
+   "used_in": "KPI tile 1, title",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "k2",
+   "slide_id": "2a1",
+   "label": "Increase in weekly client support by accountants using AI",
+   "value": 0.55,
+   "unit": "%",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "We document significant productivity gains among AI adopters, including a 55% increase in weekly client support and a reallocation of approximately 8.5% of accountant time from routine data entry toward high-value tasks such as business communication and quality assurance",
+   "locator": "Abstract",
+   "used_in": "KPI tile 2",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "k3",
+   "slide_id": "2a1",
+   "label": "Share of accountant time moved from routine data entry to higher-value tasks",
+   "value": 0.085,
+   "unit": "%",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "We document significant productivity gains among AI adopters, including a 55% increase in weekly client support and a reallocation of approximately 8.5% of accountant time from routine data entry toward high-value tasks such as business communication and quality assurance",
+   "locator": "Abstract",
+   "used_in": "KPI tile 3",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "k4",
+   "slide_id": "2a1",
+   "label": "Small and mid-sized firms in the field data",
+   "value": 79,
+   "unit": "firms",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "partnering with a technology firm that provides AI-based accounting software, we analyze unique field data from 79 small-and mid-sized firms, covering hundreds of thousands of transactions",
+   "locator": "Abstract",
+   "used_in": "footnote",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "k5",
+   "slide_id": "2a1",
+   "label": "Accountants in the panel survey",
+   "value": 277,
+   "unit": "accountants",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "through panel survey data from 277 accountants",
+   "locator": "Abstract",
+   "used_in": "footnote",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "k6",
+   "slide_id": "2a1",
+   "label": "Increase in general ledger granularity",
+   "value": 0.12,
+   "unit": "%",
+   "period": "2025 study",
+   "source_id": "s5",
+   "excerpt": "evidenced by a 12% increase in general ledger granularity and a 7.5-day reduction in monthly close time",
+   "locator": "Abstract",
+   "used_in": "KPI tile 1 driver",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "i12",
+   "slide_id": "3a1",
+   "label": "Time Intuit says its QuickBooks AI agents save businesses",
+   "value": 12,
+   "unit": "hours a month",
+   "period": "Jul 2025",
+   "source_id": "s7",
+   "excerpt": "saving businesses up to 12 hours a month",
+   "locator": "Body text",
+   "used_in": "timeline bar note",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "x73",
+   "slide_id": "3a1",
+   "label": "Xero customers who have used AI on the platform since March 2025",
+   "value": 0.73,
+   "unit": "%",
+   "period": "Sep 2025",
+   "source_id": "s8",
+   "excerpt": "with 73% of customers having used AI across the platform since March",
+   "locator": "Body text",
+   "used_in": "timeline bar note",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "wage",
+   "slide_id": "L4",
+   "label": "US software developer median annual wage",
+   "value": 135980,
+   "unit": "$",
+   "period": "May 2025",
+   "source_id": "w1",
+   "excerpt": "The median annual wage for software developers was $135,980 in May 2025.",
+   "locator": "Summary / Pay tab",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "wsh",
+   "slide_id": "L4",
+   "label": "Wages as a share of private-industry employer compensation costs",
+   "value": 0.7,
+   "unit": "%",
+   "period": "June 2026",
+   "source_id": "w2",
+   "excerpt": "Wages and salaries averaged $32.82 and accounted for 70.0 percent of employer costs",
+   "locator": "Release text, private industry paragraph",
+   "geography": "US private industry",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "team",
+   "slide_id": "L4",
+   "label": "Engineers building the AI package (assumption)",
+   "value": 20,
+   "unit": "engineers",
+   "period": "2027 plan",
+   "source_id": "u1"
+  },
+  {
+   "id": "bm",
+   "slide_id": "L4",
+   "label": "Months to build the AI package (assumption)",
+   "value": 12,
+   "unit": "months",
+   "period": "2027 plan",
+   "source_id": "u1"
+  },
+  {
+   "id": "cust",
+   "slide_id": "L4",
+   "label": "Cobalt Ledger paying small-business customers (assumption)",
+   "value": 100000,
+   "unit": "customers",
+   "period": "2027 plan",
+   "source_id": "u1"
+  },
+  {
+   "id": "upl",
+   "slide_id": "L4",
+   "label": "Plan price uplift with AI included (assumption)",
+   "value": 5,
+   "unit": "$/month",
+   "period": "2027 plan",
+   "source_id": "u1"
+  },
+  {
+   "id": "tin",
+   "slide_id": "4b1",
+   "label": "Input tokens per receipt classification",
+   "value": 420,
+   "unit": "tokens",
+   "period": "2026 study",
+   "source_id": "w3",
+   "excerpt": "each receipt classification required roughly 420 input tokens and 24 output tokens",
+   "locator": "Section 4.1.5; Table 7",
+   "geography": "n/a",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "tout",
+   "slide_id": "4b1",
+   "label": "Output tokens per receipt classification",
+   "value": 24,
+   "unit": "tokens",
+   "period": "2026 study",
+   "source_id": "w3",
+   "excerpt": "each receipt classification required roughly 420 input tokens and 24 output tokens",
+   "locator": "Section 4.1.5; Table 7",
+   "geography": "n/a",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "hin",
+   "slide_id": "4b1",
+   "label": "Claude Haiku 5.5 input price",
+   "value": 0.1,
+   "unit": "$ per M tokens",
+   "period": "Nov 2026",
+   "source_id": "w4",
+   "excerpt": "Claude Haiku 5.5 For high-volume, latency-sensitive tasks such as classification, extraction, and routing $0.10 / MTok for prompts up to 100,000 tokens $0.50 / MTok",
+   "locator": "Model pricing table, standard (not batch) prices; columns: input, output",
+   "geography": "Global (USD)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "hout",
+   "slide_id": "4b1",
+   "label": "Claude Haiku 5.5 output price",
+   "value": 0.5,
+   "unit": "$ per M tokens",
+   "period": "Nov 2026",
+   "source_id": "w4",
+   "excerpt": "Claude Haiku 5.5 For high-volume, latency-sensitive tasks such as classification, extraction, and routing $0.10 / MTok for prompts up to 100,000 tokens $0.50 / MTok",
+   "locator": "Model pricing table, standard (not batch) prices; columns: input, output",
+   "geography": "Global (USD)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "sin",
+   "slide_id": "4b1",
+   "label": "Claude Sonnet 5.5 input price",
+   "value": 2.0,
+   "unit": "$ per M tokens",
+   "period": "Nov 2026",
+   "source_id": "w4",
+   "excerpt": "Claude Sonnet 5.5 The best combination of speed and intelligence $2 / MTok $10 / MTok",
+   "locator": "Model pricing table, standard (not batch) prices; columns: input, output",
+   "geography": "Global (USD)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "sout",
+   "slide_id": "4b1",
+   "label": "Claude Sonnet 5.5 output price",
+   "value": 10.0,
+   "unit": "$ per M tokens",
+   "period": "Nov 2026",
+   "source_id": "w4",
+   "excerpt": "Claude Sonnet 5.5 The best combination of speed and intelligence $2 / MTok $10 / MTok",
+   "locator": "Model pricing table, standard (not batch) prices; columns: input, output",
+   "geography": "Global (USD)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "ncat",
+   "slide_id": "4b1",
+   "label": "Transaction categorizations per customer per month (assumption)",
+   "value": 2000,
+   "unit": "per month",
+   "period": "2027 plan",
+   "source_id": "u1"
+  },
+  {
+   "id": "nq",
+   "slide_id": "4b1",
+   "label": "Questions to the AI assistant per customer per month (assumption)",
+   "value": 50,
+   "unit": "per month",
+   "period": "2027 plan",
+   "source_id": "u1"
+  },
+  {
+   "id": "qin",
+   "slide_id": "4b1",
+   "label": "Input tokens per assistant question (assumption)",
+   "value": 5000,
+   "unit": "tokens",
+   "period": "2027 plan",
+   "source_id": "u1"
+  },
+  {
+   "id": "qout",
+   "slide_id": "4b1",
+   "label": "Output tokens per assistant question (assumption)",
+   "value": 500,
+   "unit": "tokens",
+   "period": "2027 plan",
+   "source_id": "u1"
+  },
+  {
+   "id": "catc",
+   "slide_id": "4b1",
+   "label": "AI cost of transaction categorization per customer per year",
+   "value": 1.3,
+   "unit": "$ per year",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "ncat",
+    "tin",
+    "tout",
+    "hin",
+    "hout"
+   ],
+   "formula": "categorizations a month × 12 × (input tokens × input price + output tokens × output price)",
+   "calc": "ncat * 12 * (tin * hin + tout * hout) / 1000000",
+   "estimate": true,
+   "assumptions": [
+    "Categorization runs on Claude Haiku 5.5 and assistant questions on Claude Sonnet 5.5, at November 2026 list prices",
+    "Usage per customer is set high on purpose: 2,000 categorizations and 50 questions a month",
+    "Token counts per categorization come from a 2026 receipt-classification study; per question they are our assumption"
+   ]
+  },
+  {
+   "id": "chc",
+   "slide_id": "4b1",
+   "label": "AI cost of assistant questions per customer per year",
+   "value": 9.0,
+   "unit": "$ per year",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "nq",
+    "qin",
+    "qout",
+    "sin",
+    "sout"
+   ],
+   "formula": "questions a month × 12 × (input tokens × input price + output tokens × output price)",
+   "calc": "nq * 12 * (qin * sin + qout * sout) / 1000000",
+   "estimate": true,
+   "assumptions": [
+    "Categorization runs on Claude Haiku 5.5 and assistant questions on Claude Sonnet 5.5, at November 2026 list prices",
+    "Usage per customer is set high on purpose: 2,000 categorizations and 50 questions a month",
+    "Token counts per categorization come from a 2026 receipt-classification study; per question they are our assumption"
+   ]
+  },
+  {
+   "id": "aic",
+   "slide_id": "4b1",
+   "label": "Total AI cost per customer per year",
+   "value": 10.3,
+   "unit": "$ per year",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "catc",
+    "chc"
+   ],
+   "formula": "categorization cost + assistant cost",
+   "calc": "catc + chc",
+   "estimate": true,
+   "assumptions": [
+    "Categorization runs on Claude Haiku 5.5 and assistant questions on Claude Sonnet 5.5, at November 2026 list prices",
+    "Usage per customer is set high on purpose: 2,000 categorizations and 50 questions a month",
+    "Token counts per categorization come from a 2026 receipt-classification study; per question they are our assumption"
+   ]
+  },
+  {
+   "id": "uyr",
+   "slide_id": "4b1",
+   "label": "Plan price uplift per customer per year",
+   "value": 60,
+   "unit": "$ per year",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "upl"
+   ],
+   "formula": "monthly uplift × 12",
+   "calc": "upl * 12",
+   "estimate": true,
+   "assumptions": [
+    "The uplift applies to every paying small-business customer at renewal"
+   ]
+  },
+  {
+   "id": "ash",
+   "slide_id": "4b1",
+   "label": "AI cost as a share of the yearly uplift",
+   "value": 0.172,
+   "unit": "%",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "aic",
+    "uyr"
+   ],
+   "formula": "AI cost per year ÷ uplift per year",
+   "calc": "aic / uyr",
+   "estimate": true,
+   "assumptions": [
+    "Categorization runs on Claude Haiku 5.5 and assistant questions on Claude Sonnet 5.5, at November 2026 list prices",
+    "Usage per customer is set high on purpose: 2,000 categorizations and 50 questions a month",
+    "Token counts per categorization come from a 2026 receipt-classification study; per question they are our assumption"
+   ]
+  },
+  {
+   "id": "launch",
+   "slide_id": "L4",
+   "label": "One-off cost to build the AI package",
+   "value": 3.89,
+   "unit": "$M",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "team",
+    "wage",
+    "wsh",
+    "bm"
+   ],
+   "formula": "engineers × median wage ÷ wage share of compensation × months ÷ 12",
+   "calc": "team * wage / wsh * bm / 12 / 1000000",
+   "estimate": true,
+   "assumptions": [
+    "20 engineers for 12 months at the BLS median developer wage, loaded to total compensation (wages are 70% of it)",
+    "No other launch costs (design, marketing) are counted; they would add about a month per $0.4M",
+    "Every paying customer moves to the higher price at renewal; no churn gain is counted (4c)"
+   ]
+  },
+  {
+   "id": "net",
+   "slide_id": "L4",
+   "label": "Monthly gain after AI running costs",
+   "value": 414.2,
+   "unit": "$K per month",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "cust",
+    "upl",
+    "aic"
+   ],
+   "formula": "customers × (monthly uplift − monthly AI cost)",
+   "calc": "cust * (upl - aic / 12) / 1000",
+   "estimate": true,
+   "assumptions": [
+    "20 engineers for 12 months at the BLS median developer wage, loaded to total compensation (wages are 70% of it)",
+    "No other launch costs (design, marketing) are counted; they would add about a month per $0.4M",
+    "Every paying customer moves to the higher price at renewal; no churn gain is counted (4c)"
+   ]
+  },
+  {
+   "id": "pb",
+   "slide_id": "L4",
+   "label": "Payback period of the AI package",
+   "value": 9.4,
+   "unit": "months",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "launch",
+    "net"
+   ],
+   "formula": "launch cost ÷ monthly gain",
+   "calc": "launch * 1000 / net",
+   "estimate": true,
+   "assumptions": [
+    "20 engineers for 12 months at the BLS median developer wage, loaded to total compensation (wages are 70% of it)",
+    "No other launch costs (design, marketing) are counted; they would add about a month per $0.4M",
+    "Every paying customer moves to the higher price at renewal; no churn gain is counted (4c)"
+   ]
+  },
+  {
+   "id": "thr",
+   "slide_id": "b7",
+   "label": "Lowest monthly uplift that still pays back within 24 months",
+   "value": 2.48,
+   "unit": "$/month",
+   "period": "2027 plan",
+   "source_id": "s0",
+   "derived_from": [
+    "launch",
+    "cust",
+    "aic"
+   ],
+   "formula": "launch cost ÷ 24 months ÷ customers + monthly AI cost",
+   "calc": "launch * 1000000 / 24 / cust + aic / 12",
+   "estimate": true,
+   "assumptions": [
+    "20 engineers for 12 months at the BLS median developer wage, loaded to total compensation (wages are 70% of it)",
+    "No other launch costs (design, marketing) are counted; they would add about a month per $0.4M",
+    "Every paying customer moves to the higher price at renewal; no churn gain is counted (4c)"
+   ]
+  },
+  {
+   "id": "ia24",
+   "slide_id": "4a1",
+   "label": "Intuit Online Ecosystem revenue per customer growth, FY2024",
+   "value": 0.11,
+   "unit": "%",
+   "period": "FY2024",
+   "source_id": "w5",
+   "excerpt": "Online Ecosystem average revenue per customer, which we define as total online ecosystem revenue divided by the average number of online paying customers, increased 11% for fiscal 2024 compared with fiscal 2023.",
+   "locator": "Item 7 MD&A > Small Business & Self-Employed segment > Online Ecosystem",
+   "geography": "Global",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "ia25",
+   "slide_id": "4a1",
+   "label": "Intuit Online Ecosystem revenue per customer growth, FY2025",
+   "value": 0.14,
+   "unit": "%",
+   "period": "FY2025",
+   "source_id": "w6",
+   "excerpt": "Online Ecosystem average revenue per customer [...] increased 14% for fiscal 2025 compared with fiscal 2024.",
+   "locator": "Item 7 MD&A > Segment Results > Global Business Solutions > Online Ecosystem",
+   "geography": "Global",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "ia26",
+   "slide_id": "4a1",
+   "label": "Intuit Online Ecosystem revenue per customer growth, FY2026",
+   "value": 0.15,
+   "unit": "%",
+   "period": "FY2026",
+   "source_id": "w7",
+   "excerpt": "Online Ecosystem average revenue per customer, which we define as total online ecosystem revenue [...] increased 15% for fiscal 2026 compared with fiscal 2025.",
+   "locator": "Item 7 MD&A > Segment Results > Global Business Solutions > Online Ecosystem",
+   "geography": "Global (Intuit Online Ecosystem)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier; wording or scope corrected on the slide"
+   }
+  },
+  {
+   "id": "icg26",
+   "slide_id": "4a1",
+   "label": "Intuit Online Ecosystem paying customer growth, FY2026",
+   "value": 0.03,
+   "unit": "%",
+   "period": "FY2026",
+   "source_id": "w7",
+   "excerpt": "Online Ecosystem paying customers, which we define as the sum of all QuickBooks Online paying customers, [...] increased 3% as of July 31, 2026 compared with July 31, 2025.",
+   "locator": "Item 7 MD&A > Segment Results > Global Business Solutions > Online Ecosystem",
+   "geography": "Global (Intuit Online Ecosystem)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "qbo26",
+   "slide_id": "4a1",
+   "label": "QuickBooks Online Accounting revenue growth, FY2026",
+   "value": 0.23,
+   "unit": "%",
+   "period": "FY2026",
+   "source_id": "w7",
+   "excerpt": "QuickBooks Online Accounting revenue increased $931 million, or 23%, in fiscal 2026 compared with fiscal 2025 due to the interrelated factors of higher effective prices, customer growth, and mix shift.",
+   "locator": "Item 7 MD&A > Segment Results > Global Business Solutions > Online Ecosystem",
+   "geography": "Global",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "mcb",
+   "slide_id": "4a2",
+   "label": "Microsoft 365 Copilot Business add-on price per user, firms under 300 users",
+   "value": 21,
+   "unit": "$",
+   "period": "2025-12 onward",
+   "source_id": "w9",
+   "excerpt": "Copilot Business will be priced at a competitive $21 per user per month.",
+   "locator": "Announcement body; eligibility: 'All you need is a Microsoft 365 Business plan and fewer than 300 users.' GA: 'Available worldwide on December 1, 2025'",
+   "geography": "Global (USD list)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "qbe",
+   "slide_id": "4a2",
+   "label": "QuickBooks Online Essentials list price",
+   "value": 85,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w10",
+   "excerpt": "Essentials Track custom performance metrics $85 $42.50 / mo 50% off for 3 months* Choose plan 3 users With access for 2 accountants Everything in Simple Start, and: Intuit Intelligence Annual books check-in with action plan NEW Annual books check-in with action plan NEW Cleans up your books, fast with Accounting AI Creates invoices in bulk, automatically BETA Gets you paid faster with Payments AI Estimates quarterly payments with Business Tax AI",
+   "locator": "Plan card 'Essentials'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "xch",
+   "slide_id": "4c1",
+   "label": "Xero average monthly churn, FY2026",
+   "value": 0.0114,
+   "unit": "%",
+   "period": "FY26 (Apr 2025-Mar 2026)",
+   "source_id": "w11",
+   "excerpt": "Average monthly churn (1.14%) remained below pre-pandemic trends, underscoring Xeroʼs durability and the ongoing value customers place in the platform.",
+   "locator": "p.2, financial highlights",
+   "geography": "Global (NZ/AU/UK/US)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "icn",
+   "slide_id": "4c1",
+   "label": "Intuit Online paying customers, end of FY2026",
+   "value": 8.9,
+   "unit": "M",
+   "period": "FY26 (to Jul 2026)",
+   "source_id": "w12",
+   "excerpt": "Total Online paying customers were 8.9 million at the end of fiscal year 2026, growing 3 percent year over year, which is about 2 points lower growth than in the prior year.",
+   "locator": "p.5; see also p.29: Mailchimp 'higher effective prices expected to offset the increased churn'",
+   "geography": "Global (mostly US)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "grr",
+   "slide_id": "4c1",
+   "label": "Gross revenue retention of AI-native products under $50 a month",
+   "value": 0.23,
+   "unit": "%",
+   "period": "2025",
+   "source_id": "w13",
+   "excerpt": "AI-native products that sell for <$50 per month see just 23% GRR and 32% NRR.",
+   "locator": "Section on retention by price point; B2B SaaS median NRR 82% for comparison",
+   "geography": "Global",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p0",
+   "slide_id": "3b1",
+   "label": "QuickBooks Online Simple Start list price, US, per month",
+   "value": 38,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w10",
+   "excerpt": "Simple Start See profit & loss in real time $38 $19 / mo 50% off for 3 months* Choose plan 1 user With access for 2 accountants Everything in Free, and: Intuit Intelligence Intelligent onboarding with expert-guided setup NEW Intelligent onboarding with expert-guided setup NEW AI Chat for instant insights Limited capacity BETA Categorizes expenses Maximizes tax deductions NEW Handles the busywork Learns & performs tasks BETA",
+   "locator": "Plan card 'Simple Start'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p3",
+   "slide_id": "3b1",
+   "label": "QuickBooks Online Advanced list price, US, per month",
+   "value": 340,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w10",
+   "excerpt": "Advanced All-in-one financial solution $340 $170 / mo 50% off for 3 months* Choose plan 25 users With access for 3 accountants Everything in Plus, and: Intuit Inte",
+   "locator": "Plan card 'Advanced'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "p5",
+   "slide_id": "3b1",
+   "label": "Xero US Early list price, per month",
+   "value": 27,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w14",
+   "excerpt": "Early $ 5 . 40 per month for the first 3 months Then $27 per month An easy financial foundation - track cash flow with the essentials.",
+   "locator": "Plan card 'Early'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p7",
+   "slide_id": "3b1",
+   "label": "Xero US Established list price, per month",
+   "value": 97,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w14",
+   "excerpt": "Established $ 19 . 40 per month for the first 3 months Then $97 per month Future proof your scaling business - with advanced tools and analytics.",
+   "locator": "Plan card 'Established'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p13",
+   "slide_id": "3b1",
+   "label": "Zoho Books Standard list price, US, per org per month (monthly billing)",
+   "value": 20,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w15",
+   "excerpt": "STANDARD Efficiently organize your transactions, accounts, reports, and books $ 20 $ 15 Price/Org/Month Price/Org/Month Billed Annually",
+   "locator": "Plan card 'Standard'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p17",
+   "slide_id": "3b1",
+   "label": "Zoho Books Ultimate list price, US, per org per month (monthly billing)",
+   "value": 275,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w15",
+   "excerpt": "ULTIMATE Gain deeper insights with advanced business intelligence capabilities $ 275 $ 240 Price/Org/Month Price/Org/Month Billed Annually",
+   "locator": "Plan card 'Ultimate'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p9",
+   "slide_id": "3b1",
+   "label": "FreshBooks Lite list price, US, per month",
+   "value": 23,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w16",
+   "excerpt": "Lite $ 4 .60 USD/mo 80% Off for 4 Months Was $23.00 | Save $73.60 $ 23 .00 USD/mo",
+   "locator": "Plan card 'Lite'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p11",
+   "slide_id": "3b1",
+   "label": "FreshBooks Premium list price, US, per month",
+   "value": 70,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w16",
+   "excerpt": "Premium $ 14 .00 USD/mo 80% Off for 4 Months Was $70.00 | Save $224.00 $ 70 .00 USD/mo",
+   "locator": "Plan card 'Premium'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p20",
+   "slide_id": "3b1",
+   "label": "Wave Starter price",
+   "value": 0,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w17",
+   "excerpt": "STARTER Plan Just starting your business or looking for the basics? This is the place. $0 Get started now",
+   "locator": "Plan card 'Starter'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "p21",
+   "slide_id": "3b1",
+   "label": "Wave Pro list price, US, per month",
+   "value": 19,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w17",
+   "excerpt": "Recommended Pro Plan Want to look more polished, save more time, and conquer cash flow? It’s Pro time. $19 USD/month Billed monthly PROMO: $19 $9.50 USD/month† Save $28.50 off your first 3 months",
+   "locator": "Plan card 'Pro'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "qe2022",
+   "slide_id": "3b2",
+   "label": "QuickBooks Online Essentials list price, 2022",
+   "value": 55,
+   "unit": "$/month",
+   "period": "2022",
+   "source_id": "w18",
+   "excerpt": "According to the email, the updated pricing reflects Intuit's continued investment in artificial intelligence (AI) and product innovations designed to streamline workflows and enhance client collaboration. ... QuickBooks Online Pricing Trends: 2020-2025 Year Simple Start Essentials Plus Advanced 2020 $25 $40 $70 $150 2021 $25 $50 $80 $180 2022 $30 $55 $85 $200 2023* $30 $60 $90 $200 2024 $35 $65 $99 $235 2025 $38 $75 $115 $275 *Historical prices verified using https://web.archive.org/",
+   "locator": "Paras 1-2 and table 'QuickBooks Online Pricing Trends: 2020-2025'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "qe2025",
+   "slide_id": "3b2",
+   "label": "QuickBooks Online Essentials list price, 2025",
+   "value": 75,
+   "unit": "$/month",
+   "period": "2025",
+   "source_id": "w19",
+   "excerpt": "QBO Simple Start : Increasing to $38 from $35 (per month). QBO Essentials : Increasing to $75 from $65 (per month). QBO Plus : Increasing to $115 from $99 (per month). QBO Advanced : Increasing to $275 from $235 (per month). These subscription rates will change as of July 1, 2025, for all new and existing 'client-billed' subscriptions. The subscription rates will begin on August 1, 2025, for all existing accountant-billed subscriptions.",
+   "locator": "Section 'QuickBooks Online'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "qe2026",
+   "slide_id": "3b2",
+   "label": "QuickBooks Online Essentials list price, 2026",
+   "value": 85,
+   "unit": "$/month",
+   "period": "2026",
+   "source_id": "w10",
+   "excerpt": "Essentials Track custom performance metrics $85 $42.50 / mo 50% off for 3 months* Choose plan 3 users With access for 2 accountants Everything in Simple Start, and: Intuit Intelligence Annual books check-in with action plan NEW Annual books check-in with action plan NEW Cleans up your books, fast with Accounting AI Creates invoices in bulk, automatically BETA Gets you paid faster with Payments AI Estimates quarterly payments with Business Tax AI",
+   "locator": "Plan card 'Essentials'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "x73r",
+   "slide_id": "L3",
+   "label": "Share of transactions Xero JAX auto-reconciles",
+   "value": 0.6,
+   "unit": "%",
+   "period": "Apr–Jul 2026",
+   "source_id": "w20",
+   "excerpt": "Auto Bank Reconciliation auto-reconciles over 60%* of the transactions it sees, with ~96%** accuracy on the transactions it auto-reconciles, with every result ready for your review ... *Xero data based on a rolling 3-month average, April to July 2026.",
+   "locator": "Feature section; footnote *",
+   "geography": "Global (Xero campaign page, not US-specific)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "hb",
+   "slide_id": "2a2",
+   "label": "Avg hours/week owners spend on bookkeeping",
+   "value": 4.3,
+   "unit": "hours/week",
+   "period": "Q4 2023 survey",
+   "source_id": "w21",
+   "excerpt": "On average, how many hours per week do you personally spend performing accounting functions? 4.3 4.1 4.2 4.2 3.7 Bookkeeping Invoicing Expense tracking Financial reporting Income taxes",
+   "locator": "PDF p.7 (printed p.4), Figure 1: Time Spent on Accounting Functions",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "hi",
+   "slide_id": "2a2",
+   "label": "Avg hours/week owners spend on invoicing",
+   "value": 4.1,
+   "unit": "hours/week",
+   "period": "Q4 2023 survey",
+   "source_id": "w21",
+   "excerpt": "On average, how many hours per week do you personally spend performing accounting functions? 4.3 4.1 4.2 4.2 3.7 Bookkeeping Invoicing Expense tracking Financial reporting Income taxes",
+   "locator": "PDF p.7 (printed p.4), Figure 1: Time Spent on Accounting Functions",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "he",
+   "slide_id": "2a2",
+   "label": "Avg hours/week owners spend on expense tracking",
+   "value": 4.2,
+   "unit": "hours/week",
+   "period": "Q4 2023 survey",
+   "source_id": "w21",
+   "excerpt": "On average, how many hours per week do you personally spend performing accounting functions? 4.3 4.1 4.2 4.2 3.7 Bookkeeping Invoicing Expense tracking Financial reporting Income taxes",
+   "locator": "PDF p.7 (printed p.4), Figure 1: Time Spent on Accounting Functions",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "hr",
+   "slide_id": "2a2",
+   "label": "Avg hours/week owners spend on financial reporting",
+   "value": 4.2,
+   "unit": "hours/week",
+   "period": "Q4 2023 survey",
+   "source_id": "w21",
+   "excerpt": "On average, how many hours per week do you personally spend performing accounting functions? 4.3 4.1 4.2 4.2 3.7 Bookkeeping Invoicing Expense tracking Financial reporting Income taxes",
+   "locator": "PDF p.7 (printed p.4), Figure 1: Time Spent on Accounting Functions",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "ht",
+   "slide_id": "2a2",
+   "label": "Avg hours/week owners spend on income taxes",
+   "value": 3.7,
+   "unit": "hours/week",
+   "period": "Q4 2023 survey",
+   "source_id": "w21",
+   "excerpt": "On average, how many hours per week do you personally spend performing accounting functions? 4.3 4.1 4.2 4.2 3.7 Bookkeeping Invoicing Expense tracking Financial reporting Income taxes",
+   "locator": "PDF p.7 (printed p.4), Figure 1: Time Spent on Accounting Functions",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "htot",
+   "slide_id": "2a2",
+   "label": "Avg hours/week small business owners personally spend on accounting functions (all five functions)",
+   "value": 20,
+   "unit": "hours/week",
+   "period": "Q4 2023 survey",
+   "source_id": "w21",
+   "excerpt": "On average, small business owners spend about 20 hours each week on accounting functions, roughly evenly split between bookkeeping, invoicing, expense tracking, financial reporting and tax management (Figure 1). About one in five spends more than 30 hours a week managing their accounting functions.",
+   "locator": "PDF p.7 (printed p.4), 'Small Businesses' Accounting Burden', Figure 1",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier; wording or scope corrected on the slide"
+   }
+  },
+  {
+   "id": "x96",
+   "slide_id": "2b1",
+   "label": "Xero auto-reconciled lines not corrected by users",
+   "value": 0.96,
+   "unit": "%",
+   "period": "Apr–Jul 2026",
+   "source_id": "w20",
+   "excerpt": "with ~96%** accuracy on the transactions it auto-reconciles, with every result ready for your review ... **Xero data based on the percentage of auto-reconciled lines not corrected by users on a rolling 3-month average, April to July 2026.",
+   "locator": "Feature section; footnote **",
+   "geography": "Global (Xero campaign page)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "err26",
+   "slide_id": "2b1",
+   "label": "US small firms citing AI errors or bias as a barrier",
+   "value": 0.26,
+   "unit": "%",
+   "period": "Jan 2026",
+   "source_id": "w22",
+   "excerpt": "Concerns around accuracy, or AI having a potential bias or making errors, round out the top three barriers across all four markets, each at 26%.",
+   "locator": "PDF p.28 (printed p.27), Chapter 4 'The biggest barriers to AI are about trust', Figure 19",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "paid12",
+   "slide_id": "1c1",
+   "label": "US businesses that paid for dedicated AI tools, 2021–2025",
+   "value": 0.12,
+   "unit": "%",
+   "period": "2021-2025",
+   "source_id": "w23",
+   "excerpt": "12% of US businesses with observed payment records paid for dedicated AI tools between 2021 and 2025.",
+   "locator": "Section 'Not just AI adoption. AI investment.'",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier; wording or scope corrected on the slide"
+   }
+  },
+  {
+   "id": "use77",
+   "slide_id": "1c1",
+   "label": "US small and mid-sized businesses using AI regularly",
+   "value": 0.77,
+   "unit": "%",
+   "period": "Jan 2026",
+   "source_id": "w22",
+   "excerpt": "Since July 2024, regular AI use has climbed sharply in every country surveyed. In the US, it rose from 48% to 77% by January 2026.",
+   "locator": "PDF p.6 (printed p.5), Chapter 1 overall adoption; Figure note: 'Percentages shown are survey respondents reporting monthly, weekly, or daily use of any kind of AI (free or paid)'",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier"
+   }
+  },
+  {
+   "id": "med22",
+   "slide_id": "1c1",
+   "label": "Median yearly AI spend among small firms that use AI tools (2–99 employees)",
+   "value": 2200,
+   "unit": "$",
+   "period": "2026",
+   "source_id": "w24",
+   "excerpt": "Median Annual AI Spending Is $2,200 • The median annual investment in AI tools is $2,200. • More than four in ten businesses (42%) invest $1,000 or less per year, including 22% spending under $500 and 20% between $500 and $1,000.",
+   "locator": "p. 26, base: AI-tool users (n = 425); margin of error ±5.0 points",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verifier",
+    "note": "confirmed by the independent verifier; wording or scope corrected on the slide"
+   }
+  },
+  {
+   "id": "use58",
+   "slide_id": "b3",
+   "label": "US small businesses using generative AI",
+   "value": 0.58,
+   "unit": "%",
+   "period": "June 2025",
+   "source_id": "w25",
+   "excerpt": "58% of small businesses self-identified that they use generative AI—up from 40% in 2024 and more than double compared to 2023 (23%).",
+   "locator": "PDF p.3 (Key findings); also PDF p.12 'Part Two: AI Use Among Small Businesses' ('44% Gen AI chatbot'); data collected June 6–26, 2025",
+   "geography": "US",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p1",
+   "slide_id": "b4",
+   "label": "QuickBooks Online Essentials list price, US, per month",
+   "value": 85,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w10",
+   "excerpt": "Essentials Track custom performance metrics $85 $42.50 / mo 50% off for 3 months* Choose plan 3 users With access for 2 accountants Everything in Simple Start, and: Intuit Intelligence Annual books check-in with action plan NEW Annual books check-in with action plan NEW Cleans up your books, fast with Accounting AI Creates invoices in bulk, automatically BETA Gets you paid faster with Payments AI Estimates quarterly payments with Business Tax AI",
+   "locator": "Plan card 'Essentials'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p2",
+   "slide_id": "b4",
+   "label": "QuickBooks Online Plus list price, US, per month",
+   "value": 140,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w10",
+   "excerpt": "Plus CUSTOMER FAVORITE Scale with personalized insights $140 $70 / mo 50% off for 3 months* Choose plan 5 users With access for 2 accountants Everything in Essentials, and: Intuit Intelligence Reconciles your books Reconciles your books Transactions auto-categorized and verified NEW Surfaces profit & loss insights Chat to plan scenarios and save as budgets BETA Finds and fixes anomalies Catch discrepancies pre-filing with Sales Tax AI Sources leads and follows up with Customer AI",
+   "locator": "Plan card 'Plus' (labelled CUSTOMER FAVORITE)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p6",
+   "slide_id": "b4",
+   "label": "Xero US Growing list price, per month",
+   "value": 59,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w14",
+   "excerpt": "Growing $ 11 . 80 per month for the first 3 months Then $59 per month Go beyond the basics - automate tasks and access performance dashboards.",
+   "locator": "Plan card 'Growing'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p14",
+   "slide_id": "b5",
+   "label": "Zoho Books Professional list price, US, per org per month (monthly billing)",
+   "value": 50,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w15",
+   "excerpt": "PROFESSIONAL Confidently take on projects, track your inventory, and handle purchases $ 50 $ 40 Price/Org/Month Price/Org/Month Billed Annually",
+   "locator": "Plan card 'Professional'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p15",
+   "slide_id": "b5",
+   "label": "Zoho Books Premium list price, US, per org per month (monthly billing)",
+   "value": 70,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w15",
+   "excerpt": "PREMIUM Enhanced customization and automation to streamline business processes $ 70 $ 60 Price/Org/Month Price/Org/Month Billed Annually",
+   "locator": "Plan card 'Premium'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p16",
+   "slide_id": "b5",
+   "label": "Zoho Books Elite list price, US, per org per month (monthly billing)",
+   "value": 150,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w15",
+   "excerpt": "ELITE Advanced accounting bundled with full-fledged inventory management $ 150 $ 120 Price/Org/Month Price/Org/Month Billed Annually",
+   "locator": "Plan card 'Elite'",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "p10",
+   "slide_id": "b5",
+   "label": "FreshBooks Plus list price, US, per month",
+   "value": 43,
+   "unit": "$/month",
+   "period": "Nov 2026",
+   "source_id": "w16",
+   "excerpt": "Plus ⭐ Most Popular $ 8 .60 USD/mo 80% Off for 4 Months Was $43.00 | Save $137.60 $ 43 .00 USD/mo",
+   "locator": "Plan card 'Plus' (Most Popular)",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-AL",
+   "slide_id": "1a4",
+   "label": "Firms using AI, AL",
+   "value": 0.221,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"AL\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"22.1%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-AR",
+   "slide_id": "1a4",
+   "label": "Firms using AI, AR",
+   "value": 0.177,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"AR\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"17.7%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-AZ",
+   "slide_id": "1a4",
+   "label": "Firms using AI, AZ",
+   "value": 0.315,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"AZ\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"31.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-CA",
+   "slide_id": "1a4",
+   "label": "Firms using AI, CA",
+   "value": 0.246,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"CA\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-CO",
+   "slide_id": "1a4",
+   "label": "Firms using AI, CO",
+   "value": 0.319,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"CO\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"31.9%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-CT",
+   "slide_id": "1a4",
+   "label": "Firms using AI, CT",
+   "value": 0.23,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"CT\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"23.0%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-DC",
+   "slide_id": "1a4",
+   "label": "Firms using AI, DC",
+   "value": 0.341,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"DC\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"34.1%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-DE",
+   "slide_id": "1a4",
+   "label": "Firms using AI, DE",
+   "value": 0.25,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"DE\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"25.0%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-FL",
+   "slide_id": "1a4",
+   "label": "Firms using AI, FL",
+   "value": 0.268,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"FL\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"26.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-GA",
+   "slide_id": "1a4",
+   "label": "Firms using AI, GA",
+   "value": 0.254,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"GA\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"25.4%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-HI",
+   "slide_id": "1a4",
+   "label": "Firms using AI, HI",
+   "value": 0.286,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"HI\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"28.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-IA",
+   "slide_id": "1a4",
+   "label": "Firms using AI, IA",
+   "value": 0.215,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"IA\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"21.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-ID",
+   "slide_id": "1a4",
+   "label": "Firms using AI, ID",
+   "value": 0.135,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"ID\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"13.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-IL",
+   "slide_id": "1a4",
+   "label": "Firms using AI, IL",
+   "value": 0.245,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"IL\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-IN",
+   "slide_id": "1a4",
+   "label": "Firms using AI, IN",
+   "value": 0.205,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"IN\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"20.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-KS",
+   "slide_id": "1a4",
+   "label": "Firms using AI, KS",
+   "value": 0.249,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"KS\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.9%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-KY",
+   "slide_id": "1a4",
+   "label": "Firms using AI, KY",
+   "value": 0.228,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"KY\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"22.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-LA",
+   "slide_id": "1a4",
+   "label": "Firms using AI, LA",
+   "value": 0.173,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"LA\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"17.3%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-MA",
+   "slide_id": "1a4",
+   "label": "Firms using AI, MA",
+   "value": 0.257,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"MA\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"25.7%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-MD",
+   "slide_id": "1a4",
+   "label": "Firms using AI, MD",
+   "value": 0.294,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"MD\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"29.4%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-ME",
+   "slide_id": "1a4",
+   "label": "Firms using AI, ME",
+   "value": 0.165,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"ME\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"16.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-MI",
+   "slide_id": "1a4",
+   "label": "Firms using AI, MI",
+   "value": 0.228,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"MI\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"22.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-MN",
+   "slide_id": "1a4",
+   "label": "Firms using AI, MN",
+   "value": 0.295,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"MN\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"29.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-MO",
+   "slide_id": "1a4",
+   "label": "Firms using AI, MO",
+   "value": 0.211,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"MO\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"21.1%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-MS",
+   "slide_id": "1a4",
+   "label": "Firms using AI, MS",
+   "value": 0.18,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"MS\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"18.0%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-MT",
+   "slide_id": "1a4",
+   "label": "Firms using AI, MT",
+   "value": 0.227,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"MT\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"22.7%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-NC",
+   "slide_id": "1a4",
+   "label": "Firms using AI, NC",
+   "value": 0.296,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"NC\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"29.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-ND",
+   "slide_id": "1a4",
+   "label": "Firms using AI, ND",
+   "value": 0.2,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"ND\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"20.0%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-NE",
+   "slide_id": "1a4",
+   "label": "Firms using AI, NE",
+   "value": 0.259,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"NE\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"25.9%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-NH",
+   "slide_id": "1a4",
+   "label": "Firms using AI, NH",
+   "value": 0.215,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"NH\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"21.5%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-NJ",
+   "slide_id": "1a4",
+   "label": "Firms using AI, NJ",
+   "value": 0.186,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"NJ\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"18.6%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-NM",
+   "slide_id": "1a4",
+   "label": "Firms using AI, NM",
+   "value": 0.147,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"NM\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"14.7%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-NV",
+   "slide_id": "1a4",
+   "label": "Firms using AI, NV",
+   "value": 0.26,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"NV\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"26.0%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-NY",
+   "slide_id": "1a4",
+   "label": "Firms using AI, NY",
+   "value": 0.194,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"NY\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"19.4%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-OH",
+   "slide_id": "1a4",
+   "label": "Firms using AI, OH",
+   "value": 0.228,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"OH\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"22.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-OK",
+   "slide_id": "1a4",
+   "label": "Firms using AI, OK",
+   "value": 0.204,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"OK\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"20.4%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-OR",
+   "slide_id": "1a4",
+   "label": "Firms using AI, OR",
+   "value": 0.244,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"OR\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.4%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-PA",
+   "slide_id": "1a4",
+   "label": "Firms using AI, PA",
+   "value": 0.224,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"PA\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"22.4%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-RI",
+   "slide_id": "1a4",
+   "label": "Firms using AI, RI",
+   "value": 0.217,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"RI\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"21.7%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-SC",
+   "slide_id": "1a4",
+   "label": "Firms using AI, SC",
+   "value": 0.277,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"SC\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"27.7%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-SD",
+   "slide_id": "1a4",
+   "label": "Firms using AI, SD",
+   "value": 0.17,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"SD\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"17.0%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-TN",
+   "slide_id": "1a4",
+   "label": "Firms using AI, TN",
+   "value": 0.249,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"TN\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"24.9%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-TX",
+   "slide_id": "1a4",
+   "label": "Firms using AI, TX",
+   "value": 0.28,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"TX\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"28.0%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-UT",
+   "slide_id": "1a4",
+   "label": "Firms using AI, UT",
+   "value": 0.321,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"UT\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"32.1%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-VA",
+   "slide_id": "1a4",
+   "label": "Firms using AI, VA",
+   "value": 0.289,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"VA\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"28.9%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-VT",
+   "slide_id": "1a4",
+   "label": "Firms using AI, VT",
+   "value": 0.2,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"VT\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"20.0%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-WA",
+   "slide_id": "1a4",
+   "label": "Firms using AI, WA",
+   "value": 0.271,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"WA\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"27.1%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-WI",
+   "slide_id": "1a4",
+   "label": "Firms using AI, WI",
+   "value": 0.198,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"WI\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"19.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-WV",
+   "slide_id": "1a4",
+   "label": "Firms using AI, WV",
+   "value": 0.098,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"WV\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"9.8%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  },
+  {
+   "id": "st-WY",
+   "slide_id": "1a4",
+   "label": "Firms using AI, WY",
+   "value": 0.144,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1s",
+   "excerpt": "State \"WY\", Q7 \"In the last two weeks, did this business use Super Intelligence or SI (formerly referred to as Artificial Intelligence or AI) in any of its business functions?\", answer \"Yes\"; column 202621 = \"14.4%\"",
+   "locator": "Response Estimates sheet, Question ID 7, cycle 202621",
+   "verified": {
+    "result": "match",
+    "at": "2026-11-10",
+    "by": "verify.py"
+   }
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "web",
+   "name": "Business Trends and Outlook Survey (BTOS), national response estimates",
+   "publisher": "US Census Bureau",
+   "url": "https://www.census.gov/hfp/btos/downloads/National.xlsx",
+   "accessed": "2026-11-06",
+   "published": "2026-11-05",
+   "tier": "T1"
+  },
+  {
+   "id": "s2",
+   "kind": "web",
+   "name": "BTOS, response estimates by employment size class",
+   "publisher": "US Census Bureau",
+   "url": "https://www.census.gov/hfp/btos/downloads/Employment%20Size%20Class.xlsx",
+   "accessed": "2026-11-06",
+   "published": "2026-11-05",
+   "tier": "T1"
+  },
+  {
+   "id": "s3",
+   "kind": "web",
+   "name": "BTOS 2026 AI supplement tables",
+   "publisher": "US Census Bureau",
+   "url": "https://www.census.gov/hfp/btos/downloads/AI_Supplement_Table_2026.xlsx",
+   "accessed": "2026-11-06",
+   "published": "2026",
+   "tier": "T1"
+  },
+  {
+   "id": "s4",
+   "kind": "web",
+   "name": "Small Business Credit Survey: 2026 Report on Employer Firms",
+   "publisher": "Federal Reserve Banks",
+   "url": "https://www.fedsmallbusiness.org/-/media/project/clevelandfedtenant/fsbsite/reports/2026/2026-report-on-employer-firms/2026-report-on-employer-firms.pdf",
+   "accessed": "2026-11-06",
+   "published": "2026-03",
+   "tier": "T1"
+  },
+  {
+   "id": "s5",
+   "kind": "web",
+   "name": "Choi and Xie, Human-AI Accounting: Early Evidence from the Field (working paper)",
+   "publisher": "Stanford Graduate School of Business",
+   "url": "https://www.gsb.stanford.edu/faculty-research/working-papers/human-ai-accounting-early-evidence-field",
+   "accessed": "2026-11-06",
+   "published": "2025",
+   "tier": "T2"
+  },
+  {
+   "id": "s7",
+   "kind": "web",
+   "name": "Intuit introduces virtual team of AI agents (press release)",
+   "publisher": "Intuit",
+   "url": "https://investors.intuit.com/news-events/press-releases/detail/1258/intuit-introduces-ground-breaking-virtual-team-of-ai-agents-to-fuel-growth-for-businesses",
+   "accessed": "2026-11-06",
+   "published": "2025-07-01",
+   "tier": "T1"
+  },
+  {
+   "id": "s8",
+   "kind": "web",
+   "name": "Xero's AI financial superagent JAX launches new features (media release)",
+   "publisher": "Xero",
+   "url": "https://www.xero.com/us/media-releases/xeros-ai-financial-superagent-jax-launches-powerful-new-features/",
+   "accessed": "2026-11-06",
+   "published": "2025-09-03",
+   "tier": "T1"
+  },
+  {
+   "id": "s0",
+   "kind": "derived",
+   "name": "Team analysis of the sources above"
+  },
+  {
+   "id": "u1",
+   "kind": "user_provided",
+   "name": "Cobalt Ledger planning assumptions (checkpoint 4)",
+   "input_id": "cp4"
+  },
+  {
+   "id": "w1",
+   "kind": "web",
+   "name": "BLS Occupational Outlook Handbook - Software Developers (OEWS data)",
+   "publisher": "US Bureau of Labor Statistics",
+   "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm",
+   "accessed": "2026-11-10",
+   "published": "2026-08-27",
+   "tier": "T1"
+  },
+  {
+   "id": "w2",
+   "kind": "web",
+   "name": "BLS Employer Costs for Employee Compensation news release",
+   "publisher": "US Bureau of Labor Statistics",
+   "url": "https://www.bls.gov/news.release/ecec.nr0.htm",
+   "accessed": "2026-11-10",
+   "published": "2026-09-09",
+   "tier": "T1"
+  },
+  {
+   "id": "w3",
+   "kind": "web",
+   "name": "Analysis of LLM Performance on AWS Bedrock: Receipt-item Categorisation Case Study (arXiv:2604.01615)",
+   "publisher": "arXiv (Sanchez et al.)",
+   "url": "https://arxiv.org/html/2604.01615",
+   "accessed": "2026-11-10",
+   "published": "2026-04-02",
+   "tier": "T2"
+  },
+  {
+   "id": "w4",
+   "kind": "web",
+   "name": "Claude API Docs - Pricing",
+   "publisher": "Anthropic",
+   "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "accessed": "2026-11-10",
+   "published": "2026-11-10",
+   "tier": "T1"
+  },
+  {
+   "id": "w5",
+   "kind": "web",
+   "name": "Intuit Inc. Form 10-K FY2024, MD&A",
+   "publisher": "Intuit Inc. / SEC EDGAR",
+   "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687824000039/intu-20240731.htm",
+   "accessed": "2026-11-10",
+   "published": "2024-09-04",
+   "tier": "T1"
+  },
+  {
+   "id": "w6",
+   "kind": "web",
+   "name": "Intuit Inc. Form 10-K FY2025, MD&A",
+   "publisher": "Intuit Inc. / SEC EDGAR",
+   "url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000035/intu-20250731.htm",
+   "accessed": "2026-11-10",
+   "published": "2025-09-03",
+   "tier": "T1"
+  },
+  {
+   "id": "w7",
+   "kind": "web",
+   "name": "Intuit Inc. Form 10-K FY2026, MD&A, Segment Results, Global Business Solutions",
+   "publisher": "Intuit Inc. / SEC EDGAR",
+   "url": "https://www.sec.gov/Archives/edgar/data/0000896878/000089687826000037/intu-20260731.htm",
+   "accessed": "2026-11-10",
+   "published": "2026-09-09",
+   "tier": "T1"
+  },
+  {
+   "id": "w8",
+   "kind": "web",
+   "name": "Google Workspace blog: AI included in Business and Enterprise plans",
+   "publisher": "Google",
+   "url": "https://workspace.google.com/blog/product-announcements/empowering-businesses-with-AI",
+   "accessed": "2026-11-10",
+   "published": "2025-01-15",
+   "tier": "T1"
+  },
+  {
+   "id": "w9",
+   "kind": "web",
+   "name": "Introducing Microsoft 365 Copilot Business",
+   "publisher": "Microsoft Tech Community (Microsoft 365 Copilot blog)",
+   "url": "https://techcommunity.microsoft.com/t5/microsoft-365-copilot-blog/introducing-microsoft-365-copilot-business-empowering-small-and/ba-p/4469700",
+   "accessed": "2026-11-10",
+   "published": "2025-11-18",
+   "tier": "T1"
+  },
+  {
+   "id": "w10",
+   "kind": "web",
+   "name": "QuickBooks pricing page",
+   "publisher": "Intuit",
+   "url": "https://quickbooks.intuit.com/pricing/",
+   "accessed": "2026-11-10",
+   "published": "2026-11-10",
+   "tier": "T1"
+  },
+  {
+   "id": "w11",
+   "kind": "web",
+   "name": "Xero FY26 results market release",
+   "publisher": "Xero Limited (ASX: XRO)",
+   "url": "https://announcements.asx.com.au/asxpdf/20260514/pdf/06zkqzlkq0xnph.pdf",
+   "accessed": "2026-11-10",
+   "published": "2026-05-14",
+   "tier": "T1"
+  },
+  {
+   "id": "w12",
+   "kind": "web",
+   "name": "Intuit Q4 FY26 earnings call prepared remarks",
+   "publisher": "Intuit Inc.",
+   "url": "https://investors.intuit.com/_assets/_47c34c4bdc3a2daa838f135a69c13d29/intuit/db/946/10378/webcast_transcript/Q4+FY26+Earnings+Script.pdf",
+   "accessed": "2026-11-10",
+   "published": "2026-08-25",
+   "tier": "T1"
+  },
+  {
+   "id": "w13",
+   "kind": "web",
+   "name": "The AI churn wave (Growth Unhinged x ChartMogul)",
+   "publisher": "ChartMogul / Kyle Poyar",
+   "url": "https://chartmogul.com/reports/saas-retention-the-ai-churn-wave/",
+   "accessed": "2026-11-10",
+   "published": "2025-12-10",
+   "tier": "T2"
+  },
+  {
+   "id": "w14",
+   "kind": "web",
+   "name": "Xero US pricing plans page",
+   "publisher": "Xero",
+   "url": "https://www.xero.com/us/pricing-plans/",
+   "accessed": "2026-11-10",
+   "published": "2026-11-10",
+   "tier": "T1"
+  },
+  {
+   "id": "w15",
+   "kind": "web",
+   "name": "Zoho Books pricing page (US)",
+   "publisher": "Zoho",
+   "url": "https://www.zoho.com/us/books/pricing/",
+   "accessed": "2026-11-10",
+   "published": "2026-11-10",
+   "tier": "T1"
+  },
+  {
+   "id": "w16",
+   "kind": "web",
+   "name": "FreshBooks pricing page",
+   "publisher": "FreshBooks",
+   "url": "https://www.freshbooks.com/pricing",
+   "accessed": "2026-11-10",
+   "published": "2026-11-10",
+   "tier": "T1"
+  },
+  {
+   "id": "w17",
+   "kind": "web",
+   "name": "Wave pricing page",
+   "publisher": "Wave Financial (H&R Block)",
+   "url": "https://www.waveapps.com/pricing",
+   "accessed": "2026-11-10",
+   "published": "2026-11-10",
+   "tier": "T1"
+  },
+  {
+   "id": "w18",
+   "kind": "web",
+   "name": "Intuit Announces 2025 QuickBooks Price Increases",
+   "publisher": "The Woodard Report",
+   "url": "https://report.woodard.com/articles/intuit-announces-2025-quickbooks-price-increases-fpwr",
+   "accessed": "2026-11-10",
+   "published": "2025-05-27",
+   "tier": "T3",
+   "cites": "Intuit price-change notices to QuickBooks Online customers"
+  },
+  {
+   "id": "w19",
+   "kind": "web",
+   "name": "QuickBooks Price Hikes",
+   "publisher": "Insightful Accountant",
+   "url": "https://blog.insightfulaccountant.com/quickbooks-price-hikes",
+   "accessed": "2026-11-10",
+   "published": "2025-05-27",
+   "tier": "T3",
+   "cites": "Intuit price-change notices to QuickBooks Online customers"
+  },
+  {
+   "id": "w20",
+   "kind": "web",
+   "name": "Automatic bank reconciliation with JAX (campaign page)",
+   "publisher": "Xero",
+   "url": "https://www.xero.com/campaign/auto-bank-reconciliation/",
+   "accessed": "2026-11-10",
+   "published": "2026 (data",
+   "tier": "T1"
+  },
+  {
+   "id": "w21",
+   "kind": "web",
+   "name": "New Revenue Opportunities From Embedded Accounting (Cornerstone Advisors)",
+   "publisher": "Cornerstone Advisors (commissioned; distributed by Hurdlr/Tight)",
+   "url": "https://cdn.prod.website-files.com/67a3b2f00460a23e2c86cffb/67a3b2f00460a23e2c86d23d_New%20Revenue%20Opportunities%20From%20Embedded%20Accounting.pdf",
+   "accessed": "2026-11-10",
+   "published": "2024 (© 20",
+   "tier": "T2"
+  },
+  {
+   "id": "w22",
+   "kind": "web",
+   "name": "2026 AI Impact Report (Intuit QuickBooks, methodology with Univ. of Chicago economists led by Ufuk Akcigit)",
+   "publisher": "Intuit QuickBooks",
+   "url": "https://digitalasset.intuit.com/render/content/dam/intuit/sbseg/en_us/Blog/Downloadable-assset/2026-ai-impact-report.pdf",
+   "accessed": "2026-11-10",
+   "published": "2026-05-12",
+   "tier": "T2"
+  },
+  {
+   "id": "w23",
+   "kind": "web",
+   "name": "2026 AI Impact Report",
+   "publisher": "Intuit QuickBooks (with University of Chicago economists)",
+   "url": "https://www.intuit.com/blog/global-stories/ai-impact-report/",
+   "accessed": "2026-11-10",
+   "published": "2026-05-12",
+   "tier": "T2"
+  },
+  {
+   "id": "w24",
+   "kind": "web",
+   "name": "Small Business Technology Use Survey (March 2026)",
+   "publisher": "Small Business & Entrepreneurship Council (TechnoMetrica fieldwork, Feb 17-23 2026)",
+   "url": "https://sbecouncil.org/wp-content/uploads/2026/03/SBE-Technology-Use-Survey-March-2026-Final-2.pdf",
+   "accessed": "2026-11-10",
+   "published": "2026-03",
+   "tier": "T2"
+  },
+  {
+   "id": "w25",
+   "kind": "web",
+   "name": "Empowering Small Business: The Impact of Technology on U.S. Small Business (2025)",
+   "publisher": "U.S. Chamber of Commerce Technology Engagement Center (C_TEC), survey by Teneo Research",
+   "url": "https://www.uschamber.com/assets/documents/20251621-CTEC-Empowering-Small-Business-Report-2025-v1-r10-Digital-FINAL.pdf",
+   "accessed": "2026-11-10",
+   "published": "2025-08-18",
+   "tier": "T2"
+  },
+  {
+   "id": "s1s",
+   "kind": "web",
+   "name": "Business Trends and Outlook Survey (BTOS), response estimates by state",
+   "publisher": "US Census Bureau",
+   "url": "https://www.census.gov/hfp/btos/downloads/State.xlsx",
+   "accessed": "2026-11-10",
+   "published": "2026-11-05",
+   "tier": "T1"
+  }
+ ],
+ "inputs": [
+  {
+   "id": "cp4",
+   "kind": "qa_answer",
+   "label": "Assumptions for the fictional company, confirmed by the user at checkpoint 4",
+   "content": "Cobalt Ledger has about 100,000 paying small-business customers; the AI package lifts the plan price by $5 a month; a team of 20 engineers builds it in 12 months; a customer runs about 2,000 categorizations and 50 questions a month, each question using about 5,000 input and 500 output tokens."
+  }
+ ]
+}

@@ -1,0 +1,678 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Renderer showcase 5",
+  "subtitle": "Marimekko, donut, landscape, from–to and venn",
+  "company_name": "Example Ledger (fictional)",
+  "date": "2026-11-11",
+  "language": "en-US",
+  "confidentiality": "Illustrative example — all companies' figures and sources are fictional",
+  "theme": "navy"
+ },
+ "storyline": {
+  "governing_thought": "Example Ledger should build AI into its plans for the smallest firms, starting with the month-end close",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "The smallest firms are the open ground: most use AI, few pay for it, and a quarter keep books without software",
+    "supports": [
+     "3",
+     "4"
+    ],
+    "sub_points": [
+     {
+      "text": "Firms with 1–4 employees are over half of small firms",
+      "slide_id": "3"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "Only two platforms combine bookkeeping and AI, so the close is where we can lead",
+    "supports": [
+     "5",
+     "6",
+     "7"
+    ],
+    "sub_points": [
+     {
+      "text": "The package turns the owner into an approver",
+      "slide_id": "6"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Scope the close feature with ten owners",
+    "owner": "Product",
+    "timing": "Q1 2027"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "1",
+   "title": "The market",
+   "exec_item_id": "1"
+  },
+  {
+   "id": "2",
+   "title": "Where we play",
+   "exec_item_id": "2"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "3",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "marimekko",
+   "message_type": "component",
+   "lead_message": {
+    "text": "Over half of small firms have 1–4 employees, and more than a quarter of them use no accounting software"
+   },
+   "unit_line": "**US small firms by size and accounting software**, % of firms, 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The smallest firms are the open ground",
+     "bullets": [
+      "**Size:** firms with 1–4 employees are the widest column, at 55% of small firms",
+      "**No software:** 28% of them keep their books without accounting software, the largest gap of any size",
+      "**Leaders:** the market leader is strongest among larger firms"
+     ],
+     "implication": "Start with the smallest firms that have no software yet"
+    }
+   },
+   "body": {
+    "kind": "marimekko",
+    "rows": [
+     "Market leader",
+     "Second player",
+     "Other software",
+     "No software"
+    ],
+    "columns": [
+     {
+      "label": "1–4 employees",
+      "width": {
+       "data_ref": "w0"
+      },
+      "cells": [
+       {
+        "data_ref": "c00"
+       },
+       {
+        "data_ref": "c01"
+       },
+       {
+        "data_ref": "c02"
+       },
+       {
+        "data_ref": "c03"
+       }
+      ]
+     },
+     {
+      "label": "5–19",
+      "width": {
+       "data_ref": "w1"
+      },
+      "cells": [
+       {
+        "data_ref": "c10"
+       },
+       {
+        "data_ref": "c11"
+       },
+       {
+        "data_ref": "c12"
+       },
+       {
+        "data_ref": "c13"
+       }
+      ]
+     },
+     {
+      "label": "20–99",
+      "width": {
+       "data_ref": "w2"
+      },
+      "cells": [
+       {
+        "data_ref": "c20"
+       },
+       {
+        "data_ref": "c21"
+       },
+       {
+        "data_ref": "c22"
+       },
+       {
+        "data_ref": "c23"
+       }
+      ]
+     },
+     {
+      "label": "100+",
+      "width": {
+       "data_ref": "w3"
+      },
+      "cells": [
+       {
+        "data_ref": "c30"
+       },
+       {
+        "data_ref": "c31"
+       },
+       {
+        "data_ref": "c32"
+       },
+       {
+        "data_ref": "c33"
+       }
+      ]
+     }
+    ],
+    "width_label": "share of US small firms",
+    "highlight": [
+     {
+      "column": "1–4 employees",
+      "row": "No software"
+     }
+    ]
+   }
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "donut",
+   "message_type": "component",
+   "lead_message": {
+    "text": "Most small firms use AI, but few pay for it on its own, so AI belongs inside the plan"
+   },
+   "unit_line": "**US small firms and AI**, % of firms, 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Use is wide, paying is rare",
+     "bullets": [
+      "**Use:** about three in four owners use an AI tool at least monthly",
+      "**Paying:** only about one in eight has paid for a dedicated AI tool",
+      "**Bookkeeping:** a third of users already point AI at their books"
+     ]
+    }
+   },
+   "body": {
+    "kind": "donut",
+    "items": [
+     {
+      "label": "Use AI at least monthly",
+      "sub": "free or paid",
+      "point": {
+       "data_ref": "d1"
+      },
+      "detail": [
+       "Mostly free chat tools",
+       "Up from under half two years ago"
+      ]
+     },
+     {
+      "label": "Paid for a dedicated AI tool",
+      "sub": "in the last five years",
+      "point": {
+       "data_ref": "d2"
+      },
+      "emphasis": true,
+      "detail": [
+       "Owners rarely add a subscription",
+       "Spend sits inside tools they already pay for"
+      ]
+     },
+     {
+      "label": "Use AI for bookkeeping",
+      "sub": "of firms that use AI",
+      "point": {
+       "data_ref": "d3"
+      },
+      "detail": [
+       "Categorizing receipts and invoices",
+       "Questions about cash and tax"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "landscape",
+   "message_type": "structure",
+   "lead_message": {
+    "text": "Only the two largest platforms cover bookkeeping and an AI assistant; everyone else plays in one segment"
+   },
+   "body": {
+    "kind": "landscape",
+    "segments": [
+     {
+      "label": "Bookkeeping",
+      "items": [
+       "QuickBooks",
+       "Xero",
+       "FreshBooks",
+       "Wave",
+       "Zoho Books",
+       "Example Ledger"
+      ],
+      "note": "Two leaders, both with AI"
+     },
+     {
+      "label": "Payroll",
+      "items": [
+       "Gusto",
+       "ADP",
+       "Paychex",
+       "QuickBooks Payroll"
+      ],
+      "note": "No AI in the plan yet"
+     },
+     {
+      "label": "Payments",
+      "items": [
+       "Stripe",
+       "Square",
+       "Melio",
+       "PayPal"
+      ],
+      "note": "Embedded in checkout"
+     },
+     {
+      "label": "Tax",
+      "items": [
+       "TurboTax",
+       "H&R Block",
+       "Avalara"
+      ],
+      "note": "Seasonal, once a year"
+     },
+     {
+      "label": "AI assistants",
+      "items": [
+       "Intuit Assist",
+       "Xero JAX",
+       "ChatGPT",
+       "Claude",
+       "Copilot"
+      ],
+      "note": "General tools, no ledger"
+     }
+    ],
+    "marked": [
+     "QuickBooks",
+     "Xero",
+     "Intuit Assist",
+     "Xero JAX"
+    ],
+    "marked_label": "AI included in the plan",
+    "us": "Example Ledger"
+   },
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Bookkeeping plus AI is a two-player game",
+     "bullets": [
+      "**Leaders:** only QuickBooks and Xero pair a ledger with their own assistant",
+      "**Specialists:** payroll, payments and tax players stay in one segment",
+      "**General AI:** chat tools answer questions but cannot see the books"
+     ],
+     "implication": "Our ledger plus an assistant puts us in the leaders' segment"
+    }
+   }
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "from-to",
+   "message_type": "argument",
+   "lead_message": {
+    "text": "The package moves the owner from keeping the books to approving what the AI has already done"
+   },
+   "body": {
+    "kind": "from_to",
+    "from_label": "From: bookkeeping software",
+    "to_label": "To: books the AI keeps",
+    "rows": [
+     {
+      "label": "Data entry",
+      "from": "Owner keys in every transaction",
+      "to": "AI categorizes, owner approves",
+      "to_detail": "Every entry shows its source before it posts"
+     },
+     {
+      "label": "Month end",
+      "from": "Close takes a week",
+      "to": "Books stay closed every day",
+      "to_detail": "Reconciliation runs as transactions arrive"
+     },
+     {
+      "label": "Help",
+      "from": "Calling the bookkeeper",
+      "to": "Ask the assistant, with sources",
+      "to_detail": "Answers cite the ledger lines they use"
+     },
+     {
+      "label": "Errors",
+      "from": "Found at tax time",
+      "to": "Flagged as they happen",
+      "to_detail": "Low-confidence matches wait for review"
+     },
+     {
+      "label": "Price",
+      "from": "Set by feature tier",
+      "to": "Set by the work the AI saves",
+      "to_detail": "AI included in every paid plan"
+     }
+    ]
+   }
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "venn",
+   "message_type": "argument",
+   "lead_message": {
+    "text": "The first AI feature sits where small-firm pain, model strength and our own data meet: the month-end close"
+   },
+   "body": {
+    "kind": "venn",
+    "sets": [
+     "Small-firm pain",
+     "What AI does well",
+     "What we already own"
+    ],
+    "centre": "The month-end close",
+    "notes": [
+     "**Pain:** owners spend about a week a month closing the books",
+     "**Strength:** categorizing and matching are what models do best",
+     "**Our data:** we already hold the bank feeds and the ledger",
+     "**Gap:** nobody else combines all three for the smallest firms"
+    ]
+   }
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "w0",
+   "slide_id": "3",
+   "label": "Share of small firms, 1–4 employees",
+   "value": 0.55,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c00",
+   "slide_id": "3",
+   "label": "Market leader, 1–4 employees",
+   "value": 0.38,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c01",
+   "slide_id": "3",
+   "label": "Second player, 1–4 employees",
+   "value": 0.22,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c02",
+   "slide_id": "3",
+   "label": "Other software, 1–4 employees",
+   "value": 0.12,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c03",
+   "slide_id": "3",
+   "label": "No software, 1–4 employees",
+   "value": 0.28,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "w1",
+   "slide_id": "3",
+   "label": "Share of small firms, 5–19",
+   "value": 0.28,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c10",
+   "slide_id": "3",
+   "label": "Market leader, 5–19",
+   "value": 0.45,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c11",
+   "slide_id": "3",
+   "label": "Second player, 5–19",
+   "value": 0.25,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c12",
+   "slide_id": "3",
+   "label": "Other software, 5–19",
+   "value": 0.1,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c13",
+   "slide_id": "3",
+   "label": "No software, 5–19",
+   "value": 0.2,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "w2",
+   "slide_id": "3",
+   "label": "Share of small firms, 20–99",
+   "value": 0.12,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c20",
+   "slide_id": "3",
+   "label": "Market leader, 20–99",
+   "value": 0.52,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c21",
+   "slide_id": "3",
+   "label": "Second player, 20–99",
+   "value": 0.2,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c22",
+   "slide_id": "3",
+   "label": "Other software, 20–99",
+   "value": 0.13,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c23",
+   "slide_id": "3",
+   "label": "No software, 20–99",
+   "value": 0.15,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "w3",
+   "slide_id": "3",
+   "label": "Share of small firms, 100+",
+   "value": 0.05,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c30",
+   "slide_id": "3",
+   "label": "Market leader, 100+",
+   "value": 0.3,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c31",
+   "slide_id": "3",
+   "label": "Second player, 100+",
+   "value": 0.15,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c32",
+   "slide_id": "3",
+   "label": "Other software, 100+",
+   "value": 0.4,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "c33",
+   "slide_id": "3",
+   "label": "No software, 100+",
+   "value": 0.15,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Market model (fictional)"
+  },
+  {
+   "id": "d1",
+   "slide_id": "4",
+   "label": "Small firms using AI at least monthly",
+   "value": 0.77,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s2",
+   "locator": "Owner survey (fictional), Q4"
+  },
+  {
+   "id": "d2",
+   "slide_id": "4",
+   "label": "Small firms that paid for a dedicated AI tool",
+   "value": 0.12,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s2",
+   "locator": "Owner survey (fictional), Q9"
+  },
+  {
+   "id": "d3",
+   "slide_id": "4",
+   "label": "AI-using small firms that use it for bookkeeping",
+   "value": 0.35,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s2",
+   "locator": "Owner survey (fictional), Q6"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "user_provided",
+   "name": "Example Ledger market model (fictional)"
+  },
+  {
+   "id": "s2",
+   "kind": "user_provided",
+   "name": "Example Ledger owner survey, 2026 (fictional)"
+  }
+ ]
+}

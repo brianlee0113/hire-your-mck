@@ -1,0 +1,1019 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Renderer showcase 4",
+  "subtitle": "Cost curve, org chart, initiative one-pagers and maps",
+  "company_name": "Example Logistics (fictional)",
+  "date": "2026-11-10",
+  "language": "en-US",
+  "confidentiality": "Illustrative example — all companies, numbers and sources are fictional",
+  "theme": "navy"
+ },
+ "storyline": {
+  "governing_thought": "Example Logistics can cut a quarter of its emissions at a profit, starting with routes and drivers",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "Four levers cut 46 kt of emissions a year and save money, led by route optimization",
+    "supports": [
+     "3",
+     "5"
+    ],
+    "sub_points": [
+     {
+      "text": "Route optimization rolls out to every depot by mid-2027",
+      "slide_id": "5"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "A small program office with a champion in every depot runs the plan, starting with driver training",
+    "supports": [
+     "4",
+     "6"
+    ],
+    "sub_points": [
+     {
+      "text": "Eco-driving needs telematics, coaches and agreement on the scorecard",
+      "slide_id": "6"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "Electric vans start on urban routes, most of which are already within range",
+    "supports": [
+     "7"
+    ],
+    "sub_points": [
+     {
+      "text": "82% of urban routes fit today's electric-van range",
+      "slide_id": "7"
+     }
+    ]
+   },
+   {
+    "id": "4",
+    "text": "The first wave covers the US, Germany and Mexico, where two thirds of emissions sit",
+    "supports": [
+     "8",
+     "9"
+    ],
+    "sub_points": [
+     {
+      "text": "The US alone emits over a third of the total",
+      "slide_id": "9"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Appoint the decarbonization office lead",
+    "owner": "CEO",
+    "timing": "Dec 2026"
+   },
+   {
+    "action": "Start route optimization in the first three depots",
+    "owner": "Head of operations",
+    "timing": "Q1 2027"
+   }
+  ]
+ },
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "3",
+   "role": "content",
+   "status": "filled",
+   "archetype": "cost-curve",
+   "message_type": "component",
+   "lead_message": {
+    "text": "Four levers cut 46 kt of emissions a year and save money before any carbon price is applied",
+    "numbers": [
+     {
+      "text": "46 kt",
+      "data_ref": "save"
+     }
+    ],
+    "count_word": null
+   },
+   "unit_line": "**Abatement cost curve, Example Logistics**, 2030, against a 2025 baseline of 180 kt CO2e",
+   "body": {
+    "kind": "cost_curve",
+    "items": [
+     {
+      "label": "Route optimization software",
+      "width": {
+       "data_ref": "w1"
+      },
+      "height": {
+       "data_ref": "h1"
+      },
+      "group": "Operations"
+     },
+     {
+      "label": "Eco-driving training",
+      "width": {
+       "data_ref": "w2"
+      },
+      "height": {
+       "data_ref": "h2"
+      },
+      "group": "Operations"
+     },
+     {
+      "label": "Tire and aerodynamic retrofits",
+      "width": {
+       "data_ref": "w3"
+      },
+      "height": {
+       "data_ref": "h3"
+      },
+      "group": "Operations"
+     },
+     {
+      "label": "Warehouse LED and solar",
+      "width": {
+       "data_ref": "w4"
+      },
+      "height": {
+       "data_ref": "h4"
+      },
+      "group": "Facilities"
+     },
+     {
+      "label": "Renewable power contracts",
+      "width": {
+       "data_ref": "w5"
+      },
+      "height": {
+       "data_ref": "h5"
+      },
+      "group": "Facilities"
+     },
+     {
+      "label": "Electric vans, urban routes",
+      "width": {
+       "data_ref": "w6"
+      },
+      "height": {
+       "data_ref": "h6"
+      },
+      "group": "Fleet"
+     },
+     {
+      "label": "Renewable diesel",
+      "width": {
+       "data_ref": "w7"
+      },
+      "height": {
+       "data_ref": "h7"
+      },
+      "group": "Fleet"
+     },
+     {
+      "label": "Hydrogen trucks, long haul",
+      "width": {
+       "data_ref": "w8"
+      },
+      "height": {
+       "data_ref": "h8"
+      },
+      "group": "Fleet"
+     }
+    ],
+    "x_label": "**Abatement**, kt CO2e a year, cumulative",
+    "y_label": "**Abatement cost**, $ per t CO2e",
+    "price_line": {
+     "point": {
+      "data_ref": "cp"
+     },
+     "label": "Internal carbon price"
+    },
+    "bracket": {
+     "from": "Route optimization software",
+     "to": "Warehouse LED and solar",
+     "point": {
+      "data_ref": "save"
+     },
+     "label": "kt a year, net saving"
+    },
+    "tail": {
+     "label": "No lever yet",
+     "width": {
+      "data_ref": "tail"
+     }
+    }
+   },
+   "footnotes": [
+    "Baseline: 180 kt CO2e a year of fleet and facility emissions in 2025 (scope 1 and 2)"
+   ],
+   "section_id": "1"
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "status": "filled",
+   "archetype": "initiative-one-pager",
+   "message_type": "argument",
+   "lead_message": {
+    "prefix": "1a:",
+    "text": "Roll out route optimization to every depot by mid-2027"
+   },
+   "body": {
+    "kind": "initiative",
+    "template": "actions_impact",
+    "header": "Cut empty and detour miles with software the dispatchers already trust",
+    "rows": [
+     {
+      "label": "Build",
+      "actions": [
+       "Connect the routing tool to order and telematics data",
+       "Set depot targets for miles per stop and empty miles",
+       "Agree the override rules with dispatch leads"
+      ],
+      "impact": {
+       "point": {
+        "data_ref": "pilot"
+       },
+       "text": "lower route emissions in the Dallas pilot"
+      }
+     },
+     {
+      "label": "Roll out",
+      "actions": [
+       "Four waves of three depots, largest first",
+       "Dispatcher training in the week before each wave",
+       "Two weeks of parallel running before switching over"
+      ],
+      "impact": {
+       "point": {
+        "data_ref": "dep"
+       },
+       "text": "depots live by mid-2027, all of the network"
+      }
+     },
+     {
+      "label": "Track",
+      "actions": [
+       "Weekly miles, fuel and on-time delivery by depot",
+       "Monthly review of overrides and their reasons",
+       "Quarterly report to the decarbonization office"
+      ],
+      "impact": {
+       "point": {
+        "data_ref": "otd"
+       },
+       "text": "on-time delivery held during the pilot"
+      }
+     }
+    ],
+    "impact": {
+     "point": {
+      "data_ref": "w1"
+     },
+     "label": "kt CO2e abatement a year by 2030"
+    },
+    "owner": "Head of operations",
+    "timing": "Q1–Q3 2027"
+   },
+   "section_id": "1"
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "status": "filled",
+   "archetype": "org-chart",
+   "message_type": "structure",
+   "lead_message": {
+    "text": "A small program office under the CEO runs the plan through site champions in every depot"
+   },
+   "body": {
+    "kind": "org",
+    "nodes": [
+     {
+      "id": "ceo",
+      "label": "CEO"
+     },
+     {
+      "id": "pmo",
+      "label": "Decarbonization office",
+      "sub": "new, four people",
+      "parent": "ceo",
+      "status": "new"
+     },
+     {
+      "id": "ops",
+      "label": "Operations",
+      "parent": "pmo",
+      "sub": "routes and dispatch"
+     },
+     {
+      "id": "fleet",
+      "label": "Fleet",
+      "parent": "pmo",
+      "sub": "vans, trucks, fuel"
+     },
+     {
+      "id": "fac",
+      "label": "Facilities",
+      "parent": "pmo",
+      "sub": "depots and power"
+     },
+     {
+      "id": "proc",
+      "label": "Procurement",
+      "parent": "pmo",
+      "status": "changed",
+      "sub": "adds energy buying"
+     },
+     {
+      "id": "champ",
+      "label": "Site champions",
+      "sub": "one per depot",
+      "parent": "ops",
+      "count": 12,
+      "status": "new"
+     }
+    ],
+    "side": [
+     {
+      "label": "Board sustainability committee",
+      "sub": "quarterly review",
+      "attach": "ceo"
+     }
+    ],
+    "roles": [
+     {
+      "node": "pmo",
+      "bullets": [
+       "Owns the lever plan and the internal carbon price",
+       "Reports progress against 2030 targets each quarter",
+       "Approves spending above the depot budget"
+      ]
+     },
+     {
+      "node": "champ",
+      "bullets": [
+       "Runs route and driving changes on site",
+       "Tracks fuel and power use each week",
+       "Raises blockers to the office within a week"
+      ]
+     }
+    ]
+   },
+   "section_id": "2"
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "status": "filled",
+   "archetype": "initiative-one-pager",
+   "message_type": "argument",
+   "lead_message": {
+    "prefix": "2a:",
+    "text": "Train every driver in eco-driving and keep the habit with weekly feedback"
+   },
+   "body": {
+    "kind": "initiative",
+    "template": "pros_prereqs",
+    "description": [
+     "Half-day course for every driver, run by senior drivers, then a weekly telematics scorecard and a depot league table"
+    ],
+    "pros": [
+     "The cheapest lever on the curve after routing",
+     "Drivers see the effect on their own score within weeks",
+     "Needs no new vehicles or equipment"
+    ],
+    "cons": [
+     "The effect fades within months without feedback",
+     "Some drivers resist being ranked against colleagues",
+     "Results vary with routes and weather"
+    ],
+    "prerequisites": [
+     "Telematics on every van and truck",
+     "Senior drivers trained as coaches",
+     "Agreement with driver representatives on the scorecard",
+     "A small rewards budget for each depot"
+    ],
+    "owner": "Head of fleet",
+    "timing": "Q1–Q2 2027"
+   },
+   "footnotes": [
+    "Pilot drivers used 7% less fuel after training"
+   ],
+   "section_id": "2"
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "status": "filled",
+   "archetype": "initiative-one-pager",
+   "message_type": "argument",
+   "lead_message": {
+    "prefix": "3a:",
+    "text": "Electrify urban routes first, where vans already have the range"
+   },
+   "body": {
+    "kind": "initiative",
+    "template": "description_case",
+    "description": [
+     "Replace diesel vans on urban routes as their leases end",
+     "Chargers in the six urban depots, used overnight",
+     "Power contracts sized for night charging"
+    ],
+    "case": {
+     "name": "Route data review, 2026",
+     "bullets": [
+      "Daily mileage of every urban route compared with van range",
+      "Overnight parking checked at each urban depot",
+      "Lease end dates mapped for 2027–2029"
+     ],
+     "impact": {
+      "point": {
+       "data_ref": "vans"
+      },
+      "caption": "of urban routes are already within electric-van range"
+     }
+    },
+    "owner": "Head of fleet",
+    "timing": "2027–2029"
+   },
+   "section_id": "3"
+  },
+  {
+   "id": "8",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "archetype": "map",
+   "message_type": "item",
+   "lead_message": {
+    "text": "Route optimization goes first where the network is densest: the US, Germany and Mexico"
+   },
+   "unit_line": "**Depot network, Example Logistics**, 2026",
+   "body": {
+    "kind": "map",
+    "geo": "world",
+    "style": "highlight",
+    "groups": [
+     {
+      "label": "First wave, 2027",
+      "codes": [
+       "USA",
+       "DEU",
+       "MEX"
+      ]
+     },
+     {
+      "label": "Second wave, 2028",
+      "codes": [
+       "CAN",
+       "POL",
+       "GBR",
+       "BRA",
+       "IND"
+      ]
+     }
+    ],
+    "callouts": [
+     {
+      "code": "USA",
+      "header": "United States",
+      "text": "Largest network; Dallas pilot depot",
+      "point": {
+       "data_ref": "dep-us"
+      }
+     },
+     {
+      "code": "MEX",
+      "header": "Mexico",
+      "text": "Cross-border routes into Texas",
+      "point": {
+       "data_ref": "dep-mx"
+      }
+     },
+     {
+      "code": "DEU",
+      "header": "Germany",
+      "text": "Hub for the European network",
+      "point": {
+       "data_ref": "dep-de"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "9",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "archetype": "map",
+   "message_type": "item",
+   "lead_message": {
+    "text": "Three countries make up two thirds of emissions, so the first wave covers most of the gap"
+   },
+   "unit_line": "**Fleet and facility emissions by country**, kt CO2e, 2025",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The US alone is over a third",
+     "bullets": [
+      "**United States:** the largest fleet and the longest routes",
+      "**Germany and Mexico:** next largest, with dense urban routes",
+      "**Everyone else:** small sites that follow in 2028"
+     ],
+     "implication": "Start in the three largest countries; the rest follow the same playbook"
+    }
+   },
+   "body": {
+    "kind": "map",
+    "geo": "world",
+    "style": "bubble",
+    "regions": [
+     {
+      "code": "USA",
+      "point": {
+       "data_ref": "em-USA"
+      }
+     },
+     {
+      "code": "MEX",
+      "point": {
+       "data_ref": "em-MEX"
+      }
+     },
+     {
+      "code": "CAN",
+      "point": {
+       "data_ref": "em-CAN"
+      }
+     },
+     {
+      "code": "DEU",
+      "point": {
+       "data_ref": "em-DEU"
+      }
+     },
+     {
+      "code": "POL",
+      "point": {
+       "data_ref": "em-POL"
+      }
+     },
+     {
+      "code": "GBR",
+      "point": {
+       "data_ref": "em-GBR"
+      }
+     },
+     {
+      "code": "BRA",
+      "point": {
+       "data_ref": "em-BRA"
+      }
+     },
+     {
+      "code": "IND",
+      "point": {
+       "data_ref": "em-IND"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "w1",
+   "slide_id": "3",
+   "label": "Abatement potential: Route optimization software",
+   "value": 18,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 1"
+  },
+  {
+   "id": "h1",
+   "slide_id": "3",
+   "label": "Abatement cost: Route optimization software",
+   "value": -45,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 1"
+  },
+  {
+   "id": "w2",
+   "slide_id": "3",
+   "label": "Abatement potential: Eco-driving training",
+   "value": 12,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 2"
+  },
+  {
+   "id": "h2",
+   "slide_id": "3",
+   "label": "Abatement cost: Eco-driving training",
+   "value": -30,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 2"
+  },
+  {
+   "id": "w3",
+   "slide_id": "3",
+   "label": "Abatement potential: Tire and aerodynamic retrofits",
+   "value": 9,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 3"
+  },
+  {
+   "id": "h3",
+   "slide_id": "3",
+   "label": "Abatement cost: Tire and aerodynamic retrofits",
+   "value": -12,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 3"
+  },
+  {
+   "id": "w4",
+   "slide_id": "3",
+   "label": "Abatement potential: Warehouse LED and solar",
+   "value": 7,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 4"
+  },
+  {
+   "id": "h4",
+   "slide_id": "3",
+   "label": "Abatement cost: Warehouse LED and solar",
+   "value": -5,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 4"
+  },
+  {
+   "id": "w5",
+   "slide_id": "3",
+   "label": "Abatement potential: Renewable power contracts",
+   "value": 15,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 5"
+  },
+  {
+   "id": "h5",
+   "slide_id": "3",
+   "label": "Abatement cost: Renewable power contracts",
+   "value": 8,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 5"
+  },
+  {
+   "id": "w6",
+   "slide_id": "3",
+   "label": "Abatement potential: Electric vans, urban routes",
+   "value": 22,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 6"
+  },
+  {
+   "id": "h6",
+   "slide_id": "3",
+   "label": "Abatement cost: Electric vans, urban routes",
+   "value": 35,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 6"
+  },
+  {
+   "id": "w7",
+   "slide_id": "3",
+   "label": "Abatement potential: Renewable diesel",
+   "value": 16,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 7"
+  },
+  {
+   "id": "h7",
+   "slide_id": "3",
+   "label": "Abatement cost: Renewable diesel",
+   "value": 60,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 7"
+  },
+  {
+   "id": "w8",
+   "slide_id": "3",
+   "label": "Abatement potential: Hydrogen trucks, long haul",
+   "value": 10,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 8"
+  },
+  {
+   "id": "h8",
+   "slide_id": "3",
+   "label": "Abatement cost: Hydrogen trucks, long haul",
+   "value": 140,
+   "unit": "$ per t CO2e",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, row 8"
+  },
+  {
+   "id": "tail",
+   "slide_id": "3",
+   "label": "Emissions with no lever yet",
+   "value": 25,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s1",
+   "locator": "Lever model, residual"
+  },
+  {
+   "id": "cp",
+   "slide_id": "3",
+   "label": "Internal carbon price",
+   "value": 50,
+   "unit": "$ per t CO2e",
+   "period": "2027",
+   "source_id": "s1",
+   "locator": "Finance policy memo"
+  },
+  {
+   "id": "save",
+   "slide_id": "3",
+   "label": "Abatement from levers that save money",
+   "value": 46,
+   "unit": "kt CO2e a year",
+   "period": "2030",
+   "source_id": "s3",
+   "derived_from": [
+    "w1",
+    "w2",
+    "w3",
+    "w4"
+   ],
+   "formula": "sum of the four levers below zero",
+   "calc": "w1 + w2 + w3 + w4"
+  },
+  {
+   "id": "base",
+   "slide_id": "3",
+   "label": "Fleet and facility emissions, baseline",
+   "value": 180,
+   "unit": "kt CO2e a year",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, scope 1 and 2"
+  },
+  {
+   "id": "pilot",
+   "slide_id": "5",
+   "label": "Emissions cut in the route optimization pilot",
+   "value": 0.11,
+   "unit": "%",
+   "period": "Q2 2026",
+   "source_id": "s2",
+   "locator": "Pilot report, Dallas depot"
+  },
+  {
+   "id": "eco",
+   "slide_id": "6",
+   "label": "Fuel saved per driver after eco-driving training",
+   "value": 0.07,
+   "unit": "%",
+   "period": "2026 pilot",
+   "source_id": "s2",
+   "locator": "Pilot report, driver telematics"
+  },
+  {
+   "id": "vans",
+   "slide_id": "7",
+   "label": "Urban routes within electric-van range",
+   "value": 0.82,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Route data, daily mileage"
+  },
+  {
+   "id": "dep",
+   "slide_id": "5",
+   "label": "Depots running route optimization by mid-2027",
+   "value": 12,
+   "unit": "depots",
+   "period": "Q3 2027",
+   "source_id": "s1",
+   "locator": "Rollout plan, wave schedule"
+  },
+  {
+   "id": "otd",
+   "slide_id": "5",
+   "label": "On-time delivery in the route optimization pilot",
+   "value": 0.96,
+   "unit": "%",
+   "period": "Q2 2026",
+   "source_id": "s2",
+   "locator": "Pilot report, Dallas depot"
+  },
+  {
+   "id": "em-USA",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, USA",
+   "value": 62,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-MEX",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, MEX",
+   "value": 18,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-CAN",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, CAN",
+   "value": 14,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-DEU",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, DEU",
+   "value": 21,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-POL",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, POL",
+   "value": 9,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-GBR",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, GBR",
+   "value": 11,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-BRA",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, BRA",
+   "value": 12,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "em-IND",
+   "slide_id": "9",
+   "label": "Fleet and facility emissions, IND",
+   "value": 8,
+   "unit": "kt CO2e",
+   "period": "2025",
+   "source_id": "s1",
+   "locator": "Emissions inventory, by country"
+  },
+  {
+   "id": "dep-us",
+   "slide_id": "8",
+   "label": "Depots in the United States",
+   "value": 12,
+   "unit": "depots",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Network list"
+  },
+  {
+   "id": "dep-de",
+   "slide_id": "8",
+   "label": "Depots in Germany",
+   "value": 5,
+   "unit": "depots",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Network list"
+  },
+  {
+   "id": "dep-mx",
+   "slide_id": "8",
+   "label": "Depots in Mexico",
+   "value": 4,
+   "unit": "depots",
+   "period": "2026",
+   "source_id": "s1",
+   "locator": "Network list"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "user_provided",
+   "name": "Example Logistics lever model and route data (fictional)"
+  },
+  {
+   "id": "s2",
+   "kind": "user_provided",
+   "name": "Example Logistics pilot reports, 2026 (fictional)"
+  },
+  {
+   "id": "s3",
+   "kind": "derived",
+   "name": "Team analysis"
+  }
+ ],
+ "sections": [
+  {
+   "id": "1",
+   "title": "Levers that pay",
+   "exec_item_id": "1",
+   "tracker_label": "Levers"
+  },
+  {
+   "id": "2",
+   "title": "People and organization",
+   "exec_item_id": "2",
+   "tracker_label": "People"
+  },
+  {
+   "id": "3",
+   "title": "Fleet",
+   "exec_item_id": "3",
+   "tracker_label": "Fleet"
+  },
+  {
+   "id": "4",
+   "title": "Network",
+   "exec_item_id": "4",
+   "tracker_label": "Network"
+  }
+ ]
+}

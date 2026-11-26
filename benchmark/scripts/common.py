@@ -11,7 +11,8 @@ import time
 
 BENCH = pathlib.Path(__file__).resolve().parents[1]
 REPO = BENCH.parent
-CONFIG = json.loads((BENCH / "config" / "experiment.json").read_text())
+# HYM_BENCH_CONFIG: a phase with its own config file (e.g. config/speed.json), so it does not touch experiment.json
+CONFIG = json.loads((BENCH / os.environ.get("HYM_BENCH_CONFIG", "config/experiment.json")).read_text())
 
 # Variables a parent Claude Code session sets; a child session must not inherit them.
 PARENT_VARS = ["CLAUDECODE", "CLAUDE_CODE_SESSION_ID", "CLAUDE_CODE_CHILD_SESSION", "CLAUDE_CODE_MESSAGING_SOCKET",
