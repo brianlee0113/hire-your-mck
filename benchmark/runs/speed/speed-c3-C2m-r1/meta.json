@@ -1,0 +1,249 @@
+{
+ "run_id": "speed-c3-C2m-r1",
+ "case": "c3-ai-assistant",
+ "condition": "C2m",
+ "rep": 1,
+ "order": 1,
+ "phase": "speed",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 981.0,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "hire-your-mck:hire-your-mck",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "claude-approvals",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "hire-your-mck",
+        "path": "/Users/brianlee0113/hym-bench-work/_plugin/hire-your-mck-b77ffca5e271",
+        "source": "hire-your-mck@inline",
+        "version": "1.2.1"
+       },
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.332",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 46,
+      "duration_ms": 979925,
+      "duration_api_ms": 941279,
+      "total_cost_usd": 4.695283,
+      "usage": {
+       "input_tokens": 82,
+       "cache_creation_input_tokens": 194225,
+       "cache_read_input_tokens": 5667575,
+       "output_tokens": 100382,
+       "output_tokens_details": {
+        "thinking_tokens": 58596
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 194225,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1595,
+         "cache_read_input_tokens": 200553,
+         "cache_creation_input_tokens": 1044,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1044
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 82,
+        "outputTokens": 100382,
+        "cacheReadInputTokens": 5667575,
+        "cacheCreationInputTokens": 194225,
+        "webSearchRequests": 0,
+        "costUSD": 4.695283,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 58596,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 194225,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": "alculated ones are our estimates, each with its formula on the slide and as a live formula in the workbook. No \"?\" placeholders are left. The step that re-checks sources against the web didn't apply, because the only source is the briefing pack.\n\n**Choices I made for you:**\n- **Audience:** the CEO and executive team deciding at January 2027 planning.\n- **Theme:** navy, the skill's default.\n- **Storyline:** built as I planned it, with no review step.\n\n**Assumptions to know about:**\n- **Pro uptake of 33%** carries most of the case. At the paywall's 14% rate, Pro adds only about $1.2M a year.\n- **Pro's AI cost assumes usage scales with seats.** That gives about $4 of each $12 seat. Beta accounts were more active than the base, so this probably overstates the cost.\n- **The $1.1M mobile delay cost is an upper bound.** It assumes the rewrite would stop all mobile-driven churn the day it ships.\n- **The 13-month payback** is recorded in the workbook as a plain calculation rather than an estimate, though it depends on the Pro profit estimate. Its formula note says so.\n\nNext, I could switch the theme, add a page showing results at different Pro uptake levels, or tighten any slide you want to change.\n\nFiles are in `./deliverable/`:\n- brightwork-dispatch-copilot.pptx\n- brightwork-dispatch-copilot-sources.xlsx\n- brightwork-dispatch-copilot.json (the spec the deck is rendered from)\n- NOTES.md (the choices and assumptions above)\n\nThe script that generates the spec is `./work/build_spec.py`."
+    }
+   ],
+   "started": "2026-11-26T18:45:46+00:00",
+   "ended": "2026-11-26T19:02:07+00:00",
+   "session_id": "ad90f80b-bd29-4fb7-ad02-b8a11570cf56",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 4.695283,
+  "duration_s": 981.0,
+  "api_s": 941.279,
+  "turns": 46,
+  "input_tokens": 82,
+  "output_tokens": 100382,
+  "cache_read_tokens": 5667575,
+  "cache_creation_tokens": 194225,
+  "cost_all_attempts_usd": 4.695283
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 4.695283,
+   "input": 82,
+   "output": 100382,
+   "cache_read": 5667575,
+   "cache_creation": 194225
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "/hire-your-mck Mode: full deck with data (`deck_detailed`).\n\nCreate a deck for Brightwork's CEO and executive team: Should Brightwork launch Dispatch Copilot in Q2 2027, and if so, how should it be packaged and priced?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "409625e125604c423496d6969e6deef6a39a2f0d7c6586ef901f8c373300483e",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.332 (Claude Code)",
+ "plugin_snapshot_sha256": "b77ffca5e2718a7dee52a395ef2b8c5088fcd19acdbdcea0c6d1e3d612035d39",
+ "plugin_source": "benchmark/env/plugin-main",
+ "repo_head": "f1fcc516dc2ebd16a9c0e0b0135cc4c38a7dc8b1",
+ "packet_sha256": "8b9ddcb4efe84fb69297f21948ac4490060c38882288e506e449a4c370208718",
+ "files": [
+  {
+   "path": "workspace/deliverable/NOTES.md",
+   "bytes": 2158,
+   "sha256": "2f4d51f066e04960d8b51c3053262b44c974317505d01336013287b9b515a54e"
+  },
+  {
+   "path": "workspace/deliverable/brightwork-dispatch-copilot-sources.xlsx",
+   "bytes": 37949,
+   "sha256": "0d9de2617d4852c3a08a90341a713c751ce46cde18c0eff57f731bf6da8d5a1a"
+  },
+  {
+   "path": "workspace/deliverable/brightwork-dispatch-copilot.json",
+   "bytes": 79527,
+   "sha256": "2638d85db2c1edc9019084dadc313f53f15af107d5ea21d14bf5a0a22259cee6"
+  },
+  {
+   "path": "workspace/deliverable/brightwork-dispatch-copilot.pptx",
+   "bytes": 114106,
+   "sha256": "668df5da9854be840365bbfd8dc3e20db056388382f87f16aaa936c6f1c8ea72"
+  },
+  {
+   "path": "workspace/work/build_spec.py",
+   "bytes": 45580,
+   "sha256": "d1c824e94e6cac4e60d3562ddbec7c1b5bd08c4b911cf4ad9971962d52368e66"
+  }
+ ]
+}

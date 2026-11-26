@@ -1,0 +1,249 @@
+{
+ "run_id": "speed-c5-E1-r1",
+ "case": "c5-negative-entry",
+ "condition": "E1",
+ "rep": 1,
+ "order": 4,
+ "phase": "speed",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 789.6,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "hire-your-mck:hire-your-mck",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "claude-approvals",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "hire-your-mck",
+        "path": "/Users/brianlee0113/hym-bench-work/_plugin/hire-your-mck-c16061fa352c",
+        "source": "hire-your-mck@inline",
+        "version": "1.2.0"
+       },
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.332",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 40,
+      "duration_ms": 788758,
+      "duration_api_ms": 773266,
+      "total_cost_usd": 3.886706800000001,
+      "usage": {
+       "input_tokens": 74,
+       "cache_creation_input_tokens": 170853,
+       "cache_read_input_tokens": 4419634,
+       "output_tokens": 81783,
+       "output_tokens_details": {
+        "thinking_tokens": 44396
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 170853,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1388,
+         "cache_read_input_tokens": 177290,
+         "cache_creation_input_tokens": 935,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 935
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 74,
+        "outputTokens": 81783,
+        "cacheReadInputTokens": 4419634,
+        "cacheCreationInputTokens": 170853,
+        "webSearchRequests": 0,
+        "costUSD": 3.886706800000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 44396,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 170853,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": "8, half the minimum.\n- **Pilot cost:** the $3.6M assumes one store at the median customer site's volume and margin from day one, with no ramp-up losses. That understates the real cost.\n- **Software-first runway:** I describe it as close to the floor, not safely within it. It holds only if the late-stage deals close early and the burn comes down a little.\n- **Structure:** I merged the Columbus test into the unit-economics section, because five summary points would not fit on the first page at full size.\n\n**Things to know:**\n- **Rounding:** the charts show per-order figures to the cent. The number cards and the backup table show one decimal (for example \"\u2212$6.2\" next to a title that says $6.17). The renderer has no setting for this; the workbook holds the exact values.\n- **Sources:** all 109 numbers come from the briefing pack or are calculated from it, with live Excel formulas. No placeholders are left. There are no web sources, so there was nothing to re-check online.\n- **Not sized:** the effect of the proposed minimum pay rules for riders, because the pack gives no rate. Also how many of the 37 pipeline grocers will sign, because it gives no conversion rate. The deck counts only the 9 late-stage deals as revenue.\n\nPossible next steps: change the theme, or rerun the cash page using the kinder reading of the $9.5M.\n\nFiles are in `./deliverable/` (19 slides, navy theme):\n- `parcelbird.pptx`\n- `parcelbird-sources.xlsx`\n- `parcelbird.json` (the deck spec, so it can be re-rendered)"
+    }
+   ],
+   "started": "2026-11-26T18:45:52+00:00",
+   "ended": "2026-11-26T18:59:02+00:00",
+   "session_id": "1b2a6045-278a-4417-a4c3-96506d5bbf58",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 3.886706800000001,
+  "duration_s": 789.6,
+  "api_s": 773.266,
+  "turns": 40,
+  "input_tokens": 74,
+  "output_tokens": 81783,
+  "cache_read_tokens": 4419634,
+  "cache_creation_tokens": 170853,
+  "cost_all_attempts_usd": 3.886706800000001
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 3.886706800000001,
+   "input": 74,
+   "output": 81783,
+   "cache_read": 4419634,
+   "cache_creation": 170853
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "/hire-your-mck Mode: full deck with data (`deck_detailed`).\n\nCreate a deck for Parcelbird's board: Should Parcelbird launch its own quick-commerce grocery delivery service in 2027?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "dee32af15b300fab408343a4ee9737b3da34f8ab54dcf244e7f0c9db1233fed3",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.332 (Claude Code)",
+ "plugin_snapshot_sha256": "c16061fa352cd546cb19a17c71f9249b1e76ccaf3546fd258fb5941fbcfd8006",
+ "plugin_source": "benchmark/env/plugin-E1",
+ "repo_head": "f1fcc516dc2ebd16a9c0e0b0135cc4c38a7dc8b1",
+ "packet_sha256": "4fc9ae69881f7afe2f36c430baa40f8a21662f6231179ef24cbe92978bff7ade",
+ "files": [
+  {
+   "path": "workspace/build/build_spec.py",
+   "bytes": 50592,
+   "sha256": "9794e3e2ac1945bc3e2bb50851c19d4e1a6610abe72949c2c73cbfdf6f0cdf7c"
+  },
+  {
+   "path": "workspace/build/parcelbird.json",
+   "bytes": 94402,
+   "sha256": "2961d1fae2dd914f940a66e758b2c53eed2bc175d96cf2674bd557816e6e6251"
+  },
+  {
+   "path": "workspace/deliverable/parcelbird-sources.xlsx",
+   "bytes": 44247,
+   "sha256": "894699d71feca5d6106f396d09bdbf244327ffb810c0058fa5aa0080b59f9322"
+  },
+  {
+   "path": "workspace/deliverable/parcelbird.json",
+   "bytes": 94402,
+   "sha256": "2961d1fae2dd914f940a66e758b2c53eed2bc175d96cf2674bd557816e6e6251"
+  },
+  {
+   "path": "workspace/deliverable/parcelbird.pptx",
+   "bytes": 109103,
+   "sha256": "7bf36c87293fc050a19eb2ea4c13f78b602b09eb35d10d193491f0ae8cec5b9c"
+  }
+ ]
+}

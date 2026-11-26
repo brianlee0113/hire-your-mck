@@ -1,0 +1,2766 @@
+{
+ "spec_version": "0.1",
+ "mode": "deck_detailed",
+ "meta": {
+  "title": "Dispatch Copilot: launch decision",
+  "subtitle": "Whether to launch in Q2 2027, and how to package and price it",
+  "company_name": "Brightwork",
+  "audience": "CEO and executive team",
+  "purpose": "Decide at January 2027 planning whether to launch Dispatch Copilot in Q2 2027, and its package and price",
+  "date": "2026-11-26",
+  "language": "en-US",
+  "confidentiality": "Discussion document; synthetic benchmark data",
+  "theme": "navy"
+ },
+ "inputs": [
+  {
+   "id": "in-1",
+   "kind": "pasted_research",
+   "label": "Brightwork briefing pack (evidence/briefing-pack.md)",
+   "content": "# Brightwork: should we launch an AI dispatch assistant? — briefing pack\n\n> **Synthetic benchmark data.** The company, people, competitors and every figure in this pack are fictional. They were generated for a reasoning benchmark and are internally consistent, but they are not real market data.\n\n## 1. Context\n\nBrightwork sells field-service management software (scheduling, dispatch, quotes, invoicing) to HVAC,\nplumbing and electrical contractors with 3–50 technicians. It has 9,800 customer accounts with an average of\n6.2 office seats each (dispatchers and office staff) on the Core plan at $79 per seat per month: annual recurring\nrevenue (ARR) of $57.6M. Gross margin is 78%, annual logo churn 14%, net revenue retention 101%.\n\nThe product team has built **Dispatch Copilot**: AI that proposes a day's schedule, drafts quotes from\ntechnician notes, and summarises customer calls. It ran as a free beta for 12 weeks.\n\n**Decision maker:** CEO Maya Okafor and the executive team, at January 2027 planning.\n\n## 2. Decision question\n\n**Should Brightwork launch Dispatch Copilot in Q2 2027, and if so, how should it be packaged and priced?**\n\n## 3. Objectives and constraints\n\n- Raise net revenue retention from 101% to 105% by 2028.\n- Keep company gross margin at or above 75%.\n- Engineering: 60 engineers in total. Launching Copilot needs 14 engineers for two quarters, which delays the\n  rewrite of the technician mobile app by two quarters.\n\n## 4. Current view inside the company\n\nThe Chief Product Officer proposes launching Copilot as a **paid add-on at $149 per account per month**: \"Our\nsurvey shows 46% of customers are likely to buy it. That is about $8M of new ARR in the first year.\"\nThe Head of Customer Success worries about the mobile app delay: \"Mobile reliability is what customers complain\nabout.\"\n\n## 5. Beta results (240 accounts, 12 weeks, volunteers)\n\n**Table 1. Beta outcomes**\n\n| Measure | Beta accounts | Matched non-beta accounts |\n|---|---|---|\n| Self-reported dispatcher hours saved per week | 4.1 | — |\n| Change in jobs scheduled per dispatcher-hour vs the prior 12 weeks | +11% | +2% |\n| 90-day renewal rate | 97% | 93% |\n\n- Beta accounts volunteered; they are larger (8.1 seats on average) and more active than the base.\n- Usage is concentrated: the top 10% of beta accounts generated 58% of all AI requests.\n\n**Table 2. AI requests per account per month (beta)**\n\n|  | Requests per month |\n|---|---|\n| Median account | 1,900 |\n| Mean account | 3,600 |\n| Mean of the top 10% of accounts | 14,500 |\n\n- Model inference cost: $0.009 per request under the current provider contract, fixed through December 2027.\n  The provider's list prices fell 35% over the past 12 months.\n- Running the feature also needs about $0.6M a year of platform, evaluation and support cost.\n\n## 6. Pricing evidence\n\n- **Survey** (October 2026, 610 customer admins): at $149 per account per month, 46% said they were \"likely\" or\n  \"very likely\" to buy Copilot.\n- **Paywall test** (last four weeks of the beta): 120 beta accounts were offered Copilot at $149 per account per\n  month after the free period. 17 accounts (14%) bought it. Accounts that bought averaged 6,800 requests a month.\n- **Tier option:** a new \"Pro\" plan that includes Copilot, priced $12 more per seat per month than Core. When\n  Brightwork last launched a higher tier (2023), 33% of accounts moved to it within a year.\n\n## 7. Competitor evidence\n\n- **Routewise**, the closest competitor, launched AI scheduling **included in its Pro plan** in September 2026.\n- Brightwork's win rate in deals where Routewise competed fell from 44% (Q1–Q2 2026) to 37% (Q3 2026).\n  Brightwork has about 2,600 qualified new-customer opportunities a year, and Routewise competes in about 60% of\n  them; a new account averages 6.2 seats on Core.\n- In Q3 2026 lost deals, 31% of loss notes mention AI features.\n\n## 8. Customer evidence\n\n**Table 3. Main reason given by accounts that churned, 2026 (n = 1,190)**\n\n| Reason | Share |\n|---|---|\n| Mobile app reliability | 27% |\n| Price | 22% |\n| Missing integrations | 15% |\n| Went out of business / sold | 14% |\n| Switched for AI features | 6% |\n| Other | 16% |\n\n- Top feature request in the 2026 customer survey: \"a reliable technician mobile app\" (38% rank it first);\n  AI scheduling is ranked first by 19%.\n\n## 9. Costs\n\n- Engineering: 14 engineers for two quarters at a fully loaded $210,000 per engineer-year.\n\n## 10. Other material\n\n- **VP Sales memo:** \"31% of our lost deals cite AI, so Copilot would recover about a third of the deals we lose to\n  Routewise.\"\n- **Survey method note:** the October survey went to all 9,800 account admins; 610 replied (6%). Respondents average\n  9.4 seats, against 6.2 for all accounts.\n\n## 11. Uncertainties\n\n- Whether the productivity gain holds beyond volunteers.\n- How fast inference prices fall after 2027.\n- Whether Routewise's AI is the cause of the lower win rate or coincides with its price promotion in Q3 2026\n  (Routewise also offered 20% off the first year in Q3).\n"
+  },
+  {
+   "id": "in-2",
+   "kind": "qa_answer",
+   "label": "Choices made without the user (unavailable)",
+   "content": "Audience: CEO and exec team, approve or reject. Theme: navy. Storyline approved as recommended. No placeholders needed."
+  }
+ ],
+ "storyline": {
+  "governing_thought": "Launch Copilot in Q2 2027 in a Pro plan at $12 more per seat, and plan on $2.9M of new ARR, not $8M",
+  "exec_summary": [
+   {
+    "id": "1",
+    "text": "Copilot is worth launching, though its gains are smaller than claimed",
+    "supports": [
+     "1",
+     "2"
+    ],
+    "sub_points": [
+     {
+      "text": "Beta accounts scheduled 11% more jobs per dispatcher-hour, but they were volunteers",
+      "slide_id": "1"
+     },
+     {
+      "text": "Routewise's AI puts at most $0.6M of our new ARR a year at stake",
+      "slide_id": "2"
+     }
+    ]
+   },
+   {
+    "id": "2",
+    "text": "At $149, real buying points to about $2.5M of ARR, not the $8M proposed",
+    "supports": [
+     "3",
+     "4"
+    ],
+    "sub_points": [
+     {
+      "text": "Only 14% of beta accounts bought at $149, against 46% stated intent",
+      "slide_id": "3"
+     },
+     {
+      "text": "Even $2.5M is a ceiling, because the beta accounts volunteered",
+      "slide_id": "4"
+     }
+    ]
+   },
+   {
+    "id": "3",
+    "text": "A Pro plan at $12 more per seat is the better package, worth about $2.9M",
+    "supports": [
+     "5",
+     "6",
+     "7"
+    ],
+    "sub_points": [
+     {
+      "text": "A flat $149 draws heavy users: buyers cost $61 a month to serve",
+      "slide_id": "5"
+     },
+     {
+      "text": "Pro prices with seats and matches Routewise's packaging",
+      "slide_id": "7"
+     }
+    ]
+   },
+   {
+    "id": "4",
+    "text": "Pro meets both company targets and outweighs the mobile delay",
+    "supports": [
+     "8",
+     "9",
+     "10"
+    ],
+    "sub_points": [
+     {
+      "text": "Pro closes the NRR gap at 26% uptake, and the mobile delay risks at most $1.1M of ARR",
+      "slide_id": "8"
+     }
+    ]
+   },
+   {
+    "id": "5",
+    "text": "Decide in January, sell Pro from Q2 2027 and restart the mobile rewrite in Q3",
+    "supports": [
+     "11",
+     "12"
+    ],
+    "sub_points": [
+     {
+      "text": "Guardrails: a fair-use allowance, a fixed mobile restart, a clean win-rate test, cheaper inference",
+      "slide_id": "11"
+     }
+    ]
+   }
+  ],
+  "next_steps": [
+   {
+    "action": "Approve Copilot inside a Pro plan at $12 more per seat over Core, for a Q2 2027 launch",
+    "owner": "CEO and executive team",
+    "timing": "January 2027"
+   },
+   {
+    "action": "Commit the 14 Copilot engineers back to the mobile rewrite from Q3 2027",
+    "owner": "Head of Engineering",
+    "timing": "January 2027"
+   },
+   {
+    "action": "Set the Pro fair-use allowance and overage price from beta usage per seat",
+    "owner": "CPO and CFO",
+    "timing": "February 2027"
+   },
+   {
+    "action": "Run the win-rate test against Routewise once its first-year discount ends",
+    "owner": "VP Sales",
+    "timing": "Q2–Q3 2027"
+   },
+   {
+    "action": "Track Pro uptake monthly against the 26% NRR threshold; reopen the inference contract",
+    "owner": "CFO",
+    "timing": "From Q2 2027"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "1",
+   "title": "Why launch Copilot",
+   "exec_item_id": "1",
+   "tracker_label": "Value"
+  },
+  {
+   "id": "2",
+   "title": "How much demand at $149",
+   "exec_item_id": "2",
+   "tracker_label": "Demand"
+  },
+  {
+   "id": "3",
+   "title": "How to package and price it",
+   "exec_item_id": "3",
+   "tracker_label": "Packaging"
+  },
+  {
+   "id": "4",
+   "title": "Fit with company targets",
+   "exec_item_id": "4",
+   "tracker_label": "Targets"
+  },
+  {
+   "id": "5",
+   "title": "How to launch",
+   "exec_item_id": "5",
+   "tracker_label": "Plan"
+  }
+ ],
+ "slides": [
+  {
+   "id": "c",
+   "role": "cover",
+   "status": "filled"
+  },
+  {
+   "id": "es",
+   "role": "exec_summary",
+   "status": "filled",
+   "archetype": "exec-summary",
+   "message_type": "navigation"
+  },
+  {
+   "id": "d1",
+   "role": "section_divider",
+   "section_id": "1",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "1",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Copilot lifted dispatcher output in the beta, but volunteers make the 11% gain a ceiling, not a forecast",
+    "clauses": 1,
+    "numbers": [
+     {
+      "text": "11%",
+      "data_ref": "prod_b"
+     }
+    ]
+   },
+   "archetype": "kpi-big-numbers",
+   "message_type": "item",
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "prod_b"
+      },
+      "caption": "more jobs scheduled per dispatcher-hour in beta accounts",
+      "relation": "Matched non-beta accounts rose 2% over the same 12 weeks",
+      "drivers": [
+       "Copilot proposes the day's schedule",
+       "A gap of 9 percentage points over matched accounts"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "ren_b"
+      },
+      "caption": "90-day renewal rate of beta accounts",
+      "relation": "Compared with 93% for matched non-beta accounts",
+      "drivers": [
+       "Free throughout, so no price was tested",
+       "Engaged volunteers tend to renew anyway"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "hrs"
+      },
+      "caption": "dispatcher hours saved a week, as reported by users",
+      "relation": "Self-reported by beta users",
+      "drivers": [
+       "Beta accounts average 8.1 seats, against 6.2 in the base",
+       "Not measured in system logs"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "top10"
+      },
+      "caption": "of all AI requests came from the top 10% of beta accounts",
+      "relation": "Value and cost sit with a few heavy users",
+      "drivers": [
+       "Median account: 1,900 requests a month",
+       "Heavy users drive inference cost"
+      ]
+     }
+    ]
+   },
+   "unit_line": "**Dispatch Copilot beta outcomes**, 240 volunteer accounts, 12 weeks, 2026",
+   "so_what": "Treat the beta as proof that Copilot works, not as the size of the gain: measure the first non-volunteer cohort after launch",
+   "so_what_style": "line"
+  },
+  {
+   "id": "2",
+   "role": "content",
+   "section_id": "1",
+   "status": "filled",
+   "lead_message": {
+    "text": "Routewise's AI puts at most $0.6M of new ARR a year at stake, a third of what Sales hopes to recover",
+    "clauses": 1,
+    "numbers": [
+     {
+      "text": "$0.6M",
+      "data_ref": "rw_arr"
+     }
+    ],
+    "highlights": [
+     "Q3 2026"
+    ]
+   },
+   "archetype": "column-time-series",
+   "message_type": "time-series",
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "Q1–Q2 2026",
+     "Q3 2026"
+    ],
+    "series": [
+     {
+      "name": "Win rate where Routewise competed",
+      "points": [
+       {
+        "data_ref": "wr_pre"
+       },
+       {
+        "data_ref": "wr_post"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Q3 2026"
+    ],
+    "value_format": "0%"
+   },
+   "unit_line": "**Brightwork win rate in deals where Routewise competed**, % of deals, 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "The fall is real but small, and not all of it is AI",
+     "bullets": [
+      "**Q3 2026:** Routewise also gave 20% off the first year, so price explains part of the fall",
+      "**Loss notes:** 31% mention AI, but a mention is not the cause of a loss"
+     ],
+     "rows": [
+      {
+       "label": "New ARR at stake a year",
+       "basis": "1,560 Routewise deals × 7 pp × $5,878 per account",
+       "point": {
+        "data_ref": "rw_arr"
+       },
+       "highlight": true
+      },
+      {
+       "label": "Share of the 328 deals Sales expects",
+       "basis": "109 lost wins ÷ 328",
+       "point": {
+        "data_ref": "vp_ratio"
+       }
+      }
+     ]
+    }
+   },
+   "footnotes": [
+    "Routewise competes in about 60% of about 2,600 qualified opportunities a year; a new account averages 6.2 seats on Core"
+   ]
+  },
+  {
+   "id": "d2",
+   "role": "section_divider",
+   "section_id": "2",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "3",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Survey intent overstates demand: only 14% of beta accounts bought when asked to pay, and both samples skew large",
+    "clauses": 2,
+    "numbers": [
+     {
+      "text": "14%",
+      "data_ref": "pw_rate"
+     }
+    ],
+    "highlights": []
+   },
+   "archetype": "multi-chart-panel",
+   "message_type": "item",
+   "body": {
+    "kind": "panels",
+    "panels": [
+     {
+      "header": "Under a third of stated intent turned into purchases",
+      "unit_line": "**Accounts choosing Copilot at $149 per account per month**, %, 2026",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Survey: likely to buy",
+        "Paywall test: bought"
+       ],
+       "series": [
+        {
+         "name": "Share of accounts",
+         "points": [
+          {
+           "data_ref": "survey_rate"
+          },
+          {
+           "data_ref": "pw_rate"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Paywall test: bought"
+       ],
+       "value_format": "0%"
+      }
+     },
+     {
+      "header": "Both samples come from larger accounts than the base",
+      "unit_line": "**Office seats per account**, average, 2026",
+      "body": {
+       "kind": "chart",
+       "chart_type": "bar",
+       "categories": [
+        "Survey respondents",
+        "Beta accounts",
+        "All accounts"
+       ],
+       "series": [
+        {
+         "name": "Seats per account",
+         "points": [
+          {
+           "data_ref": "survey_seats"
+          },
+          {
+           "data_ref": "beta_seats"
+          },
+          {
+           "data_ref": "seats"
+          }
+         ]
+        }
+       ],
+       "sort": "none",
+       "highlight": [
+        "Survey respondents",
+        "Beta accounts"
+       ],
+       "value_format": "0.0"
+      }
+     }
+    ]
+   },
+   "layout": {
+    "variant": "split_2"
+   },
+   "footnotes": [
+    "Survey: October 2026, sent to all 9,800 account admins, 610 replied (6%); \"likely\" or \"very likely\" to buy at $149",
+    "Paywall test: last four weeks of the beta, 120 beta accounts offered Copilot at $149 after the free period, 17 bought",
+    "Beta accounts volunteered and are more active than the base, so even the paywall rate likely overstates demand across all accounts"
+   ]
+  },
+  {
+   "id": "4",
+   "role": "content",
+   "section_id": "2",
+   "status": "filled",
+   "lead_message": {
+    "text": "Priced as proposed, Copilot would add about $2.5M of ARR in its first year, under a third of the $8M plan",
+    "clauses": 1,
+    "numbers": [
+     {
+      "text": "$2.5M",
+      "data_ref": "addon_arr"
+     },
+     {
+      "text": "$8M",
+      "data_ref": "cpo8"
+     }
+    ],
+    "highlights": [
+     "Paywall behavior"
+    ]
+   },
+   "archetype": "column-time-series",
+   "message_type": "item",
+   "body": {
+    "kind": "chart",
+    "chart_type": "column",
+    "categories": [
+     "Proposal: survey intent",
+     "Paywall behavior"
+    ],
+    "series": [
+     {
+      "name": "First-year ARR",
+      "points": [
+       {
+        "data_ref": "cpo8"
+       },
+       {
+        "data_ref": "addon_arr"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Paywall behavior"
+    ],
+    "value_format": "\"$\"0.0\"M\""
+   },
+   "unit_line": "**First-year ARR from a $149 add-on**, $ millions, by the evidence used",
+   "basis": {
+    "header": "How we sized it",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "acc"
+      },
+      "caption": "customer accounts today"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "pw_rate"
+      },
+      "caption": "bought at $149 in the beta paywall test"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "addon_year"
+      },
+      "caption": "a year per account: $149 a month × 12"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "addon_arr"
+      },
+      "caption": "first-year ARR at the paywall rate"
+     }
+    ]
+   },
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Even $2.5M is a ceiling, not a forecast",
+     "bullets": [
+      "**Proposal:** applies stated intent from a 6% response, weighted to 9.4-seat accounts",
+      "**Paywall behavior:** real purchases, but by volunteers who had already used Copilot free",
+      "**Ramp:** assumes every buyer converts in year one; a slower ramp lowers the figure further"
+     ]
+    }
+   },
+   "footnotes": [
+    "Proposal figure as stated by the Chief Product Officer: 46% of 9,800 accounts × $149 × 12"
+   ]
+  },
+  {
+   "id": "d3",
+   "role": "section_divider",
+   "section_id": "3",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "5",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "A flat $149 price draws the heaviest users: paying accounts cost $61 a month to serve, the top tenth $131",
+    "clauses": 1,
+    "numbers": [
+     {
+      "text": "$149",
+      "data_ref": "addon_price"
+     },
+     {
+      "text": "$61",
+      "data_ref": "c_buy"
+     },
+     {
+      "text": "$131",
+      "data_ref": "c_top"
+     }
+    ],
+    "highlights": [
+     "Top 10% of beta accounts",
+     "Paywall buyers"
+    ]
+   },
+   "archetype": "bar-ranking",
+   "message_type": "item",
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "Top 10% of beta accounts",
+     "Paywall buyers",
+     "Mean beta account",
+     "Median beta account"
+    ],
+    "series": [
+     {
+      "name": "Inference cost per month",
+      "points": [
+       {
+        "data_ref": "c_top"
+       },
+       {
+        "data_ref": "c_buy"
+       },
+       {
+        "data_ref": "c_mean"
+       },
+       {
+        "data_ref": "c_med"
+       }
+      ]
+     }
+    ],
+    "sort": "desc",
+    "highlight": [
+     "Top 10% of beta accounts",
+     "Paywall buyers"
+    ],
+    "value_format": "\"$\"0",
+    "benchmark": {
+     "label": "Add-on price",
+     "point": {
+      "data_ref": "addon_price"
+     }
+    }
+   },
+   "unit_line": "**Inference cost per account per month**, $, at $0.009 per AI request, beta usage 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "A flat price sells to the accounts that cost most to serve",
+     "bullets": [
+      "**Paywall buyers:** sent 3.6 times the median account's requests, so inference takes 41% of the price",
+      "**Top 10%:** inference alone reaches 88% of the price, before platform and support cost",
+      "**Median and mean accounts:** cheap to serve, yet these are the accounts the $149 price failed to convert"
+     ],
+     "implication": "Charge per seat with a fair-use allowance, so price rises with the dispatchers who drive usage"
+    }
+   },
+   "footnotes": [
+    "Requests per month from beta Table 2 and the paywall test; cost at the current contract price of $0.009 a request, fixed through December 2027"
+   ]
+  },
+  {
+   "id": "6",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "Packaged in Pro, Copilot would add about $2.9M of ARR a year if uptake matches the 2023 tier launch",
+    "clauses": 1,
+    "numbers": [
+     {
+      "text": "$2.9M",
+      "data_ref": "pro_arr"
+     }
+    ]
+   },
+   "archetype": "calculation-bridge",
+   "message_type": "component",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "acc"
+      },
+      "caption": "customer accounts on Core today"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "tier_up"
+      },
+      "caption": "moved to the new higher tier within a year of its 2023 launch"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "pro_year"
+      },
+      "caption": "more a year per account: 6.2 seats × $12 a seat a month × 12"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "pro_arr"
+      },
+      "caption": "new ARR a year from Pro at 2023 uptake"
+     }
+    ],
+    "assumptions_header": "The estimate rests on four assumptions, and uptake matters most",
+    "assumptions": [
+     "Uptake matches the 2023 tier launch; at the 14% paywall rate, Pro would add about $1.2M",
+     "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+     "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+     "Core stays at $79 per seat, so no account pays less than today"
+    ]
+   },
+   "unit_line": "**New ARR from a Pro plan that includes Copilot**, $ millions a year, at 2023 tier uptake",
+   "footnotes": [
+    "Estimate by the team from the briefing pack; the live formula is in the Calculations sheet of the source workbook"
+   ]
+  },
+  {
+   "id": "7",
+   "role": "content",
+   "section_id": "3",
+   "status": "filled",
+   "lead_message": {
+    "text": "Of the three options, launching Copilot inside Pro is strongest on revenue, unit cost and competitive fit",
+    "clauses": 1,
+    "count_word": 3
+   },
+   "archetype": "harvey-ball-table",
+   "message_type": "structure",
+   "body": {
+    "kind": "table",
+    "table_type": "harvey",
+    "columns": [
+     "Revenue potential",
+     "Inference, % of price",
+     "Answers Routewise",
+     "Strength of evidence",
+     "Protects mobile"
+    ],
+    "rows": [
+     {
+      "label": "Pro plan at $12 more per seat, Q2 2027",
+      "highlight": true,
+      "cells": [
+       {
+        "rating": 4
+       },
+       {
+        "point": {
+         "data_ref": "pro_share"
+        }
+       },
+       {
+        "rating": 4
+       },
+       {
+        "rating": 3
+       },
+       {
+        "rating": 1
+       }
+      ]
+     },
+     {
+      "label": "$149 add-on per account, Q2 2027",
+      "cells": [
+       {
+        "rating": 3
+       },
+       {
+        "point": {
+         "data_ref": "buy_share"
+        }
+       },
+       {
+        "rating": 2
+       },
+       {
+        "rating": 2
+       },
+       {
+        "rating": 1
+       }
+      ],
+      "note": "A ceiling from volunteers; about $24 a seat, twice Pro, and it draws heavy users"
+     },
+     {
+      "label": "Mobile rewrite first, Copilot after it",
+      "cells": [
+       {
+        "rating": 2
+       },
+       {
+        "text": "As Pro"
+       },
+       {
+        "rating": 0
+       },
+       {
+        "rating": 3
+       },
+       {
+        "rating": 4
+       }
+      ],
+      "note": "Protects mobile, but leaves Routewise's AI unanswered until the rewrite ships"
+     }
+    ],
+    "legend": "Ratings: team assessment from the briefing pack; full circle = strongest of the three options"
+   },
+   "unit_line": "**Launch options compared**, team assessment; inference cost as % of the price each account pays",
+   "callout": {
+    "target": "Pro plan at $12 more per seat, Q2 2027",
+    "header": "Recommended",
+    "detail": "Largest revenue, price scales with seats, and it matches Routewise's Pro packaging"
+   },
+   "basis": {
+    "header": "How we costed a Pro seat",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "c_seat"
+      },
+      "caption": "inference a seat a month: beta mean of 3,600 requests ÷ 8.1 seats × $0.009"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "pro_up"
+      },
+      "caption": "Pro price above Core, per seat a month"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "pro_share"
+      },
+      "caption": "of the Pro price spent on inference"
+     }
+    ]
+   },
+   "footnotes": [
+    "Revenue: Pro about $2.9M a year at 2023 uptake, against $2.45M for the add-on at the paywall rate; add-on inference uses paywall buyers' 6,800 requests against $149",
+    "Pro evidence rests on the 2023 tier launch across all accounts; the add-on rests on 120 volunteer beta accounts"
+   ]
+  },
+  {
+   "id": "d4",
+   "role": "section_divider",
+   "section_id": "4",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "8",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Pro closes the NRR gap alone if 26% of accounts move up, fewer than the third that moved in 2023",
+    "clauses": 1,
+    "numbers": [
+     {
+      "text": "26%",
+      "data_ref": "breakeven"
+     }
+    ]
+   },
+   "archetype": "calculation-bridge",
+   "message_type": "component",
+   "body": {
+    "kind": "equation",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "nrr_gap"
+      },
+      "caption": "NRR gap: from 101% today to the 105% target for 2028"
+     },
+     {
+      "op": "×",
+      "point": {
+       "data_ref": "arr"
+      },
+      "caption": "today's ARR, the base NRR is measured on"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "pro_full"
+      },
+      "caption": "added ARR if every account moved to Pro: 9,800 × $893 a year"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "breakeven"
+      },
+      "caption": "of accounts must move to Pro to close the gap alone"
+     }
+    ],
+    "assumptions_header": "The 2023 benchmark clears the bar; the volunteer paywall rate does not",
+    "assumptions": [
+     "At the 33% uptake seen after the 2023 tier launch, Pro adds about 5.0 percentage points of NRR",
+     "At the 14% paywall rate, Pro adds only 2.1 percentage points; win-backs or lower churn must close the rest",
+     "The $149 add-on reaches 4.3 percentage points only if the volunteers' 14% buying rate holds across all accounts",
+     "Churn and contraction stay at 2026 levels, so new ARR from Copilot is the only change"
+    ]
+   },
+   "unit_line": "**Pro uptake needed to lift NRR from 101% to 105%**, share of accounts, first year after launch",
+   "footnotes": [
+    "Added NRR = first-year new ARR ÷ today's $57.6M ARR; Pro at 33%: $2.89M, Pro at 14%: $1.22M, add-on: $2.45M"
+   ]
+  },
+  {
+   "id": "9",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Inside Pro, Copilot keeps gross margin near 76.5%, above the floor, and repays its build in about 13 months",
+    "clauses": 1,
+    "numbers": [
+     {
+      "text": "76.5%",
+      "data_ref": "gm_pro"
+     },
+     {
+      "text": "13 months",
+      "data_ref": "payback"
+     }
+    ]
+   },
+   "archetype": "kpi-big-numbers",
+   "message_type": "item",
+   "body": {
+    "kind": "kpi",
+    "items": [
+     {
+      "point": {
+       "data_ref": "gm_pro"
+      },
+      "caption": "company gross margin with Pro, first year",
+      "drivers": [
+       "Against 78% today and a 75% floor",
+       "The add-on would land at 76.2%"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "gm_incr"
+      },
+      "caption": "gross margin on Pro revenue",
+      "drivers": [
+       "Inference $0.96M, platform $0.6M a year",
+       "List prices fell 35%: upside from 2028"
+      ]
+     },
+     {
+      "point": {
+       "data_ref": "payback"
+      },
+      "caption": "months to repay the $1.47M build",
+      "drivers": [
+       "From $1.33M of Pro gross profit a year",
+       "The add-on would take about 21 months"
+      ]
+     }
+    ]
+   },
+   "unit_line": "**Copilot economics in a Pro plan**, first year after launch, at 2023 tier uptake",
+   "basis": {
+    "header": "How we built company margin",
+    "terms": [
+     {
+      "point": {
+       "data_ref": "gp_with"
+      },
+      "caption": "gross profit: 78% of $57.6M today plus $1.33M from Pro"
+     },
+     {
+      "op": "÷",
+      "point": {
+       "data_ref": "arr_with"
+      },
+      "caption": "ARR: $57.6M today plus $2.89M from Pro"
+     },
+     {
+      "op": "=",
+      "point": {
+       "data_ref": "gm_pro"
+      },
+      "caption": "company gross margin with Pro"
+     }
+    ]
+   },
+   "footnotes": [
+    "Inference assumes about 444 requests per seat a month, the beta mean; beta accounts are more active than the base, so cost is likely overstated"
+   ]
+  },
+  {
+   "id": "10",
+   "role": "content",
+   "section_id": "4",
+   "status": "filled",
+   "lead_message": {
+    "text": "Mobile reliability drives 27% of churn, yet a two-quarter delay to its rewrite risks at most $1.1M of ARR",
+    "clauses": 1,
+    "numbers": [
+     {
+      "text": "27%",
+      "data_ref": "ch_mob"
+     },
+     {
+      "text": "$1.1M",
+      "data_ref": "mob_delay"
+     }
+    ],
+    "highlights": [
+     "Mobile app reliability"
+    ]
+   },
+   "archetype": "bar-ranking",
+   "message_type": "item",
+   "body": {
+    "kind": "chart",
+    "chart_type": "bar",
+    "categories": [
+     "Mobile app reliability",
+     "Price",
+     "Missing integrations",
+     "Went out of business / sold",
+     "Switched for AI features",
+     "Other"
+    ],
+    "series": [
+     {
+      "name": "Share of churned accounts",
+      "points": [
+       {
+        "data_ref": "ch_mob"
+       },
+       {
+        "data_ref": "ch_price"
+       },
+       {
+        "data_ref": "ch_int"
+       },
+       {
+        "data_ref": "ch_oob"
+       },
+       {
+        "data_ref": "ch_ai"
+       },
+       {
+        "data_ref": "ch_oth"
+       }
+      ]
+     }
+    ],
+    "sort": "none",
+    "highlight": [
+     "Mobile app reliability"
+    ],
+    "value_format": "0%"
+   },
+   "unit_line": "**Main reason given by accounts that churned**, % of 1,190 churned accounts, 2026",
+   "layout": {
+    "variant": "takeaway_sidebar",
+    "sidebar": {
+     "kind": "bullets",
+     "header": "Mobile is the bigger retention lever, but the delay is bounded",
+     "bullets": [
+      "**Mobile:** 4.5 times the churn from AI, and the top request for 38% of customers",
+      "**Delay cost:** an upper bound, far below the $2.9M a year Pro adds"
+     ],
+     "rows": [
+      {
+       "label": "Most ARR a two-quarter delay could cost",
+       "highlight": true,
+       "basis": "1,372 churned accounts × 27% × $5,878 × ½ year",
+       "point": {
+        "data_ref": "mob_delay"
+       }
+      },
+      {
+       "label": "ARR lost a year to AI switching",
+       "basis": "Same base × 6% of churn",
+       "point": {
+        "data_ref": "ai_churn"
+       }
+      }
+     ]
+    }
+   },
+   "footnotes": [
+    "Churned accounts assumed to have the average 6.2 seats on Core at $79; annual logo churn is 14% of 9,800 accounts"
+   ]
+  },
+  {
+   "id": "d5",
+   "role": "section_divider",
+   "section_id": "5",
+   "status": "filled",
+   "archetype": "section-divider",
+   "message_type": "navigation"
+  },
+  {
+   "id": "11",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "Four guardrails protect the launch, from a fair-use allowance to a fixed restart date for mobile",
+    "clauses": 1,
+    "count_word": 4
+   },
+   "archetype": "numbered-levers",
+   "message_type": "argument",
+   "body": {
+    "kind": "levers",
+    "headers": [
+     "Guardrail",
+     "Why it matters"
+    ],
+    "items": [
+     {
+      "code": "1",
+      "text": "Fair-use allowance in Pro: include requests up to a set level per seat and meter heavy use above it",
+      "point": {
+       "data_ref": "c_top"
+      },
+      "metric": "a month in inference for a top-10% beta account"
+     },
+     {
+      "code": "2",
+      "text": "Fixed mobile restart: return all 14 Copilot engineers to the rewrite in Q3 2027, ahead of any Copilot phase two",
+      "point": {
+       "data_ref": "ch_mob"
+      },
+      "metric": "of churned accounts left over mobile app reliability"
+     },
+     {
+      "code": "3",
+      "text": "Clean win-rate test: compare win rates against Routewise once its first-year discount ends, before crediting AI",
+      "point": {
+       "data_ref": "wr_drop"
+      },
+      "metric": "fall in win rate where Routewise competed, Q3 2026"
+     },
+     {
+      "code": "4",
+      "text": "Inference renegotiation: reopen the provider contract before it expires in December 2027",
+      "point": {
+       "data_ref": "listfall"
+      },
+      "metric": "fall in the provider's list prices over 12 months"
+     }
+    ]
+   },
+   "unit_line": "**Launch guardrails**, with the evidence behind each",
+   "footnotes": [
+    "The allowance level and overage price are set in pricing design in February 2027, from beta usage per seat"
+   ]
+  },
+  {
+   "id": "12",
+   "role": "content",
+   "section_id": "5",
+   "status": "filled",
+   "lead_message": {
+    "text": "A January decision puts Pro on sale in the second quarter and the engineers back on mobile in the third",
+    "clauses": 1
+   },
+   "archetype": "timeline-roadmap",
+   "message_type": "structure",
+   "body": {
+    "kind": "timeline",
+    "periods": [
+     "Q1 2027",
+     "Q2 2027",
+     "Q3 2027",
+     "Q4 2027",
+     "Q1 2028",
+     "Q2 2028"
+    ],
+    "rows": [
+     {
+      "label": "Copilot build",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q2 2027",
+        "label": "14 engineers build and launch",
+        "emphasis": true
+       }
+      ]
+     },
+     {
+      "label": "Pro plan",
+      "bars": [
+       {
+        "start": "Q1 2027",
+        "end": "Q1 2027",
+        "label": "Set allowance, overage"
+       },
+       {
+        "start": "Q2 2027",
+        "end": "Q2 2028",
+        "label": "Pro on sale at $12 more per seat",
+        "emphasis": true
+       }
+      ]
+     },
+     {
+      "label": "Mobile rewrite",
+      "bars": [
+       {
+        "start": "Q3 2027",
+        "end": "Q2 2028",
+        "label": "Restarts with all 14 engineers back"
+       }
+      ]
+     },
+     {
+      "label": "Win-rate test",
+      "bars": [
+       {
+        "start": "Q2 2027",
+        "end": "Q3 2027",
+        "label": "Routewise deals after its discount"
+       }
+      ]
+     },
+     {
+      "label": "Inference contract",
+      "bars": [
+       {
+        "start": "Q3 2027",
+        "end": "Q4 2027",
+        "label": "Renegotiate before expiry"
+       }
+      ]
+     }
+    ],
+    "milestones": [
+     {
+      "at": "Q1 2027",
+      "label": "January decision"
+     },
+     {
+      "at": "Q2 2028",
+      "label": "Uptake read against 26%"
+     }
+    ]
+   },
+   "unit_line": "**Launch plan**, by quarter, January 2027 to mid-2028",
+   "so_what": "The decision in January sets both clocks: Copilot ships in Q2 and the mobile rewrite restarts in Q3",
+   "so_what_style": "line",
+   "footnotes": [
+    "Copilot build timing follows from a Q2 2027 launch and the 14 engineers needed for two quarters; the rewrite's end date comes from its own plan"
+   ]
+  },
+  {
+   "id": "end",
+   "role": "end_page",
+   "status": "filled"
+  }
+ ],
+ "data_points": [
+  {
+   "id": "acc",
+   "slide_id": "4",
+   "label": "Brightwork customer accounts",
+   "value": 9800,
+   "unit": "accounts",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "It has 9,800 customer accounts with an average of",
+   "locator": "Section 1, Context"
+  },
+  {
+   "id": "seats",
+   "slide_id": "6",
+   "label": "Average office seats per account",
+   "value": 6.2,
+   "unit": "seats",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "an average of\n6.2 office seats each",
+   "locator": "Section 1, Context"
+  },
+  {
+   "id": "core",
+   "slide_id": "2",
+   "label": "Core plan price per seat per month",
+   "value": 79,
+   "unit": "$",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "on the Core plan at $79 per seat per month",
+   "locator": "Section 1, Context"
+  },
+  {
+   "id": "arr",
+   "slide_id": "8",
+   "label": "Brightwork ARR",
+   "value": 57.6,
+   "unit": "$M",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "annual recurring\nrevenue (ARR) of $57.6M",
+   "locator": "Section 1, Context"
+  },
+  {
+   "id": "gm",
+   "slide_id": "9",
+   "label": "Company gross margin",
+   "value": 0.78,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "Gross margin is 78%",
+   "locator": "Section 1, Context"
+  },
+  {
+   "id": "churn",
+   "slide_id": "10",
+   "label": "Annual logo churn",
+   "value": 0.14,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "annual logo churn 14%",
+   "locator": "Section 1, Context"
+  },
+  {
+   "id": "nrr",
+   "slide_id": "8",
+   "label": "Net revenue retention, today",
+   "value": 1.01,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "net revenue retention 101%",
+   "locator": "Section 1, Context"
+  },
+  {
+   "id": "nrrt",
+   "slide_id": "8",
+   "label": "Net revenue retention target",
+   "value": 1.05,
+   "unit": "%",
+   "period": "2028",
+   "source_id": "s1",
+   "excerpt": "Raise net revenue retention from 101% to 105% by 2028.",
+   "locator": "Section 3, Objectives"
+  },
+  {
+   "id": "gmfloor",
+   "slide_id": "9",
+   "label": "Gross margin floor",
+   "value": 0.75,
+   "unit": "%",
+   "period": "ongoing",
+   "source_id": "s1",
+   "excerpt": "Keep company gross margin at or above 75%.",
+   "locator": "Section 3, Objectives"
+  },
+  {
+   "id": "eng",
+   "slide_id": "9",
+   "label": "Engineers needed to launch Copilot",
+   "value": 14,
+   "unit": "engineers",
+   "period": "two quarters",
+   "source_id": "s1",
+   "excerpt": "Engineering: 14 engineers for two quarters at a fully loaded $210,000 per engineer-year.",
+   "locator": "Section 9, Costs"
+  },
+  {
+   "id": "engcost",
+   "slide_id": "9",
+   "label": "Fully loaded cost per engineer-year",
+   "value": 210000,
+   "unit": "$",
+   "period": "2027",
+   "source_id": "s1",
+   "excerpt": "at a fully loaded $210,000 per engineer-year",
+   "locator": "Section 9, Costs"
+  },
+  {
+   "id": "prod_b",
+   "slide_id": "1",
+   "label": "Change in jobs per dispatcher-hour, beta accounts",
+   "value": 0.11,
+   "unit": "%",
+   "period": "12-week beta vs prior 12 weeks",
+   "source_id": "s1",
+   "excerpt": "| Change in jobs scheduled per dispatcher-hour vs the prior 12 weeks | +11% | +2% |",
+   "locator": "Table 1, Beta outcomes, beta column"
+  },
+  {
+   "id": "prod_m",
+   "slide_id": "1",
+   "label": "Change in jobs per dispatcher-hour, matched non-beta accounts",
+   "value": 0.02,
+   "unit": "%",
+   "period": "same 12 weeks",
+   "source_id": "s1",
+   "excerpt": "| Change in jobs scheduled per dispatcher-hour vs the prior 12 weeks | +11% | +2% |",
+   "locator": "Table 1, Beta outcomes, matched column"
+  },
+  {
+   "id": "ren_b",
+   "slide_id": "1",
+   "label": "90-day renewal rate, beta accounts",
+   "value": 0.97,
+   "unit": "%",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "| 90-day renewal rate | 97% | 93% |",
+   "locator": "Table 1, Beta outcomes, beta column"
+  },
+  {
+   "id": "ren_m",
+   "slide_id": "1",
+   "label": "90-day renewal rate, matched non-beta accounts",
+   "value": 0.93,
+   "unit": "%",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "| 90-day renewal rate | 97% | 93% |",
+   "locator": "Table 1, Beta outcomes, matched column"
+  },
+  {
+   "id": "hrs",
+   "slide_id": "1",
+   "label": "Self-reported dispatcher hours saved per week, beta",
+   "value": 4.1,
+   "unit": "hours",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "| Self-reported dispatcher hours saved per week | 4.1 | — |",
+   "locator": "Table 1, Beta outcomes"
+  },
+  {
+   "id": "beta_n",
+   "slide_id": "1",
+   "label": "Beta accounts",
+   "value": 240,
+   "unit": "accounts",
+   "period": "12-week beta",
+   "source_id": "s1",
+   "excerpt": "Beta results (240 accounts, 12 weeks, volunteers)",
+   "locator": "Section 5 heading"
+  },
+  {
+   "id": "beta_seats",
+   "slide_id": "1",
+   "label": "Average office seats, beta accounts",
+   "value": 8.1,
+   "unit": "seats",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "they are larger (8.1 seats on average)",
+   "locator": "Section 5, notes under Table 1"
+  },
+  {
+   "id": "top10",
+   "slide_id": "1",
+   "label": "Share of AI requests from the top 10% of beta accounts",
+   "value": 0.58,
+   "unit": "%",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "the top 10% of beta accounts generated 58% of all AI requests",
+   "locator": "Section 5, notes under Table 1"
+  },
+  {
+   "id": "top_dec",
+   "slide_id": "1",
+   "label": "Top slice of beta accounts by AI requests",
+   "value": 0.1,
+   "unit": "%",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "the top 10% of beta accounts generated 58% of all AI requests",
+   "locator": "Section 5, notes under Table 1"
+  },
+  {
+   "id": "ren_days",
+   "slide_id": "1",
+   "label": "Renewal window measured in the beta",
+   "value": 90,
+   "unit": "days",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "| 90-day renewal rate | 97% | 93% |",
+   "locator": "Table 1, Beta outcomes"
+  },
+  {
+   "id": "req_med",
+   "slide_id": "5",
+   "label": "AI requests per month, median beta account",
+   "value": 1900,
+   "unit": "requests",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "| Median account | 1,900 |",
+   "locator": "Table 2, AI requests per account per month"
+  },
+  {
+   "id": "req_mean",
+   "slide_id": "5",
+   "label": "AI requests per month, mean beta account",
+   "value": 3600,
+   "unit": "requests",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "| Mean account | 3,600 |",
+   "locator": "Table 2, AI requests per account per month"
+  },
+  {
+   "id": "req_top",
+   "slide_id": "5",
+   "label": "AI requests per month, mean of top 10% of beta accounts",
+   "value": 14500,
+   "unit": "requests",
+   "period": "beta period",
+   "source_id": "s1",
+   "excerpt": "| Mean of the top 10% of accounts | 14,500 |",
+   "locator": "Table 2, AI requests per account per month"
+  },
+  {
+   "id": "req_buy",
+   "slide_id": "5",
+   "label": "AI requests per month, accounts that bought at the paywall",
+   "value": 6800,
+   "unit": "requests",
+   "period": "paywall test",
+   "source_id": "s1",
+   "excerpt": "Accounts that bought averaged 6,800 requests a month.",
+   "locator": "Section 6, Paywall test"
+  },
+  {
+   "id": "cpr",
+   "slide_id": "5",
+   "label": "Inference cost per AI request",
+   "value": 0.009,
+   "unit": "$",
+   "period": "through Dec 2027",
+   "source_id": "s1",
+   "excerpt": "Model inference cost: $0.009 per request under the current provider contract, fixed through December 2027.",
+   "locator": "Section 5, cost notes"
+  },
+  {
+   "id": "listfall",
+   "slide_id": "9",
+   "label": "Fall in provider list prices over the past 12 months",
+   "value": 0.35,
+   "unit": "%",
+   "period": "past 12 months",
+   "source_id": "s1",
+   "excerpt": "The provider's list prices fell 35% over the past 12 months.",
+   "locator": "Section 5, cost notes"
+  },
+  {
+   "id": "plat",
+   "slide_id": "9",
+   "label": "Platform, evaluation and support cost of running Copilot",
+   "value": 0.6,
+   "unit": "$M",
+   "period": "a year",
+   "source_id": "s1",
+   "excerpt": "about $0.6M a year of platform, evaluation and support cost",
+   "locator": "Section 5, cost notes"
+  },
+  {
+   "id": "survey_rate",
+   "slide_id": "3",
+   "label": "Survey admins likely or very likely to buy at $149",
+   "value": 0.46,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1",
+   "excerpt": "46% said they were \"likely\" or\n  \"very likely\" to buy Copilot",
+   "locator": "Section 6, Survey (October 2026)"
+  },
+  {
+   "id": "survey_n",
+   "slide_id": "3",
+   "label": "Survey respondents",
+   "value": 610,
+   "unit": "admins",
+   "period": "Oct 2026",
+   "source_id": "s1",
+   "excerpt": "the October survey went to all 9,800 account admins; 610 replied (6%)",
+   "locator": "Section 10, Survey method note"
+  },
+  {
+   "id": "survey_resp",
+   "slide_id": "3",
+   "label": "Survey response rate",
+   "value": 0.06,
+   "unit": "%",
+   "period": "Oct 2026",
+   "source_id": "s1",
+   "excerpt": "the October survey went to all 9,800 account admins; 610 replied (6%)",
+   "locator": "Section 10, Survey method note"
+  },
+  {
+   "id": "survey_seats",
+   "slide_id": "3",
+   "label": "Average seats, survey respondents",
+   "value": 9.4,
+   "unit": "seats",
+   "period": "Oct 2026",
+   "source_id": "s1",
+   "excerpt": "Respondents average\n  9.4 seats, against 6.2 for all accounts.",
+   "locator": "Section 10, Survey method note"
+  },
+  {
+   "id": "addon_price",
+   "slide_id": "5",
+   "label": "Proposed add-on price per account per month",
+   "value": 149,
+   "unit": "$",
+   "period": "proposal",
+   "source_id": "s1",
+   "excerpt": "paid add-on at $149 per account per month",
+   "locator": "Section 4, CPO proposal"
+  },
+  {
+   "id": "cpo8",
+   "slide_id": "4",
+   "label": "CPO's first-year ARR case for the add-on",
+   "value": 8,
+   "unit": "$M",
+   "period": "first year",
+   "source_id": "s1",
+   "excerpt": "That is about $8M of new ARR in the first year.",
+   "locator": "Section 4, CPO quote"
+  },
+  {
+   "id": "pw_n",
+   "slide_id": "3",
+   "label": "Beta accounts offered the paywall",
+   "value": 120,
+   "unit": "accounts",
+   "period": "last four weeks of beta",
+   "source_id": "s1",
+   "excerpt": "120 beta accounts were offered Copilot at $149 per account per\n  month after the free period. 17 accounts (14%) bought it.",
+   "locator": "Section 6, Paywall test"
+  },
+  {
+   "id": "pw_buy",
+   "slide_id": "3",
+   "label": "Beta accounts that bought at the paywall",
+   "value": 17,
+   "unit": "accounts",
+   "period": "last four weeks of beta",
+   "source_id": "s1",
+   "excerpt": "17 accounts (14%) bought it.",
+   "locator": "Section 6, Paywall test"
+  },
+  {
+   "id": "pw_rate",
+   "slide_id": "3",
+   "label": "Paywall conversion at $149",
+   "value": 0.14,
+   "unit": "%",
+   "period": "last four weeks of beta",
+   "source_id": "s1",
+   "excerpt": "17 accounts (14%) bought it.",
+   "locator": "Section 6, Paywall test"
+  },
+  {
+   "id": "pro_up",
+   "slide_id": "6",
+   "label": "Pro plan price above Core, per seat per month",
+   "value": 12,
+   "unit": "$",
+   "period": "proposal",
+   "source_id": "s1",
+   "excerpt": "priced $12 more per seat per month than Core",
+   "locator": "Section 6, Tier option"
+  },
+  {
+   "id": "tier_up",
+   "slide_id": "6",
+   "label": "Accounts that moved to the 2023 higher tier within a year",
+   "value": 0.33,
+   "unit": "%",
+   "period": "2023 launch, first year",
+   "source_id": "s1",
+   "excerpt": "When\n  Brightwork last launched a higher tier (2023), 33% of accounts moved to it within a year.",
+   "locator": "Section 6, Tier option"
+  },
+  {
+   "id": "wr_pre",
+   "slide_id": "2",
+   "label": "Win rate where Routewise competed, Q1–Q2 2026",
+   "value": 0.44,
+   "unit": "%",
+   "period": "Q1–Q2 2026",
+   "source_id": "s1",
+   "excerpt": "fell from 44% (Q1–Q2 2026) to 37% (Q3 2026)",
+   "locator": "Section 7, Competitor evidence"
+  },
+  {
+   "id": "wr_post",
+   "slide_id": "2",
+   "label": "Win rate where Routewise competed, Q3 2026",
+   "value": 0.37,
+   "unit": "%",
+   "period": "Q3 2026",
+   "source_id": "s1",
+   "excerpt": "fell from 44% (Q1–Q2 2026) to 37% (Q3 2026)",
+   "locator": "Section 7, Competitor evidence"
+  },
+  {
+   "id": "opps",
+   "slide_id": "2",
+   "label": "Qualified new-customer opportunities a year",
+   "value": 2600,
+   "unit": "opportunities",
+   "period": "a year",
+   "source_id": "s1",
+   "excerpt": "Brightwork has about 2,600 qualified new-customer opportunities a year",
+   "locator": "Section 7, Competitor evidence"
+  },
+  {
+   "id": "rw_share",
+   "slide_id": "2",
+   "label": "Share of opportunities where Routewise competes",
+   "value": 0.6,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "Routewise competes in about 60% of\n  them",
+   "locator": "Section 7, Competitor evidence"
+  },
+  {
+   "id": "ai_loss",
+   "slide_id": "2",
+   "label": "Q3 2026 lost deals whose loss notes mention AI",
+   "value": 0.31,
+   "unit": "%",
+   "period": "Q3 2026",
+   "source_id": "s1",
+   "excerpt": "In Q3 2026 lost deals, 31% of loss notes mention AI features.",
+   "locator": "Section 7, Competitor evidence"
+  },
+  {
+   "id": "promo",
+   "slide_id": "2",
+   "label": "Routewise first-year discount in Q3 2026",
+   "value": 0.2,
+   "unit": "%",
+   "period": "Q3 2026",
+   "source_id": "s1",
+   "excerpt": "Routewise also offered 20% off the first year in Q3",
+   "locator": "Section 11, Uncertainties"
+  },
+  {
+   "id": "ch_mob",
+   "slide_id": "10",
+   "label": "Churned accounts' main reason: Mobile app reliability",
+   "value": 0.27,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "| Mobile app reliability | 27% |",
+   "locator": "Table 3, Main reason given by accounts that churned, 2026 (n = 1,190)"
+  },
+  {
+   "id": "ch_price",
+   "slide_id": "10",
+   "label": "Churned accounts' main reason: Price",
+   "value": 0.22,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "| Price | 22% |",
+   "locator": "Table 3, Main reason given by accounts that churned, 2026 (n = 1,190)"
+  },
+  {
+   "id": "ch_int",
+   "slide_id": "10",
+   "label": "Churned accounts' main reason: Missing integrations",
+   "value": 0.15,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "| Missing integrations | 15% |",
+   "locator": "Table 3, Main reason given by accounts that churned, 2026 (n = 1,190)"
+  },
+  {
+   "id": "ch_oob",
+   "slide_id": "10",
+   "label": "Churned accounts' main reason: Went out of business / sold",
+   "value": 0.14,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "| Went out of business / sold | 14% |",
+   "locator": "Table 3, Main reason given by accounts that churned, 2026 (n = 1,190)"
+  },
+  {
+   "id": "ch_ai",
+   "slide_id": "10",
+   "label": "Churned accounts' main reason: Switched for AI features",
+   "value": 0.06,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "| Switched for AI features | 6% |",
+   "locator": "Table 3, Main reason given by accounts that churned, 2026 (n = 1,190)"
+  },
+  {
+   "id": "ch_oth",
+   "slide_id": "10",
+   "label": "Churned accounts' main reason: Other",
+   "value": 0.16,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "| Other | 16% |",
+   "locator": "Table 3, Main reason given by accounts that churned, 2026 (n = 1,190)"
+  },
+  {
+   "id": "ch_n",
+   "slide_id": "10",
+   "label": "Churned accounts surveyed for main reason",
+   "value": 1190,
+   "unit": "accounts",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "Main reason given by accounts that churned, 2026 (n = 1,190)",
+   "locator": "Table 3 heading"
+  },
+  {
+   "id": "fr_mob",
+   "slide_id": "10",
+   "label": "Customers ranking a reliable mobile app as top request",
+   "value": 0.38,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "\"a reliable technician mobile app\" (38% rank it first)",
+   "locator": "Section 8, Customer evidence"
+  },
+  {
+   "id": "fr_ai",
+   "slide_id": "10",
+   "label": "Customers ranking AI scheduling as top request",
+   "value": 0.19,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s1",
+   "excerpt": "AI scheduling is ranked first by 19%",
+   "locator": "Section 8, Customer evidence"
+  },
+  {
+   "id": "acct_year",
+   "slide_id": "2",
+   "label": "Core ARR per average account",
+   "value": 5877.6,
+   "unit": "$",
+   "period": "2026",
+   "source_id": "s2",
+   "derived_from": [
+    "seats",
+    "core"
+   ],
+   "calc": "seats * core * 12",
+   "formula": "6.2 seats × $79 × 12 = $5,878"
+  },
+  {
+   "id": "prod_net",
+   "slide_id": "1",
+   "label": "Beta productivity gain over matched accounts",
+   "value": 9.0,
+   "unit": "pp",
+   "period": "beta period",
+   "source_id": "s2",
+   "derived_from": [
+    "prod_b",
+    "prod_m"
+   ],
+   "calc": "(prod_b - prod_m) * 100",
+   "formula": "11% − 2% = 9 pp"
+  },
+  {
+   "id": "nrr_gap",
+   "slide_id": "8",
+   "label": "NRR gap to the 2028 target",
+   "value": 4.0,
+   "unit": "pp",
+   "period": "2026 to 2028",
+   "source_id": "s2",
+   "derived_from": [
+    "nrr",
+    "nrrt"
+   ],
+   "calc": "(nrrt - nrr) * 100",
+   "formula": "105% − 101% = 4 pp"
+  },
+  {
+   "id": "rw_deals",
+   "slide_id": "2",
+   "label": "Opportunities a year where Routewise competes",
+   "value": 1560.0,
+   "unit": "deals",
+   "period": "a year",
+   "source_id": "s2",
+   "derived_from": [
+    "opps",
+    "rw_share"
+   ],
+   "calc": "opps * rw_share",
+   "formula": "2,600 × 60% = 1,560"
+  },
+  {
+   "id": "wr_drop",
+   "slide_id": "2",
+   "label": "Fall in win rate against Routewise",
+   "value": 7.0,
+   "unit": "pp",
+   "period": "Q1–Q2 2026 to Q3 2026",
+   "source_id": "s2",
+   "derived_from": [
+    "wr_pre",
+    "wr_post"
+   ],
+   "calc": "(wr_pre - wr_post) * 100",
+   "formula": "44% − 37% = 7 pp"
+  },
+  {
+   "id": "rw_wins",
+   "slide_id": "2",
+   "label": "Wins a year lost if the lower Routewise win rate persists",
+   "value": 109.2,
+   "unit": "deals",
+   "period": "a year",
+   "source_id": "s2",
+   "derived_from": [
+    "opps",
+    "rw_share",
+    "wr_pre",
+    "wr_post"
+   ],
+   "calc": "opps * rw_share * (wr_pre - wr_post)",
+   "formula": "1,560 deals × 7 pp = 109 deals",
+   "estimate": true,
+   "assumptions": [
+    "The whole fall in win rate is caused by Routewise's AI; part of it may come from its 20% first-year discount in Q3 2026",
+    "The Q3 2026 win rate persists for a full year of about 1,560 Routewise deals",
+    "Lost accounts would have had the average 6.2 seats on Core at $79"
+   ]
+  },
+  {
+   "id": "rw_arr",
+   "slide_id": "2",
+   "label": "New ARR a year at stake from the lower Routewise win rate",
+   "value": 0.641834,
+   "unit": "$M",
+   "period": "a year",
+   "source_id": "s2",
+   "derived_from": [
+    "opps",
+    "rw_share",
+    "wr_pre",
+    "wr_post",
+    "acct_year"
+   ],
+   "calc": "opps * rw_share * (wr_pre - wr_post) * acct_year / 1000000",
+   "formula": "109 deals × $5,878 = $0.64M",
+   "estimate": true,
+   "assumptions": [
+    "The whole fall in win rate is caused by Routewise's AI; part of it may come from its 20% first-year discount in Q3 2026",
+    "The Q3 2026 win rate persists for a full year of about 1,560 Routewise deals",
+    "Lost accounts would have had the average 6.2 seats on Core at $79"
+   ]
+  },
+  {
+   "id": "vp_deals",
+   "slide_id": "2",
+   "label": "Deals Sales expects Copilot to recover (a third of Routewise losses)",
+   "value": 327.6,
+   "unit": "deals",
+   "period": "a year",
+   "source_id": "s2",
+   "derived_from": [
+    "rw_deals",
+    "wr_post"
+   ],
+   "calc": "rw_deals * (1 - wr_post) / 3",
+   "formula": "1,560 × 63% lost ÷ 3 = 328 deals"
+  },
+  {
+   "id": "vp_ratio",
+   "slide_id": "2",
+   "label": "Win-rate drop as a share of the Sales recovery claim",
+   "value": 0.33,
+   "unit": "%",
+   "period": "a year",
+   "source_id": "s2",
+   "derived_from": [
+    "opps",
+    "rw_share",
+    "wr_pre",
+    "wr_post",
+    "vp_deals"
+   ],
+   "calc": "opps * rw_share * (wr_pre - wr_post) / vp_deals",
+   "formula": "109 ÷ 328 = 33%",
+   "estimate": true,
+   "assumptions": [
+    "The whole fall in win rate is caused by Routewise's AI; part of it may come from its 20% first-year discount in Q3 2026",
+    "The Q3 2026 win rate persists for a full year of about 1,560 Routewise deals",
+    "Lost accounts would have had the average 6.2 seats on Core at $79"
+   ]
+  },
+  {
+   "id": "pw_ratio",
+   "slide_id": "3",
+   "label": "Paywall conversion as a share of survey intent",
+   "value": 0.304348,
+   "unit": "%",
+   "period": "2026",
+   "source_id": "s2",
+   "derived_from": [
+    "pw_rate",
+    "survey_rate"
+   ],
+   "calc": "pw_rate / survey_rate",
+   "formula": "14% ÷ 46% = 30%"
+  },
+  {
+   "id": "addon_year",
+   "slide_id": "4",
+   "label": "Add-on price per account per year",
+   "value": 1788,
+   "unit": "$",
+   "period": "a year",
+   "source_id": "s2",
+   "derived_from": [
+    "addon_price"
+   ],
+   "calc": "addon_price * 12",
+   "formula": "$149 × 12 = $1,788"
+  },
+  {
+   "id": "addon_accts",
+   "slide_id": "4",
+   "label": "Accounts buying the add-on at the paywall rate",
+   "value": 1372.0,
+   "unit": "accounts",
+   "period": "first year",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "pw_rate"
+   ],
+   "calc": "acc * pw_rate",
+   "formula": "9,800 × 14% = 1,372",
+   "estimate": true,
+   "assumptions": [
+    "The 14% paywall rate among beta volunteers holds across all 9,800 accounts; volunteers are larger and more active, so it is a ceiling",
+    "Every buyer converts within the first year and keeps paying $149 a month",
+    "No discount at launch and no change to Core pricing"
+   ]
+  },
+  {
+   "id": "addon_arr",
+   "slide_id": "4",
+   "label": "First-year ARR from the $149 add-on at the paywall rate",
+   "value": 2.453136,
+   "unit": "$M",
+   "period": "first year",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "pw_rate",
+    "addon_year"
+   ],
+   "calc": "acc * pw_rate * addon_year / 1000000",
+   "formula": "9,800 × 14% × $1,788 = $2.45M",
+   "estimate": true,
+   "assumptions": [
+    "The 14% paywall rate among beta volunteers holds across all 9,800 accounts; volunteers are larger and more active, so it is a ceiling",
+    "Every buyer converts within the first year and keeps paying $149 a month",
+    "No discount at launch and no change to Core pricing"
+   ]
+  },
+  {
+   "id": "c_med",
+   "slide_id": "5",
+   "label": "Inference cost per month, median beta account",
+   "value": 17.1,
+   "unit": "$",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "req_med",
+    "cpr"
+   ],
+   "calc": "req_med * cpr",
+   "formula": "1,900 requests × $0.009"
+  },
+  {
+   "id": "c_mean",
+   "slide_id": "5",
+   "label": "Inference cost per month, mean beta account",
+   "value": 32.4,
+   "unit": "$",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "req_mean",
+    "cpr"
+   ],
+   "calc": "req_mean * cpr",
+   "formula": "3,600 requests × $0.009"
+  },
+  {
+   "id": "c_buy",
+   "slide_id": "5",
+   "label": "Inference cost per month, paywall buyer",
+   "value": 61.2,
+   "unit": "$",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "req_buy",
+    "cpr"
+   ],
+   "calc": "req_buy * cpr",
+   "formula": "6,800 requests × $0.009"
+  },
+  {
+   "id": "c_top",
+   "slide_id": "5",
+   "label": "Inference cost per month, top-10% beta account",
+   "value": 130.5,
+   "unit": "$",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "req_top",
+    "cpr"
+   ],
+   "calc": "req_top * cpr",
+   "formula": "14,500 requests × $0.009"
+  },
+  {
+   "id": "buy_share",
+   "slide_id": "5",
+   "label": "Inference cost as a share of the $149 price, paywall buyers",
+   "value": 0.41,
+   "unit": "%",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "c_buy",
+    "addon_price"
+   ],
+   "calc": "c_buy / addon_price",
+   "formula": "$61.2 ÷ $149 = 41%"
+  },
+  {
+   "id": "top_share",
+   "slide_id": "5",
+   "label": "Inference cost as a share of the $149 price, top 10% of accounts",
+   "value": 0.88,
+   "unit": "%",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "c_top",
+    "addon_price"
+   ],
+   "calc": "c_top / addon_price",
+   "formula": "$130.5 ÷ $149 = 88%"
+  },
+  {
+   "id": "buy_mult",
+   "slide_id": "5",
+   "label": "Paywall buyers' requests compared with the median account",
+   "value": 3.578947,
+   "unit": "x",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "c_buy",
+    "c_med"
+   ],
+   "calc": "c_buy / c_med",
+   "formula": "$61.2 ÷ $17.1 = 3.6x"
+  },
+  {
+   "id": "c_seat",
+   "slide_id": "7",
+   "label": "Inference cost per Pro seat per month",
+   "value": 4.0,
+   "unit": "$",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "req_mean",
+    "beta_seats",
+    "cpr"
+   ],
+   "calc": "req_mean / beta_seats * cpr",
+   "formula": "3,600 ÷ 8.1 seats × $0.009 = $4.00",
+   "estimate": true,
+   "assumptions": [
+    "AI requests scale with office seats: the beta mean of 3,600 requests over 8.1 seats gives about 444 requests per seat a month",
+    "Beta accounts were more active than the base, so this overstates cost for a typical Pro account",
+    "Inference stays at $0.009 a request, the contract price fixed through December 2027"
+   ]
+  },
+  {
+   "id": "pro_share",
+   "slide_id": "7",
+   "label": "Inference cost as a share of the $12 Pro seat uplift",
+   "value": 0.33,
+   "unit": "%",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "req_mean",
+    "beta_seats",
+    "cpr",
+    "pro_up"
+   ],
+   "calc": "req_mean / beta_seats * cpr / pro_up",
+   "formula": "$4.00 ÷ $12 = 33%",
+   "estimate": true,
+   "assumptions": [
+    "AI requests scale with office seats: the beta mean of 3,600 requests over 8.1 seats gives about 444 requests per seat a month",
+    "Beta accounts were more active than the base, so this overstates cost for a typical Pro account",
+    "Inference stays at $0.009 a request, the contract price fixed through December 2027"
+   ]
+  },
+  {
+   "id": "addon_seat",
+   "slide_id": "7",
+   "label": "Add-on price per seat for an average 6.2-seat account",
+   "value": 24.032258,
+   "unit": "$",
+   "period": "per month",
+   "source_id": "s2",
+   "derived_from": [
+    "addon_price",
+    "seats"
+   ],
+   "calc": "addon_price / seats",
+   "formula": "$149 ÷ 6.2 = $24"
+  },
+  {
+   "id": "pro_year",
+   "slide_id": "6",
+   "label": "Pro price increase per average account per year",
+   "value": 893.0,
+   "unit": "$",
+   "period": "a year",
+   "source_id": "s2",
+   "derived_from": [
+    "seats",
+    "pro_up"
+   ],
+   "calc": "seats * pro_up * 12",
+   "formula": "6.2 seats × $12 × 12 = $893"
+  },
+  {
+   "id": "pro_arr",
+   "slide_id": "6",
+   "label": "First-year ARR from Pro at the 2023 tier uptake",
+   "value": 2.887962,
+   "unit": "$M",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "tier_up",
+    "pro_year"
+   ],
+   "calc": "acc * tier_up * pro_year / 1000000",
+   "formula": "9,800 × 33% × $893 = $2.89M",
+   "estimate": true,
+   "assumptions": [
+    "33% of accounts move to Pro within a year, as they did to the higher tier launched in 2023",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today"
+   ]
+  },
+  {
+   "id": "nrr_pro",
+   "slide_id": "8",
+   "label": "NRR added by Pro at the 2023 uptake of 33%",
+   "value": 5.013823,
+   "unit": "pp",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "tier_up",
+    "pro_year",
+    "arr"
+   ],
+   "calc": "acc * tier_up * pro_year / 1000000 / arr * 100",
+   "formula": "$2.89M ÷ $57.6M = 5.0 pp",
+   "estimate": true,
+   "assumptions": [
+    "33% of accounts move to Pro within a year, as they did to the higher tier launched in 2023",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today",
+    "Added NRR = first-year new ARR ÷ today's $57.6M ARR",
+    "Churn and contraction stay at 2026 levels"
+   ]
+  },
+  {
+   "id": "nrr_add",
+   "slide_id": "8",
+   "label": "NRR added by the add-on at the 14% paywall rate",
+   "value": 4.258917,
+   "unit": "pp",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "pw_rate",
+    "addon_year",
+    "arr"
+   ],
+   "calc": "acc * pw_rate * addon_year / 1000000 / arr * 100",
+   "formula": "$2.45M ÷ $57.6M = 4.3 pp",
+   "estimate": true,
+   "assumptions": [
+    "The 14% paywall rate among beta volunteers holds across all 9,800 accounts; volunteers are larger and more active, so it is a ceiling",
+    "Every buyer converts within the first year and keeps paying $149 a month",
+    "No discount at launch and no change to Core pricing",
+    "Added NRR = first-year new ARR ÷ today's $57.6M ARR",
+    "Churn and contraction stay at 2026 levels"
+   ]
+  },
+  {
+   "id": "nrr_prolow",
+   "slide_id": "8",
+   "label": "NRR added by Pro if only 14% of accounts move",
+   "value": 2.127076,
+   "unit": "pp",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "pw_rate",
+    "pro_year",
+    "arr"
+   ],
+   "calc": "acc * pw_rate * pro_year / 1000000 / arr * 100",
+   "formula": "9,800 × 14% × $893 = $1.22M; ÷ $57.6M = 2.1 pp",
+   "estimate": true,
+   "assumptions": [
+    "Pro uptake falls to the 14% paywall conversion rate",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today",
+    "Added NRR = first-year new ARR ÷ today's $57.6M ARR",
+    "Churn and contraction stay at 2026 levels"
+   ]
+  },
+  {
+   "id": "pro_full",
+   "slide_id": "8",
+   "label": "ARR added if every account moved to Pro",
+   "value": 8.7514,
+   "unit": "$M",
+   "period": "a year",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "pro_year"
+   ],
+   "calc": "acc * pro_year / 1000000",
+   "formula": "9,800 × $893 = $8.75M"
+  },
+  {
+   "id": "breakeven",
+   "slide_id": "8",
+   "label": "Pro uptake needed to close the NRR gap alone",
+   "value": 0.26,
+   "unit": "%",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "nrr_gap",
+    "arr",
+    "pro_full"
+   ],
+   "calc": "nrr_gap / 100 * arr / pro_full",
+   "formula": "4 pp × $57.6M ÷ $8.75M = 26%",
+   "estimate": true,
+   "assumptions": [
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today",
+    "Added NRR = first-year new ARR ÷ today's $57.6M ARR",
+    "Churn and contraction stay at 2026 levels"
+   ]
+  },
+  {
+   "id": "pro_inf",
+   "slide_id": "9",
+   "label": "Inference cost of Pro a year",
+   "value": 0.962438,
+   "unit": "$M",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "tier_up",
+    "seats",
+    "c_seat"
+   ],
+   "calc": "acc * tier_up * seats * c_seat * 12 / 1000000",
+   "formula": "3,234 accounts × 6.2 seats × $4.00 × 12 = $0.96M",
+   "estimate": true,
+   "assumptions": [
+    "33% of accounts move to Pro within a year, as they did to the higher tier launched in 2023",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today",
+    "AI requests scale with office seats: the beta mean of 3,600 requests over 8.1 seats gives about 444 requests per seat a month",
+    "Platform, evaluation and support cost of $0.6M a year sits in cost of revenue"
+   ]
+  },
+  {
+   "id": "pro_gp",
+   "slide_id": "9",
+   "label": "Gross profit from Pro a year",
+   "value": 1.325524,
+   "unit": "$M",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "pro_arr",
+    "pro_inf",
+    "plat"
+   ],
+   "calc": "pro_arr - pro_inf - plat",
+   "formula": "$2.89M − $0.96M − $0.6M = $1.33M",
+   "estimate": true,
+   "assumptions": [
+    "33% of accounts move to Pro within a year, as they did to the higher tier launched in 2023",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today",
+    "AI requests scale with office seats: the beta mean of 3,600 requests over 8.1 seats gives about 444 requests per seat a month",
+    "Platform, evaluation and support cost of $0.6M a year sits in cost of revenue"
+   ]
+  },
+  {
+   "id": "gp_with",
+   "slide_id": "9",
+   "label": "Company gross profit with Pro",
+   "value": 46.253524,
+   "unit": "$M",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "arr",
+    "gm",
+    "pro_gp"
+   ],
+   "calc": "arr * gm + pro_gp",
+   "formula": "78% × $57.6M + $1.33M = $46.3M",
+   "estimate": true,
+   "assumptions": [
+    "33% of accounts move to Pro within a year, as they did to the higher tier launched in 2023",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today",
+    "AI requests scale with office seats: the beta mean of 3,600 requests over 8.1 seats gives about 444 requests per seat a month",
+    "Platform, evaluation and support cost of $0.6M a year sits in cost of revenue"
+   ]
+  },
+  {
+   "id": "arr_with",
+   "slide_id": "9",
+   "label": "Company ARR with Pro",
+   "value": 60.487962,
+   "unit": "$M",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "arr",
+    "pro_arr"
+   ],
+   "calc": "arr + pro_arr",
+   "formula": "$57.6M + $2.89M = $60.5M",
+   "estimate": true,
+   "assumptions": [
+    "33% of accounts move to Pro within a year, as they did to the higher tier launched in 2023",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today",
+    "AI requests scale with office seats: the beta mean of 3,600 requests over 8.1 seats gives about 444 requests per seat a month",
+    "Platform, evaluation and support cost of $0.6M a year sits in cost of revenue"
+   ]
+  },
+  {
+   "id": "gm_pro",
+   "slide_id": "9",
+   "label": "Company gross margin with Pro",
+   "value": 0.764673,
+   "unit": "%",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "gp_with",
+    "arr_with"
+   ],
+   "calc": "gp_with / arr_with",
+   "formula": "$46.3M ÷ $60.5M = 76.5%",
+   "estimate": true,
+   "assumptions": [
+    "33% of accounts move to Pro within a year, as they did to the higher tier launched in 2023",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today",
+    "AI requests scale with office seats: the beta mean of 3,600 requests over 8.1 seats gives about 444 requests per seat a month",
+    "Platform, evaluation and support cost of $0.6M a year sits in cost of revenue"
+   ]
+  },
+  {
+   "id": "gm_incr",
+   "slide_id": "9",
+   "label": "Gross margin on Pro revenue",
+   "value": 0.46,
+   "unit": "%",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "pro_gp",
+    "pro_arr"
+   ],
+   "calc": "pro_gp / pro_arr",
+   "formula": "$1.33M ÷ $2.89M = 46%",
+   "estimate": true,
+   "assumptions": [
+    "33% of accounts move to Pro within a year, as they did to the higher tier launched in 2023",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today",
+    "AI requests scale with office seats: the beta mean of 3,600 requests over 8.1 seats gives about 444 requests per seat a month",
+    "Platform, evaluation and support cost of $0.6M a year sits in cost of revenue"
+   ]
+  },
+  {
+   "id": "addon_gp",
+   "slide_id": "9",
+   "label": "Gross profit from the add-on a year",
+   "value": 0.845539,
+   "unit": "$M",
+   "period": "first year",
+   "source_id": "s2",
+   "derived_from": [
+    "addon_arr",
+    "addon_accts",
+    "c_buy",
+    "plat"
+   ],
+   "calc": "addon_arr - addon_accts * c_buy * 12 / 1000000 - plat",
+   "formula": "$2.45M − 1,372 × $61.2 × 12 − $0.6M = $0.85M",
+   "estimate": true,
+   "assumptions": [
+    "The 14% paywall rate among beta volunteers holds across all 9,800 accounts; volunteers are larger and more active, so it is a ceiling",
+    "Every buyer converts within the first year and keeps paying $149 a month",
+    "No discount at launch and no change to Core pricing",
+    "Buyers keep the paywall buyers' average of 6,800 requests a month"
+   ]
+  },
+  {
+   "id": "gm_add",
+   "slide_id": "9",
+   "label": "Company gross margin with the add-on",
+   "value": 0.762217,
+   "unit": "%",
+   "period": "first year",
+   "source_id": "s2",
+   "derived_from": [
+    "arr",
+    "gm",
+    "addon_gp",
+    "addon_arr"
+   ],
+   "calc": "(arr * gm + addon_gp) / (arr + addon_arr)",
+   "formula": "($44.9M + $0.85M) ÷ ($57.6M + $2.45M) = 76.2%",
+   "estimate": true,
+   "assumptions": [
+    "The 14% paywall rate among beta volunteers holds across all 9,800 accounts; volunteers are larger and more active, so it is a ceiling",
+    "Every buyer converts within the first year and keeps paying $149 a month",
+    "No discount at launch and no change to Core pricing",
+    "Buyers keep the paywall buyers' average of 6,800 requests a month"
+   ]
+  },
+  {
+   "id": "eng_cost",
+   "slide_id": "9",
+   "label": "Engineering cost of the Copilot launch",
+   "value": 1.47,
+   "unit": "$M",
+   "period": "Q1–Q2 2027",
+   "source_id": "s2",
+   "derived_from": [
+    "eng",
+    "engcost"
+   ],
+   "calc": "eng * 0.5 * engcost / 1000000",
+   "formula": "14 engineers × half a year × $210,000 = $1.47M"
+  },
+  {
+   "id": "payback",
+   "slide_id": "9",
+   "label": "Months for Pro gross profit to repay the build",
+   "value": 13.3,
+   "unit": "months",
+   "period": "from launch",
+   "source_id": "s2",
+   "derived_from": [
+    "eng_cost",
+    "pro_gp"
+   ],
+   "calc": "eng_cost / pro_gp * 12",
+   "formula": "$1.47M ÷ $1.33M a year × 12 = 13 months; rests on the Pro gross profit estimate"
+  },
+  {
+   "id": "payback_add",
+   "slide_id": "9",
+   "label": "Months for add-on gross profit to repay the build",
+   "value": 20.862427,
+   "unit": "months",
+   "period": "from launch",
+   "source_id": "s2",
+   "derived_from": [
+    "eng_cost",
+    "addon_gp"
+   ],
+   "calc": "eng_cost / addon_gp * 12",
+   "formula": "$1.47M ÷ $0.85M a year × 12 = 21 months",
+   "estimate": true,
+   "assumptions": [
+    "The 14% paywall rate among beta volunteers holds across all 9,800 accounts; volunteers are larger and more active, so it is a ceiling",
+    "Every buyer converts within the first year and keeps paying $149 a month",
+    "No discount at launch and no change to Core pricing"
+   ]
+  },
+  {
+   "id": "churned",
+   "slide_id": "10",
+   "label": "Accounts lost to churn a year",
+   "value": 1372.0,
+   "unit": "accounts",
+   "period": "2026",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "churn"
+   ],
+   "calc": "acc * churn",
+   "formula": "9,800 × 14% = 1,372"
+  },
+  {
+   "id": "mob_delay",
+   "slide_id": "10",
+   "label": "Most ARR a two-quarter mobile delay could cost",
+   "value": 1.088649,
+   "unit": "$M",
+   "period": "two quarters",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "churn",
+    "ch_mob",
+    "acct_year"
+   ],
+   "calc": "acc * churn * ch_mob * acct_year * 0.5 / 1000000",
+   "formula": "9,800 × 14% × 27% × $5,878 × ½ = $1.09M",
+   "estimate": true,
+   "assumptions": [
+    "Churned accounts have the average 6.2 seats on Core at $79",
+    "The rewrite would remove all mobile-driven churn the day it ships; any smaller effect lowers the cost",
+    "Two quarters = half a year of mobile-driven churn"
+   ]
+  },
+  {
+   "id": "ai_churn",
+   "slide_id": "10",
+   "label": "ARR lost a year to churn for AI features",
+   "value": 0.483844,
+   "unit": "$M",
+   "period": "a year",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "churn",
+    "ch_ai",
+    "acct_year"
+   ],
+   "calc": "acc * churn * ch_ai * acct_year / 1000000",
+   "formula": "9,800 × 14% × 6% × $5,878 = $0.48M",
+   "estimate": true,
+   "assumptions": [
+    "Churned accounts have the average 6.2 seats on Core at $79"
+   ]
+  },
+  {
+   "id": "mob_mult",
+   "slide_id": "10",
+   "label": "Mobile churn compared with AI churn",
+   "value": 4.5,
+   "unit": "x",
+   "period": "2026",
+   "source_id": "s2",
+   "derived_from": [
+    "ch_mob",
+    "ch_ai"
+   ],
+   "calc": "ch_mob / ch_ai",
+   "formula": "27% ÷ 6% = 4.5x"
+  },
+  {
+   "id": "pro_low_arr",
+   "slide_id": "6",
+   "label": "ARR a year from Pro if only 14% of accounts move",
+   "value": 1.225196,
+   "unit": "$M",
+   "period": "first year after launch",
+   "source_id": "s2",
+   "derived_from": [
+    "acc",
+    "pw_rate",
+    "pro_year"
+   ],
+   "calc": "acc * pw_rate * pro_year / 1000000",
+   "formula": "9,800 × 14% × $893 = $1.22M",
+   "estimate": true,
+   "assumptions": [
+    "Pro uptake falls to the 14% paywall conversion rate",
+    "Accounts that move have the average 6.2 office seats; larger movers would raise the figure",
+    "Every Pro seat pays the full $12 a month uplift, with no launch discount",
+    "Core stays at $79 per seat, so no account pays less than today"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "user_provided",
+   "name": "Brightwork briefing pack",
+   "input_id": "in-1"
+  },
+  {
+   "id": "s2",
+   "kind": "derived",
+   "name": "Team analysis of the Brightwork briefing pack"
+  }
+ ]
+}

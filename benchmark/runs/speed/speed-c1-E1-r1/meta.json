@@ -1,0 +1,249 @@
+{
+ "run_id": "speed-c1-E1-r1",
+ "case": "c1-market-entry",
+ "condition": "E1",
+ "rep": 1,
+ "order": 8,
+ "phase": "speed",
+ "status": "complete",
+ "attempts": [
+  {
+   "attempt": 1,
+   "status": "complete",
+   "turns": [
+    {
+     "turn": 0,
+     "prompt": "task",
+     "wall_s": 1134.9,
+     "timed_out": false,
+     "init": {
+      "model": "claude-opus-5-5",
+      "tools": [
+       "Task",
+       "Bash",
+       "Edit",
+       "Read",
+       "Skill",
+       "Write"
+      ],
+      "skills": [
+       "deep-research",
+       "hire-your-mck:hire-your-mck",
+       "design",
+       "design-sync",
+       "dataviz",
+       "update-config",
+       "verify",
+       "debug",
+       "code-review",
+       "simplify",
+       "batch",
+       "fewer-permission-prompts",
+       "doctor",
+       "claude-approvals",
+       "loop",
+       "schedule",
+       "claude-api",
+       "workflow-authoring",
+       "run",
+       "run-skill-generator",
+       "plugin-authoring"
+      ],
+      "plugins": [
+       {
+        "name": "hire-your-mck",
+        "path": "/Users/brianlee0113/hym-bench-work/_plugin/hire-your-mck-c16061fa352c",
+        "source": "hire-your-mck@inline",
+        "version": "1.2.0"
+       },
+       {
+        "name": "cc-plugin-agents-md",
+        "path": "builtin",
+        "source": "cc-plugin-agents-md@builtin"
+       },
+       {
+        "name": "cc-plugin-telemetry",
+        "path": "builtin",
+        "source": "cc-plugin-telemetry@builtin"
+       },
+       {
+        "name": "cc-plugin-privacy",
+        "path": "builtin",
+        "source": "cc-plugin-privacy@builtin"
+       },
+       {
+        "name": "cc-plugin-plugin-authoring",
+        "path": "builtin",
+        "source": "cc-plugin-plugin-authoring@builtin"
+       }
+      ],
+      "claude_code_version": "2.1.332",
+      "permissionMode": "dontAsk"
+     },
+     "result": {
+      "subtype": "success",
+      "is_error": false,
+      "num_turns": 43,
+      "duration_ms": 1133872,
+      "duration_api_ms": 1112013,
+      "total_cost_usd": 5.392375400000001,
+      "usage": {
+       "input_tokens": 78,
+       "cache_creation_input_tokens": 220675,
+       "cache_read_input_tokens": 6005217,
+       "output_tokens": 121281,
+       "output_tokens_details": {
+        "thinking_tokens": 62407
+       },
+       "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+       },
+       "service_tier": "standard",
+       "cache_creation": {
+        "ephemeral_1h_input_tokens": 220675,
+        "ephemeral_5m_input_tokens": 0
+       },
+       "inference_geo": "global",
+       "iterations": [
+        {
+         "input_tokens": 2,
+         "output_tokens": 1801,
+         "cache_read_input_tokens": 227075,
+         "cache_creation_input_tokens": 972,
+         "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 972
+         },
+         "type": "message"
+        }
+       ],
+       "speed": "standard",
+       "fallback_credit": null
+      },
+      "modelUsage": {
+       "claude-opus-5-5": {
+        "inputTokens": 78,
+        "outputTokens": 121281,
+        "cacheReadInputTokens": 6005217,
+        "cacheCreationInputTokens": 220675,
+        "webSearchRequests": 0,
+        "costUSD": 5.392375400000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 62407,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 220675,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+       }
+      },
+      "stop_reason": "end_turn",
+      "terminal_reason": "completed",
+      "api_error_status": null,
+      "permission_denials": [],
+      "subagent_stats": {
+       "spawned": 0,
+       "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+       },
+       "started_in_background": 0,
+       "max_depth": 0,
+       "spawned_by_subagents": 0,
+       "completed": 0,
+       "failed": 0,
+       "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+       },
+       "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+       },
+       "by_type": {}
+      }
+     },
+     "result_text_tail": "s cash excludes stock, because the pack doesn't give a figure for it.\n- **Duty timing:** the duty case assumes the 25% rate applies from January 2028.\n- **Trade-press figure left out:** the $5.2B \"US K-beauty market\" figure also counts makeup and hair care, so the deck uses the $3.6B skincare figure and says why in a footnote.\n\n**Checks**\n- **No gaps:** all 217 numbers come from the briefing pack or a calculation on it, and none are placeholders.\n- **QA:** the checker passes with 0 failures and 4 warnings, all minor:\n  - The three annual growth rates (CAGRs) need a power, which the source workbook's formula format can't express, so they show the formula as text rather than a live calculation.\n  - One figure beside the payback chart (cash effect per point of ad cost) is flagged because it explains the gaps between the bars rather than being read off them.\n- **Layout:** the renderer reports no layout problems. I couldn't look at the slides as images because LibreOffice isn't installed, so a quick visual pass in PowerPoint is worth doing.\n- **No source re-check run:** there are no web sources, so the step that re-opens sources online didn't apply.\n\nFrom here I can switch the theme, add a separate stress test on volume, or make the 28% pilot ad cost the base case throughout instead of the planning team's 25%.\n\nFiles are in `deliverable/`:\n- onsoo-us-entry.pptx\n- onsoo-us-entry-sources.xlsx \u2014 every number, its source and live formulas\n- onsoo-us-entry.json \u2014 the spec, to re-render"
+    }
+   ],
+   "started": "2026-11-26T18:46:00+00:00",
+   "ended": "2026-11-26T19:04:55+00:00",
+   "session_id": "a995e4cd-761c-43f9-90c4-e562eb4634bf",
+   "transcript": "transcript-attempt1.jsonl"
+  }
+ ],
+ "totals": {
+  "cost_usd": 5.392375400000001,
+  "duration_s": 1134.9,
+  "api_s": 1112.013,
+  "turns": 43,
+  "input_tokens": 78,
+  "output_tokens": 121281,
+  "cache_read_tokens": 6005217,
+  "cache_creation_tokens": 220675,
+  "cost_all_attempts_usd": 5.392375400000001
+ },
+ "models_used": {
+  "claude-opus-5-5": {
+   "cost_usd": 5.392375400000001,
+   "input": 78,
+   "output": 121281,
+   "cache_read": 6005217,
+   "cache_creation": 220675
+  }
+ },
+ "autoreplies_used": 0,
+ "prompt": "/hire-your-mck Mode: full deck with data (`deck_detailed`).\n\nCreate a deck for Onsoo Botanicals' CEO and board: Should Onsoo enter the US market in 2027, and if so, by which route?\n\nThe briefing pack in ./evidence/briefing-pack.md has everything that is available: work only from it. Web research is not available.\n\nSave the finished deliverable in ./deliverable/.\n\nI won't be available to answer questions while you work. Wherever you would ask me something, choose the option you would recommend, note your choice, and carry on until the deliverable is finished.",
+ "prompt_sha256": "2446ab2714da823186ae03a68562e3ffbf7cc15708f957f4ea3dbcd6118c4b88",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "claude_code_version": "2.1.332 (Claude Code)",
+ "plugin_snapshot_sha256": "c16061fa352cd546cb19a17c71f9249b1e76ccaf3546fd258fb5941fbcfd8006",
+ "plugin_source": "benchmark/env/plugin-E1",
+ "repo_head": "f1fcc516dc2ebd16a9c0e0b0135cc4c38a7dc8b1",
+ "packet_sha256": "76b3fb49ff605d65d989ca71906ebbd68809f221bc038b6903d4a7598004e3aa",
+ "files": [
+  {
+   "path": "workspace/deliverable/onsoo-us-entry-sources.xlsx",
+   "bytes": 66887,
+   "sha256": "d94919d52b61a1ffd3f49b104424685a5cdfb653d95153060e61e6188167a48a"
+  },
+  {
+   "path": "workspace/deliverable/onsoo-us-entry.json",
+   "bytes": 148363,
+   "sha256": "6b567051271f5ced9ecaa94435761b750de44fa1ac60efebe4e750aa74bc7442"
+  },
+  {
+   "path": "workspace/deliverable/onsoo-us-entry.pptx",
+   "bytes": 159641,
+   "sha256": "a4ad553cbee48b2f98aeed0d860a8b5ed83326934ce4001f5699bbd50d60de5d"
+  },
+  {
+   "path": "workspace/work/build.py",
+   "bytes": 70934,
+   "sha256": "2c7cea9e56cf1bcc70bb0b561b5bef7b7bdeb7d0cda2e93875ea7591c741c94a"
+  },
+  {
+   "path": "workspace/work/model.py",
+   "bytes": 2494,
+   "sha256": "3a75c911249f5a49b3b9c7667b751ba8bcc6fe05a3b1c4af171f21da558c12a5"
+  }
+ ]
+}

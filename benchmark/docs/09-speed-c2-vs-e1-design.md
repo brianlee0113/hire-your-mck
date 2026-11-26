@@ -70,3 +70,21 @@ Run: `HYM_BENCH_CONFIG=config/speed.json` for `run_generation.py --phase speed -
 `extract_deck`, `e2e_metrics` with `--phase speed`. Claude Code 2.1.332.
 
 The same reading rules apply to V13 vs C2m and to V13 vs E1.
+
+## Results (run 2026-11-26, 13:45–14:05, all nine complete)
+
+Wall time (min) · cost · slides; every deck opens and passes its own skill's `check.py` with 0 FAIL.
+
+| Case | C2m (main) | E1 | V13 (v1.3-h) | E1 / C2m | V13 / C2m |
+|---|---|---|---|---|---|
+| c1 | 17.2 · $4.93 · 20 | 18.9 · $5.39 · 23 | 18.2 · $5.32 · 21 | 1.10 | 1.06 |
+| c3 | 16.4 · $4.70 · 20 | 18.5 · $5.46 · 18 | 15.5 · $4.31 · 17 | 1.13 | 0.95 |
+| c5 | 13.7 · $3.82 · 19 | 13.2 · $3.89 · 19 | 15.1 · $4.11 · 23 | 0.96 | 1.10 |
+| **Geometric mean** | | | | **1.06** | **1.03** |
+
+- Reading rule: the gap is under 15% in all three cases for both E1 and V13, so **no real difference** at this size.
+- The old ×1.43 (dev-e1 vs explore-c2, API time) came mostly from the different day and the stalled runs, not
+  from the skill.
+- The whole wave took 19 min; the 45-min stop and the watchdog never fired.
+- Note: `e2e_metrics.py` runs the repo's `tools/spec/check.py` (v1.3 rules), which fails the C2m and E1 decks for
+  rules their skills did not have (1 and 4 FAILs). Re-run with each arm's own `check.py`: 0 FAIL in all nine.
