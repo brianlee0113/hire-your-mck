@@ -40,3 +40,17 @@ was interactive (the user answered the questions); here the auto-reply always pi
 
 ## Cost
 2 runs, ≈ $15.
+
+## Results (run 2026-11-26, 15:09–15:29, both complete)
+
+| Arm | Mode | Slides | Auto-replies | Wall (all turns) | Cost | Own `check.py` |
+|---|---|---|---|---|---|---|
+| Cv (main) | `deck_deep` (recommended at Checkpoint 1) | 43 | 1 | 17.7 min | $5.17 | 0 FAIL |
+| V13v (v1.3-h) | `deck_deep` (recommended at Checkpoint 1) | 44 | 1 | 19.5 min | $5.67 | 0 FAIL |
+
+- **Same behaviour.** Both skills asked one round of Checkpoint 1 questions in Korean (mode, theme; v1.3-h also
+  audience and deck language), recommended `deck_deep`, and after the auto-reply built a 43–44 slide deck. The
+  v3-B8 one-slide problem did not appear.
+- Time ×1.10, cost ×1.10 (one pair: reported, not judged).
+- So the v3-B8 result is not explained by the request wording on this case. Remaining differences from that
+  session: a real user answering the questions, and the user's own material.
