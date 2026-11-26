@@ -1007,6 +1007,120 @@ if spec["mode"] == "deck_deep":
             out("L-04", "warn", f"section {sc['id']} ('{sc['title'][:30]}') is about implementation but is not the last section")
     if dt == "client_diagnostic" and top_secs and not act.search(top_secs[-1]["title"] + " " + top_secs[-1].get("tracker_label", "")):
         out("L-04", "warn", "a client diagnostic ends on how to make it happen (plan, owners, next steps); the last section is not that")
+# DA: decision audit (Step 2b of SKILL.md) for full and deep decks
+if spec["mode"] in ("deck_detailed", "deck_deep") and not spec.get("compile"):  # a compiled deck carries its own analysis
+    au = spec.get("decision_audit")
+    if not au:
+        out("DA-01", "fail", "no decision_audit: test the recommendation against constraints, the strongest alternative and its failure threshold (SKILL.md Step 2b)")
+    else:
+        def _txt(x):
+            return str(x or "").strip()
+        def _ids(item, rule, what):
+            tri = item.get("triage")
+            sids = item.get("slide_ids") or []
+            if tri in ("body", "backup") and not sids:
+                out(rule, "fail", f"{what} is triaged '{tri}' but lists no slide_ids; name the slides that carry it")
+            for sid_ in sids:
+                if sid_ != "es" and sid_ not in slides:
+                    out(rule, "fail", f"{what} points to unknown slide {sid_}")
+                elif tri == "backup" and sid_ in slides and slides[sid_]["role"] != "backup":
+                    out(rule, "warn", f"{what} is triaged 'backup' but slide {sid_} is not a backup slide")
+        if not au.get("constraints"):
+            out("DA-01", "fail", "decision_audit.constraints is empty; list every binding constraint and known cost")
+        for k, cn in enumerate(au.get("constraints") or []):
+            if cn.get("reflected") is False and not _txt(cn.get("effect")):
+                out("DA-01", "fail", f"constraint '{_txt(cn.get('item'))[:50]}' is left out of the headline; say its effect and where the deck says so")
+            for sid_ in cn.get("slide_ids") or []:
+                if sid_ != "es" and sid_ not in slides:
+                    out("DA-01", "fail", f"constraint '{_txt(cn.get('item'))[:40]}' points to unknown slide {sid_}")
+        alts = au.get("alternatives") or []
+        if not alts:
+            out("DA-02", "fail", "decision_audit.alternatives is empty; test the strongest option a sceptic would propose")
+        for al in alts:
+            if not _txt(al.get("why")):
+                out("DA-02", "fail", f"alternative '{_txt(al.get('option'))[:50]}' has no reason")
+            _ids(al, "DA-02", f"alternative '{_txt(al.get('option'))[:40]}'")
+        ft = au.get("failure_threshold") or {}
+        if not (_txt(ft.get("driver")) and _txt(ft.get("threshold"))):
+            out("DA-03", "fail", "decision_audit.failure_threshold needs the driver and the value where the answer flips")
+        else:
+            _ids(ft, "DA-03", "failure threshold")
+        cs = au.get("consistency") or {}
+        if cs.get("holds") is False and not _txt(cs.get("fix")):
+            out("DA-04", "fail", "the governing thought does not hold with every constraint in; say how the wording changed (consistency.fix)")
+        def _main_ids(sids):
+            return [x for x in sids if x == "es" or (x in slides and slides[x]["role"] not in ("backup",))]
+        cases = au.get("cases") or {}
+        if not (_txt(cases.get("base")) and _txt(cases.get("stress"))):
+            out("DA-05", "fail", "decision_audit.cases needs the headline number in a base and a stress case")
+        elif not _main_ids(cases.get("slide_ids") or []):
+            out("DA-05", "fail", "the base and stress case are not on any main-deck slide (cases.slide_ids)")
+        gates = au.get("gates") or []
+        if not 2 <= len(gates) <= 5:
+            out("DA-06", "fail", f"{len(gates)} decision gates; want 2–5 (metric, threshold, when, response) from the failure threshold and key risks")
+        for g in gates:
+            miss = [k for k in ("metric", "threshold", "when", "response") if not _txt(g.get(k))]
+            if miss:
+                out("DA-06", "fail", f"gate '{_txt(g.get('metric'))[:40]}' lacks {', '.join(miss)}")
+            if not _main_ids(g.get("slide_ids") or []):
+                out("DA-06", "fail", f"gate '{_txt(g.get('metric'))[:40]}' is on no main-deck slide; gates go on the plan or next-steps slides")
+            elif not re.search(r"\d", _txt(g.get("threshold"))):
+                out("DA-06", "warn", f"gate '{_txt(g.get('metric'))[:40]}' has no number in its threshold")
+        gap = au.get("gap")
+        if gap is not None:
+            cl = gap.get("closers") or []
+            if not cl:
+                out("DA-07", "fail", "the base case misses a target (gap) but no sized option closes it; size the options or say what target the evidence supports")
+            elif not any(x.get("recommended") for x in cl):
+                out("DA-07", "warn", "gap.closers: mark the option you recommend")
+            for x in cl:
+                if not _main_ids(x.get("slide_ids") or []):
+                    out("DA-07", "fail", f"gap closer '{_txt(x.get('option'))[:40]}' is on no main-deck slide")
+        if not [s for s in au.get("alternatives") or [] if s.get("triage") == "body"] and ft.get("triage") != "body":
+            out("DA-04", "warn", "no audit finding reaches the main deck; check that the strongest alternative or the failure threshold really does not bear on the decision")
+# CP: compiled decks (references/compile.md)
+cp = spec.get("compile")
+if cp:
+    units = cp.get("units") or []
+    if not units:
+        out("CP-01", "fail", "compile.units is empty; inventory the source's decision units before mapping")
+    for u in units:
+        sids = u.get("slide_ids") or []
+        unknown = [x for x in sids if x != "es" and x not in slides]
+        if unknown:
+            out("CP-01", "fail", f"unit {u.get('id')} points to unknown slide(s) {', '.join(unknown)}")
+        if u.get("critical"):
+            main_ids = [x for x in sids if x == "es" or (x in slides and slides[x]["role"] != "backup")]
+            if not main_ids:
+                out("CP-01", "fail", f"critical unit {u.get('id')} ('{str(u.get('text'))[:50]}') is on no main-deck slide")
+        elif not sids:
+            out("CP-01", "warn", f"unit {u.get('id')} ('{str(u.get('text'))[:50]}') is on no slide; carry it or say why it was left out")
+    for ut in cp.get("untraceable") or []:
+        if ut.get("data_point_id") not in dps:
+            out("CP-02", "fail", f"untraceable entry names unknown data point {ut.get('data_point_id')}")
+        elif ut.get("critical") and not str(ut.get("ack") or "").strip():
+            out("CP-02", "fail", f"critical number {ut.get('data_point_id')} cannot be traced to the evidence or recomputed; ask the user and record the answer in ack")
+    for k, co in enumerate(cp.get("corrections") or []):
+        lacking = [x for x in ("source_loc", "was", "now", "why", "evidence") if not str(co.get(x) or "").strip()]
+        if lacking:
+            out("CP-03", "fail", f"correction {k + 1} needs {', '.join(lacking)}; a correction must show the evidence for the error")
+        aff = co.get("affects") or []
+        if not aff:
+            out("CP-03", "fail", f"correction {k + 1} lists no affected slides; name every slide that carries the unit (and 'es' if the summary does), then re-read them together")
+        bad = [x for x in aff if x != "es" and x not in slides]
+        if bad:
+            out("CP-03", "fail", f"correction {k + 1} affects unknown slide(s) {', '.join(bad)}")
+        u = next((u for u in units if u.get("id") == co.get("unit_id")), None)
+        if u and aff:
+            missed = [x for x in u.get("slide_ids") or [] if x not in aff]
+            if missed:
+                out("CP-03", "fail", f"correction {k + 1} changes unit {u.get('id')} but leaves out slide(s) {', '.join(missed)} that carry it")
+    ck = cp.get("check")
+    n_crit = sum(1 for u in units if u.get("critical"))
+    if not ck:
+        out("CP-04", "fail", "compile.check is missing; read the deck against every critical unit before rendering")
+    elif ck.get("critical_units") != n_crit or ck.get("preserved", 0) < n_crit:
+        out("CP-04", "fail", f"compile.check: {ck.get('preserved')} of {n_crit} critical units preserved (check says {ck.get('critical_units')}); fix the losses")
 fails = [r for r in results if r[1] == "fail"]; warns = [r for r in results if r[1] == "warn"]
 for rule, st, sid, det in results:
     if st != "pass" or rule == "schema":

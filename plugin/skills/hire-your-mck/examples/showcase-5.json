@@ -674,5 +674,81 @@
    "kind": "user_provided",
    "name": "Example Ledger owner survey, 2026 (fictional)"
   }
- ]
+ ],
+ "decision_audit": {
+  "constraints": [
+   {
+    "item": "Owners rarely add a subscription",
+    "reflected": true,
+    "effect": "AI goes inside the plans they already pay for, not into a new product",
+    "slide_ids": [
+     "4"
+    ]
+   },
+   {
+    "item": "Two leading platforms already combine bookkeeping and AI",
+    "reflected": true,
+    "effect": "we lead on the close for the smallest firms, not on AI in general",
+    "slide_ids": [
+     "5",
+     "7"
+    ]
+   }
+  ],
+  "alternatives": [
+   {
+    "option": "Sell AI as a paid add-on",
+    "verdict": "rejected",
+    "why": "only 12% of firms have paid for a dedicated AI tool, and spend sits inside tools they already pay for",
+    "triage": "body",
+    "slide_ids": [
+     "4"
+    ]
+   }
+  ],
+  "failure_threshold": {
+   "driver": "time to close the books for pilot firms",
+   "threshold": "if AI does not cut the week-long close, the case for leading on the close falls away",
+   "range": "not sized: the deck has no data on our own customers' close times, so the pilot measures it",
+   "triage": "body",
+   "slide_ids": [
+    "6",
+    "7"
+   ]
+  },
+  "consistency": {
+   "headline": "Example Ledger should build AI into its plans for the smallest firms, starting with the month-end close",
+   "holds": true,
+   "fix": ""
+  },
+  "cases": {
+   "base": "most of the 77% of firms that already use AI try it in their books",
+   "stress": "only the 35% that use AI for bookkeeping today; still worth building in, not worth a price rise",
+   "holds_in_stress": true,
+   "slide_ids": [
+    "4"
+   ]
+  },
+  "gates": [
+   {
+    "metric": "pilot firms that close their books with the AI each month",
+    "threshold": "under 35% after 90 days (today's share that use AI for bookkeeping)",
+    "when": "end of the pilot",
+    "response": "keep it in the plans but narrow it to categorizing entries",
+    "slide_ids": [
+     "6"
+    ]
+   },
+   {
+    "metric": "platforms that combine bookkeeping and AI for firms with 1-4 employees",
+    "threshold": "3 or more platforms before our pilot ends (2 today)",
+    "when": "quarterly",
+    "response": "bring the close forward and skip the second pilot round",
+    "slide_ids": [
+     "5",
+     "7"
+    ]
+   }
+  ]
+ }
 }

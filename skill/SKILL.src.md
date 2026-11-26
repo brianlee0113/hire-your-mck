@@ -33,6 +33,7 @@ Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow
 | `references/spec-guide.md` | Writing the JSON: fields, statuses, data points, sources, placeholders |
 | `references/style.md` | Titles, unit lines, density, conclusion devices, themes |
 | `references/deep-deck.md` | Only for `deck_deep`: the seven-step workflow that replaces Steps 1–2 |
+| `references/compile.md` | Only when the user gives a finished analysis or deck to turn into ours: replaces Steps 1, 2 and 2b |
 | `examples/*.json` | Complete specs that pass QA. Copy their shape |
 
 ## The four modes
@@ -43,6 +44,8 @@ Install if missing: `pip install python-pptx openpyxl jsonschema pillow` (Pillow
 | `deck_deep` | A decision to work through, plus research or files | 30–60 slides built with the seven-step process: problem, issue tree, sections, `filled` |
 | `deck_flow` | The landing message (plus any context) | `ghost`: real exhibit skeleton with "?" values, takeaway to prove, data needed |
 | `single_slide` | One lead message, or research for one slide | One `filled` slide |
+
+**Compile.** When the user gives an analysis that is already done (a memo, a draft deck, a deck from another tool) and asks for it in our format ("compile", "restyle", "turn this into our deck"), build a `deck_detailed` spec with a `compile` block and follow `references/compile.md`: the analysis is the source of truth, and you carry it onto slides without changing what it means.
 
 ## Workflow
 
@@ -88,6 +91,22 @@ Show the executive summary with, under each bullet, the planned slide titles and
 5. A number written in any text (bullets, captions, unit lines, `so_what`) needs a data point too, including plan thresholds ("accounts above $2M") and sample sizes ("n = 1,200"). `check.py` warns on any that lack one.
 6. If you cannot find a number and cannot calculate it from sourced inputs, do not guess it. Use `{"placeholder": true, "label": "<what data is needed>"}` and add a `data_requirements` entry with where to look.
 
+### Step 2b · Decision audit (before Checkpoint 3)
+Before you write any slide body, attack your own recommendation the way a sceptical board member would. A storyline can pass every other check and still fail here: a known cost left out of the headline, an obvious smaller option never tested, a plan that breaks if one input moves. If you can start a subagent, give it the evidence and your draft storyline and ask it to argue against the recommendation; otherwise do it as a separate pass. Record the result in `decision_audit` (`references/spec-guide.md`); `check.py` fails a full or deep deck without it.
+
+1. **Constraints and known costs.** List every constraint the decision must meet (cash, debt terms, capital limits, approvals, timing) and every cost or headwind the evidence already names (a contracted price increase, a one-time cost, a tax change). Recompute the headline number with all of them in. If it holds only without one of them, that is the finding.
+2. **Strongest alternative.** Name the option a sceptic would propose instead: often a smaller, staged or pilot version of what you reject, or a cheaper half-measure of what you recommend. Test it with the same numbers, then say why the recommendation still wins, or change the recommendation.
+3. **Failure threshold.** Find the input the answer is most sensitive to and the value at which the recommendation stops being right or breaks a constraint ("holds while monthly churn stays under 3%"). Give the headline number as low / base / high.
+4. **Consistency.** The governing thought, executive summary and titles claim no more than 1–3 support. If the base case reaches the target only when a known cost is left out, the title says so; it does not say "reaches the target".
+
+Then turn the findings into the plan. An audit that ends on "the plan falls short" leaves the decision maker with nothing to decide:
+
+5. **Close the gap.** If the base case misses a target or breaks a constraint, size the options that would close the gap (further levers, a different scope or timing, a negotiated item) and say which you recommend and what the decision maker must approve for it. If nothing closes it, say what target the evidence does support.
+6. **Base and stress case.** Show the recommendation's headline number in a base case and a stress case built from the failure threshold and the riskiest assumptions, and whether the recommendation still holds in the stress case.
+7. **Decision gates.** Turn the failure threshold and the key risks into 2–5 gates: the metric to watch, the threshold, when it is checked, and what is done if it is crossed (pause, scale back, switch to the alternative). Each threshold comes from the analysis, not a round guess. Gates go on the plan or next-steps slides, not in an appendix.
+
+Triage every finding: **body** if it changes or conditions the decision (fold it into the slide and exec item it affects, or give it its own slide), **backup** if it is a real objection that does not change the answer, **drop** if it does not bear on the decision or the evidence cannot test it (say why). Never add a slide only to show that an audit happened: the deck shows the results, not the audit. Numbers the audit puts on slides follow Step 2 like any other number (sourced or derived; estimates with their basis). If the audit changes the governing thought or the executive summary, say what changed and why at Checkpoint 3, or in the delivery note if no placeholders remain.
+
 ### Checkpoint 3 · Missing data (only if placeholders remain)
 Say how many numbers have no source and which ones, then ask one multiple-choice question per number (or one for all, if they share a fix).
 - **Full deck (`deck_detailed`): leave no "?" on the slides (B-12).** For each missing number offer: a recommended value with its basis (a benchmark, a peer, or a calculation from sourced inputs, shown on the slide as an estimate, B-08) · upload or paste the data · search the web wider. Offer "keep as ?" only as the last option. A target the user must set (a pilot KPI, a price) is still a question with 2–3 concrete values to pick from, e.g. "30-day reply rate target: 60% (Recommended: SCSEP-like programs see …) · 50% · 70%".
@@ -121,9 +140,10 @@ Then judge what the script cannot check, slide by slide, and fix what fails:
 - B-10 / B-11: read each bullet and number alone; is it clear what it measures and what it is compared with?
 - G-01: read only the titles in order; is there a gap in the logic?
 - G-03: are framework items, tree branches and levers mutually exclusive and collectively exhaustive?
+- Decision audit: read the governing thought, the exec summary and every title against `decision_audit`. Does any of them claim more than the audit supports, or leave out a `body` finding? Do the gates and the base and stress case appear on main-deck slides, with thresholds taken from the analysis?
 
 ### Step 5 · Render and deliver
-Run `render.py`. It prints `warn:` lines, each with its page and slide id, for layout problems it can detect (text running into the element below, a rule or the edge of its panel, text spilling out of a shape, shapes off the slide, an exec summary that does not fit at full size). Fix every one by shortening the text, dropping a bullet or a sidebar row, or splitting the slide, then render again until none are left. Give the user the `.pptx` and the `-sources.xlsx`, then a short note: slide count, theme, how many numbers are sourced, and the list of placeholders still open with the data each one needs.
+Run `render.py`. It prints `warn:` lines, each with its page and slide id, for layout problems it can detect (text running into the element below, a rule or the edge of its panel, text spilling out of a shape, shapes off the slide, an exec summary that does not fit at full size, chart bars too thin or narrow for their names and values). Fix every one by shortening the text, dropping a bullet or a sidebar row, giving a crowded chart a full-width panel or fewer bars, or splitting the slide, then render again until none are left. Give the user the `.pptx` and the `-sources.xlsx`, then a short note: slide count, theme, how many numbers are sourced, and the list of placeholders still open with the data each one needs.
 
 Offer the next useful step: fill the open placeholders, switch theme (`navy` default; `crimson`, `forest`, `mono`, `vivid`, `slate`, `terracotta`), or turn a flow deck into a detailed one (same spec, fill the data).
 

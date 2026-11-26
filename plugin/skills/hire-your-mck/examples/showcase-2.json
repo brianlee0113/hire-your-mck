@@ -1148,5 +1148,81 @@
       "kind": "user_provided",
       "name": "Example Freight mid-market plan (fictional)"
     }
-  ]
+  ],
+  "decision_audit": {
+    "constraints": [
+      {
+        "item": "Pilot accounts must accept index-linked pricing without leaving",
+        "reflected": true,
+        "effect": "the pilot gate checks margin and churn before scaling",
+        "slide_ids": [
+          "3",
+          "7"
+        ]
+      },
+      {
+        "item": "Two cross-docks must open on schedule (Q2 and Q4 2027)",
+        "reflected": true,
+        "effect": "the roadmap sequences pricing first so the plan does not wait on the network",
+        "slide_ids": [
+          "4"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "option": "Close the gap through network and cost moves alone, without changing pricing",
+        "verdict": "rejected",
+        "why": "price is the largest branch of the gap ($22M of $40M), and the peer that moved to index pricing raised margin 4.1 percentage points",
+        "triage": "body",
+        "slide_ids": [
+          "5",
+          "7"
+        ]
+      }
+    ],
+    "failure_threshold": {
+      "driver": "margin from the two pricing levers ($14M and $8M)",
+      "threshold": "if they deliver under about $15M, the other three levers cannot cover the rest of the $40M",
+      "range": "base $40M by 2027 (slide 6); low and high not sized",
+      "triage": "body",
+      "slide_ids": [
+        "6"
+      ]
+    },
+    "consistency": {
+      "headline": "A pricing-led plan closes the $40M gap, starting with a Sun Belt pilot",
+      "holds": true,
+      "fix": ""
+    },
+    "cases": {
+      "base": "five levers close the $40M gap by 2027",
+      "stress": "pricing levers at half: about $29M, $11M short; pricing still leads, the target date moves",
+      "holds_in_stress": true,
+      "slide_ids": [
+        "6"
+      ]
+    },
+    "gates": [
+      {
+        "metric": "margin uplift on pilot accounts",
+        "threshold": "under 2 percentage points after two quarters (half the peer's 4.1)",
+        "when": "pilot review, end of Q2 2027",
+        "response": "fix the index before scaling; do not extend to all large accounts",
+        "slide_ids": [
+          "3",
+          "4"
+        ]
+      },
+      {
+        "metric": "Dallas cross-dock",
+        "threshold": "not open by the end of Q2 2027",
+        "when": "Q2 2027",
+        "response": "delay the Atlanta cross-dock and scale pricing first",
+        "slide_ids": [
+          "4"
+        ]
+      }
+    ]
+  }
 }

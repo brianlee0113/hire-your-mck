@@ -77,6 +77,12 @@
     },
     "qa": {
       "$ref": "#/$defs/qa"
+    },
+    "decision_audit": {
+      "$ref": "#/$defs/decision_audit"
+    },
+    "compile": {
+      "$ref": "#/$defs/compile"
     }
   },
   "$defs": {
@@ -3193,6 +3199,374 @@
           "maxItems": 5,
           "items": {
             "type": "string"
+          }
+        }
+      }
+    },
+    "decision_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Step 2b of SKILL.md: the recommendation tested against constraints, the strongest alternative and its failure threshold. Not rendered.",
+      "required": [
+        "constraints",
+        "alternatives",
+        "failure_threshold",
+        "consistency",
+        "cases",
+        "gates"
+      ],
+      "properties": {
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "item",
+              "reflected"
+            ],
+            "properties": {
+              "item": {
+                "type": "string"
+              },
+              "reflected": {
+                "type": "boolean"
+              },
+              "effect": {
+                "type": "string"
+              },
+              "slide_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "option",
+              "verdict",
+              "why",
+              "triage"
+            ],
+            "properties": {
+              "option": {
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "rejected",
+                  "adopted",
+                  "combined"
+                ]
+              },
+              "why": {
+                "type": "string"
+              },
+              "triage": {
+                "enum": [
+                  "body",
+                  "backup",
+                  "drop"
+                ]
+              },
+              "slide_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "failure_threshold": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "driver",
+            "threshold",
+            "range",
+            "triage"
+          ],
+          "properties": {
+            "driver": {
+              "type": "string"
+            },
+            "threshold": {
+              "type": "string"
+            },
+            "range": {
+              "type": "string"
+            },
+            "triage": {
+              "enum": [
+                "body",
+                "backup",
+                "drop"
+              ]
+            },
+            "slide_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "consistency": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "headline",
+            "holds"
+          ],
+          "properties": {
+            "headline": {
+              "type": "string"
+            },
+            "holds": {
+              "type": "boolean"
+            },
+            "fix": {
+              "type": "string"
+            }
+          }
+        },
+        "gap": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "target",
+            "base_case",
+            "closers"
+          ],
+          "properties": {
+            "target": {
+              "type": "string"
+            },
+            "base_case": {
+              "type": "string"
+            },
+            "closers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "option",
+                  "size"
+                ],
+                "properties": {
+                  "option": {
+                    "type": "string"
+                  },
+                  "size": {
+                    "type": "string"
+                  },
+                  "recommended": {
+                    "type": "boolean"
+                  },
+                  "slide_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "cases": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "base",
+            "stress",
+            "holds_in_stress"
+          ],
+          "properties": {
+            "base": {
+              "type": "string"
+            },
+            "stress": {
+              "type": "string"
+            },
+            "holds_in_stress": {
+              "type": "boolean"
+            },
+            "slide_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "gates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "metric",
+              "threshold",
+              "when",
+              "response"
+            ],
+            "properties": {
+              "metric": {
+                "type": "string"
+              },
+              "threshold": {
+                "type": "string"
+              },
+              "when": {
+                "type": "string"
+              },
+              "response": {
+                "type": "string"
+              },
+              "slide_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "compile": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "references/compile.md: a finished analysis compiled into a deck without changing its meaning.",
+      "required": [
+        "source",
+        "variant",
+        "units"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "variant": {
+          "enum": [
+            "restyle",
+            "restructure"
+          ]
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "type",
+              "text",
+              "critical"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "source_loc": {
+                "type": "string"
+              },
+              "critical": {
+                "type": "boolean"
+              },
+              "slide_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "untraceable": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "data_point_id",
+              "critical"
+            ],
+            "properties": {
+              "data_point_id": {
+                "type": "string"
+              },
+              "critical": {
+                "type": "boolean"
+              },
+              "ack": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "corrections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "was",
+              "now",
+              "why"
+            ],
+            "properties": {
+              "unit_id": {
+                "type": "string"
+              },
+              "was": {
+                "type": "string"
+              },
+              "now": {
+                "type": "string"
+              },
+              "why": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "check": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "critical_units",
+            "preserved"
+          ],
+          "properties": {
+            "critical_units": {
+              "type": "integer"
+            },
+            "preserved": {
+              "type": "integer"
+            },
+            "notes": {
+              "type": "string"
+            }
           }
         }
       }

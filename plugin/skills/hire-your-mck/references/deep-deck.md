@@ -61,6 +61,8 @@ After each leaf, record the `finding`: **confirmed**, **revised** (true with a d
 
 Redraw the tree with the verdicts. Rewrite every refuted or revised title to what the data shows (T-04 fails if a title still states a refuted hypothesis). Then rewrite the governing thought and the exec summary from the verdicts: one bold bullet per section, 2–3 sub-points per bullet.
 
+Then run the decision audit (Step 2b of `SKILL.md`) on the new answer. The tree tests your hypotheses; the audit tests the recommendation against the constraints, the strongest alternative (including one the tree never held) and its failure threshold.
+
 Checkpoint 4 shows which hypotheses flipped and the new governing thought, together with the open placeholders (Checkpoint 3 of `SKILL.md`). Ask: accept the new answer (Recommended) · change the emphasis · and, per open number, the usual choices.
 
 ## Step 7 · Communicate

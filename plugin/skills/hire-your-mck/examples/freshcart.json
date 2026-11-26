@@ -1432,5 +1432,90 @@
       "kind": "derived",
       "name": "Team analysis of FreshCart research"
     }
-  ]
+  ],
+  "decision_audit": {
+    "constraints": [
+      {
+        "item": "Launch cost: peers spent about $40M each over several years",
+        "reflected": true,
+        "effect": "the plan budgets the same scale of investment; the peer case and the plan say so",
+        "slide_ids": [
+          "5",
+          "7"
+        ]
+      },
+      {
+        "item": "Current suppliers can add only about 1.5 percentage points of share a year",
+        "reflected": true,
+        "effect": "sets the five-year path to 26% and is why new supplier capacity is one of the four moves",
+        "slide_ids": [
+          "6",
+          "7"
+        ]
+      },
+      {
+        "item": "The 0.7-percentage-point margin gain is before launch costs",
+        "reflected": false,
+        "effect": "the margin slide says the gain is before launch costs; the deck does not net the $40M against it",
+        "slide_ids": [
+          "2b"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "option": "Grow private label only in the aisles where we already sell it, without entering snacks and frozen",
+        "verdict": "rejected",
+        "why": "snacks and frozen are sizable categories where we sell no private label, so most of the gap to 26% sits there",
+        "triage": "body",
+        "slide_ids": [
+          "4"
+        ]
+      }
+    ],
+    "failure_threshold": {
+      "driver": "private-label share added each year, set by supplier capacity",
+      "threshold": "below about 1.5 percentage points a year, 26% is not reached within five years",
+      "range": "base path 18% (2025) to 27% (2031) at 1.5 percentage points a year, from slide 6; low and high not sized",
+      "triage": "body",
+      "slide_ids": [
+        "6"
+      ]
+    },
+    "consistency": {
+      "headline": "FreshCart should raise private label to the US average of 26% within about five years",
+      "holds": true,
+      "fix": ""
+    },
+    "cases": {
+      "base": "share reaches 26% around 2030-31 and gross margin rises about 0.7 percentage points before launch costs",
+      "stress": "capacity adds half as much each year: about 22% by 2030 and roughly half the margin gain; still worth starting now",
+      "holds_in_stress": true,
+      "slide_ids": [
+        "2b",
+        "6"
+      ]
+    },
+    "gates": [
+      {
+        "metric": "private-label share of sales",
+        "threshold": "below 21% at the end of 2027 (the path on slide 6)",
+        "when": "annual plan review, end of 2027",
+        "response": "hold the frozen launch and fix supplier capacity first",
+        "slide_ids": [
+          "6",
+          "7"
+        ]
+      },
+      {
+        "metric": "co-manufacturer capacity under contract",
+        "threshold": "less than 1.5 percentage points of share a year by the end of 2026",
+        "when": "supplier review, Q4 2026",
+        "response": "add a second co-manufacturer before entering frozen",
+        "slide_ids": [
+          "7"
+        ]
+      }
+    ]
+  }
 }

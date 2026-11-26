@@ -24,6 +24,44 @@ The spec is one JSON file (schema: `scripts/storyline.schema.json`, JSON Schema 
 - `meta.theme`: `navy` (default), `crimson`, `forest`, `mono`, `vivid`, `slate`, `terracotta`. `meta.font_pair` overrides the theme's fonts (`georgia-arial` default, `aptos-serif-aptos`, `arial`, `calibri`, `aptos`).
 - Never put a firm's name in `company_name`; use the user's company.
 
+### Decision audit (`deck_detailed`, `deck_deep`)
+
+`decision_audit` records Step 2b of `SKILL.md`. It is not rendered; `check.py` reads it.
+
+```json
+"decision_audit": {
+  "constraints": [
+    {"item": "Model inference cost per active user", "reflected": true,
+     "effect": "cuts the package's contribution margin; the payback title uses the margin after it", "slide_ids": ["7"]},
+    {"item": "Launch budget the CFO has approved", "reflected": false,
+     "effect": "the full build runs over it; the exec item says the second phase needs a new approval", "slide_ids": ["es", "8"]}
+  ],
+  "alternatives": [
+    {"option": "Resell a partner's AI assistant instead of building our own", "verdict": "rejected",
+     "why": "faster, but it cannot sit inside the month-end close, which is where users see the gain", "triage": "body", "slide_ids": ["5"]}
+  ],
+  "failure_threshold": {"driver": "share of customers who switch the package on", "threshold": "below about a quarter, the build does not pay back within three years",
+                        "range": "payback low / base / high, from the derived data points on slide 8", "triage": "body", "slide_ids": ["8"]},
+  "consistency": {"headline": "the governing thought as written", "holds": true, "fix": ""},
+  "gap": {"target": "payback within three years", "base_case": "about 3.5 years on the first phase alone",
+          "closers": [{"option": "Start with the two tasks with the highest time saved", "size": "payback about 2.5 years", "recommended": true, "slide_ids": ["8"]}]},
+  "cases": {"base": "payback in about 2.5 years", "stress": "about 4 years if only half the planned customers switch it on; still ahead of waiting",
+            "holds_in_stress": true, "slide_ids": ["8"]},
+  "gates": [
+    {"metric": "share of pilot customers using the package weekly", "threshold": "under 20% after 90 days",
+     "when": "end of the pilot", "response": "do not raise prices; narrow the package to the close", "slide_ids": ["8"]}
+  ]
+}
+```
+
+- `constraints[]`: every binding constraint and known cost. `reflected: false` means the headline number leaves it out; then `effect` says what it would do and the titles that show the number must say so.
+- `alternatives[]`: at least one, the strongest option a sceptic would propose. `verdict`: `rejected`, `adopted` (it became the recommendation) or `combined`. `triage`: `body`, `backup` or `drop`; `body` and `backup` list the `slide_ids` that carry it (backup slides for `backup`).
+- `failure_threshold`: the driver, the value where the answer flips, the low / base / high of the headline; `triage` and `slide_ids` as above.
+- `consistency.holds`: does the governing thought hold with every constraint in? If not, `fix` says how the wording changed.
+- `gap`: only when the base case misses a target or breaks a constraint. `closers[]` are sized options to close it, one marked `recommended`; each lists the `slide_ids` that show it.
+- `cases`: the headline number in a base and a stress case, and whether the recommendation still holds under stress.
+- `gates[]`: 2–5 decision gates (metric, threshold, when, response) derived from the failure threshold and key risks; each lists the main-deck `slide_ids` that show it.
+
 ### Deep decks (`deck_deep`)
 
 `problem`, `issue_tree` and `sections` are required; `meta.deck_type` is `client_diagnostic` (default), `policy_analysis` or `research_report`.

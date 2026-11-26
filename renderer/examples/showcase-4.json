@@ -1015,5 +1015,79 @@
    "exec_item_id": "4",
    "tracker_label": "Network"
   }
- ]
+ ],
+ "decision_audit": {
+  "constraints": [
+   {
+    "item": "Internal carbon price of $50 per t CO2e",
+    "reflected": true,
+    "effect": "the cost curve marks it; the plan starts with the levers below zero",
+    "slide_ids": [
+     "3"
+    ]
+   },
+   {
+    "item": "Electric vans only where routes are in range and leases end (2027-2029)",
+    "reflected": true,
+    "effect": "vans start on urban routes as leases end",
+    "slide_ids": [
+     "7"
+    ]
+   }
+  ],
+  "alternatives": [
+   {
+    "option": "Go straight to electric vans across the fleet",
+    "verdict": "rejected",
+    "why": "vans cost about $35 per t, while routing and driver training save money and need no new vehicles",
+    "triage": "body",
+    "slide_ids": [
+     "3"
+    ]
+   }
+  ],
+  "failure_threshold": {
+   "driver": "abatement from the four levers below zero cost, led by routing (18 kt)",
+   "threshold": "they give 46 kt against 45 kt for a quarter of 180 kt, so a shortfall of more than 1 kt misses the quarter at a profit",
+   "range": "base 46 kt a year (slide 3); low and high not sized",
+   "triage": "body",
+   "slide_ids": [
+    "3"
+   ]
+  },
+  "consistency": {
+   "headline": "Example Logistics can cut a quarter of its emissions at a profit, starting with routes and drivers",
+   "holds": true,
+   "fix": ""
+  },
+  "cases": {
+   "base": "46 kt a year, a quarter of 180 kt, at a saving",
+   "stress": "routing at two thirds of plan (12 kt): about 40 kt, 22%; still at a saving, short of a quarter",
+   "holds_in_stress": true,
+   "slide_ids": [
+    "3",
+    "5"
+   ]
+  },
+  "gates": [
+   {
+    "metric": "route emissions cut in each rollout wave",
+    "threshold": "under 7% (two thirds of the 11% Dallas pilot)",
+    "when": "after each wave of three depots",
+    "response": "pause the next wave and fix dispatcher adoption",
+    "slide_ids": [
+     "5"
+    ]
+   },
+   {
+    "metric": "fuel saved per driver after eco-driving training",
+    "threshold": "under 4% three months after the course (pilot: 7%)",
+    "when": "quarterly depot review",
+    "response": "add the weekly scorecard before training more depots",
+    "slide_ids": [
+     "6"
+    ]
+   }
+  ]
+ }
 }
