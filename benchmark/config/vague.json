@@ -1,0 +1,208 @@
+{
+ "experiment_id": "hym-vague-v1",
+ "description": "Vague-request test: main skill vs v1.3-h HEAD on a v3-B8-style request (docs/11-vague-request-test.md)",
+ "generator": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "subagent_model": "claude-opus-5-5",
+  "sampling_note": "Claude Code exposes no temperature/top_p; Opus 5.5 rejects sampling parameters. Effort is fixed instead."
+ },
+ "conditions": {
+  "A": {
+   "name": "Vanilla Claude",
+   "prompt": "prompts/conditions/A_vanilla.md",
+   "plugin": false
+  },
+  "B": {
+   "name": "Strong-baseline Claude",
+   "prompt": "prompts/conditions/B_strong_baseline.md",
+   "plugin": false
+  },
+  "C": {
+   "name": "Hire Your McK",
+   "prompt": "prompts/conditions/C_hire_your_mck.md",
+   "plugin": true
+  },
+  "C2": {
+   "name": "Hire Your McK (full-deck mode)",
+   "prompt": "prompts/conditions/C2_hire_your_mck_full_deck.md",
+   "plugin": true,
+   "note": "Exploratory arm added after the main results (METHODOLOGY.md §12). Same skill snapshot; the mode is named in the request."
+  },
+  "E1": {
+   "name": "Hire Your McK v1.3 E1 (decision audit, full-deck mode)",
+   "prompt": "prompts/conditions/E1_hire_your_mck_audit.md",
+   "plugin": true,
+   "note": "Development arm (METHODOLOGY.md §13). Same request as C2; the skill snapshot adds the decision audit (Step 2b) and nothing else. From the holdout on, loaded from env/plugin-E1: the skill as frozen for dev-e1 (commit f5b01a4) plus the 1.2.1 waterfall renderer fix, so that E2 and compile changes in plugin/ do not reach it.",
+   "plugin_dir": "env/plugin-E1"
+  },
+  "E2": {
+   "name": "Hire Your McK v1.3 E2 (audit turned into a plan, full-deck mode)",
+   "prompt": "prompts/conditions/E2_hire_your_mck_plan.md",
+   "plugin": true,
+   "note": "Development arm (METHODOLOGY.md §14). Same request as C2 and E1; the skill adds gap closing, base and stress case and decision gates to the E1 audit."
+  },
+  "H1s": {
+   "name": "Hire Your McK compile mode (restyle) on B's finished deck",
+   "prompt": "prompts/conditions/H1s_compile_restyle.md",
+   "plugin": true,
+   "note": "Development arm H1 (METHODOLOGY.md §15). Input: B's deck for the same case and replicate, extracted to text, plus the briefing pack.",
+   "needs_analysis": true
+  },
+  "H1r": {
+   "name": "Hire Your McK compile mode (restructure) on B's finished deck",
+   "prompt": "prompts/conditions/H1r_compile_restructure.md",
+   "plugin": true,
+   "note": "Development arm H1 (METHODOLOGY.md §15). Input: B's deck for the same case and replicate, extracted to text, plus the briefing pack.",
+   "needs_analysis": true
+  },
+  "H2a": {
+   "name": "Hire Your McK compile mode (restyle) on B's deck for the same case (hybrid H)",
+   "prompt": "prompts/conditions/H2a_compile_restyle.md",
+   "plugin": true,
+   "needs_analysis": true,
+   "note": "Holdout (METHODOLOGY.md §16). Same request as H1s; the skill snapshot is plugin/ at the holdout freeze (compile rules with verified corrections). Runs after B; input: B's deck, extracted to text, plus the briefing pack."
+  },
+  "C2m": {
+   "name": "Hire Your McK main 1.2.1 (full-deck mode)",
+   "prompt": "prompts/conditions/C2_hire_your_mck_full_deck.md",
+   "plugin": true,
+   "plugin_dir": "env/plugin-main",
+   "note": "Speed test. C2 request; skill = plugin/ on main (1.2.1, commit 032de9e)."
+  },
+  "V13": {
+   "name": "Hire Your McK v1.3-h HEAD (full-deck mode)",
+   "prompt": "prompts/conditions/C2_hire_your_mck_full_deck.md",
+   "plugin": true,
+   "plugin_dir": "env/plugin-v13",
+   "note": "Speed test. C2 request; skill = plugin/ on v1.3-h at commit 5f0b04a (1.3.0-dev: E1 + E2 + compile + post-holdout renderer warnings)."
+  },
+  "Cv": {
+   "name": "Hire Your McK main 1.2.1, vague request",
+   "prompt": "prompts/conditions/V_vague_request.md",
+   "plugin": true,
+   "plugin_dir": "env/plugin-main",
+   "note": "Vague-request test. No decision maker, question, mode or autonomy line; checkpoints are answered by the standard auto-reply."
+  },
+  "V13v": {
+   "name": "Hire Your McK v1.3-h HEAD, vague request",
+   "prompt": "prompts/conditions/V_vague_request.md",
+   "plugin": true,
+   "plugin_dir": "env/plugin-v13",
+   "note": "Vague-request test. Same request as Cv."
+  }
+ },
+ "task_template": "prompts/conditions/task.md",
+ "autoreply": "prompts/conditions/autoreply.md",
+ "tools": [
+  "Bash",
+  "Read",
+  "Write",
+  "Edit",
+  "Skill",
+  "Agent"
+ ],
+ "limits": {
+  "max_budget_usd_per_run": 60,
+  "turn_timeout_s": 3000,
+  "max_autoreplies": 4,
+  "max_infra_retries": 0,
+  "infra_retry_wait_s": 600
+ },
+ "parallel": 2,
+ "seeds": {
+  "pilot_order": 11,
+  "main_order": 2027,
+  "blinding": 4242,
+  "pairwise": 7,
+  "human_order": 99,
+  "pilot2_order": 12,
+  "explore-c2_order": 2028,
+  "dev-e1-smoke_order": 30,
+  "dev-e1_order": 2029,
+  "dev-e2_order": 2030,
+  "dev-h1_order": 2031,
+  "holdout_order": 2032,
+  "speed_order": 2034,
+  "nomode_order": 2035,
+  "vague_order": 2036
+ },
+ "cases": {
+  "c1-market-entry": {
+   "decision_maker": "Onsoo Botanicals' CEO and board",
+   "decision_question": "Should Onsoo enter the US market in 2027, and if so, by which route?"
+  },
+  "c2-profitability": {
+   "decision_maker": "Harlow Fresh Markets' CEO, for the February 2027 board meeting",
+   "decision_question": "How should Harlow reverse its declining operating margin, and which actions should it take first?"
+  },
+  "c3-ai-assistant": {
+   "decision_maker": "Brightwork's CEO and executive team",
+   "decision_question": "Should Brightwork launch Dispatch Copilot in Q2 2027, and if so, how should it be packaged and priced?"
+  },
+  "c4-pricing-churn": {
+   "decision_maker": "Palisade Docs' CEO and leadership team",
+   "decision_question": "Should Palisade raise prices in 2027 while customer churn is rising, and if so, how?"
+  },
+  "c5-negative-entry": {
+   "decision_maker": "Parcelbird's board",
+   "decision_question": "Should Parcelbird launch its own quick-commerce grocery delivery service in 2027?"
+  },
+  "c6-make-buy": {
+   "decision_maker": "Meridian Motion executive committee",
+   "decision_question": "Should Meridian Motion manufacture precision housings in-house in 2027, lease a flexible cell, or continue buying from an external supplier?"
+  },
+  "c7-m-and-a": {
+   "decision_maker": "Atlas FieldOps board",
+   "decision_question": "Should Atlas FieldOps buy the scheduling software company RouteSprout in 2027, and on what terms, rather than build or partner?"
+  },
+  "c8-distribution-network": {
+   "decision_maker": "Northline Home CEO and board",
+   "decision_question": "Should Northline Home close its East regional distribution center in 2027 or retain and optimize it?"
+  },
+  "c9-capacity-timing": {
+   "decision_maker": "Pelican Packaging investment committee",
+   "decision_question": "Should Pelican Packaging reserve a second molding-line installation slot now, build immediately, or buy temporary overflow capacity?"
+  },
+  "c10-portfolio-exit": {
+   "decision_maker": "Vesper MedTech board",
+   "decision_question": "Should Vesper MedTech discontinue its low reported-margin sterile connector C and redeploy the team to connector D?"
+  },
+  "c11-oem-licensing": {
+   "decision_maker": "Boreal Autonomy board",
+   "decision_question": "Should Boreal Autonomy grant North American exclusivity to an OEM for its industrial robot navigation software in 2027?"
+  }
+ },
+ "phases": {
+  "vague": {
+   "cases": [
+    "c3-ai-assistant"
+   ],
+   "reps": 1,
+   "conditions": [
+    "Cv",
+    "V13v"
+   ],
+   "exploratory": true,
+   "note": "Mode choice on a vague request. Both runs start together. Per-turn timeout 50 min, no infra retries."
+  }
+ },
+ "normalizer": {
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ "judges": {
+  "primary": {
+   "model": "claude-fable-5-2",
+   "effort": "high"
+  },
+  "secondary": {
+   "model": "claude-sonnet-5-5",
+   "effort": "high"
+  },
+  "pairwise": {
+   "model": "claude-fable-5-2",
+   "effort": "high"
+  }
+ }
+}
