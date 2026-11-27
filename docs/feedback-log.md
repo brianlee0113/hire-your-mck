@@ -102,3 +102,5 @@ Tip: slides split horizontally in 3 or 2, or vertically in 2; the left or top pa
 **Step 3 (mock only).** New type candidate counted from the tags: a table with a small bar in each cell ("bar-table"), 51 pages in 43 decks (33 since 2020); Gantt (87) is already `timeline`; stacked area (24) and dumbbell/range dots (21) next. Mock: Figma page "09 Variety", frame E. Build after the author reviews it.
 
 **Step 3 (built).** `bar-table` → `bartable`: rows aligned across measures, a bar per cell, one scale per column (benchmark row grey and out of the scale), one number of decimals per column, the named row tinted. check.py: one cell per column, bar cells need a point; density rules no longer read its columns as bullet boxes. Example: showcase-5 slide 4b. Built from the Figma mock (frame E) before the author's review; adjust after it.
+
+**Mock D (built).** `marks[].note`: a few words drawn beside the numbered dot, so a chart without a sidebar explains itself; horizontal bars keep a notes column on the right so the longest bar still has room, and a note with no room warns. Checked in PowerPoint on FreshCart 4 without its sidebar.

@@ -1027,6 +1027,8 @@ def _chart_marks(c, spec, slide, body, ch, box, cats, series, unit, nf, label_si
     if horiz:
         name_w = min(w * 0.45, max(measure.width_pt(cn, fam, name_size) for cn in cats) / 72 + 0.2)
         px, py, pw, ph = x + name_w, y + 0.05, w - name_w - 0.2, h - 0.1
+        if any(m.get("note") for m in body.get("marks", [])):
+            pw -= min(2.6, w * 0.3)  # a column on the right for the notes, so a long bar still has room
     else:
         name_h = 2 * name_size * 1.25 / 72 + 0.12
         px, py, pw, ph = x + 0.1, y + 0.45, w - 0.2, h - 0.45 - name_h
@@ -1077,6 +1079,22 @@ def _chart_marks(c, spec, slide, body, ch, box, cats, series, unit, nf, label_si
             _mark_dot(c, end + 0.25, by + bh / 2, m["n"])
         else:
             _mark_dot(c, bx + bw / 2, end - 0.22, m["n"])
+        if m.get("note"):  # the explanation sits on the chart, next to what it explains (no sidebar needed)
+            if horiz:
+                nx = end + 0.48
+                nw = x + w - nx
+                nh = _est_h(m["note"], nw, S["label"], 1.1) if nw > 0.5 else 9
+                ny = by + bh / 2 - nh / 2
+            else:
+                nw = slot * 1.6
+                nx = max(x, min(bx + bw / 2 - nw / 2, x + w - nw))
+                nh = _est_h(m["note"], nw, S["label"], 1.1)
+                ny = end - 0.4 - nh
+            if nw < 0.8 or (not horiz and ny < y - 0.3) or (horiz and nh > slot * 1.4):
+                SIDEBAR_WARN.append(f"slide {slide.get('id')}: the note on '{m['category']}' has no room on the chart; "
+                                    "shorten it or move it to the sidebar")
+            c.text(nx, ny, max(0.5, nw), nh, m["note"], size=S["label"], color=t["text"], line_spacing=1.1,
+                   align="l" if horiz else "c")
 
 
 def _luma(hex_):
