@@ -97,6 +97,25 @@ class Spec:
     def dpoint(self, point):
         return None if not point or point.get("placeholder") else self.dp.get(point.get("data_ref"))
 
+    def recompute(self, did, overrides, _seen=None):
+        """Value of data point `did` with some inputs replaced (overrides: id -> value), rebuilt through calc."""
+        if did in overrides:
+            return overrides[did]
+        d = self.dp[did]
+        if not d.get("calc"):
+            return d["value"]
+        seen = (_seen or set()) | {did}
+        e = d["calc"].replace("−", "-").replace("×", "*").replace("÷", "/")
+        env = {}
+        for k, i in enumerate(sorted(self.dp, key=len, reverse=True)):
+            e2 = re.sub(rf"(?<![\w.]){re.escape(i)}(?![\w-])", f"_v{k}", e)
+            if e2 != e:
+                if i in seen:
+                    raise ValueError(f"calc of {did} refers back to {i}")
+                env[f"_v{k}"] = self.recompute(i, overrides, seen)
+                e = e2
+        return _safe_eval(e, env)
+
 
 def collect_refs(obj, out=None):
     """All data_ref ids anywhere inside a slide."""
@@ -126,6 +145,21 @@ def has_placeholder(obj):
 
 
 # ---------------------------------------------------------------- formatting
+
+def _safe_eval(expr, env):
+    """+ − × ÷ on numbers and names from env only (data point calc)."""
+    import ast
+    import operator
+    ops = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul, ast.Div: operator.truediv}
+    def ev(n):
+        if isinstance(n, ast.Expression): return ev(n.body)
+        if isinstance(n, ast.BinOp) and type(n.op) in ops: return ops[type(n.op)](ev(n.left), ev(n.right))
+        if isinstance(n, ast.UnaryOp) and isinstance(n.op, ast.USub): return -ev(n.operand)
+        if isinstance(n, ast.Constant) and isinstance(n.value, (int, float)): return n.value
+        if isinstance(n, ast.Name) and n.id in env: return env[n.id]
+        raise ValueError(f"unknown term '{ast.unparse(n)}'")
+    return ev(ast.parse(expr, mode="eval"))
+
 
 def excel_format(unit, value_format=None):
     if value_format:
@@ -2759,6 +2793,7 @@ def content(c, spec, slide, page_no):
              "levers": lambda: levers(c, spec, slide, body, box),
              "case": lambda: case(c, spec, slide, body, box),
              "equation": lambda: equation_body(c, spec, body, box),
+             "model": lambda: model_body(c, spec, body, box),
              "cost_curve": lambda: cost_curve(c, spec, slide, body, box),
              "org": lambda: org_chart(c, spec, slide, body, box),
              "initiative": lambda: initiative(c, spec, slide, body, box),
@@ -3742,6 +3777,119 @@ def equation_body(c, spec, body, box):
         c.line(x, ay + 0.4, x + w, ay + 0.4, color=t["primary"], weight=1.5)
         _bullets(c, ass, x, ay + 0.55, w, y + h - ay - 0.55,
                  size=fit_size(ass, w, y + h - ay - 0.55, S["body"] + 1, line_spacing=1.15))
+
+
+def range_fmt(lo, hi, unit):
+    """15–30, $3–7, 80–120K: the unit is written once, on the high end."""
+    a, b = fmt(lo, unit), fmt(hi, unit)
+    pre = "$" if a.startswith("$") and b.startswith("$") else ""
+    tail = b[len(pre) + len(_num(hi)):] if b.startswith(pre + _num(hi)) else ""
+    if tail and a.endswith(tail):
+        a = a[:len(a) - len(tail)]
+    return f"{a}–{b[len(pre):] if pre else b}"
+
+
+def model_sensitivity(spec, body):
+    """[(driver, low_result, high_result)] sorted by swing, widest first; drivers without a range last (None)."""
+    res = body["result"]["point"].get("data_ref")
+    rows = []
+    for dv in body["drivers"]:
+        d = spec.dpoint(dv["point"])
+        rg = (d or {}).get("range")
+        if not (d and rg and res in spec.dp):
+            rows.append((dv, None, None))
+            continue
+        lo = spec.recompute(res, {d["id"]: rg["low"]})
+        hi = spec.recompute(res, {d["id"]: rg["high"]})
+        rows.append((dv, lo, hi))
+    return sorted(rows, key=lambda r: (r[1] is None, -(abs(r[2] - r[1]) if r[1] is not None else 0)))
+
+
+def model_body(c, spec, body, box):
+    """Estimate as a model (B-13): driver table (value, basis, range) and a tornado of the result at each
+    driver's low and high, rows aligned. The result row closes the table."""
+    x, y, w, h = box
+    t = c.t
+    rows = model_sensitivity(spec, body)
+    res = spec.dpoint(body["result"]["point"])
+    base = res["value"] if res else None
+    unit = (res or {}).get("unit")
+    gap = 0.35
+    tw = w * 0.56
+    tx2 = x + tw + gap
+    tw2 = w - tw - gap
+    cols = [("Driver", 0.27), ("Value", 0.19), ("Basis", 0.30), ("Range", 0.24)]
+    pad = 0.18  # space between the right-aligned value and the basis text
+    head_h = 0.42
+    res_h = 0.75
+    n = len(rows)
+    rh = min(0.66, (h - head_h - res_h - 0.1) / max(1, n))
+    # headers
+    cx = x
+    for name, f in cols:
+        c.text(cx + (pad if name == "Basis" else 0), y, tw * f - 0.08, head_h - 0.08, name, size=S["label"], bold=True, color=t["muted"], anchor="b",
+               align="r" if name in ("Value", "Range") else "l")
+        cx += tw * f
+    c.text(tx2, y, tw2, head_h - 0.08, body.get("sensitivity_header") or body["result"]["label"], size=S["label"],
+           bold=True, color=t["muted"], anchor="b")
+    c.line(x, y + head_h, x + w, y + head_h, color=t["title"], weight=1)
+    # scale for the tornado: base and every end, with room for the end labels
+    ends = [v for _, lo, hi in rows if lo is not None for v in (lo, hi)] + ([base] if base is not None else [])
+    lab_w = 0.75
+    if ends:
+        vmin, vmax = min(ends), max(ends)
+        span = (vmax - vmin) or 1
+        px0, px1 = tx2 + lab_w, tx2 + tw2 - lab_w
+        to_x = lambda v: px0 + (v - vmin) / span * (px1 - px0)
+    low_c, high_c = tint(t["primary"], 0.55), t["primary"]
+    for k, (dv, lo, hi) in enumerate(rows):
+        ry = y + head_h + k * rh
+        d = spec.dpoint(dv["point"]) or {}
+        rg = d.get("range")
+        cells = [(dv["label"], "l", True, t["text"]), (dp_fmt(spec, dv["point"]), "r", True, t["title"]),
+                 (dv["basis"], "l", False, t["muted"]), (range_fmt(rg["low"], rg["high"], d.get("unit")) if rg else "—", "r", False, t["text"])]
+        cx = x
+        for (txt, al, bold, col), (name, f) in zip(cells, cols):
+            px = pad if name == "Basis" else 0
+            cw = tw * f - 0.08 - px
+            size = fit_size([txt], cw, rh - 0.08, S["body"], min_size=10, indent=0, line_spacing=1.0, bold=bold)
+            c.text(cx + px, ry, cw, rh, txt, size=size, bold=bold, color=col, align=al, anchor="m", line_spacing=1.0)
+            cx += tw * f
+        c.line(x, ry + rh, x + w, ry + rh, color=t["rule"])
+        if lo is None or not ends:
+            continue
+        bh = min(0.34, rh * 0.55)
+        by = ry + (rh - bh) / 2
+        xb = to_x(base)
+        for v, col in ((lo, low_c), (hi, high_c)):
+            if abs(v - base) > 1e-12:
+                c.rect(min(xb, to_x(v)), by, abs(to_x(v) - xb), bh, fill=col)
+        left, right = sorted((lo, hi))
+        # the ends are estimates too: one decimal (of the shown scale, so 9.7% not 10%), whole numbers past 100
+        vf = ("0.0%" if unit == "%" else "0.0") if abs(base * (100 if unit == "%" else 1)) < 100 else ("0%" if unit == "%" else "0")
+        left_s, right_s = fmt(left, unit, vf), fmt(right, unit, vf)
+        c.text(to_x(left) - lab_w, ry, lab_w - 0.06, rh, left_s, size=S["label"], color=t["text"], align="r", anchor="m")
+        c.text(to_x(right) + 0.06, ry, lab_w - 0.06, rh, right_s, size=S["label"], color=t["text"], anchor="m")
+    # result row
+    ry = y + head_h + n * rh
+    c.line(x, ry, x + w, ry, color=t["title"], weight=1.5)
+    c.text(x, ry + 0.08, tw * cols[0][1] - 0.08, res_h - 0.16, body["result"]["label"], size=S["body"], bold=True,
+           color=t["title"], anchor="m")
+    c.text(x + tw * cols[0][1], ry + 0.08, tw * cols[1][1] - 0.08, res_h - 0.16, dp_fmt(spec, body["result"]["point"]),
+           size=22, bold=True, font=t["font_title"], color=t["highlight"], align="r", anchor="m")
+    if body["result"].get("formula"):
+        fx = x + tw * (cols[0][1] + cols[1][1]) + pad
+        c.text(fx, ry + 0.08, tw * (cols[2][1] + cols[3][1]) - 0.08, res_h - 0.16, "= " + body["result"]["formula"],
+               size=S["label"], color=t["muted"], anchor="m")
+    if ends and base is not None:
+        xb = to_x(base)
+        c.line(xb, y + head_h + 0.04, xb, ry, color=t["title"], weight=1, dash=True)
+        c.text(xb - 1.2, ry + 0.06, 2.4, 0.3, f"Base {fmt(base, unit)}", size=S["label"], bold=True, color=t["title"], align="c")
+        lx = tx2 + tw2 - 2.9
+        c.rect(lx, ry + 0.46, 0.16, 0.16, fill=low_c)
+        c.text(lx + 0.22, ry + 0.4, 1.2, 0.28, "driver at low", size=S["small"], color=t["muted"], anchor="m")
+        c.rect(lx + 1.45, ry + 0.46, 0.16, 0.16, fill=high_c)
+        c.text(lx + 1.67, ry + 0.4, 1.2, 0.28, "driver at high", size=S["small"], color=t["muted"], anchor="m")
 
 
 # ---------------------------------------------------------------- entry

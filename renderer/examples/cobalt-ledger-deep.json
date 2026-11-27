@@ -3445,6 +3445,137 @@
       }
     },
     {
+      "id": "b8",
+      "role": "backup",
+      "section_id": "4",
+      "status": "filled",
+      "lead_message": {
+        "prefix": "BACKUP:",
+        "text": "The price uplift moves the payback most; no driver at the end of its range pushes it past the two-year test"
+      },
+      "message_type": "item",
+      "archetype": "estimate-model",
+      "backup_of": "L4",
+      "unit_line": "**Payback of the AI package**, months, 2027 plan, team estimate; each driver moved alone across its range",
+      "body": {
+        "kind": "model",
+        "drivers": [
+          {
+            "point": {
+              "data_ref": "team"
+            },
+            "label": "Engineers",
+            "basis": "assumption"
+          },
+          {
+            "point": {
+              "data_ref": "lce"
+            },
+            "label": "Cost per engineer-year",
+            "basis": "BLS wage, loaded"
+          },
+          {
+            "point": {
+              "data_ref": "bm"
+            },
+            "label": "Build time",
+            "basis": "assumption"
+          },
+          {
+            "point": {
+              "data_ref": "cust"
+            },
+            "label": "Paying customers",
+            "basis": "planning base"
+          },
+          {
+            "point": {
+              "data_ref": "upl"
+            },
+            "label": "Price uplift",
+            "basis": "assumption, peers (4a)"
+          },
+          {
+            "point": {
+              "data_ref": "aic"
+            },
+            "label": "AI cost per customer",
+            "basis": "model prices (4b)"
+          }
+        ],
+        "result": {
+          "point": {
+            "data_ref": "pb"
+          },
+          "label": "Payback, months",
+          "formula": "build cost ÷ monthly gain after AI costs"
+        },
+        "sensitivity_header": "Payback, months, at each driver's low and high"
+      }
+    },
+    {
+      "id": "b9",
+      "role": "backup",
+      "section_id": "4",
+      "status": "filled",
+      "lead_message": {
+        "prefix": "BACKUP:",
+        "text": "Assistant usage drives the AI cost; even at double usage it stays under a third of the uplift"
+      },
+      "message_type": "item",
+      "archetype": "estimate-model",
+      "backup_of": "4b1",
+      "unit_line": "**AI running cost as a share of the price uplift**, %, per customer per year, team estimate; each driver moved alone",
+      "body": {
+        "kind": "model",
+        "drivers": [
+          {
+            "point": {
+              "data_ref": "nq"
+            },
+            "label": "Assistant questions per month",
+            "basis": "assumption, set high"
+          },
+          {
+            "point": {
+              "data_ref": "qin"
+            },
+            "label": "Input tokens per question",
+            "basis": "assumption"
+          },
+          {
+            "point": {
+              "data_ref": "sin"
+            },
+            "label": "Sonnet input price",
+            "basis": "Anthropic list price"
+          },
+          {
+            "point": {
+              "data_ref": "ncat"
+            },
+            "label": "Categorizations per month",
+            "basis": "assumption, set high"
+          },
+          {
+            "point": {
+              "data_ref": "upl"
+            },
+            "label": "Price uplift",
+            "basis": "assumption, peers (4a)"
+          }
+        ],
+        "result": {
+          "point": {
+            "data_ref": "ash"
+          },
+          "label": "AI cost, % of uplift",
+          "formula": "(categorization + assistant cost) ÷ yearly uplift"
+        },
+        "sensitivity_header": "AI cost as % of uplift, at each driver's low and high"
+      }
+    },
+    {
       "id": "end",
       "role": "end_page",
       "status": "filled"
@@ -4320,7 +4451,12 @@
       "value": 20,
       "unit": "engineers",
       "period": "2027 plan",
-      "source_id": "u1"
+      "source_id": "u1",
+      "range": {
+        "low": 15,
+        "high": 30,
+        "basis": "assumption: a lean team to a full squad"
+      }
     },
     {
       "id": "bm",
@@ -4329,7 +4465,12 @@
       "value": 12,
       "unit": "months",
       "period": "2027 plan",
-      "source_id": "u1"
+      "source_id": "u1",
+      "range": {
+        "low": 9,
+        "high": 18,
+        "basis": "assumption: fast build to a 50% overrun"
+      }
     },
     {
       "id": "cust",
@@ -4338,7 +4479,12 @@
       "value": 100000,
       "unit": "customers",
       "period": "2027 plan",
-      "source_id": "u1"
+      "source_id": "u1",
+      "range": {
+        "low": 80000,
+        "high": 120000,
+        "basis": "±20% of the planning base"
+      }
     },
     {
       "id": "upl",
@@ -4347,7 +4493,12 @@
       "value": 5,
       "unit": "$/month",
       "period": "2027 plan",
-      "source_id": "u1"
+      "source_id": "u1",
+      "range": {
+        "low": 3,
+        "high": 7,
+        "basis": "peer AI add-on prices (4a)"
+      }
     },
     {
       "id": "tin",
@@ -4437,6 +4588,11 @@
         "at": "2026-11-10",
         "by": "verifier",
         "note": "confirmed by the independent verifier"
+      },
+      "range": {
+        "low": 1,
+        "high": 4,
+        "basis": "half to double today's list price"
       }
     },
     {
@@ -4464,7 +4620,12 @@
       "value": 2000,
       "unit": "per month",
       "period": "2027 plan",
-      "source_id": "u1"
+      "source_id": "u1",
+      "range": {
+        "low": 1000,
+        "high": 4000,
+        "basis": "half to double the usage set in 4b"
+      }
     },
     {
       "id": "nq",
@@ -4473,7 +4634,12 @@
       "value": 50,
       "unit": "per month",
       "period": "2027 plan",
-      "source_id": "u1"
+      "source_id": "u1",
+      "range": {
+        "low": 25,
+        "high": 100,
+        "basis": "half to double the usage set in 4b"
+      }
     },
     {
       "id": "qin",
@@ -4482,7 +4648,12 @@
       "value": 5000,
       "unit": "tokens",
       "period": "2027 plan",
-      "source_id": "u1"
+      "source_id": "u1",
+      "range": {
+        "low": 2500,
+        "high": 10000,
+        "basis": "short to long questions with account context"
+      }
     },
     {
       "id": "qout",
@@ -4560,7 +4731,12 @@
         "Categorization runs on Claude Haiku 5.5 and assistant questions on Claude Sonnet 5.5, at November 2026 list prices",
         "Usage per customer is set high on purpose: 2,000 categorizations and 50 questions a month",
         "Token counts per categorization come from a 2026 receipt-classification study; per question they are our assumption"
-      ]
+      ],
+      "range": {
+        "low": 5,
+        "high": 20,
+        "basis": "half to double the usage set in 4b"
+      }
     },
     {
       "id": "uyr",
@@ -4614,7 +4790,12 @@
         "wsh"
       ],
       "formula": "median wage ÷ wage share of compensation",
-      "calc": "wage / wsh / 1000"
+      "calc": "wage / wsh / 1000",
+      "range": {
+        "low": 175,
+        "high": 214,
+        "basis": "±10%, wage spread across US metros"
+      }
     },
     {
       "id": "launch",
@@ -4626,12 +4807,11 @@
       "source_id": "s0",
       "derived_from": [
         "team",
-        "wage",
-        "wsh",
+        "lce",
         "bm"
       ],
-      "formula": "engineers × median wage ÷ wage share of compensation × months ÷ 12",
-      "calc": "team * wage / wsh * bm / 12 / 1000000",
+      "formula": "engineers × loaded cost per engineer-year × months ÷ 12",
+      "calc": "team * lce * bm / 12 / 1000",
       "estimate": true,
       "assumptions": [
         "20 engineers for 12 months at the BLS median developer wage, loaded to total compensation (wages are 70% of it)",

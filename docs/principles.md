@@ -145,7 +145,8 @@
 > 백업이 저렇게 단순한 계산식으로 나오는 경우는 컨설팅에서 잘 없어. 이거는 개선이 필요한 영역이야.
 
 - **EN:** On an `equation` slide, show the drivers behind the inputs: 3 or more inputs, with an intermediate result (`=`) where it helps (38% − 29% = 9 pp × 8% = 0.7 pp). A one-step calculation (A ÷ B = C) goes in a `basis` strip on the chart slide that uses the number; a chain of additions and subtractions is a `waterfall-bridge`.
-- **QA:** content·backup 장표의 `equation` 본문이 입력 2개(연산 한 번)이거나 +와 −만 쓰면 fail. 근거: 블라인드 리뷰 13쌍 중 6쌍에서 같은 지적 (feedback-log Round 3).
+- **EN (model):** An estimate built on 3 or more inputs also shows which ones move it: an `estimate-model` slide (driver table with value, basis and range, tornado of the result at each driver's low and high), usually in the appendix.
+- **QA:** content·backup 장표의 `equation` 본문이 입력 2개(연산 한 번)이거나 +와 −만 쓰면 fail. `model` 장표는 드라이버가 결과 calc에 안 들어가거나, 값이 범위 밖이거나, 범위 있는 드라이버가 2개 미만이면 fail. 부록이 있는 덱에서 입력 3개 이상인 추정치에 모델 장표가 없으면 warn. 근거: 블라인드 리뷰 13쌍 중 6쌍에서 같은 지적 (feedback-log Round 3).
 
 ### 질문 방식 (2026-11-06, SKILL.md 운영 규칙)
 > 그거를 내가 타이핑으로 답변하는게 별로야. 앞에서처럼 너가 객관식처럼 옵션들을 주고(물론 내가 기입도 가능), 그렇게 해야 이탈이 덜 될 듯.

@@ -684,6 +684,7 @@
         "quote-interview",
         "statement",
         "calculation-bridge",
+        "estimate-model",
         "cover",
         "agenda-tracker",
         "section-divider",
@@ -902,6 +903,9 @@
         },
         {
           "$ref": "#/$defs/body_equation"
+        },
+        {
+          "$ref": "#/$defs/body_model"
         },
         {
           "$ref": "#/$defs/body_cost_curve"
@@ -2063,6 +2067,27 @@
               }
             }
           }
+        },
+        "range": {
+          "type": "object",
+          "required": [
+            "low",
+            "high"
+          ],
+          "additionalProperties": false,
+          "description": "Plausible low and high values of an input, for the sensitivity on an estimate-model slide (B-13). In the data point's unit and scale.",
+          "properties": {
+            "low": {
+              "type": "number"
+            },
+            "high": {
+              "type": "number"
+            },
+            "basis": {
+              "type": "string",
+              "description": "Why this range, in a few words: 'peer range, 2024 survey', '±10%, wage spread across states'."
+            }
+          }
         }
       }
     },
@@ -2225,6 +2250,72 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "body_model": {
+      "type": "object",
+      "required": [
+        "kind",
+        "drivers",
+        "result"
+      ],
+      "additionalProperties": false,
+      "description": "An estimate shown as a model (B-13): a driver table (value, basis, range) next to a tornado of the result at each driver's low and high. The renderer recomputes the result from the data points' calc; drivers need a range on their data point.",
+      "properties": {
+        "kind": {
+          "const": "model"
+        },
+        "drivers": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "required": [
+              "point",
+              "label",
+              "basis"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "point": {
+                "$ref": "#/$defs/point"
+              },
+              "label": {
+                "type": "string",
+                "description": "Short driver name, 1–3 words: 'Engineers', 'Uplift per month'."
+              },
+              "basis": {
+                "type": "string",
+                "description": "Where the value comes from, a few words: 'BLS, 2024', 'assumption', 'page 4b'."
+              }
+            }
+          }
+        },
+        "result": {
+          "type": "object",
+          "required": [
+            "point",
+            "label"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "point": {
+              "$ref": "#/$defs/point"
+            },
+            "label": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string",
+              "description": "The model in words: 'build cost ÷ monthly net gain'."
+            }
+          }
+        },
+        "sensitivity_header": {
+          "type": "string",
+          "description": "Header over the tornado: the result and its unit, e.g. 'Payback, months'. Defaults to the result label."
         }
       }
     },

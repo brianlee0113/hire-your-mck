@@ -34,6 +34,7 @@ First decide **what the title compares** (Zelazny's comparison types plus struct
 | Who does what in the organization | report to, owns, runs, governance, new unit | `org-chart` | `process-flow` (hand-offs, not reporting lines) |
 | One initiative in detail, one of a series | 1a:, initiative, how we would, owner | `initiative-one-pager` | `case-example` (something that worked elsewhere) |
 | Our own estimate, and how it is built | would add, uplift, worth, at today's pace | `calculation-bridge` | `basis` strip on the chart slide |
+| Which assumptions move an estimate | stays under, holds unless, depends most on | `estimate-model` | `calculation-bridge` (no ranges known) |
 
 Rules: two clauses in the title → two panels; no arrow between them unless one causes the other (B-09). A count word ("three") → exactly that many elements. A question title → the answer goes in a callout or sidebar.
 
@@ -42,6 +43,7 @@ Rules: two clauses in the title → two panels; no arrow between them unless one
 Each line: archetype → `body.kind` (key fields) — how a full slide looks.
 
 - `calculation-bridge` → `equation` (`terms` with `op`, `assumptions_header`, `assumptions`) — 4–6 number cards joined by × + − ÷ = with the result card dark, then the assumptions under a takeaway header (B-08). Show the drivers: 3 or more inputs, with an intermediate `=` where it helps; one operation or only + and − fails (B-13) and belongs in a `basis` strip or a `waterfall-bridge`.
+- `estimate-model` → `model` (`drivers[]` with `point`, `label`, `basis`; `result` with `point`, `label`, `formula`; `sensitivity_header`) — a driver table (value, basis, range) beside a tornado of the result at each driver's low and high, widest swing first, with the result row closing the table (B-13). Ranges sit on the drivers' data points (`range: {low, high, basis}`); the renderer recomputes the result through `calc`. Use it for an estimate built on 3 or more inputs, usually as the backup to its `calculation-bridge`; the title says which driver matters and whether the answer holds.
 
 **Charts** (`kind: "chart"`, `chart_type`, `categories`, `series[].points`, `highlight`, `sort`, `value_format`, optional `benchmark`)
 - `scatter-bubble` → `scatter`: `categories` name the points; `series[0]` = x values, `series[1]` = y values, optional `series[2]` = sizes (bubbles). `x_label` / `y_label` as `"**Metric**, unit"`, `x_format` / `value_format`. Dashed average lines split the plot by default; name the areas with `quadrant_labels` (TL, TR, BL, BR) and accent one with `focus_quadrant`. `highlight` = the points the title names. `trendline: true` only when few labels sit near the line. Pair with a sidebar that reads the outliers.

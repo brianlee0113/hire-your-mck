@@ -48,7 +48,8 @@ QA (LLM): read one bullet alone; are subject, metric and comparison clear? check
 QA: warn when a `deck_detailed` spec still has placeholders.
 
 **B-13 · A calculation slide shows how the number is built, not one step of arithmetic.** Box cards with a single operation (A ÷ B = C) or only additions and subtractions look too simple and lower trust, more so when they repeat. On an `equation` slide show the drivers behind the inputs: 3 or more inputs, with an intermediate result (`=`) where it helps (38% − 29% = 9 pp × 8% = 0.7 pp). A one-step calculation goes in a `basis` strip on the chart slide that uses the number; a chain of additions and subtractions is a `waterfall-bridge`.
-QA: fail if an `equation` body (content or backup) has two inputs, or only + and −.
+An estimate built on 3 or more inputs also shows which ones move it: an `estimate-model` slide (driver table with value, basis and range, tornado of the result at each driver's low and high), usually in the appendix.
+QA: fail if an `equation` body (content or backup) has two inputs, or only + and −; fail if a `model` driver is not in the result's calc, sits outside its range, or fewer than two drivers have a range. Warn, in decks with an appendix, when an estimate on 3+ inputs has no model slide.
 
 ## A · Measured on public decks
 

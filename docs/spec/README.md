@@ -122,6 +122,8 @@
 | **B-08** | `calc` 재계산 값 불일치, estimate인데 `calc`·`assumptions` 없음, 추정치를 근거(`basis`, `equation`, 행 `basis`) 없이 보여줌 | fail |
 | **B-08** | 추정처럼 보이는 계산값에 `estimate` 표시 없음, derived인데 `calc` 없음 | warn |
 | **B-10** | 레버 숫자에 열 제목(`headers`) 없음, 단위가 섞였는데 `metric` 없음 | fail |
+| **B-13** | `equation` 본문이 입력 2개(연산 한 번)이거나 +·−만 씀 / `model` 드라이버가 결과 `calc`에 없음, 값이 `range` 밖, 범위 있는 드라이버 2개 미만 | fail |
+| **B-13** | 부록이 있는 덱에서 입력 3개 이상인 추정치에 `estimate-model` 장표 없음 | warn |
 | units | 숫자 뒤 "points" (→ 문장은 percentage points, 라벨은 pp) | fail |
 | units | 문장 속 "pp", "Nx", "vs." | warn |
 | A-12 | 글자 수(본문 450자, 차트·도식 300자 미만 / 1,300자 초과), 박스 불렛 3개 미만, KPI drivers 없음, 한 결론 장치가 40% 초과 또는 3장 연속 | warn |

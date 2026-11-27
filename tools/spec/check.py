@@ -568,7 +568,7 @@ for d in dps.values():
 def _basis_refs(slide):
     """Refs whose basis is on the slide: basis strip, equation body, or a row/element carrying 'basis'."""
     refs = set(collect_data_refs(slide.get("basis") or {}))
-    if (slide.get("body") or {}).get("kind") == "equation":
+    if (slide.get("body") or {}).get("kind") in ("equation", "model"):
         refs |= set(collect_data_refs(slide["body"]))
     def walk(o):
         if isinstance(o, dict):
@@ -616,6 +616,55 @@ for s in spec["slides"]:
         out("B-13", "fail", "equation slide shows one operation (two inputs and a result); show the drivers behind the inputs (3+ inputs, an intermediate '=' is fine), or put the cards in a basis strip on the chart slide that uses the number", s["id"])
     elif ops and all(o in ("+", "−", "=") for o in ops):
         out("B-13", "fail", "equation slide only adds and subtracts; a sum or bridge reads better as a waterfall-bridge, or as a basis strip on the chart slide", s["id"])
+def _inputs_of(did, seen=None):
+    """Every data point the calc of `did` reads, directly or through other calcs."""
+    seen = set() if seen is None else seen
+    d = dps.get(did) or {}
+    names = set(d.get("derived_from", []))
+    if d.get("calc"):
+        names |= {i for i in dps if re.search(rf"(?<![\w.]){re.escape(i)}(?![\w-])", d["calc"])}
+    for i in names - seen:
+        seen.add(i)
+        _inputs_of(i, seen)
+    return seen
+_modelled = set()
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") != "model" or s.get("status") == "ghost":
+        continue
+    r = b["result"]["point"].get("data_ref")
+    _modelled.add(r)
+    if r and not (dps.get(r) or {}).get("calc"):
+        out("B-13", "fail", f"model result {r} has no calc, so the sensitivity cannot be computed", s["id"])
+        continue
+    reach = _inputs_of(r) if r else set()
+    ranged = 0
+    for dv in b["drivers"]:
+        i = dv["point"].get("data_ref")
+        if not i:
+            continue
+        if i not in reach:
+            out("B-13", "fail", f"driver {i} is not an input of {r}'s calc; moving it would not change the result", s["id"])
+        rg = (dps.get(i) or {}).get("range")
+        if rg:
+            ranged += 1
+            v = dps[i]["value"]
+            if not rg["low"] <= v <= rg["high"]:
+                out("B-13", "fail", f"driver {i}: value {v} is outside its range {rg['low']}–{rg['high']}", s["id"])
+            if not rg.get("basis"):
+                out("B-13", "warn", f"driver {i}: range has no basis; say why low and high are plausible", s["id"])
+    if ranged < 2:
+        out("B-13", "fail", "model shows fewer than two drivers with a range; add range {low, high, basis} to the drivers' data points", s["id"])
+# an estimate built on 3 or more inputs gets its sensitivity in the appendix (decks that have one)
+_has_appendix = any(s.get("role") == "backup" for s in spec["slides"])
+for s in (spec["slides"] if _has_appendix else []):
+    b = s.get("body") or {}
+    if s.get("role") != "content" or s.get("status") == "ghost" or b.get("kind") != "equation":
+        continue
+    r = (b.get("terms") or [{}])[-1].get("point", {}).get("data_ref")
+    leaves = {i for i in _inputs_of(r) if not (dps.get(i) or {}).get("calc")} if r else set()
+    if (dps.get(r) or {}).get("estimate") and len(leaves) >= 3 and r not in _modelled:
+        out("B-13", "warn", f"estimate {r} rests on {len(leaves)} inputs; show which ones move it with an estimate-model slide (backup is fine)", s["id"])
 # Units (style.md): percentage differences are 'percentage points' in sentences and 'pp' in labels, never bare 'points'
 def _all_text(o, path=""):
     if isinstance(o, str): yield path, o
