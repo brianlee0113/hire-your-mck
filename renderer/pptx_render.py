@@ -419,8 +419,12 @@ def chrome(c, spec, slide, page_no, footnotes=None):
         notes.append("Lower confidence (secondary source, not re-checked, or sources differ): " + (txt if len(txt) < 110 else txt[:107] + "…"))
     if notes:
         lines = [f"{i + 1}  {n}" for i, n in enumerate(notes)]
-        top = y - 0.02 - G["line_h"] * len(lines)
-        c.text(m, top, G["title_w"], G["line_h"] * len(lines), lines, size=S["source"], color=t["muted"])
+        n_lines = sum(max(1, _lines(ln, G["title_w"], S["source"])) for ln in lines)
+        if n_lines > len(lines) + 1:
+            SIDEBAR_WARN.append(f"slide {slide.get('id')}: footnotes run to {n_lines} lines; keep each to one line "
+                                "(move detail to a backup or the workbook)")
+        top = y - 0.02 - G["line_h"] * n_lines
+        c.text(m, top, G["title_w"], G["line_h"] * n_lines, lines, size=S["source"], color=t["muted"])
     src = source_line(spec, slide)
     if src:
         c.text(m, y + (G["line_h"] if notes else 0) * 0, G["title_w"], G["line_h"], src, size=S["source"], color=t["muted"])
@@ -478,8 +482,9 @@ def body_box(slide):
     bottom = G["content_bottom"]
     if slide.get("so_what") and slide.get("status") != "ghost":
         bottom -= G["sowhat_h"] + G["gap"]
-    if (slide.get("footnotes")):
-        bottom -= G["line_h"] * len(slide["footnotes"])
+    if (slide.get("footnotes")):  # wrapped footnotes take their real lines, so they never sit on the body
+        bottom -= G["line_h"] * sum(max(1, _lines(f"{i + 1}  {n}", G["title_w"], S["source"]))
+                                    for i, n in enumerate(slide["footnotes"]))
     if slide.get("basis") and slide.get("status") != "ghost":
         bottom -= BASIS_H + G["gap"]
     lay = slide.get("layout") or {}
