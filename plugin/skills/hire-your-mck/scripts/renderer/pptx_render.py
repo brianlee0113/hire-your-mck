@@ -1764,10 +1764,12 @@ def table(c, spec, body, box, slide=None):
         hh = max(_lines(col, widths[j], size, bold=True) for j, col in enumerate(cols, start=1)) * size * 1.2 / 72 + 0.16
         rh = []
         for i, row in enumerate(rows):
-            n = max([_lines(row["label"], widths[0], lsize, bold=True)] +
-                    [_lines(tx, widths[j] - (chip_w + 0.1 if j - 1 < len(row["cells"]) and row["cells"][j - 1].get("status") else 0), size)
-                     for j, tx in enumerate(cell_texts(i, row), start=1) if tx])
-            need = n * size * 1.2 / 72 + 0.18
+            n = max([_lines(tx, widths[j] - (chip_w + 0.1 if j - 1 < len(row["cells"]) and row["cells"][j - 1].get("status") else 0), size)
+                     for j, tx in enumerate(cell_texts(i, row), start=1) if tx] or [1])
+            lab_need = _lines(row["label"], widths[0], lsize, bold=True) * lsize * 1.2 / 72
+            if row.get("basis"):  # B-08: how the row's estimate is built, under its label
+                lab_need += _lines(row["basis"], widths[0], size - 2) * (size - 2) * 1.2 / 72
+            need = max(n * size * 1.2 / 72, lab_need) + 0.18
             if harvey_type:
                 need = max(need, 0.5)
             rh.append(need)
@@ -1834,14 +1836,15 @@ def table(c, spec, body, box, slide=None):
         tf = cell.text_frame
         tf.word_wrap = True
         parts = runs or [(text, bold, color)]
-        for k, (tx, bd, col) in enumerate(parts):
+        for k, part in enumerate(parts):
+            tx, bd, col = part[:3]
             p = tf.paragraphs[0] if k == 0 else tf.add_paragraph()
             p.alignment = {"l": PP_ALIGN.LEFT, "c": PP_ALIGN.CENTER}[align]
             if k == 0:
                 p.text = ""
             r = p.add_run()
             r.text = tx
-            r.font.size = Pt(size)
+            r.font.size = Pt(part[3] if len(part) > 3 else size)
             r.font.bold = bd
             r.font.name = t["font_body"]
             r.font.color.rgb = rgb(col or t["text"])
@@ -1862,8 +1865,9 @@ def table(c, spec, body, box, slide=None):
         if heat and row.get("benchmark"):
             tint = t["panel"]
         label = (row.get("badge", "") + "  " if row.get("badge") else "") + row["label"]
-        put(tb.cell(i, 0), label, bold=True, color=t["highlight"] if on else (t["muted"] if row.get("benchmark") else t["title"]),
-            size=size + 1, fill=tint)
+        lab_col = t["highlight"] if on else (t["muted"] if row.get("benchmark") else t["title"])
+        put(tb.cell(i, 0), label, bold=True, color=lab_col, size=size + 1, fill=tint,
+            runs=[(label, True, lab_col), (row["basis"], False, t["muted"], size - 2)] if row.get("basis") else None)
         texts = cell_texts(i - 1, row)
         for j, txt in enumerate(texts, start=1):
             cell = row["cells"][j - 1] if j - 1 < len(row["cells"]) else {}
