@@ -125,4 +125,4 @@ A fresh agent compiled the c7 B deck (RouteSprout) in restyle mode: 24 slides, 0
 
 Fixed from its notes: compile `corrections` items now allow `source_loc`, `evidence` and `affects`, which check.py (CP-03) requires, so a correction could never pass before; data points take `decimals` so a source's 1.92 is not shown as 1.9 (compile.md says to use it); A-01 no longer reads "Q1 2028" as a number.
 
-Seen in the deck, open: a 51-point line chart with crowded x labels and overlapping end labels (slide 12); timeline bars too narrow for their labels break words (slide 13); long footnotes can run past the slide without a warning; sidebar bullets max 4 and one-line exec sub-points made the agent move source detail to footnotes and body slides.
+Seen in the deck, open: a 51-point line chart with crowded x labels and overlapping end labels (slide 12); timeline bars too narrow for their labels broke words (slide 13; fixed: the label goes beside the bar, or just above it when the next bar is in the way); long footnotes can run past the slide without a warning; sidebar bullets max 4 and one-line exec sub-points made the agent move source detail to footnotes and body slides.

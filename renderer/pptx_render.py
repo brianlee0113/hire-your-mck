@@ -3803,10 +3803,31 @@ def timeline(c, spec, slide, body, box):
             while nl > 1 and lsize > 10:  # shrink before a label spills out of its bar (F8)
                 lsize -= 0.5
                 nl = _lines(b["label"], bw, lsize, bold=emph)
+            fam_ = FONTS["body"]
+            word_w = max((measure.width_pt(wd, fam_, lsize, bool(emph)) / 72 for wd in b.get("label", "").split()), default=0)
+            outside = b.get("label") and word_w > bw - 0.18  # a word wider than the bar would break mid-word inside it
+            if outside:
+                nl = 1
             bh = min(max(0.42, nl * lsize * 1.2 / 72 + 0.12), rh * 0.85)
             bar = c.rect(bx, ry + (rh - bh) / 2, bw, bh, fill=t["highlight"] if emph else t["other_bars"], radius=0.04)
-            if b.get("label"):
+            if b.get("label") and not outside:
                 c.label_in(bar, b["label"], size=lsize, bold=emph, color=t["white"] if emph else t["title"], align="l")
+            elif outside:  # a short bar: its label goes just right of it, up to the next bar in the row
+                nxt = min([gx + idx[o["start"]] * pw for o in row["bars"] if o.get("start") in idx and idx[o["start"]] > idx[b["end"]]]
+                          or [x + w])
+                room = nxt - (bx + bw) - 0.12
+                lab_w = measure.width_pt(b["label"], fam_, S["label"], bool(emph)) / 72 + 0.05
+                if lab_w <= room:
+                    c.text(bx + bw + 0.08, ry, room, rh, b["label"], size=S["label"], bold=bool(emph),
+                           color=t["highlight"] if emph else t["title"], anchor="m")
+                else:  # no room beside it: just above the bar, in the row's spare height
+                    top_ = ry + (rh - bh) / 2
+                    lab_h = S["small"] * 1.2 / 72 + 0.02
+                    if top_ - lab_h < ry - 0.02:
+                        SIDEBAR_WARN.append(f"slide {slide.get('id')}: timeline bar '{b['label'][:30]}' is too short for its label; "
+                                            "shorten the label or give the row more height")
+                    c.text(bx, top_ - lab_h - 0.02, measure.width_pt(b["label"], fam_, S["small"], bool(emph)) / 72 + 0.1, lab_h,
+                           b["label"], size=S["small"], bold=bool(emph), color=t["highlight"] if emph else t["title"])
         c.line(x, ry + rh, x + w, ry + rh, color=t["rule"])
 
 
