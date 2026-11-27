@@ -183,7 +183,7 @@ Captions name the source of any input that is not ours.
 
 ## Tables
 
-Row `note`s and a slide `callout` on a table render as the table's **last column** ("Verdict", or `body.verdict_header`), inside the table; the callout row is highlighted and shows the callout header and detail. Row heights come from the text, so keep cells to 2–3 lines.
+Row `note`s and a slide `callout` on a table render as the table's **last column** ("Verdict", or `body.verdict_header`), inside the table; the callout row is highlighted and shows the callout header and detail. Row heights come from the text, so keep cells to 2–3 lines. A verdict cell can carry `"status": "pass" | "watch" | "fail"` (optional `status_label`, e.g. "Holds", "Not now"): it draws a green, amber or red chip before the cell text, so the pattern reads before the words. Keep the text to a short reason ("Correlation, not cause"); use chips for tests, claims and options, not for every table.
 
 ## Scatter
 
@@ -256,6 +256,8 @@ Shows `next_steps` (action, owner, timing). Add `storyline.key_takeaways` only i
 KPI items show their `drivers` under a thin rule; add `drivers_header` only when a label helps, and not the same one on every KPI slide.
 
 `implication` is what the exhibit means for a decision, drawn at the foot of the sidebar. Use it only when the slide leads to one (where to launch, what to build first, how to price); a slide that reports a finding ends on plain bullets. At most a third of sidebar slides carry one. The renderer rotates four looks in deck order (a dark "bottom-line" box as in the reference decks, a rule with accent text, a white panel with an accent bar, a circled "!") so neighbouring slides differ; set `implication_style` (`dark`, `rule`, `bar`, `alert`) only to force one look. Use it instead of a last bullet that starts "For us:".
+
+The sidebar itself alternates two looks in deck order: a tinted `box` and an `open` column (no panel, a heavy rule on top, text on the slide background), so the deck does not read as one grey box after another. Set `sidebar.style` only to force one.
 
 `rows` and `big_number` must be **derived from the exhibit** (B-05, B-06), but not as a plain sum or difference: use shares or expected impact. `check.py` fails a repeat and warns on an unrelated number or a plain difference.
 

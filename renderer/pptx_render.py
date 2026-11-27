@@ -55,6 +55,18 @@ class Spec:
         self._key = None
         self.exec = spec.get("storyline", {}).get("exec_summary", [])
         self._imp_n = 0
+        self._side_n = 0
+
+    SIDEBAR_STYLES = ("box", "open")
+
+    def sidebar_style(self, sb):
+        """Explicit style wins; otherwise box and open alternate in deck order, so the explanation is not
+        always the same grey panel (holdout review, 2026-11-23)."""
+        if sb.get("style"):
+            return sb["style"]
+        st = self.SIDEBAR_STYLES[self._side_n % 2]
+        self._side_n += 1
+        return st
 
     IMPLICATION_STYLES = ("dark", "rule", "bar", "alert")  # reference "bottom-line box" first, then varied
 
@@ -462,11 +474,18 @@ def sidebar(c, spec, slide, x=None, w=None):
     y = G["content_top"]
     bottom = G["content_bottom"] - ((G["sowhat_h"] + G["gap"]) if slide.get("so_what") else 0)
     h = bottom - y
-    c.rect(x, y, w, h, fill=t["sidebar"], radius=0.06 if t["bar_radius"] else None)
-    if (slide.get("body") or {}).get("kind") != "matrix":
-        c.rect(x - G["gap"] * 1.35, y + h / 2 - 0.17, 0.2, 0.34, fill=t["sidebar"], shape=MSO_SHAPE.CHEVRON)
-    ink = t["sidebar_text"]
-    pad = 0.28
+    open_ = spec.sidebar_style(sb) == "open"
+    dark = t["dark_sidebar"] and not open_
+    if open_:  # no panel: a heavy rule on top, text on the slide background
+        c.line(x, y, x + w, y, color=t["primary"], weight=3)
+        ink = t["text"]
+        pad = 0.04
+    else:
+        c.rect(x, y, w, h, fill=t["sidebar"], radius=0.06 if t["bar_radius"] else None)
+        if (slide.get("body") or {}).get("kind") != "matrix":
+            c.rect(x - G["gap"] * 1.35, y + h / 2 - 0.17, 0.2, 0.34, fill=t["sidebar"], shape=MSO_SHAPE.CHEVRON)
+        ink = t["sidebar_text"]
+        pad = 0.28
     cy = y + 0.24
     if sb.get("implication"):  # what it means for us: its own box at the foot of the sidebar
         isz = S["body"] + 1
@@ -478,18 +497,18 @@ def sidebar(c, spec, slide, x=None, w=None):
             tw_ = bw - d - 0.42
             ih = max(d + 0.32, _est_h(sb["implication"], tw_, isz, 1.12, bold=True) + 0.34)
             iy = bottom - pad + 0.08 - ih
-            c.rect(bx, iy, bw, ih, fill=tint(t["highlight"]) if not t["dark_sidebar"] else t["primary"], line=t["highlight"], weight=1)
+            c.rect(bx, iy, bw, ih, fill=tint(t["highlight"]) if not dark else t["primary"], line=t["highlight"], weight=1)
             dot = c.rect(bx + 0.16, iy + 0.16, d, d, fill=t["highlight"], shape=MSO_SHAPE.OVAL)
             for side in ("margin_top", "margin_bottom", "margin_left", "margin_right"):
                 setattr(dot.text_frame, side, 0)
             c.label_in(dot, "!", size=S["header"] + 3, bold=True, color=t["white"], font=t["font_title"])
             c.text(bx + d + 0.3, iy + 0.17, tw_, ih - 0.3, sb["implication"], size=isz, bold=True,
-                   color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12)
+                   color=t["title"] if not dark else t["white"], line_spacing=1.12)
         elif istyle == "dark":  # filled box in the primary colour, white bold text (reference "bottom-line box")
             tw_ = bw - 0.4
             ih = _est_h(sb["implication"], tw_, isz, 1.1, bold=True, title=True) + 0.3
             iy = bottom - pad + 0.08 - ih
-            c.rect(bx, iy, bw, ih, fill=t["primary"] if not t["dark_sidebar"] else t["highlight"])
+            c.rect(bx, iy, bw, ih, fill=t["primary"] if not dark else t["highlight"])
             c.text(bx + 0.2, iy + 0.15, tw_, ih - 0.3, sb["implication"], size=isz, bold=True, font=t["font_title"],
                    color=t["white"], line_spacing=1.1, anchor="m")
         elif istyle == "rule":  # no box: a rule, then a bold line in the accent colour
@@ -498,20 +517,20 @@ def sidebar(c, spec, slide, x=None, w=None):
             iy = bottom - pad + 0.08 - ih
             c.line(bx, iy, bx + bw, iy, color=t["highlight"], weight=1.5)
             c.text(bx, iy + 0.14, tw_, ih - 0.14, sb["implication"], size=isz, bold=True, font=t["font_title"],
-                   color=t["highlight"] if not t["dark_sidebar"] else t["white"], line_spacing=1.1)
+                   color=t["highlight"] if not dark else t["white"], line_spacing=1.1)
         else:  # default: white panel with the accent bar
             tw_ = w - 2 * pad - 0.32
             ih = _est_h(sb["implication"], tw_, isz, 1.12, bold=True) + 0.3
             iy = bottom - pad + 0.08 - ih
-            c.rect(bx, iy, bw, ih, fill=t["white"] if not t["dark_sidebar"] else t["primary"])
+            c.rect(bx, iy, bw, ih, fill=t["white"] if not dark else t["primary"])
             c.rect(bx, iy, 0.07, ih, fill=t["highlight"])
             c.text(x + pad + 0.14, iy + 0.15, tw_, ih - 0.3, sb["implication"], size=isz, bold=True,
-                   color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12, anchor="m")
+                   color=t["title"] if not dark else t["white"], line_spacing=1.12, anchor="m")
         bottom = iy - 0.12
     if sb.get("header"):
         size = S["takeaway"] + 2
         hh = _est_h(sb["header"], w - 2 * pad, size, 1.0, bold=True, title=True)
-        c.text(x + pad, cy, w - 2 * pad, hh, sb["header"], size=size, bold=True, color=ink, font=t["font_title"], line_spacing=1.0)
+        c.text(x + pad, cy, w - 2 * pad, hh, sb["header"], size=size, bold=True, color=t["title"] if open_ else ink, font=t["font_title"], line_spacing=1.0)
         cy += hh + (0.06 if sb.get("kind") == "big_number" else 0.2)
     kind = sb.get("kind")
     if kind == "big_number":
@@ -532,8 +551,8 @@ def sidebar(c, spec, slide, x=None, w=None):
         step = room / max(1, n)
         for i, r in enumerate(sb.get("reasons", [])):
             ry = cy + i * step
-            dot = c.rect(x + pad, ry + 0.02, 0.34, 0.34, fill=t["primary"] if not t["dark_sidebar"] else t["white"], shape=MSO_SHAPE.OVAL)
-            c.label_in(dot, str(i + 1), size=S["label"], bold=True, color=t["white"] if not t["dark_sidebar"] else t["primary"])
+            dot = c.rect(x + pad, ry + 0.02, 0.34, 0.34, fill=t["primary"] if not dark else t["white"], shape=MSO_SHAPE.OVAL)
+            c.label_in(dot, str(i + 1), size=S["label"], bold=True, color=t["white"] if not dark else t["primary"])
             head = r["header"]
             pt = r.get("point")
             known = pt and spec.dpoint(pt)
@@ -570,7 +589,7 @@ def sidebar(c, spec, slide, x=None, w=None):
         if rows and cy + sum(heights) + 0.06 * len(bullets) > bottom - reserve + 0.15:
             SIDEBAR_WARN.append(f"slide {slide['id']}: sidebar bullets and value rows do not both fit; shorten the bullets or drop a row")
         for b, bh in zip(bullets, heights):
-            runs = [("▪  ", {"color": t["highlight"] if not t["dark_sidebar"] else ink})]
+            runs = [("▪  ", {"color": t["highlight"] if not dark else ink})]
             for k, part in enumerate(b.split("**")):
                 if part:
                     runs.append((part, {"color": ink, "bold": k % 2 == 1}))
@@ -582,7 +601,7 @@ def sidebar(c, spec, slide, x=None, w=None):
     if rows:
         # rows sit on the bottom of the sidebar so they can never run out of it (F6); bullets fill the space above
         cy = (bottom - (0.55 if sb.get("note") else 0.1)) - sum(needs_r) - 0.12
-        c.line(x + pad, cy, x + w - pad, cy, color=t["rule"] if not t["dark_sidebar"] else ink)
+        c.line(x + pad, cy, x + w - pad, cy, color=t["rule"] if not dark else ink)
         cy += 0.12
         vals = [abs(spec.value(r["point"]) or 0) for r in rows]
         vmax = max(vals) or 1
@@ -596,7 +615,7 @@ def sidebar(c, spec, slide, x=None, w=None):
             c.text(x + pad, cy, lw_, lh, r["label"], size=S["body"] - 1, bold=on, color=ink, line_spacing=1.0)
             if r.get("basis"):  # B-08: how the estimate was built
                 bh_ = _est_h(r["basis"], lw_, S["label"], 1.0)
-                c.text(x + pad, cy + lh + 0.02, lw_, bh_, r["basis"], size=S["label"], color=t["muted"] if not t["dark_sidebar"] else ink, line_spacing=1.0)
+                c.text(x + pad, cy + lh + 0.02, lw_, bh_, r["basis"], size=S["label"], color=t["muted"] if not dark else ink, line_spacing=1.0)
                 lh += bh_ + 0.04
             c.text(x + w - pad - vw, cy - 0.03, vw, 0.34, dp_fmt(spec, r["point"]), size=S["header"] + 2, bold=True, font=t["font_title"],
                    color=t["placeholder"] if ph else (t["highlight"] if on else ink), align="r")
@@ -606,10 +625,10 @@ def sidebar(c, spec, slide, x=None, w=None):
                 c.rect(x + pad, by, max(0.04, bw_), 0.08, fill=None if ph else (t["highlight"] if on else t["other_bars"]),
                        line=t["placeholder"] if ph else None, dash=ph)
             else:
-                c.line(x + pad, by + 0.06, x + w - pad, by + 0.06, color=t["rule"] if not t["dark_sidebar"] else ink)
+                c.line(x + pad, by + 0.06, x + w - pad, by + 0.06, color=t["rule"] if not dark else ink)
             cy = max(cy + rh, by + 0.14)
     if sb.get("note"):
-        c.text(x + pad, bottom - 0.45, w - 2 * pad, 0.3, sb["note"], size=S["label"] + 1, bold=True, color=t["caution_ink"] if not t["dark_sidebar"] else ink)
+        c.text(x + pad, bottom - 0.45, w - 2 * pad, 0.3, sb["note"], size=S["label"] + 1, bold=True, color=t["caution_ink"] if not dark else ink)
 
 
 # ---------------------------------------------------------------- charts
@@ -1517,6 +1536,14 @@ def table(c, spec, body, box, slide=None):
         for j in range(1, ncols):
             widths[j] = (w - first_w) / (ncols - 1)
 
+    STATUS = {"pass": ("Pass", t["good"], t["white"], "✓"), "watch": ("Watch", t["caution"], t["caution_ink"], "!"),
+              "fail": ("Fail", t["alert"], t["white"], "✕")}
+    def chip_text(cell):
+        lab, _, _, mark = STATUS[cell["status"]]
+        return f"{mark}  {cell.get('status_label') or lab}"
+    chip_w = max([measure.width_pt(chip_text(cl), FONTS["body"], S["label"], True) / 72 + 0.3
+                  for r_ in rows for cl in r_["cells"] if cl.get("status")] or [0])
+
     def cell_texts(i, row):
         out = []
         for j, cell in enumerate(row["cells"], start=1):
@@ -1535,7 +1562,8 @@ def table(c, spec, body, box, slide=None):
         rh = []
         for i, row in enumerate(rows):
             n = max([_lines(row["label"], widths[0], lsize, bold=True)] +
-                    [_lines(tx, widths[j], size) for j, tx in enumerate(cell_texts(i, row), start=1) if tx])
+                    [_lines(tx, widths[j] - (chip_w + 0.1 if j - 1 < len(row["cells"]) and row["cells"][j - 1].get("status") else 0), size)
+                     for j, tx in enumerate(cell_texts(i, row), start=1) if tx])
             need = n * size * 1.2 / 72 + 0.18
             if harvey_type:
                 need = max(need, 0.5)
@@ -1589,13 +1617,14 @@ def table(c, spec, body, box, slide=None):
     for i, r_ in enumerate(rhs, start=1):
         tb.rows[i].height = Inches(r_)
 
-    def put(cell, text, bold=False, color=None, size=S["body"], align="l", fill=None, runs=None):
+    def put(cell, text, bold=False, color=None, size=S["body"], align="l", fill=None, runs=None, indent=0.0):
         if fill:
             cell.fill.solid()
             cell.fill.fore_color.rgb = rgb(fill)
         else:
             cell.fill.background()
         cell.margin_left = cell.margin_right = Inches(0.12)
+        cell.margin_left = Inches(0.12 + indent)
         cell.margin_top = cell.margin_bottom = Inches(0.05)
         cell.vertical_anchor = MSO_ANCHOR.MIDDLE
         tf = cell.text_frame
@@ -1649,8 +1678,25 @@ def table(c, spec, body, box, slide=None):
             put(tb.cell(i, j), txt,
                 bold=bool(on and (is_text_col or cell.get("point"))),
                 color=(t["highlight"] if (on and is_text_col) else (t["title"] if on or cell.get("point") else t["text"])),
-                size=size, align="l" if (is_text_col or not harvey_type) else "c", fill=tint)
+                size=size, align="l" if (is_text_col or not harvey_type or cell.get("status")) else "c", fill=tint,
+                indent=(chip_w + 0.1) if cell.get("status") else 0.0)
     bottom = y + head_h + sum(rhs)
+    if chip_w:  # verdict chips sit on the computed row heights, before the cell's short reason
+        xs_, acc = [], x
+        for cw in widths:
+            xs_.append(acc)
+            acc += cw
+        ch = 0.3
+        for i, row in enumerate(rows):
+            for j, cell in enumerate(row["cells"], start=1):
+                if not cell.get("status"):
+                    continue
+                _, fill_, ink_, _ = STATUS[cell["status"]]
+                chip = c.rect(xs_[j] + 0.12, tops[i] + (rhs[i] - ch) / 2, chip_w, ch, fill=fill_, radius=0.15)
+                chip.text_frame.margin_left = chip.text_frame.margin_right = 0
+                chip.text_frame.margin_top = chip.text_frame.margin_bottom = 0
+                chip.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+                c.label_in(chip, chip_text(cell), size=S["label"], bold=True, color=ink_)
     if heat:
         for i, row in enumerate(rows):  # the target row gets a full-width outline (shading keeps its meaning)
             if row.get("highlight") or i == co_row:

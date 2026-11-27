@@ -809,6 +809,13 @@
                 "rule"
               ],
               "description": "Leave it out: the renderer rotates dark box, rule, accent bar and circled '!' in deck order, so neighbouring slides differ. Set it only to force one look on a slide."
+            },
+            "style": {
+              "enum": [
+                "box",
+                "open"
+              ],
+              "description": "box: tinted panel (the default look). open: no panel, a heavy rule on top and white space, so the slide does not read as one more grey box (holdout review: formats look monotonous). Omit to alternate box and open in deck order."
             }
           }
         }
@@ -1280,6 +1287,18 @@
                     },
                     "point": {
                       "$ref": "#/$defs/point"
+                    },
+                    "status": {
+                      "enum": [
+                        "pass",
+                        "watch",
+                        "fail"
+                      ],
+                      "description": "A verdict drawn as a coloured chip before the cell text (green pass, amber watch, red fail), so the pattern reads before the words. Keep the cell text to a short reason."
+                    },
+                    "status_label": {
+                      "type": "string",
+                      "description": "Chip word, 1–2 words; defaults to Pass / Watch / Fail. Use the deck's own verdict words (Holds, Partly, Fails)."
                     }
                   }
                 }

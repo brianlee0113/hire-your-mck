@@ -56,7 +56,7 @@ Each line: archetype → `body.kind` (key fields) — how a full slide looks.
 **Panels** (`kind: "panels"`, 2–4 `panels[]` with a takeaway `header`, `unit_line`, `delta`, `body` = chart or kpi) — every panel proves the same title.
 
 **Tables** (`kind: "table"`, `table_type`, `columns`, `rows[]` with `label`, `cells[]`, `highlight`, `badge`)
-- `harvey-ball-table` → `harvey`: cells with `rating` 0–4; add a numeric column (cells with `point`) and a last **Verdict** column (text cells). The recommended row gets `highlight: true`. Verdicts live inside the table so rows stay aligned.
+- `harvey-ball-table` → `harvey`: cells with `rating` 0–4; add a numeric column (cells with `point`) and a last **Verdict** column (text cells). The recommended row gets `highlight: true`. Verdicts live inside the table so rows stay aligned; give each verdict cell a `status` (pass / watch / fail) to show it as a coloured chip with a short reason.
 - `heatmap` → `heatmap`: rows = items, columns = measures, every cell a `point`. Each column is shaded by rank (darker = higher; list columns where lower is better in `low_is_better`, and darker then means better). A reference row (`benchmark: true`, e.g. network median) goes first and stays unshaded. The row the title names gets `highlight: true` (outlined); add row `note`s for a verdict column.
 - `comparison-table` → `comparison`; `data-table` → `data`.
 
