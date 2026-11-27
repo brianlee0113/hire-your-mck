@@ -41,7 +41,7 @@ Rules: two clauses in the title → two panels; no arrow between them unless one
 
 Each line: archetype → `body.kind` (key fields) — how a full slide looks.
 
-- `calculation-bridge` → `equation` (`terms` with `op`, `assumptions_header`, `assumptions`) — 3–5 number cards joined by × + = with the result card dark, then the assumptions under a takeaway header (B-08).
+- `calculation-bridge` → `equation` (`terms` with `op`, `assumptions_header`, `assumptions`) — 4–6 number cards joined by × + − ÷ = with the result card dark, then the assumptions under a takeaway header (B-08). Show the drivers: 3 or more inputs, with an intermediate `=` where it helps; one operation or only + and − fails (B-13) and belongs in a `basis` strip or a `waterfall-bridge`.
 
 **Charts** (`kind: "chart"`, `chart_type`, `categories`, `series[].points`, `highlight`, `sort`, `value_format`, optional `benchmark`)
 - `scatter-bubble` → `scatter`: `categories` name the points; `series[0]` = x values, `series[1]` = y values, optional `series[2]` = sizes (bubbles). `x_label` / `y_label` as `"**Metric**, unit"`, `x_format` / `value_format`. Dashed average lines split the plot by default; name the areas with `quadrant_labels` (TL, TR, BL, BR) and accent one with `focus_quadrant`. `highlight` = the points the title names. `trendline: true` only when few labels sit near the line. Pair with a sidebar that reads the outliers.

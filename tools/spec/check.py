@@ -605,6 +605,17 @@ for s in content:
         units = {(dps.get(it["point"].get("data_ref")) or {}).get("unit") for it in b["items"] if it.get("point")}
         if len(units) > 1 and any(it.get("point") and not it.get("metric") for it in b["items"]):
             out("B-10", "fail", "lever numbers in different units without 'metric' (what each number measures)", s["id"])
+# B-13: a calculation slide shows how the number is built, not one step of arithmetic
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if s.get("role") not in ("content", "backup") or s.get("status") == "ghost" or b.get("kind") != "equation":
+        continue
+    ops = [t.get("op") for t in b.get("terms", [])[1:]]
+    inputs = 1 + sum(1 for o in ops if o and o != "=")
+    if inputs <= 2:
+        out("B-13", "fail", "equation slide shows one operation (two inputs and a result); show the drivers behind the inputs (3+ inputs, an intermediate '=' is fine), or put the cards in a basis strip on the chart slide that uses the number", s["id"])
+    elif ops and all(o in ("+", "−", "=") for o in ops):
+        out("B-13", "fail", "equation slide only adds and subtracts; a sum or bridge reads better as a waterfall-bridge, or as a basis strip on the chart slide", s["id"])
 # Units (style.md): percentage differences are 'percentage points' in sentences and 'pp' in labels, never bare 'points'
 def _all_text(o, path=""):
     if isinstance(o, str): yield path, o

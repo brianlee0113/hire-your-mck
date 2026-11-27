@@ -139,6 +139,14 @@
 - **EN:** In a full deck (`deck_detailed`), a "?" is the last resort. For each missing number, ask the user as multiple choice with a recommended value and its basis first (a benchmark, a peer, or a calculation from sourced inputs, shown as an estimate under B-08), then upload/paste, then a wider web search. A target only the user can set (a pilot KPI, a price) is still a question with 2–3 concrete values to pick from.
 - **QA:** `deck_detailed`인데 "?"가 남아 있으면 warn. 흐름 덱(`deck_flow`)에서는 "?"가 목적이므로 검사하지 않는다.
 
+### B-13 · 계산 장표는 산수 한 단계가 아니라 숫자가 만들어진 과정을 보여준다 (2026-11-27)
+> 박스 기반의 +, -, *, / 수식이 보기는 쉬우나 살짝 너무 단순하게 느껴져서 신뢰도를 낮춤
+>
+> 백업이 저렇게 단순한 계산식으로 나오는 경우는 컨설팅에서 잘 없어. 이거는 개선이 필요한 영역이야.
+
+- **EN:** On an `equation` slide, show the drivers behind the inputs: 3 or more inputs, with an intermediate result (`=`) where it helps (38% − 29% = 9 pp × 8% = 0.7 pp). A one-step calculation (A ÷ B = C) goes in a `basis` strip on the chart slide that uses the number; a chain of additions and subtractions is a `waterfall-bridge`.
+- **QA:** content·backup 장표의 `equation` 본문이 입력 2개(연산 한 번)이거나 +와 −만 쓰면 fail. 근거: 블라인드 리뷰 13쌍 중 6쌍에서 같은 지적 (feedback-log Round 3).
+
 ### 질문 방식 (2026-11-06, SKILL.md 운영 규칙)
 > 그거를 내가 타이핑으로 답변하는게 별로야. 앞에서처럼 너가 객관식처럼 옵션들을 주고(물론 내가 기입도 가능), 그렇게 해야 이탈이 덜 될 듯.
 >

@@ -47,6 +47,9 @@ QA (LLM): read one bullet alone; are subject, metric and comparison clear? check
 **B-12 · A full deck leaves no "?" on the slides.** In `deck_detailed`, a placeholder is the last resort: ask the user as multiple choice with a recommended value and its basis first (benchmark, peer, or a calculation from sourced inputs shown as an estimate, B-08), then upload/paste, then a wider search. A target only the user can set is still a choice of 2–3 concrete values.
 QA: warn when a `deck_detailed` spec still has placeholders.
 
+**B-13 · A calculation slide shows how the number is built, not one step of arithmetic.** Box cards with a single operation (A ÷ B = C) or only additions and subtractions look too simple and lower trust, more so when they repeat. On an `equation` slide show the drivers behind the inputs: 3 or more inputs, with an intermediate result (`=`) where it helps (38% − 29% = 9 pp × 8% = 0.7 pp). A one-step calculation goes in a `basis` strip on the chart slide that uses the number; a chain of additions and subtractions is a `waterfall-bridge`.
+QA: fail if an `equation` body (content or backup) has two inputs, or only + and −.
+
 ## A · Measured on public decks
 
 - **A-01** Numbers in the title appear on the slide (a total bar, highlighted bar, callout or sidebar). QA: title numbers are declared in `lead_message.numbers` with a data_ref shown in the body or sidebar.

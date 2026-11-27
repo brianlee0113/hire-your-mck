@@ -2059,16 +2059,30 @@
         "terms": [
           {
             "point": {
+              "data_ref": "team"
+            },
+            "caption": "engineers for the 12-month build (assumption)"
+          },
+          {
+            "op": "×",
+            "point": {
+              "data_ref": "lce"
+            },
+            "caption": "loaded cost per engineer-year: the US median developer wage, loaded to total compensation (BLS)"
+          },
+          {
+            "op": "=",
+            "point": {
               "data_ref": "launch"
             },
-            "caption": "to build: 20 engineers for a year at the US median developer wage (4b)"
+            "caption": "to build the AI package (4b)"
           },
           {
             "op": "÷",
             "point": {
               "data_ref": "net"
             },
-            "caption": "a month from a $5 plan uplift across 100,000 customers, less AI running costs (4a, 4b)"
+            "caption": "gained each month from a $5 plan uplift across 100,000 customers, less AI running costs (4a, 4b)"
           },
           {
             "op": "=",
@@ -4588,6 +4602,21 @@
       ]
     },
     {
+      "id": "lce",
+      "slide_id": "L4",
+      "label": "Loaded cost per engineer-year",
+      "value": 194.3,
+      "unit": "$K",
+      "period": "2027 plan",
+      "source_id": "s0",
+      "derived_from": [
+        "wage",
+        "wsh"
+      ],
+      "formula": "median wage ÷ wage share of compensation",
+      "calc": "wage / wsh / 1000"
+    },
+    {
       "id": "launch",
       "slide_id": "L4",
       "label": "One-off cost to build the AI package",
@@ -4615,7 +4644,7 @@
       "slide_id": "L4",
       "label": "Monthly gain after AI running costs",
       "value": 414.2,
-      "unit": "$K per month",
+      "unit": "$K",
       "period": "2027 plan",
       "source_id": "s0",
       "derived_from": [

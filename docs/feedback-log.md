@@ -67,4 +67,6 @@ Repeat of R7 (Round 1): the same comment came back in 6 of 13 reviewed pairs, ac
 | T4 | When an equation stays in the main storyline, the cards carry more than the number: unit, source or assumption tag, and the range of each driver; the result card shows the range too | renderer `equation`, schema | layout_check 0 warnings; side-by-side with the old card |
 | T5 | Re-test: rebuild c10 E1 and c7 H2a with T1–T4, then blind-review the old and new decks (pairs on the equation and backup slides) | benchmark | the author no longer flags "simple formula" on those slides |
 
+**T1 done (2026-11-27), wider than planned.** In the holdout E1 decks most box equations were one operation of any kind (A ÷ B = C), not only + and −, so rule B-13 fails an `equation` body (content or backup) with two inputs, or with only + and −. It flags 7 slides in 6 holdout E1 decks. Two examples rewritten to show their drivers: FreshCart 2b (38% − 29% = 9 pp × 8% = 0.7 pp), Cobalt Ledger deep L4 (20 engineers × $194.3K = $3.9M ÷ $414.2K a month = 9.4 months). All example decks 0 fail; both slides rendered and checked in PowerPoint.
+
 Open questions: whether T3 replaces `calculation-bridge` in the appendix entirely, or only for estimates with 3 or more drivers; whether T1 should be a fail or a strong warn while T3 does not exist yet.

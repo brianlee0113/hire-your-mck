@@ -165,7 +165,7 @@ Always give a placeholder a `label` that says what data is needed; it is shown t
 
 Pick one:
 - **`basis` strip** under the exhibit, for a chart built on an estimate: `"basis": {"header": "How we projected it", "terms": [{"point": {...}, "caption": "share of sales, 2025 actual"}, {"op": "+", "point": {...}, "caption": "added in 2026–31: 1.5 pp a year from current co-manufacturers (supplier review) × 6 years"}, {"op": "=", "point": {...}, "caption": "share in 2031"}]}`. Siblings built from the same inputs (every bar of one projection) are covered.
-- **`equation` body** (archetype `calculation-bridge`) when the estimate is the slide's point: `{"kind": "equation", "terms": [...], "assumptions_header": "The estimate rests on four assumptions", "assumptions": [...]}`. Use it when a number would need its own explanation on another slide (B-03).
+- **`equation` body** (archetype `calculation-bridge`) when the estimate is the slide's point: `{"kind": "equation", "terms": [...], "assumptions_header": "The estimate rests on four assumptions", "assumptions": [...]}`. Use it when a number would need its own explanation on another slide (B-03). Show the drivers, not one step: 3 or more inputs, with an intermediate `{"op": "="}` where it helps (`38% − 29% = 9 pp × 8% = 0.7 pp`); two inputs, or only + and −, fail (B-13).
 - **Row `basis`** in a sidebar: `{"label": "Expected impact if snacks and frozen reach 26%", "basis": "16% of sales × 26% share", "point": {...}}`.
 
 Captions name the source of any input that is not ours.
@@ -268,6 +268,7 @@ KPI items show their `drivers` under a thin rule; add `drivers_header` only when
 | B-05 sidebar or callout repeats the body | fail |
 | B-08 calc does not recompute, estimate without calc/assumptions, estimate shown without basis | fail |
 | B-10 lever numbers without headers, mixed units without metric | fail |
+| B-13 `equation` body with two inputs, or only + and − | fail |
 | units: bare "points" after a number | fail |
 | units: "pp", "Nx" or "vs." in a sentence | warn |
 | B-05 plain sum/difference in a sidebar, key takeaways repeating the exec summary | warn |
