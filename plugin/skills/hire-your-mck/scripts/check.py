@@ -336,7 +336,7 @@ for s in spec["slides"]:
     sid = s["id"]
     if s["role"] not in ("content", "backup"):
         continue
-    lm = s["lead_message"]; body = s.get("body"); pts = list(points(body)) + list(points(s.get("layout")))
+    lm = s["lead_message"]; body = s.get("body"); pts = list(points(body)) + list(points(s.get("layout"))) + list(points(s.get("basis")))
     # A-03 title length
     words = len(lm["text"].split())
     if words > 25: out("A-03", "fail", f"title has {words} words (max 25)", sid)
@@ -353,7 +353,7 @@ for s in spec["slides"]:
         if s["status"] in ("filled", "qa_passed") and not ref:
             out("A-01", "fail", f"title number '{n['text']}' has no data_ref", sid)
         elif ref and not any(p.get("data_ref") == ref for p in pts):
-            out("A-01", "fail", f"title number '{n['text']}' ({ref}) is not shown in the body/sidebar", sid)
+            out("A-01", "fail", f"title number '{n['text']}' ({ref}) is not shown in the body, sidebar or basis strip", sid)
     # A-02 highlights
     if body and body.get("kind") == "chart":
         hl_t = set(lm.get("highlights", [])); hl_c = set(body.get("highlight", []))
