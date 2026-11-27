@@ -935,6 +935,13 @@ def chart(c, spec, slide, body, box):
     if multi and len(series) > 5:
         SIDEBAR_WARN.append(f"slide {slide.get('id')}: {len(series)} series cannot all be told apart by color; "
                             "group the smallest into 'Other' (5 at most)")
+    starts_crowded = False
+    if ctype == "line" and multi:
+        firsts = sorted(v for v in (spec.value(s_["points"][0]) for s_ in series if s_["points"]) if v is not None)
+        allv = [v for s_ in series for v in (spec.value(p_) for p_ in s_["points"]) if v is not None]
+        lo_, hi_, _ = _nice_axis(allv, pad=0.06) if allv else (0, 1, 1)  # the axis _line_end_labels sets
+        gaps = [b_ - a_ for a_, b_ in zip(firsts, firsts[1:])]
+        starts_crowded = bool(gaps) and min(gaps) / ((hi_ - lo_) or 1) * (h - 0.65) < (S["label"] + 2) * 1.6 / 72
     for si, (s_spec, s_obj) in enumerate(zip(series, plot.series)):
         base = colors[si]
         if ctype == "line":
@@ -961,6 +968,10 @@ def chart(c, spec, slide, body, box):
                     _fill(pt.format, t["highlight"])
             if ctype == "line" and pi not in (0, len(s_spec["points"]) - 1):
                 continue
+            if ctype == "line" and multi and pi == len(s_spec["points"]) - 1:
+                continue  # drawn below as end labels pushed apart, so close endings do not overlap
+            if ctype == "line" and multi and pi == 0 and starts_crowded:
+                continue  # start values too close to label apart; the end labels and the table carry the numbers
             dl = pt.data_label
             dl.has_text_frame = True
             val_txt = "?" if p.get("placeholder") else fmt(spec.value(p), unit, nf)
@@ -985,6 +996,26 @@ def chart(c, spec, slide, body, box):
                 dl.position = XL_LABEL_POSITION.RIGHT if pi else XL_LABEL_POSITION.LEFT
             else:
                 dl.position = XL_LABEL_POSITION.CENTER if stacked else XL_LABEL_POSITION.OUTSIDE_END
+    if ctype == "line":
+        n_cat = len(cats)
+        slot_ = (w - (1.9 if multi else 0)) * 0.92 / max(n_cat, 1)
+        widest = max(measure.width_pt(str(cn), t["font_body"], S["label"] + 1) for cn in cats) / 72 + 0.12
+        if widest > slot_:  # too many points for every name: label every k-th one
+            skip = math.ceil(widest / slot_)
+            ca_ = ch.category_axis._element
+            for tag in ("c:tickLblSkip", "c:tickMarkSkip"):
+                old_ = ca_.find(qn(tag))
+                if old_ is not None:
+                    ca_.remove(old_)
+            el = etree.SubElement(ca_, qn("c:tickLblSkip"))
+            el.set("val", str(skip))
+            # schema order: tickLblSkip sits before noMultiLvlLbl when that is present
+            nm = ca_.find(qn("c:noMultiLvlLbl"))
+            if nm is not None:
+                ca_.remove(el)
+                nm.addprevious(el)
+        if multi:
+            _line_end_labels(c, spec, ch, (x, y, w, h), series, unit, nf, highlight, colors)
     if body.get("marks") or body.get("outline"):
         _chart_marks(c, spec, slide, body, ch, (x, y, w, h), cats, series, unit, nf, label_size, name_size,
                      gap if gap is not None else 45, horiz, multi, bool(bench_line))
@@ -1044,6 +1075,38 @@ def stacked_area(c, spec, slide, body, box):
         if v / vmax * ph < 0.22:
             SIDEBAR_WARN.append(f"slide {slide.get('id')}: the '{s['name']}' layer is too thin for its end label; group small layers into 'Other'")
     return gf
+
+
+def _line_end_labels(c, spec, ch, box, series, unit, nf, highlight, colors):
+    """Name each line at its end with its last value; labels that would overlap are pushed apart (F8)."""
+    x, y, w, h = box
+    t = c.t
+    vals = [spec.value(p) for s_ in series for p in s_["points"] if spec.value(p) is not None]
+    if not vals:
+        return
+    lo, hi, _ = _nice_axis(vals, pad=0.06)
+    ch.value_axis.minimum_scale, ch.value_axis.maximum_scale = lo, hi
+    lab_w = 1.8
+    px, py, pw, ph = x + 0.25, y + 0.2, w - lab_w - 0.35, h - 0.2 - 0.45
+    _pin_plot(ch, (px - x) / w, (py - y) / h, pw / w, ph / h)
+    size = S["label"] + 1
+    items = []
+    for s_, col in zip(series, colors):
+        last = spec.value(s_["points"][-1]) if s_["points"] else None
+        if last is None:
+            continue
+        val_ = fmt(last, unit, nf if nf != "#,##0.0" else None)
+        txt = [[(s_["name"] + "  ", {"color": col if col != t["other_bars"] else t["text"], "bold": s_["name"] in highlight}),
+                (val_, {"bold": True, "color": t["title"]})]]
+        lh = _est_h(s_["name"] + "  " + val_, lab_w - 0.1, size, 1.05, bold=True) + 0.04
+        items.append([py + ph - (last - lo) / ((hi - lo) or 1) * ph - lh / 2, lh, txt])
+    items.sort(key=lambda it: it[0])
+    for k in range(1, len(items)):  # push down any label that would overlap the one above
+        prev = items[k - 1]
+        if items[k][0] < prev[0] + prev[1] + 0.04:
+            items[k][0] = prev[0] + prev[1] + 0.04
+    for top, lh, txt in items:
+        c.text(px + pw + 0.12, top, lab_w, lh, txt, size=size, line_spacing=1.0, anchor="m")
 
 
 def _pin_plot(ch, fx, fy, fw, fh):
