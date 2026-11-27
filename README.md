@@ -113,6 +113,10 @@ Sources are managed apart from the slides, in `<deck>-sources.xlsx`:
 
 So a reviewer can check any page without opening the deck, and you can update a source and see what it touches. A number the skill calculated (a share, a gap, a multiple) lists its inputs and is a **live Excel formula** over those cells, so you can audit it or change an input.
 
+**An estimate built on several inputs also shows what moves it.** A backup slide lists each driver with its value,
+basis and a plausible low–high range, next to a tornado chart of the result at each end. The ranges sit in the
+Calculations sheet too, so the "what if" is as traceable as the number itself.
+
 When a number cannot be found, the skill does not guess. It asks you: a recommended value with its basis, an upload, or a wider search. Only as a last resort does the slide keep a "?" and an `ILLUSTRATIVE — DATA NEEDED` sticker.
 
 ---
@@ -125,6 +129,7 @@ Every deck is a JSON storyline spec that a checker tests before anything is rend
 - a sidebar that repeats what the chart already shows
 - a calculated number whose formula does not recompute
 - an estimate shown without its basis
+- a calculation slide that is one step of arithmetic (A ÷ B = C) instead of showing how the number is built
 - a title over 25 words, a count word ("four moves") that does not match the slide
 
 This is the checker on the first draft of the example deck, and on the final one:
@@ -141,7 +146,8 @@ $ python scripts/check.py cobalt-ledger.json          # final
 8 content slides (0 ghost) · 49 data points · 10 sources · 0 fail · 0 warn
 ```
 
-The renderer then measures every text box with the real fonts and flags anything that would overflow, so nothing spills off the slide.
+The renderer then measures every text box with the real fonts and flags anything that would overflow, or that would
+only fit by shrinking body text below 12 pt, so nothing spills off the slide and nothing turns too small to read.
 
 ---
 
@@ -158,11 +164,18 @@ The renderer then measures every text box with the real fonts and flags anything
 
 A storyline-only deck turns into a full deck later: same spec, fill in the data. If you do not name a mode, the skill recommends one from your brief: a decision with several open questions behind it, for a CEO or board, gets the deep deck. See [`cobalt-ledger-deep.json`](renderer/examples/cobalt-ledger-deep.json) for a 44-slide example.
 
+**Already have the analysis?** Give it a finished memo or draft deck and ask it to *compile* or *restyle* it into
+this format. The analysis stays the source of truth: numbers, rankings and conclusions carry over unchanged, and
+anything it cannot trace or that contradicts the source's own arithmetic is flagged for you, not silently fixed.
+
 ---
 
 ## Gallery
 
-30+ slide types, chosen by what the title says (a ranking, a trend, a bridge, a set of moves, a case, an issue tree, a map, a cost curve, an org chart, a marimekko, and more).
+30+ slide types, chosen by what the title says (a ranking, a trend, a bridge, a set of moves, a case, an issue tree,
+a map, a cost curve, a marimekko, a bar-table that compares a few items on several measures, a before-and-after
+dumbbell, an estimate model, and more). A slide can also pair two exhibits side by side, or point at the part of a
+chart its takeaway is about with numbered marks that match the sidebar.
 
 ![Six slides from the example deck](docs/readme/gallery.png)
 
