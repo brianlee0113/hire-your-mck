@@ -26,6 +26,8 @@ from . import tokens
 G = tokens.GRID
 S = tokens.SIZES
 STICKER = "ILLUSTRATIVE — DATA NEEDED"
+READ_MIN = 12  # pt: body text below this reads as too small (holdout review, 2026-11-23)
+LABEL_MIN = 10  # pt: the same for captions and labels (text that starts below body size)
 
 
 def rgb(h):
@@ -1550,6 +1552,11 @@ def table(c, spec, body, box, slide=None):
         if head_h + sum(rhs) <= h - legend_h or size <= 10:
             break
         size -= 0.5
+    if size < READ_MIN:
+        hh12, rh12 = heights(READ_MIN)
+        over = (hh12 + sum(rh12)) / max(0.1, h - legend_h)
+        SIDEBAR_WARN.append(f"slide {(slide or {}).get('id')}: table text shrinks to {size:g} pt to fit (keep body text at {READ_MIN} pt or more): "
+                            f"cut about {max(5, round((1 - 1 / over) * 20) * 5)}% of the cell text, drop a row or column, or move detail to a backup")
     # then up to 2 pt smaller so no header word breaks; if that is not enough, keep the size and ask for a shorter header
     for s2 in [size - 0.5 * k for k in range(0, 5)]:
         if s2 >= 11 and words_fit(s2):
@@ -2636,7 +2643,7 @@ def landscape(c, spec, slide, body, box):
     marked = set(body.get("marked", []))
     us = body.get("us")
     names = [it for s_ in segs for it in s_["items"]]
-    fs = min(fit_size([nm], cw - 0.4, chip - 0.06, S["body"] + 1, min_size=10, indent=0, line_spacing=1.0, bold=True) for nm in names)
+    fs = min(fit_size([nm], cw - 0.4, chip - 0.06, S["body"] + 1, min_size=10, indent=0, line_spacing=1.0, bold=True, floor=LABEL_MIN) for nm in names)
     head_fs = S["header"]  # one size for every header; no word may break inside a column
     while head_fs > 10 and any(measure.width_pt(wd, FONTS["body"], head_fs, True) / 72 > cw - 0.25
                                for s_ in segs for wd in s_["label"].split()):
@@ -3222,14 +3229,27 @@ def _est_h(text, w, size, line_spacing=1.15, bold=False, title=False):
                for part in str(text).split("\n")) + 0.02
 
 
-def fit_size(texts, w, h, size, min_size=11, indent=0.2, line_spacing=1.15, para_gap=0.0, bold=False, title=False):
-    """Largest font size (pt, step 0.5) at which the paragraphs fit in w x h inches, measured with real fonts."""
+def fit_size(texts, w, h, size, min_size=11, indent=0.2, line_spacing=1.15, para_gap=0.0, bold=False, title=False, floor=None):
+    """Largest font size (pt, step 0.5) at which the paragraphs fit in w x h inches, measured with real fonts.
+    Body text that has to go below READ_MIN to fit gets a warning with how much to cut (holdout review:
+    "the font is too small to take in at a glance")."""
+    start = size
     while size > min_size:
         need = sum(_est_h(tx, w - indent, size, line_spacing, bold, title) for tx in texts) + para_gap * len(texts)
         if need <= h:
-            return size
+            break
         size -= 0.5
-    return min_size
+    else:
+        size = min_size
+    floor = floor or (READ_MIN if start >= S["body"] else LABEL_MIN)
+    if start >= floor > size and texts:
+        need = sum(_est_h(tx, w - indent, floor, line_spacing, bold, title) for tx in texts) + para_gap * len(texts)
+        cut = max(5, round((1 - h / need) * 100 / 5) * 5) if need > 0 else 5
+        snippet = re.sub(r"\*\*", "", str(texts[0]))[:40]
+        msg = f"text shrinks to {size:g} pt to fit (keep {'body text' if floor == READ_MIN else 'captions'} at {floor} pt or more): cut about {cut}% of the words, split the slide, or move detail to a backup: \"{snippet}\""
+        if msg not in SIDEBAR_WARN:
+            SIDEBAR_WARN.append(msg)
+    return size
 
 
 def tint_of(hex_, f=0.88):
@@ -3728,7 +3748,7 @@ def equation_row(c, spec, terms, box, big=False):
     x, y, w, h = box
     t = c.t
     n = len(terms)
-    opw = 0.45 if big else 0.36
+    opw = 0.45 if big else 0.3
     cw = (w - opw * (n - 1)) / n
     for i, tm in enumerate(terms):
         cx = x + i * (cw + opw)
@@ -3739,7 +3759,7 @@ def equation_row(c, spec, terms, box, big=False):
         known = spec.dpoint(tm["point"]) is not None
         shp = c.rect(cx, y, cw, h, fill=t["primary"] if last else t["sidebar"], radius=0.05 if t["bar_radius"] else None)
         ink = t["white"] if last else t["sidebar_text"]
-        pad = 0.16
+        pad = 0.16 if big else 0.1
         nh = 0.75 if big else 0.42
         label = dp_fmt(spec, tm["point"])
         nsize = 40 if big else 22

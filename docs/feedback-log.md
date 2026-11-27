@@ -73,4 +73,18 @@ Repeat of R7 (Round 1): the same comment came back in 6 of 13 reviewed pairs, ac
 
 **T2 done (2026-11-27).** check.py warns when the storyline has more than one `equation` slide (holdout E1: c10 and c7 each have two). Cobalt Ledger deep had two (L4 payback, 4b1 AI cost); 4b1 could not move to the appendix because it is the evidence slide of issue-tree leaf n4b (T-03), so it became a bar chart (uplift vs AI cost) with the build as a `basis` strip. Units of the AI cost numbers changed from "$ per year" to "$" (the unit line says per year) so the strip cards fit. 0 fail; rendered and checked.
 
+**T1 follow-up (open, 2026-11-27).** The author reviewed T1 and finds it needs more work; what exactly is still to be decided.
+
+**T4 dropped (2026-11-27).** The `estimate-model` slide already shows unit, basis and range for each driver, so the equation cards stay as they are.
+
 Open questions: whether T3 replaces `calculation-bridge` in the appendix entirely, or only for estimates with 3 or more drivers; whether T1 should be a fail or a strong warn while T3 does not exist yet.
+
+## Round 4 · 2026-11-27 · font too small (author's blind holdout review, 2026-11-23) · in progress
+
+Comments: "the font is too small, so the content does not come across at a glance" (holdout P1, P2, P4, P5; P2 is the skill-rendered c8 H2a deck, the others are B decks), "limited formats make the content look monotonous" (P1, c7 E1).
+
+**Measured.** Skill decks already use larger type than B decks (median 12–14 pt vs 10–11 pt; B decks put 60–87% of their text below 12 pt, skill decks 23–43%). Text below 10 pt is footnotes and source lines. In c8 H2a the small body text comes from the renderer shrinking crowded text to fit, without a warning: tables to 11.5 pt, sidebar bullets to 10.5–11.5 pt, basis-strip captions to 9 pt.
+
+**Fix 1 (done).** `fit_size` and the table sizer now warn when body text only fits below 12 pt, or captions and labels below 10 pt, with about how much to cut. The size still shrinks so nothing overflows; SKILL.md Step 5 lists the warning with the others to fix, and compile mode resolves it by tightening, splitting or moving detail to a backup, never by dropping a unit. Small equation cards got less padding. On the reviewed decks: 15 warnings in c8 H2a, 4 in c7 E1. Example decks trimmed to 0 warnings (FreshCart 4 lost one sidebar bullet; other cuts are wording only).
+
+**Open.** Format monotony (c7 E1: chart + sidebar + basis strip on most slides) needs a design pass first.

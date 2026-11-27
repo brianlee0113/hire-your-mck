@@ -72,7 +72,8 @@ silently. A correction is the only kind of change to the analysis you may make, 
   `text-columns`. A sensitivity grid or a multi-scenario cash chart stays a grid or a multi-series chart; never
   turn it into a single-number KPI tile or a one-line calculation.
 - Density (A-12) is a guide here, not a target. Never drop a unit to fit it: split the slide at a logical break or
-  turn prose into a table or chart. Never add filler to reach it (B-06).
+  turn prose into a table or chart. The same holds for `render.py`'s shrink warning (body text below 12 pt): tighten
+  the wording, split the slide, or move detail to a backup, but keep every unit. Never add filler to reach it (B-06).
 - Navigation: no agenda trackers or section dividers unless the source has sections and the deck runs past 15
   content slides; never repeat a contents page.
 - Titles follow our style (B-07, A-03) but keep every qualifier: conditions, ranges, hedges, comparisons and the
