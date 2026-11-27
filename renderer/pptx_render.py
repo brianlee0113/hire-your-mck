@@ -1795,8 +1795,9 @@ def table(c, spec, body, box, slide=None):
             head_h, rhs = heights(size)
             break
     else:
-        long_ = [wd for j, col in enumerate(cols, start=1) for wd in str(col).split()
-                 if measure.width_pt(wd, FONTS["body"], size, True) / 72 > widths[j] - 0.36]
+        long_ = sorted(((measure.width_pt(wd, FONTS["body"], 11, True) / 72 - (widths[j] - 0.36), wd)
+                        for j, col in enumerate(cols, start=1) for wd in str(col).split()), reverse=True)
+        long_ = [wd for _, wd in long_[:3]]  # the words closest to (or past) their column width
         SIDEBAR_WARN.append(f"slide {(slide or {}).get('id')}: table header words wider than their column ({', '.join(repr(w_) for w_ in long_[:3])}); "
                             "shorten the column header or drop a column")
     spare = max(0.0, (h - legend_h) - head_h - sum(rhs))

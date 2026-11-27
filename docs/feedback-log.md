@@ -110,3 +110,11 @@ Tip: slides split horizontally in 3 or 2, or vertically in 2; the left or top pa
 **Chart type (built): `stacked_area`.** 24 pages in 19 decks: a mix over many periods. Native stacked area, axis pinned to the first and last points, each layer named at its right end with its last value (no legend, no computed total, per D5); a layer too thin for its label warns. Checked in PowerPoint on a test copy of showcase-2.
 
 **Composition planned up front.** SKILL.md Step 1 now plans each slide's composition after routing: the base exhibit, then whether the rest concludes on the whole (sidebar or band), points at a part (outline, numbered marks with numbered bullets, or notes) or adds a second exhibit (panels, `widths`), varied across the deck. check.py warns when numbered bullets and chart marks do not match.
+
+## Dry run · 2026-11-27 · fresh agent with the plugin skill only (Northgate Bikes, fictional, 13 slides)
+
+Result: check.py 0 fail / 0 warn and 0 render warnings after fixing its first 3 fails, 17 warns and 9 render warnings. It used stacked_area, panels `widths: [2, 1]` with marks and notes, bar-table, dumbbell, status chips, an equation slide and an estimate-model backup; checked in PowerPoint, no layout problems.
+
+Fixed from its notes: (a) check.py now warns when marks or outline sit on a chart they cannot be drawn on (negative values, several series, other chart types), instead of only the renderer; (f) one rule for the appendix divider in SKILL.md and spec-guide; (g) the table header warning names the widest words; (h) bar-table column `kind` defaults to bar.
+
+Open: (b) B-08 looks one level up `derived_from`, so a scenario chart whose bars come from different inputs fails until each bar's calc is rebuilt; the docs do not say how to show the basis of a scenario comparison. (c) A table cell has no `basis`, so an estimate in a comparison table always fails B-08; it is unclear whether break-even points or capital needs count as estimates. (d) A-01 wants a title number that is not a chart value in the sidebar; slides with no sidebar (bar-table, so_what) have nowhere to put it. (e) V-02 flags middle years when one excerpt holds a whole series and the locator gives a year range.

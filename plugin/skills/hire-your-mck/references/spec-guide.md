@@ -87,7 +87,7 @@ The spec is one JSON file (schema: `scripts/storyline.schema.json`, JSON Schema 
 - Evidence slides set `"tree_node": "n1a"`; the renderer writes the code ("1a:") before the title, so leave `prefix` out. Continuation pages of a long table add "(1/2)" to the title (R12). The lead slide (first content slide after the section's agenda) has no `tree_node`.
 - Each section gets a `question` (deck_deep): the Key questions page lists them under the problem statement.
 - Front matter: a `problem_statement` slide (`{"id": "q", "role": "problem_statement", "status": "filled"}`) shows the problem worksheet; it is not a content slide and belongs to no exec item.
-- The appendix opens with `{"id": "app", "role": "appendix_divider", "status": "filled"}` (any deck with backup slides and navigation); the agenda then ends with an Appendix row.
+- The appendix opens with `{"id": "app", "role": "appendix_divider", "status": "filled"}` (any deck with backup slides); with an agenda, it ends with an Appendix row.
 - The appendix slide "What we did not pursue" is a `backup` with `"tree_node": ["n5"]` instead of `backup_of`.
 - Sections without `tree_node` are context or how to make it happen (last). Sub-sections set `parent_id` and share the parent's `exec_item_id`.
 

@@ -633,6 +633,13 @@ for s in spec["slides"]:
         ends = {r["from"].get("data_ref"), r["to"].get("data_ref")}
         if ch and not ends <= set(ch.get("derived_from", [])):
             out("B-08", "warn", f"dumbbell row '{r['label']}': change {ch.get('id')} is not derived from the row's two values", s["id"])
+# composition: marks and outline need a single-series bar or column chart with no negative values
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") == "chart" and (b.get("marks") or b.get("outline")):
+        neg = any((dps.get(p.get("data_ref")) or {}).get("value", 0) < 0 for ser in b.get("series", []) for p in ser.get("points", []))
+        if b.get("chart_type") not in ("bar", "column") or len(b.get("series", [])) != 1 or neg:
+            out("A-12", "warn", "marks and outline are drawn only on single-series bar and column charts with no negative values; use highlight or a sidebar instead", s["id"])
 # composition: numbered sidebar bullets and chart marks point at each other
 for s in spec["slides"]:
     if s.get("status") == "ghost":
