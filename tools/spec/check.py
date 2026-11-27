@@ -605,6 +605,11 @@ for s in content:
         units = {(dps.get(it["point"].get("data_ref")) or {}).get("unit") for it in b["items"] if it.get("point")}
         if len(units) > 1 and any(it.get("point") and not it.get("metric") for it in b["items"]):
             out("B-10", "fail", "lever numbers in different units without 'metric' (what each number measures)", s["id"])
+# panels: one width per panel
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") == "panels" and b.get("widths") and len(b["widths"]) != len(b["panels"]):
+        out("schema", "fail", f"panels.widths has {len(b['widths'])} values for {len(b['panels'])} panels", s["id"])
 # B-13: a calculation slide shows how the number is built, not one step of arithmetic
 for s in spec["slides"]:
     b = s.get("body") or {}

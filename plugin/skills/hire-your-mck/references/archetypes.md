@@ -53,7 +53,7 @@ Each line: archetype → `body.kind` (key fields) — how a full slide looks.
 
 **KPI** (`kind: "kpi"`, `items[]` with `point`, `caption`, `relation`, `drivers[]`) — 2–4 tiles on top; under each, 2–4 driver lines (or what data is missing).
 
-**Panels** (`kind: "panels"`, 2–4 `panels[]` with a takeaway `header`, `unit_line`, `delta`, `body` = chart or kpi) — every panel proves the same title.
+**Panels** (`kind: "panels"`, 2–4 `panels[]` with a takeaway `header`, `unit_line`, `delta`, `body` = chart, kpi, table or text; optional `widths`, e.g. `[2, 1]`) — every panel proves the same title. Two panels side by side are a 50:50 split; give the main exhibit more room with `widths: [2, 1]` (chart + the table of figures behind it, chart + the segment it zooms into). Three panels are parallel evidence. A conclusion about the whole exhibit goes in a `takeaway_sidebar` (66:33) or the `so_what` band under it, not in a panel (`docs/research/composition.md`).
 
 **Tables** (`kind: "table"`, `table_type`, `columns`, `rows[]` with `label`, `cells[]`, `highlight`, `badge`)
 - `harvey-ball-table` → `harvey`: cells with `rating` 0–4; add a numeric column (cells with `point`) and a last **Verdict** column (text cells). The recommended row gets `highlight: true`. Verdicts live inside the table so rows stay aligned; give each verdict cell a `status` (pass / watch / fail) to show it as a coloured chip with a short reason.

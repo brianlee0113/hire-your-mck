@@ -1549,7 +1549,12 @@ def table(c, spec, body, box, slide=None):
         if not shade and not body.get("legend"):
             legend_h = 0
     ncols = len(cols) + 1
-    first_w = w * 0.19
+    # row labels never break inside a word: the first column grows to the longest label word (up to 45%)
+    longest = max([measure.width_pt(wd, FONTS["body"], S["body"] + 1, True) / 72
+                   for r_ in rows for wd in ((r_.get("badge", "") + " ") if r_.get("badge") else "").split() + r_["label"].split()] or [0])
+    first_w = min(max(w * 0.19, longest + 0.3), w * 0.45)
+    if longest + 0.3 > w * 0.45:
+        SIDEBAR_WARN.append(f"slide {(slide or {}).get('id')}: a row label word is wider than the label column; use a shorter label")
     widths = [first_w] + [0] * (ncols - 1)
     if last_text or verdict:
         widths[-1] = w * 0.27
@@ -3431,11 +3436,13 @@ def panels(c, spec, slide, body, box):
     ps = body["panels"]
     n = len(ps)
     gap = 0.42
-    pw = (w - gap * (n - 1)) / n
-    hd_h = max(_est_h(p["header"], pw - (0.9 if p.get("delta") else 0), S["header"] + 1, 1.0, bold=True) for p in ps)
-    ul_h = max([_est_h(p["unit_line"].replace("**", ""), pw, S["label"], 1.0) for p in ps if p.get("unit_line")] or [0])
+    ratios = body.get("widths") if len(body.get("widths") or []) == n else [1] * n
+    pws = [(w - gap * (n - 1)) * r_ / sum(ratios) for r_ in ratios]
+    pxs = [x + sum(pws[:i]) + gap * i for i in range(n)]
+    hd_h = max(_est_h(p["header"], pw_ - (0.9 if p.get("delta") else 0), S["header"] + 1, 1.0, bold=True) for p, pw_ in zip(ps, pws))
+    ul_h = max([_est_h(p["unit_line"].replace("**", ""), pw_, S["label"], 1.0) for p, pw_ in zip(ps, pws) if p.get("unit_line")] or [0])
     for i, p in enumerate(ps):
-        px = x + i * (pw + gap)
+        px, pw = pxs[i], pws[i]
         c.text(px, y, pw - (0.9 if p.get("delta") else 0), hd_h, p["header"], size=S["header"] + 1, bold=True, color=t["title"], line_spacing=1.0)
         if p.get("delta"):
             pill = c.rect(px + pw - 0.85, y + 0.04, 0.85, 0.32, fill=t["highlight"] if spec.dpoint(p["delta"]) else None,
@@ -3452,6 +3459,10 @@ def panels(c, spec, slide, body, box):
         b = p["body"]
         if b["kind"] == "chart":
             chart(c, spec, slide, b, inner)
+        elif b["kind"] == "table":  # a second exhibit can be a table: chart + the figures behind it
+            table(c, spec, b, inner, slide)
+        elif b["kind"] == "text":
+            text_body(c, spec, slide, b, inner)
         else:
             kpi(c, spec, b, inner)
         if i < n - 1 and body.get("connector") == "arrow":  # B-09: parallel evidence gets no arrow

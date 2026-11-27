@@ -1203,6 +1203,12 @@
                   },
                   {
                     "$ref": "#/$defs/body_kpi"
+                  },
+                  {
+                    "$ref": "#/$defs/body_table"
+                  },
+                  {
+                    "$ref": "#/$defs/body_text"
                   }
                 ]
               },
@@ -1211,6 +1217,17 @@
               }
             }
           }
+        },
+        "widths": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "minItems": 2,
+          "maxItems": 4,
+          "description": "Relative panel widths, one per panel, e.g. [2, 1] for a main exhibit beside a smaller one. Omit for equal widths."
         },
         "connector": {
           "enum": [
