@@ -45,6 +45,8 @@ write data points as usual (Step 2 of `SKILL.md`, rules V-01–V-04):
 | an assumption the analysis states | `estimate: true` with `assumptions` and a `basis` on the slide |
 | not found and not reproducible | sourced from the analysis itself (a `user_provided` source whose `input_id` is the analysis), and listed in `compile.untraceable` |
 
+Keep the source's precision: a data point shows one decimal above 1 by default, so give `"decimals": 2` to a number the source writes as 1.92, rather than typing it into a text cell.
+
 Never invent a formula to make an untraceable number look checked. In `compile.untraceable`, mark `critical: true`
 when the number is in a title, the executive summary, a gate or a recommendation's headline: `check.py` fails a
 critical untraceable number until it is acknowledged (`ack`: what the user decided, e.g. "keep as the analysis's
@@ -72,7 +74,8 @@ silently. A correction is the only kind of change to the analysis you may make, 
   `text-columns`. A sensitivity grid or a multi-scenario cash chart stays a grid or a multi-series chart; never
   turn it into a single-number KPI tile or a one-line calculation.
 - Density (A-12) is a guide here, not a target. Never drop a unit to fit it: split the slide at a logical break or
-  turn prose into a table or chart. Never add filler to reach it (B-06).
+  turn prose into a table or chart. The same holds for `render.py`'s shrink warning (body text below 12 pt): tighten
+  the wording, split the slide, or move detail to a backup, but keep every unit. Never add filler to reach it (B-06).
 - Navigation: no agenda trackers or section dividers unless the source has sections and the deck runs past 15
   content slides; never repeat a contents page.
 - Titles follow our style (B-07, A-03) but keep every qualifier: conditions, ranges, hedges, comparisons and the

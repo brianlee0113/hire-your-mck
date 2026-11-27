@@ -26,6 +26,8 @@ from . import tokens
 G = tokens.GRID
 S = tokens.SIZES
 STICKER = "ILLUSTRATIVE — DATA NEEDED"
+READ_MIN = 12  # pt: body text below this reads as too small (holdout review, 2026-11-23)
+LABEL_MIN = 10  # pt: the same for captions and labels (text that starts below body size)
 
 
 def rgb(h):
@@ -53,6 +55,18 @@ class Spec:
         self._key = None
         self.exec = spec.get("storyline", {}).get("exec_summary", [])
         self._imp_n = 0
+        self._side_n = 0
+
+    SIDEBAR_STYLES = ("box", "open")
+
+    def sidebar_style(self, sb):
+        """Explicit style wins; otherwise box and open alternate in deck order, so the explanation is not
+        always the same grey panel (holdout review, 2026-11-23)."""
+        if sb.get("style"):
+            return sb["style"]
+        st = self.SIDEBAR_STYLES[self._side_n % 2]
+        self._side_n += 1
+        return st
 
     IMPLICATION_STYLES = ("dark", "rule", "bar", "alert")  # reference "bottom-line box" first, then varied
 
@@ -97,6 +111,25 @@ class Spec:
     def dpoint(self, point):
         return None if not point or point.get("placeholder") else self.dp.get(point.get("data_ref"))
 
+    def recompute(self, did, overrides, _seen=None):
+        """Value of data point `did` with some inputs replaced (overrides: id -> value), rebuilt through calc."""
+        if did in overrides:
+            return overrides[did]
+        d = self.dp[did]
+        if not d.get("calc"):
+            return d["value"]
+        seen = (_seen or set()) | {did}
+        e = d["calc"].replace("−", "-").replace("×", "*").replace("÷", "/")
+        env = {}
+        for k, i in enumerate(sorted(self.dp, key=len, reverse=True)):
+            e2 = re.sub(rf"(?<![\w.]){re.escape(i)}(?![\w-])", f"_v{k}", e)
+            if e2 != e:
+                if i in seen:
+                    raise ValueError(f"calc of {did} refers back to {i}")
+                env[f"_v{k}"] = self.recompute(i, overrides, seen)
+                e = e2
+        return _safe_eval(e, env)
+
 
 def collect_refs(obj, out=None):
     """All data_ref ids anywhere inside a slide."""
@@ -127,6 +160,21 @@ def has_placeholder(obj):
 
 # ---------------------------------------------------------------- formatting
 
+def _safe_eval(expr, env):
+    """+ − × ÷ on numbers and names from env only (data point calc)."""
+    import ast
+    import operator
+    ops = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul, ast.Div: operator.truediv}
+    def ev(n):
+        if isinstance(n, ast.Expression): return ev(n.body)
+        if isinstance(n, ast.BinOp) and type(n.op) in ops: return ops[type(n.op)](ev(n.left), ev(n.right))
+        if isinstance(n, ast.UnaryOp) and isinstance(n.op, ast.USub): return -ev(n.operand)
+        if isinstance(n, ast.Constant) and isinstance(n.value, (int, float)): return n.value
+        if isinstance(n, ast.Name) and n.id in env: return env[n.id]
+        raise ValueError(f"unknown term '{ast.unparse(n)}'")
+    return ev(ast.parse(expr, mode="eval"))
+
+
 def excel_format(unit, value_format=None):
     if value_format:
         return value_format
@@ -139,11 +187,16 @@ def _num(v, decimals=None):
         # is not (99.95 must not read 100.0)
         if abs(v - round(v)) < 1e-9:
             decimals = 0
+        elif abs(v) < 1:  # AUC 0.864, r 0.74: one decimal would flatten them to 0.9 and 0.7
+            decimals = next((d for d in (1, 2, 3) if abs(v - round(v, d)) < 1e-9), 3)
         elif abs(round(v, 1) - round(round(v, 1))) < 1e-9 and abs(v - round(v, 1)) > 1e-9:
             decimals = 2
         else:
             decimals = 1
     return f"{v:,.{decimals}f}"
+
+
+SCALE_UNITS = ("k", "K", "M", "B", "bn")
 
 
 def fmt(value, unit=None, value_format=None, signed=False):
@@ -174,20 +227,42 @@ def fmt(value, unit=None, value_format=None, signed=False):
         out = "$" + _num(value) + unit[1:]
     elif unit == "pp":
         out = _num(value) + " pp"
+    elif unit in SCALE_UNITS:  # 4.2M, 120k: the scale word is part of the number
+        out = _num(value) + unit
     else:
         out = _num(value)
     return (sign + out).replace("-", "−")
+
+
+def _join_range(lo, hi):
+    """$2.0M + $3.5M -> $2.0–3.5M; 12.0% + 15.5% -> 12.0–15.5%: the unit is written once."""
+    tail = re.search(r"[^\d.,]*$", hi).group(0)
+    if tail and lo.endswith(tail):
+        lo = lo[:-len(tail)]
+    head = re.match(r"[^\d−-]*", lo).group(0)
+    if head and hi.startswith(head) and lo.startswith(head):
+        hi = hi[len(head):]
+    return f"{lo}–{hi}"
 
 
 def dp_fmt(spec, point, value_format=None, signed=False):
     d = spec.dpoint(point)
     if d is None:
         return "?"
+    if value_format is None and d.get("decimals") is not None:  # keep the source's precision (1.92, not 1.9)
+        n_ = d["decimals"]
+        value_format = (("0." + "0" * n_) if n_ else "0") + ("%" if d.get("unit") == "%" else "")
     if d.get("value_high") is not None:  # a range, e.g. 4–5 years
-        lo = fmt(d["value"], d.get("unit"), value_format)
         hi = fmt(d["value_high"], d.get("unit"), value_format)
-        unit_tail = hi[len(_num(d["value_high"])):] if hi.startswith(_num(d["value_high"])) else ""
-        return f"{lo[:len(lo) - len(unit_tail)] if unit_tail and lo.endswith(unit_tail) else lo}–{hi}"
+        lo_vf = value_format
+        if not lo_vf:  # the low end takes the high end's decimals: 3.0–3.7, not 3–3.7
+            scale = 100 if d.get("unit") == "%" else 1
+            digits = _num(d["value_high"] * scale)
+            dec = len(digits.split(".")[1]) if "." in digits else 0
+            if dec:
+                lo_vf = "0." + "0" * dec + ("%" if d.get("unit") == "%" else "")
+        lo = fmt(d["value"], d.get("unit"), lo_vf)
+        return _join_range(lo, hi)
     return fmt(d.get("value"), d.get("unit"), value_format, signed)
 
 
@@ -344,8 +419,12 @@ def chrome(c, spec, slide, page_no, footnotes=None):
         notes.append("Lower confidence (secondary source, not re-checked, or sources differ): " + (txt if len(txt) < 110 else txt[:107] + "…"))
     if notes:
         lines = [f"{i + 1}  {n}" for i, n in enumerate(notes)]
-        top = y - 0.02 - G["line_h"] * len(lines)
-        c.text(m, top, G["title_w"], G["line_h"] * len(lines), lines, size=S["source"], color=t["muted"])
+        n_lines = sum(max(1, _lines(ln, G["title_w"], S["source"])) for ln in lines)
+        if n_lines > len(lines) + 1:
+            SIDEBAR_WARN.append(f"slide {slide.get('id')}: footnotes run to {n_lines} lines; keep each to one line "
+                                "(move detail to a backup or the workbook)")
+        top = y - 0.02 - G["line_h"] * n_lines
+        c.text(m, top, G["title_w"], G["line_h"] * n_lines, lines, size=S["source"], color=t["muted"])
     src = source_line(spec, slide)
     if src:
         c.text(m, y + (G["line_h"] if notes else 0) * 0, G["title_w"], G["line_h"], src, size=S["source"], color=t["muted"])
@@ -403,8 +482,9 @@ def body_box(slide):
     bottom = G["content_bottom"]
     if slide.get("so_what") and slide.get("status") != "ghost":
         bottom -= G["sowhat_h"] + G["gap"]
-    if (slide.get("footnotes")):
-        bottom -= G["line_h"] * len(slide["footnotes"])
+    if (slide.get("footnotes")):  # wrapped footnotes take their real lines, so they never sit on the body
+        bottom -= G["line_h"] * sum(max(1, _lines(f"{i + 1}  {n}", G["title_w"], S["source"]))
+                                    for i, n in enumerate(slide["footnotes"]))
     if slide.get("basis") and slide.get("status") != "ghost":
         bottom -= BASIS_H + G["gap"]
     lay = slide.get("layout") or {}
@@ -426,11 +506,18 @@ def sidebar(c, spec, slide, x=None, w=None):
     y = G["content_top"]
     bottom = G["content_bottom"] - ((G["sowhat_h"] + G["gap"]) if slide.get("so_what") else 0)
     h = bottom - y
-    c.rect(x, y, w, h, fill=t["sidebar"], radius=0.06 if t["bar_radius"] else None)
-    if (slide.get("body") or {}).get("kind") != "matrix":
-        c.rect(x - G["gap"] * 1.35, y + h / 2 - 0.17, 0.2, 0.34, fill=t["sidebar"], shape=MSO_SHAPE.CHEVRON)
-    ink = t["sidebar_text"]
-    pad = 0.28
+    open_ = spec.sidebar_style(sb) == "open"
+    dark = t["dark_sidebar"] and not open_
+    if open_:  # no panel: a heavy rule on top, text on the slide background
+        c.line(x, y, x + w, y, color=t["primary"], weight=3)
+        ink = t["text"]
+        pad = 0.04
+    else:
+        c.rect(x, y, w, h, fill=t["sidebar"], radius=0.06 if t["bar_radius"] else None)
+        if (slide.get("body") or {}).get("kind") != "matrix":
+            c.rect(x - G["gap"] * 1.35, y + h / 2 - 0.17, 0.2, 0.34, fill=t["sidebar"], shape=MSO_SHAPE.CHEVRON)
+        ink = t["sidebar_text"]
+        pad = 0.28
     cy = y + 0.24
     if sb.get("implication"):  # what it means for us: its own box at the foot of the sidebar
         isz = S["body"] + 1
@@ -442,18 +529,18 @@ def sidebar(c, spec, slide, x=None, w=None):
             tw_ = bw - d - 0.42
             ih = max(d + 0.32, _est_h(sb["implication"], tw_, isz, 1.12, bold=True) + 0.34)
             iy = bottom - pad + 0.08 - ih
-            c.rect(bx, iy, bw, ih, fill=tint(t["highlight"]) if not t["dark_sidebar"] else t["primary"], line=t["highlight"], weight=1)
+            c.rect(bx, iy, bw, ih, fill=tint(t["highlight"]) if not dark else t["primary"], line=t["highlight"], weight=1)
             dot = c.rect(bx + 0.16, iy + 0.16, d, d, fill=t["highlight"], shape=MSO_SHAPE.OVAL)
             for side in ("margin_top", "margin_bottom", "margin_left", "margin_right"):
                 setattr(dot.text_frame, side, 0)
             c.label_in(dot, "!", size=S["header"] + 3, bold=True, color=t["white"], font=t["font_title"])
             c.text(bx + d + 0.3, iy + 0.17, tw_, ih - 0.3, sb["implication"], size=isz, bold=True,
-                   color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12)
+                   color=t["title"] if not dark else t["white"], line_spacing=1.12)
         elif istyle == "dark":  # filled box in the primary colour, white bold text (reference "bottom-line box")
             tw_ = bw - 0.4
             ih = _est_h(sb["implication"], tw_, isz, 1.1, bold=True, title=True) + 0.3
             iy = bottom - pad + 0.08 - ih
-            c.rect(bx, iy, bw, ih, fill=t["primary"] if not t["dark_sidebar"] else t["highlight"])
+            c.rect(bx, iy, bw, ih, fill=t["primary"] if not dark else t["highlight"])
             c.text(bx + 0.2, iy + 0.15, tw_, ih - 0.3, sb["implication"], size=isz, bold=True, font=t["font_title"],
                    color=t["white"], line_spacing=1.1, anchor="m")
         elif istyle == "rule":  # no box: a rule, then a bold line in the accent colour
@@ -462,20 +549,20 @@ def sidebar(c, spec, slide, x=None, w=None):
             iy = bottom - pad + 0.08 - ih
             c.line(bx, iy, bx + bw, iy, color=t["highlight"], weight=1.5)
             c.text(bx, iy + 0.14, tw_, ih - 0.14, sb["implication"], size=isz, bold=True, font=t["font_title"],
-                   color=t["highlight"] if not t["dark_sidebar"] else t["white"], line_spacing=1.1)
+                   color=t["highlight"] if not dark else t["white"], line_spacing=1.1)
         else:  # default: white panel with the accent bar
             tw_ = w - 2 * pad - 0.32
             ih = _est_h(sb["implication"], tw_, isz, 1.12, bold=True) + 0.3
             iy = bottom - pad + 0.08 - ih
-            c.rect(bx, iy, bw, ih, fill=t["white"] if not t["dark_sidebar"] else t["primary"])
+            c.rect(bx, iy, bw, ih, fill=t["white"] if not dark else t["primary"])
             c.rect(bx, iy, 0.07, ih, fill=t["highlight"])
             c.text(x + pad + 0.14, iy + 0.15, tw_, ih - 0.3, sb["implication"], size=isz, bold=True,
-                   color=t["title"] if not t["dark_sidebar"] else t["white"], line_spacing=1.12, anchor="m")
+                   color=t["title"] if not dark else t["white"], line_spacing=1.12, anchor="m")
         bottom = iy - 0.12
     if sb.get("header"):
         size = S["takeaway"] + 2
         hh = _est_h(sb["header"], w - 2 * pad, size, 1.0, bold=True, title=True)
-        c.text(x + pad, cy, w - 2 * pad, hh, sb["header"], size=size, bold=True, color=ink, font=t["font_title"], line_spacing=1.0)
+        c.text(x + pad, cy, w - 2 * pad, hh, sb["header"], size=size, bold=True, color=t["title"] if open_ else ink, font=t["font_title"], line_spacing=1.0)
         cy += hh + (0.06 if sb.get("kind") == "big_number" else 0.2)
     kind = sb.get("kind")
     if kind == "big_number":
@@ -496,8 +583,8 @@ def sidebar(c, spec, slide, x=None, w=None):
         step = room / max(1, n)
         for i, r in enumerate(sb.get("reasons", [])):
             ry = cy + i * step
-            dot = c.rect(x + pad, ry + 0.02, 0.34, 0.34, fill=t["primary"] if not t["dark_sidebar"] else t["white"], shape=MSO_SHAPE.OVAL)
-            c.label_in(dot, str(i + 1), size=S["label"], bold=True, color=t["white"] if not t["dark_sidebar"] else t["primary"])
+            dot = c.rect(x + pad, ry + 0.02, 0.34, 0.34, fill=t["primary"] if not dark else t["white"], shape=MSO_SHAPE.OVAL)
+            c.label_in(dot, str(i + 1), size=S["label"], bold=True, color=t["white"] if not dark else t["primary"])
             head = r["header"]
             pt = r.get("point")
             known = pt and spec.dpoint(pt)
@@ -528,17 +615,22 @@ def sidebar(c, spec, slide, x=None, w=None):
     if bullets:
         room = bottom - reserve - cy
         plain = [b.replace("**", "") for b in bullets]
-        size = fit_size(bullets, w - 2 * pad, room - 0.12 * len(bullets), S["body"] + 2, min_size=10.5, line_spacing=1.12)
-        heights = [_est_h(b, w - 2 * pad - 0.2, size, 1.12) for b in bullets]
+        size = fit_size(bullets, w - 2 * pad, room - 0.12 * len(bullets), S["body"] + 2, min_size=10.5, line_spacing=1.12, indent=0.4 if sb.get("markers") else 0.2)
+        heights = [_est_h(b, w - 2 * pad - (0.4 if sb.get("markers") else 0.2), size, 1.12) for b in bullets]
         gap = min(0.42, max(0.06, (room - sum(heights)) / max(1, len(bullets))))
         if rows and cy + sum(heights) + 0.06 * len(bullets) > bottom - reserve + 0.15:
             SIDEBAR_WARN.append(f"slide {slide['id']}: sidebar bullets and value rows do not both fit; shorten the bullets or drop a row")
-        for b, bh in zip(bullets, heights):
-            runs = [("▪  ", {"color": t["highlight"] if not t["dark_sidebar"] else ink})]
+        numbered = sb.get("markers")
+        for k_, (b, bh) in enumerate(zip(bullets, heights)):
+            runs = [] if numbered else [("▪  ", {"color": t["highlight"] if not dark else ink})]
             for k, part in enumerate(b.split("**")):
                 if part:
                     runs.append((part, {"color": ink, "bold": k % 2 == 1}))
-            c.text(x + pad, cy, w - 2 * pad, bh, [runs], size=size, line_spacing=1.12)
+            if numbered:  # the number matches a mark on the exhibit (composition.md: specific-area emphasis)
+                _mark_dot(c, x + pad + 0.15, cy + size / 72 * 0.62, k_ + 1, d=0.28)
+                c.text(x + pad + 0.4, cy, w - 2 * pad - 0.4, bh, [runs], size=size, line_spacing=1.12)
+            else:
+                c.text(x + pad, cy, w - 2 * pad, bh, [runs], size=size, line_spacing=1.12)
             cy += bh + gap
         if cy - gap > bottom - reserve + 0.05:
             SIDEBAR_WARN.append(f"slide {slide['id']}: sidebar bullets run past the space above the "
@@ -546,7 +638,7 @@ def sidebar(c, spec, slide, x=None, w=None):
     if rows:
         # rows sit on the bottom of the sidebar so they can never run out of it (F6); bullets fill the space above
         cy = (bottom - (0.55 if sb.get("note") else 0.1)) - sum(needs_r) - 0.12
-        c.line(x + pad, cy, x + w - pad, cy, color=t["rule"] if not t["dark_sidebar"] else ink)
+        c.line(x + pad, cy, x + w - pad, cy, color=t["rule"] if not dark else ink)
         cy += 0.12
         vals = [abs(spec.value(r["point"]) or 0) for r in rows]
         vmax = max(vals) or 1
@@ -560,7 +652,7 @@ def sidebar(c, spec, slide, x=None, w=None):
             c.text(x + pad, cy, lw_, lh, r["label"], size=S["body"] - 1, bold=on, color=ink, line_spacing=1.0)
             if r.get("basis"):  # B-08: how the estimate was built
                 bh_ = _est_h(r["basis"], lw_, S["label"], 1.0)
-                c.text(x + pad, cy + lh + 0.02, lw_, bh_, r["basis"], size=S["label"], color=t["muted"] if not t["dark_sidebar"] else ink, line_spacing=1.0)
+                c.text(x + pad, cy + lh + 0.02, lw_, bh_, r["basis"], size=S["label"], color=t["muted"] if not dark else ink, line_spacing=1.0)
                 lh += bh_ + 0.04
             c.text(x + w - pad - vw, cy - 0.03, vw, 0.34, dp_fmt(spec, r["point"]), size=S["header"] + 2, bold=True, font=t["font_title"],
                    color=t["placeholder"] if ph else (t["highlight"] if on else ink), align="r")
@@ -570,10 +662,10 @@ def sidebar(c, spec, slide, x=None, w=None):
                 c.rect(x + pad, by, max(0.04, bw_), 0.08, fill=None if ph else (t["highlight"] if on else t["other_bars"]),
                        line=t["placeholder"] if ph else None, dash=ph)
             else:
-                c.line(x + pad, by + 0.06, x + w - pad, by + 0.06, color=t["rule"] if not t["dark_sidebar"] else ink)
+                c.line(x + pad, by + 0.06, x + w - pad, by + 0.06, color=t["rule"] if not dark else ink)
             cy = max(cy + rh, by + 0.14)
     if sb.get("note"):
-        c.text(x + pad, bottom - 0.45, w - 2 * pad, 0.3, sb["note"], size=S["label"] + 1, bold=True, color=t["caution_ink"] if not t["dark_sidebar"] else ink)
+        c.text(x + pad, bottom - 0.45, w - 2 * pad, 0.3, sb["note"], size=S["label"] + 1, bold=True, color=t["caution_ink"] if not dark else ink)
 
 
 # ---------------------------------------------------------------- charts
@@ -724,6 +816,8 @@ def chart(c, spec, slide, body, box):
         return waterfall(c, spec, body, box)
     if ctype == "scatter":
         return scatter(c, spec, slide, body, box)
+    if ctype == "stacked_area":
+        return stacked_area(c, spec, slide, body, box)
     cats, series = _sorted(body, spec)
     known = [spec.value(p) for s in series for p in s["points"] if spec.value(p) is not None]
     stand_in = (sum(known) / len(known)) if known else None
@@ -846,6 +940,13 @@ def chart(c, spec, slide, body, box):
     if multi and len(series) > 5:
         SIDEBAR_WARN.append(f"slide {slide.get('id')}: {len(series)} series cannot all be told apart by color; "
                             "group the smallest into 'Other' (5 at most)")
+    starts_crowded = False
+    if ctype == "line" and multi:
+        firsts = sorted(v for v in (spec.value(s_["points"][0]) for s_ in series if s_["points"]) if v is not None)
+        allv = [v for s_ in series for v in (spec.value(p_) for p_ in s_["points"]) if v is not None]
+        lo_, hi_, _ = _nice_axis(allv, pad=0.06) if allv else (0, 1, 1)  # the axis _line_end_labels sets
+        gaps = [b_ - a_ for a_, b_ in zip(firsts, firsts[1:])]
+        starts_crowded = bool(gaps) and min(gaps) / ((hi_ - lo_) or 1) * (h - 0.65) < (S["label"] + 2) * 1.6 / 72
     for si, (s_spec, s_obj) in enumerate(zip(series, plot.series)):
         base = colors[si]
         if ctype == "line":
@@ -872,6 +973,10 @@ def chart(c, spec, slide, body, box):
                     _fill(pt.format, t["highlight"])
             if ctype == "line" and pi not in (0, len(s_spec["points"]) - 1):
                 continue
+            if ctype == "line" and multi and pi == len(s_spec["points"]) - 1:
+                continue  # drawn below as end labels pushed apart, so close endings do not overlap
+            if ctype == "line" and multi and pi == 0 and starts_crowded:
+                continue  # start values too close to label apart; the end labels and the table carry the numbers
             dl = pt.data_label
             dl.has_text_frame = True
             val_txt = "?" if p.get("placeholder") else fmt(spec.value(p), unit, nf)
@@ -896,8 +1001,227 @@ def chart(c, spec, slide, body, box):
                 dl.position = XL_LABEL_POSITION.RIGHT if pi else XL_LABEL_POSITION.LEFT
             else:
                 dl.position = XL_LABEL_POSITION.CENTER if stacked else XL_LABEL_POSITION.OUTSIDE_END
+    if ctype == "line":
+        n_cat = len(cats)
+        slot_ = (w - (1.9 if multi else 0)) * 0.92 / max(n_cat, 1)
+        widest = max(measure.width_pt(str(cn), t["font_body"], S["label"] + 1) for cn in cats) / 72 + 0.12
+        if widest > slot_:  # too many points for every name: label every k-th one
+            skip = math.ceil(widest / slot_)
+            ca_ = ch.category_axis._element
+            for tag in ("c:tickLblSkip", "c:tickMarkSkip"):
+                old_ = ca_.find(qn(tag))
+                if old_ is not None:
+                    ca_.remove(old_)
+            el = etree.SubElement(ca_, qn("c:tickLblSkip"))
+            el.set("val", str(skip))
+            # schema order: tickLblSkip sits before noMultiLvlLbl when that is present
+            nm = ca_.find(qn("c:noMultiLvlLbl"))
+            if nm is not None:
+                ca_.remove(el)
+                nm.addprevious(el)
+        if multi:
+            _line_end_labels(c, spec, ch, (x, y, w, h), series, unit, nf, highlight, colors)
+    if body.get("marks") or body.get("outline"):
+        _chart_marks(c, spec, slide, body, ch, (x, y, w, h), cats, series, unit, nf, label_size, name_size,
+                     gap if gap is not None else 45, horiz, multi, bool(bench_line))
     _no_invert(ch)
     return gf
+
+
+def stacked_area(c, spec, slide, body, box):
+    """Stacked area over time with each layer named at its right end (stacked area: 24 pages in 19 public decks).
+    The plot area is pinned so the end labels sit on their own band."""
+    x, y, w, h = box
+    t = c.t
+    cats, series = list(body["categories"]), body["series"]
+    unit = next(((spec.dpoint(p) or {}).get("unit") for s in series for p in s["points"] if spec.dpoint(p)), None)
+    nf = excel_format(unit, body.get("value_format"))
+    cd = CategoryChartData(number_format=nf)
+    cd.categories = cats
+    for s in series:
+        cd.add_series(s["name"], [spec.value(p) or 0 for p in s["points"]])
+    gf = c.slide.shapes.add_chart(XL_CHART_TYPE.AREA_STACKED, Inches(x), Inches(y), Inches(w), Inches(h), cd)
+    ch = gf.chart
+    ch.has_title = False
+    ch.has_legend = False
+    ch.font.name = t["font_body"]
+    ch.font.size = Pt(S["label"] + 1)
+    _clean_axes(ch, t)
+    totals = [sum(spec.value(s["points"][i]) or 0 for s in series) for i in range(len(cats))]
+    vmax = (max(totals) or 1) * 1.08
+    ch.value_axis.minimum_scale = 0
+    ch.value_axis.maximum_scale = vmax
+    highlight = set(body.get("highlight", []))
+    colors = series_colors(t, [s["name"] for s in series], highlight)
+    for s_obj, col in zip(ch.plots[0].series, colors):
+        _fill(s_obj.format, col)
+        s_obj.format.line.color.rgb = rgb(t["white"])
+        s_obj.format.line.width = Pt(0.75)
+    lab_w = min(2.4, w * 0.28)
+    name_h = S["label"] * 1.6 / 72 + 0.1
+    px, py, pw, ph = x + 0.05, y + 0.3, w - lab_w - 0.25, h - 0.3 - name_h
+    _pin_plot(ch, (px - x) / w, (py - y) / h, pw / w, ph / h)
+    # the value axis sits between categories on an area chart's edges: pin it to the first and last points
+    cross = ch.value_axis._element.find(qn("c:crossBetween"))
+    if cross is not None:
+        cross.set("val", "midCat")
+    fam = t["font_body"]
+    base = 0.0
+    last = len(cats) - 1
+    for s, col in zip(series, colors):
+        v = spec.value(s["points"][last]) or 0
+        mid = py + ph - (base + v / 2) / vmax * ph
+        base += v
+        on = s["name"] in highlight
+        lab = [[(s["name"] + "  ", {"bold": on, "color": t["highlight"] if on else t["text"]}),
+                (dp_fmt(spec, s["points"][last], body.get("value_format")), {"bold": True, "color": t["title"]})]]
+        hh = max(0.3, _est_h(s["name"] + "  00", lab_w, S["label"] + 1, 1.0))
+        c.text(px + pw + 0.35, mid - hh / 2, lab_w - 0.1, hh, lab, size=S["label"] + 1, anchor="m", line_spacing=1.0)
+        if v / vmax * ph < 0.22:
+            SIDEBAR_WARN.append(f"slide {slide.get('id')}: the '{s['name']}' layer is too thin for its end label; group small layers into 'Other'")
+    return gf
+
+
+def _line_end_labels(c, spec, ch, box, series, unit, nf, highlight, colors):
+    """Name each line at its end with its last value; labels that would overlap are pushed apart (F8)."""
+    x, y, w, h = box
+    t = c.t
+    vals = [spec.value(p) for s_ in series for p in s_["points"] if spec.value(p) is not None]
+    if not vals:
+        return
+    lo, hi, _ = _nice_axis(vals, pad=0.06)
+    ch.value_axis.minimum_scale, ch.value_axis.maximum_scale = lo, hi
+    lab_w = 1.8
+    px, py, pw, ph = x + 0.25, y + 0.2, w - lab_w - 0.35, h - 0.2 - 0.45
+    _pin_plot(ch, (px - x) / w, (py - y) / h, pw / w, ph / h)
+    size = S["label"] + 1
+    items = []
+    for s_, col in zip(series, colors):
+        last = spec.value(s_["points"][-1]) if s_["points"] else None
+        if last is None:
+            continue
+        val_ = fmt(last, unit, nf if nf != "#,##0.0" else None)
+        txt = [[(s_["name"] + "  ", {"color": col if col != t["other_bars"] else t["text"], "bold": s_["name"] in highlight}),
+                (val_, {"bold": True, "color": t["title"]})]]
+        lh = _est_h(s_["name"] + "  " + val_, lab_w - 0.1, size, 1.05, bold=True) + 0.04
+        items.append([py + ph - (last - lo) / ((hi - lo) or 1) * ph - lh / 2, lh, txt])
+    items.sort(key=lambda it: it[0])
+    for k in range(1, len(items)):  # push down any label that would overlap the one above
+        prev = items[k - 1]
+        if items[k][0] < prev[0] + prev[1] + 0.04:
+            items[k][0] = prev[0] + prev[1] + 0.04
+    for top, lh, txt in items:
+        c.text(px + pw + 0.12, top, lab_w, lh, txt, size=size, line_spacing=1.0, anchor="m")
+
+
+def _pin_plot(ch, fx, fy, fw, fh):
+    """Fix the inner plot area (fractions of the chart frame) so bar positions can be computed."""
+    pa = ch._chartSpace.chart.plotArea
+    old = pa.find(qn("c:layout"))
+    if old is not None:
+        pa.remove(old)
+    lay = etree.SubElement(pa, qn("c:layout"))
+    pa.remove(lay)
+    pa.insert(0, lay)
+    ml = etree.SubElement(lay, qn("c:manualLayout"))
+    for tag, val in (("layoutTarget", "inner"), ("xMode", "edge"), ("yMode", "edge"),
+                     ("x", fx), ("y", fy), ("w", fw), ("h", fh)):
+        etree.SubElement(ml, qn("c:" + tag)).set("val", str(round(val, 4)) if not isinstance(val, str) else val)
+
+
+def _mark_dot(c, cx, cy, n, d=0.3):
+    t = c.t
+    dot = c.rect(cx - d / 2, cy - d / 2, d, d, fill=t["highlight"], shape=MSO_SHAPE.OVAL)
+    for side in ("margin_top", "margin_bottom", "margin_left", "margin_right"):
+        setattr(dot.text_frame, side, 0)
+    dot.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+    c.label_in(dot, str(n), size=S["label"], bold=True, color=t["white"])
+
+
+def _chart_marks(c, spec, slide, body, ch, box, cats, series, unit, nf, label_size, name_size, gap, horiz, multi, bench_line):
+    """Point at a specific part of the exhibit (composition.md): numbered dots on bars and a dashed outline
+    around a group of them, matched by number to the sidebar bullets (sidebar.markers)."""
+    t = c.t
+    ctype = body.get("chart_type")
+    vals = [spec.value(p) for p in series[0]["points"]] if series else []
+    if multi or ctype not in ("bar", "column") or bench_line or any(v is not None and v < 0 for v in vals):
+        SIDEBAR_WARN.append(f"slide {slide.get('id')}: marks and outline work on single-series bar and column charts "
+                            "with no negative values; drop them or use a highlight")
+        return
+    x, y, w, h = box
+    vmax = ch.value_axis.maximum_scale or (max([v for v in vals if v is not None] or [1]) * 1.15)
+    fam = t["font_body"]
+    if horiz:
+        name_w = min(w * 0.45, max(measure.width_pt(cn, fam, name_size) for cn in cats) / 72 + 0.2)
+        px, py, pw, ph = x + name_w, y + 0.05, w - name_w - 0.2, h - 0.1
+        if any(m.get("note") for m in body.get("marks", [])):
+            pw -= min(2.6, w * 0.3)  # a column on the right for the notes, so a long bar still has room
+    else:
+        name_h = 2 * name_size * 1.25 / 72 + 0.12
+        px, py, pw, ph = x + 0.1, y + 0.45, w - 0.2, h - 0.45 - name_h
+    _pin_plot(ch, (px - x) / w, (py - y) / h, pw / w, ph / h)
+    n = max(len(cats), 1)
+    slot = (ph if horiz else pw) / n
+    thick = slot / (1 + gap / 100)
+    lab_h = label_size * 1.2 / 72
+
+    def bar(i):  # x, y, w, h of bar i, and where its value label ends
+        v = vals[i] or 0
+        lw_ = measure.width_pt(fmt(vals[i], unit, nf) if vals[i] is not None else "?", fam, label_size, True) / 72
+        if horiz:
+            by = py + i * slot + (slot - thick) / 2
+            bw = pw * v / vmax
+            return (px, by, bw, thick), px + bw + 0.08 + lw_
+        bh = ph * v / vmax
+        bx = px + i * slot + (slot - thick) / 2
+        return (bx, py + ph - bh, thick, bh), py + ph - bh - 0.05 - lab_h
+
+    out = body.get("outline")
+    if out:
+        idx = [cats.index(cn) for cn in out.get("categories", []) if cn in cats]
+        if idx:
+            rects = [bar(i) for i in idx]
+            if horiz:
+                x0 = px - min(name_w - 0.05, max(measure.width_pt(cats[i], fam, name_size) for i in idx) / 72 + 0.3)
+                y0 = py + min(idx) * slot + 0.04
+                x1 = max(e for _, e in rects) + 0.15
+                y1 = py + (max(idx) + 1) * slot - 0.04
+            else:
+                x0 = px + min(idx) * slot + 0.04
+                x1 = px + (max(idx) + 1) * slot - 0.04
+                y0 = min(e for _, e in rects) - 0.1
+                y1 = py + ph + name_h - 0.04
+            c.rect(x0, y0, x1 - x0, y1 - y0, line=t["highlight"], dash=True, weight=1.5)
+            if out.get("n"):
+                _mark_dot(c, x1, y0, out["n"])
+            if out.get("label"):  # beside the dot on bars; above the outline on columns, so it stays in its panel
+                lx_, ly_ = (x1 + 0.22, y0 - 0.02) if horiz else (x0, y0 - 0.34)
+                c.text(lx_, ly_, 2.0 if horiz else x1 - x0 - 0.2, 0.3, out["label"], size=S["label"], bold=True, color=t["highlight"])
+    for m in body.get("marks", []):
+        if m.get("category") not in cats:
+            SIDEBAR_WARN.append(f"slide {slide.get('id')}: mark on '{m.get('category')}', which is not a category")
+            continue
+        (bx, by, bw, bh), end = bar(cats.index(m["category"]))
+        if horiz:
+            _mark_dot(c, end + 0.25, by + bh / 2, m["n"])
+        else:
+            _mark_dot(c, bx + bw / 2, end - 0.22, m["n"])
+        if m.get("note"):  # the explanation sits on the chart, next to what it explains (no sidebar needed)
+            if horiz:
+                nx = end + 0.48
+                nw = x + w - nx
+                nh = _est_h(m["note"], nw, S["label"], 1.1) if nw > 0.5 else 9
+                ny = by + bh / 2 - nh / 2
+            else:
+                nw = slot * 1.6
+                nx = max(x, min(bx + bw / 2 - nw / 2, x + w - nw))
+                nh = _est_h(m["note"], nw, S["label"], 1.1)
+                ny = end - 0.4 - nh
+            if nw < 0.8 or (not horiz and ny < y - 0.3) or (horiz and nh > slot * 1.4):
+                SIDEBAR_WARN.append(f"slide {slide.get('id')}: the note on '{m['category']}' has no room on the chart; "
+                                    "shorten it or move it to the sidebar")
+            c.text(nx, ny, max(0.5, nw), nh, m["note"], size=S["label"], color=t["text"], line_spacing=1.1,
+                   align="l" if horiz else "c")
 
 
 def _luma(hex_):
@@ -1470,7 +1794,12 @@ def table(c, spec, body, box, slide=None):
         if not shade and not body.get("legend"):
             legend_h = 0
     ncols = len(cols) + 1
-    first_w = w * 0.19
+    # row labels never break inside a word: the first column grows to the longest label word (up to 45%)
+    longest = max([measure.width_pt(wd, FONTS["body"], S["body"] + 1, True) / 72
+                   for r_ in rows for wd in ((r_.get("badge", "") + " ") if r_.get("badge") else "").split() + r_["label"].split()] or [0])
+    first_w = min(max(w * 0.19, longest + 0.3), w * 0.45)
+    if longest + 0.3 > w * 0.45:
+        SIDEBAR_WARN.append(f"slide {(slide or {}).get('id')}: a row label word is wider than the label column; use a shorter label")
     widths = [first_w] + [0] * (ncols - 1)
     if last_text or verdict:
         widths[-1] = w * 0.27
@@ -1480,6 +1809,14 @@ def table(c, spec, body, box, slide=None):
     else:
         for j in range(1, ncols):
             widths[j] = (w - first_w) / (ncols - 1)
+
+    STATUS = {"pass": ("Pass", t["good"], t["white"], "✓"), "watch": ("Watch", t["caution"], t["caution_ink"], "!"),
+              "fail": ("Fail", t["alert"], t["white"], "✕")}
+    def chip_text(cell):
+        lab, _, _, mark = STATUS[cell["status"]]
+        return f"{mark}  {cell.get('status_label') or lab}"
+    chip_w = max([measure.width_pt(chip_text(cl), FONTS["body"], S["label"], True) / 72 + 0.3
+                  for r_ in rows for cl in r_["cells"] if cl.get("status")] or [0])
 
     def cell_texts(i, row):
         out = []
@@ -1498,9 +1835,12 @@ def table(c, spec, body, box, slide=None):
         hh = max(_lines(col, widths[j], size, bold=True) for j, col in enumerate(cols, start=1)) * size * 1.2 / 72 + 0.16
         rh = []
         for i, row in enumerate(rows):
-            n = max([_lines(row["label"], widths[0], lsize, bold=True)] +
-                    [_lines(tx, widths[j], size) for j, tx in enumerate(cell_texts(i, row), start=1) if tx])
-            need = n * size * 1.2 / 72 + 0.18
+            n = max([_lines(tx, widths[j] - (chip_w + 0.1 if j - 1 < len(row["cells"]) and row["cells"][j - 1].get("status") else 0), size)
+                     for j, tx in enumerate(cell_texts(i, row), start=1) if tx] or [1])
+            lab_need = _lines(row["label"], widths[0], lsize, bold=True) * lsize * 1.2 / 72
+            if row.get("basis"):  # B-08: how the row's estimate is built, under its label
+                lab_need += _lines(row["basis"], widths[0], size - 2) * (size - 2) * 1.2 / 72
+            need = max(n * size * 1.2 / 72, lab_need) + 0.18
             if harvey_type:
                 need = max(need, 0.5)
             rh.append(need)
@@ -1516,6 +1856,11 @@ def table(c, spec, body, box, slide=None):
         if head_h + sum(rhs) <= h - legend_h or size <= 10:
             break
         size -= 0.5
+    if size < READ_MIN:
+        hh12, rh12 = heights(READ_MIN)
+        over = (hh12 + sum(rh12)) / max(0.1, h - legend_h)
+        SIDEBAR_WARN.append(f"slide {(slide or {}).get('id')}: table text shrinks to {size:g} pt to fit (keep body text at {READ_MIN} pt or more): "
+                            f"cut about {max(5, round((1 - 1 / over) * 20) * 5)}% of the cell text, drop a row or column, or move detail to a backup")
     # then up to 2 pt smaller so no header word breaks; if that is not enough, keep the size and ask for a shorter header
     for s2 in [size - 0.5 * k for k in range(0, 5)]:
         if s2 >= 11 and words_fit(s2):
@@ -1523,8 +1868,9 @@ def table(c, spec, body, box, slide=None):
             head_h, rhs = heights(size)
             break
     else:
-        long_ = [wd for j, col in enumerate(cols, start=1) for wd in str(col).split()
-                 if measure.width_pt(wd, FONTS["body"], size, True) / 72 > widths[j] - 0.36]
+        long_ = sorted(((measure.width_pt(wd, FONTS["body"], 11, True) / 72 - (widths[j] - 0.36), wd)
+                        for j, col in enumerate(cols, start=1) for wd in str(col).split()), reverse=True)
+        long_ = [wd for _, wd in long_[:3]]  # the words closest to (or past) their column width
         SIDEBAR_WARN.append(f"slide {(slide or {}).get('id')}: table header words wider than their column ({', '.join(repr(w_) for w_ in long_[:3])}); "
                             "shorten the column header or drop a column")
     spare = max(0.0, (h - legend_h) - head_h - sum(rhs))
@@ -1548,26 +1894,28 @@ def table(c, spec, body, box, slide=None):
     for i, r_ in enumerate(rhs, start=1):
         tb.rows[i].height = Inches(r_)
 
-    def put(cell, text, bold=False, color=None, size=S["body"], align="l", fill=None, runs=None):
+    def put(cell, text, bold=False, color=None, size=S["body"], align="l", fill=None, runs=None, indent=0.0):
         if fill:
             cell.fill.solid()
             cell.fill.fore_color.rgb = rgb(fill)
         else:
             cell.fill.background()
         cell.margin_left = cell.margin_right = Inches(0.12)
+        cell.margin_left = Inches(0.12 + indent)
         cell.margin_top = cell.margin_bottom = Inches(0.05)
         cell.vertical_anchor = MSO_ANCHOR.MIDDLE
         tf = cell.text_frame
         tf.word_wrap = True
         parts = runs or [(text, bold, color)]
-        for k, (tx, bd, col) in enumerate(parts):
+        for k, part in enumerate(parts):
+            tx, bd, col = part[:3]
             p = tf.paragraphs[0] if k == 0 else tf.add_paragraph()
             p.alignment = {"l": PP_ALIGN.LEFT, "c": PP_ALIGN.CENTER}[align]
             if k == 0:
                 p.text = ""
             r = p.add_run()
             r.text = tx
-            r.font.size = Pt(size)
+            r.font.size = Pt(part[3] if len(part) > 3 else size)
             r.font.bold = bd
             r.font.name = t["font_body"]
             r.font.color.rgb = rgb(col or t["text"])
@@ -1588,8 +1936,9 @@ def table(c, spec, body, box, slide=None):
         if heat and row.get("benchmark"):
             tint = t["panel"]
         label = (row.get("badge", "") + "  " if row.get("badge") else "") + row["label"]
-        put(tb.cell(i, 0), label, bold=True, color=t["highlight"] if on else (t["muted"] if row.get("benchmark") else t["title"]),
-            size=size + 1, fill=tint)
+        lab_col = t["highlight"] if on else (t["muted"] if row.get("benchmark") else t["title"])
+        put(tb.cell(i, 0), label, bold=True, color=lab_col, size=size + 1, fill=tint,
+            runs=[(label, True, lab_col), (row["basis"], False, t["muted"], size - 2)] if row.get("basis") else None)
         texts = cell_texts(i - 1, row)
         for j, txt in enumerate(texts, start=1):
             cell = row["cells"][j - 1] if j - 1 < len(row["cells"]) else {}
@@ -1608,8 +1957,25 @@ def table(c, spec, body, box, slide=None):
             put(tb.cell(i, j), txt,
                 bold=bool(on and (is_text_col or cell.get("point"))),
                 color=(t["highlight"] if (on and is_text_col) else (t["title"] if on or cell.get("point") else t["text"])),
-                size=size, align="l" if (is_text_col or not harvey_type) else "c", fill=tint)
+                size=size, align="l" if (is_text_col or not harvey_type or cell.get("status")) else "c", fill=tint,
+                indent=(chip_w + 0.1) if cell.get("status") else 0.0)
     bottom = y + head_h + sum(rhs)
+    if chip_w:  # verdict chips sit on the computed row heights, before the cell's short reason
+        xs_, acc = [], x
+        for cw in widths:
+            xs_.append(acc)
+            acc += cw
+        ch = 0.3
+        for i, row in enumerate(rows):
+            for j, cell in enumerate(row["cells"], start=1):
+                if not cell.get("status"):
+                    continue
+                _, fill_, ink_, _ = STATUS[cell["status"]]
+                chip = c.rect(xs_[j] + 0.12, tops[i] + (rhs[i] - ch) / 2, chip_w, ch, fill=fill_, radius=0.15)
+                chip.text_frame.margin_left = chip.text_frame.margin_right = 0
+                chip.text_frame.margin_top = chip.text_frame.margin_bottom = 0
+                chip.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+                c.label_in(chip, chip_text(cell), size=S["label"], bold=True, color=ink_)
     if heat:
         for i, row in enumerate(rows):  # the target row gets a full-width outline (shading keeps its meaning)
             if row.get("highlight") or i == co_row:
@@ -2602,7 +2968,7 @@ def landscape(c, spec, slide, body, box):
     marked = set(body.get("marked", []))
     us = body.get("us")
     names = [it for s_ in segs for it in s_["items"]]
-    fs = min(fit_size([nm], cw - 0.4, chip - 0.06, S["body"] + 1, min_size=10, indent=0, line_spacing=1.0, bold=True) for nm in names)
+    fs = min(fit_size([nm], cw - 0.4, chip - 0.06, S["body"] + 1, min_size=10, indent=0, line_spacing=1.0, bold=True, floor=LABEL_MIN) for nm in names)
     head_fs = S["header"]  # one size for every header; no word may break inside a column
     while head_fs > 10 and any(measure.width_pt(wd, FONTS["body"], head_fs, True) / 72 > cw - 0.25
                                for s_ in segs for wd in s_["label"].split()):
@@ -2759,6 +3125,9 @@ def content(c, spec, slide, page_no):
              "levers": lambda: levers(c, spec, slide, body, box),
              "case": lambda: case(c, spec, slide, body, box),
              "equation": lambda: equation_body(c, spec, body, box),
+             "model": lambda: model_body(c, spec, body, box),
+             "bartable": lambda: bartable(c, spec, slide, body, box),
+             "dumbbell": lambda: dumbbell(c, spec, slide, body, box),
              "cost_curve": lambda: cost_curve(c, spec, slide, body, box),
              "org": lambda: org_chart(c, spec, slide, body, box),
              "initiative": lambda: initiative(c, spec, slide, body, box),
@@ -3187,14 +3556,27 @@ def _est_h(text, w, size, line_spacing=1.15, bold=False, title=False):
                for part in str(text).split("\n")) + 0.02
 
 
-def fit_size(texts, w, h, size, min_size=11, indent=0.2, line_spacing=1.15, para_gap=0.0, bold=False, title=False):
-    """Largest font size (pt, step 0.5) at which the paragraphs fit in w x h inches, measured with real fonts."""
+def fit_size(texts, w, h, size, min_size=11, indent=0.2, line_spacing=1.15, para_gap=0.0, bold=False, title=False, floor=None):
+    """Largest font size (pt, step 0.5) at which the paragraphs fit in w x h inches, measured with real fonts.
+    Body text that has to go below READ_MIN to fit gets a warning with how much to cut (holdout review:
+    "the font is too small to take in at a glance")."""
+    start = size
     while size > min_size:
         need = sum(_est_h(tx, w - indent, size, line_spacing, bold, title) for tx in texts) + para_gap * len(texts)
         if need <= h:
-            return size
+            break
         size -= 0.5
-    return min_size
+    else:
+        size = min_size
+    floor = floor or (READ_MIN if start >= S["body"] else LABEL_MIN)
+    if start >= floor > size and texts:
+        need = sum(_est_h(tx, w - indent, floor, line_spacing, bold, title) for tx in texts) + para_gap * len(texts)
+        cut = max(5, round((1 - h / need) * 100 / 5) * 5) if need > 0 else 5
+        snippet = re.sub(r"\*\*", "", str(texts[0]))[:40]
+        msg = f"text shrinks to {size:g} pt to fit (keep {'body text' if floor == READ_MIN else 'captions'} at {floor} pt or more): cut about {cut}% of the words, split the slide, or move detail to a backup: \"{snippet}\""
+        if msg not in SIDEBAR_WARN:
+            SIDEBAR_WARN.append(msg)
+    return size
 
 
 def tint_of(hex_, f=0.88):
@@ -3306,11 +3688,13 @@ def panels(c, spec, slide, body, box):
     ps = body["panels"]
     n = len(ps)
     gap = 0.42
-    pw = (w - gap * (n - 1)) / n
-    hd_h = max(_est_h(p["header"], pw - (0.9 if p.get("delta") else 0), S["header"] + 1, 1.0, bold=True) for p in ps)
-    ul_h = max([_est_h(p["unit_line"].replace("**", ""), pw, S["label"], 1.0) for p in ps if p.get("unit_line")] or [0])
+    ratios = body.get("widths") if len(body.get("widths") or []) == n else [1] * n
+    pws = [(w - gap * (n - 1)) * r_ / sum(ratios) for r_ in ratios]
+    pxs = [x + sum(pws[:i]) + gap * i for i in range(n)]
+    hd_h = max(_est_h(p["header"], pw_ - (0.9 if p.get("delta") else 0), S["header"] + 1, 1.0, bold=True) for p, pw_ in zip(ps, pws))
+    ul_h = max([_est_h(p["unit_line"].replace("**", ""), pw_, S["label"], 1.0) for p, pw_ in zip(ps, pws) if p.get("unit_line")] or [0])
     for i, p in enumerate(ps):
-        px = x + i * (pw + gap)
+        px, pw = pxs[i], pws[i]
         c.text(px, y, pw - (0.9 if p.get("delta") else 0), hd_h, p["header"], size=S["header"] + 1, bold=True, color=t["title"], line_spacing=1.0)
         if p.get("delta"):
             pill = c.rect(px + pw - 0.85, y + 0.04, 0.85, 0.32, fill=t["highlight"] if spec.dpoint(p["delta"]) else None,
@@ -3327,6 +3711,10 @@ def panels(c, spec, slide, body, box):
         b = p["body"]
         if b["kind"] == "chart":
             chart(c, spec, slide, b, inner)
+        elif b["kind"] == "table":  # a second exhibit can be a table: chart + the figures behind it
+            table(c, spec, b, inner, slide)
+        elif b["kind"] == "text":
+            text_body(c, spec, slide, b, inner)
         else:
             kpi(c, spec, b, inner)
         if i < n - 1 and body.get("connector") == "arrow":  # B-09: parallel evidence gets no arrow
@@ -3483,10 +3871,31 @@ def timeline(c, spec, slide, body, box):
             while nl > 1 and lsize > 10:  # shrink before a label spills out of its bar (F8)
                 lsize -= 0.5
                 nl = _lines(b["label"], bw, lsize, bold=emph)
+            fam_ = FONTS["body"]
+            word_w = max((measure.width_pt(wd, fam_, lsize, bool(emph)) / 72 for wd in b.get("label", "").split()), default=0)
+            outside = b.get("label") and word_w > bw - 0.18  # a word wider than the bar would break mid-word inside it
+            if outside:
+                nl = 1
             bh = min(max(0.42, nl * lsize * 1.2 / 72 + 0.12), rh * 0.85)
             bar = c.rect(bx, ry + (rh - bh) / 2, bw, bh, fill=t["highlight"] if emph else t["other_bars"], radius=0.04)
-            if b.get("label"):
+            if b.get("label") and not outside:
                 c.label_in(bar, b["label"], size=lsize, bold=emph, color=t["white"] if emph else t["title"], align="l")
+            elif outside:  # a short bar: its label goes just right of it, up to the next bar in the row
+                nxt = min([gx + idx[o["start"]] * pw for o in row["bars"] if o.get("start") in idx and idx[o["start"]] > idx[b["end"]]]
+                          or [x + w])
+                room = nxt - (bx + bw) - 0.12
+                lab_w = measure.width_pt(b["label"], fam_, S["label"], bool(emph)) / 72 + 0.05
+                if lab_w <= room:
+                    c.text(bx + bw + 0.08, ry, room, rh, b["label"], size=S["label"], bold=bool(emph),
+                           color=t["highlight"] if emph else t["title"], anchor="m")
+                else:  # no room beside it: just above the bar, in the row's spare height
+                    top_ = ry + (rh - bh) / 2
+                    lab_h = S["small"] * 1.2 / 72 + 0.02
+                    if top_ - lab_h < ry - 0.02:
+                        SIDEBAR_WARN.append(f"slide {slide.get('id')}: timeline bar '{b['label'][:30]}' is too short for its label; "
+                                            "shorten the label or give the row more height")
+                    c.text(bx, top_ - lab_h - 0.02, measure.width_pt(b["label"], fam_, S["small"], bool(emph)) / 72 + 0.1, lab_h,
+                           b["label"], size=S["small"], bold=bool(emph), color=t["highlight"] if emph else t["title"])
         c.line(x, ry + rh, x + w, ry + rh, color=t["rule"])
 
 
@@ -3693,7 +4102,7 @@ def equation_row(c, spec, terms, box, big=False):
     x, y, w, h = box
     t = c.t
     n = len(terms)
-    opw = 0.45 if big else 0.36
+    opw = 0.45 if big else 0.3
     cw = (w - opw * (n - 1)) / n
     for i, tm in enumerate(terms):
         cx = x + i * (cw + opw)
@@ -3704,7 +4113,7 @@ def equation_row(c, spec, terms, box, big=False):
         known = spec.dpoint(tm["point"]) is not None
         shp = c.rect(cx, y, cw, h, fill=t["primary"] if last else t["sidebar"], radius=0.05 if t["bar_radius"] else None)
         ink = t["white"] if last else t["sidebar_text"]
-        pad = 0.16
+        pad = 0.16 if big else 0.1
         nh = 0.75 if big else 0.42
         label = dp_fmt(spec, tm["point"])
         nsize = 40 if big else 22
@@ -3742,6 +4151,262 @@ def equation_body(c, spec, body, box):
         c.line(x, ay + 0.4, x + w, ay + 0.4, color=t["primary"], weight=1.5)
         _bullets(c, ass, x, ay + 0.55, w, y + h - ay - 0.55,
                  size=fit_size(ass, w, y + h - ay - 0.55, S["body"] + 1, line_spacing=1.15))
+
+
+def bartable(c, spec, slide, body, box):
+    """Rows compared on several measures with a small bar per cell (composition.md: bar-table).
+    Each bar column has its own scale; the benchmark row is grey and left out of the scale."""
+    x, y, w, h = box
+    t = c.t
+    cols, rows = body["columns"], body["rows"]
+    kinds = [col.get("kind", "bar") for col in cols]
+    fam = FONTS["body"]
+    longest = max(measure.width_pt(wd, fam, S["body"] + 1, True) / 72 for r in rows for wd in r["label"].split())
+    lab_w = min(max(w * 0.16, longest + 0.3), w * 0.3)
+    text_n, bar_n = kinds.count("text"), kinds.count("bar")
+    rest = w - lab_w
+    text_w = min(2.6, rest * 0.3) if text_n else 0
+    bar_w = (rest - text_w * text_n) / max(1, bar_n)
+    widths = [bar_w if k == "bar" else text_w for k in kinds]
+    xs = [x + lab_w + sum(widths[:j]) for j in range(len(cols))]
+    head_h = max(_est_h(col["header"], wd - 0.2, S["label"], 1.0, bold=True) for col, wd in zip(cols, widths)) + 0.12
+    if body.get("label_header"):
+        c.text(x, y, lab_w - 0.1, head_h - 0.08, body["label_header"], size=S["label"], bold=True, color=t["muted"], anchor="b")
+    for col, cx, wd in zip(cols, xs, widths):
+        c.text(cx, y, wd - 0.2, head_h - 0.08, col["header"], size=S["label"], bold=True, color=t["muted"], anchor="b")
+    c.line(x, y + head_h, x + w, y + head_h, color=t["primary"], weight=1.5)
+    # each bar column scales to its largest non-benchmark value; leave room for the value label
+    scale = {}
+    for j, k in enumerate(kinds):
+        if k == "bar":
+            vals = [abs(spec.value(r["cells"][j].get("point")) or 0) for r in rows if not r.get("benchmark") and j < len(r["cells"])]
+            scale[j] = max(vals or [1]) or 1
+    # one number of decimals per bar column (5.0 beside 5.2, not 5)
+    col_vf = {}
+    for j in scale:
+        unit_ = next(((spec.dpoint(r["cells"][j].get("point")) or {}).get("unit") for r in rows if spec.dpoint(r["cells"][j].get("point"))), None)
+        sc = 100 if unit_ == "%" else 1
+        digs = [_num(spec.value(r["cells"][j].get("point")) * sc) for r in rows if spec.value(r["cells"][j].get("point")) is not None]
+        dec = max([len(d_.split(".")[1]) if "." in d_ else 0 for d_ in digs] or [0])
+        col_vf[j] = (("0." + "0" * dec) if dec else "0") + ("%" if unit_ == "%" else "") if dec else None
+    size = S["body"]
+    need = [max([0.5] + [_est_h(r["cells"][j].get("text", ""), widths[j] - 0.2, size, 1.1) + 0.2
+                         for j, k in enumerate(kinds) if k == "text" and j < len(r["cells"])]) for r in rows]
+    room = h - head_h - 0.1
+    if sum(need) > room:
+        SIDEBAR_WARN.append(f"slide {slide.get('id')}: bar-table rows need {sum(need):.1f} in but have {room:.1f} in; "
+                            "shorten the text column or drop a row")
+    rh = [n_ * max(1.0, room / sum(need)) if sum(need) <= room else n_ * room / sum(need) for n_ in need]
+    rh = [min(r_, 0.95) for r_ in rh]
+    cy = y + head_h + 0.05
+    bh = 0.24
+    for r, rh_ in zip(rows, rh):
+        on, bench = r.get("highlight"), r.get("benchmark")
+        if on:
+            c.rect(x, cy, w, rh_ - 0.04, fill=t["sidebar"] if not t["dark_sidebar"] else t["panel"])
+        c.text(x + 0.08, cy, lab_w - 0.16, rh_ - 0.04, r["label"], size=S["body"] + 1, bold=True, anchor="m",
+               color=t["highlight"] if on else (t["muted"] if bench else t["title"]))
+        for j, (k, cx, wd) in enumerate(zip(kinds, xs, widths)):
+            cell = r["cells"][j] if j < len(r["cells"]) else {}
+            if k == "text":
+                c.text(cx, cy, wd - 0.15, rh_ - 0.04, cell.get("text", ""), size=size, anchor="m", line_spacing=1.1)
+                continue
+            p = cell.get("point")
+            v = spec.value(p)
+            lab = dp_fmt(spec, p, col_vf.get(j)) if p else ""
+            lw_ = measure.width_pt(lab or "0", fam, S["body"], bool(on)) / 72 + 0.12
+            full = wd - 0.25 - lw_
+            frac = 0.45 if v is None else min(1.0, abs(v) / scale[j])
+            blen = max(0.03, full * frac)
+            by = cy + (rh_ - 0.04 - bh) / 2
+            if v is None:
+                c.rect(cx, by, blen, bh, line=t["placeholder"], dash=True)
+            else:
+                c.rect(cx, by, blen, bh, fill=t["gray_light"] if bench else (t["highlight"] if on else t["other_bars"]))
+            c.text(cx + blen + 0.08, cy, lw_ + 0.2, rh_ - 0.04, lab, size=S["body"], bold=bool(on), anchor="m",
+                   color=t["placeholder"] if v is None else t["title"])
+        cy += rh_
+        c.line(x, cy - 0.02, x + w, cy - 0.02, color=t["rule"])
+
+
+def dumbbell(c, spec, slide, body, box):
+    """Two dots per row joined by a line, sorted by the gap; the change sits in a right column (its own data point)."""
+    x, y, w, h = box
+    t = c.t
+    rows = list(body["rows"])
+    vals = lambda r: (spec.value(r["from"]), spec.value(r["to"]))
+    if body.get("sort", "gap") == "gap":
+        rows.sort(key=lambda r: -abs((vals(r)[1] or 0) - (vals(r)[0] or 0)))
+    known = [v for r in rows for v in vals(r) if v is not None] or [0, 1]
+    lo, hi, step = _nice_axis(known + [0] if min(known) >= 0 else known)
+    fam = FONTS["body"]
+    lab_w = min(w * 0.3, max(measure.width_pt(r["label"], fam, S["body"] + 2, True) for r in rows) / 72 + 0.3)
+    has_change = any(r.get("change") for r in rows)
+    ch_w = 1.3 if has_change else 0
+    x0, x1 = x + lab_w + 0.5, x + w - ch_w - 0.5
+    X = lambda v: x0 + (x1 - x0) * (v - lo) / ((hi - lo) or 1)
+    leg_h = 0.4
+    c_from, c_to = t["other_bars"], t["highlight"]
+    lx = x
+    for nm, col in zip(body["names"], (c_from, c_to)):
+        nw_ = measure.width_pt(nm, fam, S["label"] + 1) / 72 + 0.15
+        c.rect(lx, y + 0.1, 0.18, 0.18, fill=col, shape=MSO_SHAPE.OVAL)
+        c.text(lx + 0.26, y + 0.02, nw_, 0.34, nm, size=S["label"] + 1, color=t["text"], anchor="m")
+        lx += 0.26 + nw_ + 0.3
+    if has_change:
+        c.text(x + w - ch_w, y + 0.02, ch_w, 0.34, body.get("change_header") or "Change", size=S["label"] + 1, bold=True,
+               color=t["muted"], align="r", anchor="m")
+    top = y + leg_h + 0.05
+    c.line(x, top, x + w, top, color=t["primary"], weight=1.5)
+    axis_h = 0.3
+    rh = min(1.0, (h - leg_h - axis_h - 0.1) / len(rows))
+    body_h = rh * len(rows)
+    v = lo
+    while v <= hi + 1e-9:  # light gridlines and round tick values under the rows
+        c.rect(X(v) - 0.007, top + 0.05, 0.014, body_h, fill=t["gray_light"])
+        c.text(X(v) - 0.4, top + 0.08 + body_h, 0.8, 0.26, fmt(v, None), size=S["small"], color=t["muted"], align="c")
+        v += step
+    d = 0.2
+    digs = [_num(v_) for v_ in known]  # one number of decimals for every dot label (1.0 beside 0.8, not 1)
+    dec = max([len(s_.split(".")[1]) if "." in s_ else 0 for s_ in digs] or [0])
+    vf = ("0." + "0" * dec) if dec else None
+    for k, r in enumerate(rows):
+        cy = top + 0.05 + k * rh + rh / 2
+        on = r.get("highlight")
+        a, b = vals(r)
+        c.text(x, cy - rh / 2, lab_w, rh, r["label"], size=S["body"] + 2, bold=bool(on), anchor="m",
+               color=t["title"] if on else t["text"])
+        if a is None or b is None:
+            c.text(x0, cy - 0.15, 1.5, 0.3, "?", size=S["body"], color=t["placeholder"])
+            continue
+        xa, xb = X(a), X(b)
+        c.rect(min(xa, xb), cy - 0.025, max(0.02, abs(xb - xa)), 0.05, fill=c_to if on else t["gray_mid"])
+        c.rect(xa - d / 2, cy - d / 2, d, d, fill=c_from, shape=MSO_SHAPE.OVAL)
+        c.rect(xb - d / 2, cy - d / 2, d, d, fill=c_to, shape=MSO_SHAPE.OVAL)
+        la, lb = dp_fmt(spec, r["from"], vf), dp_fmt(spec, r["to"], vf)
+        wa = measure.width_pt(la, fam, S["label"] + 1) / 72 + 0.1
+        wb = measure.width_pt(lb, fam, S["label"] + 1, True) / 72 + 0.1
+        right_a = xa >= xb  # each value sits on the outer side of its dot
+        c.text(xa + d / 2 + 0.06 if right_a else xa - d / 2 - 0.06 - wa, cy - 0.15, wa, 0.3, la, size=S["label"] + 1,
+               color=t["muted"], align="l" if right_a else "r", anchor="m")
+        c.text(xb - d / 2 - 0.06 - wb if right_a else xb + d / 2 + 0.06, cy - 0.15, wb, 0.3, lb, size=S["label"] + 1,
+               bold=True, color=t["title"], align="r" if right_a else "l", anchor="m")
+        if r.get("change"):
+            c.text(x + w - ch_w, cy - rh / 2, ch_w, rh, dp_fmt(spec, r["change"], signed=True), size=S["body"] + 2, bold=True,
+                   align="r", anchor="m", color=t["highlight"] if on else t["title"])
+
+
+def range_fmt(lo, hi, unit):
+    """15–30, $3–7, 80–120K: the unit is written once, on the high end."""
+    a, b = fmt(lo, unit), fmt(hi, unit)
+    pre = "$" if a.startswith("$") and b.startswith("$") else ""
+    tail = b[len(pre) + len(_num(hi)):] if b.startswith(pre + _num(hi)) else ""
+    if tail and a.endswith(tail):
+        a = a[:len(a) - len(tail)]
+    return f"{a}–{b[len(pre):] if pre else b}"
+
+
+def model_sensitivity(spec, body):
+    """[(driver, low_result, high_result)] sorted by swing, widest first; drivers without a range last (None)."""
+    res = body["result"]["point"].get("data_ref")
+    rows = []
+    for dv in body["drivers"]:
+        d = spec.dpoint(dv["point"])
+        rg = (d or {}).get("range")
+        if not (d and rg and res in spec.dp):
+            rows.append((dv, None, None))
+            continue
+        lo = spec.recompute(res, {d["id"]: rg["low"]})
+        hi = spec.recompute(res, {d["id"]: rg["high"]})
+        rows.append((dv, lo, hi))
+    return sorted(rows, key=lambda r: (r[1] is None, -(abs(r[2] - r[1]) if r[1] is not None else 0)))
+
+
+def model_body(c, spec, body, box):
+    """Estimate as a model (B-13): driver table (value, basis, range) and a tornado of the result at each
+    driver's low and high, rows aligned. The result row closes the table."""
+    x, y, w, h = box
+    t = c.t
+    rows = model_sensitivity(spec, body)
+    res = spec.dpoint(body["result"]["point"])
+    base = res["value"] if res else None
+    unit = (res or {}).get("unit")
+    gap = 0.35
+    tw = w * 0.56
+    tx2 = x + tw + gap
+    tw2 = w - tw - gap
+    cols = [("Driver", 0.27), ("Value", 0.19), ("Basis", 0.30), ("Range", 0.24)]
+    pad = 0.18  # space between the right-aligned value and the basis text
+    head_h = 0.42
+    res_h = 0.75
+    n = len(rows)
+    rh = min(0.66, (h - head_h - res_h - 0.1) / max(1, n))
+    # headers
+    cx = x
+    for name, f in cols:
+        c.text(cx + (pad if name == "Basis" else 0), y, tw * f - 0.08, head_h - 0.08, name, size=S["label"], bold=True, color=t["muted"], anchor="b",
+               align="r" if name in ("Value", "Range") else "l")
+        cx += tw * f
+    c.text(tx2, y, tw2, head_h - 0.08, body.get("sensitivity_header") or body["result"]["label"], size=S["label"],
+           bold=True, color=t["muted"], anchor="b")
+    c.line(x, y + head_h, x + w, y + head_h, color=t["title"], weight=1)
+    # scale for the tornado: base and every end, with room for the end labels
+    ends = [v for _, lo, hi in rows if lo is not None for v in (lo, hi)] + ([base] if base is not None else [])
+    lab_w = 0.75
+    if ends:
+        vmin, vmax = min(ends), max(ends)
+        span = (vmax - vmin) or 1
+        px0, px1 = tx2 + lab_w, tx2 + tw2 - lab_w
+        to_x = lambda v: px0 + (v - vmin) / span * (px1 - px0)
+    low_c, high_c = tint(t["primary"], 0.55), t["primary"]
+    for k, (dv, lo, hi) in enumerate(rows):
+        ry = y + head_h + k * rh
+        d = spec.dpoint(dv["point"]) or {}
+        rg = d.get("range")
+        cells = [(dv["label"], "l", True, t["text"]), (dp_fmt(spec, dv["point"]), "r", True, t["title"]),
+                 (dv["basis"], "l", False, t["muted"]), (range_fmt(rg["low"], rg["high"], d.get("unit")) if rg else "—", "r", False, t["text"])]
+        cx = x
+        for (txt, al, bold, col), (name, f) in zip(cells, cols):
+            px = pad if name == "Basis" else 0
+            cw = tw * f - 0.08 - px
+            size = fit_size([txt], cw, rh - 0.08, S["body"], min_size=10, indent=0, line_spacing=1.0, bold=bold)
+            c.text(cx + px, ry, cw, rh, txt, size=size, bold=bold, color=col, align=al, anchor="m", line_spacing=1.0)
+            cx += tw * f
+        c.line(x, ry + rh, x + w, ry + rh, color=t["rule"])
+        if lo is None or not ends:
+            continue
+        bh = min(0.34, rh * 0.55)
+        by = ry + (rh - bh) / 2
+        xb = to_x(base)
+        for v, col in ((lo, low_c), (hi, high_c)):
+            if abs(v - base) > 1e-12:
+                c.rect(min(xb, to_x(v)), by, abs(to_x(v) - xb), bh, fill=col)
+        left, right = sorted((lo, hi))
+        # the ends are estimates too: one decimal (of the shown scale, so 9.7% not 10%), whole numbers past 100
+        vf = ("0.0%" if unit == "%" else "0.0") if abs(base * (100 if unit == "%" else 1)) < 100 else ("0%" if unit == "%" else "0")
+        left_s, right_s = fmt(left, unit, vf), fmt(right, unit, vf)
+        c.text(to_x(left) - lab_w, ry, lab_w - 0.06, rh, left_s, size=S["label"], color=t["text"], align="r", anchor="m")
+        c.text(to_x(right) + 0.06, ry, lab_w - 0.06, rh, right_s, size=S["label"], color=t["text"], anchor="m")
+    # result row
+    ry = y + head_h + n * rh
+    c.line(x, ry, x + w, ry, color=t["title"], weight=1.5)
+    c.text(x, ry + 0.08, tw * cols[0][1] - 0.08, res_h - 0.16, body["result"]["label"], size=S["body"], bold=True,
+           color=t["title"], anchor="m")
+    c.text(x + tw * cols[0][1], ry + 0.08, tw * cols[1][1] - 0.08, res_h - 0.16, dp_fmt(spec, body["result"]["point"]),
+           size=22, bold=True, font=t["font_title"], color=t["highlight"], align="r", anchor="m")
+    if body["result"].get("formula"):
+        fx = x + tw * (cols[0][1] + cols[1][1]) + pad
+        c.text(fx, ry + 0.08, tw * (cols[2][1] + cols[3][1]) - 0.08, res_h - 0.16, "= " + body["result"]["formula"],
+               size=S["label"], color=t["muted"], anchor="m")
+    if ends and base is not None:
+        xb = to_x(base)
+        c.line(xb, y + head_h + 0.04, xb, ry, color=t["title"], weight=1, dash=True)
+        c.text(xb - 1.2, ry + 0.06, 2.4, 0.3, f"Base {fmt(base, unit)}", size=S["label"], bold=True, color=t["title"], align="c")
+        lx = tx2 + tw2 - 2.9
+        c.rect(lx, ry + 0.46, 0.16, 0.16, fill=low_c)
+        c.text(lx + 0.22, ry + 0.4, 1.2, 0.28, "driver at low", size=S["small"], color=t["muted"], anchor="m")
+        c.rect(lx + 1.45, ry + 0.46, 0.16, 0.16, fill=high_c)
+        c.text(lx + 1.67, ry + 0.4, 1.2, 0.28, "driver at high", size=S["small"], color=t["muted"], anchor="m")
 
 
 # ---------------------------------------------------------------- entry

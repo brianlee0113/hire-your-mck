@@ -87,7 +87,7 @@ The spec is one JSON file (schema: `scripts/storyline.schema.json`, JSON Schema 
 - Evidence slides set `"tree_node": "n1a"`; the renderer writes the code ("1a:") before the title, so leave `prefix` out. Continuation pages of a long table add "(1/2)" to the title (R12). The lead slide (first content slide after the section's agenda) has no `tree_node`.
 - Each section gets a `question` (deck_deep): the Key questions page lists them under the problem statement.
 - Front matter: a `problem_statement` slide (`{"id": "q", "role": "problem_statement", "status": "filled"}`) shows the problem worksheet; it is not a content slide and belongs to no exec item.
-- The appendix opens with `{"id": "app", "role": "appendix_divider", "status": "filled"}` (any deck with backup slides and navigation); the agenda then ends with an Appendix row.
+- The appendix opens with `{"id": "app", "role": "appendix_divider", "status": "filled"}` (any deck with backup slides); with an agenda, it ends with an Appendix row.
 - The appendix slide "What we did not pursue" is a `backup` with `"tree_node": ["n5"]` instead of `backup_of`.
 - Sections without `tree_node` are context or how to make it happen (last). Sub-sections set `parent_id` and share the parent's `exec_item_id`.
 
@@ -165,8 +165,10 @@ Always give a placeholder a `label` that says what data is needed; it is shown t
 
 Pick one:
 - **`basis` strip** under the exhibit, for a chart built on an estimate: `"basis": {"header": "How we projected it", "terms": [{"point": {...}, "caption": "share of sales, 2025 actual"}, {"op": "+", "point": {...}, "caption": "added in 2026–31: 1.5 pp a year from current co-manufacturers (supplier review) × 6 years"}, {"op": "=", "point": {...}, "caption": "share in 2031"}]}`. Siblings built from the same inputs (every bar of one projection) are covered.
-- **`equation` body** (archetype `calculation-bridge`) when the estimate is the slide's point: `{"kind": "equation", "terms": [...], "assumptions_header": "The estimate rests on four assumptions", "assumptions": [...]}`. Use it when a number would need its own explanation on another slide (B-03).
+- **`equation` body** (archetype `calculation-bridge`) when the estimate is the slide's point: `{"kind": "equation", "terms": [...], "assumptions_header": "The estimate rests on four assumptions", "assumptions": [...]}`. Use it when a number would need its own explanation on another slide (B-03). Show the drivers, not one step: 3 or more inputs, with an intermediate `{"op": "="}` where it helps (`38% − 29% = 9 pp × 8% = 0.7 pp`); two inputs, or only + and −, fail (B-13). Keep one in the storyline, for the estimate the decision rests on; show other estimates as a chart with a `basis` strip, or move them to the appendix (more than one warns).
+- **`model` body** (archetype `estimate-model`) for an estimate built on 3 or more inputs, to show which ones move it (B-13): `{"kind": "model", "drivers": [{"point": {"data_ref": "upl"}, "label": "Price uplift", "basis": "assumption, peers (4a)"}, ...], "result": {"point": {"data_ref": "pb"}, "label": "Payback, months", "formula": "build cost ÷ monthly gain after AI costs"}, "sensitivity_header": "Payback, months, at each driver's low and high"}`. Each driver's data point carries `"range": {"low": 3, "high": 7, "basis": "peer AI add-on prices"}`; the result's `calc` must read every driver (directly or through other calcs). In a deck with an appendix, an estimate on a `calculation-bridge` slide that rests on 3 or more inputs gets one (warn).
 - **Row `basis`** in a sidebar: `{"label": "Expected impact if snacks and frozen reach 26%", "basis": "16% of sales × 26% share", "point": {...}}`.
+- **Table row `basis`** for an estimate inside a comparison table: `{"label": "Chain-wide at $59", "basis": "1,400 = $70K bike cost ÷ $50 margin", "cells": [...]}` — one short line under the row label; it covers the estimates in that row.
 
 Captions name the source of any input that is not ours.
 
@@ -182,7 +184,7 @@ Captions name the source of any input that is not ours.
 
 ## Tables
 
-Row `note`s and a slide `callout` on a table render as the table's **last column** ("Verdict", or `body.verdict_header`), inside the table; the callout row is highlighted and shows the callout header and detail. Row heights come from the text, so keep cells to 2–3 lines.
+Row `note`s and a slide `callout` on a table render as the table's **last column** ("Verdict", or `body.verdict_header`), inside the table; the callout row is highlighted and shows the callout header and detail. Row heights come from the text, so keep cells to 2–3 lines. A verdict cell can carry `"status": "pass" | "watch" | "fail"` (optional `status_label`, e.g. "Holds", "Not now"): it draws a green, amber or red chip before the cell text, so the pattern reads before the words. Keep the text to a short reason ("Correlation, not cause"); use chips for tests, claims and options, not for every table.
 
 ## Scatter
 
@@ -256,6 +258,8 @@ KPI items show their `drivers` under a thin rule; add `drivers_header` only when
 
 `implication` is what the exhibit means for a decision, drawn at the foot of the sidebar. Use it only when the slide leads to one (where to launch, what to build first, how to price); a slide that reports a finding ends on plain bullets. At most a third of sidebar slides carry one. The renderer rotates four looks in deck order (a dark "bottom-line" box as in the reference decks, a rule with accent text, a white panel with an accent bar, a circled "!") so neighbouring slides differ; set `implication_style` (`dark`, `rule`, `bar`, `alert`) only to force one look. Use it instead of a last bullet that starts "For us:".
 
+The sidebar itself alternates two looks in deck order: a tinted `box` and an `open` column (no panel, a heavy rule on top, text on the slide background), so the deck does not read as one grey box after another. Set `sidebar.style` only to force one.
+
 `rows` and `big_number` must be **derived from the exhibit** (B-05, B-06), but not as a plain sum or difference: use shares or expected impact. `check.py` fails a repeat and warns on an unrelated number or a plain difference.
 
 ## QA (`check.py`)
@@ -268,6 +272,8 @@ KPI items show their `drivers` under a thin rule; add `drivers_header` only when
 | B-05 sidebar or callout repeats the body | fail |
 | B-08 calc does not recompute, estimate without calc/assumptions, estimate shown without basis | fail |
 | B-10 lever numbers without headers, mixed units without metric | fail |
+| B-13 `equation` body with two inputs, or only + and −; `model` driver outside the result's calc, value outside its range, fewer than two ranged drivers | fail |
+| B-13 estimate on 3+ inputs without an `estimate-model` slide (decks with an appendix); more than one `equation` slide in the storyline | warn |
 | units: bare "points" after a number | fail |
 | units: "pp", "Nx" or "vs." in a sentence | warn |
 | B-05 plain sum/difference in a sidebar, key takeaways repeating the exec summary | warn |

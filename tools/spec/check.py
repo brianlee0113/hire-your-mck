@@ -336,7 +336,7 @@ for s in spec["slides"]:
     sid = s["id"]
     if s["role"] not in ("content", "backup"):
         continue
-    lm = s["lead_message"]; body = s.get("body"); pts = list(points(body)) + list(points(s.get("layout")))
+    lm = s["lead_message"]; body = s.get("body"); pts = list(points(body)) + list(points(s.get("layout"))) + list(points(s.get("basis")))
     # A-03 title length
     words = len(lm["text"].split())
     if words > 25: out("A-03", "fail", f"title has {words} words (max 25)", sid)
@@ -345,6 +345,8 @@ for s in spec["slides"]:
     # A-01 numbers in title appear on slide
     nums = re.findall(r"[$~]?\d[\d,.]*\s?(?:%|x|M|B|K|pp|p\.p\.)?", re.sub(r"\(\d+/\d+\)|\b\d+\s?[–-]\s?\d+(?=\s+[a-z])", "", lm["text"]))  # "(1/2)" continuations
     nums = [n for n in nums if not re.fullmatch(r"(19|20)\d\d(s)?", n.strip().rstrip(",.;:"))]  # years are not claims
+    quarters = set(re.findall(r"\b(?:Q|H|FY)(\d)\b", lm["text"]))  # "Q1 2028", "H2": period names, not claims
+    nums = [n for n in nums if n.strip().rstrip(",.;:") not in quarters]
     declared = lm.get("numbers", [])
     if nums and not declared:
         out("A-01", "warn", f"title numbers {nums} not declared in lead_message.numbers", sid)
@@ -353,7 +355,7 @@ for s in spec["slides"]:
         if s["status"] in ("filled", "qa_passed") and not ref:
             out("A-01", "fail", f"title number '{n['text']}' has no data_ref", sid)
         elif ref and not any(p.get("data_ref") == ref for p in pts):
-            out("A-01", "fail", f"title number '{n['text']}' ({ref}) is not shown in the body/sidebar", sid)
+            out("A-01", "fail", f"title number '{n['text']}' ({ref}) is not shown in the body, sidebar or basis strip", sid)
     # A-02 highlights
     if body and body.get("kind") == "chart":
         hl_t = set(lm.get("highlights", [])); hl_c = set(body.get("highlight", []))
@@ -384,10 +386,10 @@ for s in spec["slides"]:
     # A-12 density
     if s.get("status") != "ghost" and s.get("archetype") != "statement" and body:
         n_chars = slide_chars(s)
-        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org", "map", "marimekko", "donut", "venn", "landscape") else 450  # exhibits carry the message
+        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org", "map", "marimekko", "donut", "venn", "landscape", "bartable", "model", "dumbbell") else 450  # exhibits carry the message
         if n_chars < low: out("A-12", "warn", f"slide text is ~{n_chars} chars; references run 670–1,110 (target 600–1,100, charts ≥300)", sid)
         elif n_chars > 1300: out("A-12", "warn", f"slide text is ~{n_chars} chars; above 1,300 reads as crowded", sid)
-        for it in body.get("columns", []) + body.get("items", []) + body.get("steps", []):
+        for it in ([] if body.get("kind") == "bartable" else body.get("columns", [])) + body.get("items", []) + body.get("steps", []):
             if isinstance(it, dict) and "header" in it and len(it.get("detail", [])) < 3:
                 out("A-12", "warn", f"'{it['header'][:30]}' has {len(it.get('detail', []))} bullets (want 3–5)", sid); break
         lay = s.get("layout") or {}
@@ -568,7 +570,7 @@ for d in dps.values():
 def _basis_refs(slide):
     """Refs whose basis is on the slide: basis strip, equation body, or a row/element carrying 'basis'."""
     refs = set(collect_data_refs(slide.get("basis") or {}))
-    if (slide.get("body") or {}).get("kind") == "equation":
+    if (slide.get("body") or {}).get("kind") in ("equation", "model"):
         refs |= set(collect_data_refs(slide["body"]))
     def walk(o):
         if isinstance(o, dict):
@@ -605,6 +607,125 @@ for s in content:
         units = {(dps.get(it["point"].get("data_ref")) or {}).get("unit") for it in b["items"] if it.get("point")}
         if len(units) > 1 and any(it.get("point") and not it.get("metric") for it in b["items"]):
             out("B-10", "fail", "lever numbers in different units without 'metric' (what each number measures)", s["id"])
+# bar-table: one cell per column; bar cells hold a point, text cells hold text
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") != "bartable" or s.get("status") == "ghost":
+        continue
+    kinds = [col.get("kind", "bar") for col in b["columns"]]
+    for r in b["rows"]:
+        if len(r["cells"]) != len(kinds):
+            out("schema", "fail", f"bar-table row '{r['label']}' has {len(r['cells'])} cells for {len(kinds)} columns", s["id"])
+            continue
+        for k, cell in zip(kinds, r["cells"]):
+            if k == "bar" and not cell.get("point"):
+                out("D5", "fail", f"bar-table row '{r['label']}': a bar cell needs a point (data_ref or placeholder)", s["id"])
+            if k == "text" and not cell.get("text"):
+                out("schema", "fail", f"bar-table row '{r['label']}': a text cell needs text", s["id"])
+# dumbbell: a change column shows a data point whose calc is the difference of the row's two dots
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") != "dumbbell" or s.get("status") == "ghost":
+        continue
+    with_change = [r for r in b["rows"] if r.get("change")]
+    if with_change and len(with_change) != len(b["rows"]):
+        out("schema", "fail", "dumbbell: give every row a change, or none", s["id"])
+    for r in with_change:
+        ch = dps.get(r["change"].get("data_ref")) or {}
+        ends = {r["from"].get("data_ref"), r["to"].get("data_ref")}
+        if ch and not ends <= set(ch.get("derived_from", [])):
+            out("B-08", "warn", f"dumbbell row '{r['label']}': change {ch.get('id')} is not derived from the row's two values", s["id"])
+# composition: marks and outline need a single-series bar or column chart with no negative values
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") == "chart" and (b.get("marks") or b.get("outline")):
+        neg = any((dps.get(p.get("data_ref")) or {}).get("value", 0) < 0 for ser in b.get("series", []) for p in ser.get("points", []))
+        if b.get("chart_type") not in ("bar", "column") or len(b.get("series", [])) != 1 or neg:
+            out("A-12", "warn", "marks and outline are drawn only on single-series bar and column charts with no negative values; use highlight or a sidebar instead", s["id"])
+# composition: numbered sidebar bullets and chart marks point at each other
+for s in spec["slides"]:
+    if s.get("status") == "ghost":
+        continue
+    sb = (s.get("layout") or {}).get("sidebar") or {}
+    b = s.get("body") or {}
+    nums = {m.get("n") for m in b.get("marks", [])} | ({(b.get("outline") or {}).get("n")} - {None})
+    if sb.get("markers"):
+        want = set(range(1, len(sb.get("bullets", [])) + 1))
+        if not nums:
+            out("A-12", "warn", "sidebar.markers numbers the bullets, but the chart has no marks or outline to match", s["id"])
+        elif nums - want:
+            out("A-12", "warn", f"chart marks {sorted(nums - want)} have no sidebar bullet with that number", s["id"])
+    elif b.get("marks") and not all(m.get("note") for m in b["marks"]) and (s.get("layout") or {}).get("variant") == "takeaway_sidebar":
+        out("A-12", "warn", "chart marks without sidebar.markers or notes: say what each number points at", s["id"])
+# panels: one width per panel
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") == "panels" and b.get("widths") and len(b["widths"]) != len(b["panels"]):
+        out("schema", "fail", f"panels.widths has {len(b['widths'])} values for {len(b['panels'])} panels", s["id"])
+# B-13: a calculation slide shows how the number is built, not one step of arithmetic
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if s.get("role") not in ("content", "backup") or s.get("status") == "ghost" or b.get("kind") != "equation":
+        continue
+    ops = [t.get("op") for t in b.get("terms", [])[1:]]
+    inputs = 1 + sum(1 for o in ops if o and o != "=")
+    if inputs <= 2:
+        out("B-13", "fail", "equation slide shows one operation (two inputs and a result); show the drivers behind the inputs (3+ inputs, an intermediate '=' is fine), or put the cards in a basis strip on the chart slide that uses the number", s["id"])
+    elif ops and all(o in ("+", "−", "=") for o in ops):
+        out("B-13", "fail", "equation slide only adds and subtracts; a sum or bridge reads better as a waterfall-bridge, or as a basis strip on the chart slide", s["id"])
+# B-13: one calculation-bridge in the storyline; more estimates go to the appendix (a backup equation or model)
+_eq_story = [s["id"] for s in content if s.get("status") != "ghost" and (s.get("body") or {}).get("kind") == "equation"]
+if len(_eq_story) > 1:
+    out("B-13", "warn", f"{len(_eq_story)} equation slides in the storyline ({', '.join(_eq_story)}); keep the one the decision rests on and move the rest to the appendix (role backup), or show the estimate as a basis strip on its chart", _eq_story[1])
+def _inputs_of(did, seen=None):
+    """Every data point the calc of `did` reads, directly or through other calcs."""
+    seen = set() if seen is None else seen
+    d = dps.get(did) or {}
+    names = set(d.get("derived_from", []))
+    if d.get("calc"):
+        names |= {i for i in dps if re.search(rf"(?<![\w.]){re.escape(i)}(?![\w-])", d["calc"])}
+    for i in names - seen:
+        seen.add(i)
+        _inputs_of(i, seen)
+    return seen
+_modelled = set()
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") != "model" or s.get("status") == "ghost":
+        continue
+    r = b["result"]["point"].get("data_ref")
+    _modelled.add(r)
+    if r and not (dps.get(r) or {}).get("calc"):
+        out("B-13", "fail", f"model result {r} has no calc, so the sensitivity cannot be computed", s["id"])
+        continue
+    reach = _inputs_of(r) if r else set()
+    ranged = 0
+    for dv in b["drivers"]:
+        i = dv["point"].get("data_ref")
+        if not i:
+            continue
+        if i not in reach:
+            out("B-13", "fail", f"driver {i} is not an input of {r}'s calc; moving it would not change the result", s["id"])
+        rg = (dps.get(i) or {}).get("range")
+        if rg:
+            ranged += 1
+            v = dps[i]["value"]
+            if not rg["low"] <= v <= rg["high"]:
+                out("B-13", "fail", f"driver {i}: value {v} is outside its range {rg['low']}–{rg['high']}", s["id"])
+            if not rg.get("basis"):
+                out("B-13", "warn", f"driver {i}: range has no basis; say why low and high are plausible", s["id"])
+    if ranged < 2:
+        out("B-13", "fail", "model shows fewer than two drivers with a range; add range {low, high, basis} to the drivers' data points", s["id"])
+# an estimate built on 3 or more inputs gets its sensitivity in the appendix (decks that have one)
+_has_appendix = any(s.get("role") == "backup" for s in spec["slides"])
+for s in (spec["slides"] if _has_appendix else []):
+    b = s.get("body") or {}
+    if s.get("role") != "content" or s.get("status") == "ghost" or b.get("kind") != "equation":
+        continue
+    r = (b.get("terms") or [{}])[-1].get("point", {}).get("data_ref")
+    leaves = {i for i in _inputs_of(r) if not (dps.get(i) or {}).get("calc")} if r else set()
+    if (dps.get(r) or {}).get("estimate") and len(leaves) >= 3 and r not in _modelled:
+        out("B-13", "warn", f"estimate {r} rests on {len(leaves)} inputs; show which ones move it with an estimate-model slide (backup is fine)", s["id"])
 # Units (style.md): percentage differences are 'percentage points' in sentences and 'pp' in labels, never bare 'points'
 def _all_text(o, path=""):
     if isinstance(o, str): yield path, o
@@ -740,7 +861,11 @@ for d in dps.values():
         out("V-02", "fail", f"{d['id']} is in {d['unit']} but its excerpt is in {cur}; convert it as a derived number (calc, rate and date in assumptions)", d["slide_id"])
     years = set(re.findall(r"(?:19|20)\d\d", d.get("period") or ""))
     context = " ".join(str(x or "") for x in (d.get("excerpt"), d.get("locator")))  # not the source's own date: a 2026 report often holds 2025 data
-    if years and d.get("excerpt") and re.search(r"(?:19|20)\d\d", context) and not years & set(re.findall(r"(?:19|20)\d\d", context)):
+    named = set(re.findall(r"(?:19|20)\d\d", context))
+    for a_, b_ in re.findall(r"((?:19|20)\d\d)\s*[–-]\s*((?:19|20)\d\d)", context):  # "2022–2026" names every year in it
+        if int(a_) < int(b_) <= int(a_) + 30:
+            named |= {str(y_) for y_ in range(int(a_), int(b_) + 1)}
+    if years and d.get("excerpt") and named and not years & named:
         out("V-02", "warn", f"{d['id']}: period {d['period']} does not appear in its excerpt or locator, which name other years; check the value is for that period", d["slide_id"])
 for sid_, ids in no_trace.items():
     out("V-01", "warn", f"{len(ids)} data point(s) from {sid_} have neither excerpt nor locator ({', '.join(ids[:4])}{'…' if len(ids) > 4 else ''}); add the sheet, row or page they come from")

@@ -18,12 +18,17 @@
         "text": "Mid-market growth is structural, and pricing is the capability we lack",
         "supports": [
           "1",
+          "1b",
           "2"
         ],
         "sub_points": [
           {
             "text": "More shippers, each shipping more value",
             "slide_id": "1"
+          },
+          {
+            "text": "E-commerce shippers lead the growth and the revenue",
+            "slide_id": "1b"
           },
           {
             "text": "Network and service are strong; pricing is the gap",
@@ -231,6 +236,125 @@
                 "2025"
               ],
               "value_format": "\"$\"0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "1b",
+      "role": "content",
+      "section_id": "1",
+      "status": "filled",
+      "archetype": "multi-chart-panel",
+      "message_type": "item",
+      "lead_message": {
+        "text": "E-commerce shippers lead the growth with most new accounts and 46% of revenue",
+        "highlights": [
+          "E-commerce"
+        ],
+        "numbers": [
+          {
+            "text": "46%",
+            "data_ref": "sg_ecom_rev"
+          }
+        ]
+      },
+      "body": {
+        "kind": "panels",
+        "widths": [
+          2,
+          1
+        ],
+        "panels": [
+          {
+            "header": "Most of the new shippers since 2021 sell online",
+            "unit_line": "**Shippers added 2021–25**, thousands, by segment",
+            "body": {
+              "kind": "chart",
+              "chart_type": "bar",
+              "categories": [
+                "E-commerce",
+                "Manufacturers",
+                "Distributors"
+              ],
+              "series": [
+                {
+                  "name": "Shippers added",
+                  "points": [
+                    {
+                      "data_ref": "sg_ecom_add"
+                    },
+                    {
+                      "data_ref": "sg_mfg_add"
+                    },
+                    {
+                      "data_ref": "sg_dist_add"
+                    }
+                  ]
+                }
+              ],
+              "sort": "desc",
+              "highlight": [
+                "E-commerce"
+              ],
+              "value_format": "0.0"
+            }
+          },
+          {
+            "header": "They already carry the largest share of revenue",
+            "unit_line": "**Share of mid-market revenue**, 2025",
+            "body": {
+              "kind": "table",
+              "table_type": "data",
+              "columns": [
+                "Revenue",
+                "What they ship"
+              ],
+              "rows": [
+                {
+                  "label": "E-commerce",
+                  "highlight": true,
+                  "cells": [
+                    {
+                      "point": {
+                        "data_ref": "sg_ecom_rev"
+                      }
+                    },
+                    {
+                      "text": "Small parcels, weekly volume"
+                    }
+                  ]
+                },
+                {
+                  "label": "Manufacturers",
+                  "highlight": false,
+                  "cells": [
+                    {
+                      "point": {
+                        "data_ref": "sg_mfg_rev"
+                      }
+                    },
+                    {
+                      "text": "Pallets, steady lanes"
+                    }
+                  ]
+                },
+                {
+                  "label": "Distributors",
+                  "highlight": false,
+                  "cells": [
+                    {
+                      "point": {
+                        "data_ref": "sg_dist_rev"
+                      }
+                    },
+                    {
+                      "text": "Mixed loads, seasonal peaks"
+                    }
+                  ]
+                }
+              ]
             }
           }
         ]
@@ -589,7 +713,7 @@
       "archetype": "numbered-levers",
       "message_type": "component",
       "lead_message": {
-        "text": "Five levers add up to $40M by 2027, and the two pricing levers deliver more than half",
+        "text": "Five levers add up to $40M by 2027; the two pricing levers deliver more than half",
         "numbers": [
           {
             "text": "$40M",
@@ -1115,6 +1239,66 @@
       "excerpt": "Sales and service: $3M",
       "locator": "Margin bridge tab (fictional)",
       "used_in": "tree: Sales and service"
+    },
+    {
+      "id": "sg_ecom_add",
+      "slide_id": "1b",
+      "label": "E-commerce shippers: shippers added 2021–25",
+      "value": 4.1,
+      "unit": "k",
+      "period": "2021–25",
+      "source_id": "s1",
+      "locator": "Account P&L export, \"Shippers\" tab, by segment"
+    },
+    {
+      "id": "sg_ecom_rev",
+      "slide_id": "1b",
+      "label": "E-commerce shippers: share of mid-market revenue",
+      "value": 0.46,
+      "unit": "%",
+      "period": "2025",
+      "source_id": "s1",
+      "locator": "Account P&L export, \"Revenue\" tab, by segment"
+    },
+    {
+      "id": "sg_mfg_add",
+      "slide_id": "1b",
+      "label": "Light manufacturers: shippers added 2021–25",
+      "value": 1.6,
+      "unit": "k",
+      "period": "2021–25",
+      "source_id": "s1",
+      "locator": "Account P&L export, \"Shippers\" tab, by segment"
+    },
+    {
+      "id": "sg_mfg_rev",
+      "slide_id": "1b",
+      "label": "Light manufacturers: share of mid-market revenue",
+      "value": 0.31,
+      "unit": "%",
+      "period": "2025",
+      "source_id": "s1",
+      "locator": "Account P&L export, \"Revenue\" tab, by segment"
+    },
+    {
+      "id": "sg_dist_add",
+      "slide_id": "1b",
+      "label": "Regional distributors: shippers added 2021–25",
+      "value": 0.9,
+      "unit": "k",
+      "period": "2021–25",
+      "source_id": "s1",
+      "locator": "Account P&L export, \"Shippers\" tab, by segment"
+    },
+    {
+      "id": "sg_dist_rev",
+      "slide_id": "1b",
+      "label": "Regional distributors: share of mid-market revenue",
+      "value": 0.23,
+      "unit": "%",
+      "period": "2025",
+      "source_id": "s1",
+      "locator": "Account P&L export, \"Revenue\" tab, by segment"
     }
   ],
   "sources": [

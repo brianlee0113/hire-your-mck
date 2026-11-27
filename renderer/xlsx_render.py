@@ -193,13 +193,13 @@ def _calculations(wb, spec, primary):
     ws["A1"].font = Font(bold=True, size=13)
     ws["A2"] = "Inputs come from the sources listed; estimates are team calculations. Assumptions are listed next to each estimate."
     ws["A2"].font = Font(color="6A7682")
-    heads = ["Id", "Data point", "Value", "Unit", "Period", "Type", "Formula", "Assumptions", "Source"]
+    heads = ["Id", "Data point", "Value", "Unit", "Period", "Type", "Formula", "Assumptions", "Source", "Low", "High", "Why this range"]
     ws.append([]); ws.append(heads)
     for col in range(1, len(heads) + 1):
         c = ws.cell(row=4, column=col)
         c.font = Font(bold=True, color="FFFFFF"); c.fill = PatternFill("solid", fgColor=primary)
         c.alignment = Alignment(vertical="center", wrap_text=True)
-    for w, col in zip([10, 46, 12, 8, 14, 11, 40, 52, 34], "ABCDEFGHI"):
+    for w, col in zip([10, 46, 12, 8, 14, 11, 40, 52, 34, 10, 10, 34], "ABCDEFGHIJKL"):
         ws.column_dimensions[col].width = w
     rows = {i: 5 + k for k, i in enumerate(order)}
     cell_of = {i: f"C{r}" for i, r in rows.items()}
@@ -209,10 +209,13 @@ def _calculations(wb, spec, primary):
         kind = "estimate" if d.get("estimate") else ("calculated" if d.get("calc") else "input")
         value = excel_formula(d["calc"], cell_of) if d.get("calc") else d.get("value")
         ws.append([i, d.get("label"), value, d.get("unit"), d.get("period"), kind, d.get("formula"),
-                   "\n".join("• " + a for a in d.get("assumptions", [])), src.get("name")])
+                   "\n".join("• " + a for a in d.get("assumptions", [])), src.get("name")]
+                  + ([d["range"]["low"], d["range"]["high"], d["range"].get("basis")] if d.get("range") else []))
         r = ws.max_row
         v = ws.cell(row=r, column=3)
         v.number_format = "0.0%" if d.get("unit") == "%" else "#,##0.0#"
+        for col in (10, 11):
+            ws.cell(row=r, column=col).number_format = v.number_format
         if kind == "input":
             v.font = Font(color="1F4FD1")  # inputs in blue, formulas in black
         if kind == "estimate":

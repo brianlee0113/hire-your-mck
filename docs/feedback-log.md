@@ -43,3 +43,86 @@ The point is to see whether the same comment comes back in later rounds.
 **Verified by:** check.py 0 fail / 0 warn and layout_check 0 warnings on all four example decks and the Northwind deck; table and timeline slides re-rendered and reviewed.
 
 **Follow-up (Harbor dry-run deck review):** remaining overlaps (4p gap above the big number, 5p bullet into the rows, 7p "$4.6M" wrapping and a caption leaving its card, 8p highlight stroke thinner under the header) all came from guessing text width as "characters × average width". New `renderer/measure.py` wraps text with the real font files (Pillow; Arial/Georgia, or metric-compatible Liberation/Gelasio on Linux). Every layout height (sidebar, exec summary, tables, equation cards, tree nodes, timelines) and the post-render `layout_check` now use it. Outlines are drawn after header fills so strokes keep one width. All example decks, Northwind and Harbor: 0 layout warnings, checked visually.
+
+## Round 3 · 2026-11-27 · box equations look too simple (author's blind slide reviews, 11-17 and 11-21/23) · open
+
+Repeat of R7 (Round 1): the same comment came back in 6 of 13 reviewed pairs, across both review rounds.
+
+| Review | Pair · deck flagged | Comment (summary) |
+|---|---|---|
+| 11-17 (c2, c5) | P1 · C2 (skill 1.2.0, full deck) | box-drawn calculations lower trust; lead only lists the slide content |
+| | P2 · C (skill 1.2) | over-simplified box calculations lower trust, and repeating them makes it worse |
+| | P3 · C (skill 1.2) | box lists make the content look too simple |
+| 11-21/23 (holdout) | P2 · B (6-line prompt) | box +, −, ×, ÷ formulas are easy to read but too simple, which lowers trust |
+| | P4 · E1 (skill + self-check), c10 | "the simple formula" was the biggest minus (reason for the verdict) |
+| | P6 · H2a (B analysis → skill), c7 | a backup made of a simple calculation is rare in consulting; needs work |
+
+**Cause.** R2/R3 asked to show the basis of every estimate; the answer was the `equation` body and the `calculation-bridge` archetype (3–5 number cards joined by × + =). It is used for every estimate, including two-term sums and differences, and it is the only form a backup calculation can take. The c10 E1 deck has 4 of them. The basis is now visible, but it reads as arithmetic rather than analysis. B decks (no skill) do the same, so the habit is not only the skill's, but the skill makes it a template.
+
+| # | Task | Where | How to check |
+|---|---|---|---|
+| T1 | A plain sum or difference never gets its own equation slide: an `equation` of 2–3 terms with only + / − fails (B-05, today warn only) and goes into a `basis` strip on the chart slide instead | check.py, SKILL.md, archetypes.md | check.py fails a 2-term +/− equation; example decks still 0 fail |
+| T2 | At most one `calculation-bridge` in the main storyline, and never two in a row; further estimates go to the appendix | check.py warn (like A-12), deep-deck.md | warn on the c10 E1 spec (4 bridges) |
+| T3 | Backup calculations look like a model, not a box equation: a driver table (driver, value, unit, source or assumption, low/high range) with the result, plus a sensitivity view (low/base/high or tornado) when an assumption is uncertain | new archetype (e.g. `estimate-model`), renderer, spec-guide.md, schema | renders editable; the workbook's Calculations sheet ties to the table |
+| T4 | When an equation stays in the main storyline, the cards carry more than the number: unit, source or assumption tag, and the range of each driver; the result card shows the range too | renderer `equation`, schema | layout_check 0 warnings; side-by-side with the old card |
+| T5 | Re-test: rebuild c10 E1 and c7 H2a with T1–T4, then blind-review the old and new decks (pairs on the equation and backup slides) | benchmark | the author no longer flags "simple formula" on those slides |
+
+**T1 done (2026-11-27), wider than planned.** In the holdout E1 decks most box equations were one operation of any kind (A ÷ B = C), not only + and −, so rule B-13 fails an `equation` body (content or backup) with two inputs, or with only + and −. It flags 7 slides in 6 holdout E1 decks. Two examples rewritten to show their drivers: FreshCart 2b (38% − 29% = 9 pp × 8% = 0.7 pp), Cobalt Ledger deep L4 (20 engineers × $194.3K = $3.9M ÷ $414.2K a month = 9.4 months). All example decks 0 fail; both slides rendered and checked in PowerPoint.
+
+**T3 done (2026-11-27).** Layout and scope chosen by the author: driver table + tornado; for estimates built on 3 or more inputs, with B-13 equations still allowed in the storyline. New archetype `estimate-model` → `model` body: drivers (value, basis, range) beside a tornado of the result at each driver's low and high, widest swing first. Ranges live on the data points (`range: {low, high, basis}`) and the renderer recomputes the result through `calc`; the Calculations sheet lists Low, High and why. check.py fails a driver outside the result's calc, a value outside its range, or fewer than two ranged drivers; it warns, in decks with an appendix, when an estimate on 3+ inputs has no model slide (FreshCart has no appendix, so it is not flagged). Cobalt Ledger deep gains b8 (payback) and b9 (AI cost share); L4's build cost now reads loaded cost per engineer-year, so its calc matches the cards. All example decks 0 fail; both slides rendered and checked in PowerPoint.
+
+**T2 done (2026-11-27).** check.py warns when the storyline has more than one `equation` slide (holdout E1: c10 and c7 each have two). Cobalt Ledger deep had two (L4 payback, 4b1 AI cost); 4b1 could not move to the appendix because it is the evidence slide of issue-tree leaf n4b (T-03), so it became a bar chart (uplift vs AI cost) with the build as a `basis` strip. Units of the AI cost numbers changed from "$ per year" to "$" (the unit line says per year) so the strip cards fit. 0 fail; rendered and checked.
+
+**T1 follow-up (open, 2026-11-27).** The author reviewed T1 and finds it needs more work; what exactly is still to be decided.
+
+**T4 dropped (2026-11-27).** The `estimate-model` slide already shows unit, basis and range for each driver, so the equation cards stay as they are.
+
+Open questions: whether T3 replaces `calculation-bridge` in the appendix entirely, or only for estimates with 3 or more drivers; whether T1 should be a fail or a strong warn while T3 does not exist yet.
+
+## Round 4 · 2026-11-27 · font too small (author's blind holdout review, 2026-11-23) · in progress
+
+Comments: "the font is too small, so the content does not come across at a glance" (holdout P1, P2, P4, P5; P2 is the skill-rendered c8 H2a deck, the others are B decks), "limited formats make the content look monotonous" (P1, c7 E1).
+
+**Measured.** Skill decks already use larger type than B decks (median 12–14 pt vs 10–11 pt; B decks put 60–87% of their text below 12 pt, skill decks 23–43%). Text below 10 pt is footnotes and source lines. In c8 H2a the small body text comes from the renderer shrinking crowded text to fit, without a warning: tables to 11.5 pt, sidebar bullets to 10.5–11.5 pt, basis-strip captions to 9 pt.
+
+**Fix 1 (done).** `fit_size` and the table sizer now warn when body text only fits below 12 pt, or captions and labels below 10 pt, with about how much to cut. The size still shrinks so nothing overflows; SKILL.md Step 5 lists the warning with the others to fix, and compile mode resolves it by tightening, splitting or moving detail to a backup, never by dropping a unit. Small equation cards got less padding. On the reviewed decks: 15 warnings in c8 H2a, 4 in c7 E1. Example decks trimmed to 0 warnings (FreshCart 4 lost one sidebar bullet; other cuts are wording only).
+
+**Open.** Format monotony (c7 E1: chart + sidebar + basis strip on most slides) needs a design pass first.
+
+**Fix 2 (done, monotony).** Compared with the B decks the review called varied, skill decks use as many slide types but put almost every explanation in the same grey box. Mock-ups in Figma (file xve9JsL0BllnkfBzqztLYV, page "09 Variety (2026-11-27)", real RouteSprout content): 0 now, A split exhibits, B open column, C status chips, D notes on the chart. The author chose B + C first. B: `sidebar.style` `box | open`; unset sidebars alternate in deck order (open = no panel, heavy rule on top). C: table cells take `status: pass | watch | fail` (+ `status_label`) and draw a green / amber / red chip before a short reason, from the existing good / caution / alert tokens. Example: showcase slide 4 verdict column. All example decks 0 fail, 0 render warnings; showcase and FreshCart checked in PowerPoint. Next candidates: A (split exhibits, planned as v3-3) and D (chart annotations).
+
+## Round 5 · 2026-11-27 · slide composition (author's tip) · step 1 done
+
+Tip: slides split horizontally in 3 or 2, or vertically in 2; the left or top part sets what goes right or below; a conclusion about the whole part is a box or bullets, one about a specific area uses its own devices. Checked against the 3,257 tagged public-deck pages (`docs/research/composition.md`): split pages are over half the body; 66:33 is exhibit + whole-exhibit takeaway (35% sidebar or box, 11% bullets); 50:50 and 3-column are several exhibits for one claim; specific-area marks (brackets and outlines 18–25%, one accented element 10–16%, callouts 4–9%) appear in every split. The tags have no vertical-split value, so the vertical case is unconfirmed.
+
+**Step 1 (done).** `panels` now takes table and text bodies and `widths` (e.g. `[2, 1]`), so a chart can sit beside the table behind it. Table row labels no longer break inside a word: the label column grows to the longest label word (up to 45%), with a warning beyond. Example: showcase-2 slide 1b (chart + table, 2:1). Next: specific-area marks linked to sidebar text; vertical two-exhibit split after a sample check.
+
+**Step 2 (done).** Specific-area emphasis on single-series bar and column charts: `outline` (dashed box around adjacent bars, optional number and label) and `marks` (numbered dots), matched to numbered sidebar bullets (`sidebar.markers`). The plot area is pinned (manual layout) so bar positions are computed, not guessed; checked in PowerPoint on bars (FreshCart 4) and columns inside panels. Example: FreshCart 4 (Snacks and Frozen outlined as 1, Dairy marked 2).
+
+**Step 3 (mock only).** New type candidate counted from the tags: a table with a small bar in each cell ("bar-table"), 51 pages in 43 decks (33 since 2020); Gantt (87) is already `timeline`; stacked area (24) and dumbbell/range dots (21) next. Mock: Figma page "09 Variety", frame E. Build after the author reviews it.
+
+**Step 3 (built).** `bar-table` → `bartable`: rows aligned across measures, a bar per cell, one scale per column (benchmark row grey and out of the scale), one number of decimals per column, the named row tinted. check.py: one cell per column, bar cells need a point; density rules no longer read its columns as bullet boxes. Example: showcase-5 slide 4b. Built from the Figma mock (frame E) before the author's review; adjust after it.
+
+**Mock D (built).** `marks[].note`: a few words drawn beside the numbered dot, so a chart without a sidebar explains itself; horizontal bars keep a notes column on the right so the longest bar still has room, and a note with no room warns. Checked in PowerPoint on FreshCart 4 without its sidebar.
+
+**Second new type (built): `dumbbell`.** Next most frequent form in the tags after bar-table and stacked area: 21 pages in 20 decks (11 since 2020). Two dots per row on one axis, sorted by the gap; the change column shows its own derived data point (D5), and check.py warns when that point is not derived from the row's two values. Mock: Figma frame F. Example: showcase-5 slide 6b.
+
+**Chart type (built): `stacked_area`.** 24 pages in 19 decks: a mix over many periods. Native stacked area, axis pinned to the first and last points, each layer named at its right end with its last value (no legend, no computed total, per D5); a layer too thin for its label warns. Checked in PowerPoint on a test copy of showcase-2.
+
+**Composition planned up front.** SKILL.md Step 1 now plans each slide's composition after routing: the base exhibit, then whether the rest concludes on the whole (sidebar or band), points at a part (outline, numbered marks with numbered bullets, or notes) or adds a second exhibit (panels, `widths`), varied across the deck. check.py warns when numbered bullets and chart marks do not match.
+
+## Dry run · 2026-11-27 · fresh agent with the plugin skill only (Northgate Bikes, fictional, 13 slides)
+
+Result: check.py 0 fail / 0 warn and 0 render warnings after fixing its first 3 fails, 17 warns and 9 render warnings. It used stacked_area, panels `widths: [2, 1]` with marks and notes, bar-table, dumbbell, status chips, an equation slide and an estimate-model backup; checked in PowerPoint, no layout problems.
+
+Fixed from its notes: (a) check.py now warns when marks or outline sit on a chart they cannot be drawn on (negative values, several series, other chart types), instead of only the renderer; (f) one rule for the appendix divider in SKILL.md and spec-guide; (g) the table header warning names the widest words; (h) bar-table column `kind` defaults to bar.
+
+Open: (b) B-08 looks one level up `derived_from`, so a scenario chart whose bars come from different inputs fails until each bar's calc is rebuilt; the docs do not say how to show the basis of a scenario comparison. (c) fixed: table rows take a `basis` line under the label (B-08 counts it for the row's estimates). Still open: whether break-even points or capital needs count as estimates. (d) fixed: A-01 also accepts a title number shown in a `basis` strip, and SKILL.md says to use one on slides with no sidebar. (e) fixed: V-02 reads a year range in the excerpt or locator (2022–2026) as naming every year in it; a period outside the range still warns.
+
+## Compile preview · 2026-11-27 · c7 B deck compiled with today's skill (informal T5 preview, not the frozen benchmark)
+
+A fresh agent compiled the c7 B deck (RouteSprout) in restyle mode: 24 slides, 0 fail, 0 render warnings, about 29 minutes. It used chips in evidence and criteria tables, panels with widths, a bar-table, table row `basis` and a basis strip; no estimate-model (the source gives no ranges, and adding one would extend the analysis). Checked in PowerPoint.
+
+Fixed from its notes: compile `corrections` items now allow `source_loc`, `evidence` and `affects`, which check.py (CP-03) requires, so a correction could never pass before; data points take `decimals` so a source's 1.92 is not shown as 1.9 (compile.md says to use it); A-01 no longer reads "Q1 2028" as a number.
+
+Seen in the deck, open: a 17-point line chart with crowded x labels and overlapping end and start labels (slide 12; fixed: x labels skip to fit, multi-series end labels are drawn on a pinned plot and pushed apart, start labels drop when they would collide); timeline bars too narrow for their labels broke words (slide 13; fixed: the label goes beside the bar, or just above it when the next bar is in the way); long footnotes could sit on the body without a warning (fixed: the body leaves room for wrapped footnotes, and over one extra line warns); sidebar bullets max 4 and one-line exec sub-points made the agent move source detail to footnotes and body slides.

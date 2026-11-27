@@ -12,6 +12,8 @@ First decide **what the title compares** (Zelazny's comparison types plus struct
 | What adds up to the total / bridge A → B | drivers, contribution, gap | `waterfall-bridge` | `stacked-100` (one point in time) |
 | Two things move together | the more…, correlates, goes with | `scatter-bubble` | `matrix-2x2` (judged positions, no data) |
 | Many items on several measures | trails on, scorecard, across measures, vs. the median | `heatmap` | `data-table` |
+| A few items on several measures, size matters | leads on every measure, lowest on all three | `bar-table` | `heatmap` (rank only) |
+| Each item at two points (before/after, without/with, us/peer) | cut most, gap widest, moved least | `dumbbell` | `bar-ranking` of the change |
 | What people told us | customers say, interviews, in their words | `quote-interview` | `bullet-argument` |
 | How respondents answered | n% of respondents | `survey-bars` | `bar-ranking` |
 | Made of N elements or pillars | three factors, four pillars | `framework-pillars` | `text-columns` |
@@ -34,6 +36,7 @@ First decide **what the title compares** (Zelazny's comparison types plus struct
 | Who does what in the organization | report to, owns, runs, governance, new unit | `org-chart` | `process-flow` (hand-offs, not reporting lines) |
 | One initiative in detail, one of a series | 1a:, initiative, how we would, owner | `initiative-one-pager` | `case-example` (something that worked elsewhere) |
 | Our own estimate, and how it is built | would add, uplift, worth, at today's pace | `calculation-bridge` | `basis` strip on the chart slide |
+| Which assumptions move an estimate | stays under, holds unless, depends most on | `estimate-model` | `calculation-bridge` (no ranges known) |
 
 Rules: two clauses in the title → two panels; no arrow between them unless one causes the other (B-09). A count word ("three") → exactly that many elements. A question title → the answer goes in a callout or sidebar.
 
@@ -41,20 +44,25 @@ Rules: two clauses in the title → two panels; no arrow between them unless one
 
 Each line: archetype → `body.kind` (key fields) — how a full slide looks.
 
-- `calculation-bridge` → `equation` (`terms` with `op`, `assumptions_header`, `assumptions`) — 3–5 number cards joined by × + = with the result card dark, then the assumptions under a takeaway header (B-08).
+- `calculation-bridge` → `equation` (`terms` with `op`, `assumptions_header`, `assumptions`) — 4–6 number cards joined by × + − ÷ = with the result card dark, then the assumptions under a takeaway header (B-08). Show the drivers: 3 or more inputs, with an intermediate `=` where it helps; one operation or only + and − fails (B-13) and belongs in a `basis` strip or a `waterfall-bridge`. At most one in the storyline (B-13): the estimate the decision rests on; other estimates go on their chart with a `basis` strip, or to the appendix.
+- `bar-table` → `bartable` (`columns[]` with `header` and `kind` `bar` (the default) or `text`, `rows[]` with `label`, `cells` (a `point` per bar column, `text` per text column), `highlight`, `benchmark`, `label_header`) — rows aligned across 2–4 measures with a small bar in each cell, each column on its own scale, the named row tinted with accent bars, a total or median first in grey and out of the scale; an optional last text column says why. Use it when the size of each value matters (a heatmap only ranks). 51 pages in 43 public decks.
+- `dumbbell` → `dumbbell` (`names` [first, second], `rows[]` with `label`, `from`, `to`, optional `change` as its own derived data point, `highlight`; `change_header`, `sort: gap`) — two dots per row joined by a line on one shared axis, sorted by the gap, the change in a right column, the rows the title names in the accent. 21 pages in 20 public decks.
+- `estimate-model` → `model` (`drivers[]` with `point`, `label`, `basis`; `result` with `point`, `label`, `formula`; `sensitivity_header`) — a driver table (value, basis, range) beside a tornado of the result at each driver's low and high, widest swing first, with the result row closing the table (B-13). Ranges sit on the drivers' data points (`range: {low, high, basis}`); the renderer recomputes the result through `calc`. Use it for an estimate built on 3 or more inputs, usually as the backup to its `calculation-bridge`; the title says which driver matters and whether the answer holds.
 
 **Charts** (`kind: "chart"`, `chart_type`, `categories`, `series[].points`, `highlight`, `sort`, `value_format`, optional `benchmark`)
 - `scatter-bubble` → `scatter`: `categories` name the points; `series[0]` = x values, `series[1]` = y values, optional `series[2]` = sizes (bubbles). `x_label` / `y_label` as `"**Metric**, unit"`, `x_format` / `value_format`. Dashed average lines split the plot by default; name the areas with `quadrant_labels` (TL, TR, BL, BR) and accent one with `focus_quadrant`. `highlight` = the points the title names. `trendline: true` only when few labels sit near the line. Pair with a sidebar that reads the outliers.
 - `bar-ranking` → `bar`: sorted desc, the named bar highlighted, benchmark (e.g. market average) as a dashed last bar.
-- `column-time-series` → `column`; `line-trend` → `line` (end-of-line labels, no axis); `stacked-column` → `stacked_column`; `stacked-100` → `stacked_100`; `waterfall-bridge` → `waterfall` (first and last = totals, steps between; `sort: "none"`).
+- `column-time-series` → `column`; `line-trend` → `line` (end-of-line labels, no axis); `stacked-column` → `stacked_column` (or `stacked_area` for a mix over many periods: layers named at their right end with the last value, no legend; 24 pages in 19 public decks); `stacked-100` → `stacked_100`; `waterfall-bridge` → `waterfall` (first and last = totals, steps between; `sort: "none"`).
 - Fill: `layout.variant: "takeaway_sidebar"`. Sidebar = big number (only if not already on the chart) or a header, then 2–4 **bold lead-in bullets** that read the chart (one per highlighted bar, segment or period), then optional `rows` with numbers **derived** from the chart (share of total, gap, change). Never chart values again (B-05), never unrelated metrics (B-06).
 
 **KPI** (`kind: "kpi"`, `items[]` with `point`, `caption`, `relation`, `drivers[]`) — 2–4 tiles on top; under each, 2–4 driver lines (or what data is missing).
 
-**Panels** (`kind: "panels"`, 2–4 `panels[]` with a takeaway `header`, `unit_line`, `delta`, `body` = chart or kpi) — every panel proves the same title.
+**Panels** (`kind: "panels"`, 2–4 `panels[]` with a takeaway `header`, `unit_line`, `delta`, `body` = chart, kpi, table or text; optional `widths`, e.g. `[2, 1]`) — every panel proves the same title. Two panels side by side are a 50:50 split; give the main exhibit more room with `widths: [2, 1]` (chart + the table of figures behind it, chart + the segment it zooms into). Three panels are parallel evidence. A conclusion about the whole exhibit goes in a `takeaway_sidebar` (66:33) or the `so_what` band under it, not in a panel (`docs/research/composition.md`).
+
+**Pointing at a specific part** (single-series `bar` or `column` with no negative values): when the takeaway is about some bars, not the whole chart, add `outline: {"categories": ["Snacks", "Frozen"], "n": 1, "label": "No own brand"}` (a dashed box around adjacent bars) and/or `marks: [{"category": "Dairy", "n": 2}]` (numbered dots), and set `sidebar.markers: true` so sidebar bullet 1, 2 … carries the same number. Keep `highlight` for the one bar the title names. A takeaway about the whole chart stays a plain sidebar. With no sidebar, give each mark a short `note` (a few words) and the chart explains itself: notes sit beside the dot (bars keep a notes column on the right), the outline's `label` beside its box.
 
 **Tables** (`kind: "table"`, `table_type`, `columns`, `rows[]` with `label`, `cells[]`, `highlight`, `badge`)
-- `harvey-ball-table` → `harvey`: cells with `rating` 0–4; add a numeric column (cells with `point`) and a last **Verdict** column (text cells). The recommended row gets `highlight: true`. Verdicts live inside the table so rows stay aligned.
+- `harvey-ball-table` → `harvey`: cells with `rating` 0–4; add a numeric column (cells with `point`) and a last **Verdict** column (text cells). The recommended row gets `highlight: true`. Verdicts live inside the table so rows stay aligned; give each verdict cell a `status` (pass / watch / fail) to show it as a coloured chip with a short reason.
 - `heatmap` → `heatmap`: rows = items, columns = measures, every cell a `point`. Each column is shaded by rank (darker = higher; list columns where lower is better in `low_is_better`, and darker then means better). A reference row (`benchmark: true`, e.g. network median) goes first and stays unshaded. The row the title names gets `highlight: true` (outlined); add row `note`s for a verdict column.
 - `comparison-table` → `comparison`; `data-table` → `data`.
 

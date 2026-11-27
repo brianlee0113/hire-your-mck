@@ -341,16 +341,30 @@
         "terms": [
           {
             "point": {
-              "data_ref": "shf2b"
+              "data_ref": "mg2a"
             },
-            "caption": "of total sales moves from national brands to private label, closing the gap to the US average"
+            "caption": "gross margin on private label (p. 4)"
+          },
+          {
+            "op": "−",
+            "point": {
+              "data_ref": "mg2b"
+            },
+            "caption": "gross margin on national brands (p. 4)"
+          },
+          {
+            "op": "=",
+            "point": {
+              "data_ref": "mgd2"
+            },
+            "caption": "higher gross margin on each dollar moved"
           },
           {
             "op": "×",
             "point": {
-              "data_ref": "mgd2"
+              "data_ref": "shf2b"
             },
-            "caption": "higher gross margin on each dollar moved (38% compared with 29%, p. 4)"
+            "caption": "of sales moves to private label, closing the gap to the US average"
           },
           {
             "op": "=",
@@ -465,9 +479,8 @@
           "kind": "bullets",
           "header": "Two whole aisles start from zero",
           "bullets": [
-            "**Snacks and frozen:** 16% of our sales (7% and 9%), with no own-brand option",
-            "**Dairy:** shoppers buy our brand where we offer it",
-            "**All categories:** held down by the empty aisles, not by weak dairy"
+            "**Snacks and frozen:** 16% of sales, no own brand",
+            "**Dairy:** shoppers buy our brand where it exists"
           ],
           "rows": [
             {
@@ -485,7 +498,8 @@
                 "data_ref": "cl4"
               }
             }
-          ]
+          ],
+          "markers": true
         }
       },
       "body": {
@@ -527,7 +541,20 @@
             "data_ref": "us4"
           }
         },
-        "value_format": "0%"
+        "value_format": "0%",
+        "outline": {
+          "categories": [
+            "Snacks",
+            "Frozen"
+          ],
+          "n": 1
+        },
+        "marks": [
+          {
+            "category": "Dairy",
+            "n": 2
+          }
+        ]
       },
       "footnotes": [
         "Dairy share is within the dairy category; the US average is across all grocery categories"
@@ -583,7 +610,7 @@
             "point": {
               "data_ref": "pi5"
             },
-            "caption": "invested each in product development and packaging"
+            "caption": "invested by each in product and packaging"
           },
           {
             "point": {
@@ -702,7 +729,7 @@
             "point": {
               "data_ref": "add6"
             },
-            "caption": "added in 2026–31: 1.5 pp a year from current co-manufacturers¹ × 6 years"
+            "caption": "added 2026–31: 1.5 pp a year¹ × 6 years"
           },
           {
             "op": "=",
