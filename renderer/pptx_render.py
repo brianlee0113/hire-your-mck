@@ -187,11 +187,16 @@ def _num(v, decimals=None):
         # is not (99.95 must not read 100.0)
         if abs(v - round(v)) < 1e-9:
             decimals = 0
+        elif abs(v) < 1:  # AUC 0.864, r 0.74: one decimal would flatten them to 0.9 and 0.7
+            decimals = next((d for d in (1, 2, 3) if abs(v - round(v, d)) < 1e-9), 3)
         elif abs(round(v, 1) - round(round(v, 1))) < 1e-9 and abs(v - round(v, 1)) > 1e-9:
             decimals = 2
         else:
             decimals = 1
     return f"{v:,.{decimals}f}"
+
+
+SCALE_UNITS = ("k", "K", "M", "B", "bn")
 
 
 def fmt(value, unit=None, value_format=None, signed=False):
@@ -222,9 +227,22 @@ def fmt(value, unit=None, value_format=None, signed=False):
         out = "$" + _num(value) + unit[1:]
     elif unit == "pp":
         out = _num(value) + " pp"
+    elif unit in SCALE_UNITS:  # 4.2M, 120k: the scale word is part of the number
+        out = _num(value) + unit
     else:
         out = _num(value)
     return (sign + out).replace("-", "−")
+
+
+def _join_range(lo, hi):
+    """$2.0M + $3.5M -> $2.0–3.5M; 12.0% + 15.5% -> 12.0–15.5%: the unit is written once."""
+    tail = re.search(r"[^\d.,]*$", hi).group(0)
+    if tail and lo.endswith(tail):
+        lo = lo[:-len(tail)]
+    head = re.match(r"[^\d−-]*", lo).group(0)
+    if head and hi.startswith(head) and lo.startswith(head):
+        hi = hi[len(head):]
+    return f"{lo}–{hi}"
 
 
 def dp_fmt(spec, point, value_format=None, signed=False):
@@ -232,10 +250,16 @@ def dp_fmt(spec, point, value_format=None, signed=False):
     if d is None:
         return "?"
     if d.get("value_high") is not None:  # a range, e.g. 4–5 years
-        lo = fmt(d["value"], d.get("unit"), value_format)
         hi = fmt(d["value_high"], d.get("unit"), value_format)
-        unit_tail = hi[len(_num(d["value_high"])):] if hi.startswith(_num(d["value_high"])) else ""
-        return f"{lo[:len(lo) - len(unit_tail)] if unit_tail and lo.endswith(unit_tail) else lo}–{hi}"
+        lo_vf = value_format
+        if not lo_vf:  # the low end takes the high end's decimals: 3.0–3.7, not 3–3.7
+            scale = 100 if d.get("unit") == "%" else 1
+            digits = _num(d["value_high"] * scale)
+            dec = len(digits.split(".")[1]) if "." in digits else 0
+            if dec:
+                lo_vf = "0." + "0" * dec + ("%" if d.get("unit") == "%" else "")
+        lo = fmt(d["value"], d.get("unit"), lo_vf)
+        return _join_range(lo, hi)
     return fmt(d.get("value"), d.get("unit"), value_format, signed)
 
 
