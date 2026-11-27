@@ -678,6 +678,7 @@
         "cost-curve",
         "data-table",
         "bar-table",
+        "dumbbell",
         "map",
         "org-chart",
         "initiative-one-pager",
@@ -948,6 +949,9 @@
         },
         {
           "$ref": "#/$defs/body_bartable"
+        },
+        {
+          "$ref": "#/$defs/body_dumbbell"
         }
       ]
     },
@@ -3838,6 +3842,73 @@
         "label_header": {
           "type": "string",
           "description": "Header over the row labels, e.g. 'Segment'."
+        }
+      }
+    },
+    "body_dumbbell": {
+      "type": "object",
+      "required": [
+        "kind",
+        "names",
+        "rows"
+      ],
+      "additionalProperties": false,
+      "description": "Two values per row joined by a line (before/after, without/with, us/peer), sorted by the gap (dumbbell: 21 pages in 20 public decks).",
+      "properties": {
+        "kind": {
+          "const": "dumbbell"
+        },
+        "names": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          },
+          "description": "Legend for the first and second dot: ['Before', 'After']."
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 9,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "from",
+              "to"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "from": {
+                "$ref": "#/$defs/point"
+              },
+              "to": {
+                "$ref": "#/$defs/point"
+              },
+              "change": {
+                "$ref": "#/$defs/point",
+                "description": "The difference as its own data point (with calc), shown in the right column. Omit every change to drop the column."
+              },
+              "highlight": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "change_header": {
+          "type": "string",
+          "description": "Header over the change column, e.g. 'Change, hours'."
+        },
+        "sort": {
+          "enum": [
+            "gap",
+            "none"
+          ],
+          "default": "gap"
         }
       }
     }

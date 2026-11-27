@@ -13,6 +13,7 @@ First decide **what the title compares** (Zelazny's comparison types plus struct
 | Two things move together | the more…, correlates, goes with | `scatter-bubble` | `matrix-2x2` (judged positions, no data) |
 | Many items on several measures | trails on, scorecard, across measures, vs. the median | `heatmap` | `data-table` |
 | A few items on several measures, size matters | leads on every measure, lowest on all three | `bar-table` | `heatmap` (rank only) |
+| Each item at two points (before/after, without/with, us/peer) | cut most, gap widest, moved least | `dumbbell` | `bar-ranking` of the change |
 | What people told us | customers say, interviews, in their words | `quote-interview` | `bullet-argument` |
 | How respondents answered | n% of respondents | `survey-bars` | `bar-ranking` |
 | Made of N elements or pillars | three factors, four pillars | `framework-pillars` | `text-columns` |
@@ -45,6 +46,7 @@ Each line: archetype → `body.kind` (key fields) — how a full slide looks.
 
 - `calculation-bridge` → `equation` (`terms` with `op`, `assumptions_header`, `assumptions`) — 4–6 number cards joined by × + − ÷ = with the result card dark, then the assumptions under a takeaway header (B-08). Show the drivers: 3 or more inputs, with an intermediate `=` where it helps; one operation or only + and − fails (B-13) and belongs in a `basis` strip or a `waterfall-bridge`. At most one in the storyline (B-13): the estimate the decision rests on; other estimates go on their chart with a `basis` strip, or to the appendix.
 - `bar-table` → `bartable` (`columns[]` with `header` and `kind` bar or text, `rows[]` with `label`, `cells` (a `point` per bar column, `text` per text column), `highlight`, `benchmark`, `label_header`) — rows aligned across 2–4 measures with a small bar in each cell, each column on its own scale, the named row tinted with accent bars, a total or median first in grey and out of the scale; an optional last text column says why. Use it when the size of each value matters (a heatmap only ranks). 51 pages in 43 public decks.
+- `dumbbell` → `dumbbell` (`names` [first, second], `rows[]` with `label`, `from`, `to`, optional `change` as its own derived data point, `highlight`; `change_header`, `sort: gap`) — two dots per row joined by a line on one shared axis, sorted by the gap, the change in a right column, the rows the title names in the accent. 21 pages in 20 public decks.
 - `estimate-model` → `model` (`drivers[]` with `point`, `label`, `basis`; `result` with `point`, `label`, `formula`; `sensitivity_header`) — a driver table (value, basis, range) beside a tornado of the result at each driver's low and high, widest swing first, with the result row closing the table (B-13). Ranges sit on the drivers' data points (`range: {low, high, basis}`); the renderer recomputes the result through `calc`. Use it for an estimate built on 3 or more inputs, usually as the backup to its `calculation-bridge`; the title says which driver matters and whether the answer holds.
 
 **Charts** (`kind: "chart"`, `chart_type`, `categories`, `series[].points`, `highlight`, `sort`, `value_format`, optional `benchmark`)

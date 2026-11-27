@@ -2995,6 +2995,7 @@ def content(c, spec, slide, page_no):
              "equation": lambda: equation_body(c, spec, body, box),
              "model": lambda: model_body(c, spec, body, box),
              "bartable": lambda: bartable(c, spec, slide, body, box),
+             "dumbbell": lambda: dumbbell(c, spec, slide, body, box),
              "cost_curve": lambda: cost_curve(c, spec, slide, body, box),
              "org": lambda: org_chart(c, spec, slide, body, box),
              "initiative": lambda: initiative(c, spec, slide, body, box),
@@ -4073,6 +4074,73 @@ def bartable(c, spec, slide, body, box):
                    color=t["placeholder"] if v is None else t["title"])
         cy += rh_
         c.line(x, cy - 0.02, x + w, cy - 0.02, color=t["rule"])
+
+
+def dumbbell(c, spec, slide, body, box):
+    """Two dots per row joined by a line, sorted by the gap; the change sits in a right column (its own data point)."""
+    x, y, w, h = box
+    t = c.t
+    rows = list(body["rows"])
+    vals = lambda r: (spec.value(r["from"]), spec.value(r["to"]))
+    if body.get("sort", "gap") == "gap":
+        rows.sort(key=lambda r: -abs((vals(r)[1] or 0) - (vals(r)[0] or 0)))
+    known = [v for r in rows for v in vals(r) if v is not None] or [0, 1]
+    lo, hi, step = _nice_axis(known + [0] if min(known) >= 0 else known)
+    fam = FONTS["body"]
+    lab_w = min(w * 0.3, max(measure.width_pt(r["label"], fam, S["body"] + 2, True) for r in rows) / 72 + 0.3)
+    has_change = any(r.get("change") for r in rows)
+    ch_w = 1.3 if has_change else 0
+    x0, x1 = x + lab_w + 0.5, x + w - ch_w - 0.5
+    X = lambda v: x0 + (x1 - x0) * (v - lo) / ((hi - lo) or 1)
+    leg_h = 0.4
+    c_from, c_to = t["other_bars"], t["highlight"]
+    lx = x
+    for nm, col in zip(body["names"], (c_from, c_to)):
+        nw_ = measure.width_pt(nm, fam, S["label"] + 1) / 72 + 0.15
+        c.rect(lx, y + 0.1, 0.18, 0.18, fill=col, shape=MSO_SHAPE.OVAL)
+        c.text(lx + 0.26, y + 0.02, nw_, 0.34, nm, size=S["label"] + 1, color=t["text"], anchor="m")
+        lx += 0.26 + nw_ + 0.3
+    if has_change:
+        c.text(x + w - ch_w, y + 0.02, ch_w, 0.34, body.get("change_header") or "Change", size=S["label"] + 1, bold=True,
+               color=t["muted"], align="r", anchor="m")
+    top = y + leg_h + 0.05
+    c.line(x, top, x + w, top, color=t["primary"], weight=1.5)
+    axis_h = 0.3
+    rh = min(1.0, (h - leg_h - axis_h - 0.1) / len(rows))
+    body_h = rh * len(rows)
+    v = lo
+    while v <= hi + 1e-9:  # light gridlines and round tick values under the rows
+        c.rect(X(v) - 0.007, top + 0.05, 0.014, body_h, fill=t["gray_light"])
+        c.text(X(v) - 0.4, top + 0.08 + body_h, 0.8, 0.26, fmt(v, None), size=S["small"], color=t["muted"], align="c")
+        v += step
+    d = 0.2
+    digs = [_num(v_) for v_ in known]  # one number of decimals for every dot label (1.0 beside 0.8, not 1)
+    dec = max([len(s_.split(".")[1]) if "." in s_ else 0 for s_ in digs] or [0])
+    vf = ("0." + "0" * dec) if dec else None
+    for k, r in enumerate(rows):
+        cy = top + 0.05 + k * rh + rh / 2
+        on = r.get("highlight")
+        a, b = vals(r)
+        c.text(x, cy - rh / 2, lab_w, rh, r["label"], size=S["body"] + 2, bold=bool(on), anchor="m",
+               color=t["title"] if on else t["text"])
+        if a is None or b is None:
+            c.text(x0, cy - 0.15, 1.5, 0.3, "?", size=S["body"], color=t["placeholder"])
+            continue
+        xa, xb = X(a), X(b)
+        c.rect(min(xa, xb), cy - 0.025, max(0.02, abs(xb - xa)), 0.05, fill=c_to if on else t["gray_mid"])
+        c.rect(xa - d / 2, cy - d / 2, d, d, fill=c_from, shape=MSO_SHAPE.OVAL)
+        c.rect(xb - d / 2, cy - d / 2, d, d, fill=c_to, shape=MSO_SHAPE.OVAL)
+        la, lb = dp_fmt(spec, r["from"], vf), dp_fmt(spec, r["to"], vf)
+        wa = measure.width_pt(la, fam, S["label"] + 1) / 72 + 0.1
+        wb = measure.width_pt(lb, fam, S["label"] + 1, True) / 72 + 0.1
+        right_a = xa >= xb  # each value sits on the outer side of its dot
+        c.text(xa + d / 2 + 0.06 if right_a else xa - d / 2 - 0.06 - wa, cy - 0.15, wa, 0.3, la, size=S["label"] + 1,
+               color=t["muted"], align="l" if right_a else "r", anchor="m")
+        c.text(xb - d / 2 - 0.06 - wb if right_a else xb + d / 2 + 0.06, cy - 0.15, wb, 0.3, lb, size=S["label"] + 1,
+               bold=True, color=t["title"], align="r" if right_a else "l", anchor="m")
+        if r.get("change"):
+            c.text(x + w - ch_w, cy - rh / 2, ch_w, rh, dp_fmt(spec, r["change"], signed=True), size=S["body"] + 2, bold=True,
+                   align="r", anchor="m", color=t["highlight"] if on else t["title"])
 
 
 def range_fmt(lo, hi, unit):

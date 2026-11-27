@@ -384,7 +384,7 @@ for s in spec["slides"]:
     # A-12 density
     if s.get("status") != "ghost" and s.get("archetype") != "statement" and body:
         n_chars = slide_chars(s)
-        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org", "map", "marimekko", "donut", "venn", "landscape", "bartable", "model") else 450  # exhibits carry the message
+        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org", "map", "marimekko", "donut", "venn", "landscape", "bartable", "model", "dumbbell") else 450  # exhibits carry the message
         if n_chars < low: out("A-12", "warn", f"slide text is ~{n_chars} chars; references run 670–1,110 (target 600–1,100, charts ≥300)", sid)
         elif n_chars > 1300: out("A-12", "warn", f"slide text is ~{n_chars} chars; above 1,300 reads as crowded", sid)
         for it in ([] if body.get("kind") == "bartable" else body.get("columns", [])) + body.get("items", []) + body.get("steps", []):
@@ -620,6 +620,19 @@ for s in spec["slides"]:
                 out("D5", "fail", f"bar-table row '{r['label']}': a bar cell needs a point (data_ref or placeholder)", s["id"])
             if k == "text" and not cell.get("text"):
                 out("schema", "fail", f"bar-table row '{r['label']}': a text cell needs text", s["id"])
+# dumbbell: a change column shows a data point whose calc is the difference of the row's two dots
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") != "dumbbell" or s.get("status") == "ghost":
+        continue
+    with_change = [r for r in b["rows"] if r.get("change")]
+    if with_change and len(with_change) != len(b["rows"]):
+        out("schema", "fail", "dumbbell: give every row a change, or none", s["id"])
+    for r in with_change:
+        ch = dps.get(r["change"].get("data_ref")) or {}
+        ends = {r["from"].get("data_ref"), r["to"].get("data_ref")}
+        if ch and not ends <= set(ch.get("derived_from", [])):
+            out("B-08", "warn", f"dumbbell row '{r['label']}': change {ch.get('id')} is not derived from the row's two values", s["id"])
 # panels: one width per panel
 for s in spec["slides"]:
     b = s.get("body") or {}

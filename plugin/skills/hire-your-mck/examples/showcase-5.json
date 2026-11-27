@@ -34,6 +34,7 @@
         "supports": [
           "5",
           "6",
+          "6b",
           "7"
         ],
         "sub_points": [
@@ -562,6 +563,93 @@
       }
     },
     {
+      "id": "6b",
+      "role": "content",
+      "status": "filled",
+      "archetype": "dumbbell",
+      "message_type": "item",
+      "lead_message": {
+        "text": "In the pilot, the package cut bookkeeping time most where the AI already works: reconciling and categorizing"
+      },
+      "unit_line": "**Hours a week on each bookkeeping task**, before and after the AI package, 40 pilot firms (fictional)",
+      "body": {
+        "kind": "dumbbell",
+        "names": [
+          "Before",
+          "With the package"
+        ],
+        "change_header": "Change, hours",
+        "rows": [
+          {
+            "label": "Bank reconciliation",
+            "from": {
+              "data_ref": "db_rec_b"
+            },
+            "to": {
+              "data_ref": "db_rec_a"
+            },
+            "change": {
+              "data_ref": "db_rec_d"
+            },
+            "highlight": true
+          },
+          {
+            "label": "Categorizing transactions",
+            "from": {
+              "data_ref": "db_cat_b"
+            },
+            "to": {
+              "data_ref": "db_cat_a"
+            },
+            "change": {
+              "data_ref": "db_cat_d"
+            },
+            "highlight": true
+          },
+          {
+            "label": "Month-end close",
+            "from": {
+              "data_ref": "db_close_b"
+            },
+            "to": {
+              "data_ref": "db_close_a"
+            },
+            "change": {
+              "data_ref": "db_close_d"
+            },
+            "highlight": false
+          },
+          {
+            "label": "Invoicing",
+            "from": {
+              "data_ref": "db_inv_b"
+            },
+            "to": {
+              "data_ref": "db_inv_a"
+            },
+            "change": {
+              "data_ref": "db_inv_d"
+            },
+            "highlight": false
+          },
+          {
+            "label": "Payroll",
+            "from": {
+              "data_ref": "db_pay_b"
+            },
+            "to": {
+              "data_ref": "db_pay_a"
+            },
+            "change": {
+              "data_ref": "db_pay_d"
+            },
+            "highlight": false
+          }
+        ]
+      },
+      "section_id": "2"
+    },
+    {
       "id": "7",
       "role": "content",
       "section_id": "2",
@@ -973,6 +1061,181 @@
       "period": "2026",
       "source_id": "s2",
       "locator": "Owner survey, size cut, Q4, Q7, Q12"
+    },
+    {
+      "id": "db_rec_b",
+      "slide_id": "6b",
+      "label": "Bank reconciliation: hours a week before the package",
+      "value": 3.1,
+      "unit": "hours",
+      "period": "2026 pilot, before",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 0"
+    },
+    {
+      "id": "db_rec_a",
+      "slide_id": "6b",
+      "label": "Bank reconciliation: hours a week with the package",
+      "value": 0.8,
+      "unit": "hours",
+      "period": "2026 pilot, week 8",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 8"
+    },
+    {
+      "id": "db_rec_d",
+      "slide_id": "6b",
+      "label": "Bank reconciliation: change in hours a week",
+      "value": -2.3,
+      "unit": "hours",
+      "period": "2026 pilot",
+      "source_id": "s4",
+      "derived_from": [
+        "db_rec_a",
+        "db_rec_b"
+      ],
+      "formula": "with − before",
+      "calc": "db_rec_a - db_rec_b"
+    },
+    {
+      "id": "db_cat_b",
+      "slide_id": "6b",
+      "label": "Categorizing transactions: hours a week before the package",
+      "value": 2.4,
+      "unit": "hours",
+      "period": "2026 pilot, before",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 0"
+    },
+    {
+      "id": "db_cat_a",
+      "slide_id": "6b",
+      "label": "Categorizing transactions: hours a week with the package",
+      "value": 0.5,
+      "unit": "hours",
+      "period": "2026 pilot, week 8",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 8"
+    },
+    {
+      "id": "db_cat_d",
+      "slide_id": "6b",
+      "label": "Categorizing transactions: change in hours a week",
+      "value": -1.9,
+      "unit": "hours",
+      "period": "2026 pilot",
+      "source_id": "s4",
+      "derived_from": [
+        "db_cat_a",
+        "db_cat_b"
+      ],
+      "formula": "with − before",
+      "calc": "db_cat_a - db_cat_b"
+    },
+    {
+      "id": "db_close_b",
+      "slide_id": "6b",
+      "label": "Month-end close: hours a week before the package",
+      "value": 2.2,
+      "unit": "hours",
+      "period": "2026 pilot, before",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 0"
+    },
+    {
+      "id": "db_close_a",
+      "slide_id": "6b",
+      "label": "Month-end close: hours a week with the package",
+      "value": 1.0,
+      "unit": "hours",
+      "period": "2026 pilot, week 8",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 8"
+    },
+    {
+      "id": "db_close_d",
+      "slide_id": "6b",
+      "label": "Month-end close: change in hours a week",
+      "value": -1.2,
+      "unit": "hours",
+      "period": "2026 pilot",
+      "source_id": "s4",
+      "derived_from": [
+        "db_close_a",
+        "db_close_b"
+      ],
+      "formula": "with − before",
+      "calc": "db_close_a - db_close_b"
+    },
+    {
+      "id": "db_inv_b",
+      "slide_id": "6b",
+      "label": "Invoicing: hours a week before the package",
+      "value": 1.6,
+      "unit": "hours",
+      "period": "2026 pilot, before",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 0"
+    },
+    {
+      "id": "db_inv_a",
+      "slide_id": "6b",
+      "label": "Invoicing: hours a week with the package",
+      "value": 1.1,
+      "unit": "hours",
+      "period": "2026 pilot, week 8",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 8"
+    },
+    {
+      "id": "db_inv_d",
+      "slide_id": "6b",
+      "label": "Invoicing: change in hours a week",
+      "value": -0.5,
+      "unit": "hours",
+      "period": "2026 pilot",
+      "source_id": "s4",
+      "derived_from": [
+        "db_inv_a",
+        "db_inv_b"
+      ],
+      "formula": "with − before",
+      "calc": "db_inv_a - db_inv_b"
+    },
+    {
+      "id": "db_pay_b",
+      "slide_id": "6b",
+      "label": "Payroll: hours a week before the package",
+      "value": 1.0,
+      "unit": "hours",
+      "period": "2026 pilot, before",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 0"
+    },
+    {
+      "id": "db_pay_a",
+      "slide_id": "6b",
+      "label": "Payroll: hours a week with the package",
+      "value": 0.9,
+      "unit": "hours",
+      "period": "2026 pilot, week 8",
+      "source_id": "s3",
+      "locator": "Pilot time log, week 8"
+    },
+    {
+      "id": "db_pay_d",
+      "slide_id": "6b",
+      "label": "Payroll: change in hours a week",
+      "value": -0.1,
+      "unit": "hours",
+      "period": "2026 pilot",
+      "source_id": "s4",
+      "derived_from": [
+        "db_pay_a",
+        "db_pay_b"
+      ],
+      "formula": "with − before",
+      "calc": "db_pay_a - db_pay_b"
     }
   ],
   "sources": [
@@ -985,6 +1248,16 @@
       "id": "s2",
       "kind": "user_provided",
       "name": "Example Ledger owner survey, 2026 (fictional)"
+    },
+    {
+      "id": "s3",
+      "kind": "user_provided",
+      "name": "Example Ledger AI package pilot, 40 firms, 2026 (fictional)"
+    },
+    {
+      "id": "s4",
+      "kind": "derived",
+      "name": "Team analysis"
     }
   ],
   "decision_audit": {
