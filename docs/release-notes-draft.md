@@ -12,9 +12,11 @@ Version: 1.4.0 rather than 1.3.1, because it adds slide types and a rule that ca
 
 **Slide composition.** Two exhibits side by side can now mix chart, table and text, with relative widths (`widths: [2, 1]`). A takeaway about part of a chart can point at it: a dashed outline or numbered dots on the bars, matched to numbered sidebar bullets, or short notes on the chart itself when there is no sidebar.
 
+**Compile mode.** A correction now passes `check.py` with its evidence (the schema refused the fields CP-03 asks for), data points take `decimals` so the source's precision is kept (1.92, not 1.9), and table rows take a `basis` line for an estimate inside a comparison.
+
 **Less sameness.** Sidebars alternate between a tinted box and an open column with a rule on top, and verdict cells can show a green, amber or red chip (Pass / Watch / Fail, or your own words).
 
-**Readability.** `render.py` warns when body text only fits below 12 pt (captions below 10 pt) and says about how much to cut. Numbers below 1 keep their decimals (0.864, not 0.9), ranges match decimals (3.0–3.7) and write the unit once, and k / M / B print after the number. Table row labels no longer break inside a word.
+**Readability.** `render.py` warns when body text only fits below 12 pt (captions below 10 pt) and says about how much to cut. Numbers below 1 keep their decimals (0.864, not 0.9), ranges match decimals (3.0–3.7) and write the unit once, and k / M / B print after the number. Table row labels and short timeline bars no longer break inside a word, line charts with many points skip x labels and keep several lines' end labels apart, and wrapped footnotes no longer sit on the body.
 
 **Heads-up**
 - A spec made with 1.3.0 fails `check.py` if it has an equation slide with one operation or only + and − (B-13). Show the drivers, or move the calculation to a basis strip on the chart slide.
