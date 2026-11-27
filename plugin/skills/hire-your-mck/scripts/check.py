@@ -384,10 +384,10 @@ for s in spec["slides"]:
     # A-12 density
     if s.get("status") != "ghost" and s.get("archetype") != "statement" and body:
         n_chars = slide_chars(s)
-        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org", "map", "marimekko", "donut", "venn", "landscape") else 450  # exhibits carry the message
+        low = 300 if body.get("kind") in ("chart", "panels", "tree", "matrix", "cost_curve", "org", "map", "marimekko", "donut", "venn", "landscape", "bartable", "model") else 450  # exhibits carry the message
         if n_chars < low: out("A-12", "warn", f"slide text is ~{n_chars} chars; references run 670–1,110 (target 600–1,100, charts ≥300)", sid)
         elif n_chars > 1300: out("A-12", "warn", f"slide text is ~{n_chars} chars; above 1,300 reads as crowded", sid)
-        for it in body.get("columns", []) + body.get("items", []) + body.get("steps", []):
+        for it in ([] if body.get("kind") == "bartable" else body.get("columns", [])) + body.get("items", []) + body.get("steps", []):
             if isinstance(it, dict) and "header" in it and len(it.get("detail", [])) < 3:
                 out("A-12", "warn", f"'{it['header'][:30]}' has {len(it.get('detail', []))} bullets (want 3–5)", sid); break
         lay = s.get("layout") or {}
@@ -605,6 +605,21 @@ for s in content:
         units = {(dps.get(it["point"].get("data_ref")) or {}).get("unit") for it in b["items"] if it.get("point")}
         if len(units) > 1 and any(it.get("point") and not it.get("metric") for it in b["items"]):
             out("B-10", "fail", "lever numbers in different units without 'metric' (what each number measures)", s["id"])
+# bar-table: one cell per column; bar cells hold a point, text cells hold text
+for s in spec["slides"]:
+    b = s.get("body") or {}
+    if b.get("kind") != "bartable" or s.get("status") == "ghost":
+        continue
+    kinds = [col.get("kind", "bar") for col in b["columns"]]
+    for r in b["rows"]:
+        if len(r["cells"]) != len(kinds):
+            out("schema", "fail", f"bar-table row '{r['label']}' has {len(r['cells'])} cells for {len(kinds)} columns", s["id"])
+            continue
+        for k, cell in zip(kinds, r["cells"]):
+            if k == "bar" and not cell.get("point"):
+                out("D5", "fail", f"bar-table row '{r['label']}': a bar cell needs a point (data_ref or placeholder)", s["id"])
+            if k == "text" and not cell.get("text"):
+                out("schema", "fail", f"bar-table row '{r['label']}': a text cell needs text", s["id"])
 # panels: one width per panel
 for s in spec["slides"]:
     b = s.get("body") or {}

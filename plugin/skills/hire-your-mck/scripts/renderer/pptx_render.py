@@ -2976,6 +2976,7 @@ def content(c, spec, slide, page_no):
              "case": lambda: case(c, spec, slide, body, box),
              "equation": lambda: equation_body(c, spec, body, box),
              "model": lambda: model_body(c, spec, body, box),
+             "bartable": lambda: bartable(c, spec, slide, body, box),
              "cost_curve": lambda: cost_curve(c, spec, slide, body, box),
              "org": lambda: org_chart(c, spec, slide, body, box),
              "initiative": lambda: initiative(c, spec, slide, body, box),
@@ -3978,6 +3979,82 @@ def equation_body(c, spec, body, box):
         c.line(x, ay + 0.4, x + w, ay + 0.4, color=t["primary"], weight=1.5)
         _bullets(c, ass, x, ay + 0.55, w, y + h - ay - 0.55,
                  size=fit_size(ass, w, y + h - ay - 0.55, S["body"] + 1, line_spacing=1.15))
+
+
+def bartable(c, spec, slide, body, box):
+    """Rows compared on several measures with a small bar per cell (composition.md: bar-table).
+    Each bar column has its own scale; the benchmark row is grey and left out of the scale."""
+    x, y, w, h = box
+    t = c.t
+    cols, rows = body["columns"], body["rows"]
+    kinds = [col.get("kind", "bar") for col in cols]
+    fam = FONTS["body"]
+    longest = max(measure.width_pt(wd, fam, S["body"] + 1, True) / 72 for r in rows for wd in r["label"].split())
+    lab_w = min(max(w * 0.16, longest + 0.3), w * 0.3)
+    text_n, bar_n = kinds.count("text"), kinds.count("bar")
+    rest = w - lab_w
+    text_w = min(2.6, rest * 0.3) if text_n else 0
+    bar_w = (rest - text_w * text_n) / max(1, bar_n)
+    widths = [bar_w if k == "bar" else text_w for k in kinds]
+    xs = [x + lab_w + sum(widths[:j]) for j in range(len(cols))]
+    head_h = max(_est_h(col["header"], wd - 0.2, S["label"], 1.0, bold=True) for col, wd in zip(cols, widths)) + 0.12
+    if body.get("label_header"):
+        c.text(x, y, lab_w - 0.1, head_h - 0.08, body["label_header"], size=S["label"], bold=True, color=t["muted"], anchor="b")
+    for col, cx, wd in zip(cols, xs, widths):
+        c.text(cx, y, wd - 0.2, head_h - 0.08, col["header"], size=S["label"], bold=True, color=t["muted"], anchor="b")
+    c.line(x, y + head_h, x + w, y + head_h, color=t["primary"], weight=1.5)
+    # each bar column scales to its largest non-benchmark value; leave room for the value label
+    scale = {}
+    for j, k in enumerate(kinds):
+        if k == "bar":
+            vals = [abs(spec.value(r["cells"][j].get("point")) or 0) for r in rows if not r.get("benchmark") and j < len(r["cells"])]
+            scale[j] = max(vals or [1]) or 1
+    # one number of decimals per bar column (5.0 beside 5.2, not 5)
+    col_vf = {}
+    for j in scale:
+        unit_ = next(((spec.dpoint(r["cells"][j].get("point")) or {}).get("unit") for r in rows if spec.dpoint(r["cells"][j].get("point"))), None)
+        sc = 100 if unit_ == "%" else 1
+        digs = [_num(spec.value(r["cells"][j].get("point")) * sc) for r in rows if spec.value(r["cells"][j].get("point")) is not None]
+        dec = max([len(d_.split(".")[1]) if "." in d_ else 0 for d_ in digs] or [0])
+        col_vf[j] = (("0." + "0" * dec) if dec else "0") + ("%" if unit_ == "%" else "") if dec else None
+    size = S["body"]
+    need = [max([0.5] + [_est_h(r["cells"][j].get("text", ""), widths[j] - 0.2, size, 1.1) + 0.2
+                         for j, k in enumerate(kinds) if k == "text" and j < len(r["cells"])]) for r in rows]
+    room = h - head_h - 0.1
+    if sum(need) > room:
+        SIDEBAR_WARN.append(f"slide {slide.get('id')}: bar-table rows need {sum(need):.1f} in but have {room:.1f} in; "
+                            "shorten the text column or drop a row")
+    rh = [n_ * max(1.0, room / sum(need)) if sum(need) <= room else n_ * room / sum(need) for n_ in need]
+    rh = [min(r_, 0.95) for r_ in rh]
+    cy = y + head_h + 0.05
+    bh = 0.24
+    for r, rh_ in zip(rows, rh):
+        on, bench = r.get("highlight"), r.get("benchmark")
+        if on:
+            c.rect(x, cy, w, rh_ - 0.04, fill=t["sidebar"] if not t["dark_sidebar"] else t["panel"])
+        c.text(x + 0.08, cy, lab_w - 0.16, rh_ - 0.04, r["label"], size=S["body"] + 1, bold=True, anchor="m",
+               color=t["highlight"] if on else (t["muted"] if bench else t["title"]))
+        for j, (k, cx, wd) in enumerate(zip(kinds, xs, widths)):
+            cell = r["cells"][j] if j < len(r["cells"]) else {}
+            if k == "text":
+                c.text(cx, cy, wd - 0.15, rh_ - 0.04, cell.get("text", ""), size=size, anchor="m", line_spacing=1.1)
+                continue
+            p = cell.get("point")
+            v = spec.value(p)
+            lab = dp_fmt(spec, p, col_vf.get(j)) if p else ""
+            lw_ = measure.width_pt(lab or "0", fam, S["body"], bool(on)) / 72 + 0.12
+            full = wd - 0.25 - lw_
+            frac = 0.45 if v is None else min(1.0, abs(v) / scale[j])
+            blen = max(0.03, full * frac)
+            by = cy + (rh_ - 0.04 - bh) / 2
+            if v is None:
+                c.rect(cx, by, blen, bh, line=t["placeholder"], dash=True)
+            else:
+                c.rect(cx, by, blen, bh, fill=t["gray_light"] if bench else (t["highlight"] if on else t["other_bars"]))
+            c.text(cx + blen + 0.08, cy, lw_ + 0.2, rh_ - 0.04, lab, size=S["body"], bold=bool(on), anchor="m",
+                   color=t["placeholder"] if v is None else t["title"])
+        cy += rh_
+        c.line(x, cy - 0.02, x + w, cy - 0.02, color=t["rule"])
 
 
 def range_fmt(lo, hi, unit):

@@ -677,6 +677,7 @@
         "survey-bars",
         "cost-curve",
         "data-table",
+        "bar-table",
         "map",
         "org-chart",
         "initiative-one-pager",
@@ -944,6 +945,9 @@
         },
         {
           "$ref": "#/$defs/body_venn"
+        },
+        {
+          "$ref": "#/$defs/body_bartable"
         }
       ]
     },
@@ -3746,6 +3750,90 @@
               "type": "string"
             }
           }
+        }
+      }
+    },
+    "body_bartable": {
+      "type": "object",
+      "required": [
+        "kind",
+        "columns",
+        "rows"
+      ],
+      "additionalProperties": false,
+      "description": "Rows compared on several measures, a small bar in each measure cell (bar-table: 51 pages in 43 public decks). Each bar column is scaled on its own; a benchmark row (total, median) goes first in grey.",
+      "properties": {
+        "kind": {
+          "const": "bartable"
+        },
+        "columns": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": [
+              "header"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "header": {
+                "type": "string",
+                "description": "Measure and unit: 'Shippers added, thousands'."
+              },
+              "kind": {
+                "enum": [
+                  "bar",
+                  "text"
+                ],
+                "default": "bar"
+              }
+            }
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "cells"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "highlight": {
+                "type": "boolean"
+              },
+              "benchmark": {
+                "type": "boolean",
+                "description": "Reference row (total, median): grey bars, left out of each column's scale. Put it first."
+              },
+              "cells": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "point": {
+                      "$ref": "#/$defs/point"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "label_header": {
+          "type": "string",
+          "description": "Header over the row labels, e.g. 'Segment'."
         }
       }
     }
