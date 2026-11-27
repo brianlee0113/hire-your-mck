@@ -859,7 +859,11 @@ for d in dps.values():
         out("V-02", "fail", f"{d['id']} is in {d['unit']} but its excerpt is in {cur}; convert it as a derived number (calc, rate and date in assumptions)", d["slide_id"])
     years = set(re.findall(r"(?:19|20)\d\d", d.get("period") or ""))
     context = " ".join(str(x or "") for x in (d.get("excerpt"), d.get("locator")))  # not the source's own date: a 2026 report often holds 2025 data
-    if years and d.get("excerpt") and re.search(r"(?:19|20)\d\d", context) and not years & set(re.findall(r"(?:19|20)\d\d", context)):
+    named = set(re.findall(r"(?:19|20)\d\d", context))
+    for a_, b_ in re.findall(r"((?:19|20)\d\d)\s*[–-]\s*((?:19|20)\d\d)", context):  # "2022–2026" names every year in it
+        if int(a_) < int(b_) <= int(a_) + 30:
+            named |= {str(y_) for y_ in range(int(a_), int(b_) + 1)}
+    if years and d.get("excerpt") and named and not years & named:
         out("V-02", "warn", f"{d['id']}: period {d['period']} does not appear in its excerpt or locator, which name other years; check the value is for that period", d["slide_id"])
 for sid_, ids in no_trace.items():
     out("V-01", "warn", f"{len(ids)} data point(s) from {sid_} have neither excerpt nor locator ({', '.join(ids[:4])}{'…' if len(ids) > 4 else ''}); add the sheet, row or page they come from")
