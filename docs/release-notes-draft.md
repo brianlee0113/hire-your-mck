@@ -8,7 +8,7 @@ Version: 1.4.0 rather than 1.3.1, because it adds slide types and a rule that ca
 
 **New slide type: estimate model.** For an estimate built on 3 or more inputs: a driver table (value, basis, low–high range) beside a tornado of the result at each driver's low and high. Ranges sit on the data points; the renderer recomputes the result through `calc`, and the sources workbook lists the ranges.
 
-**New slide types: bar-table and dumbbell.** A bar-table compares a few rows on several measures, with a small bar in each cell, one scale per column and a grey benchmark row (43 of the 203 public decks we studied use it). A dumbbell shows each item at two points (before/after, without/with) on one axis, sorted by the gap, with the change in its own column (20 decks).
+**New slide types: bar-table and dumbbell.** A bar-table compares a few rows on several measures, with a small bar in each cell, one scale per column and a grey benchmark row (43 of the 203 public decks we studied use it). A dumbbell shows each item at two points (before/after, without/with) on one axis, sorted by the gap, with the change in its own column (20 decks). Charts also take `stacked_area`, with each layer named at its right end.
 
 **Slide composition.** Two exhibits side by side can now mix chart, table and text, with relative widths (`widths: [2, 1]`). A takeaway about part of a chart can point at it: a dashed outline or numbered dots on the bars, matched to numbered sidebar bullets, or short notes on the chart itself when there is no sidebar.
 

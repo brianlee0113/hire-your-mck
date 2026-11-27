@@ -808,6 +808,8 @@ def chart(c, spec, slide, body, box):
         return waterfall(c, spec, body, box)
     if ctype == "scatter":
         return scatter(c, spec, slide, body, box)
+    if ctype == "stacked_area":
+        return stacked_area(c, spec, slide, body, box)
     cats, series = _sorted(body, spec)
     known = [spec.value(p) for s in series for p in s["points"] if spec.value(p) is not None]
     stand_in = (sum(known) / len(known)) if known else None
@@ -984,6 +986,60 @@ def chart(c, spec, slide, body, box):
         _chart_marks(c, spec, slide, body, ch, (x, y, w, h), cats, series, unit, nf, label_size, name_size,
                      gap if gap is not None else 45, horiz, multi, bool(bench_line))
     _no_invert(ch)
+    return gf
+
+
+def stacked_area(c, spec, slide, body, box):
+    """Stacked area over time with each layer named at its right end (stacked area: 24 pages in 19 public decks).
+    The plot area is pinned so the end labels sit on their own band."""
+    x, y, w, h = box
+    t = c.t
+    cats, series = list(body["categories"]), body["series"]
+    unit = next(((spec.dpoint(p) or {}).get("unit") for s in series for p in s["points"] if spec.dpoint(p)), None)
+    nf = excel_format(unit, body.get("value_format"))
+    cd = CategoryChartData(number_format=nf)
+    cd.categories = cats
+    for s in series:
+        cd.add_series(s["name"], [spec.value(p) or 0 for p in s["points"]])
+    gf = c.slide.shapes.add_chart(XL_CHART_TYPE.AREA_STACKED, Inches(x), Inches(y), Inches(w), Inches(h), cd)
+    ch = gf.chart
+    ch.has_title = False
+    ch.has_legend = False
+    ch.font.name = t["font_body"]
+    ch.font.size = Pt(S["label"] + 1)
+    _clean_axes(ch, t)
+    totals = [sum(spec.value(s["points"][i]) or 0 for s in series) for i in range(len(cats))]
+    vmax = (max(totals) or 1) * 1.08
+    ch.value_axis.minimum_scale = 0
+    ch.value_axis.maximum_scale = vmax
+    highlight = set(body.get("highlight", []))
+    colors = series_colors(t, [s["name"] for s in series], highlight)
+    for s_obj, col in zip(ch.plots[0].series, colors):
+        _fill(s_obj.format, col)
+        s_obj.format.line.color.rgb = rgb(t["white"])
+        s_obj.format.line.width = Pt(0.75)
+    lab_w = min(2.4, w * 0.28)
+    name_h = S["label"] * 1.6 / 72 + 0.1
+    px, py, pw, ph = x + 0.05, y + 0.3, w - lab_w - 0.25, h - 0.3 - name_h
+    _pin_plot(ch, (px - x) / w, (py - y) / h, pw / w, ph / h)
+    # the value axis sits between categories on an area chart's edges: pin it to the first and last points
+    cross = ch.value_axis._element.find(qn("c:crossBetween"))
+    if cross is not None:
+        cross.set("val", "midCat")
+    fam = t["font_body"]
+    base = 0.0
+    last = len(cats) - 1
+    for s, col in zip(series, colors):
+        v = spec.value(s["points"][last]) or 0
+        mid = py + ph - (base + v / 2) / vmax * ph
+        base += v
+        on = s["name"] in highlight
+        lab = [[(s["name"] + "  ", {"bold": on, "color": t["highlight"] if on else t["text"]}),
+                (dp_fmt(spec, s["points"][last], body.get("value_format")), {"bold": True, "color": t["title"]})]]
+        hh = max(0.3, _est_h(s["name"] + "  00", lab_w, S["label"] + 1, 1.0))
+        c.text(px + pw + 0.35, mid - hh / 2, lab_w - 0.1, hh, lab, size=S["label"] + 1, anchor="m", line_spacing=1.0)
+        if v / vmax * ph < 0.22:
+            SIDEBAR_WARN.append(f"slide {slide.get('id')}: the '{s['name']}' layer is too thin for its end label; group small layers into 'Other'")
     return gf
 
 

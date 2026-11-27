@@ -106,3 +106,5 @@ Tip: slides split horizontally in 3 or 2, or vertically in 2; the left or top pa
 **Mock D (built).** `marks[].note`: a few words drawn beside the numbered dot, so a chart without a sidebar explains itself; horizontal bars keep a notes column on the right so the longest bar still has room, and a note with no room warns. Checked in PowerPoint on FreshCart 4 without its sidebar.
 
 **Second new type (built): `dumbbell`.** Next most frequent form in the tags after bar-table and stacked area: 21 pages in 20 decks (11 since 2020). Two dots per row on one axis, sorted by the gap; the change column shows its own derived data point (D5), and check.py warns when that point is not derived from the row's two values. Mock: Figma frame F. Example: showcase-5 slide 6b.
+
+**Chart type (built): `stacked_area`.** 24 pages in 19 decks: a mix over many periods. Native stacked area, axis pinned to the first and last points, each layer named at its right end with its last value (no legend, no computed total, per D5); a layer too thin for its label warns. Checked in PowerPoint on a test copy of showcase-2.
