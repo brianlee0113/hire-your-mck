@@ -633,6 +633,21 @@ for s in spec["slides"]:
         ends = {r["from"].get("data_ref"), r["to"].get("data_ref")}
         if ch and not ends <= set(ch.get("derived_from", [])):
             out("B-08", "warn", f"dumbbell row '{r['label']}': change {ch.get('id')} is not derived from the row's two values", s["id"])
+# composition: numbered sidebar bullets and chart marks point at each other
+for s in spec["slides"]:
+    if s.get("status") == "ghost":
+        continue
+    sb = (s.get("layout") or {}).get("sidebar") or {}
+    b = s.get("body") or {}
+    nums = {m.get("n") for m in b.get("marks", [])} | ({(b.get("outline") or {}).get("n")} - {None})
+    if sb.get("markers"):
+        want = set(range(1, len(sb.get("bullets", [])) + 1))
+        if not nums:
+            out("A-12", "warn", "sidebar.markers numbers the bullets, but the chart has no marks or outline to match", s["id"])
+        elif nums - want:
+            out("A-12", "warn", f"chart marks {sorted(nums - want)} have no sidebar bullet with that number", s["id"])
+    elif b.get("marks") and not all(m.get("note") for m in b["marks"]) and (s.get("layout") or {}).get("variant") == "takeaway_sidebar":
+        out("A-12", "warn", "chart marks without sidebar.markers or notes: say what each number points at", s["id"])
 # panels: one width per panel
 for s in spec["slides"]:
     b = s.get("body") or {}
