@@ -816,6 +816,10 @@
                 "open"
               ],
               "description": "box: tinted panel (the default look). open: no panel, a heavy rule on top and white space, so the slide does not read as one more grey box (holdout review: formats look monotonous). Omit to alternate box and open in deck order."
+            },
+            "markers": {
+              "type": "boolean",
+              "description": "Number the sidebar bullets 1, 2, 3 with the same dots as the exhibit's marks and outline, so each bullet points at the part it explains."
             }
           }
         }
@@ -1110,6 +1114,53 @@
             "highlight"
           ],
           "description": "scatter: which points carry their name. Default all up to 14 points, else highlighted only."
+        },
+        "marks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "category",
+              "n"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "category": {
+                "type": "string"
+              },
+              "n": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              }
+            }
+          },
+          "description": "Numbered dots on specific bars (single-series bar or column). Number n matches sidebar bullet n when sidebar.markers is true."
+        },
+        "outline": {
+          "type": "object",
+          "required": [
+            "categories"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "categories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "n": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "description": "A dashed outline around adjacent bars the title or a sidebar bullet is about, with an optional numbered dot and a short label."
         }
       }
     },

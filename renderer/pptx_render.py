@@ -607,17 +607,22 @@ def sidebar(c, spec, slide, x=None, w=None):
     if bullets:
         room = bottom - reserve - cy
         plain = [b.replace("**", "") for b in bullets]
-        size = fit_size(bullets, w - 2 * pad, room - 0.12 * len(bullets), S["body"] + 2, min_size=10.5, line_spacing=1.12)
-        heights = [_est_h(b, w - 2 * pad - 0.2, size, 1.12) for b in bullets]
+        size = fit_size(bullets, w - 2 * pad, room - 0.12 * len(bullets), S["body"] + 2, min_size=10.5, line_spacing=1.12, indent=0.4 if sb.get("markers") else 0.2)
+        heights = [_est_h(b, w - 2 * pad - (0.4 if sb.get("markers") else 0.2), size, 1.12) for b in bullets]
         gap = min(0.42, max(0.06, (room - sum(heights)) / max(1, len(bullets))))
         if rows and cy + sum(heights) + 0.06 * len(bullets) > bottom - reserve + 0.15:
             SIDEBAR_WARN.append(f"slide {slide['id']}: sidebar bullets and value rows do not both fit; shorten the bullets or drop a row")
-        for b, bh in zip(bullets, heights):
-            runs = [("▪  ", {"color": t["highlight"] if not dark else ink})]
+        numbered = sb.get("markers")
+        for k_, (b, bh) in enumerate(zip(bullets, heights)):
+            runs = [] if numbered else [("▪  ", {"color": t["highlight"] if not dark else ink})]
             for k, part in enumerate(b.split("**")):
                 if part:
                     runs.append((part, {"color": ink, "bold": k % 2 == 1}))
-            c.text(x + pad, cy, w - 2 * pad, bh, [runs], size=size, line_spacing=1.12)
+            if numbered:  # the number matches a mark on the exhibit (composition.md: specific-area emphasis)
+                _mark_dot(c, x + pad + 0.15, cy + size / 72 * 0.62, k_ + 1, d=0.28)
+                c.text(x + pad + 0.4, cy, w - 2 * pad - 0.4, bh, [runs], size=size, line_spacing=1.12)
+            else:
+                c.text(x + pad, cy, w - 2 * pad, bh, [runs], size=size, line_spacing=1.12)
             cy += bh + gap
         if cy - gap > bottom - reserve + 0.05:
             SIDEBAR_WARN.append(f"slide {slide['id']}: sidebar bullets run past the space above the "
@@ -975,8 +980,103 @@ def chart(c, spec, slide, body, box):
                 dl.position = XL_LABEL_POSITION.RIGHT if pi else XL_LABEL_POSITION.LEFT
             else:
                 dl.position = XL_LABEL_POSITION.CENTER if stacked else XL_LABEL_POSITION.OUTSIDE_END
+    if body.get("marks") or body.get("outline"):
+        _chart_marks(c, spec, slide, body, ch, (x, y, w, h), cats, series, unit, nf, label_size, name_size,
+                     gap if gap is not None else 45, horiz, multi, bool(bench_line))
     _no_invert(ch)
     return gf
+
+
+def _pin_plot(ch, fx, fy, fw, fh):
+    """Fix the inner plot area (fractions of the chart frame) so bar positions can be computed."""
+    pa = ch._chartSpace.chart.plotArea
+    old = pa.find(qn("c:layout"))
+    if old is not None:
+        pa.remove(old)
+    lay = etree.SubElement(pa, qn("c:layout"))
+    pa.remove(lay)
+    pa.insert(0, lay)
+    ml = etree.SubElement(lay, qn("c:manualLayout"))
+    for tag, val in (("layoutTarget", "inner"), ("xMode", "edge"), ("yMode", "edge"),
+                     ("x", fx), ("y", fy), ("w", fw), ("h", fh)):
+        etree.SubElement(ml, qn("c:" + tag)).set("val", str(round(val, 4)) if not isinstance(val, str) else val)
+
+
+def _mark_dot(c, cx, cy, n, d=0.3):
+    t = c.t
+    dot = c.rect(cx - d / 2, cy - d / 2, d, d, fill=t["highlight"], shape=MSO_SHAPE.OVAL)
+    for side in ("margin_top", "margin_bottom", "margin_left", "margin_right"):
+        setattr(dot.text_frame, side, 0)
+    dot.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+    c.label_in(dot, str(n), size=S["label"], bold=True, color=t["white"])
+
+
+def _chart_marks(c, spec, slide, body, ch, box, cats, series, unit, nf, label_size, name_size, gap, horiz, multi, bench_line):
+    """Point at a specific part of the exhibit (composition.md): numbered dots on bars and a dashed outline
+    around a group of them, matched by number to the sidebar bullets (sidebar.markers)."""
+    t = c.t
+    ctype = body.get("chart_type")
+    vals = [spec.value(p) for p in series[0]["points"]] if series else []
+    if multi or ctype not in ("bar", "column") or bench_line or any(v is not None and v < 0 for v in vals):
+        SIDEBAR_WARN.append(f"slide {slide.get('id')}: marks and outline work on single-series bar and column charts "
+                            "with no negative values; drop them or use a highlight")
+        return
+    x, y, w, h = box
+    vmax = ch.value_axis.maximum_scale or (max([v for v in vals if v is not None] or [1]) * 1.15)
+    fam = t["font_body"]
+    if horiz:
+        name_w = min(w * 0.45, max(measure.width_pt(cn, fam, name_size) for cn in cats) / 72 + 0.2)
+        px, py, pw, ph = x + name_w, y + 0.05, w - name_w - 0.2, h - 0.1
+    else:
+        name_h = 2 * name_size * 1.25 / 72 + 0.12
+        px, py, pw, ph = x + 0.1, y + 0.45, w - 0.2, h - 0.45 - name_h
+    _pin_plot(ch, (px - x) / w, (py - y) / h, pw / w, ph / h)
+    n = max(len(cats), 1)
+    slot = (ph if horiz else pw) / n
+    thick = slot / (1 + gap / 100)
+    lab_h = label_size * 1.2 / 72
+
+    def bar(i):  # x, y, w, h of bar i, and where its value label ends
+        v = vals[i] or 0
+        lw_ = measure.width_pt(fmt(vals[i], unit, nf) if vals[i] is not None else "?", fam, label_size, True) / 72
+        if horiz:
+            by = py + i * slot + (slot - thick) / 2
+            bw = pw * v / vmax
+            return (px, by, bw, thick), px + bw + 0.08 + lw_
+        bh = ph * v / vmax
+        bx = px + i * slot + (slot - thick) / 2
+        return (bx, py + ph - bh, thick, bh), py + ph - bh - 0.05 - lab_h
+
+    out = body.get("outline")
+    if out:
+        idx = [cats.index(cn) for cn in out.get("categories", []) if cn in cats]
+        if idx:
+            rects = [bar(i) for i in idx]
+            if horiz:
+                x0 = px - min(name_w - 0.05, max(measure.width_pt(cats[i], fam, name_size) for i in idx) / 72 + 0.3)
+                y0 = py + min(idx) * slot + 0.04
+                x1 = max(e for _, e in rects) + 0.15
+                y1 = py + (max(idx) + 1) * slot - 0.04
+            else:
+                x0 = px + min(idx) * slot + 0.04
+                x1 = px + (max(idx) + 1) * slot - 0.04
+                y0 = min(e for _, e in rects) - 0.1
+                y1 = py + ph + name_h - 0.04
+            c.rect(x0, y0, x1 - x0, y1 - y0, line=t["highlight"], dash=True, weight=1.5)
+            if out.get("n"):
+                _mark_dot(c, x1, y0, out["n"])
+            if out.get("label"):  # beside the dot on bars; above the outline on columns, so it stays in its panel
+                lx_, ly_ = (x1 + 0.22, y0 - 0.02) if horiz else (x0, y0 - 0.34)
+                c.text(lx_, ly_, 2.0 if horiz else x1 - x0 - 0.2, 0.3, out["label"], size=S["label"], bold=True, color=t["highlight"])
+    for m in body.get("marks", []):
+        if m.get("category") not in cats:
+            SIDEBAR_WARN.append(f"slide {slide.get('id')}: mark on '{m.get('category')}', which is not a category")
+            continue
+        (bx, by, bw, bh), end = bar(cats.index(m["category"]))
+        if horiz:
+            _mark_dot(c, end + 0.25, by + bh / 2, m["n"])
+        else:
+            _mark_dot(c, bx + bw / 2, end - 0.22, m["n"])
 
 
 def _luma(hex_):
