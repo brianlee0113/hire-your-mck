@@ -616,6 +616,10 @@ for s in spec["slides"]:
         out("B-13", "fail", "equation slide shows one operation (two inputs and a result); show the drivers behind the inputs (3+ inputs, an intermediate '=' is fine), or put the cards in a basis strip on the chart slide that uses the number", s["id"])
     elif ops and all(o in ("+", "−", "=") for o in ops):
         out("B-13", "fail", "equation slide only adds and subtracts; a sum or bridge reads better as a waterfall-bridge, or as a basis strip on the chart slide", s["id"])
+# B-13: one calculation-bridge in the storyline; more estimates go to the appendix (a backup equation or model)
+_eq_story = [s["id"] for s in content if s.get("status") != "ghost" and (s.get("body") or {}).get("kind") == "equation"]
+if len(_eq_story) > 1:
+    out("B-13", "warn", f"{len(_eq_story)} equation slides in the storyline ({', '.join(_eq_story)}); keep the one the decision rests on and move the rest to the appendix (role backup), or show the estimate as a basis strip on its chart", _eq_story[1])
 def _inputs_of(did, seen=None):
     """Every data point the calc of `did` reads, directly or through other calcs."""
     seen = set() if seen is None else seen

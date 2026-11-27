@@ -165,7 +165,7 @@ Always give a placeholder a `label` that says what data is needed; it is shown t
 
 Pick one:
 - **`basis` strip** under the exhibit, for a chart built on an estimate: `"basis": {"header": "How we projected it", "terms": [{"point": {...}, "caption": "share of sales, 2025 actual"}, {"op": "+", "point": {...}, "caption": "added in 2026–31: 1.5 pp a year from current co-manufacturers (supplier review) × 6 years"}, {"op": "=", "point": {...}, "caption": "share in 2031"}]}`. Siblings built from the same inputs (every bar of one projection) are covered.
-- **`equation` body** (archetype `calculation-bridge`) when the estimate is the slide's point: `{"kind": "equation", "terms": [...], "assumptions_header": "The estimate rests on four assumptions", "assumptions": [...]}`. Use it when a number would need its own explanation on another slide (B-03). Show the drivers, not one step: 3 or more inputs, with an intermediate `{"op": "="}` where it helps (`38% − 29% = 9 pp × 8% = 0.7 pp`); two inputs, or only + and −, fail (B-13).
+- **`equation` body** (archetype `calculation-bridge`) when the estimate is the slide's point: `{"kind": "equation", "terms": [...], "assumptions_header": "The estimate rests on four assumptions", "assumptions": [...]}`. Use it when a number would need its own explanation on another slide (B-03). Show the drivers, not one step: 3 or more inputs, with an intermediate `{"op": "="}` where it helps (`38% − 29% = 9 pp × 8% = 0.7 pp`); two inputs, or only + and −, fail (B-13). Keep one in the storyline, for the estimate the decision rests on; show other estimates as a chart with a `basis` strip, or move them to the appendix (more than one warns).
 - **`model` body** (archetype `estimate-model`) for an estimate built on 3 or more inputs, to show which ones move it (B-13): `{"kind": "model", "drivers": [{"point": {"data_ref": "upl"}, "label": "Price uplift", "basis": "assumption, peers (4a)"}, ...], "result": {"point": {"data_ref": "pb"}, "label": "Payback, months", "formula": "build cost ÷ monthly gain after AI costs"}, "sensitivity_header": "Payback, months, at each driver's low and high"}`. Each driver's data point carries `"range": {"low": 3, "high": 7, "basis": "peer AI add-on prices"}`; the result's `calc` must read every driver (directly or through other calcs). In a deck with an appendix, an estimate on a `calculation-bridge` slide that rests on 3 or more inputs gets one (warn).
 - **Row `basis`** in a sidebar: `{"label": "Expected impact if snacks and frozen reach 26%", "basis": "16% of sales × 26% share", "point": {...}}`.
 
@@ -270,7 +270,7 @@ KPI items show their `drivers` under a thin rule; add `drivers_header` only when
 | B-08 calc does not recompute, estimate without calc/assumptions, estimate shown without basis | fail |
 | B-10 lever numbers without headers, mixed units without metric | fail |
 | B-13 `equation` body with two inputs, or only + and −; `model` driver outside the result's calc, value outside its range, fewer than two ranged drivers | fail |
-| B-13 estimate on 3+ inputs without an `estimate-model` slide (decks with an appendix) | warn |
+| B-13 estimate on 3+ inputs without an `estimate-model` slide (decks with an appendix); more than one `equation` slide in the storyline | warn |
 | units: bare "points" after a number | fail |
 | units: "pp", "Nx" or "vs." in a sentence | warn |
 | B-05 plain sum/difference in a sidebar, key takeaways repeating the exec summary | warn |

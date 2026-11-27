@@ -2231,56 +2231,91 @@
             "text": "$10",
             "data_ref": "aic"
           }
+        ],
+        "highlights": [
+          "AI running cost"
         ]
       },
       "message_type": "component",
-      "archetype": "calculation-bridge",
+      "archetype": "bar-ranking",
       "tree_node": "n4b",
-      "unit_line": "**AI running cost per customer**, $ per year, at November 2026 model prices, team estimate",
+      "unit_line": "**Price uplift and AI running cost per customer**, $ per year, at November 2026 model prices, team estimate",
       "body": {
-        "kind": "equation",
+        "kind": "chart",
+        "chart_type": "bar",
+        "categories": [
+          "Plan price uplift",
+          "AI running cost"
+        ],
+        "series": [
+          {
+            "name": "$ per customer per year",
+            "points": [
+              {
+                "data_ref": "uyr"
+              },
+              {
+                "data_ref": "aic"
+              }
+            ]
+          }
+        ],
+        "sort": "none",
+        "highlight": [
+          "AI running cost"
+        ],
+        "value_format": "0.0"
+      },
+      "basis": {
+        "header": "How we estimated it",
         "terms": [
           {
             "point": {
               "data_ref": "catc"
             },
-            "caption": "to categorize 2,000 bank transactions a month on Claude Haiku 5.5"
+            "caption": "categorizing transactions (Haiku)"
           },
           {
             "op": "+",
             "point": {
               "data_ref": "chc"
             },
-            "caption": "to answer 50 questions a month on Claude Sonnet 5.5"
+            "caption": "answering questions (Sonnet)"
           },
           {
             "op": "=",
             "point": {
               "data_ref": "aic"
             },
-            "caption": "AI cost per customer per year"
+            "caption": "AI cost a year"
           },
           {
             "op": "÷",
             "point": {
               "data_ref": "uyr"
             },
-            "caption": "from a $5 monthly uplift"
+            "caption": "price uplift a year"
           },
           {
             "op": "=",
             "point": {
               "data_ref": "ash"
             },
-            "caption": "of the uplift goes to running the AI"
+            "caption": "of the uplift"
           }
-        ],
-        "assumptions_header": "Usage is set high, so the cost is an upper bound",
-        "assumptions": [
-          "Categorization runs on Claude Haiku 5.5 and assistant questions on Claude Sonnet 5.5, at November 2026 list prices",
-          "Usage per customer is set high on purpose: 2,000 categorizations and 50 questions a month",
-          "Token counts per categorization come from a 2026 receipt-classification study; per question they are our assumption"
         ]
+      },
+      "layout": {
+        "variant": "takeaway_sidebar",
+        "sidebar": {
+          "kind": "bullets",
+          "header": "Usage is set high, so the cost is an upper bound",
+          "bullets": [
+            "**Assistant questions are most of it:** answering 50 questions a month on Claude Sonnet 5.5 is nine-tenths of the cost",
+            "**Usage set high:** 2,000 categorizations and 50 questions a month per customer, at November 2026 list prices",
+            "**Not the deciding number:** payback depends far more on the price uplift (backup)"
+          ]
+        }
       }
     },
     {
@@ -4669,7 +4704,7 @@
       "slide_id": "4b1",
       "label": "AI cost of transaction categorization per customer per year",
       "value": 1.3,
-      "unit": "$ per year",
+      "unit": "$",
       "period": "2027 plan",
       "source_id": "s0",
       "derived_from": [
@@ -4693,7 +4728,7 @@
       "slide_id": "4b1",
       "label": "AI cost of assistant questions per customer per year",
       "value": 9.0,
-      "unit": "$ per year",
+      "unit": "$",
       "period": "2027 plan",
       "source_id": "s0",
       "derived_from": [
@@ -4717,7 +4752,7 @@
       "slide_id": "4b1",
       "label": "Total AI cost per customer per year",
       "value": 10.3,
-      "unit": "$ per year",
+      "unit": "$",
       "period": "2027 plan",
       "source_id": "s0",
       "derived_from": [
@@ -4743,7 +4778,7 @@
       "slide_id": "4b1",
       "label": "Plan price uplift per customer per year",
       "value": 60,
-      "unit": "$ per year",
+      "unit": "$",
       "period": "2027 plan",
       "source_id": "s0",
       "derived_from": [
