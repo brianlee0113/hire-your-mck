@@ -45,6 +45,8 @@ write data points as usual (Step 2 of `SKILL.md`, rules V-01–V-04):
 | an assumption the analysis states | `estimate: true` with `assumptions` and a `basis` on the slide |
 | not found and not reproducible | sourced from the analysis itself (a `user_provided` source whose `input_id` is the analysis), and listed in `compile.untraceable` |
 
+Keep the source's precision: a data point shows one decimal above 1 by default, so give `"decimals": 2` to a number the source writes as 1.92, rather than typing it into a text cell.
+
 Never invent a formula to make an untraceable number look checked. In `compile.untraceable`, mark `critical: true`
 when the number is in a title, the executive summary, a gate or a recommendation's headline: `check.py` fails a
 critical untraceable number until it is acknowledged (`ack`: what the user decided, e.g. "keep as the analysis's

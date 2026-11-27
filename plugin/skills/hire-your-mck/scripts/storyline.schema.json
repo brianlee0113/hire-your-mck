@@ -2192,6 +2192,12 @@
               "description": "Why this range, in a few words: 'peer range, 2024 survey', '±10%, wage spread across states'."
             }
           }
+        },
+        "decimals": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "description": "Decimals to show wherever this number appears (1.92 stays 1.92). Use it to keep a source's precision, e.g. in compile mode; omit for the default (one decimal above 1, more below 1)."
         }
       }
     },
@@ -3727,7 +3733,10 @@
             "required": [
               "was",
               "now",
-              "why"
+              "why",
+              "source_loc",
+              "evidence",
+              "affects"
             ],
             "properties": {
               "unit_id": {
@@ -3741,6 +3750,21 @@
               },
               "why": {
                 "type": "string"
+              },
+              "source_loc": {
+                "type": "string",
+                "description": "Where the source says it (slide or section)."
+              },
+              "evidence": {
+                "type": "string",
+                "description": "The excerpt, the source's own exhibit, or the recomputation that shows the error."
+              },
+              "affects": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Every slide id that carries the unit or depends on it, 'es' for the executive summary."
               }
             }
           }

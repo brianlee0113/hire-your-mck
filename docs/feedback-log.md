@@ -118,3 +118,11 @@ Result: check.py 0 fail / 0 warn and 0 render warnings after fixing its first 3 
 Fixed from its notes: (a) check.py now warns when marks or outline sit on a chart they cannot be drawn on (negative values, several series, other chart types), instead of only the renderer; (f) one rule for the appendix divider in SKILL.md and spec-guide; (g) the table header warning names the widest words; (h) bar-table column `kind` defaults to bar.
 
 Open: (b) B-08 looks one level up `derived_from`, so a scenario chart whose bars come from different inputs fails until each bar's calc is rebuilt; the docs do not say how to show the basis of a scenario comparison. (c) fixed: table rows take a `basis` line under the label (B-08 counts it for the row's estimates). Still open: whether break-even points or capital needs count as estimates. (d) fixed: A-01 also accepts a title number shown in a `basis` strip, and SKILL.md says to use one on slides with no sidebar. (e) fixed: V-02 reads a year range in the excerpt or locator (2022–2026) as naming every year in it; a period outside the range still warns.
+
+## Compile preview · 2026-11-27 · c7 B deck compiled with today's skill (informal T5 preview, not the frozen benchmark)
+
+A fresh agent compiled the c7 B deck (RouteSprout) in restyle mode: 24 slides, 0 fail, 0 render warnings, about 29 minutes. It used chips in evidence and criteria tables, panels with widths, a bar-table, table row `basis` and a basis strip; no estimate-model (the source gives no ranges, and adding one would extend the analysis). Checked in PowerPoint.
+
+Fixed from its notes: compile `corrections` items now allow `source_loc`, `evidence` and `affects`, which check.py (CP-03) requires, so a correction could never pass before; data points take `decimals` so a source's 1.92 is not shown as 1.9 (compile.md says to use it); A-01 no longer reads "Q1 2028" as a number.
+
+Seen in the deck, open: a 51-point line chart with crowded x labels and overlapping end labels (slide 12); timeline bars too narrow for their labels break words (slide 13); long footnotes can run past the slide without a warning; sidebar bullets max 4 and one-line exec sub-points made the agent move source detail to footnotes and body slides.

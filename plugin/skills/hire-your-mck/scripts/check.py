@@ -345,6 +345,8 @@ for s in spec["slides"]:
     # A-01 numbers in title appear on slide
     nums = re.findall(r"[$~]?\d[\d,.]*\s?(?:%|x|M|B|K|pp|p\.p\.)?", re.sub(r"\(\d+/\d+\)|\b\d+\s?[–-]\s?\d+(?=\s+[a-z])", "", lm["text"]))  # "(1/2)" continuations
     nums = [n for n in nums if not re.fullmatch(r"(19|20)\d\d(s)?", n.strip().rstrip(",.;:"))]  # years are not claims
+    quarters = set(re.findall(r"\b(?:Q|H|FY)(\d)\b", lm["text"]))  # "Q1 2028", "H2": period names, not claims
+    nums = [n for n in nums if n.strip().rstrip(",.;:") not in quarters]
     declared = lm.get("numbers", [])
     if nums and not declared:
         out("A-01", "warn", f"title numbers {nums} not declared in lead_message.numbers", sid)

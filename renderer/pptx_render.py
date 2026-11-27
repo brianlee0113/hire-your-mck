@@ -249,6 +249,9 @@ def dp_fmt(spec, point, value_format=None, signed=False):
     d = spec.dpoint(point)
     if d is None:
         return "?"
+    if value_format is None and d.get("decimals") is not None:  # keep the source's precision (1.92, not 1.9)
+        n_ = d["decimals"]
+        value_format = (("0." + "0" * n_) if n_ else "0") + ("%" if d.get("unit") == "%" else "")
     if d.get("value_high") is not None:  # a range, e.g. 4–5 years
         hi = fmt(d["value_high"], d.get("unit"), value_format)
         lo_vf = value_format
