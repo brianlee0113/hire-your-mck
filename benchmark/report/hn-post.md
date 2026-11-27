@@ -1,63 +1,67 @@
-# HN submission draft
+# HN submission draft (v2, 2026-11-27)
 
-**Title:** Can a Claude Skill improve strategic reasoning? We tested ours and it didn't
+Status: draft for Codex review (`benchmark/docs/12-hn-post-review-for-codex.md`). Not posted.
 
-**URL:** link to `benchmark/report/REPORT.md` in the repository
+## Title (pick one)
 
----
+1. **Show HN: My 6,000-line Claude Skill for strategy decks lost to a 6-line prompt** (recommended)
+2. Show HN: I'm an ex-McKinsey consultant. My deck-building AI lost to a 6-line prompt
+3. Show HN: I benchmarked my Claude Skill for strategy decks – a 6-line prompt reasoned better
 
-**Text (for a Show HN, or as the first comment):**
+Notes: (1) puts the contrast in the title and makes no brand claim. (2) has the strongest hook but puts the firm's
+name in the title; the README already says "Built by an ex-McKinsey consultant" and disclaims affiliation, so this is
+a judgement call. Avoid "McKinsey-style" in the title either way.
 
-I built Hire Your McK, a Claude Skill that turns a brief into a consulting-style deck. Its pitch is that it gets the
-*logic* right, not just the slides: pyramid storyline, action titles, and a hypothesis-driven "deep deck" workflow
-with an issue tree. I wanted to know whether that claim holds, so I benchmarked it against the same model without
-the skill.
+**URL:** the repository (README first screen), with the benchmark report linked in the first comment.
 
-Setup:
+## First comment
 
-- Five synthetic strategy cases. Each one plants a misleading initial hypothesis, plus traps: a definitional
-  inconsistency, a correlation sold as causation, and a margin figure that leaves out a cost.
-- Three conditions:
-  - plain Claude;
-  - Claude plus a six-line methodology prompt (hypothesis-driven, pyramid, MECE, action titles);
-  - the skill.
-- Same model (Opus 5.5, effort high), three runs each, 45 runs in total. Every run was sandboxed with no network,
-  and the run order was randomised.
-- Each deck was extracted to text, normalised into a common storyline format, anonymised, and judged against a
-  hidden answer key. Fable 5.2 scored every deck and compared them in pairs, showing each pair in both orders.
-  Sonnet 5.5 gave a second set of scores.
+I built hire-your-mck, a Claude Skill that turns a brief into a consulting-style deck: a
+storyline, an action title on every slide, editable PowerPoint charts, and an Excel workbook with a source for every
+number. About 6,000 lines of instructions and code. I claimed it made Claude's reasoning better.
 
-Results:
+Then I benchmarked it. It lost to this:
 
-- **The skill did not improve the reasoning visible in its decks. It scored slightly lower.** In pairwise judging,
-  plain Claude beat it in 13 of 15 matched pairs, and the methodology prompt beat it in 15 of 15. (What was graded
-  is the reasoning that reached the deck, not the model's internal reasoning.)
-- **All 45 decks reached the same, defensible answers.** They revised (or rejected) the initial hypothesis exactly
-  where the evidence said to, and fell for none of the traps. On these cases the model does not need help with the
-  reasoning.
-- **The skill's decks were 2.7× longer** (45 slides against 17–20) and cost about twice as much to make. Judges
-  mostly penalised repetition, such as section summaries restating their own slides. Without the concision
-  dimension the gap shrinks to borderline against plain Claude, but it remains against the methodology prompt.
-- **Making the skill's decks short did not help.** After seeing these results I added a follow-up arm (labelled
-  exploratory, design written down before it ran): the skill in its default full-deck mode. Its decks came down to
-  baseline length (22 slides) and its clarity score recovered. It still lost all 45 of its pairwise comparisons,
-  including 15 of 15 against the skill's own long deck. The judges usually called it the leaner deck, then preferred
-  the other one for its sensitivities, option comparisons and downside cases. The skill's compact slide format
-  seems to squeeze out exactly that material.
-- **The six-line methodology prompt was the best condition** (13–1 against plain Claude, pairwise).
-- **What the skill does add is product, not reasoning:** a source workbook for every number, editable charts, and a
-  QA pass.
+```
+- Work hypothesis-driven. State an initial answer early, write down what would have to be true for it to hold,
+  test each of those against the evidence, and change the answer if the evidence does not support it.
+- Build the storyline with the pyramid principle: one governing thought that answers the question, an executive
+  summary up front whose points become the sections, and the supporting arguments and evidence beneath each point.
+- Keep every grouping MECE (mutually exclusive, collectively exhaustive).
+- Give every slide an action title: a full-sentence takeaway that the slide's content proves.
+- Base the recommendation on evidence. Quantify where the data allows and show the calculations, weigh the
+  alternatives and their trade-offs, and state the key assumptions, risks and uncertainties.
+```
 
-Caveats:
+Paste that under any "make me a deck" request. It is the most useful thing in this post.
 
-- n = 5 cases, so no case-level test can reach p < 0.05. The results are consistent in direction, not
-  statistically significant. A 0-of-15 record does not mean a 0% true win rate: the exact 95% upper bound is
-  somewhere between 22% (pairs independent) and 52% (cases independent).
-- The cases and answer keys are synthetic and written by me.
-- Claude judged Claude, and there is no human review yet (the package is in the repo).
-- The skill ran unattended. Left to itself it always chose its longest mode; the short mode was tested only in the
-  post-hoc follow-up.
-- We also caught a bug in our own extraction that had made the skill look worse. We fixed it and re-judged
-  everything. The gap shrank, but the direction held. The report keeps both versions.
+What happened:
 
-Everything is in the repo: cases, answer keys, prompts, transcripts, judgments, and a one-command rerun.
+- **Round 1** – 5 strategy cases with planted traps, 45 sandboxed runs, judged blind against hidden answer keys.
+  Plain Claude beat the skill 13–2 in pairwise judging. The six-line prompt beat it 15–0. Every deck reached the same
+  answers and fell for none of the traps: the model didn't need help reasoning. The skill's rigid slide format
+  squeezed out the sensitivities and option comparisons that judges rewarded.
+- **So I changed the skill's job.** The prompt does the thinking; the skill only "compiles" the finished analysis
+  into the deck: same numbers, same conclusions, plus sources, native charts and a checker.
+- **Round 2** – 6 new cases written by a different model and frozen before any run. Compiled decks tied the
+  prompt-only decks 6–6 on reasoning and kept 100% of the critical content. They also inherited the analysis's
+  mistakes: they fixed 1 of 10, at about 3.5× the cost. A skill that writes its own analysis, even with a
+  self-critique step, still lost to the prompt 0–6.
+
+What a skill like this is good for, then, is the deliverable, not the thinking: every number traceable to a
+source, charts you can edit, and a checker that fails a deck on what a reviewer would send back. Version 1.4.0
+came out of my own blind review of the slides: box-style formulas looked too simple to trust, the text was too small,
+and every slide was the same grey box.
+
+Caveats: small n, synthetic cases, Claude judged Claude, and the only human reviewer so far is me.
+
+Cases, answer keys, prompts, transcripts, judgments and a one-command rerun: [benchmark report link]
+
+## Before posting (checklist)
+
+- [ ] Codex review done and resolved (`benchmark/docs/12-hn-post-review-for-codex.md`)
+- [ ] Decide where `benchmark/` lives publicly (branch link vs merge to main) and fill in the report link
+- [ ] `benchmark/report/REPORT.md` updated with the holdout (round 2) and the c12 founder case, so every number in
+      the comment is in the report
+- [ ] README: heading on line 49 and gallery/demo images decided at the same time
+- [ ] Post Tue–Thu, 8–10 am US Eastern; stay to answer comments for the first two hours
