@@ -43,3 +43,28 @@ The point is to see whether the same comment comes back in later rounds.
 **Verified by:** check.py 0 fail / 0 warn and layout_check 0 warnings on all four example decks and the Northwind deck; table and timeline slides re-rendered and reviewed.
 
 **Follow-up (Harbor dry-run deck review):** remaining overlaps (4p gap above the big number, 5p bullet into the rows, 7p "$4.6M" wrapping and a caption leaving its card, 8p highlight stroke thinner under the header) all came from guessing text width as "characters × average width". New `renderer/measure.py` wraps text with the real font files (Pillow; Arial/Georgia, or metric-compatible Liberation/Gelasio on Linux). Every layout height (sidebar, exec summary, tables, equation cards, tree nodes, timelines) and the post-render `layout_check` now use it. Outlines are drawn after header fills so strokes keep one width. All example decks, Northwind and Harbor: 0 layout warnings, checked visually.
+
+## Round 3 · 2026-11-27 · box equations look too simple (author's blind slide reviews, 11-17 and 11-21/23) · open
+
+Repeat of R7 (Round 1): the same comment came back in 6 of 13 reviewed pairs, across both review rounds.
+
+| Review | Pair · deck flagged | Comment (summary) |
+|---|---|---|
+| 11-17 (c2, c5) | P1 · C2 (skill 1.2.0, full deck) | box-drawn calculations lower trust; lead only lists the slide content |
+| | P2 · C (skill 1.2) | over-simplified box calculations lower trust, and repeating them makes it worse |
+| | P3 · C (skill 1.2) | box lists make the content look too simple |
+| 11-21/23 (holdout) | P2 · B (6-line prompt) | box +, −, ×, ÷ formulas are easy to read but too simple, which lowers trust |
+| | P4 · E1 (skill + self-check), c10 | "the simple formula" was the biggest minus (reason for the verdict) |
+| | P6 · H2a (B analysis → skill), c7 | a backup made of a simple calculation is rare in consulting; needs work |
+
+**Cause.** R2/R3 asked to show the basis of every estimate; the answer was the `equation` body and the `calculation-bridge` archetype (3–5 number cards joined by × + =). It is used for every estimate, including two-term sums and differences, and it is the only form a backup calculation can take. The c10 E1 deck has 4 of them. The basis is now visible, but it reads as arithmetic rather than analysis. B decks (no skill) do the same, so the habit is not only the skill's, but the skill makes it a template.
+
+| # | Task | Where | How to check |
+|---|---|---|---|
+| T1 | A plain sum or difference never gets its own equation slide: an `equation` of 2–3 terms with only + / − fails (B-05, today warn only) and goes into a `basis` strip on the chart slide instead | check.py, SKILL.md, archetypes.md | check.py fails a 2-term +/− equation; example decks still 0 fail |
+| T2 | At most one `calculation-bridge` in the main storyline, and never two in a row; further estimates go to the appendix | check.py warn (like A-12), deep-deck.md | warn on the c10 E1 spec (4 bridges) |
+| T3 | Backup calculations look like a model, not a box equation: a driver table (driver, value, unit, source or assumption, low/high range) with the result, plus a sensitivity view (low/base/high or tornado) when an assumption is uncertain | new archetype (e.g. `estimate-model`), renderer, spec-guide.md, schema | renders editable; the workbook's Calculations sheet ties to the table |
+| T4 | When an equation stays in the main storyline, the cards carry more than the number: unit, source or assumption tag, and the range of each driver; the result card shows the range too | renderer `equation`, schema | layout_check 0 warnings; side-by-side with the old card |
+| T5 | Re-test: rebuild c10 E1 and c7 H2a with T1–T4, then blind-review the old and new decks (pairs on the equation and backup slides) | benchmark | the author no longer flags "simple formula" on those slides |
+
+Open questions: whether T3 replaces `calculation-bridge` in the appendix entirely, or only for estimates with 3 or more drivers; whether T1 should be a fail or a strong warn while T3 does not exist yet.
